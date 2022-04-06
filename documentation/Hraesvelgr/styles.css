@@ -1,0 +1,14 @@
+/* Changing defaults */
+th, td {
+	padding: 5px;
+	padding-right: 15px;
+}
+p, h1, h2, h3{
+	padding-left: 5px;
+}
+
+/* Classes */
+table.horizontal td {
+	text-align: center;
+	padding-right: 5px;
+}

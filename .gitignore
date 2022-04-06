@@ -56,3 +56,6 @@ dkms.conf
 
 # Backups
 *.scf_bk
+
+# VSCode settings
+.build-debug/

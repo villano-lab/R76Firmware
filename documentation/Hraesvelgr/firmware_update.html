@@ -1,0 +1,112 @@
+<html>
+<head><title>Updating DT5560SE Firmware and Software</title></head>
+<body>
+
+<h1>Updating DT5560SE Firmware and Software</h1>
+
+<h2>0. First-time setup</h2>
+<a href="#s1">Skip</a>
+<p>
+If you have not cloned the R76-Firmware repository on both the Windows and Linux machines yet, 
+you will need to do so now. </p>
+
+<h3>Clone to Windows</h3>
+Start by opening the GitHub Desktop application, pinned to the Start menu, 
+to clone to Windows. 
+In the upper left corner, there is a dropdown labeled "Current Repository: Repositoryname."</p>
+
+<img src="images/currentrepo.png" alt="The upper left corner of the GitHub Desktop app, as altribed above." />
+
+<p>Select this, then use the "Add" dropdown to select "Clone repository..."</p>
+
+<img src="images/clone.png" alt="Under the now-selected 'Current repository' menu, there is a dropdown on the right of the top row of the sub-menu labeled 'Add.' This has been selected, and the first option, 'Clone repository...', has been selected." />
+
+<p>In the cloning menu, select the "URL" tab 
+and provide <code>https://github.com/villano-lab/R76-Firmware</code> in the first box,
+then hit "Clone."</p>
+
+<img src="images/cloneurl.png" alt="A popup appears named 'Clone a repository' appears within the application. There is a row of tabs beneath the title; 'URL' has been selected. Just below this are two text-entry fields. The first now says 'https://github.com/villano-lab/R76-Firmware'. The second is unchanged from the default. Beneath these is a 'Clone' button to the left of a 'Cancel' button." />
+
+<p>The repository will begin cloning itself to the local machine.<br/>
+
+Once you've cloned the (much cleaner) R76 repository, 
+you may wish to update the path of the "Help" bookmark in Firefox 
+to use this repository to use this repository instead of the old one.
+You can access the bookmarks manager using <code>ctrl+shift+O</code>.
+Navigate to "Bookmarks Toolbar", "Help", 
+then change <code>NaI_Array_Firmware</code> in the path to <code>R76-Firmware</code>.</p>
+
+<h3>Clone to Linux</h3>
+<p>Start by launching PowerShell from the Start menu. Once it is open, enter the command:</p>
+
+<p><code>ssh middy</code></p>
+
+<p>You are now controlling the Linux machine. 
+From here, switch to the <code>packages</code> directory:</p>
+
+<p><code>cd packages</code></p>
+
+<p>Then clone the repository.</p>
+
+<p><code>git clone https://github.com/villano-lab/R76-Firmware</code></p>
+
+<p>Once the repository is cloned, 
+you can exit the remote session with the command <code>exit</code> 
+or by simply closing the PowerShell window.</p>
+
+<h2 id="s1">1. Update local copy of the repository</h2>
+<p>To pull all updates to the firmware and source files for software, 
+fetch and pull updates for `R76-Firmware` from GitHub. <br/>
+Launch GitHub Desktop from the Start menu, 
+then make sure that you are currently looking at the <code>R76-Firmware</code> repository
+(indicated at the far left of the top bar). Once you are,
+use the "fetch" button on the right side of the top bar to check for remote changes.</p>
+
+<img src="images/fetchorigin.png" alt="The top bar of the GitHub Desktop menu. The leftmost button is a dropdown which reads 'Current repository: NaI_Array_Firmware'. The rightmost button, labeled 'Fetch Origin,' is highlighted." />
+
+<p>If, after fetching, there are any new changes to be downloaded, the fetch button will change:</p>
+
+<img src="images/pull.png" alt="The same button as above has now become 'Pull origin.'" />
+
+<h2>2. Find and flash the firmware file.</h2>
+<p>Each firmware directory within the <code>R76-firmware</code> repository should contain a flashable firmware file. 
+This file is named <code>projectname.fpga</code> &ndash; for example, <code>Na22Trigger.fpga</code>. 
+To flash the firmware to the DT5560SE, in the Home ribbon in SCI-Compiler, use the "Flash Program Tool" function.</p>
+
+<img src="images/sciflashribbon.png" alt="The home ribbon in the top bar of SCI-Compiler. 'Flash Program Tool' has been highlighted toward the right." />
+
+<p>When prompted, select the correct device (DT5560) from the dropdown menu 
+and supply the appropriate IP address (134.84.150.42).</p>
+
+<img src="images/flashtoolconnect.png" alt="A menu that I don't actually have a picture of yet because SCI-Compiler broke itself." />
+
+<p>Once connected, select the firmware file you want to upload. 
+When finished, the DT5560SE will automatically reboot itself into the new firmware.</p>
+
+<h2>3. Build the SDK</h2>
+<p>Within each firmware directory is a `library` subdirectory. 
+The C programs provided here currently can only be built on the Linux machine, 
+so start by running <code>ssh middy</code> to connect. 
+Navigate to the directory containing the C code SDK for firmware <code>firmwarename</code>:
+</p>
+
+<p><code>cd ~/packages/R76-Firmware/firmwarename/library/C/lib</code></p>
+
+<p>And run the command</p>
+
+<p><code>make</code></p>.
+</p>
+
+<h2>4. Compile the programs</h2>
+
+<p>Once the SDK for your firmware is built, 
+you can run the compilation for programs associated with the firmware.
+Assuming you are still at the location we left off in at the last step 
+(<code>middy:~/packages/R76-Firmware/firmwarename/library/C/lib/</code>)
+you can run the command:</p>
+
+<p><code>bash compile.sh</code></p>
+
+<p>All compiled programs can now be run from within this directory.</p>
+
+</body></html>
