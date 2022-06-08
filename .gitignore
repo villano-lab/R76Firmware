@@ -59,3 +59,8 @@ dkms.conf
 
 # VSCode settings
 .build-debug/
+
+# Unwanted SCICompiler Output
+HDL/
+VC++/
+output/R76Firmware
