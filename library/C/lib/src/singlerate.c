@@ -32,7 +32,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, DELAY_TEXT);
 	fprintf (stream, INHIB_TEXT);
 	fprintf (stream, TOP_TEXT);
-	fprintf (stream, RANGE_TEXT);
+	fprintf (stream, THRESH_TEXT);
 	fprintf (stream, SKIP_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+d:i:l::shv::Vg:D:T:r:S:", longopts, &ind);
+		iarg = getopt_long(argc, argv, "+d:i:l::shv::Vg:D:T:t:S:", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -89,9 +89,8 @@ int main(int argc, char* argv[])
 			gateflag = 1;
 			gtemp = optarg;
 			break;
-		case 'r':
-			rangeflag = 1;
-			rtemp = optarg;
+		case 't':
+			thrs = atoi(optarg);
 			break;
 		case 'i':
 			inhib = atoi(optarg);
@@ -108,8 +107,6 @@ int main(int argc, char* argv[])
 		}
 	}
 
-	fp = fopen("out.csv","w");
-
 	//Verbosity message
 	if(verbose > 0){
 		printf("Running in verbose mode. Verbosity: %d\n",verbose);
@@ -118,9 +115,6 @@ int main(int argc, char* argv[])
 	//Convert gtemp into the two gates and rtemp into min/max/step
 	if(gateflag == 1){ //if gate was set,
 		parse_gate(gtemp,verbose);
-	}
-	if(rangeflag == 1){ //if range was set,
-		parse_range(rtemp,verbose);
 	}
 
 	//Detector on/off
@@ -146,9 +140,7 @@ int main(int argc, char* argv[])
 		}
 	}
 
-	//Final run setup
-	int thrs = 0;	        //amount LESS THAN 8192 for threshold.
-	
+	//Final run setup	
 	if(logfile != NULL){
 		fprintf(logfile,"============ Settings ============\n");
 		fprintf(logfile,"Starting threshold:			%d\n",thrs);
@@ -166,7 +158,6 @@ int main(int argc, char* argv[])
 	
 	//Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
-	thrs = range_l;
 	thrs_q = set_by_polarity(REG_thrsh_SET,polarity,thrs);
 	if(thrs_q != 0){
 		printf("Error from REG_thrsh_SET. Aborting.\n");
@@ -182,39 +173,26 @@ int main(int argc, char* argv[])
 	gate_uq = REG_gate_u_SET(gate_u,&handle);			
 	gate_lq = REG_gate_l_SET(gate_l,&handle);
 	polarity_q = REG_polarity_SET(polarity,&handle);	//Set polarity to negative
+	skip_q = REG_skip_SET(skip,&handle);
 	
 	//Run phase - undo reset
 	if(verbose>0){printf("Setting up rate counter... \n");};
 	tic = time(NULL);
-    
-	fprintf(fp,"treshold, rate\n"); // add a header row
-	if(verbose>0){printf("Collecting data! \n");};
+    	
+	sleep(10);
+
+	if(verbose>0){printf("Collecting data for 10 seconds! \n");};
 	//Collect data
-	int i;
-	while(thrs < range_u){	
-		//reset the threshold
-		if(verbose>1){printf("Updated threshold:\n");};
-		if(verbose>1){printf("%d\n",thrs);};
-
-		thrs_q = set_by_polarity(REG_thrsh_SET,polarity,thrs);
-		if(thrs_q != 0){
-			printf("Error from REG_thrs_SET. Aborting.\n");
-			return thrs_q;
-		}
-
-		//wait
-		sleep(10);
+	//wait
+	sleep(10);
 		
-		//get the rate
-		if(verbose > 1){printf("Retreiving data...\n");};
-		rate_q=RATE_METER_RateMeter_0_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
-		if(verbose > 1){printf("Rateval: %f\n",rateval[0]/10.0);};
+	//get the rate
+	if(verbose > 1){printf("Retreiving data...\n");};
+	rate_q=RATE_METER_RateMeter_0_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
+	if(verbose > 1){printf("Rateval: %f\n",rateval[0]/10.0);};
 
-		//write the rate
-		fprintf(fp,"%d, %f\n",thrs,rateval[0]/10.0);
-		if(verbose>1){printf("thresh: %d ; rate: %f Hz\n",thrs,rateval[0]/10.0);};
-		thrs += range_s;
-	};
+	//print the rate
+	printf("%f\n",rateval[0]/10.0);
 
 	if(verbose>0){printf("Data collection complete.\n");};
 	toc = time(NULL);
@@ -225,6 +203,5 @@ int main(int argc, char* argv[])
 	};
 	print_timestamp(elapsed,verbose);
 	if(logfile != NULL){fclose(logfile);};
-	fclose(fp);
 	return 0;
 }

@@ -18,6 +18,7 @@
 #define INHIB_TEXT (" -i,	--inhibit	<inhibit>	Set the value of the inhibit time in clock ticks (integer. default: 1000)\n")
 #define THRESH_TEXT (" -t,	--thresh	<threshold>		Set the value of the (lower) threshold (default: 4192). \n")
 #define RANGE_TEXT (" -r,	--range	'<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned (default: min 0, max 4080, step size 40).\n					These are set in terms of their distance from the lower threshold; a lower value of 0 indicates starting from the same value as threshold.\n")
+#define SKIP_TEXT (" -S,    --skip <#>  Skip every # trigger to reduce the rate.\n")
 #define VERBOSE_TEXT (" -v,	--verbose	<level>		Print verbose messages at the specified level (1 if unspecified).\n")
 #define SILENT_TEXT (" -s,-q,	--silent,--quiet,		Print nothing.\n")
 #define LOG_TEXT (" -l,	--log		<file>		Log terminal output.\n")
@@ -62,11 +63,11 @@ extern int write_q;
 extern int empty_q;
 extern int full_q;
 extern int fifo_q;
-extern int orcheck_q;
-extern uint32_t orcheck;
+extern int skip_q;
 extern uint32_t fifo;
 extern uint32_t empty;
 extern uint32_t full;
+extern uint32_t skip;
 //Command-line-reading Variables
 extern int ind;
 extern int iarg;
@@ -83,6 +84,7 @@ extern int delayflag;
 extern int threshflag;
 extern int topflag;
 extern int polflag;
+extern int skipflag;
 extern int reset;
 extern int force;
 //Other Variables

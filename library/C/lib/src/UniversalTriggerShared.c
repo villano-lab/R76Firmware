@@ -29,6 +29,7 @@ const struct option longopts[] =
 	{"range",	required_argument,	0,	'r'},
 	{"reset",	no_argument,		0,	'R'},
 	{"force",	no_argument,		0,	'f'},
+	{"skip",	required_argument,	0,	'S'},
 	{0,		0,			0,	0},
 };
 
@@ -67,8 +68,8 @@ int write_q;
 int empty_q;
 int full_q;
 int fifo_q;
-int orcheck_q;
-uint32_t orcheck;
+int skip_q;
+uint32_t skip = 0; //by default, don't skip pieces.
 uint32_t fifo;
 uint32_t empty;
 uint32_t full;
@@ -83,6 +84,7 @@ int threshflag=0;
 int detflag=0;
 int topflag=0;
 int polflag=0;
+int skipflag=0;
 int reset=0;
 int force=0;
 char* rtemp;

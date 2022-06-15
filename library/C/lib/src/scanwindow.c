@@ -34,6 +34,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, INHIB_TEXT);
 	fprintf (stream, THRESH_TEXT);
 	fprintf (stream, RANGE_TEXT);
+	fprintf (stream, SKIP_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
@@ -47,7 +48,7 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+D:t:i:l::shv::Vg:d:r:", longopts, &ind);
+		iarg = getopt_long(argc, argv, "+D:t:i:l::shv::Vg:d:r:S:", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -100,6 +101,9 @@ int main(int argc, char* argv[])
 			break;
 		case 'd':
 			delay = atoi(optarg);
+			break;
+		case 'S':
+			skip = atoi(optarg);
 			break;
 		}
 	}
@@ -181,6 +185,7 @@ int main(int argc, char* argv[])
 	
 	fprintf(fp,"top, rate\n"); // add a header row
 	if(verbose>0){printf("Collecting data! \n");};
+	sleep(5); //let the board catch up to settings.
 	//Collect data
 	while(top < thrs + range_u){	
 		//reset the threshold

@@ -34,6 +34,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, INHIB_TEXT);
 	fprintf (stream, THRESH_TEXT);
 	fprintf (stream, TOP_TEXT);
+	fprintf (stream, SKIP_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
@@ -52,7 +53,7 @@ int main(int argc, char* argv[])
 	int iarg=0;
 	int polarity=1;
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+D:i:t:l::shv::Vg:d:T:Rf", longopts, &index);
+		iarg = getopt_long(argc, argv, "+D:i:t:l::shv::Vg:d:T:RfS:", longopts, &index);
 		switch (iarg){
 		case 'f':
 			force = 1;
@@ -115,6 +116,10 @@ int main(int argc, char* argv[])
 			topflag = 1;
 			top = atoi(optarg);
 			break;
+		case 'S':
+			skipflag = 1;
+			skip = atoi(optarg);
+			break;
 		}
 	}
 
@@ -134,6 +139,7 @@ int main(int argc, char* argv[])
 				topflag = 1;
 				detflag = 1;
 				gateflag = 1;
+				skipflag = 1;
 			}else if(strcasecmp(userinput, "n") == 0 || strcasecmp(userinput, "no") == 0 || userinput == "0"){
 				if(verbose>-1){printf("Proceeding with provided values only.");}
 			}else{
@@ -143,7 +149,13 @@ int main(int argc, char* argv[])
 			}
 			//user input. abort or proceed.
 		}else if(force == 1){
-			inhibflag, delayflag, threshflag, topflag, detflag, gateflag = 1;
+			inhibflag = 1;
+			delayflag = 1;
+			threshflag = 1;
+			topflag = 1;
+			detflag = 1;
+			gateflag = 1;
+			skipflag = 1;
 		}else{
 			printf("Somehow, the force variable was set to an invalid value (%d). Aborting. Please submit a bug report.\n",force);
 			return -1;
@@ -189,6 +201,12 @@ int main(int argc, char* argv[])
 		printf("Lower threshold flag is off. Skipping.\n");
 	}
 	
+	if(skipflag == 1){
+		if(verbose>-1){printf("Setting to skip every %d triggers.\n",skip);}
+	}else if(verbose > 1){
+		printf("'Skip' flag is off. Skipping.\n")
+	}
+
 	if(logfile != NULL){
 		fprintf(logfile,"============ Settings ============\n");
 		if(threshflag 	== 1){		fprintf(logfile,"Lower threshold:				%d\n",thrs);}
@@ -200,6 +218,7 @@ int main(int argc, char* argv[])
 		}
 		if(delayflag	== 1){		fprintf(logfile,"Delay:							%d\n",delay);}
 		if(polflag		== 1){		fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);}
+		if(skipflag     == 1){		fprintf(logfile,"Skip value:					%d\n",skip);}
 		if(detflag		== 1){
 									fprintf(logfile,"Detectors enabled:				\n");
 			for(int i=0;i++;i<24){
@@ -230,6 +249,17 @@ int main(int argc, char* argv[])
 		}
 	}else if(verbose > 1){
 		printf("Top threshold flag is off. Skipping.\n");
+	}
+
+	//set skip
+	if(skipflag == 1){
+		skip_q = REG_skip_SET(skip,&handle);
+		if(skip_q != 0){
+			printf("Error from REG_skip_SET. Aborting.\n");
+			return skip_q;
+		}else if(verbose > 0){
+			printf("Successfully set skip to %d.\n",skip);
+		}
 	}
 
 	//set inhib
