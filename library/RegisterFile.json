@@ -313,16 +313,22 @@
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
+},
+{
+  "Name": "skip",
+  "Address": 196620,
+  "RegionSize": 1,
+  "Description": "",
+  "Category": "Undefined"
+},
+{
+  "Name": "stopwrite",
+  "Address": 196621,
+  "RegionSize": 1,
+  "Description": "",
+  "Category": "Undefined"
 }],
 "MMCComponents":[
-{
-  "Name": "RateMeter_0",
-  "Type": "MCRateMeter",
-  "Address": 65536,
-  "Version": "1.0.0.0",
-  "Channels": 1,
-  "Registers": []
-},
 {
   "Name": "Oscilloscope_0",
   "Type": "Oscilloscope",
@@ -381,4 +387,12 @@
     }
   ],
   "Channels": 32
+},
+{
+  "Name": "RateMeter_0",
+  "Type": "MCRateMeter",
+  "Address": 65536,
+  "Version": "1.0.0.0",
+  "Channels": 1,
+  "Registers": []
 }],"Device":"DT5560","Project":"R76Firmware"}
