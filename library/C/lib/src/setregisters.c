@@ -204,7 +204,7 @@ int main(int argc, char* argv[])
 	if(skipflag == 1){
 		if(verbose>-1){printf("Setting to skip every %d triggers.\n",skip);}
 	}else if(verbose > 1){
-		printf("'Skip' flag is off. Skipping.\n")
+		printf("'Skip' flag is off. Skipping.\n");
 	}
 
 	if(logfile != NULL){

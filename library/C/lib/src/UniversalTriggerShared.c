@@ -44,8 +44,8 @@ int range_u = 4080;
 int range_s = 40;
 int delay = 50;
 int inhib = 1000;
-int baseline = 8192;
-int top = 8192;
+int baseline = 200;
+int top = 16384;
 //things you probably won't change
 int polarity = 1;	//zero for negative, one for positive
 //Register-reading Variables
@@ -69,6 +69,11 @@ int empty_q;
 int full_q;
 int fifo_q;
 int skip_q;
+int custom_q;
+uint32_t read_data;
+uint32_t valid_data;
+uint32_t custom;
+uint32_t status;
 uint32_t skip = 0; //by default, don't skip pieces.
 uint32_t fifo;
 uint32_t empty;
@@ -118,7 +123,7 @@ void copyright(){
 
 //Parsing functions
 int parse_detector_switch(char* selection){
-    if(strcasecmp(selection,"muon") == 0 || strcasecmp(selection,"muons" == 0)){
+    if(strcasecmp(selection,"muon") == 0 || strcasecmp(selection,"muons") == 0){
     	return 14680064; //21, 22, 23
     }else if(strcasecmp(selection,"PuBe") == 0 || strcasecmp(selection, "All") == 0 ){
         return 4294967295;

@@ -53,6 +53,16 @@ dkms.conf
 
 # Other binaries
 *.zip
+fifotest
+setregisters
+singlerate
+scanrate
+scanwindow
+currentrate
+
+# Other make output
+library/C/lib/libR76Firmware.txt
+r5560_sdk/linux
 
 # Backups
 *.scf_bk

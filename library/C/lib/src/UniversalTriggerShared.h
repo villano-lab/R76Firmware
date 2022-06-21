@@ -12,7 +12,7 @@
 
 //Defaults
 #define BOARD_IP_ADDRESS ("134.84.150.42")
-#define DET_TEXT (" -D,	--det	<# or source name>	Choose which detectors to trigger on (default: all).\n					Number values are bitwise from 0 to all 1s in 24 bit (16777215).\n")
+#define DET_TEXT (" -D,	--det	<# or source name>	Choose which detectors to trigger on (default: all).\n					Number values are bitwise from 0 to all 1s in 32 bit (4294967295).\n")
 #define GATE_TEXT (" -g,	--gate	'<lower #> <upper #>'	Set the gate times for the upper and lower triggers in clock ticks (integer. defaults: 0-100)\n					The two entries are delimited by spaces, commas, or dashes. Both must be provided.\n")
 #define DELAY_TEXT (" -d,	--delay	<delay length>	Set the value of the delay time in clock ticks (integer. default: 50)\n")
 #define INHIB_TEXT (" -i,	--inhibit	<inhibit>	Set the value of the inhibit time in clock ticks (integer. default: 1000)\n")
@@ -24,7 +24,7 @@
 #define LOG_TEXT (" -l,	--log		<file>		Log terminal output.\n")
 #define VERSION_TEXT (" -V, 	--version			Print version and exit.\n")
 #define HELP_TEXT (" -h,-?,	--help				Print this help function.\n")
-#define TOP_TEXT (" -T,   --top   <value> Set the upper threshold to the given value (default: 8192).\n")
+#define TOP_TEXT (" -T,   --top   <value> Set the upper threshold to the given value (default: 16384).\n")
 #define RESET_TEXT (" -R,   --reset     Reset all unsupplied values to their defaults.\n")
 #define FORCE_TEXT (" -f,   --force     Skip all user input.\n")
 
@@ -56,7 +56,7 @@ extern int polarity_q;
 extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
-extern int disable_t[24];
+extern int disable_t[32];
 extern int ratereset_q;
 extern int read_q;
 extern int write_q;
@@ -64,6 +64,11 @@ extern int empty_q;
 extern int full_q;
 extern int fifo_q;
 extern int skip_q;
+extern int custom_q;
+extern uint32_t read_data;
+extern uint32_t valid_data;
+extern uint32_t custom;
+extern uint32_t status;
 extern uint32_t fifo;
 extern uint32_t empty;
 extern uint32_t full;
