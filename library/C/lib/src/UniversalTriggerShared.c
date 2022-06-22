@@ -220,7 +220,7 @@ int connect_staticaddr(int verbose){
 		if(logfile != NULL){fprintf(logfile,"Unable to connect to the board at %s!\n",BOARD_IP_ADDRESS);};
 		return (-1); 
 	}else{
-		if(verbose>0){printf("Connected.\n");};
+		if(verbose>-1){printf("Connected.\n");};
 		if(logfile != NULL){fprintf(logfile,"Connected to board at %s\n",BOARD_IP_ADDRESS);};
         return 0;
 	};
