@@ -74,3 +74,6 @@ r5560_sdk/linux
 HDL/
 VC++/
 output/R76Firmware
+
+# Unnamed output
+out.csv

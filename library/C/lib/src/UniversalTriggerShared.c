@@ -151,9 +151,9 @@ int parse_gate(char* gatestring, int verbose){
 int parse_range(char* rangestring, int verbose){
 	if(verbose > 2){printf("Are we even supposed to be here? %d\n",rangeflag);}
 	if(verbose > 1){printf ("Splitting string \"%s\" into tokens:\n",rangestring);}
-	range_l = atoi(strtok (rangestring," ,.-"));
-	range_u = atoi(strtok (NULL," ,.-"));
-	range_s = atoi(strtok (NULL," ,.-"));
+	range_l = atoi(strtok (rangestring," ,.-:"));
+	range_u = atoi(strtok (NULL," ,.-:"));
+	range_s = atoi(strtok (NULL," ,.-:"));
 	if(verbose > 1){printf("%d, %d, %d\n",range_l,range_u,range_s);}
 }
 void print_timestamp(int elapsed, int verbose){
