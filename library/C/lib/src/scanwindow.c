@@ -141,7 +141,7 @@ int main(int argc, char* argv[])
 
 	//Now set all the values we determined above
 	disable_q = disable_dets(disable_t, disable);
-	for(int i=0; i<24; i++){
+	for(int i=0; i<32; i++){
 		if(disable_q[i] != 0){
 			printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
 			return -1;
@@ -178,6 +178,7 @@ int main(int argc, char* argv[])
 	gate_uq = REG_gate_u_SET(gate_u,&handle);			
 	gate_lq = REG_gate_l_SET(gate_l,&handle);	
 	polarity_q = REG_polarity_SET(polarity,&handle);	//Set polarity to negative
+	skip_q = REG_skip_SET(skip,&handle);
 	
 	//Run phase - undo reset
 	if(verbose>0){printf("Setting up rate counter... \n");};

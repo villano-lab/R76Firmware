@@ -74,7 +74,7 @@ uint32_t read_data;
 uint32_t valid_data;
 uint32_t custom;
 uint32_t status;
-uint32_t skip = 0; //by default, don't skip pieces.
+uint32_t skip = -1; //by default, don't skip pieces.
 uint32_t fifo;
 uint32_t empty;
 uint32_t full;
