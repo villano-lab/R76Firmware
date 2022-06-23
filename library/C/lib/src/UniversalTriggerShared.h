@@ -100,6 +100,8 @@ extern FILE *fp;
 extern FILE *logfile;
 //Rate Counter Variables
 extern int rate_q;
+extern int unreduced_q;
+extern uint32_t unreduced[160];
 extern uint32_t rateval[160]; //needs to be pre-allocated
 extern uint32_t ratechan;
 extern uint32_t ratetimeout; //timeout in ms

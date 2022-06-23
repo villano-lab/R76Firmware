@@ -215,9 +215,11 @@ int main(int argc, char* argv[])
 		if(verbose > 1){printf("Retreiving data...\n");};
 		rate_q=RATE_METER_RateMeter_0_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
 		if(verbose > 1){printf("Rateval: %f\n",rateval[0]/10.0);};
+		unreduced_q=RATE_METER_RateMeter_NoSkip_GET_DATA(unreduced,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
+		if(verbose > 1){printf("Unreduced: %f\n",unreduced[0]/10.0);};
 
 		//write the rate
-		fprintf(fp,"%d, %f\n",top,rateval[0]/10.0);
+		fprintf(fp,"%d, %f, %f\n",top,rateval[0]/10.0,unreduced[0]/10.0);
 		if(verbose>1){printf("top: %d ; rate: %f Hz\n",top,rateval[0]/10.0);};
 		top += range_s;
 	};

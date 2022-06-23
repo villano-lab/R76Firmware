@@ -102,6 +102,8 @@ FILE *fp;
 FILE *logfile;
 //Rate Counter Variables
 int rate_q;
+int unreduced_q;
+uint32_t unreduced[160];
 uint32_t rateval[160]; //needs to be pre-allocated
 uint32_t ratechan=1;
 uint32_t ratetimeout=10; //timeout in ms
