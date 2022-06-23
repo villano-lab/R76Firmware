@@ -232,98 +232,98 @@
 },
 {
   "Name": "fifo",
-  "Address": 131072,
+  "Address": 33,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "read",
-  "Address": 131073,
+  "Address": 34,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "empty",
-  "Address": 131074,
+  "Address": 35,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "full",
-  "Address": 131075,
+  "Address": 36,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "write",
-  "Address": 131076,
+  "Address": 37,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_25",
-  "Address": 131077,
+  "Address": 38,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_26",
-  "Address": 131078,
+  "Address": 39,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_27",
-  "Address": 131079,
+  "Address": 40,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_28",
-  "Address": 131080,
+  "Address": 41,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_29",
-  "Address": 131081,
+  "Address": 42,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_30",
-  "Address": 131082,
+  "Address": 43,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_31",
-  "Address": 131083,
+  "Address": 44,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "skip",
-  "Address": 196620,
+  "Address": 65548,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "stopwrite",
-  "Address": 196621,
+  "Address": 65549,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
@@ -332,55 +332,55 @@
 {
   "Name": "Oscilloscope_0",
   "Type": "Oscilloscope",
-  "Address": 163840,
+  "Address": 32768,
   "Version": "1.0.0.0",
   "nsamples": 1024,
   "Registers": [
     {
       "Name": "READ_STATUS",
-      "Address": 196608,
+      "Address": 65536,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
       "Name": "READ_POSITION",
-      "Address": 196609,
+      "Address": 65537,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
       "Name": "CONFIG_TRIGGER_MODE",
-      "Address": 196610,
+      "Address": 65538,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
       "Name": "CONFIG_PRETRIGGER",
-      "Address": 196611,
+      "Address": 65539,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
       "Name": "CONFIG_TRIGGER_LEVEL",
-      "Address": 196612,
+      "Address": 65540,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
       "Name": "CONFIG_ARM",
-      "Address": 196613,
+      "Address": 65541,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
       "Name": "CONFIG_DECIMATOR",
-      "Address": 196614,
+      "Address": 65542,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
@@ -389,9 +389,17 @@
   "Channels": 32
 },
 {
+  "Name": "RateMeter_NoSkip",
+  "Type": "MCRateMeter",
+  "Address": 131072,
+  "Version": "1.0.0.0",
+  "Channels": 1,
+  "Registers": []
+},
+{
   "Name": "RateMeter_0",
   "Type": "MCRateMeter",
-  "Address": 65536,
+  "Address": 262144,
   "Version": "1.0.0.0",
   "Channels": 1,
   "Registers": []
