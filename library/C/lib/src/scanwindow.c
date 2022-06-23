@@ -180,6 +180,15 @@ int main(int argc, char* argv[])
 	polarity_q = REG_polarity_SET(polarity,&handle);	//Set polarity to negative
 	skip_q = REG_skip_SET(skip,&handle);
 	
+	if(verbose>1){printf("Updated top threshold to initial value:\n");};
+	if(verbose>1){printf("%d\n",top);};
+
+	top_q = set_by_polarity(REG_top_SET,polarity,top);
+	if(top_q != 0){
+		printf("Error from REG_top_SET. Aborting.\n");
+		return top_q;
+	}
+
 	//Run phase - undo reset
 	if(verbose>0){printf("Setting up rate counter... \n");};
 	tic = time(NULL);
