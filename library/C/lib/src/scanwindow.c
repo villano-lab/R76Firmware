@@ -178,7 +178,13 @@ int main(int argc, char* argv[])
 	gate_uq = REG_gate_u_SET(gate_u,&handle);			
 	gate_lq = REG_gate_l_SET(gate_l,&handle);	
 	polarity_q = REG_polarity_SET(polarity,&handle);	//Set polarity to negative
+
+	if(verbose>0){printf("Skipping every %dth value.\n",skip);}
 	skip_q = REG_skip_SET(skip,&handle);
+	if(skip_q != 0){
+		printf("Error from REG_skip_SET. Aborting.\n");
+		return skip_q;
+	}
 	
 	if(verbose>1){printf("Updated top threshold to initial value:\n");};
 	if(verbose>1){printf("%d\n",top);};
