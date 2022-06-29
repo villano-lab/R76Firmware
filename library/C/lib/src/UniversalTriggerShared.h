@@ -43,6 +43,8 @@ extern int delay;
 extern int polarity;
 extern int baseline;
 extern int top;
+extern int int_time;
+extern int pre_int;
 //Register-reading Variables
 extern NI_HANDLE handle;
 extern int thrs_q;
@@ -57,7 +59,7 @@ extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
 extern int disable_t[32];
-extern int ratereset_q;
+extern int reset_q;
 extern int read_q;
 extern int write_q;
 extern int empty_q;
@@ -65,6 +67,10 @@ extern int full_q;
 extern int fifo_q;
 extern int skip_q;
 extern int custom_q;
+extern int int_time_q;
+extern int baseline_q;
+extern int pre_int_q;
+extern int stopwrite_q;
 extern uint32_t read_data;
 extern uint32_t valid_data;
 extern uint32_t custom;

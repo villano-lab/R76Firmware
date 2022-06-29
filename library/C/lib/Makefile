@@ -67,7 +67,7 @@ Objects=$(Objects0)
 ## Main Build Targets 
 ##
 .PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
-all: $(OutputFile) setregisters scanrate scanwindow currentrate #fifotest #no custom packet yet so not ready to test fifo
+all: $(OutputFile) setregisters scanrate scanwindow currentrate fifotest
 
 $(OutputFile): $(IntermediateDirectory)/.d $(Objects) 
 	@$(MakeDirCommand) $(@D)

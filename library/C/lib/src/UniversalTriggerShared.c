@@ -35,7 +35,7 @@ const struct option longopts[] =
 
 //Defaults
 int verbose = 0;
-int thrs = 4192;	        //amount LESS THAN 8192 for threshold.
+int thrs = 4192;	        //distance from baseline for threshold.
 uint32_t value = 4294967295;
 int gate_u = 100; 
 int gate_l = 0;
@@ -46,6 +46,8 @@ int delay = 50;
 int inhib = 1000;
 int baseline = 200;
 int top = 16384;
+int int_time = 16; //should change this default once we find a good value - taken directly from the sci-compiler defaults
+int pre_int = 5;   //^same here
 //things you probably won't change
 int polarity = 1;	//zero for negative, one for positive
 //Register-reading Variables
@@ -62,7 +64,7 @@ char* selection;
 int *disable_q; // array of disable instead of 24 initializations
 int *disable;
 int disable_t[32];
-int ratereset_q;
+int reset_q;
 int read_q;
 int write_q;
 int empty_q;
@@ -70,6 +72,10 @@ int full_q;
 int fifo_q;
 int skip_q;
 int custom_q;
+int int_time_q;
+int baseline_q;
+int pre_int_q;
+int stopwrite_q;
 uint32_t read_data;
 uint32_t valid_data;
 uint32_t custom;

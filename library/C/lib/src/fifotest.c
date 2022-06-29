@@ -100,19 +100,34 @@ int main(int argc, char* argv[])
 			return write_q;
 		}	
 	int i=0;
-	if(verbose>0){printf("Running until interrupt. Press any key to stop printing.\n");}
+
+	int_time_q = REG_int_time_SET(int_time,&handle);
+	if(int_time_q != 0){
+		printf("Error! Failed to set the `int_time` variable. \n");
+		return int_time_q;
+	}
+	pre_int_q = REG_pre_int_SET(pre_int_q,&handle);
+	if(pre_int_q != 0){
+		printf("Error! Failed to set the `pre_int` variable. \n");
+		return pre_int;
+	}
+	baseline_q = REG_baseline_SET(baseline_q,&handle);
+	if(baseline_q != 0){
+		printf("Error! Failed to set the `baseline` variable. \n");
+		return baseline;
+	}
 	if(verbose>0){printf("If you are not getting any triggers, please try running `setthresh.exe -R` and try again.\n");}
 	
 	//Reset everything real quick
-	ratereset_q = REG_ratereset_SET(1,&handle);
-	if(ratereset_q != 0){
+	reset_q = REG_reset_SET(1,&handle);
+	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
-		return ratereset_q;
+		return reset_q;
 	}	
-	ratereset_q = REG_ratereset_SET(0,&handle);
-	if(ratereset_q != 0){
+	reset_q = REG_reset_SET(0,&handle);
+	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
-		return ratereset_q;
+		return reset_q;
 	}
 	stopwrite_q = REG_stopwrite_SET(0,&handle);
 	if(stopwrite_q != 0){
@@ -126,7 +141,7 @@ int main(int argc, char* argv[])
 	
 	//Main loop!============================================================
 	// =====================================================================
-	CPACK_CP_0_START(&handle);
+	// CPACK_CP_0_START(&handle); //comment out if no custom packet yet
 	while(empty != 1){
 		//print a warning if we're not keeping up.
 		end = clock();
@@ -139,21 +154,21 @@ int main(int argc, char* argv[])
 		}
 		if(full == 1){
 			toc = time(NULL);
-			if(verbose>-1){printf("WARNING: The FIFO is full! Temporarily disabling writing. Number of entries before filling: %d. Seconds taken to fill FIFO: %d\n",i,(int)toc-(int)tic);}
-			if(logfile != NULL){fprintf(logfile,"FIFO was full. Temporarily disabling writing. Seconds to fill fifo: %d.\n",(int)toc-(int)tic);}
+			if(verbose>-1){printf("WARNING: The FIFO is full! Now disabling writing. Number of entries before filling: %d. Seconds taken to fill FIFO: %d\n",i,(int)toc-(int)tic);}
+			if(logfile != NULL){fprintf(logfile,"FIFO was full. Now disabling writing. Seconds to fill fifo: %d.\n",(int)toc-(int)tic);}
 			stopwrite_q = REG_stopwrite_SET(1,&handle);
                 	if(stopwrite_q != 0){
                         	printf("Error! Failed to set the `stopwrite` variable.\n");
                         	return stopwrite_q;
                 	}
 		}
-		cfull_q = REG_full_GET(&cfull,&handle);
+		/*cfull_q = REG_full_GET(&cfull,&handle); //comment out if no custom packet yet
 		if(cfull_q != 0){
 			printf("Error! Failed to get the `custom_full` variable.\n");
 			return cfull_q;
 		}
 		if(cfull == 1){printf("The custom packet's FIFO is full. There is no actual error handling for this yet.\n");}
-		end = clock();
+		end = clock();*/
 		if(verbose > 2){printf("Time spent handling whether the FIFO was full: %f us\n.",(double)(end - begin)*1000000/CLOCKS_PER_SEC);}
 		//read out a piece
 		begin = clock();
@@ -167,7 +182,7 @@ int main(int argc, char* argv[])
 			printf("Error! Failed to set the `read` variable.\n");
 			return read_q;
 		}
-		available_q = CPACK_CP_0_DATA_AVAILABLE(&available,&handle);
+		/*available_q = CPACK_CP_0_DATA_AVAILABLE(&available,&handle); //comment out if no custom packet yet
 		if(available_q != 0){
 			printf("Error! Failed to check for available data from custom packet.\n");
 			return available_q;
@@ -176,11 +191,11 @@ int main(int argc, char* argv[])
 		if(status_q != 0){
 			printf("Error! Failed to check status of custom packet.\n");
 			return status_q;
-		}
-		custom_q = CPACK_CP_0_DOWNLOAD(&custom,1,100,&handle,&read_data,&valid_data);
-		if(custom_q != 0){
-			printf("Error! Failed to download data from custom packet.\n");
-			return custom_q;
+		}*/
+		fifo_q = REG_fifo_GET(&fifo,&handle);
+		if(fifo_q != 0){
+			printf("Error! Failed to download data from fifo.\n");
+			return fifo_q;
 		}
 		end = clock();
 		if(verbose > 2){printf("Time spent retrieving an entry: %f us\n.",(double)(end - begin)*1000000/CLOCKS_PER_SEC);}
@@ -189,8 +204,8 @@ int main(int argc, char* argv[])
 		i++;
 		toc = time(NULL);
 		fflush(stdout); //flush the print buffer here
-		if(verbose > 0 && verbose < 3){printf("Result: %u (#%d, words read: %d, valid data: %d, data available: %d, status: %d)\n",custom,i,read_data,valid_data,available,status);}
-		if(logfile != NULL){fprintf(logfile,"%u (%d)\n",custom,i);}
+		if(verbose > 0 && verbose < 3){printf("Result: %u (#%d)\n",fifo,i);}
+		if(logfile != NULL){fprintf(logfile,"%u (%d)\n",fifo,i);}
 		empty_q = REG_empty_GET(&empty,&handle);
 		if(empty_q != 0){
 			printf("\nError! Failed to get the `empty` variable.\n");
@@ -204,7 +219,7 @@ int main(int argc, char* argv[])
 	//when we're done emptying,
 	if(verbose > -1){
 		fflush(stdout); //flush the print buffer here
-		printf("Emptied the FIFO! Number of entries this round (%d seconds): %d (FIFO size: something big that I forgot, like 10 or 100 thousand?).\n",(int)toc-(int)tic,i);
+		printf("Emptied the FIFO! Number of entries this round (%d seconds): %d (FIFO size: 131072).\n",(int)toc-(int)tic,i);
 		if(logfile != NULL){fprintf(logfile,"Emptied %d entries over the course of %d seconds.\n",i,(int)toc-(int)tic);}
 	}
 	
@@ -212,22 +227,17 @@ int main(int argc, char* argv[])
 	//stop reading & writing and reset.
 	read_q = REG_read_SET(0,&handle);
 		if(read_q != 0){
-			printf("Error! Failed to set the `write` variable.\n");
+			printf("Error! Failed to set the `read` variable.\n");
 			return read_q;}
-	write_q = REG_write_SET(0,&handle);
-	if(write_q != 0){
-			printf("Error! Failed to set the `write` variable.\n");
-			return write_q;
-		}	
-	ratereset_q = REG_ratereset_SET(1,&handle);
-	if(ratereset_q != 0){
+	reset_q = REG_reset_SET(1,&handle);
+	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
-		return ratereset_q;
+		return reset_q;
 	}	
-	ratereset_q = REG_ratereset_SET(0,&handle);
-	if(ratereset_q != 0){
+	reset_q = REG_reset_SET(0,&handle);
+	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
-		return ratereset_q;
+		return reset_q;
 	}
 	return 0;
 }	
