@@ -87,14 +87,6 @@ def gray_to_bin(num, nbit):
     temp ^= (temp >> 1)
     return temp    
 
-def REG_ratereset_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_ratereset, handle)
-    return err, data
-
-def REG_ratereset_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_ratereset, handle)
-    return err
-
 def REG_thrsh_GET(handle):
     [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh, handle)
     return err, data
@@ -461,6 +453,38 @@ def REG_stopwrite_GET(handle):
 
 def REG_stopwrite_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
+    return err
+
+def REG_reset_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_reset, handle)
+    return err, data
+
+def REG_reset_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_reset, handle)
+    return err
+
+def REG_int_time_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_int_time, handle)
+    return err, data
+
+def REG_int_time_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_int_time, handle)
+    return err
+
+def REG_pre_int_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
+    return err, data
+
+def REG_pre_int_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
+    return err
+
+def REG_baseline_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_baseline, handle)
+    return err, data
+
+def REG_baseline_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_baseline, handle)
     return err
 
 

@@ -129,8 +129,6 @@ SCILIB int ClearBuffer(void *buffer_handle);
 
 
 
-SCILIB int REG_ratereset_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_ratereset_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_thrsh_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_thrsh_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_polarity_GET(uint32_t *val, NI_HANDLE *handle);
@@ -223,6 +221,14 @@ SCILIB int REG_skip_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_skip_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_stopwrite_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_stopwrite_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_reset_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_reset_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_int_time_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_int_time_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_pre_int_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_pre_int_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_baseline_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_baseline_SET(uint32_t val, NI_HANDLE *handle);
 //-----------------------------------------------------------------
 //-
 //- OSCILLOSCOPE_Oscilloscope_0_START

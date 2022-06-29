@@ -370,15 +370,7 @@ SCILIB int ClearBuffer(void *buffer_handle)
 {
 	circular_buf_reset(buffer_handle);
 	return 0;
-}SCILIB int REG_ratereset_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_ratereset, handle);
-}
-SCILIB int REG_ratereset_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_ratereset, handle);
-}
-SCILIB int REG_thrsh_GET(uint32_t *val, NI_HANDLE *handle)
+}SCILIB int REG_thrsh_GET(uint32_t *val, NI_HANDLE *handle)
 {
      return __abstracted_reg_read(val, SCI_REG_thrsh, handle);
 }
@@ -745,6 +737,38 @@ SCILIB int REG_stopwrite_GET(uint32_t *val, NI_HANDLE *handle)
 SCILIB int REG_stopwrite_SET(uint32_t val, NI_HANDLE *handle)
 {
      return __abstracted_reg_write(val, SCI_REG_stopwrite, handle);
+}
+SCILIB int REG_reset_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_reset, handle);
+}
+SCILIB int REG_reset_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_reset, handle);
+}
+SCILIB int REG_int_time_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_int_time, handle);
+}
+SCILIB int REG_int_time_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_int_time, handle);
+}
+SCILIB int REG_pre_int_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_pre_int, handle);
+}
+SCILIB int REG_pre_int_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_pre_int, handle);
+}
+SCILIB int REG_baseline_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_baseline, handle);
+}
+SCILIB int REG_baseline_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_baseline, handle);
 }
 //-----------------------------------------------------------------
 //-

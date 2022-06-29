@@ -1,315 +1,308 @@
 {"Registers":[
 {
-  "Name": "ratereset",
+  "Name": "thrsh",
   "Address": 0,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh",
+  "Name": "polarity",
   "Address": 1,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "polarity",
+  "Name": "top",
   "Address": 2,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "top",
+  "Name": "inhib",
   "Address": 3,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "inhib",
+  "Name": "delay",
   "Address": 4,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "delay",
+  "Name": "disable_det_0",
   "Address": 5,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_0",
+  "Name": "disable_det_1",
   "Address": 6,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_1",
+  "Name": "disable_det_2",
   "Address": 7,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_2",
+  "Name": "disable_det_3",
   "Address": 8,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_3",
+  "Name": "disable_det_4",
   "Address": 9,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_4",
+  "Name": "disable_det_5",
   "Address": 10,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_5",
+  "Name": "disable_det_6",
   "Address": 11,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_6",
+  "Name": "disable_det_7",
   "Address": 12,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_7",
+  "Name": "disable_det_8",
   "Address": 13,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_8",
+  "Name": "disable_det_9",
   "Address": 14,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_9",
+  "Name": "disable_det_10",
   "Address": 15,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_10",
+  "Name": "disable_det_11",
   "Address": 16,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_11",
+  "Name": "disable_det_12",
   "Address": 17,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_12",
+  "Name": "disable_det_13",
   "Address": 18,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_13",
+  "Name": "disable_det_14",
   "Address": 19,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_14",
+  "Name": "disable_det_15",
   "Address": 20,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_15",
+  "Name": "disable_det_16",
   "Address": 21,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_16",
+  "Name": "disable_det_17",
   "Address": 22,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_17",
+  "Name": "disable_det_18",
   "Address": 23,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_18",
+  "Name": "disable_det_19",
   "Address": 24,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_19",
+  "Name": "disable_det_20",
   "Address": 25,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_20",
+  "Name": "disable_det_21",
   "Address": 26,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_21",
+  "Name": "disable_det_22",
   "Address": 27,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_22",
+  "Name": "disable_det_23",
   "Address": 28,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_23",
+  "Name": "disable_det_24",
   "Address": 29,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_24",
+  "Name": "gate_l",
   "Address": 30,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "gate_l",
+  "Name": "gate_u",
   "Address": 31,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "gate_u",
+  "Name": "fifo",
   "Address": 32,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "fifo",
+  "Name": "read",
   "Address": 33,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "read",
+  "Name": "empty",
   "Address": 34,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "empty",
+  "Name": "full",
   "Address": 35,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "full",
+  "Name": "write",
   "Address": 36,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "write",
+  "Name": "disable_det_25",
   "Address": 37,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_25",
+  "Name": "disable_det_26",
   "Address": 38,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_26",
+  "Name": "disable_det_27",
   "Address": 39,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_27",
+  "Name": "disable_det_28",
   "Address": 40,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_28",
+  "Name": "disable_det_29",
   "Address": 41,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_29",
+  "Name": "disable_det_30",
   "Address": 42,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
-  "Name": "disable_det_30",
-  "Address": 43,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
   "Name": "disable_det_31",
-  "Address": 44,
+  "Address": 43,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
@@ -324,6 +317,34 @@
 {
   "Name": "stopwrite",
   "Address": 65549,
+  "RegionSize": 1,
+  "Description": "",
+  "Category": "Undefined"
+},
+{
+  "Name": "reset",
+  "Address": 327680,
+  "RegionSize": 1,
+  "Description": "",
+  "Category": "Undefined"
+},
+{
+  "Name": "int_time",
+  "Address": 327681,
+  "RegionSize": 1,
+  "Description": "",
+  "Category": "Undefined"
+},
+{
+  "Name": "pre_int",
+  "Address": 327682,
+  "RegionSize": 1,
+  "Description": "",
+  "Category": "Undefined"
+},
+{
+  "Name": "baseline",
+  "Address": 327683,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
