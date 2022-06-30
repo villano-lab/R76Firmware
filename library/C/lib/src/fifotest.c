@@ -142,7 +142,7 @@ int main(int argc, char* argv[])
 	//Main loop!============================================================
 	// =====================================================================
 	// CPACK_CP_0_START(&handle); //comment out if no custom packet yet
-	wait(30) //wait a little while so we can get some data before exiting.
+	sleep(30); //wait a little while so we can get some data before exiting.
 	while(empty != 1){
 		//print a warning if we're not keeping up.
 		end = clock();
