@@ -116,7 +116,7 @@ int main(int argc, char* argv[])
 		printf("Error! Failed to set the `baseline` variable. \n");
 		return baseline;
 	}
-	if(verbose>0){printf("If you are not getting any triggers, please try running `setthresh.exe -R` and try again.\n");}
+	if(verbose>0){printf("If you are not getting any triggers, please try running `./setregisters.exe -R` and try again.\n");}
 	
 	//Reset everything real quick
 	reset_q = REG_reset_SET(1,&handle);
@@ -142,6 +142,7 @@ int main(int argc, char* argv[])
 	//Main loop!============================================================
 	// =====================================================================
 	// CPACK_CP_0_START(&handle); //comment out if no custom packet yet
+	wait(30) //wait a little while so we can get some data before exiting.
 	while(empty != 1){
 		//print a warning if we're not keeping up.
 		end = clock();
