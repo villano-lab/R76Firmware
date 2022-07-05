@@ -23,12 +23,16 @@
 const char* program_name = "fifotest";
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
-	fprintf (stream, "Usage:  %s options \n", program_name);
+	fprintf (stream, "Usage:  %s options -- options to pass to setregisters (optional) \n", program_name);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
 	fprintf (stream, VERSION_TEXT);
 	fprintf (stream, HELP_TEXT);
+	fprintf (stream, "\n===============================================================\n");
+	fprintf (stream, "setregisters: utility for setting register values\n");
+	fprintf (stream, "----------\n");
+	system("./setregisters -h");
 
 	exit (exit_code);
 };
@@ -39,7 +43,7 @@ int main(int argc, char* argv[])
 	clock_t begin, end;
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "l::shv::V", longopts, &ind);
+		iarg = getopt_long(argc, argv, "l::shv::V+", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -73,6 +77,15 @@ int main(int argc, char* argv[])
 			break;
 		}
 	}
+	
+	if(optind!=argc){ //if there are args to pass through, tell the user,
+		if(verbose > 0){printf("Running setregisters utility.\n");}
+		//then construct, run, and free the command.
+		char* command = malloc(100);
+		snprintf(command,100,"./setregisters %s -v%d",argv[optind],verbose);
+		system(command);
+		free(command);
+  	}
 	
 	fp = fopen("out.csv","w");
 

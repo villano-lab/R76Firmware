@@ -167,10 +167,7 @@ int parse_range(char* rangestring, int verbose){
 void print_timestamp(int elapsed, int verbose){
 	int hours = floor(elapsed / 3600);
 	int minutes = floor((elapsed % 3600)/60);
-	int seconds = floor((elapsed % 60));
-	char* timestamp = malloc(100);
-	snprintf(timestamp,100,"%02d-%02d-%02d",hours,minutes,seconds);
-	if(verbose>1){printf("Timestamp: %s\n",timestamp);};
+	int seconds = floor(elapsed % 60);
 	if(verbose>-1){printf("Time elapsed: %02d:%02d:%02d \n",hours,minutes,seconds);};
 	if(verbose>1){printf("Closing files...");};
 }

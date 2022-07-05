@@ -24,7 +24,7 @@
 #include  "R76Firmware_lib.h"
 #include  "UniversalTriggerShared.h"
 
-const char* program_name = "setthresh";
+const char* program_name = "setregisters";
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
 	fprintf (stream, "Usage:  %s options \n", program_name);
