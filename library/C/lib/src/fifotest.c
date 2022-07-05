@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
 	clock_t begin, end;
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "d:i:l::shv::Vg:D:T:", longopts, &ind);
+		iarg = getopt_long(argc, argv, "l::shv::V", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -135,14 +135,20 @@ int main(int argc, char* argv[])
 		return stopwrite_q;
 	}
 	tic = time(NULL);
-	empty = 0;
+	empty = 1;
 	
 	if(verbose > 0){printf("Setup complete; starting acquisition.\n");}
 	
 	//Main loop!============================================================
 	// =====================================================================
 	// CPACK_CP_0_START(&handle); //comment out if no custom packet yet
-	sleep(30); //wait a little while so we can get some data before exiting.
+	while(empty != 0){ //ensure some data is taken first.
+		empty_q = REG_empty_GET(&empty,&handle);
+		if(empty_q != 0){
+			printf("Error! Failed to get the `empty` variable.\n");
+			return empty_q;
+		}
+	}
 	while(empty != 1){
 		//print a warning if we're not keeping up.
 		end = clock();
