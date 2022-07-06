@@ -146,12 +146,12 @@ int main(int argc, char* argv[])
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
 	}	
-	reset_q = SPECTRUM_Spectrum_0_STOP(&handle);
+	reset_q = SPECTRUM_Spectrum_1_STOP(&handle);
 	if(reset_q != 0){
 		printf("Error! Failed to stop Spectrum_0.\n");
 		return reset_q;
 	}
-	reset_q = SPECTRUM_Spectrum_0_RESET(&handle);
+	reset_q = SPECTRUM_Spectrum_1_RESET(&handle);
 	if(reset_q != 0){
 		printf("Error! Failed to reset Spectrum_0.\n");
 		return reset_q;
@@ -161,7 +161,7 @@ int main(int argc, char* argv[])
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
 	}
-	reset_q = SPECTRUM_Spectrum_0_START(&handle);
+	reset_q = SPECTRUM_Spectrum_1_START(&handle);
 	if(reset_q != 0){
 		printf("Error! Failed to start Spectrum_0.\n");
 		return reset_q;
@@ -284,17 +284,17 @@ int main(int argc, char* argv[])
 	}
 
 	//check out spectrum.	
-	stopwrite_q = SPECTRUM_Spectrum_0_STOP(&handle);
+	stopwrite_q = SPECTRUM_Spectrum_1_STOP(&handle);
 	if(stopwrite_q != 0){
 		printf("Error! Failed to stop Spectrum_0.\n");
 		return stopwrite_q;
 	}
-	read_q = SPECTRUM_Spectrum_0_STATUS(&status,&handle);
+	read_q = SPECTRUM_Spectrum_1_STATUS(&status,&handle);
 	if(read_q != 0){
 		printf("Error! Failed to retrieve the status of Spectrum_0.\n");
 		return read_q;
 	}
-	read_q = SPECTRUM_Spectrum_0_DOWNLOAD(spec_dl,16,10000,&handle,&size,&valid_data);
+	read_q = SPECTRUM_Spectrum_1_DOWNLOAD(spec_dl,16,10000,&handle,&size,&valid_data);
 	printf("%d valid words:\n",valid_data);
 	for(i=0; i<valid_data; i++){
 		printf("%d\n",spec_dl[i]);
