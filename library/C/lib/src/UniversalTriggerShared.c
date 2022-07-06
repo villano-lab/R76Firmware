@@ -56,8 +56,8 @@ int delay = 50;
 int inhib = 1000;
 int baseline = 200;
 int top = 16384;
-int int_time = 16; //should change this default once we find a good value - taken directly from the sci-compiler defaults
-int pre_int = 5;   //^same here
+int int_time = 250; //should change this default once we find a good value - these are good for SCIDK
+int pre_int = 30;   //^same here
 //things you probably won't change
 int polarity = 1;	//zero for negative, one for positive
 //Register-reading Variables

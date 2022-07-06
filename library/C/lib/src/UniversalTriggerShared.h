@@ -27,10 +27,10 @@
 #define TOP_TEXT (" -T,   --top   <value> Set the upper threshold to the given value (default: 16384).\n")
 #define RESET_TEXT (" -R,   --reset     Reset all unsupplied values to their defaults.\n")
 #define FORCE_TEXT (" -f,   --force     Skip all user input.\n")
-#define POLARITY_TEXT ("-p, --polarity  <1 or 0>    Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
-#define PRE_INT_TEXT ("-P,  --pre-int   <#> Set the pre-integration time. (integer. default: 5)\n")
-#define INT_TIME_TEXT ("-I, --int-time  <#> Set the integration time. (integer. default: 16)\n")
-#define CONFIG_TEXT ("-c,   --config    <file>  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
+#define POLARITY_TEXT (" -p, --polarity  <1 or 0>    Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
+#define PRE_INT_TEXT (" -P,  --pre-int   <#> Set the pre-integration time in clock cycles. (integer. default: 30)\n")
+#define INT_TIME_TEXT (" -I, --int-time  <#> Set the integration time in clock cycles. (integer. default: 250)\n")
+#define CONFIG_TEXT (" -c,   --config    <file>  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
 
 //Defaults
 extern int verbose;
