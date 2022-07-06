@@ -286,19 +286,21 @@ int main(int argc, char* argv[])
 	//check out spectrum.	
 	stopwrite_q = SPECTRUM_Spectrum_1_STOP(&handle);
 	if(stopwrite_q != 0){
-		printf("Error! Failed to stop Spectrum_0.\n");
+		printf("Error! Failed to stop Spectrum_1.\n");
 		return stopwrite_q;
 	}
 	read_q = SPECTRUM_Spectrum_1_STATUS(&status,&handle);
 	if(read_q != 0){
-		printf("Error! Failed to retrieve the status of Spectrum_0.\n");
+		printf("Error! Failed to retrieve the status of Spectrum_1.\n");
 		return read_q;
 	}
 	if(verbose>0){printf("Status: %d\n",status);}
 	read_q = SPECTRUM_Spectrum_1_DOWNLOAD(spec_dl,1024,10000,&handle,&size,&valid_data);
 	printf("%d valid words, reading %d:\n",valid_data,size);
 	for(i=0; i<valid_data; i++){
-		printf("%d: %d\n",i,spec_dl[i]);
+		if((verbose > -1 && spec_dl[i] > 0) || verbose > 1){
+			printf("%d: %d\n",i,spec_dl[i]);
+		}
 	}
 	return 0;
-}	
+}
