@@ -74,8 +74,8 @@ char* selection;
 int *disable_q; // array of disable instead of 24 initializations
 int *disable;
 int disable_t[32];
-uint32_t spec_dl[32];
-uint32_t size = 16;
+uint32_t spec_dl[1040];
+uint32_t size = 1024;
 int reset_q;
 int read_q;
 int write_q;

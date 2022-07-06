@@ -294,10 +294,11 @@ int main(int argc, char* argv[])
 		printf("Error! Failed to retrieve the status of Spectrum_0.\n");
 		return read_q;
 	}
-	read_q = SPECTRUM_Spectrum_1_DOWNLOAD(spec_dl,16,10000,&handle,&size,&valid_data);
-	printf("%d valid words:\n",valid_data);
+	if(verbose>0){printf("Status: %d\n",status);}
+	read_q = SPECTRUM_Spectrum_1_DOWNLOAD(spec_dl,1024,10000,&handle,&size,&valid_data);
+	printf("%d valid words, reading %d:\n",valid_data,size);
 	for(i=0; i<valid_data; i++){
-		printf("%d\n",spec_dl[i]);
+		printf("%d: %d\n",i,spec_dl[i]);
 	}
 	return 0;
 }	
