@@ -24,5 +24,5 @@ jobs:
         sudo ln -s libr5560.so.1.0.0 librprng.so
     - name: make
       run: |
-        cd ~/library/C/lib
+        cd /home/runner/work/R76-Firmware/R76-Firmware/library/C/lib
         make
