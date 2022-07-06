@@ -63,7 +63,7 @@ extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
 extern int disable_t[32];
-extern uint32_t spec_dl[32];
+extern uint32_t spec_dl[1040];
 extern uint32_t size;
 extern int reset_q;
 extern int read_q;
