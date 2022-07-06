@@ -27,18 +27,14 @@
 const char* program_name = "scanrate";
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
-	fprintf (stream, "Usage:  %s options \n", program_name);
-  	fprintf (stream, DET_TEXT);
-	fprintf (stream, DELAY_TEXT);
-	fprintf (stream, INHIB_TEXT);
-	fprintf (stream, TOP_TEXT);
-	fprintf (stream, THRESH_TEXT);
-	fprintf (stream, SKIP_TEXT);
+	fprintf (stream, "Usage:  %s [options] -- [options to pass to setregisters] \n", program_name);
+  	fprintf (stream, CONFIG_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
 	fprintf (stream, VERSION_TEXT);
 	fprintf (stream, HELP_TEXT);
+	subhelp(stream);
 
 	exit (exit_code);
 };
@@ -47,7 +43,7 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+d:i:l::shv::Vg:D:T:t:S:", longopts, &ind);
+		iarg = getopt_long(argc, argv, "l::c::shv::V+", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -79,33 +75,29 @@ int main(int argc, char* argv[])
 				logfile = fopen("log.txt","w");
 			};
 			break;
-		case 'D':
-			selection = optarg;
-			parse_detector_switch(selection);
-			if(value < 0 ){return -1;} //If there's an error, pass it through.
-			break;
-		case 'g':
-			if(verbose > 2){printf("Hey I'm in case g\n");}
-			gateflag = 1;
-			gtemp = optarg;
-			break;
-		case 't':
-			thrs = atoi(optarg);
-			break;
-		case 'i':
-			inhib = atoi(optarg);
-			break;
-		case 'd':
-			delay = atoi(optarg);
-			break;
-		case 'T':
-			top = atoi(optarg);
-			break;
-		case 'S':
-			skip = atoi(optarg);
+		case 'c':
+			if(optarg){
+				configfilename = optarg;
+			}else{
+				configfilename = "example.config";
+			}
+			read_config(configfilename);
+			char* command = malloc(100);
+			snprintf(command,100,"./setregisters -c %s -v%d",configfilename,verbose);
+			system(command);
+			free(command);
 			break;
 		}
 	}
+
+	if(optind!=argc){ //if there are args to pass through, tell the user,
+		if(verbose > 0){printf("Running setregisters utility.\n");}
+		//then construct, run, and free the command.
+		char* command = malloc(100);
+		snprintf(command,100,"./setregisters %s -v%d",argv[optind],verbose);
+		system(command);
+		free(command);
+  	}
 
 	//Verbosity message
 	if(verbose > 0){

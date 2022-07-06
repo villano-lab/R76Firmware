@@ -23,27 +23,24 @@
 const char* program_name = "fifotest";
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
-	fprintf (stream, "Usage:  %s options -- options to pass to setregisters (optional) \n", program_name);
+	fprintf (stream, "Usage:  %s [options] -- [options to pass to setregisters] \n", program_name);
+	fprintf (stream, CONFIG_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
 	fprintf (stream, VERSION_TEXT);
 	fprintf (stream, HELP_TEXT);
-	fprintf (stream, "\n===============================================================\n");
-	fprintf (stream, "setregisters: utility for setting register values\n");
-	fprintf (stream, "----------\n");
-	system("./setregisters -h");
+	subhelp(stream);
 
 	exit (exit_code);
 };
-
 
 int main(int argc, char* argv[])
 {
 	clock_t begin, end;
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "l::shv::V+", longopts, &ind);
+		iarg = getopt_long(argc, argv, "l::c::shv::V+", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -67,6 +64,18 @@ int main(int argc, char* argv[])
 			printf("Scan Rate\n");
 			copyright();
 			return 0;
+			break;
+		case 'c':
+			if(optarg){
+				configfilename = optarg;
+			}else{
+				configfilename = "example.config";
+			}
+			read_config(configfilename);
+			char* command = malloc(100);
+			snprintf(command,100,"./setregisters -c %s -v%d",configfilename,verbose);
+			system(command);
+			free(command);
 			break;
 		case 'l':
 			if(optarg){
@@ -137,9 +146,24 @@ int main(int argc, char* argv[])
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
 	}	
+	reset_q = SPECTRUM_Spectrum_0_STOP(&handle);
+	if(reset_q != 0){
+		printf("Error! Failed to stop Spectrum_0.\n");
+		return reset_q;
+	}
+	reset_q = SPECTRUM_Spectrum_0_RESET(&handle);
+	if(reset_q != 0){
+		printf("Error! Failed to reset Spectrum_0.\n");
+		return reset_q;
+	}
 	reset_q = REG_reset_SET(0,&handle);
 	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
+		return reset_q;
+	}
+	reset_q = SPECTRUM_Spectrum_0_START(&handle);
+	if(reset_q != 0){
+		printf("Error! Failed to start Spectrum_0.\n");
 		return reset_q;
 	}
 	stopwrite_q = REG_stopwrite_SET(0,&handle);
@@ -243,7 +267,6 @@ int main(int argc, char* argv[])
 		if(logfile != NULL){fprintf(logfile,"Emptied %d entries over the course of %d seconds.\n",i,(int)toc-(int)tic);}
 	}
 	
-	printf("\n"); //be nice to the terminal
 	//stop reading & writing and reset.
 	read_q = REG_read_SET(0,&handle);
 		if(read_q != 0){
@@ -258,6 +281,23 @@ int main(int argc, char* argv[])
 	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
+	}
+
+	//check out spectrum.	
+	stopwrite_q = SPECTRUM_Spectrum_0_STOP(&handle);
+	if(stopwrite_q != 0){
+		printf("Error! Failed to stop Spectrum_0.\n");
+		return stopwrite_q;
+	}
+	read_q = SPECTRUM_Spectrum_0_STATUS(&status,&handle);
+	if(read_q != 0){
+		printf("Error! Failed to retrieve the status of Spectrum_0.\n");
+		return read_q;
+	}
+	read_q = SPECTRUM_Spectrum_0_DOWNLOAD(spec_dl,16,10000,&handle,&size,&valid_data);
+	printf("%d valid words:\n",valid_data);
+	for(i=0; i<valid_data; i++){
+		printf("%d\n",spec_dl[i]);
 	}
 	return 0;
 }	
