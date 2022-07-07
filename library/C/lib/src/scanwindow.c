@@ -175,9 +175,9 @@ int main(int argc, char* argv[])
 	if(verbose>0){printf("Setting up rate counter... \n");};
 	tic = time(NULL);
 	
-	fprintf(fp,"top, rate\n"); // add a header row
+	fprintf(fp,"top, rate, uncut\n"); // add a header row
 	if(verbose>0){printf("Collecting data! \n");};
-	sleep(5); //let the board catch up to settings.
+	sleep(6); //let the board catch up to settings.
 	//Collect data
 	while(top < thrs + range_u){	
 		//reset the threshold
