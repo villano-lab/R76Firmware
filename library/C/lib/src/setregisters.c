@@ -138,6 +138,12 @@ int main(int argc, char* argv[])
 			if(optarg){polarity = atoi(optarg);
 			}else{polarity = 1;};
 			break;
+		case 'P':
+			pre_int = atoi(optarg);
+			break;
+		case 'I':
+			int_time = atoi(optarg);
+			break;
 		}
 	}
 

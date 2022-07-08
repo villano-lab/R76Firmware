@@ -24,7 +24,7 @@
 #include  "R76Firmware_lib.h"
 #include  "UniversalTriggerShared.h"
 
-const char* program_name = "scanrate";
+const char* program_name = "singlerate";
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
 	fprintf (stream, "Usage:  %s [options] -- [options to pass to setregisters] \n", program_name);
@@ -104,17 +104,6 @@ int main(int argc, char* argv[])
 		printf("Running in verbose mode. Verbosity: %d\n",verbose);
 	};
 
-	//Convert gtemp into the two gates and rtemp into min/max/step
-	if(gateflag == 1){ //if gate was set,
-		parse_gate(gtemp,verbose);
-	}
-
-	//Detector on/off
-	if(verbose > 1){
-		printf("Detector string value supplied: %s\n",selection);
-	}
-	disable = on_to_off(disable_t,value,verbose);
-
 	//Connect to the board.
 	int connect_q = connect_staticaddr(verbose);
 	if(connect_q != 0){
@@ -122,61 +111,11 @@ int main(int argc, char* argv[])
 		return connect_q;
 	}
 
-	//Now set all the values we determined above
-	disable_q = disable_dets(disable_t, disable);
-
-	for(int i=0; i<24; i++){
-		if(disable_q[i] != 0){
-			printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
-			return -1;
-		}
-	}
-
-	//Final run setup	
-	if(logfile != NULL){
-		fprintf(logfile,"============ Settings ============\n");
-		fprintf(logfile,"Starting threshold:			%d\n",thrs);
-		fprintf(logfile,"Trigger Inhibition Time:		%d\n",inhib);
-		fprintf(logfile,"Upper Gate:					%d\n",gate_u);
-		fprintf(logfile,"Lower Gate: 					%d\n",gate_l);
-		fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);
-		fprintf(logfile,"Lower threshold scanning from %d to %d in steps of %d.\n",range_l,range_u,range_s);
-		fprintf(logfile,"Detectors enabled:				\n");
-		for(int i=0;i++;i<24){
-			if(disable[i] == 0){fprintf(logfile,"%d, ",i);}
-		}
-		fprintf(logfile,"\b\b\n\n"); //clear trailing comma and space before inserting two newlines.
-	};
-	
-	//Pass them along to the system
-	if(verbose>0){printf("Configuring...\n");};
-	thrs_q = set_by_polarity(REG_thrsh_SET,polarity,thrs);
-	if(thrs_q != 0){
-		printf("Error from REG_thrsh_SET. Aborting.\n");
-		return thrs_q;
-	}
-	top_q = set_by_polarity(REG_top_SET,polarity,top);
-	if(top_q != 0){
-		printf("Error from REG_top_SET. Aborting.\n");
-		return top_q;
-	}
-	inhib_q = REG_inhib_SET(inhib,&handle);			//Set number of samples to delay data by
-	delay_q = REG_delay_SET(delay,&handle);			//Set number of samples to delay data by
-	gate_uq = REG_gate_u_SET(gate_u,&handle);			
-	gate_lq = REG_gate_l_SET(gate_l,&handle);
-	polarity_q = REG_polarity_SET(polarity,&handle);	//Set polarity to negative
-	skip_q = REG_skip_SET(skip,&handle);
-	
-	//Run phase - undo reset
-	if(verbose>0){printf("Setting up rate counter... \n");};
+	if(verbose>0){printf("Collecting data for 10 seconds! (please wait up to 20s)\n");};
 	tic = time(NULL);
-    	
-	sleep(10);
-
-	if(verbose>0){printf("Collecting data for 10 seconds! \n");};
 	//Collect data
 	//wait
-	sleep(10);
+	sleep(20);
 		
 	//get the rate
 	if(verbose > 1){printf("Retreiving data...\n");};
