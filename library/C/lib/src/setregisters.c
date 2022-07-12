@@ -24,10 +24,10 @@
 #include  "R76Firmware_lib.h"
 #include  "UniversalTriggerShared.h"
 
-const char* program_name = "setthresh";
+const char* program_name = "setregisters";
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
-	fprintf (stream, "Usage:  %s options \n", program_name);
+	fprintf (stream, "Usage:  %s [options] \n", program_name);
   	fprintf (stream, DET_TEXT);
 	fprintf (stream, GATE_TEXT);
 	fprintf (stream, DELAY_TEXT);
@@ -35,9 +35,14 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, THRESH_TEXT);
 	fprintf (stream, TOP_TEXT);
 	fprintf (stream, SKIP_TEXT);
+	fprintf (stream, POLARITY_TEXT);
+	fprintf (stream, PRE_INT_TEXT);
+	fprintf (stream, INT_TIME_TEXT);
+	fprintf (stream, CONFIG_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
+	fprintf (stream, CONFIG_TEXT);
 	fprintf (stream, VERSION_TEXT);
 	fprintf (stream, HELP_TEXT);
 	fprintf (stream, RESET_TEXT);
@@ -50,10 +55,8 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	int index;
-	int iarg=0;
-	int polarity=1;
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+D:i:t:l::shv::Vg:d:T:RfS:", longopts, &index);
+		iarg = getopt_long(argc, argv, "l::c::D:i:t:shv::Vg:d:T:RfS:p::P:I:", longopts, &index);
 		switch (iarg){
 		case 'f':
 			force = 1;
@@ -80,7 +83,7 @@ int main(int argc, char* argv[])
 			return 0;
 			break;
 		case 'V':
-			printf("Set Thresh\n");
+			printf("Set Registers\n");
 			copyright();
 			return 0;
 			break;
@@ -88,10 +91,19 @@ int main(int argc, char* argv[])
 			if(optarg){logfile = fopen(optarg,"w");
 			}else{logfile = fopen("log.txt","w");};
 			break;
+		case 'c':
+			if(optarg){
+				configfilename = optarg;
+			}else{
+				configfilename = "example.config";
+			}
+			read_config(configfilename);
+			break;
 		case 'D':
 			selection = optarg;
 			value = parse_detector_switch(selection);
-			if(value < 0 ){return -1;} //If there's an error, pass it through.
+			if(value < 0 ){return value;} //If there's an error, pass it through.
+			detflag = 1;
 			break;
 		case 'g':
 			if(verbose > 2){printf("Hey I'm in case g\n");}
@@ -120,6 +132,17 @@ int main(int argc, char* argv[])
 			skipflag = 1;
 			skip = atoi(optarg);
 			break;
+		case 'p':
+			polflag = 1;
+			if(optarg){polarity = atoi(optarg);
+			}else{polarity = 1;};
+			break;
+		case 'P':
+			pre_int = atoi(optarg);
+			break;
+		case 'I':
+			int_time = atoi(optarg);
+			break;
 		}
 	}
 
@@ -140,6 +163,7 @@ int main(int argc, char* argv[])
 				detflag = 1;
 				gateflag = 1;
 				skipflag = 1;
+				polflag = 1;
 			}else if(strcasecmp(userinput, "n") == 0 || strcasecmp(userinput, "no") == 0 || userinput == "0"){
 				if(verbose>-1){printf("Proceeding with provided values only.");}
 			}else{
@@ -156,13 +180,14 @@ int main(int argc, char* argv[])
 			detflag = 1;
 			gateflag = 1;
 			skipflag = 1;
+			polflag = 1;
 		}else{
 			printf("Somehow, the force variable was set to an invalid value (%d). Aborting. Please submit a bug report.\n",force);
 			return -1;
 		}
 	}
 
-	if(verbose > -1 && polflag == 0 && (threshflag == 1 || topflag == 1)){
+	if(verbose > 0 && polflag == 0 && (threshflag == 1 || topflag == 1)){
 		printf("No polarity supplied. Thresholds will be set assuming negative polarity is being flipped to positive.\n");
 	}
 
@@ -215,6 +240,9 @@ int main(int argc, char* argv[])
 		if(gateflag		== 1){
 									fprintf(logfile,"Upper Gate:					%d\n",gate_u);
 									fprintf(logfile,"Lower Gate: 					%d\n",gate_l);
+		}else if(gateflagl == 1){	fprintf(logfile,"Lower Gate:					%d\n",gate_l);}
+		if(gateflagu == 1 && gateflag != 1){
+									fprintf(logfile,"Upper Gate:					%d\n",gate_u);
 		}
 		if(delayflag	== 1){		fprintf(logfile,"Delay:							%d\n",delay);}
 		if(polflag		== 1){		fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);}
@@ -289,12 +317,16 @@ int main(int argc, char* argv[])
 	}
 
 	//set gates
-	if(gateflag == 1){
+	if(gateflag == 1 || gateflagl == 1){
 		gate_lq 				= REG_gate_l_SET(gate_l,&handle);
 		if(gate_lq != 0){
 			printf("Error from REG_gate_l_SET. Aborting.\n");
 			return gate_lq;
 		}
+	}else if(verbose > 1){
+		printf("Gate flag is off. Skipping lower gate.\n");
+	}
+	if(gateflag == 1 || gateflagu == 1){
 		gate_uq					= REG_gate_u_SET(gate_u,&handle);
 		if(gate_uq != 0){
 			printf("Error from REG_gate_u_SET. Aborting.\n");
@@ -303,7 +335,7 @@ int main(int argc, char* argv[])
 			printf("Successfully set lower gate to %d and upper gate to %d.\n",gate_l,gate_u);
 		}
 	}else if(verbose > 1){
-		printf("Gate flag is off. Skipping.\n");
+		printf("Gate flag is off. Skipping upper gate.\n");
 	}
 
 	//set delay

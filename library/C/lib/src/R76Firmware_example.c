@@ -66,6 +66,774 @@ int main(int argc, char* argv[])
 	}
 	printf("Download Finished");
 */
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_0_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_0_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_0_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_0_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_0_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_0_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_0_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_1_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_1_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_1_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_1_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_1_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_1_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_1_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_2_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_2_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_2_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_2_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_2_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_2_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_2_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_3_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_3_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_3_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_3_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_3_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_3_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_3_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_4_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_4_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_4_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_4_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_4_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_4_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_4_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_5_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_5_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_5_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_5_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_5_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_5_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_5_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_6_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_6_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_6_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_6_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_6_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_6_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_6_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_7_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_7_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_7_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_7_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_7_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_7_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_7_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_8_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_8_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_8_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_8_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_8_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_8_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_8_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_9_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_9_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_9_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_9_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_9_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_9_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_9_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_10_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_10_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_10_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_10_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_10_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_10_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_10_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_11_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_11_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_11_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_11_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_11_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_11_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_11_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_12_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_12_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_12_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_12_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_12_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_12_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_12_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_13_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_13_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_13_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_13_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_13_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_13_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_13_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_14_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_14_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_14_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_14_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_14_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_14_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_14_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_15_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_15_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_15_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_15_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_15_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_15_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_15_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_16_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_16_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_16_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_16_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_16_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_16_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_16_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_17_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_17_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_17_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_17_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_17_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_17_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_17_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_18_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_18_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_18_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_18_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_18_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_18_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_18_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_19_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_19_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_19_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_19_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_19_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_19_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_19_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_20_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_20_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_20_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_20_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_20_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_20_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_20_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_21_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_21_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_21_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_21_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_21_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_21_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_21_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_22_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_22_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_22_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_22_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_22_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_22_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_22_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
+/* //REMOVE THIS COMMENT TO ENABLE THE EXAMPLE CODE
+
+	uint32_t status_spectrum= 0;
+	int32_t Rebin = 0;
+	int32_t LimitMode = 0;
+	int32_t LimitValue = 0;
+	uint32_t data_spectrum[1024];
+	uint32_t read_data_spectrum;
+	uint32_t valid_data_spectrum;
+	uint32_t bins = 1024;
+	int32_t timeout_spectrum = 1000;
+	uint32_t spectrum[1024];
+
+	if (SPECTRUM_Spectrum_23_SET_PARAMETERS(Rebin, LimitMode, LimitValue, &handle) != 0) printf("Set Parameters Error");
+	if (SPECTRUM_Spectrum_23_FLUSH(&handle) != 0) printf("Flush Error");
+	if (SPECTRUM_Spectrum_23_RESET(&handle) != 0) printf("Reset Error");
+	if (SPECTRUM_Spectrum_23_START(&handle) == 0) {
+		if (SPECTRUM_Spectrum_23_STATUS(&status_spectrum, &handle) == 0) {
+			while (status_spectrum != 0)
+			{
+				if (SPECTRUM_Spectrum_23_DOWNLOAD(&data_spectrum, bins, timeout_spectrum, &handle, &read_data_spectrum, &valid_data_spectrum) == 0)
+				{
+					for (int i = 0; i < 1024; i++)
+						spectrum[i] = data_spectrum[i];
+				}
+				else  printf("Data Download Error");
+			}
+			if (SPECTRUM_Spectrum_23_STOP(&handle) != 0) printf("Stop Error");
+		}
+	}
+	else printf("Start Error");
+*/
 
 
 	

@@ -70,6 +70,7 @@ r5560_sdk/linux
 # VSCode settings
 .vscode
 .build-debug/
+.vscode/
 
 # Unwanted SCICompiler Output
 HDL/
