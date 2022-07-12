@@ -68,6 +68,7 @@ r5560_sdk/linux
 *.scf_bk
 
 # VSCode settings
+.vscode
 .build-debug/
 
 # Unwanted SCICompiler Output
