@@ -42,6 +42,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
+	fprintf (stream, CONFIG_TEXT);
 	fprintf (stream, VERSION_TEXT);
 	fprintf (stream, HELP_TEXT);
 	fprintf (stream, RESET_TEXT);
@@ -54,8 +55,6 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	int index;
-	int iarg=0;
-	int polarity=1;
 	while(iarg != -1){
 		iarg = getopt_long(argc, argv, "l::c::D:i:t:shv::Vg:d:T:RfS:p::P:I:", longopts, &index);
 		switch (iarg){
