@@ -1,19 +1,13 @@
+#include "UniversalTriggerShared.h"
+#include "R76Firmware_lib.h"
 #include "Def.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include <stdint.h>
+#include <fcntl.h>
 #include <termios.h>
 #include <unistd.h>
-#include <fcntl.h>
-#include <time.h>
-#include <math.h>
 #include <string.h>
-#include <sys/time.h>
 #include <getopt.h>
-
-#include "R76Firmware_lib.h"
-#include "UniversalTriggerShared.h"
 
 //Variables/*
 //=======================================================================================
@@ -36,10 +30,6 @@ const struct option longopts[] =
 	{"reset",	no_argument,		0,	'R'},
 	{"force",	no_argument,		0,	'f'},
 	{"skip",	required_argument,	0,	'S'},
-	{"polarity",optional_argument,	0,	'p'},
-	{"pre-int",	required_argument,	0,	'P'},
-	{"int-time",required_argument,	0,	'I'},
-	{"config",	optional_argument,	0,	'c'},
 	{0,		0,			0,	0},
 };
 
@@ -56,8 +46,8 @@ int delay = 50;
 int inhib = 1000;
 int baseline = 200;
 int top = 16384;
-int int_time = 250; //should change this default once we find a good value - these are good for SCIDK
-int pre_int = 30;   //^same here
+int int_time = 16; //should change this default once we find a good value - taken directly from the sci-compiler defaults
+int pre_int = 5;   //^same here
 //things you probably won't change
 int polarity = 1;	//zero for negative, one for positive
 //Register-reading Variables
@@ -74,8 +64,6 @@ char* selection;
 int *disable_q; // array of disable instead of 24 initializations
 int *disable;
 int disable_t[32];
-uint32_t spec_dl[1040];
-uint32_t size = 1024;
 int reset_q;
 int read_q;
 int write_q;
@@ -100,8 +88,6 @@ uint32_t full;
 int ind;
 int iarg=0;
 int gateflag=0;
-int gateflagu=0;
-int gateflagl=0;
 int rangeflag=0;
 int delayflag=0;
 int inhibflag=0;
@@ -114,14 +100,12 @@ int reset=0;
 int force=0;
 char* rtemp;
 char* gtemp;
-char* configfilename;
 //Other Variables
 int i;
 char userinput[3];
 time_t tic, toc;
 FILE *fp;
 FILE *logfile;
-FILE *configfile;
 //Rate Counter Variables
 int rate_q;
 int unreduced_q;
@@ -143,12 +127,7 @@ void copyright(){
     printf("This is free software: you are free to change and redistribute it. \n");
     printf("There is NO WARRANTY, to the extent permitted by law. \n");
 }
-void subhelp(FILE* stream){
-	fprintf (stream, "\n===============================================================\n");
-	fprintf (stream, "setregisters: utility for setting register values\n");
-	fprintf (stream, "----------\n");
-	system("./setregisters -h");
-}
+
 
 //Parsing functions
 int parse_detector_switch(char* selection){
@@ -188,57 +167,12 @@ int parse_range(char* rangestring, int verbose){
 void print_timestamp(int elapsed, int verbose){
 	int hours = floor(elapsed / 3600);
 	int minutes = floor((elapsed % 3600)/60);
-	int seconds = floor(elapsed % 60);
+	int seconds = floor((elapsed % 60));
+	char* timestamp = malloc(100);
+	snprintf(timestamp,100,"%02d-%02d-%02d",hours,minutes,seconds);
+	if(verbose>1){printf("Timestamp: %s\n",timestamp);};
 	if(verbose>-1){printf("Time elapsed: %02d:%02d:%02d \n",hours,minutes,seconds);};
 	if(verbose>1){printf("Closing files...");};
-}
-void read_config(char* filename){
-	configfile = fopen(filename,"r");
-	char line[256]; //declare the line variable
-	int linenumber = 0;
-	while(fgets(line, 256, configfile) != NULL){
-		linenumber++;
-		char arg[128],val[128];
-		//printf("Checking if comment... ");
-		if(line[0] == '#' || line[0] == '\n' || strcmp(line,"\n") == 0 || strcmp(line,"\r\n") == 0){continue;} //skip comments and blanks
-		//printf("Not comment.\n");
-		if(sscanf(line, "%s %s", arg, val) != 2){
-			fprintf(stderr, "Syntax error, line %d: %s", linenumber, line);
-			continue;
-		}
-		if(strcasecmp(arg,"delay") == 0 || strcasecmp(arg,"del") == 0){
-			delay = atoi(val);
-			delayflag = 1;
-		}else if(strcasecmp(arg,"detectors") == 0 || strcasecmp(arg,"det") == 0 || strcasecmp(arg,"dets") == 0){
-			value = parse_detector_switch(val);
-			if(value < 0){exit(value);}
-			detflag = 1;
-		}else if(strcasecmp(arg,"gate_lower") == 0 || strcasecmp(arg,"gate_l") == 0 || strcasecmp(arg,"gl") == 0 || strcasecmp(arg,"g_l") == 0 || strcasecmp(arg,"gate_low") == 0){
-			gate_l = atoi(val);
-			gateflagl = 1;
-		}else if(strcasecmp(arg,"gate_upper") == 0 || strcasecmp(arg,"gate_u") == 0 || strcasecmp(arg,"gu") == 0 || strcasecmp(arg,"g_u") == 0 || strcasecmp(arg,"gate_up") == 0 || strcasecmp(arg,"gate_hi") == 0 || strcasecmp(arg,"gate_high") == 0){
-			gate_u = atoi(val);
-			gateflagu = 1;
-		}else if(strcasecmp(arg,"inhib") == 0 || strcasecmp(arg,"inhibit") == 0 || strcasecmp(arg,"inhibition") == 0){
-			inhib = atoi(val);
-			inhibflag = 1;
-		}else if(strcasecmp(arg,"log") == 0 || strcasecmp(arg,"logging") == 0 || strcasecmp(arg,"logfile") == 0){
-			logfile = fopen(val,"w");
-		}else if(strcasecmp(arg,"range_lower") == 0){
-			range_l = atoi(val);
-		}else if(strcasecmp(arg,"range_upper") == 0){
-			range_u = atoi(val);
-		}else if(strcasecmp(arg,"range_stepsize") == 0){
-			range_s = atoi(val);
-		}else if(strcasecmp(arg,"thresh_lower") == 0 || strcasecmp(arg,"thresh") == 0){
-			thrs = atoi(val);
-			threshflag = 1;
-		}else if(strcasecmp(arg,"thresh_upper") == 0 || strcasecmp(arg,"thresh_top") == 0 || strcasecmp(arg,"top") == 0){
-			top = atoi(val);
-			topflag = 1;
-		}
-	}
-	fclose(configfile);
 }
 
 //Converting functions

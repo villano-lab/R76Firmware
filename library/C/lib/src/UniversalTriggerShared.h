@@ -21,16 +21,12 @@
 #define SKIP_TEXT (" -S,    --skip <#>  Skip every # trigger to reduce the rate.\n")
 #define VERBOSE_TEXT (" -v,	--verbose	<level>		Print verbose messages at the specified level (1 if unspecified).\n")
 #define SILENT_TEXT (" -s,-q,	--silent,--quiet,		Print nothing.\n")
-#define LOG_TEXT (" -l,	--log		<file>		Log terminal output. (default: log.txt) \n")
+#define LOG_TEXT (" -l,	--log		<file>		Log terminal output.\n")
 #define VERSION_TEXT (" -V, 	--version			Print version and exit.\n")
 #define HELP_TEXT (" -h,-?,	--help				Print this help function.\n")
 #define TOP_TEXT (" -T,   --top   <value> Set the upper threshold to the given value (default: 16384).\n")
 #define RESET_TEXT (" -R,   --reset     Reset all unsupplied values to their defaults.\n")
 #define FORCE_TEXT (" -f,   --force     Skip all user input.\n")
-#define POLARITY_TEXT (" -p, --polarity  <1 or 0>    Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
-#define PRE_INT_TEXT (" -P,  --pre-int   <#> Set the pre-integration time in clock cycles. (integer. default: 30)\n")
-#define INT_TIME_TEXT (" -I, --int-time  <#> Set the integration time in clock cycles. (integer. default: 250)\n")
-#define CONFIG_TEXT (" -c,   --config    <file>  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
 
 //Defaults
 extern int verbose;
@@ -63,8 +59,6 @@ extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
 extern int disable_t[32];
-extern uint32_t spec_dl[1040];
-extern uint32_t size;
 extern int reset_q;
 extern int read_q;
 extern int write_q;
@@ -92,8 +86,6 @@ extern const struct option longopts[];
 extern char* gtemp;
 extern char* rtemp;
 extern int gateflag;
-extern int gateflagl;
-extern int gateflagu;
 extern int rangeflag;
 extern int detflag;
 extern int gateflag;
@@ -106,7 +98,6 @@ extern int polflag;
 extern int skipflag;
 extern int reset;
 extern int force;
-extern char* configfilename;
 //Other Variables
 extern int i;
 extern char userinput[3];
@@ -128,13 +119,11 @@ extern uint32_t ratevalid_data;
 //printing functions
 void print_usage(FILE* stream, int exit_code);                          //print usage of the program
 void copyright();                                                       //print copyright information
-void subhelp(FILE* stream);
-void print_timestamp(int elapsed, int verbose);                         //parse a time elapsed value and print it in readable format
 //parsing functions
 int parse_detector_switch(char* selection);                             //parse a string representing detector on/off
 int parse_gate(char* gatestring, int verbose);                          //parse a string representing multiple gate values
 int parse_range(char* gatestring, int verbose);                         //parse a string representing a range of values with step size
-void read_config(char* filename);                                       //parse a config file for values
+void print_timestamp(int elapsed, int verbose);                         //parse a time elapsed value and print it in readable format
 //converting functions
 int *on_to_off(int *off, int on, int verbose);                          //convert a detectors on bit vector to a detectors off bit vector
 //other functions
