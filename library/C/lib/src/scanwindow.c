@@ -27,15 +27,19 @@
 const char* program_name = "scanwindow";
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
-	fprintf (stream, "Usage:  %s [options] -- [options to pass to setregisters] \n", program_name);
-  	fprintf (stream, CONFIG_TEXT);
+	fprintf (stream, "Usage:  %s options \n", program_name);
+  	fprintf (stream, DET_TEXT);
+	fprintf (stream, GATE_TEXT);
+	fprintf (stream, DELAY_TEXT);
+	fprintf (stream, INHIB_TEXT);
+	fprintf (stream, THRESH_TEXT);
 	fprintf (stream, RANGE_TEXT);
+	fprintf (stream, SKIP_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
 	fprintf (stream, VERSION_TEXT);
 	fprintf (stream, HELP_TEXT);
-	subhelp (stream);
 	
 	exit (exit_code);
 };
@@ -44,7 +48,7 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "l::c::shv::Vr:+", longopts, &ind);
+		iarg = getopt_long(argc, argv, "+D:t:i:l::shv::Vg:d:r:S:", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -73,33 +77,36 @@ int main(int argc, char* argv[])
 			if(optarg){logfile = fopen(optarg,"w");
 			}else{logfile = fopen("log.txt","w");};
 			break;
-		case 'c':
-			if(optarg){
-				configfilename = optarg;
-			}else{
-				configfilename = "example.config";
-			}
-			read_config(configfilename);
-			char* command = malloc(100);
-			snprintf(command,100,"./setregisters -c %s -v%d",configfilename,verbose);
-			system(command);
-			free(command);
+		case 'D':
+			selection = optarg;
+			value = parse_detector_switch(selection);
+			if(value < 0 ){return -1;} //If there's an error, pass it through.
+			break;
+		case 't':
+			if(verbose > 1){printf("Threshold supplied: %s\n",optarg);}
+			thrs = atoi(optarg);
+			if(verbose > 1){printf("Threshold successfully set to %d.\n",thrs);}
+			break;
+		case 'g':
+			if(verbose > 2){printf("Hey I'm in case g\n");}
+			gateflag = 1;
+			gtemp = optarg;
 			break;
 		case 'r':
 			rangeflag = 1;
 			rtemp = optarg;
 			break;
+		case 'i':
+			inhib = atoi(optarg);
+			break;
+		case 'd':
+			delay = atoi(optarg);
+			break;
+		case 'S':
+			skip = atoi(optarg);
+			break;
 		}
 	}
-
-	if(optind!=argc){ //if there are args to pass through, tell the user,
-		if(verbose > 0){printf("Running setregisters utility.\n");}
-		//then construct, run, and free the command.
-		char* command = malloc(100);
-		snprintf(command,100,"./setregisters %s -v%d",argv[optind],verbose);
-		system(command);
-		free(command);
-  	}
 
 	fp = fopen("out.csv","w");
 
@@ -161,6 +168,23 @@ int main(int argc, char* argv[])
 	
 	//Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
+	thrs_q = set_by_polarity(REG_thrsh_SET,polarity,thrs);
+	if(thrs_q != 0){
+		printf("Error from REG_thrsh_SET. Aborting.\n");
+		return thrs_q;
+	}
+	inhib_q = REG_inhib_SET(inhib,&handle);		//Set number of clock ticks to inhibit data by
+	delay_q = REG_delay_SET(delay,&handle);			
+	gate_uq = REG_gate_u_SET(gate_u,&handle);			
+	gate_lq = REG_gate_l_SET(gate_l,&handle);	
+	polarity_q = REG_polarity_SET(polarity,&handle);	//Set polarity to negative
+
+	if(verbose>0){printf("Skipping every %dth value.\n",skip);}
+	skip_q = REG_skip_SET(skip,&handle);
+	if(skip_q != 0){
+		printf("Error from REG_skip_SET. Aborting.\n");
+		return skip_q;
+	}
 	
 	if(verbose>1){printf("Updated top threshold to initial value:\n");};
 	if(verbose>1){printf("%d\n",top);};

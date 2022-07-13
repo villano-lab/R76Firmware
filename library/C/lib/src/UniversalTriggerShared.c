@@ -35,6 +35,7 @@ const struct option longopts[] =
 	{"int-time",required_argument,	0,	'I'},
 	{"config",	optional_argument,	0,	'c'},
 	{0,		0,			0,	0},
+	{0,		0,			0,	0},
 };
 
 //Defaults
@@ -50,7 +51,7 @@ int delay = 50;
 int inhib = 1000;
 int baseline = 200;
 int top = 16384;
-int int_time = 250; //should change this default once we find a good value - these are good for SCIDK
+int int_time = 250; //should change this default once we find a good value - taken directly from the sci-compiler defaults
 int pre_int = 30;   //^same here
 //things you probably won't change
 int polarity = 1;	//zero for negative, one for positive
@@ -68,8 +69,6 @@ char* selection;
 int *disable_q; // array of disable instead of 24 initializations
 int *disable;
 int disable_t[32];
-uint32_t spec_dl[1040];
-uint32_t size = 1024;
 int reset_q;
 int read_q;
 int write_q;
@@ -182,7 +181,10 @@ int parse_range(char* rangestring, int verbose){
 void print_timestamp(int elapsed, int verbose){
 	int hours = floor(elapsed / 3600);
 	int minutes = floor((elapsed % 3600)/60);
-	int seconds = floor(elapsed % 60);
+	int seconds = floor((elapsed % 60));
+	char* timestamp = malloc(100);
+	snprintf(timestamp,100,"%02d-%02d-%02d",hours,minutes,seconds);
+	if(verbose>1){printf("Timestamp: %s\n",timestamp);};
 	if(verbose>-1){printf("Time elapsed: %02d:%02d:%02d \n",hours,minutes,seconds);};
 	if(verbose>1){printf("Closing files...");};
 }
