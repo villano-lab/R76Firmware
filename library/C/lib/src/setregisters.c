@@ -38,6 +38,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
+	fprintf (stream, CONFIG_TEXT);
 	fprintf (stream, VERSION_TEXT);
 	fprintf (stream, HELP_TEXT);
 	fprintf (stream, RESET_TEXT);
@@ -53,7 +54,7 @@ int main(int argc, char* argv[])
 	int iarg=0;
 	int polarity=1;
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+D:i:t:l::shv::Vg:d:T:RfS:", longopts, &index);
+		iarg = getopt_long(argc, argv, "l::c::D:i:t:shv::Vg:d:T:RfS:p::P:I:", longopts, &index);
 		switch (iarg){
 		case 'f':
 			force = 1;
@@ -88,6 +89,14 @@ int main(int argc, char* argv[])
 			if(optarg){logfile = fopen(optarg,"w");
 			}else{logfile = fopen("log.txt","w");};
 			break;
+		case 'c':
+			if(optarg){
+				configfilename = optarg;
+			}else{
+				configfilename = "example.config";
+			}
+			read_config(configfilename);
+			break;
 		case 'D':
 			selection = optarg;
 			value = parse_detector_switch(selection);
@@ -119,6 +128,17 @@ int main(int argc, char* argv[])
 		case 'S':
 			skipflag = 1;
 			skip = atoi(optarg);
+			break;
+		case 'p':
+			polflag = 1;
+			if(optarg){polarity = atoi(optarg);
+			}else{polarity = 1;};
+			break;
+		case 'P':
+			pre_int = atoi(optarg);
+			break;
+		case 'I':
+			int_time = atoi(optarg);
 			break;
 		}
 	}
@@ -290,11 +310,17 @@ int main(int argc, char* argv[])
 
 	//set gates
 	if(gateflag == 1){
+		gateflagl = 1;
+		gateflagu = 1;
+	}
+	if(gateflagl == 1){
 		gate_lq 				= REG_gate_l_SET(gate_l,&handle);
 		if(gate_lq != 0){
 			printf("Error from REG_gate_l_SET. Aborting.\n");
 			return gate_lq;
 		}
+	}else if(verbose>1){printf("Gate flag is off. Skipping lower gate.\n");}
+	if(gateflagu == 1){
 		gate_uq					= REG_gate_u_SET(gate_u,&handle);
 		if(gate_uq != 0){
 			printf("Error from REG_gate_u_SET. Aborting.\n");
@@ -302,9 +328,7 @@ int main(int argc, char* argv[])
 		}else if(verbose > 0){
 			printf("Successfully set lower gate to %d and upper gate to %d.\n",gate_l,gate_u);
 		}
-	}else if(verbose > 1){
-		printf("Gate flag is off. Skipping.\n");
-	}
+	}else if(verbose > 1){		printf("Gate flag is off. Skipping upper gate.\n");	}
 
 	//set delay
 	if(delayflag == 1){

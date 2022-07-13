@@ -123,6 +123,7 @@ extern uint32_t ratevalid_data;
 //printing functions
 void print_usage(FILE* stream, int exit_code);                          //print usage of the program
 void copyright();                                                       //print copyright information
+void subhelp(FILE* stream);
 //parsing functions
 int parse_detector_switch(char* selection);                             //parse a string representing detector on/off
 int parse_gate(char* gatestring, int verbose);                          //parse a string representing multiple gate values

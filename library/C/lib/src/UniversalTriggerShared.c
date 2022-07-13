@@ -136,7 +136,12 @@ void copyright(){
     printf("This is free software: you are free to change and redistribute it. \n");
     printf("There is NO WARRANTY, to the extent permitted by law. \n");
 }
-
+void subhelp(FILE* stream){
+	fprintf (stream, "\n===============================================================\n");
+	fprintf (stream, "setregisters: utility for setting register values\n");
+	fprintf (stream, "----------\n");
+	system("./setregisters -h");
+}
 
 //Parsing functions
 int parse_detector_switch(char* selection){
