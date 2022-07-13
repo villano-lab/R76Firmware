@@ -103,7 +103,8 @@ int main(int argc, char* argv[])
 		case 'D':
 			selection = optarg;
 			value = parse_detector_switch(selection);
-			if(value < 0 ){return -1;} //If there's an error, pass it through.
+			if(value < 0 ){return value;} //If there's an error, pass it through.
+			detflag = 1;
 			break;
 		case 'g':
 			if(verbose > 2){printf("Hey I'm in case g\n");}
@@ -163,6 +164,7 @@ int main(int argc, char* argv[])
 				detflag = 1;
 				gateflag = 1;
 				skipflag = 1;
+				polflag = 1;
 			}else if(strcasecmp(userinput, "n") == 0 || strcasecmp(userinput, "no") == 0 || userinput == "0"){
 				if(verbose>-1){printf("Proceeding with provided values only.");}
 			}else{
@@ -179,6 +181,7 @@ int main(int argc, char* argv[])
 			detflag = 1;
 			gateflag = 1;
 			skipflag = 1;
+			polflag = 1;
 		}else{
 			printf("Somehow, the force variable was set to an invalid value (%d). Aborting. Please submit a bug report.\n",force);
 			return -1;
