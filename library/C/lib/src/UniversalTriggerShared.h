@@ -21,12 +21,15 @@
 #define SKIP_TEXT (" -S,    --skip <#>  Skip every # trigger to reduce the rate.\n")
 #define VERBOSE_TEXT (" -v,	--verbose	<level>		Print verbose messages at the specified level (1 if unspecified).\n")
 #define SILENT_TEXT (" -s,-q,	--silent,--quiet,		Print nothing.\n")
-#define LOG_TEXT (" -l,	--log		<file>		Log terminal output.\n")
+#define LOG_TEXT (" -l,	--log		<file>		Log terminal output. (default: log.txt) \n")
 #define VERSION_TEXT (" -V, 	--version			Print version and exit.\n")
 #define HELP_TEXT (" -h,-?,	--help				Print this help function.\n")
 #define TOP_TEXT (" -T,   --top   <value> Set the upper threshold to the given value (default: 16384).\n")
 #define RESET_TEXT (" -R,   --reset     Reset all unsupplied values to their defaults.\n")
 #define FORCE_TEXT (" -f,   --force     Skip all user input.\n")
+#define POLARITY_TEXT (" -p, --polarity  <1 or 0>    Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
+#define PRE_INT_TEXT (" -P,  --pre-int   <#> Set the pre-integration time in clock cycles. (integer. default: 30)\n")
+#define INT_TIME_TEXT (" -I, --int-time  <#> Set the integration time in clock cycles. (integer. default: 250)\n")
 #define CONFIG_TEXT (" -c,   --config    <file>  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
 
 //Defaults
@@ -60,6 +63,8 @@ extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
 extern int disable_t[32];
+extern uint32_t spec_dl[1040];
+extern uint32_t size;
 extern int reset_q;
 extern int read_q;
 extern int write_q;

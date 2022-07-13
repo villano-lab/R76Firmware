@@ -37,8 +37,6 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	subhelp(stream);
 
 	exit (exit_code);
-
-	exit (exit_code);
 };
 
 int main(int argc, char* argv[])
