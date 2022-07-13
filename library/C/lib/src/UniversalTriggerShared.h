@@ -27,6 +27,7 @@
 #define TOP_TEXT (" -T,   --top   <value> Set the upper threshold to the given value (default: 16384).\n")
 #define RESET_TEXT (" -R,   --reset     Reset all unsupplied values to their defaults.\n")
 #define FORCE_TEXT (" -f,   --force     Skip all user input.\n")
+#define CONFIG_TEXT (" -c,   --config    <file>  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
 
 //Defaults
 extern int verbose;
@@ -89,6 +90,8 @@ extern int gateflag;
 extern int rangeflag;
 extern int detflag;
 extern int gateflag;
+extern int gateflagu;
+extern int gateflagl;
 extern int delayflag;
 extern int inhibflag;
 extern int delayflag;
@@ -98,6 +101,7 @@ extern int polflag;
 extern int skipflag;
 extern int reset;
 extern int force;
+extern char* configfilename;
 //Other Variables
 extern int i;
 extern char userinput[3];
@@ -124,6 +128,7 @@ int parse_detector_switch(char* selection);                             //parse 
 int parse_gate(char* gatestring, int verbose);                          //parse a string representing multiple gate values
 int parse_range(char* gatestring, int verbose);                         //parse a string representing a range of values with step size
 void print_timestamp(int elapsed, int verbose);                         //parse a time elapsed value and print it in readable format
+void read_config(char* filename);                                       //parse a config file for values
 //converting functions
 int *on_to_off(int *off, int on, int verbose);                          //convert a detectors on bit vector to a detectors off bit vector
 //other functions
