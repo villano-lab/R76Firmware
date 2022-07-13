@@ -245,7 +245,6 @@ int main(int argc, char* argv[])
 		if(inhibflag	== 1){		fprintf(logfile,"Trigger Inhibition Time:		%d\n",inhib);}
 		if(gateflagl	== 1){		fprintf(logfile,"Lower Gate: 					%d\n",gate_l);}
 		if(gateflagu	== 1){		fprintf(logfile,"Upper Gate:					%d\n",gate_u);}
-		}
 		if(delayflag	== 1){		fprintf(logfile,"Delay:							%d\n",delay);}
 		if(polflag		== 1){		fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);}
 		if(skipflag     == 1){		fprintf(logfile,"Skip value:					%d\n",skip);}
@@ -334,7 +333,7 @@ int main(int argc, char* argv[])
 		}else if(verbose > 0){
 			printf("Successfully set lower gate to %d and upper gate to %d.\n",gate_l,gate_u);
 		}
-	}else if(verbose > 1){printf("Gate flag is off. Skipping upper gate.\n");	}
+	}else if(verbose > 1){printf("Gate flag is off. Skipping upper gate.\n");}
 
 	//set delay
 	if(delayflag == 1){
