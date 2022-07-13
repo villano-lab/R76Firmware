@@ -24,10 +24,10 @@
 #include  "R76Firmware_lib.h"
 #include  "UniversalTriggerShared.h"
 
-const char* program_name = "setthresh";
+const char* program_name = "setregisters";
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
-	fprintf (stream, "Usage:  %s options \n", program_name);
+	fprintf (stream, "Usage:  %s [options] \n", program_name);
   	fprintf (stream, DET_TEXT);
 	fprintf (stream, GATE_TEXT);
 	fprintf (stream, DELAY_TEXT);
@@ -35,10 +35,13 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, THRESH_TEXT);
 	fprintf (stream, TOP_TEXT);
 	fprintf (stream, SKIP_TEXT);
+	fprintf (stream, POLARITY_TEXT);
+	fprintf (stream, PRE_INT_TEXT);
+	fprintf (stream, INT_TIME_TEXT);
+	fprintf (stream, CONFIG_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
-	fprintf (stream, CONFIG_TEXT);
 	fprintf (stream, VERSION_TEXT);
 	fprintf (stream, HELP_TEXT);
 	fprintf (stream, RESET_TEXT);
@@ -81,7 +84,7 @@ int main(int argc, char* argv[])
 			return 0;
 			break;
 		case 'V':
-			printf("Set Thresh\n");
+			printf("Set Registers\n");
 			copyright();
 			return 0;
 			break;
@@ -100,7 +103,8 @@ int main(int argc, char* argv[])
 		case 'D':
 			selection = optarg;
 			value = parse_detector_switch(selection);
-			if(value < 0 ){return -1;} //If there's an error, pass it through.
+			if(value < 0 ){return value;} //If there's an error, pass it through.
+			detflag = 1;
 			break;
 		case 'g':
 			if(verbose > 2){printf("Hey I'm in case g\n");}
@@ -160,6 +164,7 @@ int main(int argc, char* argv[])
 				detflag = 1;
 				gateflag = 1;
 				skipflag = 1;
+				polflag = 1;
 			}else if(strcasecmp(userinput, "n") == 0 || strcasecmp(userinput, "no") == 0 || userinput == "0"){
 				if(verbose>-1){printf("Proceeding with provided values only.");}
 			}else{
@@ -176,13 +181,14 @@ int main(int argc, char* argv[])
 			detflag = 1;
 			gateflag = 1;
 			skipflag = 1;
+			polflag = 1;
 		}else{
 			printf("Somehow, the force variable was set to an invalid value (%d). Aborting. Please submit a bug report.\n",force);
 			return -1;
 		}
 	}
 
-	if(verbose > -1 && polflag == 0 && (threshflag == 1 || topflag == 1)){
+	if(verbose > 0 && polflag == 0 && (threshflag == 1 || topflag == 1)){
 		printf("No polarity supplied. Thresholds will be set assuming negative polarity is being flipped to positive.\n");
 	}
 
@@ -227,15 +233,17 @@ int main(int argc, char* argv[])
 		printf("'Skip' flag is off. Skipping.\n");
 	}
 
+	if(gateflag == 1){
+		gateflagl == 1;
+		gateflagu == 1;
+	}
 	if(logfile != NULL){
 		fprintf(logfile,"============ Settings ============\n");
 		if(threshflag 	== 1){		fprintf(logfile,"Lower threshold:				%d\n",thrs);}
 		if(topflag	 	== 1){		fprintf(logfile,"Upper threshold:				%d\n",top);}
 		if(inhibflag	== 1){		fprintf(logfile,"Trigger Inhibition Time:		%d\n",inhib);}
-		if(gateflag		== 1){
-									fprintf(logfile,"Upper Gate:					%d\n",gate_u);
-									fprintf(logfile,"Lower Gate: 					%d\n",gate_l);
-		}
+		if(gateflagu	== 1){		fprintf(logfile,"Upper Gate:					%d\n",gate_u);}
+		if(gateflagl 	== 1){		fprintf(logfile,"Lower Gate: 					%d\n",gate_l);}
 		if(delayflag	== 1){		fprintf(logfile,"Delay:							%d\n",delay);}
 		if(polflag		== 1){		fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);}
 		if(skipflag     == 1){		fprintf(logfile,"Skip value:					%d\n",skip);}
@@ -309,10 +317,6 @@ int main(int argc, char* argv[])
 	}
 
 	//set gates
-	if(gateflag == 1){
-		gateflagl = 1;
-		gateflagu = 1;
-	}
 	if(gateflagl == 1){
 		gate_lq 				= REG_gate_l_SET(gate_l,&handle);
 		if(gate_lq != 0){
