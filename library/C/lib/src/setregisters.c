@@ -163,7 +163,6 @@ int main(int argc, char* argv[])
 				detflag = 1;
 				gateflag = 1;
 				skipflag = 1;
-				//polflag = 1;
 			}else if(strcasecmp(userinput, "n") == 0 || strcasecmp(userinput, "no") == 0 || userinput == "0"){
 				if(verbose>-1){printf("Proceeding with provided values only.");}
 			}else{
@@ -180,14 +179,13 @@ int main(int argc, char* argv[])
 			detflag = 1;
 			gateflag = 1;
 			skipflag = 1;
-			//polflag = 1;
 		}else{
 			printf("Somehow, the force variable was set to an invalid value (%d). Aborting. Please submit a bug report.\n",force);
 			return -1;
 		}
 	}
 
-	if(verbose > 0 && polflag == 0 && (threshflag == 1 || topflag == 1)){
+	if(verbose > -1 && polflag == 0 && (threshflag == 1 || topflag == 1)){
 		printf("No polarity supplied. Thresholds will be set assuming negative polarity is being flipped to positive.\n");
 	}
 
@@ -232,17 +230,15 @@ int main(int argc, char* argv[])
 		printf("'Skip' flag is off. Skipping.\n");
 	}
 
-	if(gateflag == 1){
-		gateflagl == 1;
-		gateflagu == 1;
-	}
 	if(logfile != NULL){
 		fprintf(logfile,"============ Settings ============\n");
 		if(threshflag 	== 1){		fprintf(logfile,"Lower threshold:				%d\n",thrs);}
 		if(topflag	 	== 1){		fprintf(logfile,"Upper threshold:				%d\n",top);}
 		if(inhibflag	== 1){		fprintf(logfile,"Trigger Inhibition Time:		%d\n",inhib);}
-		if(gateflagu	== 1){		fprintf(logfile,"Upper Gate:					%d\n",gate_u);}
-		if(gateflagl 	== 1){		fprintf(logfile,"Lower Gate: 					%d\n",gate_l);}
+		if(gateflag		== 1){
+									fprintf(logfile,"Upper Gate:					%d\n",gate_u);
+									fprintf(logfile,"Lower Gate: 					%d\n",gate_l);
+		}
 		if(delayflag	== 1){		fprintf(logfile,"Delay:							%d\n",delay);}
 		if(polflag		== 1){		fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);}
 		if(skipflag     == 1){		fprintf(logfile,"Skip value:					%d\n",skip);}
@@ -316,6 +312,10 @@ int main(int argc, char* argv[])
 	}
 
 	//set gates
+	if(gateflag == 1){
+		gateflagl = 1;
+		gateflagu = 1;
+	}
 	if(gateflagl == 1){
 		gate_lq 				= REG_gate_l_SET(gate_l,&handle);
 		if(gate_lq != 0){
