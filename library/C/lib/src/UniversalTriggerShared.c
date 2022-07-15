@@ -34,6 +34,7 @@ const struct option longopts[] =
 	{"pre-int",	required_argument,	0,	'P'},
 	{"int-time",required_argument,	0,	'I'},
 	{"config",	optional_argument,	0,	'c'},
+	{"wait",	required_argument,	0,	'w'},
 	{0,		0,			0,	0},
 };
 
@@ -106,6 +107,7 @@ int polflag=0;
 int skipflag=0;
 int reset=0;
 int force=0;
+int wait=1;
 char* rtemp;
 char* gtemp;
 char* configfilename;

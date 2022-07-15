@@ -33,6 +33,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, INHIB_TEXT);
 	fprintf (stream, TOP_TEXT);
 	fprintf (stream, RANGE_TEXT);
+	fprintf (stream, WAIT_TEXT);
 	fprintf (stream, SKIP_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
@@ -47,7 +48,7 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+d:i:l::shv::Vg:D:T:r:S:", longopts, &ind);
+		iarg = getopt_long(argc, argv, "+d:i:l::shv::Vg:D:T:r:S:w:", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -104,6 +105,9 @@ int main(int argc, char* argv[])
 			break;
 		case 'S':
 			skip = atoi(optarg);
+			break;
+		case 'w':
+			wait = atoi(optarg);
 			break;
 		}
 	}
@@ -202,17 +206,22 @@ int main(int argc, char* argv[])
 			return thrs_q;
 		}
 
-		//wait
-		sleep(10);
-		
-		//get the rate
-		if(verbose > 1){printf("Retreiving data...\n");};
-		rate_q=RATE_METER_RateMeter_0_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
-		if(verbose > 1){printf("Rateval: %f\n",rateval[0]/10.0);};
+		float cumulative = 0;
+		for(i = 0; i<wait; i++){
+			//wait
+			sleep(10);
+			
+			//get the rate
+			if(verbose > 2){printf("Retreiving data...\n");};
+			rate_q=RATE_METER_RateMeter_0_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
+			if(verbose > 2){printf("Rateval: %f\n",rateval[0]/10.0);};
+			cumulative += rateval[0]/10.0;
+		}
+		if(verbose > 1){printf("Average rate: %f\n",cumulative/wait);}
 
 		//write the rate
-		fprintf(fp,"%d, %f\n",thrs,rateval[0]/10.0);
-		if(verbose>1){printf("thresh: %d ; rate: %f Hz\n",thrs,rateval[0]/10.0);};
+		fprintf(fp,"%d, %f\n",thrs,cumulative/wait);
+		if(verbose>1){printf("thresh: %d ; rate: %f Hz\n",thrs,cumulative/wait);};
 		thrs += range_s;
 	};
 
