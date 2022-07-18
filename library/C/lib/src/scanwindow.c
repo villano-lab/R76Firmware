@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+l::c::shv::Vg:r:p:", longopts, &ind);
+		iarg = getopt_long(argc, argv, "+l::c::shv::Vg:r:w:p:", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
