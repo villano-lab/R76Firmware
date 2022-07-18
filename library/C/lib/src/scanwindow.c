@@ -118,6 +118,8 @@ int main(int argc, char* argv[])
 		free(command);
 	}
 
+    fp = fopen("out.csv","w");
+
     //pre-connection setup
     if(verbose >0){
 		printf("Running in verbose mode. Verbosity: %d\n",verbose);
@@ -145,7 +147,6 @@ int main(int argc, char* argv[])
     }
 	tic = time(NULL);
     fprintf(fp,"lower, upper, rate\n"); // add a header row
-	if(verbose>0){printf("Collecting data! \n");};
     int i;
 	if(verbose>0){printf("Collecting data! \n");};
     while(thrs < range_u){
