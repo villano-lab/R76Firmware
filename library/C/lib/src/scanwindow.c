@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+l::c::shv::Vg:r:w:W:p:", longopts, &ind);
+		iarg = getopt_long(argc, argv, "+l::c::shv::Vg:r:p:", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -88,9 +88,6 @@ int main(int argc, char* argv[])
         case 'w':
             wait = atoi(optarg);
             break;
-        case 'W':
-            width = atoi(optarg);
-            break;
         case 'p':
             polflag = 1;
             if(optarg){polarity = atoi(optarg);
@@ -129,7 +126,7 @@ int main(int argc, char* argv[])
 		parse_range(rtemp,verbose);
 	}
     thrs = range_l;
-    top = thrs + width;
+    top = thrs + range_s;
     //Connect to the board.
 	int connect_q = connect_staticaddr(verbose);
 	if(connect_q != 0){
