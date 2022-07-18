@@ -101,10 +101,10 @@ int main(int argc, char* argv[])
 	};
 
     if(optind!=argc){ //if there are args to pass through, tell the user,
-		if(verbose > 0){printf("Running setregisters utility.\n");}
+        char* command = malloc(100);
 		//then construct, run, and free the command.
-		char* command = malloc(100);
 		snprintf(command,100,"./setregisters %s -v%d",argv[optind],verbose);
+        if(verbose > 0){printf("Running setregisters utility.\n");}
         if(configfilename){
             snprintf(command,100,"%s -c%s",command,configfilename);
         }

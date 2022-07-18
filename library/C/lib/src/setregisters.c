@@ -234,7 +234,7 @@ int main(int argc, char* argv[])
 			}else if(skip == 1){
 				printf("Setting to skip EVERY trigger.\n");
 			}else if(skip == 0){
-				printf("Setting to skip every 'zero' triggers. This may result in undefined behavior.\n",skip);
+				printf("Setting to skip every 'zero' triggers. This may result in undefined behavior.\n");
 			}else if(skip < 0){
 				printf("Skip was set to a negative value (%d), meaning no triggers will be skipped.\n",skip);
 			}
