@@ -57,6 +57,7 @@ fifotest
 setregisters
 singlerate
 scanrate
+scanupper
 scanwindow
 currentrate
 

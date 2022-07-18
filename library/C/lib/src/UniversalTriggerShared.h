@@ -108,6 +108,7 @@ extern int skipflag;
 extern int reset;
 extern int force;
 extern int wait;
+extern int width;
 extern char* configfilename;
 //Other Variables
 extern int i;

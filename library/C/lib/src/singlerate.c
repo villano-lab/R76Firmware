@@ -97,6 +97,9 @@ int main(int argc, char* argv[])
 		//then construct, run, and free the command.
 		char* command = malloc(100);
 		snprintf(command,100,"./setregisters %s -v%d",argv[optind],verbose);
+		if(configfilename){
+            snprintf(command,100,"%s -c%s",command,configfilename);
+        }
 		system(command);
 		free(command);
 	}

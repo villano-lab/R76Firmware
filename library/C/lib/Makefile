@@ -67,7 +67,7 @@ Objects=$(Objects0)
 ## Main Build Targets 
 ##
 .PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
-all: $(OutputFile) setregisters scanrate scanwindow singlerate fifotest
+all: $(OutputFile) setregisters scanrate scanupper scanwindow singlerate fifotest
 
 $(OutputFile): $(IntermediateDirectory)/.d $(Objects) 
 	@$(MakeDirCommand) $(@D)
@@ -83,6 +83,8 @@ setregisters: $(OutputFile)
 	gcc -o setregisters src/setregisters.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
 scanrate: $(OutputFile)
 	gcc -o scanrate src/scanrate.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+scanupper: $(OutputFile)
+	gcc -o scanupper src/scanupper.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
 scanwindow: $(OutputFile)
 	gcc -o scanwindow src/scanwindow.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
 singlerate: $(OutputFile)

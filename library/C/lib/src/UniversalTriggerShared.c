@@ -108,6 +108,7 @@ int skipflag=0;
 int reset=0;
 int force=0;
 int wait=1;
+int width=10;
 char* rtemp;
 char* gtemp;
 char* configfilename;
