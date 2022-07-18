@@ -104,6 +104,12 @@ int main(int argc, char* argv[])
         char* command = malloc(100);
 		//then construct, run, and free the command.
 		snprintf(command,100,"./setregisters %s -v%d",argv[optind],verbose);
+        while(optind != argc){
+            optind++;
+            if(verbose>2){printf("%s\n",argv[optind]);}
+            if(verbose>2){printf("re-entered main arg loop.\n");}
+            snprintf(command,100,"%s %s",command,argv[optind]);
+        }
         if(verbose > 0){printf("Running setregisters utility.\n");}
         if(configfilename){
             snprintf(command,100,"%s -c%s",command,configfilename);
@@ -160,7 +166,7 @@ int main(int argc, char* argv[])
 			printf("Error from REG_thrs_SET. Aborting.\n");
 			return thrs_q;
 		}
-        top_q = set_by_polarity(REG_top_SET,polarity,thrs);
+        top_q = set_by_polarity(REG_top_SET,polarity,top);
         if(top_q != 0){
             printf("Error from REG_top_SET. Aborting.\n");
             return top_q;
@@ -169,7 +175,7 @@ int main(int argc, char* argv[])
         float cumulative = 0;
         for(i = 0; i<wait; i++){
 			//wait
-			sleep(10);
+			sleep(11);
 			
 			//get the rate
 			if(verbose > 2){printf("Retreiving data...\n");};
