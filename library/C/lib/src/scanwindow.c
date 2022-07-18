@@ -105,8 +105,12 @@ int main(int argc, char* argv[])
 		//then construct, run, and free the command.
 		snprintf(command,100,"./setregisters %s -v%d",argv[optind],verbose);
         while(optind != argc){
-            optind++;
             if(verbose>2){printf("%s\n",argv[optind]);}
+            optind++;
+            if(verbose>2){
+                printf("%d, ",optind);
+                printf("%s\n",argv[optind]);
+            }
             if(verbose>2){printf("re-entered main arg loop.\n");}
             snprintf(command,100,"%s %s",command,argv[optind]);
         }
@@ -173,9 +177,10 @@ int main(int argc, char* argv[])
         }
 
         float cumulative = 0;
+        sleep(10);
         for(i = 0; i<wait; i++){
 			//wait
-			sleep(11);
+			sleep(10);
 			
 			//get the rate
 			if(verbose > 2){printf("Retreiving data...\n");};
