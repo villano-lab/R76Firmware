@@ -103,16 +103,20 @@ int main(int argc, char* argv[])
     if(optind!=argc){ //if there are args to pass through, tell the user,
         char* command = malloc(100);
 		//then construct, run, and free the command.
-		snprintf(command,100,"./setregisters %s -v%d",argv[optind],verbose);
-        while(optind != argc){
-            if(verbose>2){printf("%s\n",argv[optind]);}
-            optind++;
-            if(verbose>2){
-                printf("%d, ",optind);
-                printf("%s\n",argv[optind]);
+		snprintf(command,100,"./setregisters %s -v%d ",argv[optind],verbose);
+        i = 1;
+        int done = 0;
+        if(verbose > 2){printf("command progress: %s\n",command);}
+        while(!done){
+            if(optind+i == argc || argv[optind+i] == NULL){
+                if(verbose > 2){printf("Done constructing command.");}
+                done = 1;
+            }else{
+                strcat(command,argv[optind+i]);
+                strcat(command," ");
+                if(verbose > 2){printf("command progress: %s\n",command);}
+                i++;
             }
-            if(verbose>2){printf("re-entered main arg loop.\n");}
-            snprintf(command,100,"%s %s",command,argv[optind]);
         }
         if(verbose > 0){printf("Running setregisters utility.\n");}
         if(configfilename){
