@@ -16,7 +16,7 @@
 #define GATE_TEXT (" -g,	--gate	'<lower #> <upper #>'	Set the gate times for the upper and lower triggers in clock ticks (integer. defaults: 0-100)\n					The two entries are delimited by spaces, commas, or dashes. Both must be provided.\n")
 #define DELAY_TEXT (" -d,	--delay	<delay length>	Set the value of the delay time in clock ticks (integer. default: 50)\n")
 #define INHIB_TEXT (" -i,	--inhibit	<inhibit>	Set the value of the inhibit time in clock ticks (integer. default: 1000)\n")
-#define THRESH_TEXT (" -t,	--thresh	<threshold>		Set the value of the (lower) threshold (default: 4192). \n")
+#define THRESH_TEXT (" -t,	--thresh	<threshold>		Set the value of the (lower) threshold in MeV (default: 1). \n")
 #define RANGE_TEXT (" -r,	--range	'<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned (default: min 0, max 4080, step size 40).\n					These are set in terms of their distance from the lower threshold; a lower value of 0 indicates starting from the same value as threshold.\n")
 #define SKIP_TEXT (" -S,    --skip <#>  Skip every # trigger to reduce the rate.\n")
 #define VERBOSE_TEXT (" -v,	--verbose	<level>		Print verbose messages at the specified level (1 if unspecified).\n")
@@ -24,7 +24,7 @@
 #define LOG_TEXT (" -l,	--log		<file>		Log terminal output. (default: log.txt) \n")
 #define VERSION_TEXT (" -V, 	--version			Print version and exit.\n")
 #define HELP_TEXT (" -h,-?,	--help				Print this help function.\n")
-#define TOP_TEXT (" -T,   --top   <value> Set the upper threshold to the given value (default: 16384).\n")
+#define TOP_TEXT (" -T,   --top   <value> Set the upper threshold to the given value in MeV (default: 8).\n")
 #define RESET_TEXT (" -R,   --reset     Reset all unsupplied values to their defaults.\n")
 #define FORCE_TEXT (" -f,   --force     Skip all user input.\n")
 #define POLARITY_TEXT (" -p, --polarity  <1 or 0>    Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
@@ -35,7 +35,7 @@
 
 //Defaults
 extern int verbose;
-extern int thrs;
+extern float thrs;
 extern uint32_t value;
 extern int gate_u;
 extern int gate_l;
@@ -47,14 +47,14 @@ extern int inhib;
 extern int delay;
 extern int polarity;
 extern int baseline;
-extern int top;
+extern float top;
 extern int int_time;
 extern int pre_int;
 //Register-reading Variables
 extern NI_HANDLE handle;
 extern int thrs_q;
-extern int thrs_q;
 extern int top_q;
+extern int *thresh_q;
 extern int delay_q;
 extern int gate_uq;
 extern int gate_lq;
@@ -138,9 +138,14 @@ int parse_range(char* gatestring, int verbose);                         //parse 
 void print_timestamp(int elapsed, int verbose);                         //parse a time elapsed value and print it in readable format
 void read_config(char* filename);                                       //parse a config file for values
 //converting functions
-int *on_to_off(int *off, int on, int verbose);                          //convert a detectors on bit vector to a detectors off bit vector
+int *on_to_off(int *off, int on, int verbose);                          //convert a 'detectors on' bit vector to a 'detectors off' bit vector
+int energy_to_bin(int detnum, float energy);                            //convert an energy value to a bin value
+//compatibility functions
+int REG_top_SET(uint32_t value, NI_HANDLE* handle);                           //set all top thresholds to a bin number
+int REG_thrsh_SET(uint32_t value, NI_HANDLE* handle);                         //set all lower thesholds to a bin number
 //other functions
 int connect_staticaddr(int verbose);                                    //connect to the board, with print functions.
 int *disable_dets(int *disable_q, int disable[24]);                     //disable detectors based on input array
+int *set_thresholds(char* side, int polarity, float energy);            //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
 int set_by_polarity(int (*f)(uint32_t, NI_HANDLE*), int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
 int kbhit(void);                                                        //allow keyboard interrupt

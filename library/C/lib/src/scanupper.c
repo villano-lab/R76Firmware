@@ -84,8 +84,8 @@ int main(int argc, char* argv[])
 			break;
 		case 't':
 			if(verbose > 1){printf("Threshold supplied: %s\n",optarg);}
-			thrs = atoi(optarg);
-			if(verbose > 1){printf("Threshold successfully set to %d.\n",thrs);}
+			thrs = atof(optarg);
+			if(verbose > 1){printf("Threshold successfully set to %f.\n",thrs);}
 			break;
 		case 'g':
 			if(verbose > 2){printf("Hey I'm in case g\n");}
@@ -153,7 +153,7 @@ int main(int argc, char* argv[])
 	
 	if(logfile != NULL){
 		fprintf(logfile,"============ Settings ============\n");
-		fprintf(logfile,"Starting threshold:			%d\n",thrs);
+		fprintf(logfile,"Starting threshold:			%f\n",thrs);
 		fprintf(logfile,"Trigger Inhibition Time:		%d\n",inhib);
 		fprintf(logfile,"Upper Gate:					%d\n",gate_u);
 		fprintf(logfile,"Lower Gate: 					%d\n",gate_l);
@@ -229,7 +229,7 @@ int main(int argc, char* argv[])
 		if(verbose>1){printf("top: %d ; rate: %f Hz\n",top,rateval[0]/10.0);};
 		top += range_s;
 	};
-	if(verbose > 2){printf("top: %d, limit: %d. Time to stop!\n",top,thrs+range_u);}
+	if(verbose > 2){printf("top: %d, limit: %f. Time to stop!\n",top,thrs+range_u);}
 
 	if(verbose>0){printf("Data collection complete.\n");};
 	toc = time(NULL);

@@ -40,7 +40,7 @@ const struct option longopts[] =
 
 //Defaults
 int verbose = 0;
-int thrs = 4192;	        //distance from baseline for threshold.
+float thrs = 1.;	        //distance from baseline for threshold.
 uint32_t value = 4294967295;
 int gate_u = 100; 
 int gate_l = 0;
@@ -50,16 +50,13 @@ int range_s = 40;
 int delay = 50;
 int inhib = 1000;
 int baseline = 200;
-int top = 16384;
+float top = 8.;
 int int_time = 250; //should change this default once we find a good value - these are good for SCIDK
 int pre_int = 30;   //^same here
 //things you probably won't change
 int polarity = 1;	//zero for negative, one for positive
 //Register-reading Variables
 NI_HANDLE handle;
-int thrs_q;
-int thrs_q;
-int top_q;
 int delay_q;
 int gate_uq;
 int gate_lq;
@@ -68,6 +65,9 @@ int polarity_q;
 char* selection;
 int *disable_q; // array of disable instead of 24 initializations
 int *disable;
+int *thresh_q;
+int thrs_q;
+int top_q;
 int disable_t[32];
 uint32_t spec_dl[1040];
 uint32_t size = 1024;
@@ -227,10 +227,10 @@ void read_config(char* filename){
 		}else if(strcasecmp(arg,"range_stepsize") == 0){
 			range_s = atoi(val);
 		}else if(strcasecmp(arg,"thresh_lower") == 0 || strcasecmp(arg,"thresh") == 0){
-			thrs = atoi(val);
+			thrs = atof(val);
 			threshflag = 1;
 		}else if(strcasecmp(arg,"thresh_upper") == 0 || strcasecmp(arg,"thresh_top") == 0 || strcasecmp(arg,"top") == 0){
-			top = atoi(val);
+			top = atof(val);
 			topflag = 1;
 		}
 	}
@@ -278,6 +278,145 @@ int *on_to_off(int *off, int on, int verbose){
 		printf("\b\b.\n");
 	}
     return off;
+}
+int energy_to_bin(int detnum, float energy){ //take an energy (MeV) and convert it to a bin number
+	if(detnum == 1){
+		return energy;
+	}else if(detnum == 2){
+		return energy;
+	}else if(detnum == 3){
+		return energy;
+	}else if(detnum == 4){
+		return energy;
+	}else if(detnum == 5){
+		return energy;
+	}else if(detnum == 6){
+		return energy;
+	}else if(detnum == 7){
+		return energy;
+	}else if(detnum == 8){
+		return energy;
+	}else if(detnum == 9){
+		return energy;
+	}else if(detnum == 10){
+		return energy;
+	}else if(detnum == 11){
+		return energy;
+	}else if(detnum == 12){
+		return energy;
+	}else if(detnum == 13){
+		return energy;
+	}else if(detnum == 14){
+		return energy;
+	}else if(detnum == 15){
+		return energy;
+	}else if(detnum == 16){
+		return energy;
+	}else if(detnum == 17){
+		return energy;
+	}else if(detnum == 18){
+		return energy;
+	}else if(detnum == 19){
+		return energy;
+	}else if(detnum == 20){
+		return energy;
+	}else if(detnum == 21){
+		return energy;
+	}else if(detnum == 22){
+		return energy;
+	}else if(detnum == 23){
+		return energy;
+	}else if(detnum == 24){
+		return energy;
+	}else if(detnum == 25){
+		return energy;
+	}else if(detnum == 26){
+		return energy;
+	}else if(detnum == 27){
+		return energy;
+	}else if(detnum == 28){
+		return energy;
+	}else if(detnum == 29){
+		return energy;
+	}else if(detnum == 30){
+		return energy;
+	}else if(detnum == 31){
+		return energy;
+	}else{
+		printf("Invalid detector number %d supplied to energy_to_bin function. Must supply a number 0-31.\n",detnum);
+		exit(-1);
+	}
+}
+
+//Compatibility functions
+
+int REG_thrsh_SET(uint32_t value, NI_HANDLE *handle){
+	thresh_q[0 ] = set_by_polarity(REG_thrsh_0_SET, polarity,value);
+	thresh_q[1 ] = set_by_polarity(REG_thrsh_1_SET, polarity,value);
+	thresh_q[2 ] = set_by_polarity(REG_thrsh_2_SET, polarity,value);
+	thresh_q[3 ] = set_by_polarity(REG_thrsh_3_SET, polarity,value);
+	thresh_q[4 ] = set_by_polarity(REG_thrsh_4_SET, polarity,value);
+	thresh_q[5 ] = set_by_polarity(REG_thrsh_5_SET, polarity,value);
+	thresh_q[6 ] = set_by_polarity(REG_thrsh_6_SET, polarity,value);
+	thresh_q[7 ] = set_by_polarity(REG_thrsh_7_SET, polarity,value);
+	thresh_q[8 ] = set_by_polarity(REG_thrsh_8_SET, polarity,value);
+	thresh_q[9 ] = set_by_polarity(REG_thrsh_9_SET, polarity,value);
+	thresh_q[10] = set_by_polarity(REG_thrsh_10_SET,polarity,value);
+	thresh_q[11] = set_by_polarity(REG_thrsh_11_SET,polarity,value);
+	thresh_q[12] = set_by_polarity(REG_thrsh_12_SET,polarity,value);
+	thresh_q[13] = set_by_polarity(REG_thrsh_13_SET,polarity,value);
+	thresh_q[14] = set_by_polarity(REG_thrsh_14_SET,polarity,value);
+	thresh_q[15] = set_by_polarity(REG_thrsh_15_SET,polarity,value);
+	thresh_q[16] = set_by_polarity(REG_thrsh_16_SET,polarity,value);
+	thresh_q[17] = set_by_polarity(REG_thrsh_17_SET,polarity,value);
+	thresh_q[18] = set_by_polarity(REG_thrsh_18_SET,polarity,value);
+	thresh_q[19] = set_by_polarity(REG_thrsh_19_SET,polarity,value);
+	thresh_q[20] = set_by_polarity(REG_thrsh_20_SET,polarity,value);
+	thresh_q[21] = set_by_polarity(REG_thrsh_21_SET,polarity,value);
+	thresh_q[22] = set_by_polarity(REG_thrsh_22_SET,polarity,value);
+	thresh_q[23] = set_by_polarity(REG_thrsh_23_SET,polarity,value);
+	for(int i=0; i<24; i++){
+		if(thresh_q[i] != 0){
+			printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
+			return thresh_q[i];
+		}
+	}
+	return 0;
+}
+
+int REG_top_SET(uint32_t value, NI_HANDLE *handle){
+	thresh_q[0 ] = set_by_polarity(REG_top_0_SET, polarity,value);
+	thresh_q[1 ] = set_by_polarity(REG_top_1_SET, polarity,value);
+	thresh_q[2 ] = set_by_polarity(REG_top_2_SET, polarity,value);
+	thresh_q[3 ] = set_by_polarity(REG_top_3_SET, polarity,value);
+	thresh_q[4 ] = set_by_polarity(REG_top_4_SET, polarity,value);
+	thresh_q[5 ] = set_by_polarity(REG_top_5_SET, polarity,value);
+	thresh_q[6 ] = set_by_polarity(REG_top_6_SET, polarity,value);
+	thresh_q[7 ] = set_by_polarity(REG_top_7_SET, polarity,value);
+	thresh_q[8 ] = set_by_polarity(REG_top_8_SET, polarity,value);
+	thresh_q[9 ] = set_by_polarity(REG_top_9_SET, polarity,value);
+	thresh_q[10] = set_by_polarity(REG_top_10_SET,polarity,value);
+	thresh_q[11] = set_by_polarity(REG_top_11_SET,polarity,value);
+	thresh_q[12] = set_by_polarity(REG_top_12_SET,polarity,value);
+	thresh_q[13] = set_by_polarity(REG_top_13_SET,polarity,value);
+	thresh_q[14] = set_by_polarity(REG_top_14_SET,polarity,value);
+	thresh_q[15] = set_by_polarity(REG_top_15_SET,polarity,value);
+	thresh_q[16] = set_by_polarity(REG_top_16_SET,polarity,value);
+	thresh_q[17] = set_by_polarity(REG_top_17_SET,polarity,value);
+	thresh_q[18] = set_by_polarity(REG_top_18_SET,polarity,value);
+	thresh_q[19] = set_by_polarity(REG_top_19_SET,polarity,value);
+	thresh_q[20] = set_by_polarity(REG_top_20_SET,polarity,value);
+	thresh_q[21] = set_by_polarity(REG_top_21_SET,polarity,value);
+	thresh_q[22] = set_by_polarity(REG_top_22_SET,polarity,value);
+	thresh_q[23] = set_by_polarity(REG_top_23_SET,polarity,value);
+	thresh_q[24] = set_by_polarity(REG_top_24_SET,polarity,value);
+	thresh_q[25] = set_by_polarity(REG_top_25_SET,polarity,value);
+	thresh_q[26] = set_by_polarity(REG_top_26_SET,polarity,value);
+	thresh_q[27] = set_by_polarity(REG_top_27_SET,polarity,value);
+	thresh_q[28] = set_by_polarity(REG_top_28_SET,polarity,value);
+	thresh_q[29] = set_by_polarity(REG_top_29_SET,polarity,value);
+	thresh_q[30] = set_by_polarity(REG_top_30_SET,polarity,value);
+	thresh_q[31] = set_by_polarity(REG_top_31_SET,polarity,value);
 }
 
 //Other functions
@@ -330,6 +469,80 @@ int *disable_dets(int *disable_q, int disable[32]){
 	disable_q[30] = REG_disable_det_30_SET(disable[30], &handle);
 	disable_q[31] = REG_disable_det_31_SET(disable[31], &handle);
     return disable_q;
+}
+
+int *set_thresholds(char* side, int polarity, float energy){
+	if(strcasecmp(side,"lower") == 0 || strcasecmp(side,"thrs") == 0 || strcasecmp(side,"thresh") == 0 || strcasecmp(side,"thrsh") == 0 || strcasecmp(side,"lo") == 0 || strcasecmp(side,"low") == 0){
+		thresh_q[0 ] = set_by_polarity(REG_thrsh_0_SET, polarity,energy_to_bin(0 ,energy));
+		thresh_q[1 ] = set_by_polarity(REG_thrsh_1_SET, polarity,energy_to_bin(1 ,energy));
+		thresh_q[2 ] = set_by_polarity(REG_thrsh_2_SET, polarity,energy_to_bin(2 ,energy));
+		thresh_q[3 ] = set_by_polarity(REG_thrsh_3_SET, polarity,energy_to_bin(3 ,energy));
+		thresh_q[4 ] = set_by_polarity(REG_thrsh_4_SET, polarity,energy_to_bin(4 ,energy));
+		thresh_q[5 ] = set_by_polarity(REG_thrsh_5_SET, polarity,energy_to_bin(5 ,energy));
+		thresh_q[6 ] = set_by_polarity(REG_thrsh_6_SET, polarity,energy_to_bin(6 ,energy));
+		thresh_q[7 ] = set_by_polarity(REG_thrsh_7_SET, polarity,energy_to_bin(7 ,energy));
+		thresh_q[8 ] = set_by_polarity(REG_thrsh_8_SET, polarity,energy_to_bin(8 ,energy));
+		thresh_q[9 ] = set_by_polarity(REG_thrsh_9_SET, polarity,energy_to_bin(9 ,energy));
+		thresh_q[10] = set_by_polarity(REG_thrsh_10_SET,polarity,energy_to_bin(10,energy));
+		thresh_q[11] = set_by_polarity(REG_thrsh_11_SET,polarity,energy_to_bin(11,energy));
+		thresh_q[12] = set_by_polarity(REG_thrsh_12_SET,polarity,energy_to_bin(12,energy));
+		thresh_q[13] = set_by_polarity(REG_thrsh_13_SET,polarity,energy_to_bin(13,energy));
+		thresh_q[14] = set_by_polarity(REG_thrsh_14_SET,polarity,energy_to_bin(14,energy));
+		thresh_q[15] = set_by_polarity(REG_thrsh_15_SET,polarity,energy_to_bin(15,energy));
+		thresh_q[16] = set_by_polarity(REG_thrsh_16_SET,polarity,energy_to_bin(16,energy));
+		thresh_q[17] = set_by_polarity(REG_thrsh_17_SET,polarity,energy_to_bin(17,energy));
+		thresh_q[18] = set_by_polarity(REG_thrsh_18_SET,polarity,energy_to_bin(18,energy));
+		thresh_q[19] = set_by_polarity(REG_thrsh_19_SET,polarity,energy_to_bin(19,energy));
+		thresh_q[20] = set_by_polarity(REG_thrsh_20_SET,polarity,energy_to_bin(20,energy));
+		thresh_q[21] = set_by_polarity(REG_thrsh_21_SET,polarity,energy_to_bin(21,energy));
+		thresh_q[22] = set_by_polarity(REG_thrsh_22_SET,polarity,energy_to_bin(22,energy));
+		thresh_q[23] = set_by_polarity(REG_thrsh_23_SET,polarity,energy_to_bin(23,energy));
+		/*thresh_q[24] = set_by_polarity(REG_thrsh_24_SET,polarity,energy_to_bin(24,energy));
+		thresh_q[25] = set_by_polarity(REG_thrsh_25_SET,polarity,energy_to_bin(25,energy));
+		thresh_q[26] = set_by_polarity(REG_thrsh_26_SET,polarity,energy_to_bin(26,energy));
+		thresh_q[27] = set_by_polarity(REG_thrsh_27_SET,polarity,energy_to_bin(27,energy));
+		thresh_q[28] = set_by_polarity(REG_thrsh_28_SET,polarity,energy_to_bin(28,energy));
+		thresh_q[29] = set_by_polarity(REG_thrsh_29_SET,polarity,energy_to_bin(29,energy));
+		thresh_q[30] = set_by_polarity(REG_thrsh_30_SET,polarity,energy_to_bin(30,energy));
+		thresh_q[31] = set_by_polarity(REG_thrsh_31_SET,polarity,energy_to_bin(31,energy));*/ //these do not exist yet.
+	}else if(strcasecmp(side,"upper") == 0 || strcasecmp(side,"up") == 0 || strcasecmp(side,"hi") == 0 || strcasecmp(side,"higher") == 0 || strcasecmp(side,"high") == 0 || strcasecmp(side,"top") == 0){
+		thresh_q[0 ] = set_by_polarity(REG_top_0_SET, polarity,energy_to_bin(0 ,energy));
+		thresh_q[1 ] = set_by_polarity(REG_top_1_SET, polarity,energy_to_bin(1 ,energy));
+		thresh_q[2 ] = set_by_polarity(REG_top_2_SET, polarity,energy_to_bin(2 ,energy));
+		thresh_q[3 ] = set_by_polarity(REG_top_3_SET, polarity,energy_to_bin(3 ,energy));
+		thresh_q[4 ] = set_by_polarity(REG_top_4_SET, polarity,energy_to_bin(4 ,energy));
+		thresh_q[5 ] = set_by_polarity(REG_top_5_SET, polarity,energy_to_bin(5 ,energy));
+		thresh_q[6 ] = set_by_polarity(REG_top_6_SET, polarity,energy_to_bin(6 ,energy));
+		thresh_q[7 ] = set_by_polarity(REG_top_7_SET, polarity,energy_to_bin(7 ,energy));
+		thresh_q[8 ] = set_by_polarity(REG_top_8_SET, polarity,energy_to_bin(8 ,energy));
+		thresh_q[9 ] = set_by_polarity(REG_top_9_SET, polarity,energy_to_bin(9 ,energy));
+		thresh_q[10] = set_by_polarity(REG_top_10_SET,polarity,energy_to_bin(10,energy));
+		thresh_q[11] = set_by_polarity(REG_top_11_SET,polarity,energy_to_bin(11,energy));
+		thresh_q[12] = set_by_polarity(REG_top_12_SET,polarity,energy_to_bin(12,energy));
+		thresh_q[13] = set_by_polarity(REG_top_13_SET,polarity,energy_to_bin(13,energy));
+		thresh_q[14] = set_by_polarity(REG_top_14_SET,polarity,energy_to_bin(14,energy));
+		thresh_q[15] = set_by_polarity(REG_top_15_SET,polarity,energy_to_bin(15,energy));
+		thresh_q[16] = set_by_polarity(REG_top_16_SET,polarity,energy_to_bin(16,energy));
+		thresh_q[17] = set_by_polarity(REG_top_17_SET,polarity,energy_to_bin(17,energy));
+		thresh_q[18] = set_by_polarity(REG_top_18_SET,polarity,energy_to_bin(18,energy));
+		thresh_q[19] = set_by_polarity(REG_top_19_SET,polarity,energy_to_bin(19,energy));
+		thresh_q[20] = set_by_polarity(REG_top_20_SET,polarity,energy_to_bin(20,energy));
+		thresh_q[21] = set_by_polarity(REG_top_21_SET,polarity,energy_to_bin(21,energy));
+		thresh_q[22] = set_by_polarity(REG_top_22_SET,polarity,energy_to_bin(22,energy));
+		thresh_q[23] = set_by_polarity(REG_top_23_SET,polarity,energy_to_bin(23,energy));
+		thresh_q[24] = set_by_polarity(REG_top_24_SET,polarity,energy_to_bin(24,energy));
+		thresh_q[25] = set_by_polarity(REG_top_25_SET,polarity,energy_to_bin(25,energy));
+		thresh_q[26] = set_by_polarity(REG_top_26_SET,polarity,energy_to_bin(26,energy));
+		thresh_q[27] = set_by_polarity(REG_top_27_SET,polarity,energy_to_bin(27,energy));
+		thresh_q[28] = set_by_polarity(REG_top_28_SET,polarity,energy_to_bin(28,energy));
+		thresh_q[29] = set_by_polarity(REG_top_29_SET,polarity,energy_to_bin(29,energy));
+		thresh_q[30] = set_by_polarity(REG_top_30_SET,polarity,energy_to_bin(30,energy));
+		thresh_q[31] = set_by_polarity(REG_top_31_SET,polarity,energy_to_bin(31,energy));
+	}else{
+		printf("Invalid 'side' passed to set_thresholds. Please submit a bug report.\n");
+		exit(-1);
+	}
+	return thresh_q;
 }
 
 int set_by_polarity(int (*f)(uint32_t, NI_HANDLE*), int polarity, int value){

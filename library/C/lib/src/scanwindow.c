@@ -167,7 +167,7 @@ int main(int argc, char* argv[])
         //update the threshold
         if(verbose>1){
             printf("Updated threshold:\n");
-            printf("%d, %d\n",thrs,top);
+            printf("%f, %f\n",thrs,top);
         }
         thrs_q = set_by_polarity(REG_thrsh_SET,polarity,thrs);
 		if(thrs_q != 0){
@@ -195,8 +195,8 @@ int main(int argc, char* argv[])
 		if(verbose > 1){printf("Average rate: %f\n",cumulative/wait);}
 
         //write the rate
-        fprintf(fp,"%d, %d, %f\n",thrs,top,cumulative/wait);
-		if(verbose>1){printf("lower: %d ; upper: %d, rate: %f Hz\n",thrs,top,cumulative/wait);};
+        fprintf(fp,"%f, %f, %f\n",thrs,top,cumulative/wait);
+		if(verbose>1){printf("lower: %f ; upper: %f, rate: %f Hz\n",thrs,top,cumulative/wait);};
 		thrs += range_s;
         top  += range_s;
     }

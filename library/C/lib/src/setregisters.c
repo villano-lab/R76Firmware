@@ -50,8 +50,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	exit (exit_code);
 };
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]){
 	//Read options
 	int index;
 	int iarg=0;
@@ -122,12 +121,11 @@ int main(int argc, char* argv[])
 		case 't':
 			threshflag = 1;
 			if(verbose > 1){printf("Threshold supplied: %s\n",optarg);}
-			thrs = atoi(optarg);
-			if(verbose > 1){printf("Threshold successfully set to %d.\n",thrs);}
+			thrs = atof(optarg);
 			break;
 		case 'T':
 			topflag = 1;
-			top = atoi(optarg);
+			top = atof(optarg);
 			break;
 		case 'S':
 			skipflag = 1;
@@ -207,26 +205,7 @@ int main(int argc, char* argv[])
 		return connect_q;
 	}
 
-	//Now set all the values we determined above
-	if(detflag == 1){
-		disable_q = disable_dets(disable_t, disable);
-		for(int i=0; i<24; i++){
-			if(disable_q[i] != 0){
-				printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
-				return -1;
-			}
-		}
-	}else if(verbose > 1){
-		printf("Detector flag is off (%d). Skipping.\n",detflag);
-	}
-
-	//Some printing statements
-	if(threshflag == 1){
-		if(verbose>-1){printf("Setting threshold to: %d.\n",thrs);}
-	}else if(verbose > 1){
-		printf("Lower threshold flag is off. Skipping.\n");
-	}
-	
+	//Some printing statements	
 	if(skipflag == 1){
 		if(verbose>-1){
 			if(skip >1){
@@ -248,8 +227,8 @@ int main(int argc, char* argv[])
 	}
 	if(logfile != NULL){
 		fprintf(logfile,"============ Settings ============\n");
-		if(threshflag 	== 1){		fprintf(logfile,"Lower threshold:				%d\n",thrs);}
-		if(topflag	 	== 1){		fprintf(logfile,"Upper threshold:				%d\n",top);}
+		if(threshflag 	== 1){		fprintf(logfile,"Lower threshold:				%f\n",thrs);}
+		if(topflag	 	== 1){		fprintf(logfile,"Upper threshold:				%f\n",top);}
 		if(inhibflag	== 1){		fprintf(logfile,"Trigger Inhibition Time:		%d\n",inhib);}
 		if(gateflagu	== 1){		fprintf(logfile,"Upper Gate:					%d\n",gate_u);}
 		if(gateflagl 	== 1){		fprintf(logfile,"Lower Gate: 					%d\n",gate_l);}
@@ -268,21 +247,38 @@ int main(int argc, char* argv[])
 	//Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
 
-	if(threshflag == 1){	
-		thrs_q = set_by_polarity(REG_thrsh_SET,polarity,thrs);
-		if(thrs_q != 0){
-			printf("Error from REG_thrsh_SET. Aborting.\n");
-			return thrs_q;
+	//Now set all the values we determined above
+	if(detflag == 1){
+		disable_q = disable_dets(disable_t, disable);
+		for(int i=0; i<24; i++){
+			if(disable_q[i] != 0){
+				printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
+				return disable_q[i];
+			}
 		}
+	}else if(verbose > 1){
+		printf("Detector flag is off (%d). Skipping.\n",detflag);
+	}
+
+	if(threshflag == 1){	
+		thresh_q = set_thresholds("low",polarity,thrs);
+		for(int i=0; i<24; i++){
+			if(thresh_q[i] != 0){
+				printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
+				return thresh_q[i];
+			}
+		}
+	}else if(verbose > 1){
+		printf("Lower threshold flag is off. Skipping.\n");
 	}
 	//set top
 	if(topflag == 1){
-		top_q = set_by_polarity(REG_top_SET,polarity,top);
-		if(top_q != 0){
-			printf("Error from REG_top_SET. Aborting.\n");
-			return top_q;
-		}else if(verbose > 0){
-			printf("Successfully set upper threshold to %d.\n",top);
+		thresh_q = set_thresholds("high",polarity,thrs);
+		for(int i=0; i<24; i++){
+			if(thresh_q[i] != 0){
+				printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
+				return thresh_q[i];
+			}
 		}
 	}else if(verbose > 1){
 		printf("Top threshold flag is off. Skipping.\n");
