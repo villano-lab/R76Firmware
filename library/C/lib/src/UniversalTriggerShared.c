@@ -279,67 +279,67 @@ int *on_to_off(int *off, int on, int verbose){
 }
 int energy_to_bin(int detnum, float energy){ //take an energy (MeV) and convert it to a bin number
 	if(detnum == 1){
-		return energy;
+		return (energy + 219.94)/0.7;
 	}else if(detnum == 2){
-		return energy;
+		return (energy+205.11)/0.78;
 	}else if(detnum == 3){
-		return energy;
+		return (energy+248.39)/0.78;
 	}else if(detnum == 4){
-		return energy;
+		return (energy+268.71)/0.81;
 	}else if(detnum == 5){
-		return energy;
+		return (energy+157.64)/0.79;
 	}else if(detnum == 6){
-		return energy;
+		return (energy+266.55)/0.75;
 	}else if(detnum == 7){
-		return energy;
+		return (energy+226.76)/0.87;
 	}else if(detnum == 8){
-		return energy;
+		return (energy+191.94)/0.84;
 	}else if(detnum == 9){
-		return energy;
+		return (energy+280.18)/0.71;
 	}else if(detnum == 10){
-		return energy;
+		return (energy+269.96)/0.78;
 	}else if(detnum == 11){
-		return energy;
+		return (energy+269.90)/0.78;
 	}else if(detnum == 12){
-		return energy;
+		return (energy+222.26)/0.79;
 	}else if(detnum == 13){
-		return energy;
+		return (energy+313.37)/0.82;
 	}else if(detnum == 14){
-		return energy;
+		return (energy+133.38)/0.73;
 	}else if(detnum == 15){
-		return energy;
+		return (energy+381.87)/0.90;
 	}else if(detnum == 16){
-		return energy;
+		return (energy+207.69)/0.75;
 	}else if(detnum == 17){
-		return energy;
+		return (energy+327.42)/0.85;
 	}else if(detnum == 18){
-		return energy;
+		return (energy+266.93)/0.80;
 	}else if(detnum == 19){
-		return energy;
+		return (energy+301.66)/0.85;
 	}else if(detnum == 20){
-		return energy;
+		return (energy+232.61)/0.71;
 	}else if(detnum == 21){
-		return energy;
+		return (energy+308.23)/0.87;
 	}else if(detnum == 22){
-		return energy;
+		return (energy+273.59)/0.96;
 	}else if(detnum == 23){
-		return energy;
+		return (energy+261.82)/0.75;
 	}else if(detnum == 24){
-		return energy;
+		return (energy+0);
 	}else if(detnum == 25){
-		return energy;
+		return (energy+0);
 	}else if(detnum == 26){
-		return energy;
+		return (energy+0);
 	}else if(detnum == 27){
-		return energy;
+		return (energy+0);
 	}else if(detnum == 28){
-		return energy;
+		return (energy+0);
 	}else if(detnum == 29){
-		return energy;
+		return (energy+0);
 	}else if(detnum == 30){
-		return energy;
+		return (energy+0);
 	}else if(detnum == 31){
-		return energy;
+		return (energy+0);
 	}else{
 		printf("Invalid detector number %d supplied to energy_to_bin function. Must supply a number 0-31.\n",detnum);
 		exit(-1);
