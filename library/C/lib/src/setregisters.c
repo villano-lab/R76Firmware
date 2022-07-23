@@ -276,7 +276,7 @@ int main(int argc, char* argv[]){
 		thresh_q = set_thresholds("high",polarity,thrs);
 		for(int i=0; i<24; i++){
 			if(thresh_q[i] != 0){
-				printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
+				printf("Unable to set lower threshold of detector #%d! Aborting.\n",i);
 				return thresh_q[i];
 			}
 		}

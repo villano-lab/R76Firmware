@@ -17,7 +17,7 @@
 #define DELAY_TEXT (" -d,	--delay	<delay length>	Set the value of the delay time in clock ticks (integer. default: 50)\n")
 #define INHIB_TEXT (" -i,	--inhibit	<inhibit>	Set the value of the inhibit time in clock ticks (integer. default: 1000)\n")
 #define THRESH_TEXT (" -t,	--thresh	<threshold>		Set the value of the (lower) threshold in MeV (default: 1). \n")
-#define RANGE_TEXT (" -r,	--range	'<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned (default: min 0, max 4080, step size 40).\n					These are set in terms of their distance from the lower threshold; a lower value of 0 indicates starting from the same value as threshold.\n")
+#define RANGE_TEXT (" -r,	--range	'<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned, in MeV (default: min 0, max 8, step size 1).\n")
 #define SKIP_TEXT (" -S,    --skip <#>  Skip every # trigger to reduce the rate.\n")
 #define VERBOSE_TEXT (" -v,	--verbose	<level>		Print verbose messages at the specified level (1 if unspecified).\n")
 #define SILENT_TEXT (" -s,-q,	--silent,--quiet,		Print nothing.\n")
@@ -39,9 +39,9 @@ extern float thrs;
 extern uint32_t value;
 extern int gate_u;
 extern int gate_l;
-extern int range_u;
-extern int range_l;
-extern int range_s;
+extern float range_u;
+extern float range_l;
+extern float range_s;
 extern int polarity;
 extern int inhib;
 extern int delay;
@@ -52,8 +52,6 @@ extern int int_time;
 extern int pre_int;
 //Register-reading Variables
 extern NI_HANDLE handle;
-extern int thrs_q;
-extern int top_q;
 extern int *thresh_q;
 extern int delay_q;
 extern int gate_uq;

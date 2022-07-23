@@ -44,9 +44,9 @@ float thrs = 1.;	        //distance from baseline for threshold.
 uint32_t value = 4294967295;
 int gate_u = 100; 
 int gate_l = 0;
-int range_l = 0;
-int range_u = 4080;
-int range_s = 40;
+float range_l = 0;
+float range_u = 8;
+float range_s = 1;
 int delay = 50;
 int inhib = 1000;
 int baseline = 200;
@@ -66,8 +66,6 @@ char* selection;
 int *disable_q; // array of disable instead of 24 initializations
 int *disable;
 int *thresh_q;
-int thrs_q;
-int top_q;
 int disable_t[32];
 uint32_t spec_dl[1040];
 uint32_t size = 1024;
@@ -176,10 +174,10 @@ int parse_gate(char* gatestring, int verbose){
 int parse_range(char* rangestring, int verbose){
 	if(verbose > 2){printf("Are we even supposed to be here? %d\n",rangeflag);}
 	if(verbose > 1){printf ("Splitting string \"%s\" into tokens:\n",rangestring);}
-	range_l = atoi(strtok (rangestring," ,.-:"));
-	range_u = atoi(strtok (NULL," ,.-:"));
-	range_s = atoi(strtok (NULL," ,.-:"));
-	if(verbose > 1){printf("%d, %d, %d\n",range_l,range_u,range_s);}
+	range_l = atof(strtok (rangestring," ,-:"));
+	range_u = atof(strtok (NULL," ,-:"));
+	range_s = atof(strtok (NULL," ,-:"));
+	if(verbose > 1){printf("%f, %f, %f\n",range_l,range_u,range_s);}
 }
 void print_timestamp(int elapsed, int verbose){
 	int hours = floor(elapsed / 3600);

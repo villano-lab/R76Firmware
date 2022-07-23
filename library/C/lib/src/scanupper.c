@@ -123,7 +123,7 @@ int main(int argc, char* argv[])
 		parse_range(rtemp,verbose);
 	}
 	if(verbose > 1){
-		printf("range min: %d. range max: %d. step size: %d.\n",range_l,range_u,range_s);
+		printf("range min: %f. range max: %f. step size: %f.\n",range_l,range_u,range_s);
 	}
 
 	//Detector on/off
@@ -158,7 +158,7 @@ int main(int argc, char* argv[])
 		fprintf(logfile,"Upper Gate:					%d\n",gate_u);
 		fprintf(logfile,"Lower Gate: 					%d\n",gate_l);
 		fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);
-		fprintf(logfile,"Upper threshold scanning from %d to %d in steps of %d.\n",range_l,range_u,range_s);
+		fprintf(logfile,"Upper threshold scanning from %f to %f in steps of %f.\n",range_l,range_u,range_s);
 		fprintf(logfile,"Detectors enabled:				\n");
 		for(int i=0;i++;i<24){
 			if(disable[i] == 0){fprintf(logfile,"%d, ",i);}
@@ -168,10 +168,12 @@ int main(int argc, char* argv[])
 	
 	//Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
-	thrs_q = set_by_polarity(REG_thrsh_SET,polarity,thrs);
-	if(thrs_q != 0){
-		printf("Error from REG_thrsh_SET. Aborting.\n");
-		return thrs_q;
+	thresh_q = set_thresholds("low",polarity,thrs);
+	for(i=0;i++;i<24){
+		if(thresh_q[i] != 0){
+			printf("Error from REG_thrsh_SET. Aborting.\n");
+			return thresh_q[i];
+		}
 	}
 	inhib_q = REG_inhib_SET(inhib,&handle);		//Set number of clock ticks to inhibit data by
 	delay_q = REG_delay_SET(delay,&handle);			
@@ -189,10 +191,12 @@ int main(int argc, char* argv[])
 	if(verbose>1){printf("Updated top threshold to initial value:\n");};
 	if(verbose>1){printf("%d\n",top);};
 
-	top_q = set_by_polarity(REG_top_SET,polarity,top);
-	if(top_q != 0){
-		printf("Error from REG_top_SET. Aborting.\n");
-		return top_q;
+	thresh_q = set_thresholds("high",polarity,top);
+	for(i=0;i++;i<24){
+		if(thresh_q[i] != 0){
+			printf("Error from REG_top_SET. Aborting.\n");
+			return thresh_q[i];
+		}
 	}
 
 	//Run phase - undo reset
@@ -208,10 +212,13 @@ int main(int argc, char* argv[])
 		if(verbose>1){printf("Updated top threshold:\n");};
 		if(verbose>1){printf("%d\n",top);};
 
-		top_q = set_by_polarity(REG_top_SET,polarity,top);
-		if(top_q != 0){
-			printf("Error from REG_top_SET. Aborting.\n");
-			return top_q;
+
+		thresh_q = set_thresholds("high",polarity,top);
+		for(i=0;i++;i<24){
+			if(thresh_q[i] != 0){
+				printf("Error from REG_top_SET. Aborting.\n");
+				return thresh_q[i];
+			}
 		}
 
 		//wait

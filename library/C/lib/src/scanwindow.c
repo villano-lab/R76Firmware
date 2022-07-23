@@ -169,16 +169,20 @@ int main(int argc, char* argv[])
             printf("Updated threshold:\n");
             printf("%f, %f\n",thrs,top);
         }
-        thrs_q = set_by_polarity(REG_thrsh_SET,polarity,thrs);
-		if(thrs_q != 0){
-			printf("Error from REG_thrs_SET. Aborting.\n");
-			return thrs_q;
+        thresh_q = set_thresholds("low",polarity,thrs);
+		for(i=0;i++;i<24){
+			if(thresh_q[i] != 0){
+				printf("Error from REG_thrs_SET. Aborting.\n");
+				return thresh_q[i];
+			}
 		}
-        top_q = set_by_polarity(REG_top_SET,polarity,top);
-        if(top_q != 0){
-            printf("Error from REG_top_SET. Aborting.\n");
-            return top_q;
-        }
+        thresh_q = set_thresholds("high",polarity,top);
+		for(i=0;i++;i<24){
+			if(thresh_q[i] != 0){
+				printf("Error from REG_top_SET. Aborting.\n");
+				return thresh_q[i];
+			}
+		}
 
         float cumulative = 0;
         sleep(10);
