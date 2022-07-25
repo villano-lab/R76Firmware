@@ -279,67 +279,67 @@ int *on_to_off(int *off, int on, int verbose){
 }
 int energy_to_bin(int detnum, float energy){ //take an energy (MeV) and convert it to a bin number
 	if(detnum == 1){
-		return (energy + 219.94)/0.7;
+		return 1.44*energy + 288.21;
 	}else if(detnum == 2){
-		return (energy+205.11)/0.78;
+		return 1.29*energy + 258.69;
 	}else if(detnum == 3){
-		return (energy+248.39)/0.78;
+		return 1.28*energy + 318.06;
 	}else if(detnum == 4){
-		return (energy+268.71)/0.81;
+		return 1.29*energy + 233.09;
 	}else if(detnum == 5){
-		return (energy+157.64)/0.79;
+		return 1.28*energy + 197.68;
 	}else if(detnum == 6){
-		return (energy+266.55)/0.75;
+		return 1.36*energy + 321.82;
 	}else if(detnum == 7){
-		return (energy+226.76)/0.87;
+		return 1.15*energy + 261.98;
 	}else if(detnum == 8){
-		return (energy+191.94)/0.84;
+		return 1.17*energy + 284.21;
 	}else if(detnum == 9){
-		return (energy+280.18)/0.71;
+		return 1.42*energy + 389.04;
 	}else if(detnum == 10){
-		return (energy+269.96)/0.78;
+		return 1.29*energy + 329.41;
 	}else if(detnum == 11){
-		return (energy+269.90)/0.78;
+		return 1.32*energy + 282.30;
 	}else if(detnum == 12){
-		return (energy+222.26)/0.79;
+		return 1.26*energy + 319.53;
 	}else if(detnum == 13){
-		return (energy+313.37)/0.82;
+		return 1.22*energy + 389.48;
 	}else if(detnum == 14){
-		return (energy+133.38)/0.73;
+		return 1.36*energy + 203.09;
 	}else if(detnum == 15){
-		return (energy+381.87)/0.90;
+		return 1.12*energy + 421.60;
 	}else if(detnum == 16){
-		return (energy+207.69)/0.75;
+		return 1.34*energy + 272.15;
 	}else if(detnum == 17){
-		return (energy+327.42)/0.85;
+		return 1.23*energy + 308.12;
 	}else if(detnum == 18){
-		return (energy+266.93)/0.80;
+		return 1.28*energy + 267.85;
 	}else if(detnum == 19){
-		return (energy+301.66)/0.85;
+		return 1.22*energy + 293.62;
 	}else if(detnum == 20){
-		return (energy+232.61)/0.71;
+		return 1.44*energy + 299.07;
 	}else if(detnum == 21){
-		return (energy+308.23)/0.87;
+		return 1.18*energy + 286.40;
 	}else if(detnum == 22){
-		return (energy+273.59)/0.96;
+		return 1.06*energy + 243.29;
 	}else if(detnum == 23){
-		return (energy+261.82)/0.75;
+		return 1.36*energy + 334.94;
 	}else if(detnum == 24){
-		return (energy+0);
+		return energy;
 	}else if(detnum == 25){
-		return (energy+0);
+		return energy;
 	}else if(detnum == 26){
-		return (energy+0);
+		return energy;
 	}else if(detnum == 27){
-		return (energy+0);
+		return energy;
 	}else if(detnum == 28){
-		return (energy+0);
+		return energy;
 	}else if(detnum == 29){
-		return (energy+0);
+		return energy;
 	}else if(detnum == 30){
-		return (energy+0);
+		return energy;
 	}else if(detnum == 31){
-		return (energy+0);
+		return energy;
 	}else{
 		printf("Invalid detector number %d supplied to energy_to_bin function. Must supply a number 0-31.\n",detnum);
 		exit(-1);
