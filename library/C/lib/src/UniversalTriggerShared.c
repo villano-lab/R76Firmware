@@ -278,7 +278,9 @@ int *on_to_off(int *off, int on, int verbose){
     return off;
 }
 int energy_to_bin(int detnum, float energy){ //take an energy (MeV) and convert it to a bin number
-	if(detnum == 1){
+	if(detnum == 0){
+		return energy;
+	}else if(detnum == 1){
 		return 1.44*energy + 288.21;
 	}else if(detnum == 2){
 		return 1.29*energy + 258.69;
