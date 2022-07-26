@@ -263,11 +263,7 @@ int main(int argc, char* argv[]){
 	}
 
 	if(threshflag == 1){	
-		if(verbose > 2){
-			set_thresholds("low",polarity,thrs);
-			printf("Able to run set_thresholds when not assigned to variable.\n");
-		}
-		thresh_q = set_thresholds("low",polarity,thrs);
+		thresh_q = set_thresholds("low",polarity,thrs,thresh_t);
 		if(verbose > 2){printf("Ran set_thresholds. Checking output...\n");}
 		for(int i=0; i<24; i++){
 			if(thresh_q[i] != 0){
@@ -281,7 +277,7 @@ int main(int argc, char* argv[]){
 	}
 	//set top
 	if(topflag == 1){
-		thresh_q = set_thresholds("high",polarity,thrs);
+		thresh_q = set_thresholds("high",polarity,thrs,thresh_t);
 		for(int i=0; i<24; i++){
 			if(thresh_q[i] != 0){
 				printf("Unable to set lower threshold of detector #%d! Aborting.\n",i);

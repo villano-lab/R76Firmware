@@ -62,6 +62,7 @@ extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
 extern int disable_t[32];
+extern int thresh_t[32];
 extern uint32_t spec_dl[1040];
 extern uint32_t size;
 extern int reset_q;
@@ -144,6 +145,6 @@ int REG_thrsh_SET(uint32_t value, NI_HANDLE* handle);                         //
 //other functions
 int connect_staticaddr(int verbose);                                    //connect to the board, with print functions.
 int *disable_dets(int *disable_q, int disable[24]);                     //disable detectors based on input array
-int *set_thresholds(char* side, int polarity, float energy);            //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
+int *set_thresholds(char* side, int polarity, float energy, int *thresh_q);            //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
 int set_by_polarity(int (*f)(uint32_t, NI_HANDLE*), int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
 int kbhit(void);                                                        //allow keyboard interrupt

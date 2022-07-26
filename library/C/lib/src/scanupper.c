@@ -168,7 +168,7 @@ int main(int argc, char* argv[])
 	
 	//Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
-	thresh_q = set_thresholds("low",polarity,thrs);
+	thresh_q = set_thresholds("low",polarity,thrs,thresh_t);
 	for(i=0;i++;i<24){
 		if(thresh_q[i] != 0){
 			printf("Error from REG_thrsh_SET. Aborting.\n");
@@ -191,7 +191,7 @@ int main(int argc, char* argv[])
 	if(verbose>1){printf("Updated top threshold to initial value:\n");};
 	if(verbose>1){printf("%d\n",top);};
 
-	thresh_q = set_thresholds("high",polarity,top);
+	thresh_q = set_thresholds("high",polarity,top,thresh_t);
 	for(i=0;i++;i<24){
 		if(thresh_q[i] != 0){
 			printf("Error from REG_top_SET. Aborting.\n");
@@ -213,7 +213,7 @@ int main(int argc, char* argv[])
 		if(verbose>1){printf("%d\n",top);};
 
 
-		thresh_q = set_thresholds("high",polarity,top);
+		thresh_q = set_thresholds("high",polarity,top,thresh_t);
 		for(i=0;i++;i<24){
 			if(thresh_q[i] != 0){
 				printf("Error from REG_top_SET. Aborting.\n");

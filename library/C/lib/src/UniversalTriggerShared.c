@@ -67,6 +67,7 @@ int *disable_q; // array of disable instead of 24 initializations
 int *disable;
 int *thresh_q;
 int disable_t[32];
+int thresh_t[32];
 uint32_t spec_dl[1040];
 uint32_t size = 1024;
 int reset_q;
@@ -471,7 +472,7 @@ int *disable_dets(int *disable_q, int disable[32]){
     return disable_q;
 }
 
-int *set_thresholds(char* side, int polarity, float energy){
+int *set_thresholds(char* side, int polarity, float energy, int *thresh_q){
 	if(strcasecmp(side,"lower") == 0 || strcasecmp(side,"thrs") == 0 || strcasecmp(side,"thresh") == 0 || strcasecmp(side,"thrsh") == 0 || strcasecmp(side,"lo") == 0 || strcasecmp(side,"low") == 0){
 		thresh_q[0 ] = set_by_polarity(REG_thrsh_0_SET, polarity,energy_to_bin(0 ,energy));
 		thresh_q[1 ] = set_by_polarity(REG_thrsh_1_SET, polarity,energy_to_bin(1 ,energy));

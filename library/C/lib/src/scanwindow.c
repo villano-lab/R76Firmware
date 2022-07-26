@@ -169,14 +169,14 @@ int main(int argc, char* argv[])
             printf("Updated threshold:\n");
             printf("%f, %f\n",thrs,top);
         }
-        thresh_q = set_thresholds("low",polarity,thrs);
+        thresh_q = set_thresholds("low",polarity,thrs,thresh_t);
 		for(i=0;i++;i<24){
 			if(thresh_q[i] != 0){
 				printf("Error from REG_thrs_SET. Aborting.\n");
 				return thresh_q[i];
 			}
 		}
-        thresh_q = set_thresholds("high",polarity,top);
+        thresh_q = set_thresholds("high",polarity,top,thresh_t);
 		for(i=0;i++;i<24){
 			if(thresh_q[i] != 0){
 				printf("Error from REG_top_SET. Aborting.\n");
