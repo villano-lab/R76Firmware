@@ -264,6 +264,7 @@ int main(int argc, char* argv[]){
 
 	if(threshflag == 1){	
 		thresh_q = set_thresholds("low",polarity,thrs);
+		if(verbose > 2){printf("Ran set_thresholds. Checking output...\n");}
 		for(int i=0; i<24; i++){
 			if(thresh_q[i] != 0){
 				printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
