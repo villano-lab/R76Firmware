@@ -256,6 +256,7 @@ int main(int argc, char* argv[]){
 				return disable_q[i];
 			}
 		}
+		if(verbose > 0){printf("Detector on/off states set successfully.");}
 	}else if(verbose > 1){
 		printf("Detector flag is off (%d). Skipping.\n",detflag);
 	}
@@ -268,6 +269,7 @@ int main(int argc, char* argv[]){
 				return thresh_q[i];
 			}
 		}
+		if(verbose > 0){printf("Lower thresholds set successfully.");}
 	}else if(verbose > 1){
 		printf("Lower threshold flag is off. Skipping.\n");
 	}
@@ -280,6 +282,7 @@ int main(int argc, char* argv[]){
 				return thresh_q[i];
 			}
 		}
+		if(verbose > 0){printf("Upper thresholds set successfully.");}
 	}else if(verbose > 1){
 		printf("Top threshold flag is off. Skipping.\n");
 	}
