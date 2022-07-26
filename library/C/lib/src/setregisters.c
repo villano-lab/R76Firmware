@@ -263,6 +263,10 @@ int main(int argc, char* argv[]){
 	}
 
 	if(threshflag == 1){	
+		if(verbose > 2){
+			set_thresholds("low",polarity,thrs);
+			printf("Able to run set_thresholds when not assigned to variable.\n");
+		}
 		thresh_q = set_thresholds("low",polarity,thrs);
 		if(verbose > 2){printf("Ran set_thresholds. Checking output...\n");}
 		for(int i=0; i<24; i++){
