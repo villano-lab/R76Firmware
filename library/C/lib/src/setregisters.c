@@ -250,13 +250,14 @@ int main(int argc, char* argv[]){
 	//Now set all the values we determined above
 	if(detflag == 1){
 		disable_q = disable_dets(disable_t, disable);
+		if(verbose > 2){printf("Ran disable_dets. Checking output...\n");}
 		for(int i=0; i<24; i++){
 			if(disable_q[i] != 0){
 				printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
 				return disable_q[i];
 			}
 		}
-		if(verbose > 0){printf("Detector on/off states set successfully.");}
+		if(verbose > 0){printf("Detector on/off states set successfully.\n");}
 	}else if(verbose > 1){
 		printf("Detector flag is off (%d). Skipping.\n",detflag);
 	}
@@ -269,7 +270,7 @@ int main(int argc, char* argv[]){
 				return thresh_q[i];
 			}
 		}
-		if(verbose > 0){printf("Lower thresholds set successfully.");}
+		if(verbose > 0){printf("Lower thresholds set successfully.\n");}
 	}else if(verbose > 1){
 		printf("Lower threshold flag is off. Skipping.\n");
 	}
@@ -282,7 +283,7 @@ int main(int argc, char* argv[]){
 				return thresh_q[i];
 			}
 		}
-		if(verbose > 0){printf("Upper thresholds set successfully.");}
+		if(verbose > 0){printf("Upper thresholds set successfully.\n");}
 	}else if(verbose > 1){
 		printf("Top threshold flag is off. Skipping.\n");
 	}
