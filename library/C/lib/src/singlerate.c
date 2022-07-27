@@ -96,7 +96,7 @@ int main(int argc, char* argv[])
 		if(verbose > 0){printf("Running setregisters utility.\n");}
 		//then construct, run, and free the command.
 		char* command = malloc(100);
-		snprintf(command,100,"./setregisters %s -v%d",argv[optind],verbose);
+		snprintf(command,100,"./setregisters -v%d %s",verbose,argv[optind]);
 		if(configfilename){
             snprintf(command,100,"%s -c%s",command,configfilename);
         }
