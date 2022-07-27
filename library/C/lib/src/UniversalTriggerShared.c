@@ -279,6 +279,8 @@ int *on_to_off(int *off, int on, int verbose){
     return off;
 }
 int energy_to_bin(int detnum, float energy){ //take an energy (MeV) and convert it to a bin number
+	// convert to keV, since that's how our calibrations were done
+	energy = energy * 1000;
 	if(detnum == 0){
 		return energy;
 	}else if(detnum == 1){
