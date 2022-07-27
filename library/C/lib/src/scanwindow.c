@@ -103,7 +103,7 @@ int main(int argc, char* argv[])
     if(optind!=argc){ //if there are args to pass through, tell the user,
         char* command = malloc(100);
 		//then construct, run, and free the command.
-		snprintf(command,100,"./setregisters %s -v%d ",argv[optind],verbose);
+		snprintf(command,100,"./setregisters -v%d %s ",verbose,argv[optind]);
         i = 1;
         int done = 0;
         if(verbose > 2){printf("command progress: %s\n",command);}
@@ -144,20 +144,20 @@ int main(int argc, char* argv[])
     thrs = range_l;
     top = thrs + range_s;
     //Connect to the board.
-	int connect_q = connect_staticaddr(verbose);
+	/*int connect_q = connect_staticaddr(verbose);
 	if(connect_q != 0){
 		printf("Board connection error code: %d\n",connect_q);
 		return connect_q;
-	}
+	}*/
 
     //Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
     if(polflag == 1){
-        polarity_q = REG_polarity_SET(polarity,&handle);
+        /*polarity_q = REG_polarity_SET(polarity,&handle);
         if(polarity_q != 0){
             printf("Error from REG_polarity_SET. Aboring.\n");
             return polarity_q;
-        }
+        }*/
     }
 	tic = time(NULL);
     fprintf(fp,"lower, upper, rate\n"); // add a header row
@@ -200,7 +200,7 @@ int main(int argc, char* argv[])
 
         //write the rate
         fprintf(fp,"%f, %f, %f\n",thrs,top,cumulative/wait);
-		if(verbose>1){printf("lower: %f ; upper: %f, rate: %f Hz\n",thrs,top,cumulative/wait);};
+		if(verbose>1){printf("lower: %f ; upper: %f ; rate: %f Hz\n",thrs,top,cumulative/wait);};
 		thrs += range_s;
         top  += range_s;
     }
