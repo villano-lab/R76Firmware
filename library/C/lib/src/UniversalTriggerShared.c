@@ -280,71 +280,136 @@ int *on_to_off(int *off, int on, int verbose){
 }
 int energy_to_bin(int detnum, float energy){ //take an energy (MeV) and convert it to a bin number
 	// convert to keV, since that's how our calibrations were done
+	float bin;
 	energy = energy * 1000;
 	if(detnum == 0){
-		return energy;
+		bin = energy;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 1){
-		return 1.44*energy + 288.21;
+		bin = 1.44*energy + 288.21;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 2){
-		return 1.29*energy + 258.69;
+		bin = 1.29*energy + 258.69;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 3){
-		return 1.28*energy + 318.06;
+		bin = 1.28*energy + 318.06;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 4){
-		return 1.29*energy + 233.09;
+		bin = 1.29*energy + 233.09;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 5){
-		return 1.28*energy + 197.68;
+		bin = 1.28*energy + 197.68;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 6){
-		return 1.36*energy + 321.82;
+		bin = 1.36*energy + 321.82;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 7){
-		return 1.15*energy + 261.98;
+		bin = 1.15*energy + 261.98;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 8){
-		return 1.17*energy + 284.21;
+		bin = 1.17*energy + 284.21;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 9){
-		return 1.42*energy + 389.04;
+		bin = 1.42*energy + 389.04;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 10){
-		return 1.29*energy + 329.41;
+		bin = 1.29*energy + 329.41;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 11){
-		return 1.32*energy + 282.30;
+		bin = 1.32*energy + 282.30;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 12){
-		return 1.26*energy + 319.53;
+		bin = 1.26*energy + 319.53;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 13){
-		return 1.22*energy + 389.48;
+		bin = 1.22*energy + 389.48;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 14){
-		return 1.36*energy + 203.09;
+		bin = 1.36*energy + 203.09;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 15){
-		return 1.12*energy + 421.60;
+		bin = 1.12*energy + 421.60;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 16){
-		return 1.34*energy + 272.15;
+		bin = 1.34*energy + 272.15;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 17){
-		return 1.23*energy + 308.12;
+		bin = 1.23*energy + 308.12;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 18){
-		return 1.28*energy + 267.85;
+		bin = 1.28*energy + 267.85;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 19){
-		return 1.22*energy + 293.62;
+		bin = 1.22*energy + 293.62;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 20){
-		return 1.44*energy + 299.07;
+		bin = 1.44*energy + 299.07;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 21){
-		return 1.18*energy + 286.40;
+		bin = 1.18*energy + 286.40;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 22){
-		return 1.06*energy + 243.29;
+		bin = 1.06*energy + 243.29;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 23){
-		return 1.36*energy + 334.94;
+		bin = 1.36*energy + 334.94;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 24){
-		return energy;
+		bin = energy;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 25){
-		return energy;
+		bin = energy;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 26){
-		return energy;
+		bin = energy;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 27){
-		return energy;
+		bin = energy;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 28){
-		return energy;
+		bin = energy;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 29){
-		return energy;
+		bin = energy;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 30){
-		return energy;
+		bin = energy;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else if(detnum == 31){
-		return energy;
+		bin = energy;
+		if(verbose > 3){printf("Bin value: %f\n",bin);}
+		return bin;
 	}else{
 		printf("Invalid detector number %d supplied to energy_to_bin function. Must supply a number 0-31.\n",detnum);
 		exit(-1);

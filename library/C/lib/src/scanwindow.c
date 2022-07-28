@@ -144,23 +144,23 @@ int main(int argc, char* argv[])
     thrs = range_l;
     top = thrs + range_s;
     //Connect to the board.
-	/*int connect_q = connect_staticaddr(verbose);
+	int connect_q = connect_staticaddr(verbose);
 	if(connect_q != 0){
 		printf("Board connection error code: %d\n",connect_q);
 		return connect_q;
-	}*/
+	}
 
     //Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
     if(polflag == 1){
-        /*polarity_q = REG_polarity_SET(polarity,&handle);
+        polarity_q = REG_polarity_SET(polarity,&handle);
         if(polarity_q != 0){
             printf("Error from REG_polarity_SET. Aboring.\n");
             return polarity_q;
-        }*/
+        }
     }
 	tic = time(NULL);
-    fprintf(fp,"lower, upper, rate\n"); // add a header row
+    fprintf(fp,"lower (MeV), upper (MeV), rate\n"); // add a header row
     int i;
 	if(verbose>0){printf("Collecting data! \n");};
     while(thrs < range_u){
