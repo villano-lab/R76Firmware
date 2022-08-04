@@ -1,294 +1,294 @@
 {"Registers":[
 {
   "Name": "polarity",
-  "Address": 1,
+  "Address": 0,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "inhib",
-  "Address": 3,
+  "Address": 1,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "delay",
-  "Address": 4,
+  "Address": 2,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_0",
-  "Address": 5,
+  "Address": 3,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_1",
-  "Address": 6,
+  "Address": 4,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_2",
-  "Address": 7,
+  "Address": 5,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_3",
-  "Address": 8,
+  "Address": 6,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_4",
-  "Address": 9,
+  "Address": 7,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_5",
-  "Address": 10,
+  "Address": 8,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_6",
-  "Address": 11,
+  "Address": 9,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_7",
-  "Address": 12,
+  "Address": 10,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_8",
-  "Address": 13,
+  "Address": 11,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_9",
-  "Address": 14,
+  "Address": 12,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_10",
-  "Address": 15,
+  "Address": 13,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_11",
-  "Address": 16,
+  "Address": 14,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_12",
-  "Address": 17,
+  "Address": 15,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_13",
-  "Address": 18,
+  "Address": 16,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_14",
-  "Address": 19,
+  "Address": 17,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_15",
-  "Address": 20,
+  "Address": 18,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_16",
-  "Address": 21,
+  "Address": 19,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_17",
-  "Address": 22,
+  "Address": 20,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_18",
-  "Address": 23,
+  "Address": 21,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_19",
-  "Address": 24,
+  "Address": 22,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_20",
-  "Address": 25,
+  "Address": 23,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_21",
-  "Address": 26,
+  "Address": 24,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_22",
-  "Address": 27,
+  "Address": 25,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_23",
-  "Address": 28,
+  "Address": 26,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_24",
-  "Address": 29,
+  "Address": 27,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "gate_l",
-  "Address": 30,
+  "Address": 28,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "gate_u",
-  "Address": 31,
+  "Address": 29,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "fifo",
-  "Address": 32,
+  "Address": 30,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "read",
-  "Address": 33,
+  "Address": 31,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "empty",
-  "Address": 34,
+  "Address": 32,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "full",
-  "Address": 35,
+  "Address": 33,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "write",
-  "Address": 36,
+  "Address": 34,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_25",
-  "Address": 37,
+  "Address": 35,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_26",
-  "Address": 38,
+  "Address": 36,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_27",
-  "Address": 39,
+  "Address": 37,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_28",
-  "Address": 40,
+  "Address": 38,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_29",
-  "Address": 41,
+  "Address": 39,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_30",
-  "Address": 42,
+  "Address": 40,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
 },
 {
   "Name": "disable_det_31",
-  "Address": 43,
+  "Address": 41,
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
@@ -809,4 +809,538 @@
   "Version": "1.0.0.0",
   "Channels": 1,
   "Registers": []
+},
+{
+  "Name": "lower_threholds",
+  "Type": "RegisterFile",
+  "Address": 327742,
+  "Version": "1.0.0.0",
+  "nsamples": 0,
+  "Registers": [
+    {
+      "Name": "thrsh_0",
+      "Address": 327743,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_1",
+      "Address": 327744,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_2",
+      "Address": 327745,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_3",
+      "Address": 327746,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_4",
+      "Address": 327747,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_5",
+      "Address": 327748,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_6",
+      "Address": 327749,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_7",
+      "Address": 327750,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_8",
+      "Address": 327751,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_9",
+      "Address": 327752,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_10",
+      "Address": 327753,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_11",
+      "Address": 327754,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_12",
+      "Address": 327755,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_13",
+      "Address": 327756,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_14",
+      "Address": 327757,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_15",
+      "Address": 327758,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_16",
+      "Address": 327759,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_17",
+      "Address": 327760,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_18",
+      "Address": 327761,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_19",
+      "Address": 327762,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_20",
+      "Address": 327763,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_21",
+      "Address": 327764,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_22",
+      "Address": 327765,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "thrsh_23",
+      "Address": 327766,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    }
+  ],
+  "Channels": 0
+},
+{
+  "Name": "detector_disable",
+  "Type": "RegisterFile",
+  "Address": 327768,
+  "Version": "1.0.0.0",
+  "nsamples": 0,
+  "Registers": [
+    {
+      "Name": "disable_det_0",
+      "Address": 327769,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_1",
+      "Address": 327770,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_2",
+      "Address": 327771,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_3",
+      "Address": 327772,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_4",
+      "Address": 327773,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_5",
+      "Address": 327774,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_6",
+      "Address": 327775,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_7",
+      "Address": 327776,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_8",
+      "Address": 327777,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_9",
+      "Address": 327778,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_10",
+      "Address": 327779,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_11",
+      "Address": 327780,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_12",
+      "Address": 327781,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_13",
+      "Address": 327782,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_14",
+      "Address": 327783,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_15",
+      "Address": 327784,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_16",
+      "Address": 327785,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_17",
+      "Address": 327786,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_18",
+      "Address": 327787,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_19",
+      "Address": 327788,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_20",
+      "Address": 327789,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_21",
+      "Address": 327790,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_22",
+      "Address": 327791,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "disable_det_23",
+      "Address": 327792,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    }
+  ],
+  "Channels": 0
+},
+{
+  "Name": "upper_threholds",
+  "Type": "RegisterFile",
+  "Address": 327794,
+  "Version": "1.0.0.0",
+  "nsamples": 0,
+  "Registers": [
+    {
+      "Name": "top_0",
+      "Address": 327795,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_1",
+      "Address": 327796,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_2",
+      "Address": 327797,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_3",
+      "Address": 327798,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_4",
+      "Address": 327799,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_5",
+      "Address": 327800,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_6",
+      "Address": 327801,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_7",
+      "Address": 327802,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_8",
+      "Address": 327803,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_9",
+      "Address": 327804,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_10",
+      "Address": 327805,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_11",
+      "Address": 327806,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_12",
+      "Address": 327807,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_13",
+      "Address": 327808,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_14",
+      "Address": 327809,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_15",
+      "Address": 327810,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_16",
+      "Address": 327811,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_17",
+      "Address": 327812,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_18",
+      "Address": 327813,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_19",
+      "Address": 327814,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_20",
+      "Address": 327815,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_21",
+      "Address": 327816,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_22",
+      "Address": 327817,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "top_23",
+      "Address": 327818,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    }
+  ],
+  "Channels": 0
 }],"Device":"DT5560","Project":"R76Firmware"}
