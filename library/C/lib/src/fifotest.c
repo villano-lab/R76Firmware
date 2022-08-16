@@ -295,7 +295,7 @@ int main(int argc, char* argv[])
 	spectra_DOWNLOAD(spec_dl,1000,spectra_t,specvalid_t);
 	for(i=0;i<32;i++){
 		printf("Donwloaded data (Spectrum #%d): \n",i);
-			for(int j=0;j++;j<BUFFER_SIZE+17){
+			for(int j=0;j<BUFFER_SIZE+17;j++){
 				printf("%d, ",spec_dl[i+j]);
 			}
 		printf("\n\n\n");
