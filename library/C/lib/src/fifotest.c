@@ -116,7 +116,7 @@ int main(int argc, char* argv[])
 		printf("Error! Failed to set the `baseline` variable. \n");
 		return baseline;
 	}
-	if(verbose>0){printf("If you are not getting any triggers, please try running `./setregisters.exe -R` and try again.\n");}
+	if(verbose>0){printf("If you are not getting any triggers, please try running `./setregisters -R` and try again.\n");}
 	
 	//Reset everything real quick
 	reset_q = REG_reset_SET(1,&handle);
@@ -240,5 +240,59 @@ int main(int argc, char* argv[])
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
 	}
+
+	// Spectrum section
+	spectra_STOP(spectra_t);
+	for(i=0;i++;i<24){
+		if(spectra_t[i] != 0){
+			printf("Error! Failed to stop spectrum %d.\n",i);
+			return spectra_t[i];
+		}
+	}
+
+	spectra_RESET(spectra_t);
+	for(i=0;i++;i<24){
+		if(spectra_t[i] != 0){
+			printf("Error! Failed to reset spectrum %d.\n",i);
+			return spectra_t[i];
+		}
+	}
+
+	spectra_FLUSH(spectra_t);
+	for(i=0;i++;i<24){
+		if(spectra_t[i] != 0){
+			printf("Error! Failed to flush spectrum %d.\n",i);
+			return spectra_t[i];
+		}
+	}
+
+	spectra_START(spectra_t);
+	for(i=0;i++;i<24){
+		if(spectra_t[i] != 0){
+			printf("Error! Failed to start spectrum %d.\n",i);
+			return spectra_t[i];
+		}
+	}
+
+	wait(100);
+
+	spectra_STOP(spectra_t);
+	for(i=0;i++;i<24){
+		if(spectra_t[i] != 0){
+			printf("Error! Failed to stop spectrum %d.\n",i);
+			return spectra_t[i];
+		}
+	}
+
+	spectra_STATUS(spectra_t);
+	for(i=0;i++;i<24){
+		printf("Status spectrum #%d: %d\n",i,spectra_t[i]);
+	}
+
+	spectra_DOWNLOAD(spec_dl,1000,spectra_t,specvalid_t);
+	for(i=0;i++;i<size(spec_dl)){
+		printf("Donwloaded data: %d\n",spec_dl[i]);
+	}
+
 	return 0;
 }	

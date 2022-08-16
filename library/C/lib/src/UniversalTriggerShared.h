@@ -61,8 +61,13 @@ extern int polarity_q;
 extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
+extern int *spectra_q;
+extern int *specread_q;
+extern int *specvalid_q;
 extern int disable_t[32];
 extern int thresh_t[32];
+extern int spectra_q[32];
+extern int specvalid_q[32];
 extern uint32_t spec_dl[1040];
 extern uint32_t size;
 extern int reset_q;
