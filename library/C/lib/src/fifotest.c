@@ -224,7 +224,7 @@ int main(int argc, char* argv[])
 		if(logfile != NULL){fprintf(logfile,"Emptied %d entries over the course of %d seconds.\n",i,(int)toc-(int)tic);}
 	}
 	
-	printf("\n"); //be nice to the terminal
+	if(verbose>0){printf("Stopping FIFO...\n");}
 	//stop reading & writing and reset.
 	read_q = REG_read_SET(0,&handle);
 		if(read_q != 0){
@@ -242,6 +242,7 @@ int main(int argc, char* argv[])
 	}
 
 	// Spectrum section
+	if(verbose>0){printf("Testing spectrum...\n");}
 	spectra_STOP(spectra_t);
 	for(i=0;i++;i<24){
 		if(spectra_t[i] != 0){
