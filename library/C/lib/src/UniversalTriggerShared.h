@@ -10,7 +10,7 @@
 #include <getopt.h>
 #include <math.h>
 
-//Defaults
+//Text defines
 #define BOARD_IP_ADDRESS ("134.84.150.42")
 #define DET_TEXT (" -D,	--det	<# or source name>	Choose which detectors to trigger on (default: all).\n					Number values are bitwise from 0 to all 1s in 32 bit (4294967295).\n")
 #define GATE_TEXT (" -g,	--gate	'<lower #> <upper #>'	Set the gate times for the upper and lower triggers in clock ticks (integer. defaults: 0-100)\n					The two entries are delimited by spaces, commas, or dashes. Both must be provided.\n")
@@ -32,6 +32,8 @@
 #define INT_TIME_TEXT (" -I, --int-time  <#> Set the integration time in clock cycles. (integer. default: 250)\n")
 #define CONFIG_TEXT (" -c,   --config    <file>  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
 #define WAIT_TEXT (" -w,    --wait  <#> Set the number of 10-second cycles to wait through and average results from. (integer. if not supplied, uses one cycle.)\n")
+//Assigning buffer sizes
+#define BUFFER_SIZE (1024)
 
 //Defaults
 extern int verbose;
@@ -61,14 +63,16 @@ extern int polarity_q;
 extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
-extern int *spectra_q;
-extern int *specread_q;
-extern int *specvalid_q;
+extern uint32_t *specread_q;
+extern int *specvalid;
+extern int spectra_t[32];
+extern int specvalid_t[32];
 extern int disable_t[32];
 extern int thresh_t[32];
-extern int spectra_q[32];
-extern int specvalid_q[32];
-extern uint32_t spec_dl[1040];
+//extern uint32_t spectra_q[32];
+//extern uint32_t specvalid_q[32];
+extern int specdat[32*17*BUFFER_SIZE];
+extern uint32_t spec_dl[32*17*BUFFER_SIZE];
 extern uint32_t size;
 extern int reset_q;
 extern int read_q;
@@ -147,9 +151,17 @@ int energy_to_bin(int detnum, float energy);                            //conver
 //compatibility functions
 int REG_top_SET(uint32_t value, NI_HANDLE* handle);                           //set all top thresholds to a bin number
 int REG_thrsh_SET(uint32_t value, NI_HANDLE* handle);                         //set all lower thesholds to a bin number
-//other functions
-int connect_staticaddr(int verbose);                                    //connect to the board, with print functions.
+//multichannel functions
 int *disable_dets(int *disable_q, int disable[24]);                     //disable detectors based on input array
 int *set_thresholds(char* side, int polarity, float energy, int *thresh_q);            //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
+int *spectra_START(int *spectra_q);
+int *spectra_STOP(int *spectra_q);
+int *spectra_FLUSH(int *spectra_q);
+int *spectra_RESET(int *spectra_q);
+int *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint32_t limit_value, int *spectra_q);
+int *spectra_STATUS(uint32_t *spectra_q);
+int *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, int *specread_q, int *specvalid_q);
+//utility functions
+int connect_staticaddr(int verbose);                                    //connect to the board, with print functions.
 int set_by_polarity(int (*f)(uint32_t, NI_HANDLE*), int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
 int kbhit(void);                                                        //allow keyboard interrupt

@@ -66,14 +66,15 @@ char* selection;
 int *disable_q; // array of disable instead of 24 initializations
 int *disable;
 int *thresh_q;
-int *spectra_q;
-int *specread_q;
-int *specvalid_q;
+uint32_t *spectra_q;
+uint32_t *specread_q;
+uint32_t *specvalid_q;
 int disable_t[32];
 int thresh_t[32];
 int spectra_t[32];
-uint32_t specvalid_t[32];
-uint32_t spec_dl[1040];
+int specdat[32*17*BUFFER_SIZE];
+int specvalid_t[32];
+uint32_t spec_dl[32*17*BUFFER_SIZE];
 uint32_t size = 1024;
 int reset_q;
 int read_q;
@@ -647,28 +648,28 @@ int *spectra_START(int *spectra_q){
 }
 
 int *spectra_STOP(int *spectra_q){
-	spectra_q[0 ] = SPECTRUM_SPECTRUM_0_STOP (&handle);
-	spectra_q[1 ] = SPECTRUM_SPECTRUM_1_STOP (&handle);
-	spectra_q[2 ] = SPECTRUM_SPECTRUM_2_STOP (&handle);
-	spectra_q[3 ] = SPECTRUM_SPECTRUM_3_STOP (&handle);
-	spectra_q[4 ] = SPECTRUM_SPECTRUM_4_STOP (&handle);
-	spectra_q[5 ] = SPECTRUM_SPECTRUM_5_STOP (&handle);
-	spectra_q[6 ] = SPECTRUM_SPECTRUM_6_STOP (&handle);
-	spectra_q[7 ] = SPECTRUM_SPECTRUM_7_STOP (&handle);
-	spectra_q[8 ] = SPECTRUM_SPECTRUM_8_STOP (&handle);
-	spectra_q[9 ] = SPECTRUM_SPECTRUM_9_STOP (&handle);
-	spectra_q[10] = SPECTRUM_SPECTRUM_10_STOP(&handle);
-	spectra_q[11] = SPECTRUM_SPECTRUM_11_STOP(&handle);
-	spectra_q[12] = SPECTRUM_SPECTRUM_12_STOP(&handle);
-	spectra_q[13] = SPECTRUM_SPECTRUM_13_STOP(&handle);
-	spectra_q[14] = SPECTRUM_SPECTRUM_14_STOP(&handle);
-	spectra_q[15] = SPECTRUM_SPECTRUM_15_STOP(&handle);
-	spectra_q[16] = SPECTRUM_SPECTRUM_16_STOP(&handle);
-	spectra_q[17] = SPECTRUM_SPECTRUM_17_STOP(&handle);
-	spectra_q[18] = SPECTRUM_SPECTRUM_18_STOP(&handle);
-	spectra_q[19] = SPECTRUM_SPECTRUM_19_STOP(&handle);
-	spectra_q[20] = SPECTRUM_SPECTRUM_20_STOP(&handle);
-	spectra_q[21] = SPECTRUM_SPECTRUM_21_STOP(&handle);
+	spectra_q[0 ] = SPECTRUM_Spectrum_0_STOP (&handle);
+	spectra_q[1 ] = SPECTRUM_Spectrum_1_STOP (&handle);
+	spectra_q[2 ] = SPECTRUM_Spectrum_2_STOP (&handle);
+	spectra_q[3 ] = SPECTRUM_Spectrum_3_STOP (&handle);
+	spectra_q[4 ] = SPECTRUM_Spectrum_4_STOP (&handle);
+	spectra_q[5 ] = SPECTRUM_Spectrum_5_STOP (&handle);
+	spectra_q[6 ] = SPECTRUM_Spectrum_6_STOP (&handle);
+	spectra_q[7 ] = SPECTRUM_Spectrum_7_STOP (&handle);
+	spectra_q[8 ] = SPECTRUM_Spectrum_8_STOP (&handle);
+	spectra_q[9 ] = SPECTRUM_Spectrum_9_STOP (&handle);
+	spectra_q[10] = SPECTRUM_Spectrum_10_STOP(&handle);
+	spectra_q[11] = SPECTRUM_Spectrum_11_STOP(&handle);
+	spectra_q[12] = SPECTRUM_Spectrum_12_STOP(&handle);
+	spectra_q[13] = SPECTRUM_Spectrum_13_STOP(&handle);
+	spectra_q[14] = SPECTRUM_Spectrum_14_STOP(&handle);
+	spectra_q[15] = SPECTRUM_Spectrum_15_STOP(&handle);
+	spectra_q[16] = SPECTRUM_Spectrum_16_STOP(&handle);
+	spectra_q[17] = SPECTRUM_Spectrum_17_STOP(&handle);
+	spectra_q[18] = SPECTRUM_Spectrum_18_STOP(&handle);
+	spectra_q[19] = SPECTRUM_Spectrum_19_STOP(&handle);
+	spectra_q[20] = SPECTRUM_Spectrum_20_STOP(&handle);
+	spectra_q[21] = SPECTRUM_Spectrum_21_STOP(&handle);
 	spectra_q[22] = SPECTRUM_Spectrum_22_STOP(&handle);
 	spectra_q[23] = SPECTRUM_Spectrum_23_STOP(&handle);
 	return spectra_q;
@@ -698,7 +699,7 @@ int *spectra_FLUSH(int *spectra_q){
 	spectra_q[20] = SPECTRUM_Spectrum_20_FLUSH(&handle);
 	spectra_q[21] = SPECTRUM_Spectrum_21_FLUSH(&handle);
 	spectra_q[22] = SPECTRUM_Spectrum_22_FLUSH(&handle);
-	spectra_q[23] = SPECTRUM_SPECTRUM_23_FLUSH(&handle);
+	spectra_q[23] = SPECTRUM_Spectrum_23_FLUSH(&handle);
 	return spectra_q;
 }
 
@@ -726,11 +727,11 @@ int *spectra_RESET(int *spectra_q){
 	spectra_q[20] = SPECTRUM_Spectrum_20_RESET(&handle);
 	spectra_q[21] = SPECTRUM_Spectrum_21_RESET(&handle);
 	spectra_q[22] = SPECTRUM_Spectrum_22_RESET(&handle);
-	spectra_q[23] = SPECTURM_Spectrum_23_RESET(&handle);
+	spectra_q[23] = SPECTRUM_Spectrum_23_RESET(&handle);
 	return spectra_q;
 }
 
-int *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint_32t limit_value, int *spectra_q){
+int *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint32_t limit_value, int *spectra_q){
 	spectra_q[0 ] = SPECTRUM_Spectrum_0_SET_PARAMETERS (rebin,limit_mode,limit_value,&handle);
 	spectra_q[1 ] = SPECTRUM_Spectrum_1_SET_PARAMETERS (rebin,limit_mode,limit_value,&handle);
 	spectra_q[2 ] = SPECTRUM_Spectrum_2_SET_PARAMETERS (rebin,limit_mode,limit_value,&handle);
@@ -758,60 +759,60 @@ int *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint_32t limit_value, int 
 	return spectra_q;
 }
 
-int *spectra_STATUS(int *spectra_q){
-	SPECTRUM_Spectrum_0_STATUS (spectra_q[0 ],&handle);
-	SPECTRUM_Spectrum_1_STATUS (spectra_q[1 ],&handle);
-	SPECTRUM_Spectrum_2_STATUS (spectra_q[2 ],&handle);
-	SPECTRUM_Spectrum_3_STATUS (spectra_q[3 ],&handle);
-	SPECTRUM_Spectrum_4_STATUS (spectra_q[4 ],&handle);
-	SPECTRUM_Spectrum_5_STATUS (spectra_q[5 ],&handle);
-	SPECTRUM_Spectrum_6_STATUS (spectra_q[6 ],&handle);
-	SPECTRUM_Spectrum_7_STATUS (spectra_q[7 ],&handle);
-	SPECTRUM_Spectrum_8_STATUS (spectra_q[8 ],&handle);
-	SPECTRUM_Spectrum_9_STATUS (spectra_q[9 ],&handle);
-	SPECTRUM_Spectrum_10_STATUS(spectra_q[10],&handle);
-	SPECTRUM_Spectrum_11_STATUS(spectra_q[11],&handle);
-	SPECTRUM_Spectrum_12_STATUS(spectra_q[12],&handle);
-	SPECTRUM_Spectrum_13_STATUS(spectra_q[13],&handle);
-	SPECTRUM_Spectrum_14_STATUS(spectra_q[14],&handle);
-	SPECTRUM_Spectrum_15_STATUS(spectra_q[15],&handle);
-	SPECTRUM_Spectrum_16_STATUS(spectra_q[16],&handle);
-	SPECTRUM_Spectrum_17_STATUS(spectra_q[17],&handle);
-	SPECTRUM_Spectrum_18_STATUS(spectra_q[18],&handle);
-	SPECTRUM_Spectrum_19_STATUS(spectra_q[19],&handle);
-	SPECTRUM_Spectrum_20_STATUS(spectra_q[20],&handle);
-	SPECTRUM_Spectrum_21_STATUS(spectra_q[21],&handle);
-	SPECTRUM_Spectrum_22_STATUS(spectra_q[22],&handle);
-	SPECTRUM_Spectrum_23_STATUS(spectra_q[23],&handle);
+int *spectra_STATUS(uint32_t *spectra_q){
+	SPECTRUM_Spectrum_0_STATUS (&spectra_q[0 ],&handle);
+	SPECTRUM_Spectrum_1_STATUS (&spectra_q[1 ],&handle);
+	SPECTRUM_Spectrum_2_STATUS (&spectra_q[2 ],&handle);
+	SPECTRUM_Spectrum_3_STATUS (&spectra_q[3 ],&handle);
+	SPECTRUM_Spectrum_4_STATUS (&spectra_q[4 ],&handle);
+	SPECTRUM_Spectrum_5_STATUS (&spectra_q[5 ],&handle);
+	SPECTRUM_Spectrum_6_STATUS (&spectra_q[6 ],&handle);
+	SPECTRUM_Spectrum_7_STATUS (&spectra_q[7 ],&handle);
+	SPECTRUM_Spectrum_8_STATUS (&spectra_q[8 ],&handle);
+	SPECTRUM_Spectrum_9_STATUS (&spectra_q[9 ],&handle);
+	SPECTRUM_Spectrum_10_STATUS(&spectra_q[10],&handle);
+	SPECTRUM_Spectrum_11_STATUS(&spectra_q[11],&handle);
+	SPECTRUM_Spectrum_12_STATUS(&spectra_q[12],&handle);
+	SPECTRUM_Spectrum_13_STATUS(&spectra_q[13],&handle);
+	SPECTRUM_Spectrum_14_STATUS(&spectra_q[14],&handle);
+	SPECTRUM_Spectrum_15_STATUS(&spectra_q[15],&handle);
+	SPECTRUM_Spectrum_16_STATUS(&spectra_q[16],&handle);
+	SPECTRUM_Spectrum_17_STATUS(&spectra_q[17],&handle);
+	SPECTRUM_Spectrum_18_STATUS(&spectra_q[18],&handle);
+	SPECTRUM_Spectrum_19_STATUS(&spectra_q[19],&handle);
+	SPECTRUM_Spectrum_20_STATUS(&spectra_q[20],&handle);
+	SPECTRUM_Spectrum_21_STATUS(&spectra_q[21],&handle);
+	SPECTRUM_Spectrum_22_STATUS(&spectra_q[22],&handle);
+	SPECTRUM_Spectrum_23_STATUS(&spectra_q[23],&handle);
 	return spectra_q;
 }
 
-int *spectra_DOWNLOAD(int *spectra_q, uint32_t timeout, int *specread_q, int *specvalid_q){
-	SPECTRUM_Spectrum_0_DOWNLOAD (spectra_q[0 ],BUFFER_SIZE_Spectrum_0,  timeout, &handle, specread_q[0 ], specvalid_q[0 ]);
-	SPECTRUM_Spectrum_1_DOWNLOAD (spectra_q[1 ],BUFFER_SIZE_Spectrum_1,  timeout, &handle, specread_q[1 ], specvalid_q[1 ]);
-	SPECTRUM_Spectrum_2_DOWNLOAD (spectra_q[2 ],BUFFER_SIZE_Spectrum_2,  timeout, &handle, specread_q[2 ], specvalid_q[2 ]);
-	SPECTRUM_Spectrum_3_DOWNLOAD (spectra_q[3 ],BUFFER_SIZE_Spectrum_3,  timeout, &handle, specread_q[3 ], specvalid_q[3 ]);
-	SPECTRUM_Spectrum_4_DOWNLOAD (spectra_q[4 ],BUFFER_SIZE_Spectrum_4,  timeout, &handle, specread_q[4 ], specvalid_q[4 ]);
-	SPECTRUM_Spectrum_5_DOWNLOAD (spectra_q[5 ],BUFFER_SIZE_Spectrum_5,  timeout, &handle, specread_q[5 ], specvalid_q[5 ]);
-	SPECTRUM_Spectrum_6_DOWNLOAD (spectra_q[6 ],BUFFER_SIZE_Spectrum_6,  timeout, &handle, specread_q[6 ], specvalid_q[6 ]);
-	SPECTRUM_Spectrum_7_DOWNLOAD (spectra_q[7 ],BUFFER_SIZE_Spectrum_7,  timeout, &handle, specread_q[7 ], specvalid_q[7 ]);
-	SPECTRUM_Spectrum_8_DOWNLOAD (spectra_q[8 ],BUFFER_SIZE_Spectrum_8,  timeout, &handle, specread_q[8 ], specvalid_q[8 ]);
-	SPECTRUM_Spectrum_9_DOWNLOAD (spectra_q[9 ],BUFFER_SIZE_Spectrum_9,  timeout, &handle, specread_q[9 ], specvalid_q[9 ]);
-	SPECTRUM_Spectrum_10_DOWNLOAD(spectra_q[10],BUFFER_SIZE_Spectrum_10, timeout, &handle, specread_q[10], specvalid_q[10]);
-	SPECTRUM_Spectrum_11_DOWNLOAD(spectra_q[11],BUFFER_SIZE_Spectrum_11, timeout, &handle, specread_q[11], specvalid_q[11]);
-	SPECTRUM_Spectrum_12_DOWNLOAD(spectra_q[12],BUFFER_SIZE_Spectrum_12, timeout, &handle, specread_q[12], specvalid_q[12]);
-	SPECTRUM_Spectrum_13_DOWNLOAD(spectra_q[13],BUFFER_SIZE_Spectrum_13, timeout, &handle, specread_q[13], specvalid_q[13]);
-	SPECTRUM_Spectrum_14_DOWNLOAD(spectra_q[14],BUFFER_SIZE_Spectrum_14, timeout, &handle, specread_q[14], specvalid_q[14]);
-	SPECTRUM_Spectrum_15_DOWNLOAD(spectra_q[15],BUFFER_SIZE_Spectrum_15, timeout, &handle, specread_q[15], specvalid_q[15]);
-	SPECTRUM_Spectrum_16_DOWNLOAD(spectra_q[16],BUFFER_SIZE_Spectrum_16, timeout, &handle, specread_q[16], specvalid_q[16]);
-	SPECTRUM_Spectrum_17_DOWNLOAD(spectra_q[17],BUFFER_SIZE_Spectrum_17, timeout, &handle, specread_q[17], specvalid_q[17]);
-	SPECTRUM_Spectrum_18_DOWNLOAD(spectra_q[18],BUFFER_SIZE_Spectrum_18, timeout, &handle, specread_q[18], specvalid_q[18]);
-	SPECTRUM_Spectrum_19_DOWNLOAD(spectra_q[19],BUFFER_SIZE_Spectrum_19, timeout, &handle, specread_q[19], specvalid_q[19]);
-	SPECTRUM_Spectrum_20_DOWNLOAD(spectra_q[20],BUFFER_SIZE_Spectrum_20, timeout, &handle, specread_q[20], specvalid_q[20]);
-	SPECTRUM_Spectrum_21_DOWNLOAD(spectra_q[21],BUFFER_SIZE_Spectrum_21, timeout, &handle, specread_q[21], specvalid_q[21]);
-	SPECTRUM_Spectrum_22_DOWNLOAD(spectra_q[22],BUFFER_SIZE_Spectrum_22, timeout, &handle, specread_q[22], specvalid_q[22]);
-	SPECTRUM_Spectrum_23_DOWNLOAD(spectra_q[23],BUFFER_SIZE_Spectrum_23, timeout, &handle, specread_q[23], specvalid_q[23]);
-	return spectra_q;
+int *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, int *specread_q, int *specvalid_q){
+	SPECTRUM_Spectrum_0_DOWNLOAD (&specdat[0 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[0 ], &specvalid_q[0 ]);
+	SPECTRUM_Spectrum_1_DOWNLOAD (&specdat[1 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[1 ], &specvalid_q[1 ]);
+	SPECTRUM_Spectrum_2_DOWNLOAD (&specdat[2 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[2 ], &specvalid_q[2 ]);
+	SPECTRUM_Spectrum_3_DOWNLOAD (&specdat[3 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[3 ], &specvalid_q[3 ]);
+	SPECTRUM_Spectrum_4_DOWNLOAD (&specdat[4 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[4 ], &specvalid_q[4 ]);
+	SPECTRUM_Spectrum_5_DOWNLOAD (&specdat[5 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[5 ], &specvalid_q[5 ]);
+	SPECTRUM_Spectrum_6_DOWNLOAD (&specdat[6 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[6 ], &specvalid_q[6 ]);
+	SPECTRUM_Spectrum_7_DOWNLOAD (&specdat[7 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[7 ], &specvalid_q[7 ]);
+	SPECTRUM_Spectrum_8_DOWNLOAD (&specdat[8 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[8 ], &specvalid_q[8 ]);
+	SPECTRUM_Spectrum_9_DOWNLOAD (&specdat[9 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[9 ], &specvalid_q[9 ]);
+	SPECTRUM_Spectrum_10_DOWNLOAD(&specdat[10*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[10], &specvalid_q[10]);
+	SPECTRUM_Spectrum_11_DOWNLOAD(&specdat[11*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[11], &specvalid_q[11]);
+	SPECTRUM_Spectrum_12_DOWNLOAD(&specdat[12*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[12], &specvalid_q[12]);
+	SPECTRUM_Spectrum_13_DOWNLOAD(&specdat[13*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[13], &specvalid_q[13]);
+	SPECTRUM_Spectrum_14_DOWNLOAD(&specdat[14*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[14], &specvalid_q[14]);
+	SPECTRUM_Spectrum_15_DOWNLOAD(&specdat[15*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[15], &specvalid_q[15]);
+	SPECTRUM_Spectrum_16_DOWNLOAD(&specdat[16*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[16], &specvalid_q[16]);
+	SPECTRUM_Spectrum_17_DOWNLOAD(&specdat[17*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[17], &specvalid_q[17]);
+	SPECTRUM_Spectrum_18_DOWNLOAD(&specdat[18*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[18], &specvalid_q[18]);
+	SPECTRUM_Spectrum_19_DOWNLOAD(&specdat[19*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[19], &specvalid_q[19]);
+	SPECTRUM_Spectrum_20_DOWNLOAD(&specdat[20*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[20], &specvalid_q[20]);
+	SPECTRUM_Spectrum_21_DOWNLOAD(&specdat[21*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[21], &specvalid_q[21]);
+	SPECTRUM_Spectrum_22_DOWNLOAD(&specdat[22*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[22], &specvalid_q[22]);
+	SPECTRUM_Spectrum_23_DOWNLOAD(&specdat[23*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[23], &specvalid_q[23]);
+	return specdat;
 }
 
 int set_by_polarity(int (*f)(uint32_t, NI_HANDLE*), int polarity, int value){

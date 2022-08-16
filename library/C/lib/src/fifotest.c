@@ -274,7 +274,7 @@ int main(int argc, char* argv[])
 		}
 	}
 
-	wait(100);
+	sleep(100);
 
 	spectra_STOP(spectra_t);
 	for(i=0;i++;i<24){
@@ -290,8 +290,12 @@ int main(int argc, char* argv[])
 	}
 
 	spectra_DOWNLOAD(spec_dl,1000,spectra_t,specvalid_t);
-	for(i=0;i++;i<size(spec_dl)){
-		printf("Donwloaded data: %d\n",spec_dl[i]);
+	for(i=0;i++;i<32){
+		printf("Donwloaded data (Spectrum #%d): \n",i);
+			for(int j=0;j++;j<BUFFER_SIZE+17){
+				printf("%d, ",spec_dl[i+j]);
+			}
+		printf("\n\n\n");
 	}
 
 	return 0;
