@@ -244,7 +244,7 @@ int main(int argc, char* argv[])
 	// Spectrum section
 	if(verbose>0){printf("Testing spectrum...\n");}
 	spectra_STOP(spectra_t);
-	for(i=0;i++;i<24){
+	for(i=0;i<24;i++){
 		if(spectra_t[i] != 0){
 			printf("Error! Failed to stop spectrum %d.\n",i);
 			return spectra_t[i];
@@ -252,7 +252,7 @@ int main(int argc, char* argv[])
 	}
 
 	spectra_RESET(spectra_t);
-	for(i=0;i++;i<24){
+	for(i=0;i<24;i++){
 		if(spectra_t[i] != 0){
 			printf("Error! Failed to reset spectrum %d.\n",i);
 			return spectra_t[i];
@@ -260,7 +260,7 @@ int main(int argc, char* argv[])
 	}
 
 	spectra_FLUSH(spectra_t);
-	for(i=0;i++;i<24){
+	for(i=0;i<24;i++){
 		if(spectra_t[i] != 0){
 			printf("Error! Failed to flush spectrum %d.\n",i);
 			return spectra_t[i];
@@ -268,7 +268,7 @@ int main(int argc, char* argv[])
 	}
 
 	spectra_START(spectra_t);
-	for(i=0;i++;i<24){
+	for(i=0;i<24;i++){
 		if(spectra_t[i] != 0){
 			printf("Error! Failed to start spectrum %d.\n",i);
 			return spectra_t[i];
@@ -279,7 +279,7 @@ int main(int argc, char* argv[])
 	sleep(100);
 
 	spectra_STOP(spectra_t);
-	for(i=0;i++;i<24){
+	for(i=0;i<24;i++){
 		if(spectra_t[i] != 0){
 			printf("Error! Failed to stop spectrum %d.\n",i);
 			return spectra_t[i];
@@ -288,12 +288,12 @@ int main(int argc, char* argv[])
 
 	if(verbose>0){printf("Done taking spectrum data!\n");}
 	spectra_STATUS(spectra_t);
-	for(i=0;i++;i<24){
+	for(i=0;i<24;i++){
 		printf("Status spectrum #%d: %d\n",i,spectra_t[i]);
 	}
 
 	spectra_DOWNLOAD(spec_dl,1000,spectra_t,specvalid_t);
-	for(i=0;i++;i<32){
+	for(i=0;i<32;i++){
 		printf("Donwloaded data (Spectrum #%d): \n",i);
 			for(int j=0;j++;j<BUFFER_SIZE+17){
 				printf("%d, ",spec_dl[i+j]);
