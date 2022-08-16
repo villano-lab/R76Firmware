@@ -275,6 +275,7 @@ int main(int argc, char* argv[])
 		}
 	}
 
+	if(verbose>0){printf("Taking spectrum data for 100 seconds...\n");}
 	sleep(100);
 
 	spectra_STOP(spectra_t);
@@ -285,6 +286,7 @@ int main(int argc, char* argv[])
 		}
 	}
 
+	if(verbose>0){printf("Done taking spectrum data!\n");}
 	spectra_STATUS(spectra_t);
 	for(i=0;i++;i<24){
 		printf("Status spectrum #%d: %d\n",i,spectra_t[i]);
