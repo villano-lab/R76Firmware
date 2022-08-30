@@ -275,7 +275,7 @@ int main(int argc, char* argv[]){
 		if(verbose > 2){printf("Ran set_thresholds. Checking output...\n");}
 		for(int i=0; i<24; i++){
 			if(thresh_q[i] != 0){
-				printf("Unable to set on/off state of detector #%d! Aborting.\n",i);
+				printf("Unable to set threshold of detector #%d! Aborting.\n",i);
 				return thresh_q[i];
 			}
 		}
@@ -285,10 +285,10 @@ int main(int argc, char* argv[]){
 	}
 	//set top
 	if(topflag == 1){
-		thresh_q = set_thresholds("high",polarity,thrs,thresh_t);
+		thresh_q = set_thresholds("high",polarity,top,thresh_t);
 		for(int i=0; i<24; i++){
 			if(thresh_q[i] != 0){
-				printf("Unable to set lower threshold of detector #%d! Aborting.\n",i);
+				printf("Unable to set upper threshold of detector #%d! Aborting.\n",i);
 				return thresh_q[i];
 			}
 		}
