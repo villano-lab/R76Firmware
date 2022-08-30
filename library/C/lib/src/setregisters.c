@@ -150,6 +150,11 @@ int main(int argc, char* argv[]){
 		printf("Running in verbose mode. Verbosity: %d\n",verbose);
 	};
 
+	//If the user said to reset, or if they didn't set anything and the program is going to do nothing
+	if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && polflag == 0){
+		printf("No variables set by the user. ");
+		reset = 1;
+	}
 	if(reset == 1){
 		if(force == 0){
 			printf("Reset all un-provided variables to their default values? (y/n): ");
@@ -164,6 +169,9 @@ int main(int argc, char* argv[]){
 				skipflag = 1;
 				polflag = 1;
 			}else if(strcasecmp(userinput, "n") == 0 || strcasecmp(userinput, "no") == 0 || userinput == "0"){
+				if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && polflag == 0){
+					return 0;
+				}
 				if(verbose>-1){printf("Proceeding with provided values only.");}
 			}else{
 				if(verbose > 2){printf("You supplied: %s. ",userinput);}
@@ -207,7 +215,7 @@ int main(int argc, char* argv[]){
 
 	//Some printing statements	
 	if(skipflag == 1){
-		if(verbose>-1){
+		if(verbose>0){
 			if(skip >1){
 				printf("Setting to skip every %d triggers.\n",skip);}	
 			}else if(skip == 1){
