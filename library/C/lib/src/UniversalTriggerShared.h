@@ -31,7 +31,7 @@
 #define PRE_INT_TEXT (" -P,  --pre-int   <#> Set the pre-integration time in clock cycles. (integer. default: 30)\n")
 #define INT_TIME_TEXT (" -I, --int-time  <#> Set the integration time in clock cycles. (integer. default: 250)\n")
 #define CONFIG_TEXT (" -c,   --config    <file>  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
-#define WAIT_TEXT (" -w,    --wait  <#> Set the number of 10-second cycles to wait through and average results from. (integer. if not supplied, uses one cycle.)\n")
+#define WAIT_TEXT (" -w,    --wait  <#> Set the number of 10-second cycles to wait through for data collection. (integer. if not supplied, uses one cycle.)\n")
 //Assigning buffer sizes
 #define BUFFER_SIZE (1024)
 

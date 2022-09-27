@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
 			return 0;
 			break;
 		case 'V':
-			printf("Scan Rate\n");
+			printf("FIFO Test\n");
 			copyright();
 			return 0;
 			break;
