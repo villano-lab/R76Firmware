@@ -21,6 +21,7 @@
 #include  "UniversalTriggerShared.h"
 
 const char* program_name = "fifotest";
+int waittime=12; //default 2 minutes data
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
 	fprintf (stream, "Usage:  %s options \n", program_name);
@@ -73,7 +74,7 @@ int main(int argc, char* argv[])
 			};
 			break;
         case 'w':
-            int waittime = atoi(optarg);
+            waittime = atoi(optarg);
             break;
 		}
 	}
@@ -92,8 +93,11 @@ int main(int argc, char* argv[])
 		return connect_q;
 	}
 
+<<<<<<< HEAD
 	int i=0;
 	
+=======
+>>>>>>> 9fc1332e60abb56d62509733b942361487106540
 	//Reset everything real quick
 	reset_q = REG_reset_SET(1,&handle);
 	if(reset_q != 0){
@@ -105,7 +109,12 @@ int main(int argc, char* argv[])
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
 	}
+<<<<<<< HEAD
 
+=======
+	tic = time(NULL);
+	
+>>>>>>> 9fc1332e60abb56d62509733b942361487106540
 	// Spectrum section
 	spectra_STOP(spectra_t);
 	for(i=0;i<24;i++){
@@ -148,7 +157,7 @@ int main(int argc, char* argv[])
 
     if(verbose > 0){printf("Gathering data for %d seconds.\n",waittime*10);}
     for(i=0;i < waittime;i++){
-        if(verbose > -1){printf("%f \%\r",i/waittime);}
+        if(verbose > 0){printf("%f %% \r",(double)i/waittime);}
         sleep(10); //wait a little while so we can get some data before exiting.
     }
 
