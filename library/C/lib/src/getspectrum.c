@@ -93,11 +93,8 @@ int main(int argc, char* argv[])
 		return connect_q;
 	}
 
-<<<<<<< HEAD
 	int i=0;
 	
-=======
->>>>>>> 9fc1332e60abb56d62509733b942361487106540
 	//Reset everything real quick
 	reset_q = REG_reset_SET(1,&handle);
 	if(reset_q != 0){
@@ -109,12 +106,8 @@ int main(int argc, char* argv[])
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
 	}
-<<<<<<< HEAD
-
-=======
 	tic = time(NULL);
 	
->>>>>>> 9fc1332e60abb56d62509733b942361487106540
 	// Spectrum section
 	spectra_STOP(spectra_t);
 	for(i=0;i<24;i++){
