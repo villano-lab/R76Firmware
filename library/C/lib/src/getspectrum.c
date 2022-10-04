@@ -91,21 +91,8 @@ int main(int argc, char* argv[])
 		printf("Board connection error code: %d\n",connect_q);
 		return connect_q;
 	}
-	
-	//set up variables before reset.
-	read_q = REG_read_SET(0,&handle);
-	if(read_q != 0){
-		printf("Error! Failed to set the `read` variable.\n");
-		return read_q;
-	}
-	write_q = REG_write_SET(0,&handle);
-	if(write_q != 0){
-			printf("Error! Failed to set the `write` variable.\n");
-			return write_q;
-		}	
-	int i=0;
 
-	if(verbose>0){printf("If you are not getting any triggers, please try running `./setregisters -R` and try again.\n");}
+	int i=0;
 	
 	//Reset everything real quick
 	reset_q = REG_reset_SET(1,&handle);
@@ -118,9 +105,6 @@ int main(int argc, char* argv[])
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
 	}
-	tic = time(NULL);
-	
-	if(verbose > 0){printf("Setup complete; starting acquisition.\n");}
 
 	// Spectrum section
 	spectra_STOP(spectra_t);
@@ -147,6 +131,8 @@ int main(int argc, char* argv[])
 		}
 	}
 
+	if(verbose > 0){printf("Setup complete; starting acquisition.\n");}
+
 	spectra_START(spectra_t);
 	for(i=0;i<24;i++){
 		if(spectra_t[i] != 0){
@@ -154,10 +140,15 @@ int main(int argc, char* argv[])
 			return spectra_t[i];
 		}
 	}
+    
+	spectra_STATUS(spectra_t);
+	for(i=0;i<24;i++){
+		if(verbose>0){printf("Status spectrum #%d: %d\n",i,spectra_t[i]);}
+	}
 
     if(verbose > 0){printf("Gathering data for %d seconds.\n",waittime*10);}
     for(i=0;i < waittime;i++){
-        if(verbose > 0){printf("%f \%\r",i/waittime);}
+        if(verbose > -1){printf("%f \%\r",i/waittime);}
         sleep(10); //wait a little while so we can get some data before exiting.
     }
 
@@ -172,7 +163,7 @@ int main(int argc, char* argv[])
 	if(verbose>0){printf("Done taking spectrum data!\n");}
 	spectra_STATUS(spectra_t);
 	for(i=0;i<24;i++){
-		printf("Status spectrum #%d: %d\n",i,spectra_t[i]);
+		if(verbose>0){printf("Status spectrum #%d: %d\n",i,spectra_t[i]);}
 	}
 
 	spectra_DOWNLOAD(spec_dl,1000,spectra_t,specvalid_t);
