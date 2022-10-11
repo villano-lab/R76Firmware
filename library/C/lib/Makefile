@@ -67,7 +67,7 @@ Objects=$(Objects0)
 ## Main Build Targets 
 ##
 .PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
-all: $(OutputFile) setregisters scanrate scanupper scanwindow singlerate fifotest getspectrum
+all: $(OutputFile) setregisters scanrate scanupper scanwindow singlerate fifotest getspectrum teststatus
 
 $(OutputFile): $(IntermediateDirectory)/.d $(Objects) 
 	@$(MakeDirCommand) $(@D)
@@ -91,10 +91,11 @@ scanwindow: $(OutputFile)
 	gcc -o scanwindow src/scanwindow.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
 singlerate: $(OutputFile)
 	gcc -o singlerate src/singlerate.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+teststatus: $(OutputFile)
+	gcc -o teststatus src/teststatus.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
 	
 MakeIntermediateDirs:
 	@test -d ./Debug || $(MakeDirCommand) ./Debug
-
 
 $(IntermediateDirectory)/.d:
 	@test -d ./Debug || $(MakeDirCommand) ./Debug

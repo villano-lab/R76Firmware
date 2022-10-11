@@ -12,15 +12,10 @@
 #include <sys/time.h>
 #include <getopt.h>
 
-/*//ROOT
-#include "TTree.h"
-#include "TFile.h"
-#include "Rtypes.h"*/
-
 #include  "R76Firmware_lib.h"
 #include  "UniversalTriggerShared.h"
 
-const char* program_name = "fifotest";
+const char* program_name = "getspectrum";
 int waittime=12; //default 2 minutes data
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output

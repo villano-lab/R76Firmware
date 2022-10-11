@@ -61,6 +61,7 @@ scanupper
 scanwindow
 currentrate
 getspectrum
+teststatus
 
 # Other make output
 library/C/lib/libR76Firmware.txt
