@@ -60,6 +60,7 @@ scanrate
 scanupper
 scanwindow
 currentrate
+getspectrum
 
 # Other make output
 library/C/lib/libR76Firmware.txt
@@ -82,3 +83,6 @@ out.csv
 
 # Backups
 .ipynb_checkpoints
+
+# Local Run Plans
+library/C/lib/local_scripts

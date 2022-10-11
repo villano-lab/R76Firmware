@@ -162,6 +162,8 @@ int main(int argc, char* argv[])
 		}
 	}
 
+	sleep(1); //maybe it needs a moment to catch up?
+
 	if(verbose>0){printf("Done taking spectrum data!\n");}
 	spectra_STATUS(spectra_t);
 	for(i=0;i<24;i++){
