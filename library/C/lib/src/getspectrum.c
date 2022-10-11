@@ -38,7 +38,6 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 
 int main(int argc, char* argv[])
 {
-	clock_t begin, end;
 	//Read options
 	while(iarg != -1){
 		iarg = getopt_long(argc, argv, "d:i:l::shv::Vg:w:", longopts, &ind);
@@ -54,7 +53,8 @@ int main(int argc, char* argv[])
 			verbose = -1;
 			break;
 		case 'v':
-			if(optarg){verbose = atoi(optarg);
+			if(optarg){
+				verbose = atoi(optarg);
 			}else{verbose = 1;};
 			break;
 		case '?':
@@ -161,6 +161,19 @@ int main(int argc, char* argv[])
 			return spectra_t[i];
 		}
 	}
+
+	int temp = SPECTRUM_Spectrum_0_STOP(&handle);
+	if(temp != 0){
+		printf("Error! Failed to stop spectrum 0.\n");
+		return temp;
+	}
+	int temp2 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
+	if(temp2 != 0){
+		printf("Error! Faield to retrieve status of spectrum 0.\n");
+		return temp2;
+	}
+	printf("Spectrum 0 status: %d\n",temp);
+	
 
 	sleep(1); //maybe it needs a moment to catch up?
 
