@@ -102,6 +102,12 @@ int main(int argc, char* argv[])
 		return reset_q;
 	}
 	tic = time(NULL);
+	//ensure we are not force-quitting the write process!
+	stopwrite_q = REG_stopwrite_SET(0,&handle);
+	if(stopwrite_q != 0){
+		printf("Error! Failed to set the `stopwrite` variable.\n");
+		return stopwrite_q;
+	}
 	
 	// Spectrum section
 	spectra_STOP(spectra_t);
