@@ -18,6 +18,7 @@
 #include  "UniversalTriggerShared.h"
 
 const char* program_name = "scanwindow";
+FILE *fp;
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
 	fprintf (stream, "Usage:  %s options \n", program_name);
@@ -132,7 +133,9 @@ int main(int argc, char* argv[])
 		free(command);
 	}
 
-    fp = fopen("out.csv","w");
+	if (access("out.csv", F_OK) == 0){
+		if(verbose > -1){printf("WARNING! File already exists! Data will be appended to `out.csv`.\n");}
+	}
 
     //pre-connection setup
     if(verbose >0){
@@ -199,7 +202,9 @@ int main(int argc, char* argv[])
 		if(verbose > 1){printf("Average rate: %f\n",cumulative/wait);}
 
         //write the rate
+    	fp = fopen("out.csv","a");
         fprintf(fp,"%f, %f, %f\n",thrs,top,cumulative/wait);
+		fclose(fp);
 		if(verbose>1){printf("lower: %f ; upper: %f ; rate: %f Hz\n",thrs,top,cumulative/wait);};
 		thrs += range_s;
         top  += range_s;
@@ -214,6 +219,5 @@ int main(int argc, char* argv[])
 	};
 	print_timestamp(elapsed,verbose);
 	if(logfile != NULL){fclose(logfile);};
-	fclose(fp);
 	return 0;
 }
