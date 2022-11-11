@@ -163,7 +163,9 @@ int main(int argc, char* argv[])
         }
     }
 	tic = time(NULL);
+	fp = fopen("out.csv","a");
     fprintf(fp,"lower (MeV), upper (MeV), rate\n"); // add a header row
+	fclose(fp);
     int i;
 	if(verbose>0){printf("Collecting data! \n");};
     while(thrs < range_u){
