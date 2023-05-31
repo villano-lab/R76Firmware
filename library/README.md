@@ -1,47 +1,47 @@
+# Migrate to SciSDK library
 
-# R5560 SciCompiler Library 
-This is a C++ library automatic generated for your project
+This updated version of SciCompiler includes the SciSDK library for interfacing with your hardware. 
 
-This library compile in windows with Visual C++ (2012 or above) and il linux using the standard gcc buildchain.
-This library depends only from R5560_SDKLib
-The compiled version for Windows x86/Release is automatically copied (as example) with this package 
+SciSDK is a modern library compatible with most popular programming languages, designed to act as a middleware between low-level board SDKs and user software.
 
-Windows x64 (Debug/Release), Windows x86 (Debug) and linux libR5660.so versions can be downloaded from our github the precompiled release
-https://github.com/NuclearInstruments/r5560_sdk/releases/
+**Soon, SciCompiler will stop generating custom software support for specific designs and move towards the use of SciSDK. Currently, you can find the legacy generated code in the "library/legacy" folder, but we discourage its use in new projects.**
 
-We strogly raccomand to compile from source code the linux version
-https://github.com/NuclearInstruments/r5560_sdk
+SciSDK code should not be generated or compiled each time the SciCompiler project is modified.  It uses the RegisterFile.json (found in the "project/library" folder) to detect the IPs in your design and provides easy direct access to each one.
 
-## Linux Compiling
+The SciSDK library is completely independent of the board you generated your project for and can manage multiple boards of different models simultaneously.
 
-### Pre Requisites
+## Documentation
 
-R5560 SDK requires GCC build chain and install R5560SDK library in your system
-- compile the R5560SDK an then install it in your system
- Install the library in /usr/local/lib
-```bash
-sudo cp libr5560.so.1.0.0 /usr/local/lib
-cd /usr/local/lib
-sudo ln -s libr5560.so.1.0.0 libr5560.so
+You can find SciSDK documentation on [github.com documentation](https://nuclearinstruments.github.io/SCISDK/)
+
+
+## Download
+
+Pre-installed in C:\OpenHardware\SciSDK on Windows. 
+
+For Windows, latest version can be downloaded from [github.com release](https://github.com/NuclearInstruments/SCISDK/releases)
+
+
+## Linux
+
+At present, the Linux library must be downloaded as source code and compiled. Please refer to the documentation.
+
+The source code is avaliable on [Nuclear Instruments Github SciSDK](https://github.com/NuclearInstruments/SCISDK)
+Please note that you must also compile and install all the low-level SDKs for all instruments you want to connect to. SciSDK is only a middleware and needs the SDK to interface with the hardware.
+
+Soon, a repository for Ubuntu, Centos, and Scientific Linux will be available with pre-compiled libraries.
+
+## Python
+
+Once the library is installed on your system(Windows with the installer, linux: `./configure && make && make install`) you can install the library from the official PyPI repository:
+
 ```
-Reload Linux library database
-```bash
-sudo ldconfig
-```
-
-
-### Compile and install library
-
-Just enter make in console
-
- Install the library in /usr/local/lib
-```bash
-make
-
-cd linux
-sudo cp libNAME_OF_YOUR_PROJECT /usr/local/lib
-sudo ldconfig
+pip install scisdk
 ```
 
+## Examples
+
+Several examples are already installed in C:\OpenHardware\SciSDK\examples for Windows.
+For Linux, you can find the examples at [GitHub SciSDK Examples](https://github.com/NuclearInstruments/SCISDK/tree/master/examples)
 
 
