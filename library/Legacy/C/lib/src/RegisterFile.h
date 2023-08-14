@@ -317,3 +317,8 @@
 #define SCI_REG_Spectrum_0_CONFIG_MIN 0x20004
 #define SCI_REG_Spectrum_0_CONFIG_MAX 0x20005
 
+#define SCI_REG_All_Energies_FIFOADDRESS 0x34007A
+#define SCI_REG_All_Energies_READ_STATUS 0x34007B
+#define SCI_REG_All_Energies_READ_VALID_WORDS 0x34007C
+#define SCI_REG_All_Energies_CONFIG 0x34007D
+

@@ -55,6 +55,8 @@
 
 
 
+
+
 import R76Firmware_RegisterFile
 from ctypes import *
 import array
@@ -2205,4 +2207,80 @@ def SPECTRUM_Spectrum_0_GET_STATUS(handle):
 def SPECTRUM_Spectrum_0_GET_DATA(Bin, timeout_ms, handle):
     [err, data, read_data, valid_data] = __abstracted_mem_read(Bin, R76Firmware_RegisterFile.SCI_REG_Spectrum_0_FIFOADDRESS, timeout_ms, handle)
     return err, data, read_data, valid_data
+
+
+
+
+def CPACK_All_Energies_RESET(handle):
+    err = __abstracted_reg_write(2, R76Firmware_RegisterFile.SCI_REG_All_Energies_CONFIG, handle)
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_All_Energies_CONFIG, handle)
+    return err
+
+def CPACK_All_Energies_FLUSH(handle):
+    err = __abstracted_reg_write(4, R76Firmware_RegisterFile.SCI_REG_All_Energies_CONFIG, handle)
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_All_Energies_CONFIG, handle)
+    return err
+
+def CPACK_All_Energies_START(handle):
+    err = __abstracted_reg_write(2, R76Firmware_RegisterFile.SCI_REG_All_Energies_CONFIG, handle)
+    if (err != 0):
+       return False
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_All_Energies_CONFIG, handle)
+    if (err != 0):
+       return False
+    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_All_Energies_CONFIG, handle)
+    if (err != 0):
+       return False
+    return True
+
+def CPACK_All_Energies_GET_STATUS(handle):
+    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_All_Energies_READ_STATUS, handle)
+    status = status & 0xf
+    return err, status
+
+def CPACK_All_Energies_GET_AVAILABLE_DATA(handle):
+    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_All_Energies_READ_VALID_WORDS, handle)
+    return err, status
+
+def CPACK_All_Energies_GET_DATA(n_packet, timeout_ms, handle):
+    data_length = n_packet *( 3 + <<<NUMBER OF PACKET LINES AFTER THE HEADER HERE>>>)
+    [err, data, read_data, valid_data] = __abstracted_fifo_read(data_length, R76Firmware_RegisterFile.SCI_REG_All_Energies_FIFOADDRESS, R76Firmware_RegisterFile.SCI_REG_All_Energies_READ_STATUS, True, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+def CPACK_All_Energies_RECONSTRUCT_DATA(FrameData):
+    in_sync = 0
+    tot_data = len(FrameData)
+    n_ch = <<<NUMBER OF PACKET LINES AFTER THE HEADER HERE>>>
+    n_packet = tot_data / (n_ch + 3)
+    event_energy, Time_Code, Pack_Id, Energy = ([] for i in range(4))
+    for i in range(len(FrameData)):
+        mpe = FrameData[i]
+        if (in_sync == 0):
+            if (mpe != 0x<<<YOUR HEADER HERE>>>):
+                continue
+            in_sync = 1
+            continue
+        if (in_sync == 1):
+            event_timecode = mpe 
+            Time_Code.append(event_timecode)
+            in_sync = 2
+            continue
+        if (in_sync == 2):
+            Pack_Id.append(mpe)
+            in_sync = 3
+            ch_index = 0
+            continue
+        if (in_sync == 3):
+            if (mpe == 0x<<<YOUR HEADER HERE>>>):
+                in_sync = 1
+            else:
+                ev_energy = mpe
+                event_energy.append(ev_energy)
+                ch_index += 1
+                if (ch_index == n_ch):
+                    Energy.append(event_energy)
+                    event_energy = []
+                    in_sync = 0
+    return Time_Code, Pack_Id, Energy
 
