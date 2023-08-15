@@ -2730,12 +2730,12 @@
       "PioWE": [
         {
           "Type": "Input",
-          "Signal": "IN_34",
+          "Signal": "IN_1",
           "BitStart": 0,
           "BitStop": 31,
           "SliceStart": 31,
           "SliceStop": 0,
-          "Value": "IN_34",
+          "Value": "IN_1",
           "ValueFormat": ""
         }
       ]
@@ -2744,13 +2744,23 @@
       "PioWE": [
         {
           "Type": "Input",
-          "Signal": "IN_1",
+          "Signal": "IN_34",
           "BitStart": 0,
-          "BitStop": 31,
-          "SliceStart": 31,
+          "BitStop": 23,
+          "SliceStart": 23,
           "SliceStop": 0,
-          "Value": "IN_1",
+          "Value": "IN_34",
           "ValueFormat": ""
+        },
+        {
+          "Type": "Constant",
+          "Signal": "00",
+          "BitStart": 24,
+          "BitStop": 31,
+          "SliceStart": 7,
+          "SliceStop": 0,
+          "Value": "00",
+          "ValueFormat": "Hex"
         }
       ]
     },
