@@ -2746,21 +2746,11 @@
           "Type": "Input",
           "Signal": "IN_34",
           "BitStart": 0,
-          "BitStop": 23,
-          "SliceStart": 23,
+          "BitStop": 31,
+          "SliceStart": 31,
           "SliceStop": 0,
           "Value": "IN_34",
           "ValueFormat": ""
-        },
-        {
-          "Type": "Constant",
-          "Signal": "00",
-          "BitStart": 24,
-          "BitStop": 31,
-          "SliceStart": 7,
-          "SliceStop": 0,
-          "Value": "00",
-          "ValueFormat": "Hex"
         }
       ]
     },
