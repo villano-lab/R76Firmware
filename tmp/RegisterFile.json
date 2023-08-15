@@ -799,6 +799,24 @@
   "RegionSize": 1,
   "Description": "",
   "Category": "Undefined"
+},
+{
+  "Name": "trigger_code",
+  "Type": null,
+  "Address": 3407993,
+  "Version": null,
+  "RegionSize": 1,
+  "Description": "",
+  "Category": "Undefined"
+},
+{
+  "Name": "timestamp",
+  "Type": null,
+  "Address": 3407999,
+  "Version": null,
+  "RegionSize": 1,
+  "Description": "",
+  "Category": "Undefined"
 }],
 "MMCComponents":[
 {
@@ -2656,4 +2674,470 @@
     }
   ],
   "CountsBit": 16
+},
+{
+  "Name": "All_Energies",
+  "Type": "CustomPacket",
+  "Address": 3407995,
+  "Version": "1.1.0.0",
+  "Channels": 0,
+  "Registers": [
+    {
+      "Name": "READ_STATUS",
+      "Type": null,
+      "Address": 3407996,
+      "Version": null,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "READ_VALID_WORDS",
+      "Type": null,
+      "Address": 3407997,
+      "Version": null,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG",
+      "Type": null,
+      "Address": 3407998,
+      "Version": null,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    }
+  ],
+  "UseDMA": false,
+  "listOfWord": [
+    {
+      "PioWE": [
+        {
+          "Type": "Constant",
+          "Signal": "80000000",
+          "BitStart": 0,
+          "BitStop": 31,
+          "SliceStart": 31,
+          "SliceStop": 0,
+          "Value": "80000000",
+          "ValueFormat": "Hex"
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_34",
+          "BitStart": 0,
+          "BitStop": 31,
+          "SliceStart": 31,
+          "SliceStop": 0,
+          "Value": "IN_34",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_1",
+          "BitStart": 0,
+          "BitStop": 31,
+          "SliceStart": 31,
+          "SliceStop": 0,
+          "Value": "IN_1",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_2",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_2",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_3",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_3",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_4",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_4",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_5",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_5",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_6",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_6",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_7",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_7",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_8",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_8",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_9",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_9",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_10",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_10",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_11",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_11",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_12",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_12",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_13",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_13",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_14",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_14",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_15",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_15",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_16",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_16",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_17",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_17",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_18",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_18",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_19",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_19",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_20",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_20",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_21",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_21",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_22",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_22",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_23",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_23",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_24",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_24",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_25",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_25",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_26",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_26",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_27",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_27",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_28",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_28",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_29",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_29",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_30",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_30",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_31",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_31",
+          "ValueFormat": ""
+        }
+      ]
+    },
+    {
+      "PioWE": [
+        {
+          "Type": "Input",
+          "Signal": "IN_32",
+          "BitStart": 0,
+          "BitStop": 15,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_32",
+          "ValueFormat": ""
+        },
+        {
+          "Type": "Input",
+          "Signal": "IN_33",
+          "BitStart": 16,
+          "BitStop": 31,
+          "SliceStart": 15,
+          "SliceStop": 0,
+          "Value": "IN_33",
+          "ValueFormat": ""
+        }
+      ]
+    }
+  ],
+  "BufferLength": 0
 }],"Device":"DT5560","Project":"R76Firmware"}
