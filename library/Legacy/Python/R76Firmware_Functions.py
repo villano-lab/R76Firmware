@@ -857,6 +857,14 @@ def REG_trigger_code_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_trigger_code, handle)
     return err
 
+def REG_timestamp_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
+    return err, data
+
+def REG_timestamp_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
+    return err
+
 
 
 

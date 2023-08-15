@@ -514,6 +514,8 @@ SCILIB int REG_disable_det_10_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_disable_det_10_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_trigger_code_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_trigger_code_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_timestamp_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_timestamp_SET(uint32_t val, NI_HANDLE *handle);
 //-----------------------------------------------------------------
 //-
 //- RATE_METER_RateMeter_NoSkip_GET_DATA

@@ -803,7 +803,16 @@
 {
   "Name": "trigger_code",
   "Type": null,
-  "Address": 3407998,
+  "Address": 3407993,
+  "Version": null,
+  "RegionSize": 1,
+  "Description": "",
+  "Category": "Undefined"
+},
+{
+  "Name": "timestamp",
+  "Type": null,
+  "Address": 3407999,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -2669,21 +2678,12 @@
 {
   "Name": "All_Energies",
   "Type": "CustomPacket",
-  "Address": 3407994,
+  "Address": 3407995,
   "Version": "1.1.0.0",
   "Channels": 0,
   "Registers": [
     {
       "Name": "READ_STATUS",
-      "Type": null,
-      "Address": 3407995,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "READ_VALID_WORDS",
       "Type": null,
       "Address": 3407996,
       "Version": null,
@@ -2692,9 +2692,18 @@
       "Category": "Undefined"
     },
     {
-      "Name": "CONFIG",
+      "Name": "READ_VALID_WORDS",
       "Type": null,
       "Address": 3407997,
+      "Version": null,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG",
+      "Type": null,
+      "Address": 3407998,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -2720,13 +2729,13 @@
     {
       "PioWE": [
         {
-          "Type": "TimeStamp",
-          "Signal": "",
+          "Type": "Input",
+          "Signal": "IN_34",
           "BitStart": 0,
           "BitStop": 31,
           "SliceStart": 31,
           "SliceStop": 0,
-          "Value": "",
+          "Value": "IN_34",
           "ValueFormat": ""
         }
       ]

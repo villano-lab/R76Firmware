@@ -87,7 +87,8 @@
 #define SCI_REG_empty 0x00340076
 #define SCI_REG_full 0x00340077
 #define SCI_REG_disable_det_10 0x00340078
-#define SCI_REG_trigger_code 0x0034007E
+#define SCI_REG_trigger_code 0x00340079
+#define SCI_REG_timestamp 0x0034007F
 #define SCI_REG_RateMeter_NoSkip_FIFOADDRESS 0xB0000
 
 #define SCI_REG_RateMeter_0_FIFOADDRESS 0x50000
@@ -318,8 +319,8 @@
 #define SCI_REG_Spectrum_0_CONFIG_MIN 0x20004
 #define SCI_REG_Spectrum_0_CONFIG_MAX 0x20005
 
-#define SCI_REG_All_Energies_FIFOADDRESS 0x34007A
-#define SCI_REG_All_Energies_READ_STATUS 0x34007B
-#define SCI_REG_All_Energies_READ_VALID_WORDS 0x34007C
-#define SCI_REG_All_Energies_CONFIG 0x34007D
+#define SCI_REG_All_Energies_FIFOADDRESS 0x34007B
+#define SCI_REG_All_Energies_READ_STATUS 0x34007C
+#define SCI_REG_All_Energies_READ_VALID_WORDS 0x34007D
+#define SCI_REG_All_Energies_CONFIG 0x34007E
 
