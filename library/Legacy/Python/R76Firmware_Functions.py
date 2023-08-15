@@ -849,6 +849,14 @@ def REG_disable_det_10_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_10, handle)
     return err
 
+def REG_trigger_code_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_trigger_code, handle)
+    return err, data
+
+def REG_trigger_code_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_trigger_code, handle)
+    return err
+
 
 
 

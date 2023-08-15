@@ -87,6 +87,7 @@
 #define SCI_REG_empty 0x00340076
 #define SCI_REG_full 0x00340077
 #define SCI_REG_disable_det_10 0x00340078
+#define SCI_REG_trigger_code 0x0034007E
 #define SCI_REG_RateMeter_NoSkip_FIFOADDRESS 0xB0000
 
 #define SCI_REG_RateMeter_0_FIFOADDRESS 0x50000
