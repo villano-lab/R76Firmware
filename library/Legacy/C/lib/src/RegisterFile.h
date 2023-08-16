@@ -277,15 +277,6 @@
 #define SCI_REG_Spectrum_23_CONFIG_MIN 0x340004
 #define SCI_REG_Spectrum_23_CONFIG_MAX 0x340005
 
-#define SCI_REG_Oscilloscope_0_FIFOADDRESS 0x0
-#define SCI_REG_Oscilloscope_0_READ_STATUS 0x8000
-#define SCI_REG_Oscilloscope_0_READ_POSITION 0x8001
-#define SCI_REG_Oscilloscope_0_CONFIG_TRIGGER_MODE 0x8002
-#define SCI_REG_Oscilloscope_0_CONFIG_PRETRIGGER 0x8003
-#define SCI_REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL 0x8004
-#define SCI_REG_Oscilloscope_0_CONFIG_ARM 0x8005
-#define SCI_REG_Oscilloscope_0_CONFIG_DECIMATOR 0x8006
-
 #define SCI_REG_disable_detector_0 0x340008
 #define SCI_REG_disable_detector_1 0x340009
 #define SCI_REG_disable_detector_2 0x34000A
@@ -318,6 +309,15 @@
 #define SCI_REG_Spectrum_0_CONFIG_REBIN 0x20003
 #define SCI_REG_Spectrum_0_CONFIG_MIN 0x20004
 #define SCI_REG_Spectrum_0_CONFIG_MAX 0x20005
+
+#define SCI_REG_Oscilloscope_0_FIFOADDRESS 0x0
+#define SCI_REG_Oscilloscope_0_READ_STATUS 0x8000
+#define SCI_REG_Oscilloscope_0_READ_POSITION 0x8001
+#define SCI_REG_Oscilloscope_0_CONFIG_TRIGGER_MODE 0x8002
+#define SCI_REG_Oscilloscope_0_CONFIG_PRETRIGGER 0x8003
+#define SCI_REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL 0x8004
+#define SCI_REG_Oscilloscope_0_CONFIG_ARM 0x8005
+#define SCI_REG_Oscilloscope_0_CONFIG_DECIMATOR 0x8006
 
 #define SCI_REG_All_Energies_FIFOADDRESS 0x34007B
 #define SCI_REG_All_Energies_READ_STATUS 0x34007C

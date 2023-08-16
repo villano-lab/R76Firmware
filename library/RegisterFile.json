@@ -2308,86 +2308,6 @@
   "CountsBit": 16
 },
 {
-  "Name": "Oscilloscope_0",
-  "Type": "Oscilloscope",
-  "Address": 0,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "READ_STATUS",
-      "Type": "Register",
-      "Address": 32768,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "READ_POSITION",
-      "Type": "Register",
-      "Address": 32769,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_TRIGGER_MODE",
-      "Type": "Register",
-      "Address": 32770,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_PRETRIGGER",
-      "Type": "Register",
-      "Address": 32771,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_TRIGGER_LEVEL",
-      "Type": "Register",
-      "Address": 32772,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_ARM",
-      "Type": "Register",
-      "Address": 32773,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_DECIMATOR",
-      "Type": "Register",
-      "Address": 32774,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "nsamples": 1024,
-  "Channels": 24,
-  "WordSize": 16,
-  "WordEnob": 16,
-  "AnalogInputs": 1,
-  "DigitalInputs": 4,
-  "SamplingFrequency": 0,
-  "TimeMultiplexing": 1,
-  "DecimatorMax": 0
-},
-{
   "Name": "disable_detector",
   "Type": "RegisterFile",
   "Address": 3407879,
@@ -2674,6 +2594,86 @@
     }
   ],
   "CountsBit": 16
+},
+{
+  "Name": "Oscilloscope_0",
+  "Type": "Oscilloscope",
+  "Address": 0,
+  "Version": "1.0.0.0",
+  "Registers": [
+    {
+      "Name": "READ_STATUS",
+      "Type": "Register",
+      "Address": 32768,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "READ_POSITION",
+      "Type": "Register",
+      "Address": 32769,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG_TRIGGER_MODE",
+      "Type": "Register",
+      "Address": 32770,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG_PRETRIGGER",
+      "Type": "Register",
+      "Address": 32771,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG_TRIGGER_LEVEL",
+      "Type": "Register",
+      "Address": 32772,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG_ARM",
+      "Type": "Register",
+      "Address": 32773,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG_DECIMATOR",
+      "Type": "Register",
+      "Address": 32774,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    }
+  ],
+  "nsamples": 1024,
+  "Channels": 24,
+  "WordSize": 16,
+  "WordEnob": 16,
+  "AnalogInputs": 1,
+  "DigitalInputs": 4,
+  "SamplingFrequency": 0,
+  "TimeMultiplexing": 1,
+  "DecimatorMax": 0
 },
 {
   "Name": "All_Energies",
