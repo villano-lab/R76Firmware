@@ -2,7 +2,7 @@
 // Trying to move to ROOT but it's causing segfaults before getting into the main func 
 // or even before variable declaration?
 
-#include "Def.h"
+#include "Legacy/Def.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -21,7 +21,7 @@
 #include "TFile.h"
 #include "Rtypes.h"*/
 
-#include  "R76Firmware_lib.h"
+#include  "Legacy/R76Firmware_lib.h"
 #include  "UniversalTriggerShared.h"
 
 const char* program_name = "setregisters";
@@ -38,6 +38,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, POLARITY_TEXT);
 	fprintf (stream, PRE_INT_TEXT);
 	fprintf (stream, INT_TIME_TEXT);
+	fprintf (stream, BASELINE_TEXT);
 	fprintf (stream, CONFIG_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
@@ -56,7 +57,7 @@ int main(int argc, char* argv[]){
 	int iarg=0;
 	int polarity=1;
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "l::c::D:i:t:shv::Vg:d:T:RfS:p::P:I:", longopts, &index);
+		iarg = getopt_long(argc, argv, "l::c::D:i:t:shv::Vg:d:T:RfS:p::P:I:b:", longopts, &index);
 		switch (iarg){
 		case 'f':
 			force = 1;
@@ -137,10 +138,16 @@ int main(int argc, char* argv[]){
 			}else{polarity = 1;};
 			break;
 		case 'P':
+			preflag = 1;
 			pre_int = atoi(optarg);
 			break;
 		case 'I':
+			intflag = 1;
 			int_time = atoi(optarg);
+			break;
+		case 'b':
+			baseflag = 1;
+			baseline = atoi(optarg);
 			break;
 		}
 	}
@@ -151,7 +158,7 @@ int main(int argc, char* argv[]){
 	};
 
 	//If the user said to reset, or if they didn't set anything and the program is going to do nothing
-	if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && polflag == 0){
+	if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && polflag == 0 && preflag == 0 && intflag == 0 && baseflag == 0){
 		printf("No variables set by the user. ");
 		reset = 1;
 	}
@@ -168,8 +175,11 @@ int main(int argc, char* argv[]){
 				gateflag = 1;
 				skipflag = 1;
 				polflag = 1;
+				preflag = 1;
+				intflag = 1;
+				baseflag = 1;
 			}else if(strcasecmp(userinput, "n") == 0 || strcasecmp(userinput, "no") == 0 || userinput == "0"){
-				if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && polflag == 0){
+				if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && polflag == 0 && baseflag == 0){
 					return 0;
 				}
 				if(verbose>-1){printf("Proceeding with provided values only.");}
@@ -188,6 +198,9 @@ int main(int argc, char* argv[]){
 			gateflag = 1;
 			skipflag = 1;
 			polflag = 1;
+			preflag = 1;
+			intflag = 1;
+			baseflag = 1;
 		}else{
 			printf("Somehow, the force variable was set to an invalid value (%d). Aborting. Please submit a bug report.\n",force);
 			return -1;
@@ -232,6 +245,7 @@ int main(int argc, char* argv[]){
 	if(gateflag == 1){
 		gateflagl = 1;
 		gateflagu = 1;
+		parse_gate(gtemp,verbose);
 	}
 	if(logfile != NULL){
 		fprintf(logfile,"============ Settings ============\n");
@@ -365,5 +379,35 @@ int main(int argc, char* argv[]){
 		printf("Delay flag is off. Skipping.\n");
 	}
 	
+	if(preflag == 1){
+		pre_int_q = REG_pre_int_SET(pre_int,&handle);
+		if(pre_int_q != 0){
+			printf("Error from REG_pre_int_SET. Aborting.\n");
+			return pre_int_q;
+		}else if(verbose > 0){
+			printf("Successfully set pre_int to %d.\n",pre_int);
+		}
+	}
+
+	if(intflag == 1){
+		int_time_q = REG_int_time_SET(int_time,&handle);
+		if(pre_int_q != 0){
+			printf("Error from REG_int_time_SET. Aborting.\n");
+			return int_time_q;
+		}else if(verbose > 0){
+			printf("Successfully set int_time to %d.\n",int_time);
+		}
+	}
+
+	if(baseflag == 1){
+		baseline_q = REG_baseline_SET(baseline,&handle);
+		if(baseline_q != 0){
+			printf("Error from REG_baseline_SET. Aborting.\n");
+			return baseline_q;
+		}else if(verbose > 0){
+			printf("Successfully set baseline for pulse integration to %d.\n",baseline);
+		}
+	}
+
 	return 0;
 }

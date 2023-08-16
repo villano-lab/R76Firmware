@@ -1,6 +1,6 @@
 #include "UniversalTriggerShared.h"
-#include "R76Firmware_lib.h"
-#include "Def.h"
+#include "Legacy/R76Firmware_lib.h"
+#include "Legacy/Def.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -9,7 +9,7 @@
 #include <string.h>
 #include <getopt.h>
 
-//Variables/*
+//Variables
 //=======================================================================================
 //Structs
 const struct option longopts[] =
@@ -43,16 +43,16 @@ int verbose = 0;
 float thrs = 1.;	        //distance from baseline for threshold.
 uint32_t value = 4294967295;
 int gate_u = 100; 
-int gate_l = 0;
+int gate_l = 10;
 float range_l = 0;
 float range_u = 8;
 float range_s = 1;
-int delay = 50;
+int delay = 20;
 int inhib = 1000;
 int baseline = 200;
 float top = 8.;
-int int_time = 250; //should change this default once we find a good value - these are good for SCIDK
-int pre_int = 30;   //^same here
+int int_time = 250; //this seems to be a good default based on oscilloscope readout.
+int pre_int = 100;   //^same here
 //things you probably won't change
 int polarity = 1;	//zero for negative, one for positive
 //Register-reading Variables
@@ -110,6 +110,9 @@ int detflag=0;
 int topflag=0;
 int polflag=0;
 int skipflag=0;
+int preflag=0;
+int intflag=0;
+int baseflag=0;
 int reset=0;
 int force=0;
 int wait=1;
@@ -137,7 +140,11 @@ uint32_t ratevalid_data=0;
 //=======================================================================================
 
 //Printing functions
-
+//https://stackoverflow.com/a/700184
+void printbits(unsigned char v) {
+  int i; // for C89 compatability
+  for(i = 24; i >= 0; i--) putchar('0' + ((v >> i) & 1));
+}
 void copyright(){
     printf("Copyright (c) 2022 Anthony Villano, Kitty Harris \n");
     printf("License: The Expat license  <https://spdx.org/licenses/MIT.html> \n");
@@ -172,11 +179,15 @@ int parse_detector_switch(char* selection){
     };
 }
 int parse_gate(char* gatestring, int verbose){
-	if(verbose > 2){printf("Are we even supposed to be here? %d\n",gateflag);}
-	if(verbose > 1){printf ("Splitting string \"%s\" into tokens:\n",gatestring);}
-	gate_l = atoi(strtok (gatestring," ,.-:"));
-	gate_u = atoi(strtok (NULL," ,.-:"));
-	if(verbose > 1){printf("%d, %d\n",gate_l,gate_u);}
+	if(gatestring != NULL){
+		if(verbose > 2){printf("Are we even supposed to be here? %d\n",gateflag);}
+		if(verbose > 1){printf ("Splitting string \"%s\" into tokens:\n",gatestring);}
+		gate_l = atoi(strtok (gatestring," ,.-:"));
+		gate_u = atoi(strtok (NULL," ,.-:"));
+	}else{
+		if(verbose > 0){printf("Using default values for gates, lower %d and upper %d.\n",gate_l,gate_u);}
+	}
+		if(verbose > 1){printf("%d, %d\n",gate_l,gate_u);}
 }
 int parse_range(char* rangestring, int verbose){
 	if(verbose > 2){printf("Are we even supposed to be here? %d\n",rangeflag);}
@@ -483,14 +494,14 @@ int REG_top_SET(uint32_t value, NI_HANDLE *handle){
 	thresh_q[21] = set_by_polarity(REG_top_21_SET,polarity,value);
 	thresh_q[22] = set_by_polarity(REG_top_22_SET,polarity,value);
 	thresh_q[23] = set_by_polarity(REG_top_23_SET,polarity,value);
-	thresh_q[24] = set_by_polarity(REG_top_24_SET,polarity,value);
-	thresh_q[25] = set_by_polarity(REG_top_25_SET,polarity,value);
-	thresh_q[26] = set_by_polarity(REG_top_26_SET,polarity,value);
-	thresh_q[27] = set_by_polarity(REG_top_27_SET,polarity,value);
-	thresh_q[28] = set_by_polarity(REG_top_28_SET,polarity,value);
-	thresh_q[29] = set_by_polarity(REG_top_29_SET,polarity,value);
-	thresh_q[30] = set_by_polarity(REG_top_30_SET,polarity,value);
-	thresh_q[31] = set_by_polarity(REG_top_31_SET,polarity,value);
+/*	thresh_q[24] = set_by_polarity(REG_top_24_SET,polarity,value);
+//	thresh_q[25] = set_by_polarity(REG_top_25_SET,polarity,value);
+//	thresh_q[26] = set_by_polarity(REG_top_26_SET,polarity,value);
+//	thresh_q[27] = set_by_polarity(REG_top_27_SET,polarity,value);
+//	thresh_q[28] = set_by_polarity(REG_top_28_SET,polarity,value);
+//	thresh_q[29] = set_by_polarity(REG_top_29_SET,polarity,value);
+//	thresh_q[30] = set_by_polarity(REG_top_30_SET,polarity,value);
+//	thresh_q[31] = set_by_polarity(REG_top_31_SET,polarity,value);*/
 }
 
 //Other functions
@@ -534,14 +545,14 @@ int *disable_dets(int *disable_q, int disable[32]){
 	disable_q[21] = REG_disable_det_21_SET(disable[21], &handle);
 	disable_q[22] = REG_disable_det_22_SET(disable[22], &handle);
 	disable_q[23] = REG_disable_det_23_SET(disable[23], &handle);
-	disable_q[24] = REG_disable_det_24_SET(disable[24], &handle);
-	disable_q[25] = REG_disable_det_25_SET(disable[25], &handle);
-	disable_q[26] = REG_disable_det_26_SET(disable[26], &handle);
-	disable_q[27] = REG_disable_det_27_SET(disable[27], &handle);
-	disable_q[28] = REG_disable_det_28_SET(disable[28], &handle);
-	disable_q[29] = REG_disable_det_29_SET(disable[29], &handle);
-	disable_q[30] = REG_disable_det_30_SET(disable[30], &handle);
-	disable_q[31] = REG_disable_det_31_SET(disable[31], &handle);
+/*	disable_q[24] = REG_disable_det_24_SET(disable[24], &handle);
+//	disable_q[25] = REG_disable_det_25_SET(disable[25], &handle);
+//	disable_q[26] = REG_disable_det_26_SET(disable[26], &handle);
+//	disable_q[27] = REG_disable_det_27_SET(disable[27], &handle);
+//	disable_q[28] = REG_disable_det_28_SET(disable[28], &handle);
+//	disable_q[29] = REG_disable_det_29_SET(disable[29], &handle);
+//	disable_q[30] = REG_disable_det_30_SET(disable[30], &handle);
+//	disable_q[31] = REG_disable_det_31_SET(disable[31], &handle);*/
     return disable_q;
 }
 
@@ -604,14 +615,6 @@ int *set_thresholds(char* side, int polarity, float energy, int *thresh_q){
 		thresh_q[21] = set_by_polarity(REG_top_21_SET,polarity,energy_to_bin(21,energy));
 		thresh_q[22] = set_by_polarity(REG_top_22_SET,polarity,energy_to_bin(22,energy));
 		thresh_q[23] = set_by_polarity(REG_top_23_SET,polarity,energy_to_bin(23,energy));
-		thresh_q[24] = set_by_polarity(REG_top_24_SET,polarity,energy_to_bin(24,energy));
-		thresh_q[25] = set_by_polarity(REG_top_25_SET,polarity,energy_to_bin(25,energy));
-		thresh_q[26] = set_by_polarity(REG_top_26_SET,polarity,energy_to_bin(26,energy));
-		thresh_q[27] = set_by_polarity(REG_top_27_SET,polarity,energy_to_bin(27,energy));
-		thresh_q[28] = set_by_polarity(REG_top_28_SET,polarity,energy_to_bin(28,energy));
-		thresh_q[29] = set_by_polarity(REG_top_29_SET,polarity,energy_to_bin(29,energy));
-		thresh_q[30] = set_by_polarity(REG_top_30_SET,polarity,energy_to_bin(30,energy));
-		thresh_q[31] = set_by_polarity(REG_top_31_SET,polarity,energy_to_bin(31,energy));
 	}else{
 		printf("Invalid 'side' passed to set_thresholds. Please submit a bug report.\n");
 		exit(-1);

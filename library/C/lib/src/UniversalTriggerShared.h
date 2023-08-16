@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "R76Firmware_lib.h"
-#include "Def.h"
+#include "Legacy/R76Firmware_lib.h"
+#include "Legacy/Def.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -12,26 +12,27 @@
 
 //Text defines
 #define BOARD_IP_ADDRESS ("134.84.150.42")
-#define DET_TEXT (" -D,	--det	<# or source name>	Choose which detectors to trigger on (default: all).\n					Number values are bitwise from 0 to all 1s in 32 bit (4294967295).\n")
-#define GATE_TEXT (" -g,	--gate	'<lower #> <upper #>'	Set the gate times for the upper and lower triggers in clock ticks (integer. defaults: 0-100)\n					The two entries are delimited by spaces, commas, or dashes. Both must be provided.\n")
-#define DELAY_TEXT (" -d,	--delay	<delay length>	Set the value of the delay time in clock ticks (integer. default: 50)\n")
-#define INHIB_TEXT (" -i,	--inhibit	<inhibit>	Set the value of the inhibit time in clock ticks (integer. default: 1000)\n")
-#define THRESH_TEXT (" -t,	--thresh	<threshold>		Set the value of the (lower) threshold in MeV (default: 1). \n")
-#define RANGE_TEXT (" -r,	--range	'<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned, in MeV (default: min 0, max 8, step size 1).\n")
-#define SKIP_TEXT (" -S,    --skip <#>  Skip every # trigger to reduce the rate.\n")
-#define VERBOSE_TEXT (" -v,	--verbose	<level>		Print verbose messages at the specified level (1 if unspecified).\n")
-#define SILENT_TEXT (" -s,-q,	--silent,--quiet,		Print nothing.\n")
-#define LOG_TEXT (" -l,	--log		<file>		Log terminal output. (default: log.txt) \n")
-#define VERSION_TEXT (" -V, 	--version			Print version and exit.\n")
-#define HELP_TEXT (" -h,-?,	--help				Print this help function.\n")
-#define TOP_TEXT (" -T,   --top   <value> Set the upper threshold to the given value in MeV (default: 8).\n")
-#define RESET_TEXT (" -R,   --reset     Reset all unsupplied values to their defaults.\n")
-#define FORCE_TEXT (" -f,   --force     Skip all user input.\n")
-#define POLARITY_TEXT (" -p, --polarity  <1 or 0>    Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
-#define PRE_INT_TEXT (" -P,  --pre-int   <#> Set the pre-integration time in clock cycles. (integer. default: 30)\n")
-#define INT_TIME_TEXT (" -I, --int-time  <#> Set the integration time in clock cycles. (integer. default: 250)\n")
-#define CONFIG_TEXT (" -c,   --config    <file>  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
-#define WAIT_TEXT (" -w,    --wait  <#> Set the number of 10-second cycles to wait through for data collection. (integer. if not supplied, uses one cycle.)\n")
+#define DET_TEXT      (" -D,	--det	    <# or source name>	    Choose which detectors to trigger on (default: all).\n				            Number values are bitwise from 0 to all 1s in 32 bit (4294967295).\n")
+#define GATE_TEXT     (" -g,	--gate	    '<lower #> <upper #>'   Set the gate times for the upper and lower triggers in clock ticks (integer. defaults: 10-100)\n					    The two entries are delimited by spaces, commas, or dashes. Both must be provided.\n")
+#define DELAY_TEXT    (" -d,	--delay	    <delay length>          Set the value of the delay time in clock ticks (integer. default: 50)\n")
+#define INHIB_TEXT    (" -i,	--inhibit   <inhibit>	            Set the value of the inhibit time in clock ticks (integer. default: 1000)\n")
+#define THRESH_TEXT   (" -t,    --thresh    <threshold>	            Set the value of the (lower) threshold in MeV (default: 1). \n")
+#define RANGE_TEXT    (" -r,	--range	    '<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned, in MeV (default: min 0, max 8, step size 1).\n")
+#define SKIP_TEXT     (" -S,    --skip      <#>                     Skip every # trigger to reduce the rate.\n")
+#define BASELINE_TEXT (" -b,    --baseline  <baseline>              Set the baseline in ADC units (positive integer).\n                                            WARNING! This will have unintended consequences for calibration, thresholds, and pulse integration. USE FOR DEV ONLY!\n")
+#define VERBOSE_TEXT  (" -v,	--verbose   <level>                 Print verbose messages at the specified level (1 if unspecified).\n")
+#define SILENT_TEXT   (" -s,-q,	--silent,--quiet,                   Print nothing. (Negative verbosity) \n")
+#define LOG_TEXT      (" -l,	--log	    <file>                  Log terminal output. (default: log.txt) \n")
+#define VERSION_TEXT  (" -V, 	--version                           Print version and exit.\n")
+#define HELP_TEXT     (" -h,-?,	--help                              Print this help function.\n")
+#define TOP_TEXT      (" -T,    --top       <value>                 Set the upper threshold to the given value in MeV (default: 8).\n")
+#define RESET_TEXT    (" -R,    --reset                             Reset all unsupplied values to their defaults.\n")
+#define FORCE_TEXT    (" -f,    --force                             Skip all requests for user input.\n")
+#define POLARITY_TEXT (" -p,    --polarity  <1 or 0>                Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
+#define PRE_INT_TEXT  (" -P,    --pre-int   <#>                     Set the pre-integration time in clock cycles. (integer. default: 30)\n")
+#define INT_TIME_TEXT (" -I,    --int-time  <#>                     Set the integration time in clock cycles. (integer. default: 250)\n")
+#define CONFIG_TEXT   (" -c,    --config    <file>                  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
+#define WAIT_TEXT     (" -w,    --wait      <#>                     Set the number of 10-second cycles to wait through for data collection. (integer. if not supplied, uses one cycle.)\n")
 //Assigning buffer sizes
 #define BUFFER_SIZE (1024)
 
@@ -113,6 +114,9 @@ extern int threshflag;
 extern int topflag;
 extern int polflag;
 extern int skipflag;
+extern int preflag;
+extern int intflag;
+extern int baseflag;
 extern int reset;
 extern int force;
 extern int wait;
@@ -136,6 +140,7 @@ extern uint32_t ratevalid_data;
 //Functions
 //===========================================================================
 //printing functions
+void printbits(unsigned char v);                                        //print bits of an int https://stackoverflow.com/a/700184
 void print_usage(FILE* stream, int exit_code);                          //print usage of the program
 void copyright();                                                       //print copyright information
 void subhelp(FILE* stream);

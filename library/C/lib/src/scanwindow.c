@@ -1,6 +1,6 @@
 // A program that takes all newly-detected peaks and prints them to a csv file.
 // Runs with a fixed window width and moves the window up based on a provided range.
-#include "Def.h"
+#include "Legacy/Def.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -14,7 +14,7 @@
 #include <sys/time.h>
 #include <getopt.h>
 
-#include  "R76Firmware_lib.h"
+#include  "Legacy/R76Firmware_lib.h"
 #include  "UniversalTriggerShared.h"
 
 const char* program_name = "scanwindow";
@@ -163,8 +163,9 @@ int main(int argc, char* argv[])
         }
     }
 	tic = time(NULL);
+
 	fp = fopen("out.csv","a");
-    fprintf(fp,"lower (MeV), upper (MeV), rate\n"); // add a header row
+	fprintf(fp,"lower (MeV), upper (MeV), rate\n"); // add a header row
 	fclose(fp);
     int i;
 	if(verbose>0){printf("Collecting data! \n");};

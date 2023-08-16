@@ -2,7 +2,7 @@
 // Trying to move to ROOT but it's causing segfaults before getting into the main func 
 // or even before variable declaration?
 
-#include "Def.h"
+#include "Legacy/Def.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -21,7 +21,7 @@
 #include "TFile.h"
 #include "Rtypes.h"*/
 
-#include  "R76Firmware_lib.h"
+#include  "Legacy/R76Firmware_lib.h"
 #include  "UniversalTriggerShared.h"
 
 const char* program_name = "scanwindow";

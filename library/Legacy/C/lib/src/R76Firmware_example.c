@@ -867,7 +867,7 @@ int main(int argc, char* argv[])
 		while (1)
 		{
 			valid_data_frame = 0;
-			if (CPACK_All_Energies_DOWNLOAD(&data_frame, N_Packet * (<<<PACKET_SIZE_HERE_IN_WORK>>>), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error");
+			if (CPACK_All_Energies_DOWNLOAD(&data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error");
 			
 			valid_data_enqueued = 0;
 			Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);

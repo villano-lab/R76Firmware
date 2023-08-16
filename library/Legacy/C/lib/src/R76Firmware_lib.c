@@ -4,11 +4,9 @@
 #include <stdint.h>
 
 #include "RegisterFile.h"
-
 #include  "circular_buffer.h"
-
-
 #include  "R76Firmware_lib.h"
+#include "/home/cdms/packages/R76-Firmware/library/C/lib/src/UniversalTriggerShared.h"
 
 
 #ifdef _MSC_VER
@@ -116,7 +114,7 @@ SCILIB int __abstracted_fifo_read(uint32_t *data, uint32_t count,
 	*valid_data = *read_data;
 	return err;
 }
-	
+
 SCILIB int __abstracted_reg_write(uint32_t data, uint32_t address, NI_HANDLE *handle)
 {
 	return NI_WriteReg(data, address, handle);
@@ -154,10 +152,10 @@ uint32_t gray_to_bin(uint32_t num, int nbit)
 //-			Handle to the buffer
 //- 		DEFAULT: 
 //- 		OPTIONAL: False
-//-  
+//-
 //- 	            buffer_size   PARAM_IN   uint32_t
 //- 		size in word (32 bit) of the buffer to be allocated
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-  
 //-  RETURN [int]
@@ -198,7 +196,7 @@ SCILIB int Utility_ALLOCATE_DOWNLOAD_BUFFER(void **buffer_handle, uint32_t buffe
 //-			Handle to the buffer
 //- 		DEFAULT: 
 //- 		OPTIONAL: False
-//-  
+//-
 //- 	            val			   PARAM_IN   uint32_t *
 //-			input data vector downloaded from a FIFO from the board
 //- 		DEFAULT: 
@@ -1348,7 +1346,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_1_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_1_CONFIG, handle);
@@ -1374,7 +1372,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_1_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_1_CONFIG, handle);
@@ -1389,7 +1387,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_1_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1400,7 +1398,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_1_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_1_CONFIG, handle);
@@ -1441,7 +1439,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_1_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_1_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -1586,7 +1584,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_2_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_2_CONFIG, handle);
@@ -1612,7 +1610,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_2_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_2_CONFIG, handle);
@@ -1638,7 +1636,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_2_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_2_CONFIG, handle);
@@ -1679,12 +1677,12 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_2_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_2_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_2_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_2_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -1729,10 +1727,10 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_2_STATUS, handle);
 //- SPECTRUM_Spectrum_2_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_2POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_2_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_2, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
@@ -1824,7 +1822,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_3_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_3_CONFIG, handle);
@@ -1850,7 +1848,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_3_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_3_CONFIG, handle);
@@ -1876,7 +1874,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_3_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_3_CONFIG, handle);
@@ -1891,7 +1889,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_3_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
@@ -1917,7 +1915,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_3_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_3_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -2062,7 +2060,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_4_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_4_CONFIG, handle);
@@ -2088,7 +2086,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_4_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_4_CONFIG, handle);
@@ -2114,7 +2112,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_4_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_4_CONFIG, handle);
@@ -2155,7 +2153,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_4_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_4_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -2300,7 +2298,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_5_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_5_CONFIG, handle);
@@ -2326,7 +2324,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_5_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_5_CONFIG, handle);
@@ -2352,7 +2350,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_5_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_5_CONFIG, handle);
@@ -2393,7 +2391,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_5_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_5_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -2538,7 +2536,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_6_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_6_CONFIG, handle);
@@ -2564,7 +2562,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_6_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_6_CONFIG, handle);
@@ -2590,7 +2588,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_6_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_6_CONFIG, handle);
@@ -2631,7 +2629,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_6_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_6_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -2776,7 +2774,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_7_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_7_CONFIG, handle);
@@ -2802,7 +2800,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_7_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_7_CONFIG, handle);
@@ -2828,7 +2826,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_7_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_7_CONFIG, handle);
@@ -2869,7 +2867,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_7_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_7_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -3014,7 +3012,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_8_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_8_CONFIG, handle);
@@ -3040,7 +3038,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_8_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_8_CONFIG, handle);
@@ -3066,7 +3064,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_8_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_8_CONFIG, handle);
@@ -3107,7 +3105,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_8_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_8_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -3252,7 +3250,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_9_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_9_CONFIG, handle);
@@ -3278,7 +3276,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_9_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_9_CONFIG, handle);
@@ -3304,7 +3302,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_9_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_9_CONFIG, handle);
@@ -3345,7 +3343,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_9_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_9_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -3490,7 +3488,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_10_CONFIG, handle);
@@ -3516,7 +3514,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_10_CONFIG, handle);
@@ -3542,7 +3540,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_10_CONFIG, handle);
@@ -3583,7 +3581,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -3728,7 +3726,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_11_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_11_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_11_CONFIG, handle);
@@ -3754,7 +3752,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_11_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_11_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_11_CONFIG, handle);
@@ -3780,7 +3778,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_11_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_11_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_11_CONFIG, handle);
@@ -3821,7 +3819,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_11_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_11_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -3966,7 +3964,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_12_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_12_CONFIG, handle);
@@ -3992,7 +3990,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_12_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_12_CONFIG, handle);
@@ -4018,7 +4016,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_12_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_12_CONFIG, handle);
@@ -4059,7 +4057,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_12_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_12_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -4204,7 +4202,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_13_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_13_CONFIG, handle);
@@ -4230,7 +4228,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_13_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_13_CONFIG, handle);
@@ -4256,7 +4254,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_13_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_13_CONFIG, handle);
@@ -4297,7 +4295,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_13_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_13_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -4442,7 +4440,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_14_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_14_CONFIG, handle);
@@ -4468,7 +4466,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_14_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_14_CONFIG, handle);
@@ -4494,7 +4492,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_14_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_14_CONFIG, handle);
@@ -4535,7 +4533,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_14_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_14_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -4680,7 +4678,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_15_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_15_CONFIG, handle);
@@ -4706,7 +4704,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_15_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_15_CONFIG, handle);
@@ -4732,7 +4730,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_15_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_15_CONFIG, handle);
@@ -4773,7 +4771,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_15_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_15_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -4918,7 +4916,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_16_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_16_CONFIG, handle);
@@ -4944,7 +4942,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_16_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_16_CONFIG, handle);
@@ -4970,7 +4968,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_16_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_16_CONFIG, handle);
@@ -5011,7 +5009,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_16_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_16_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -5156,7 +5154,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_17_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_17_CONFIG, handle);
@@ -5182,7 +5180,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_17_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_17_CONFIG, handle);
@@ -5208,7 +5206,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_17_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_17_CONFIG, handle);
@@ -5249,7 +5247,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_17_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_17_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -5394,7 +5392,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_18_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_18_CONFIG, handle);
@@ -5420,7 +5418,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_18_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_18_CONFIG, handle);
@@ -5446,7 +5444,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_18_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_18_CONFIG, handle);
@@ -5487,7 +5485,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_18_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_18_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -5632,7 +5630,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_19_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_19_CONFIG, handle);
@@ -5658,7 +5656,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_19_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_19_CONFIG, handle);
@@ -5684,7 +5682,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_19_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_19_CONFIG, handle);
@@ -5725,7 +5723,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_19_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_19_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -5870,7 +5868,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_20_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_20_CONFIG, handle);
@@ -5896,7 +5894,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_20_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_20_CONFIG, handle);
@@ -5922,7 +5920,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_20_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_20_CONFIG, handle);
@@ -5963,7 +5961,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_20_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_20_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -6108,7 +6106,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_21_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_21_CONFIG, handle);
@@ -6134,7 +6132,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_21_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_21_CONFIG, handle);
@@ -6160,7 +6158,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_21_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_21_CONFIG, handle);
@@ -6201,7 +6199,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_21_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_21_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -6346,7 +6344,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_22_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_22_CONFIG, handle);
@@ -6372,7 +6370,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_22_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_22_CONFIG, handle);
@@ -6398,7 +6396,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_22_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_22_CONFIG, handle);
@@ -6439,7 +6437,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_22_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_22_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -6584,7 +6582,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_23_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_23_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_23_CONFIG, handle);
@@ -6610,7 +6608,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_23_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_23_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_23_CONFIG, handle);
@@ -6636,7 +6634,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_23_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_23_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_23_CONFIG, handle);
@@ -6677,7 +6675,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_23_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+SCILIB int SPECTRUM_Spectrum_23_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 
 {
      int32_t limit = 0;
@@ -6822,7 +6820,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_0_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_0_CONFIG, handle);
@@ -6848,7 +6846,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_0_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_0_CONFIG, handle);
@@ -6874,7 +6872,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_0_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_0_CONFIG, handle);
@@ -6915,8 +6913,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_0_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
+SCILIB int SPECTRUM_Spectrum_0_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle)
 {
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_0_CONFIG_REBIN, handle);
@@ -7676,8 +7673,9 @@ return __abstracted_fifo_read(val, size, SCI_REG_All_Energies_FIFOADDRESS, SCI_R
 //-
 //-----------------------------------------------------------------
 
-SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_event_collection *decoded_packets)
+SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_event_collection *decoded_packets, int verbose, NI_HANDLE handle)
 {
+     if(verbose>2){printf("Reconstructing...\n");}
 	cbuf_handle_t cbuf;
 	cbuf = (cbuf_handle_t)buffer_handle;
 	int PacketSize =19;
@@ -7692,6 +7690,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 	decoded_packets->allocated_packets = 0;
 	decoded_packets->valid_packets = 0;
 	
+     if(verbose>2){printf("Checking buffer...\n");}
 	//check if we have elements in the circular buffer
 	int bfsize = circular_buf_size(cbuf);
 	if (bfsize < PacketSize + 1) return -1;
@@ -7703,103 +7702,44 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 	decoded_packets->allocated_packets = possible_packets;
 	decoded_packets->valid_packets = 0;
 	t_All_Energies_struct temp_data;
+
 	//process packets
+     if(verbose>2){printf("Processing packet...\n");}
 	while (circular_buf_size(cbuf)> 0)
 	{
-		circular_buf_get(cbuf, &mpe);
+          int code = circular_buf_get(cbuf, &mpe);
+          if(code != 0){
+               printf("Failed to retrieve circular buffer. (Is it empty?)\n");
+               return -1; //currently failing to ensure I notice if this happens.
+          }
+          if(verbose > 2){printf("mpe: %08x\n",mpe);}
 
 		if (in_sync == 0) {
 			if (mpe != 0x80000000)
 			{
+                    if(verbose>-1){printf("Header not found! Moving to the next packet.\n");}
 				continue;
 			}
+               if(verbose>2){printf("Found header...\n");}
 			in_sync = 1;
-		    ch_index =0;
+	          ch_index = 0;
 			continue;
 		}
-		if (in_sync == 1) {
-			temp_data.row[0]  =  mpe;
-			in_sync = 2;
-			continue;
-		}
-		if (in_sync == 2) {
-			temp_data.row[1]  =  mpe;
-			in_sync = 3;
-			continue;
-		}
-		if (in_sync == 3) {
-			temp_data.row[2]  =  mpe;
-			in_sync = 4;
-			continue;
-		}
-		if (in_sync == 4) {
-			temp_data.row[3]  =  mpe;
-			in_sync = 5;
-			continue;
-		}
-		if (in_sync == 5) {
-			temp_data.row[4]  =  mpe;
-			in_sync = 6;
-			continue;
-		}
-		if (in_sync == 6) {
-			temp_data.row[5]  =  mpe;
-			in_sync = 7;
-			continue;
-		}
-		if (in_sync == 7) {
-			temp_data.row[6]  =  mpe;
-			in_sync = 8;
-			continue;
-		}
-		if (in_sync == 8) {
-			temp_data.row[7]  =  mpe;
-			in_sync = 9;
-			continue;
-		}
-		if (in_sync == 9) {
-			temp_data.row[8]  =  mpe;
-			in_sync = 10;
-			continue;
-		}
-		if (in_sync == 10) {
-			temp_data.row[9]  =  mpe;
-			in_sync = 11;
-			continue;
-		}
-		if (in_sync == 11) {
-			temp_data.row[10]  =  mpe;
-			in_sync = 12;
-			continue;
-		}
-		if (in_sync == 12) {
-			temp_data.row[11]  =  mpe;
-			in_sync = 13;
-			continue;
-		}
-		if (in_sync == 13) {
-			temp_data.row[12]  =  mpe;
-			in_sync = 14;
-			continue;
-		}
-		if (in_sync == 14) {
-			temp_data.row[13]  =  mpe;
-			in_sync = 15;
-			continue;
-		}
-		if (in_sync == 15) {
-			temp_data.row[14]  =  mpe;
-			in_sync = 16;
-			continue;
-		}
-		if (in_sync == 16) {
-			temp_data.row[15]  =  mpe;
-			in_sync = 17;
-			continue;
-		}
-		if (in_sync == 17) {
-			temp_data.row[16]  =  mpe;
-			in_sync = 18;
+		if (in_sync >= 1 && in_sync < 18) {
+               if(verbose > 2 && in_sync == 2){
+                    uint32_t trig_value;
+                    int code = REG_trigger_code_GET(&trig_value,&handle);
+                    if(code != 0){
+                        printf("Retrieving trigger_code failed!\n");
+                    }else{
+                        printf("Hex trigger code: %06x\n",trig_value);
+                        printf("Binary trigger code: ");
+                        printbits(trig_value);
+                        printf("\n");
+                    }
+               }
+			temp_data.row[in_sync - 1]  =  mpe;
+			in_sync++;
 			continue;
 		}
 		if (in_sync == 18) {
@@ -7819,7 +7759,6 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 			    break;
 		}
 	}
-
- return 0;
-
+     if(verbose>0){printf("Reconstruction complete!\n");}
+     return 0;
 }

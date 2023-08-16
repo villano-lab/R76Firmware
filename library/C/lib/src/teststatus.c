@@ -1,4 +1,4 @@
-#include "Def.h"
+#include "Legacy/Def.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -12,7 +12,7 @@
 #include <sys/time.h>
 #include <getopt.h>
 
-#include  "R76Firmware_lib.h"
+#include  "Legacy/R76Firmware_lib.h"
 #include  "UniversalTriggerShared.h"
 
 const char* program_name = "teststatus";
