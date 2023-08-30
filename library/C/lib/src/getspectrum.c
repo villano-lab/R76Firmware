@@ -110,6 +110,14 @@ int main(int argc, char* argv[])
 	}
 	
 	// Spectrum section
+	spectra_PARAMS(spectra_t,0,0,0);
+	for(i=0;i<24;i++){
+		if(spectra_t[i] != 0){
+			printf("Error! Failed to set parameters for spectrum %d.\n",i);
+			return spectra_t[i];
+		}
+	}
+
 	spectra_STOP(spectra_t);
 	for(i=0;i<24;i++){
 		if(spectra_t[i] != 0){
@@ -118,18 +126,18 @@ int main(int argc, char* argv[])
 		}
 	}
 
-	spectra_RESET(spectra_t);
-	for(i=0;i<24;i++){
-		if(spectra_t[i] != 0){
-			printf("Error! Failed to reset spectrum %d.\n",i);
-			return spectra_t[i];
-		}
-	}
-
 	spectra_FLUSH(spectra_t);
 	for(i=0;i<24;i++){
 		if(spectra_t[i] != 0){
 			printf("Error! Failed to flush spectrum %d.\n",i);
+			return spectra_t[i];
+		}
+	}
+	
+	spectra_RESET(spectra_t);
+	for(i=0;i<24;i++){
+		if(spectra_t[i] != 0){
+			printf("Error! Failed to reset spectrum %d.\n",i);
 			return spectra_t[i];
 		}
 	}

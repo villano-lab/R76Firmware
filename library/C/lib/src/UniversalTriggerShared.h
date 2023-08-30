@@ -19,7 +19,7 @@
 #define THRESH_TEXT   (" -t,    --thresh    <threshold>	            Set the value of the (lower) threshold in MeV (default: 1). \n")
 #define RANGE_TEXT    (" -r,	--range	    '<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned, in MeV (default: min 0, max 8, step size 1).\n")
 #define SKIP_TEXT     (" -S,    --skip      <#>                     Skip every # trigger to reduce the rate.\n")
-#define BASELINE_TEXT (" -b,    --baseline  <baseline>              Set the baseline in ADC units (positive integer).\n                                            WARNING! This will have unintended consequences for calibration, thresholds, and pulse integration. USE FOR DEV ONLY!\n")
+#define BASELINE_TEXT (" -b,    --baseline  <baseline>              Set the baseline in ADC units (positive integer) and force manual baseline mode. A baseline of 0 indicates automatic baseline mode. (default: 0/automatic)\n                                            WARNING! This will have unintended consequences for calibration, thresholds, and pulse integration. USE FOR DEV ONLY!\n")
 #define VERBOSE_TEXT  (" -v,	--verbose   <level>                 Print verbose messages at the specified level (1 if unspecified).\n")
 #define SILENT_TEXT   (" -s,-q,	--silent,--quiet,                   Print nothing. (Negative verbosity) \n")
 #define LOG_TEXT      (" -l,	--log	    <file>                  Log terminal output. (default: log.txt) \n")
@@ -50,6 +50,7 @@ extern int inhib;
 extern int delay;
 extern int polarity;
 extern int baseline;
+extern int manual_baseline;
 extern float top;
 extern int int_time;
 extern int pre_int;
@@ -159,6 +160,7 @@ int REG_thrsh_SET(uint32_t value, NI_HANDLE* handle);                         //
 //multichannel functions
 int *disable_dets(int *disable_q, int disable[24]);                     //disable detectors based on input array
 int *set_thresholds(char* side, int polarity, float energy, int *thresh_q);            //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
+int *spectra_PARAMS(int *spectra_q,int32_t Rebin, int32_t LimitMode, int32_t LimitValue); //set up spectrum parameters
 int *spectra_START(int *spectra_q);
 int *spectra_STOP(int *spectra_q);
 int *spectra_FLUSH(int *spectra_q);
