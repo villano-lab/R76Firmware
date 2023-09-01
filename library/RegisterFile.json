@@ -108,7 +108,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "empty",
+  "Name": "full",
   "Type": null,
   "Address": 3407929,
   "Version": null,
@@ -117,7 +117,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "full",
+  "Name": "timestamp",
   "Type": null,
   "Address": 3407930,
   "Version": null,
@@ -126,7 +126,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "timestamp",
+  "Name": "trigger_code",
   "Type": null,
   "Address": 3407931,
   "Version": null,
@@ -135,27 +135,9 @@
   "Category": "Undefined"
 },
 {
-  "Name": "trigger_code",
-  "Type": null,
-  "Address": 3407932,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
   "Name": "reset",
   "Type": null,
-  "Address": 3407933,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "fifo",
-  "Type": null,
-  "Address": 3407934,
+  "Address": 3407932,
   "Version": null,
   "RegionSize": 1,
   "Description": "",

@@ -233,14 +233,6 @@ def REG_skip_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_skip, handle)
     return err
 
-def REG_empty_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_empty, handle)
-    return err, data
-
-def REG_empty_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_empty, handle)
-    return err
-
 def REG_full_GET(handle):
     [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_full, handle)
     return err, data
@@ -271,14 +263,6 @@ def REG_reset_GET(handle):
 
 def REG_reset_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_reset, handle)
-    return err
-
-def REG_fifo_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_fifo, handle)
-    return err, data
-
-def REG_fifo_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_fifo, handle)
     return err
 
 

@@ -10,12 +10,10 @@
 #define SCI_REG_delay 0x00340036
 #define SCI_REG_polarity 0x00340037
 #define SCI_REG_skip 0x00340038
-#define SCI_REG_empty 0x00340039
-#define SCI_REG_full 0x0034003A
-#define SCI_REG_timestamp 0x0034003B
-#define SCI_REG_trigger_code 0x0034003C
-#define SCI_REG_reset 0x0034003D
-#define SCI_REG_fifo 0x0034003E
+#define SCI_REG_full 0x00340039
+#define SCI_REG_timestamp 0x0034003A
+#define SCI_REG_trigger_code 0x0034003B
+#define SCI_REG_reset 0x0034003C
 #define SCI_REG_RateMeter_NoSkip_FIFOADDRESS 0xB0000
 
 #define SCI_REG_RateMeter_0_FIFOADDRESS 0x50000

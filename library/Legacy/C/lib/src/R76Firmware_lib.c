@@ -370,7 +370,55 @@ SCILIB int ClearBuffer(void *buffer_handle)
 {
 	circular_buf_reset(buffer_handle);
 	return 0;
-}SCILIB int REG_gate_l_GET(uint32_t *val, NI_HANDLE *handle)
+}SCILIB int REG_int_time_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_int_time, handle);
+}
+SCILIB int REG_int_time_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_int_time, handle);
+}
+SCILIB int REG_pre_int_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_pre_int, handle);
+}
+SCILIB int REG_pre_int_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_pre_int, handle);
+}
+SCILIB int REG_baseline_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_baseline, handle);
+}
+SCILIB int REG_baseline_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_baseline, handle);
+}
+SCILIB int REG_write_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_write, handle);
+}
+SCILIB int REG_write_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_write, handle);
+}
+SCILIB int REG_read_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_read, handle);
+}
+SCILIB int REG_read_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_read, handle);
+}
+SCILIB int REG_stopwrite_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_stopwrite, handle);
+}
+SCILIB int REG_stopwrite_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_stopwrite, handle);
+}
+SCILIB int REG_gate_l_GET(uint32_t *val, NI_HANDLE *handle)
 {
      return __abstracted_reg_read(val, SCI_REG_gate_l, handle);
 }
@@ -410,414 +458,6 @@ SCILIB int REG_polarity_SET(uint32_t val, NI_HANDLE *handle)
 {
      return __abstracted_reg_write(val, SCI_REG_polarity, handle);
 }
-SCILIB int REG_thrsh_1_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_1, handle);
-}
-SCILIB int REG_thrsh_1_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_1, handle);
-}
-SCILIB int REG_thrsh_2_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_2, handle);
-}
-SCILIB int REG_thrsh_2_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_2, handle);
-}
-SCILIB int REG_thrsh_3_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_3, handle);
-}
-SCILIB int REG_thrsh_3_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_3, handle);
-}
-SCILIB int REG_thrsh_4_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_4, handle);
-}
-SCILIB int REG_thrsh_4_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_4, handle);
-}
-SCILIB int REG_thrsh_5_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_5, handle);
-}
-SCILIB int REG_thrsh_5_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_5, handle);
-}
-SCILIB int REG_thrsh_6_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_6, handle);
-}
-SCILIB int REG_thrsh_6_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_6, handle);
-}
-SCILIB int REG_thrsh_7_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_7, handle);
-}
-SCILIB int REG_thrsh_7_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_7, handle);
-}
-SCILIB int REG_thrsh_8_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_8, handle);
-}
-SCILIB int REG_thrsh_8_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_8, handle);
-}
-SCILIB int REG_thrsh_9_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_9, handle);
-}
-SCILIB int REG_thrsh_9_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_9, handle);
-}
-SCILIB int REG_thrsh_10_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_10, handle);
-}
-SCILIB int REG_thrsh_10_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_10, handle);
-}
-SCILIB int REG_thrsh_11_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_11, handle);
-}
-SCILIB int REG_thrsh_11_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_11, handle);
-}
-SCILIB int REG_thrsh_12_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_12, handle);
-}
-SCILIB int REG_thrsh_12_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_12, handle);
-}
-SCILIB int REG_thrsh_13_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_13, handle);
-}
-SCILIB int REG_thrsh_13_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_13, handle);
-}
-SCILIB int REG_thrsh_14_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_14, handle);
-}
-SCILIB int REG_thrsh_14_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_14, handle);
-}
-SCILIB int REG_thrsh_15_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_15, handle);
-}
-SCILIB int REG_thrsh_15_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_15, handle);
-}
-SCILIB int REG_thrsh_16_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_16, handle);
-}
-SCILIB int REG_thrsh_16_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_16, handle);
-}
-SCILIB int REG_thrsh_17_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_17, handle);
-}
-SCILIB int REG_thrsh_17_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_17, handle);
-}
-SCILIB int REG_thrsh_18_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_18, handle);
-}
-SCILIB int REG_thrsh_18_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_18, handle);
-}
-SCILIB int REG_thrsh_19_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_19, handle);
-}
-SCILIB int REG_thrsh_19_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_19, handle);
-}
-SCILIB int REG_thrsh_20_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_20, handle);
-}
-SCILIB int REG_thrsh_20_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_20, handle);
-}
-SCILIB int REG_thrsh_21_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_21, handle);
-}
-SCILIB int REG_thrsh_21_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_21, handle);
-}
-SCILIB int REG_thrsh_22_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_22, handle);
-}
-SCILIB int REG_thrsh_22_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_22, handle);
-}
-SCILIB int REG_thrsh_23_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_23, handle);
-}
-SCILIB int REG_thrsh_23_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_23, handle);
-}
-SCILIB int REG_thrsh_0_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_thrsh_0, handle);
-}
-SCILIB int REG_thrsh_0_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_thrsh_0, handle);
-}
-SCILIB int REG_top_0_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_0, handle);
-}
-SCILIB int REG_top_0_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_0, handle);
-}
-SCILIB int REG_top_1_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_1, handle);
-}
-SCILIB int REG_top_1_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_1, handle);
-}
-SCILIB int REG_top_2_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_2, handle);
-}
-SCILIB int REG_top_2_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_2, handle);
-}
-SCILIB int REG_top_3_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_3, handle);
-}
-SCILIB int REG_top_3_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_3, handle);
-}
-SCILIB int REG_top_4_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_4, handle);
-}
-SCILIB int REG_top_4_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_4, handle);
-}
-SCILIB int REG_top_5_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_5, handle);
-}
-SCILIB int REG_top_5_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_5, handle);
-}
-SCILIB int REG_top_6_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_6, handle);
-}
-SCILIB int REG_top_6_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_6, handle);
-}
-SCILIB int REG_top_7_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_7, handle);
-}
-SCILIB int REG_top_7_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_7, handle);
-}
-SCILIB int REG_top_8_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_8, handle);
-}
-SCILIB int REG_top_8_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_8, handle);
-}
-SCILIB int REG_top_9_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_9, handle);
-}
-SCILIB int REG_top_9_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_9, handle);
-}
-SCILIB int REG_top_10_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_10, handle);
-}
-SCILIB int REG_top_10_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_10, handle);
-}
-SCILIB int REG_top_11_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_11, handle);
-}
-SCILIB int REG_top_11_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_11, handle);
-}
-SCILIB int REG_top_12_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_12, handle);
-}
-SCILIB int REG_top_12_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_12, handle);
-}
-SCILIB int REG_top_13_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_13, handle);
-}
-SCILIB int REG_top_13_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_13, handle);
-}
-SCILIB int REG_top_14_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_14, handle);
-}
-SCILIB int REG_top_14_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_14, handle);
-}
-SCILIB int REG_top_15_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_15, handle);
-}
-SCILIB int REG_top_15_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_15, handle);
-}
-SCILIB int REG_top_16_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_16, handle);
-}
-SCILIB int REG_top_16_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_16, handle);
-}
-SCILIB int REG_top_17_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_17, handle);
-}
-SCILIB int REG_top_17_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_17, handle);
-}
-SCILIB int REG_top_18_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_18, handle);
-}
-SCILIB int REG_top_18_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_18, handle);
-}
-SCILIB int REG_top_19_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_19, handle);
-}
-SCILIB int REG_top_19_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_19, handle);
-}
-SCILIB int REG_top_20_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_20, handle);
-}
-SCILIB int REG_top_20_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_20, handle);
-}
-SCILIB int REG_top_21_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_21, handle);
-}
-SCILIB int REG_top_21_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_21, handle);
-}
-SCILIB int REG_top_22_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_22, handle);
-}
-SCILIB int REG_top_22_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_22, handle);
-}
-SCILIB int REG_top_23_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_top_23, handle);
-}
-SCILIB int REG_top_23_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_top_23, handle);
-}
-SCILIB int REG_int_time_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_int_time, handle);
-}
-SCILIB int REG_int_time_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_int_time, handle);
-}
-SCILIB int REG_pre_int_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_pre_int, handle);
-}
-SCILIB int REG_pre_int_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_pre_int, handle);
-}
-SCILIB int REG_baseline_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_baseline, handle);
-}
-SCILIB int REG_baseline_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_baseline, handle);
-}
 SCILIB int REG_skip_GET(uint32_t *val, NI_HANDLE *handle)
 {
      return __abstracted_reg_read(val, SCI_REG_skip, handle);
@@ -825,54 +465,6 @@ SCILIB int REG_skip_GET(uint32_t *val, NI_HANDLE *handle)
 SCILIB int REG_skip_SET(uint32_t val, NI_HANDLE *handle)
 {
      return __abstracted_reg_write(val, SCI_REG_skip, handle);
-}
-SCILIB int REG_reset_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_reset, handle);
-}
-SCILIB int REG_reset_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_reset, handle);
-}
-SCILIB int REG_read_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_read, handle);
-}
-SCILIB int REG_read_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_read, handle);
-}
-SCILIB int REG_write_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_write, handle);
-}
-SCILIB int REG_write_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_write, handle);
-}
-SCILIB int REG_stopwrite_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_stopwrite, handle);
-}
-SCILIB int REG_stopwrite_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_stopwrite, handle);
-}
-SCILIB int REG_fifo_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_fifo, handle);
-}
-SCILIB int REG_fifo_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_fifo, handle);
-}
-SCILIB int REG_empty_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_empty, handle);
-}
-SCILIB int REG_empty_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_empty, handle);
 }
 SCILIB int REG_full_GET(uint32_t *val, NI_HANDLE *handle)
 {
@@ -882,6 +474,14 @@ SCILIB int REG_full_SET(uint32_t val, NI_HANDLE *handle)
 {
      return __abstracted_reg_write(val, SCI_REG_full, handle);
 }
+SCILIB int REG_timestamp_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_timestamp, handle);
+}
+SCILIB int REG_timestamp_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_timestamp, handle);
+}
 SCILIB int REG_trigger_code_GET(uint32_t *val, NI_HANDLE *handle)
 {
      return __abstracted_reg_read(val, SCI_REG_trigger_code, handle);
@@ -890,13 +490,13 @@ SCILIB int REG_trigger_code_SET(uint32_t val, NI_HANDLE *handle)
 {
      return __abstracted_reg_write(val, SCI_REG_trigger_code, handle);
 }
-SCILIB int REG_timestamp_GET(uint32_t *val, NI_HANDLE *handle)
+SCILIB int REG_reset_GET(uint32_t *val, NI_HANDLE *handle)
 {
-     return __abstracted_reg_read(val, SCI_REG_timestamp, handle);
+     return __abstracted_reg_read(val, SCI_REG_reset, handle);
 }
-SCILIB int REG_timestamp_SET(uint32_t val, NI_HANDLE *handle)
+SCILIB int REG_reset_SET(uint32_t val, NI_HANDLE *handle)
 {
-     return __abstracted_reg_write(val, SCI_REG_timestamp, handle);
+     return __abstracted_reg_write(val, SCI_REG_reset, handle);
 }
 //-----------------------------------------------------------------
 //-
