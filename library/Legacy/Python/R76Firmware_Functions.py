@@ -137,6 +137,54 @@ def gray_to_bin(num, nbit):
     temp ^= (temp >> 1)
     return temp    
 
+def REG_int_time_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_int_time, handle)
+    return err, data
+
+def REG_int_time_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_int_time, handle)
+    return err
+
+def REG_pre_int_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
+    return err, data
+
+def REG_pre_int_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
+    return err
+
+def REG_baseline_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_baseline, handle)
+    return err, data
+
+def REG_baseline_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_baseline, handle)
+    return err
+
+def REG_write_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_write, handle)
+    return err, data
+
+def REG_write_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_write, handle)
+    return err
+
+def REG_read_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_read, handle)
+    return err, data
+
+def REG_read_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_read, handle)
+    return err
+
+def REG_stopwrite_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
+    return err, data
+
+def REG_stopwrite_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
+    return err
+
 def REG_gate_l_GET(handle):
     [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_gate_l, handle)
     return err, data
@@ -177,76 +225,12 @@ def REG_polarity_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_polarity, handle)
     return err
 
-def REG_int_time_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_int_time, handle)
-    return err, data
-
-def REG_int_time_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_int_time, handle)
-    return err
-
-def REG_pre_int_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
-    return err, data
-
-def REG_pre_int_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
-    return err
-
-def REG_baseline_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_baseline, handle)
-    return err, data
-
-def REG_baseline_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_baseline, handle)
-    return err
-
 def REG_skip_GET(handle):
     [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_skip, handle)
     return err, data
 
 def REG_skip_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_skip, handle)
-    return err
-
-def REG_reset_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_reset, handle)
-    return err, data
-
-def REG_reset_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_reset, handle)
-    return err
-
-def REG_read_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_read, handle)
-    return err, data
-
-def REG_read_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_read, handle)
-    return err
-
-def REG_write_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_write, handle)
-    return err, data
-
-def REG_write_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_write, handle)
-    return err
-
-def REG_stopwrite_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
-    return err, data
-
-def REG_stopwrite_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
-    return err
-
-def REG_fifo_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_fifo, handle)
-    return err, data
-
-def REG_fifo_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_fifo, handle)
     return err
 
 def REG_empty_GET(handle):
@@ -265,6 +249,14 @@ def REG_full_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_full, handle)
     return err
 
+def REG_timestamp_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
+    return err, data
+
+def REG_timestamp_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
+    return err
+
 def REG_trigger_code_GET(handle):
     [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_trigger_code, handle)
     return err, data
@@ -273,12 +265,20 @@ def REG_trigger_code_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_trigger_code, handle)
     return err
 
-def REG_timestamp_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
+def REG_reset_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_reset, handle)
     return err, data
 
-def REG_timestamp_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
+def REG_reset_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_reset, handle)
+    return err
+
+def REG_fifo_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_fifo, handle)
+    return err, data
+
+def REG_fifo_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_fifo, handle)
     return err
 
 
