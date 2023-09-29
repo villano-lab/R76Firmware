@@ -137,6 +137,54 @@ def gray_to_bin(num, nbit):
     temp ^= (temp >> 1)
     return temp    
 
+def REG_int_time_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_int_time, handle)
+    return err, data
+
+def REG_int_time_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_int_time, handle)
+    return err
+
+def REG_pre_int_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
+    return err, data
+
+def REG_pre_int_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
+    return err
+
+def REG_baseline_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_baseline, handle)
+    return err, data
+
+def REG_baseline_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_baseline, handle)
+    return err
+
+def REG_write_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_write, handle)
+    return err, data
+
+def REG_write_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_write, handle)
+    return err
+
+def REG_read_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_read, handle)
+    return err, data
+
+def REG_read_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_read, handle)
+    return err
+
+def REG_stopwrite_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
+    return err, data
+
+def REG_stopwrite_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
+    return err
+
 def REG_gate_l_GET(handle):
     [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_gate_l, handle)
     return err, data
@@ -177,660 +225,12 @@ def REG_polarity_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_polarity, handle)
     return err
 
-def REG_thrsh_1_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_1, handle)
-    return err, data
-
-def REG_thrsh_1_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_1, handle)
-    return err
-
-def REG_thrsh_2_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_2, handle)
-    return err, data
-
-def REG_thrsh_2_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_2, handle)
-    return err
-
-def REG_thrsh_3_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_3, handle)
-    return err, data
-
-def REG_thrsh_3_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_3, handle)
-    return err
-
-def REG_thrsh_4_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_4, handle)
-    return err, data
-
-def REG_thrsh_4_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_4, handle)
-    return err
-
-def REG_thrsh_5_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_5, handle)
-    return err, data
-
-def REG_thrsh_5_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_5, handle)
-    return err
-
-def REG_thrsh_6_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_6, handle)
-    return err, data
-
-def REG_thrsh_6_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_6, handle)
-    return err
-
-def REG_thrsh_7_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_7, handle)
-    return err, data
-
-def REG_thrsh_7_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_7, handle)
-    return err
-
-def REG_thrsh_8_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_8, handle)
-    return err, data
-
-def REG_thrsh_8_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_8, handle)
-    return err
-
-def REG_thrsh_9_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_9, handle)
-    return err, data
-
-def REG_thrsh_9_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_9, handle)
-    return err
-
-def REG_thrsh_10_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_10, handle)
-    return err, data
-
-def REG_thrsh_10_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_10, handle)
-    return err
-
-def REG_thrsh_11_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_11, handle)
-    return err, data
-
-def REG_thrsh_11_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_11, handle)
-    return err
-
-def REG_thrsh_12_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_12, handle)
-    return err, data
-
-def REG_thrsh_12_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_12, handle)
-    return err
-
-def REG_thrsh_13_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_13, handle)
-    return err, data
-
-def REG_thrsh_13_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_13, handle)
-    return err
-
-def REG_thrsh_14_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_14, handle)
-    return err, data
-
-def REG_thrsh_14_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_14, handle)
-    return err
-
-def REG_thrsh_15_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_15, handle)
-    return err, data
-
-def REG_thrsh_15_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_15, handle)
-    return err
-
-def REG_thrsh_16_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_16, handle)
-    return err, data
-
-def REG_thrsh_16_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_16, handle)
-    return err
-
-def REG_thrsh_17_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_17, handle)
-    return err, data
-
-def REG_thrsh_17_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_17, handle)
-    return err
-
-def REG_thrsh_18_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_18, handle)
-    return err, data
-
-def REG_thrsh_18_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_18, handle)
-    return err
-
-def REG_thrsh_19_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_19, handle)
-    return err, data
-
-def REG_thrsh_19_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_19, handle)
-    return err
-
-def REG_thrsh_20_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_20, handle)
-    return err, data
-
-def REG_thrsh_20_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_20, handle)
-    return err
-
-def REG_thrsh_21_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_21, handle)
-    return err, data
-
-def REG_thrsh_21_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_21, handle)
-    return err
-
-def REG_thrsh_22_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_22, handle)
-    return err, data
-
-def REG_thrsh_22_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_22, handle)
-    return err
-
-def REG_thrsh_23_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_23, handle)
-    return err, data
-
-def REG_thrsh_23_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_23, handle)
-    return err
-
-def REG_thrsh_0_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_0, handle)
-    return err, data
-
-def REG_thrsh_0_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_0, handle)
-    return err
-
-def REG_disable_det_0_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_0, handle)
-    return err, data
-
-def REG_disable_det_0_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_0, handle)
-    return err
-
-def REG_disable_det_1_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_1, handle)
-    return err, data
-
-def REG_disable_det_1_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_1, handle)
-    return err
-
-def REG_disable_det_2_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_2, handle)
-    return err, data
-
-def REG_disable_det_2_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_2, handle)
-    return err
-
-def REG_disable_det_3_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_3, handle)
-    return err, data
-
-def REG_disable_det_3_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_3, handle)
-    return err
-
-def REG_disable_det_4_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_4, handle)
-    return err, data
-
-def REG_disable_det_4_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_4, handle)
-    return err
-
-def REG_disable_det_5_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_5, handle)
-    return err, data
-
-def REG_disable_det_5_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_5, handle)
-    return err
-
-def REG_disable_det_6_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_6, handle)
-    return err, data
-
-def REG_disable_det_6_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_6, handle)
-    return err
-
-def REG_disable_det_7_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_7, handle)
-    return err, data
-
-def REG_disable_det_7_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_7, handle)
-    return err
-
-def REG_disable_det_8_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_8, handle)
-    return err, data
-
-def REG_disable_det_8_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_8, handle)
-    return err
-
-def REG_disable_det_9_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_9, handle)
-    return err, data
-
-def REG_disable_det_9_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_9, handle)
-    return err
-
-def REG_disale_det_10_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disale_det_10, handle)
-    return err, data
-
-def REG_disale_det_10_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disale_det_10, handle)
-    return err
-
-def REG_disable_det_11_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_11, handle)
-    return err, data
-
-def REG_disable_det_11_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_11, handle)
-    return err
-
-def REG_disable_det_12_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_12, handle)
-    return err, data
-
-def REG_disable_det_12_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_12, handle)
-    return err
-
-def REG_disable_det_13_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_13, handle)
-    return err, data
-
-def REG_disable_det_13_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_13, handle)
-    return err
-
-def REG_disable_det_14_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_14, handle)
-    return err, data
-
-def REG_disable_det_14_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_14, handle)
-    return err
-
-def REG_disable_det_15_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_15, handle)
-    return err, data
-
-def REG_disable_det_15_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_15, handle)
-    return err
-
-def REG_disable_det_16_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_16, handle)
-    return err, data
-
-def REG_disable_det_16_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_16, handle)
-    return err
-
-def REG_disable_det_17_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_17, handle)
-    return err, data
-
-def REG_disable_det_17_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_17, handle)
-    return err
-
-def REG_disable_det_18_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_18, handle)
-    return err, data
-
-def REG_disable_det_18_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_18, handle)
-    return err
-
-def REG_disable_det_19_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_19, handle)
-    return err, data
-
-def REG_disable_det_19_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_19, handle)
-    return err
-
-def REG_disable_det_20_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_20, handle)
-    return err, data
-
-def REG_disable_det_20_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_20, handle)
-    return err
-
-def REG_disable_det_21_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_21, handle)
-    return err, data
-
-def REG_disable_det_21_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_21, handle)
-    return err
-
-def REG_disable_det_22_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_22, handle)
-    return err, data
-
-def REG_disable_det_22_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_22, handle)
-    return err
-
-def REG_disable_det_23_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_23, handle)
-    return err, data
-
-def REG_disable_det_23_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_23, handle)
-    return err
-
-def REG_top_0_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_0, handle)
-    return err, data
-
-def REG_top_0_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_0, handle)
-    return err
-
-def REG_top_1_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_1, handle)
-    return err, data
-
-def REG_top_1_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_1, handle)
-    return err
-
-def REG_top_2_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_2, handle)
-    return err, data
-
-def REG_top_2_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_2, handle)
-    return err
-
-def REG_top_3_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_3, handle)
-    return err, data
-
-def REG_top_3_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_3, handle)
-    return err
-
-def REG_top_4_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_4, handle)
-    return err, data
-
-def REG_top_4_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_4, handle)
-    return err
-
-def REG_top_5_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_5, handle)
-    return err, data
-
-def REG_top_5_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_5, handle)
-    return err
-
-def REG_top_6_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_6, handle)
-    return err, data
-
-def REG_top_6_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_6, handle)
-    return err
-
-def REG_top_7_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_7, handle)
-    return err, data
-
-def REG_top_7_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_7, handle)
-    return err
-
-def REG_top_8_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_8, handle)
-    return err, data
-
-def REG_top_8_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_8, handle)
-    return err
-
-def REG_top_9_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_9, handle)
-    return err, data
-
-def REG_top_9_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_9, handle)
-    return err
-
-def REG_top_10_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_10, handle)
-    return err, data
-
-def REG_top_10_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_10, handle)
-    return err
-
-def REG_top_11_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_11, handle)
-    return err, data
-
-def REG_top_11_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_11, handle)
-    return err
-
-def REG_top_12_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_12, handle)
-    return err, data
-
-def REG_top_12_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_12, handle)
-    return err
-
-def REG_top_13_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_13, handle)
-    return err, data
-
-def REG_top_13_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_13, handle)
-    return err
-
-def REG_top_14_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_14, handle)
-    return err, data
-
-def REG_top_14_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_14, handle)
-    return err
-
-def REG_top_15_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_15, handle)
-    return err, data
-
-def REG_top_15_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_15, handle)
-    return err
-
-def REG_top_16_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_16, handle)
-    return err, data
-
-def REG_top_16_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_16, handle)
-    return err
-
-def REG_top_17_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_17, handle)
-    return err, data
-
-def REG_top_17_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_17, handle)
-    return err
-
-def REG_top_18_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_18, handle)
-    return err, data
-
-def REG_top_18_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_18, handle)
-    return err
-
-def REG_top_19_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_19, handle)
-    return err, data
-
-def REG_top_19_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_19, handle)
-    return err
-
-def REG_top_20_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_20, handle)
-    return err, data
-
-def REG_top_20_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_20, handle)
-    return err
-
-def REG_top_21_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_21, handle)
-    return err, data
-
-def REG_top_21_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_21, handle)
-    return err
-
-def REG_top_22_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_22, handle)
-    return err, data
-
-def REG_top_22_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_22, handle)
-    return err
-
-def REG_top_23_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_23, handle)
-    return err, data
-
-def REG_top_23_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_23, handle)
-    return err
-
-def REG_int_time_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_int_time, handle)
-    return err, data
-
-def REG_int_time_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_int_time, handle)
-    return err
-
-def REG_pre_int_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
-    return err, data
-
-def REG_pre_int_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
-    return err
-
-def REG_baseline_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_baseline, handle)
-    return err, data
-
-def REG_baseline_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_baseline, handle)
-    return err
-
 def REG_skip_GET(handle):
     [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_skip, handle)
     return err, data
 
 def REG_skip_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_skip, handle)
-    return err
-
-def REG_reset_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_reset, handle)
-    return err, data
-
-def REG_reset_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_reset, handle)
-    return err
-
-def REG_read_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_read, handle)
-    return err, data
-
-def REG_read_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_read, handle)
-    return err
-
-def REG_write_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_write, handle)
-    return err, data
-
-def REG_write_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_write, handle)
-    return err
-
-def REG_stopwrite_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
-    return err, data
-
-def REG_stopwrite_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
-    return err
-
-def REG_fifo_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_fifo, handle)
-    return err, data
-
-def REG_fifo_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_fifo, handle)
-    return err
-
-def REG_empty_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_empty, handle)
-    return err, data
-
-def REG_empty_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_empty, handle)
     return err
 
 def REG_full_GET(handle):
@@ -841,12 +241,12 @@ def REG_full_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_full, handle)
     return err
 
-def REG_disable_det_10_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_10, handle)
+def REG_timestamp_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
     return err, data
 
-def REG_disable_det_10_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_10, handle)
+def REG_timestamp_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
     return err
 
 def REG_trigger_code_GET(handle):
@@ -857,12 +257,12 @@ def REG_trigger_code_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_trigger_code, handle)
     return err
 
-def REG_timestamp_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
+def REG_reset_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_reset, handle)
     return err, data
 
-def REG_timestamp_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
+def REG_reset_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_reset, handle)
     return err
 
 

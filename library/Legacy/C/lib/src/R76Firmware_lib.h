@@ -27,6 +27,8 @@ extern "C" {
 #define SCILIB
 #endif
 #endif
+
+
 #define NI_HANDLE tR5560_Handle
 
 typedef struct
@@ -38,12 +40,15 @@ typedef struct
 	uint32_t Valid;
 } t_FRAME_packet;
 
+
 typedef struct
 {
 	t_FRAME_packet *packets;
 	int allocated_packets;
 	int valid_packets;
 } t_FRAME_packet_collection;
+
+
 
 typedef struct
 {
@@ -60,9 +65,9 @@ typedef struct
 	int valid_packets;
 } t_generic_event_collection;
 
-typedef struct  {
-    uint32_t row[18];
-}t_All_Energies_struct;
+
+
+
 
 SCILIB int R_ConnectDevice( char *IPAddress, uint32_t port, NI_HANDLE *handle);
 SCILIB int R_CloseConnection(NI_HANDLE *handle);
@@ -112,6 +117,238 @@ SCILIB int ClearBuffer(void *buffer_handle);
 }
 #endif
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef struct  {
+    uint32_t row[18];
+}t_All_Energies_struct;
+
+
+
+
+
+
+
+SCILIB int REG_int_time_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_int_time_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_pre_int_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_pre_int_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_baseline_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_baseline_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_write_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_write_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_read_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_read_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_stopwrite_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_stopwrite_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_gate_l_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_gate_l_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_gate_u_GET(uint32_t *val, NI_HANDLE *handle);
@@ -122,178 +359,16 @@ SCILIB int REG_delay_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_delay_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_polarity_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_polarity_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_1_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_1_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_2_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_2_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_3_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_3_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_4_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_4_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_5_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_5_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_6_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_6_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_7_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_7_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_8_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_8_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_9_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_9_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_10_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_10_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_11_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_11_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_12_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_12_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_13_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_13_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_14_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_14_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_15_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_15_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_16_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_16_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_17_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_17_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_18_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_18_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_19_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_19_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_20_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_20_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_21_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_21_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_22_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_22_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_23_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_23_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_0_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_thrsh_0_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_0_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_0_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_1_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_1_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_2_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_2_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_3_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_3_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_4_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_4_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_5_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_5_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_6_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_6_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_7_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_7_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_8_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_8_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_9_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_9_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disale_det_10_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disale_det_10_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_11_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_11_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_12_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_12_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_13_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_13_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_14_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_14_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_15_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_15_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_16_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_16_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_17_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_17_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_18_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_18_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_19_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_19_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_20_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_20_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_21_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_21_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_22_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_22_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_23_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_23_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_0_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_0_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_1_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_1_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_2_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_2_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_3_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_3_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_4_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_4_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_5_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_5_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_6_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_6_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_7_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_7_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_8_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_8_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_9_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_9_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_10_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_10_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_11_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_11_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_12_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_12_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_13_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_13_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_14_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_14_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_15_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_15_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_16_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_16_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_17_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_17_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_18_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_18_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_19_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_19_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_20_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_20_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_21_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_21_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_22_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_22_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_top_23_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_top_23_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_int_time_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_int_time_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_pre_int_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_pre_int_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_baseline_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_baseline_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_skip_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_skip_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_reset_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_reset_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_read_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_read_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_write_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_write_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_stopwrite_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_stopwrite_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_fifo_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_fifo_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_empty_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_empty_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_full_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_full_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_10_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_disable_det_10_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_trigger_code_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_trigger_code_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_timestamp_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_timestamp_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_trigger_code_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_trigger_code_SET(uint32_t val, NI_HANDLE *handle);
+SCILIB int REG_reset_GET(uint32_t *val, NI_HANDLE *handle);
+SCILIB int REG_reset_SET(uint32_t val, NI_HANDLE *handle);
 //-----------------------------------------------------------------
 //-
 //- RATE_METER_RateMeter_NoSkip_GET_DATA
@@ -524,7 +599,7 @@ SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -546,7 +621,7 @@ SCILIB int SPECTRUM_Spectrum_1_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -568,7 +643,7 @@ SCILIB int SPECTRUM_Spectrum_1_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -727,7 +802,7 @@ SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -749,7 +824,7 @@ SCILIB int SPECTRUM_Spectrum_2_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -771,7 +846,7 @@ SCILIB int SPECTRUM_Spectrum_2_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -930,7 +1005,7 @@ SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -952,7 +1027,7 @@ SCILIB int SPECTRUM_Spectrum_3_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -974,7 +1049,7 @@ SCILIB int SPECTRUM_Spectrum_3_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1133,7 +1208,7 @@ SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1155,7 +1230,7 @@ SCILIB int SPECTRUM_Spectrum_4_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1177,7 +1252,7 @@ SCILIB int SPECTRUM_Spectrum_4_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1336,7 +1411,7 @@ SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1358,7 +1433,7 @@ SCILIB int SPECTRUM_Spectrum_5_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1380,7 +1455,7 @@ SCILIB int SPECTRUM_Spectrum_5_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1539,7 +1614,7 @@ SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1561,7 +1636,7 @@ SCILIB int SPECTRUM_Spectrum_6_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1583,7 +1658,7 @@ SCILIB int SPECTRUM_Spectrum_6_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1742,7 +1817,7 @@ SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1764,7 +1839,7 @@ SCILIB int SPECTRUM_Spectrum_7_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1786,7 +1861,7 @@ SCILIB int SPECTRUM_Spectrum_7_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1945,7 +2020,7 @@ SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1967,7 +2042,7 @@ SCILIB int SPECTRUM_Spectrum_8_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1989,7 +2064,7 @@ SCILIB int SPECTRUM_Spectrum_8_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2148,7 +2223,7 @@ SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2170,7 +2245,7 @@ SCILIB int SPECTRUM_Spectrum_9_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2192,7 +2267,7 @@ SCILIB int SPECTRUM_Spectrum_9_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2351,7 +2426,7 @@ SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2373,7 +2448,7 @@ SCILIB int SPECTRUM_Spectrum_10_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2395,7 +2470,7 @@ SCILIB int SPECTRUM_Spectrum_10_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2554,7 +2629,7 @@ SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2576,7 +2651,7 @@ SCILIB int SPECTRUM_Spectrum_11_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2598,7 +2673,7 @@ SCILIB int SPECTRUM_Spectrum_11_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2757,7 +2832,7 @@ SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2779,7 +2854,7 @@ SCILIB int SPECTRUM_Spectrum_12_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2801,7 +2876,7 @@ SCILIB int SPECTRUM_Spectrum_12_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2960,7 +3035,7 @@ SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2982,7 +3057,7 @@ SCILIB int SPECTRUM_Spectrum_13_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3004,7 +3079,7 @@ SCILIB int SPECTRUM_Spectrum_13_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3163,7 +3238,7 @@ SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3185,7 +3260,7 @@ SCILIB int SPECTRUM_Spectrum_14_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3207,7 +3282,7 @@ SCILIB int SPECTRUM_Spectrum_14_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3366,7 +3441,7 @@ SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3388,7 +3463,7 @@ SCILIB int SPECTRUM_Spectrum_15_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3410,7 +3485,7 @@ SCILIB int SPECTRUM_Spectrum_15_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3569,7 +3644,7 @@ SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3591,7 +3666,7 @@ SCILIB int SPECTRUM_Spectrum_16_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3613,7 +3688,7 @@ SCILIB int SPECTRUM_Spectrum_16_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3772,7 +3847,7 @@ SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3794,7 +3869,7 @@ SCILIB int SPECTRUM_Spectrum_17_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3816,7 +3891,7 @@ SCILIB int SPECTRUM_Spectrum_17_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3975,7 +4050,7 @@ SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3997,7 +4072,7 @@ SCILIB int SPECTRUM_Spectrum_18_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4019,7 +4094,7 @@ SCILIB int SPECTRUM_Spectrum_18_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4178,7 +4253,7 @@ SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4200,7 +4275,7 @@ SCILIB int SPECTRUM_Spectrum_19_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4222,7 +4297,7 @@ SCILIB int SPECTRUM_Spectrum_19_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4381,7 +4456,7 @@ SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4403,7 +4478,7 @@ SCILIB int SPECTRUM_Spectrum_20_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4425,7 +4500,7 @@ SCILIB int SPECTRUM_Spectrum_20_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4584,7 +4659,7 @@ SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4606,7 +4681,7 @@ SCILIB int SPECTRUM_Spectrum_21_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4628,7 +4703,7 @@ SCILIB int SPECTRUM_Spectrum_21_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4787,7 +4862,7 @@ SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4809,7 +4884,7 @@ SCILIB int SPECTRUM_Spectrum_22_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4831,7 +4906,7 @@ SCILIB int SPECTRUM_Spectrum_22_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4990,7 +5065,7 @@ SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5012,7 +5087,7 @@ SCILIB int SPECTRUM_Spectrum_23_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5034,7 +5109,7 @@ SCILIB int SPECTRUM_Spectrum_23_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5193,7 +5268,7 @@ SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5215,7 +5290,7 @@ SCILIB int SPECTRUM_Spectrum_0_STOP(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5237,7 +5312,7 @@ SCILIB int SPECTRUM_Spectrum_0_FLUSH(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5895,4 +5970,4 @@ SCILIB int CPACK_All_Energies_DOWNLOAD(uint32_t *val, uint32_t size, int32_t tim
 //-
 //-----------------------------------------------------------------
 
-SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_event_collection *decoded_packets, int verbose, NI_HANDLE handle);
+SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_event_collection *decoded_packets);

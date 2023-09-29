@@ -1,123 +1,6 @@
 {"Registers":[
 {
-  "Name": "gate_l",
-  "Type": null,
-  "Address": 3407904,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "gate_u",
-  "Type": null,
-  "Address": 3407905,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "inhib",
-  "Type": null,
-  "Address": 3407906,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "delay",
-  "Type": null,
-  "Address": 3407907,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "polarity",
-  "Type": null,
-  "Address": 3407908,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "thrsh_1",
-  "Type": null,
-  "Address": 3407909,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "thrsh_2",
-  "Type": null,
-  "Address": 3407910,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "thrsh_3",
-  "Type": null,
-  "Address": 3407911,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "thrsh_4",
-  "Type": null,
-  "Address": 3407912,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "thrsh_5",
-  "Type": null,
-  "Address": 3407913,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "thrsh_6",
-  "Type": null,
-  "Address": 3407914,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "thrsh_7",
-  "Type": null,
-  "Address": 3407915,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "thrsh_8",
-  "Type": null,
-  "Address": 3407916,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "thrsh_9",
+  "Name": "int_time",
   "Type": null,
   "Address": 3407917,
   "Version": null,
@@ -126,7 +9,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_10",
+  "Name": "pre_int",
   "Type": null,
   "Address": 3407918,
   "Version": null,
@@ -135,7 +18,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_11",
+  "Name": "baseline",
   "Type": null,
   "Address": 3407919,
   "Version": null,
@@ -144,7 +27,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_12",
+  "Name": "write",
   "Type": null,
   "Address": 3407920,
   "Version": null,
@@ -153,7 +36,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_13",
+  "Name": "read",
   "Type": null,
   "Address": 3407921,
   "Version": null,
@@ -162,7 +45,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_14",
+  "Name": "stopwrite",
   "Type": null,
   "Address": 3407922,
   "Version": null,
@@ -171,7 +54,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_15",
+  "Name": "gate_l",
   "Type": null,
   "Address": 3407923,
   "Version": null,
@@ -180,7 +63,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_16",
+  "Name": "gate_u",
   "Type": null,
   "Address": 3407924,
   "Version": null,
@@ -189,7 +72,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_17",
+  "Name": "inhib",
   "Type": null,
   "Address": 3407925,
   "Version": null,
@@ -198,7 +81,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_18",
+  "Name": "delay",
   "Type": null,
   "Address": 3407926,
   "Version": null,
@@ -207,7 +90,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_19",
+  "Name": "polarity",
   "Type": null,
   "Address": 3407927,
   "Version": null,
@@ -216,7 +99,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_20",
+  "Name": "skip",
   "Type": null,
   "Address": 3407928,
   "Version": null,
@@ -225,7 +108,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_21",
+  "Name": "full",
   "Type": null,
   "Address": 3407929,
   "Version": null,
@@ -234,7 +117,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_22",
+  "Name": "timestamp",
   "Type": null,
   "Address": 3407930,
   "Version": null,
@@ -243,7 +126,7 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_23",
+  "Name": "trigger_code",
   "Type": null,
   "Address": 3407931,
   "Version": null,
@@ -252,567 +135,9 @@
   "Category": "Undefined"
 },
 {
-  "Name": "thrsh_0",
-  "Type": null,
-  "Address": 3407932,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_0",
-  "Type": null,
-  "Address": 3407933,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_1",
-  "Type": null,
-  "Address": 3407934,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_2",
-  "Type": null,
-  "Address": 3407935,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_3",
-  "Type": null,
-  "Address": 3407936,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_4",
-  "Type": null,
-  "Address": 3407937,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_5",
-  "Type": null,
-  "Address": 3407938,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_6",
-  "Type": null,
-  "Address": 3407939,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_7",
-  "Type": null,
-  "Address": 3407940,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_8",
-  "Type": null,
-  "Address": 3407941,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_9",
-  "Type": null,
-  "Address": 3407942,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disale_det_10",
-  "Type": null,
-  "Address": 3407943,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_11",
-  "Type": null,
-  "Address": 3407944,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_12",
-  "Type": null,
-  "Address": 3407945,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_13",
-  "Type": null,
-  "Address": 3407946,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_14",
-  "Type": null,
-  "Address": 3407947,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_15",
-  "Type": null,
-  "Address": 3407948,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_16",
-  "Type": null,
-  "Address": 3407949,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_17",
-  "Type": null,
-  "Address": 3407950,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_18",
-  "Type": null,
-  "Address": 3407951,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_19",
-  "Type": null,
-  "Address": 3407952,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_20",
-  "Type": null,
-  "Address": 3407953,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_21",
-  "Type": null,
-  "Address": 3407954,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_22",
-  "Type": null,
-  "Address": 3407955,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_23",
-  "Type": null,
-  "Address": 3407956,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_0",
-  "Type": null,
-  "Address": 3407957,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_1",
-  "Type": null,
-  "Address": 3407958,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_2",
-  "Type": null,
-  "Address": 3407959,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_3",
-  "Type": null,
-  "Address": 3407960,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_4",
-  "Type": null,
-  "Address": 3407961,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_5",
-  "Type": null,
-  "Address": 3407962,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_6",
-  "Type": null,
-  "Address": 3407963,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_7",
-  "Type": null,
-  "Address": 3407964,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_8",
-  "Type": null,
-  "Address": 3407965,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_9",
-  "Type": null,
-  "Address": 3407966,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_10",
-  "Type": null,
-  "Address": 3407967,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_11",
-  "Type": null,
-  "Address": 3407968,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_12",
-  "Type": null,
-  "Address": 3407969,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_13",
-  "Type": null,
-  "Address": 3407970,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_14",
-  "Type": null,
-  "Address": 3407971,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_15",
-  "Type": null,
-  "Address": 3407972,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_16",
-  "Type": null,
-  "Address": 3407973,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_17",
-  "Type": null,
-  "Address": 3407974,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_18",
-  "Type": null,
-  "Address": 3407975,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_19",
-  "Type": null,
-  "Address": 3407976,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_20",
-  "Type": null,
-  "Address": 3407977,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_21",
-  "Type": null,
-  "Address": 3407978,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_22",
-  "Type": null,
-  "Address": 3407979,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "top_23",
-  "Type": null,
-  "Address": 3407980,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "int_time",
-  "Type": null,
-  "Address": 3407981,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "pre_int",
-  "Type": null,
-  "Address": 3407982,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "baseline",
-  "Type": null,
-  "Address": 3407983,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "skip",
-  "Type": null,
-  "Address": 3407984,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
   "Name": "reset",
   "Type": null,
-  "Address": 3407985,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "read",
-  "Type": null,
-  "Address": 3407986,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "write",
-  "Type": null,
-  "Address": 3407987,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "stopwrite",
-  "Type": null,
-  "Address": 3407988,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "fifo",
-  "Type": null,
-  "Address": 3407989,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "empty",
-  "Type": null,
-  "Address": 3407990,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "full",
-  "Type": null,
-  "Address": 3407991,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "disable_det_10",
-  "Type": null,
-  "Address": 3407992,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "trigger_code",
-  "Type": null,
-  "Address": 3407993,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "timestamp",
-  "Type": null,
-  "Address": 3407999,
+  "Address": 3407932,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -2308,230 +1633,6 @@
   "CountsBit": 16
 },
 {
-  "Name": "disable_detector",
-  "Type": "RegisterFile",
-  "Address": 3407879,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "0",
-      "Type": "Register",
-      "Address": 3407880,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "1",
-      "Type": "Register",
-      "Address": 3407881,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "2",
-      "Type": "Register",
-      "Address": 3407882,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "3",
-      "Type": "Register",
-      "Address": 3407883,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "4",
-      "Type": "Register",
-      "Address": 3407884,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "5",
-      "Type": "Register",
-      "Address": 3407885,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "6",
-      "Type": "Register",
-      "Address": 3407886,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "7",
-      "Type": "Register",
-      "Address": 3407887,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "8",
-      "Type": "Register",
-      "Address": 3407888,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "9",
-      "Type": "Register",
-      "Address": 3407889,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "10",
-      "Type": "Register",
-      "Address": 3407890,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "11",
-      "Type": "Register",
-      "Address": 3407891,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "12",
-      "Type": "Register",
-      "Address": 3407892,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "13",
-      "Type": "Register",
-      "Address": 3407893,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "14",
-      "Type": "Register",
-      "Address": 3407894,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "15",
-      "Type": "Register",
-      "Address": 3407895,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "16",
-      "Type": "Register",
-      "Address": 3407896,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "17",
-      "Type": "Register",
-      "Address": 3407897,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "18",
-      "Type": "Register",
-      "Address": 3407898,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "19",
-      "Type": "Register",
-      "Address": 3407899,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "20",
-      "Type": "Register",
-      "Address": 3407900,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "21",
-      "Type": "Register",
-      "Address": 3407901,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "22",
-      "Type": "Register",
-      "Address": 3407902,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "23",
-      "Type": "Register",
-      "Address": 3407903,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    }
-  ]
-},
-{
   "Name": "Spectrum_0",
   "Type": "Spectrum",
   "Address": 65536,
@@ -2678,14 +1779,14 @@
 {
   "Name": "All_Energies",
   "Type": "CustomPacket",
-  "Address": 3407995,
+  "Address": 3407879,
   "Version": "1.1.0.0",
   "Channels": 0,
   "Registers": [
     {
       "Name": "READ_STATUS",
       "Type": null,
-      "Address": 3407996,
+      "Address": 3407880,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -2694,7 +1795,7 @@
     {
       "Name": "READ_VALID_WORDS",
       "Type": null,
-      "Address": 3407997,
+      "Address": 3407881,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -2703,7 +1804,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 3407998,
+      "Address": 3407882,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -3140,4 +2241,1188 @@
     }
   ],
   "BufferLength": 0
+},
+{
+  "Name": "thrsh",
+  "Type": "RegisterFile",
+  "Address": 131079,
+  "Version": "1.0.0.0",
+  "Registers": [
+    {
+      "Name": "0",
+      "Type": "Register",
+      "Address": 131080,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "1",
+      "Type": "Register",
+      "Address": 131081,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "2",
+      "Type": "Register",
+      "Address": 131082,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "3",
+      "Type": "Register",
+      "Address": 131083,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "4",
+      "Type": "Register",
+      "Address": 131084,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "5",
+      "Type": "Register",
+      "Address": 131085,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "6",
+      "Type": "Register",
+      "Address": 131086,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "7",
+      "Type": "Register",
+      "Address": 131087,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "8",
+      "Type": "Register",
+      "Address": 131088,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "9",
+      "Type": "Register",
+      "Address": 131089,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "10",
+      "Type": "Register",
+      "Address": 131090,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "11",
+      "Type": "Register",
+      "Address": 131091,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "12",
+      "Type": "Register",
+      "Address": 131092,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "13",
+      "Type": "Register",
+      "Address": 131093,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "14",
+      "Type": "Register",
+      "Address": 131094,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "15",
+      "Type": "Register",
+      "Address": 131095,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "16",
+      "Type": "Register",
+      "Address": 131096,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "17",
+      "Type": "Register",
+      "Address": 131097,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "18",
+      "Type": "Register",
+      "Address": 131098,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "19",
+      "Type": "Register",
+      "Address": 131099,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "20",
+      "Type": "Register",
+      "Address": 131100,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "21",
+      "Type": "Register",
+      "Address": 131101,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "22",
+      "Type": "Register",
+      "Address": 131102,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "23",
+      "Type": "Register",
+      "Address": 131103,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "24",
+      "Type": "Register",
+      "Address": 131104,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "25",
+      "Type": "Register",
+      "Address": 131105,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "26",
+      "Type": "Register",
+      "Address": 131106,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "27",
+      "Type": "Register",
+      "Address": 131107,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "28",
+      "Type": "Register",
+      "Address": 131108,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "29",
+      "Type": "Register",
+      "Address": 131109,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "30",
+      "Type": "Register",
+      "Address": 131110,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "31",
+      "Type": "Register",
+      "Address": 131111,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    }
+  ]
+},
+{
+  "Name": "disable_det",
+  "Type": "RegisterFile",
+  "Address": 2097159,
+  "Version": "1.0.0.0",
+  "Registers": [
+    {
+      "Name": "0",
+      "Type": "Register",
+      "Address": 2097160,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "1",
+      "Type": "Register",
+      "Address": 2097161,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "2",
+      "Type": "Register",
+      "Address": 2097162,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "3",
+      "Type": "Register",
+      "Address": 2097163,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "4",
+      "Type": "Register",
+      "Address": 2097164,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "5",
+      "Type": "Register",
+      "Address": 2097165,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "6",
+      "Type": "Register",
+      "Address": 2097166,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "7",
+      "Type": "Register",
+      "Address": 2097167,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "8",
+      "Type": "Register",
+      "Address": 2097168,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "9",
+      "Type": "Register",
+      "Address": 2097169,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "10",
+      "Type": "Register",
+      "Address": 2097170,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "11",
+      "Type": "Register",
+      "Address": 2097171,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "12",
+      "Type": "Register",
+      "Address": 2097172,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "13",
+      "Type": "Register",
+      "Address": 2097173,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "14",
+      "Type": "Register",
+      "Address": 2097174,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "15",
+      "Type": "Register",
+      "Address": 2097175,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "16",
+      "Type": "Register",
+      "Address": 2097176,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "17",
+      "Type": "Register",
+      "Address": 2097177,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "18",
+      "Type": "Register",
+      "Address": 2097178,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "19",
+      "Type": "Register",
+      "Address": 2097179,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "20",
+      "Type": "Register",
+      "Address": 2097180,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "21",
+      "Type": "Register",
+      "Address": 2097181,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "22",
+      "Type": "Register",
+      "Address": 2097182,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "23",
+      "Type": "Register",
+      "Address": 2097183,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "24",
+      "Type": "Register",
+      "Address": 2097184,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "25",
+      "Type": "Register",
+      "Address": 2097185,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "26",
+      "Type": "Register",
+      "Address": 2097186,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "27",
+      "Type": "Register",
+      "Address": 2097187,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "28",
+      "Type": "Register",
+      "Address": 2097188,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "29",
+      "Type": "Register",
+      "Address": 2097189,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "30",
+      "Type": "Register",
+      "Address": 2097190,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "31",
+      "Type": "Register",
+      "Address": 2097191,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    }
+  ]
+},
+{
+  "Name": "top",
+  "Type": "RegisterFile",
+  "Address": 1835015,
+  "Version": "1.0.0.0",
+  "Registers": [
+    {
+      "Name": "0",
+      "Type": "Register",
+      "Address": 1835016,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "1",
+      "Type": "Register",
+      "Address": 1835017,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "2",
+      "Type": "Register",
+      "Address": 1835018,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "3",
+      "Type": "Register",
+      "Address": 1835019,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "4",
+      "Type": "Register",
+      "Address": 1835020,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "5",
+      "Type": "Register",
+      "Address": 1835021,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "6",
+      "Type": "Register",
+      "Address": 1835022,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "7",
+      "Type": "Register",
+      "Address": 1835023,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "8",
+      "Type": "Register",
+      "Address": 1835024,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "9",
+      "Type": "Register",
+      "Address": 1835025,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "10",
+      "Type": "Register",
+      "Address": 1835026,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "11",
+      "Type": "Register",
+      "Address": 1835027,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "12",
+      "Type": "Register",
+      "Address": 1835028,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "13",
+      "Type": "Register",
+      "Address": 1835029,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "14",
+      "Type": "Register",
+      "Address": 1835030,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "15",
+      "Type": "Register",
+      "Address": 1835031,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "16",
+      "Type": "Register",
+      "Address": 1835032,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "17",
+      "Type": "Register",
+      "Address": 1835033,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "18",
+      "Type": "Register",
+      "Address": 1835034,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "19",
+      "Type": "Register",
+      "Address": 1835035,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "20",
+      "Type": "Register",
+      "Address": 1835036,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "21",
+      "Type": "Register",
+      "Address": 1835037,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "22",
+      "Type": "Register",
+      "Address": 1835038,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "23",
+      "Type": "Register",
+      "Address": 1835039,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "24",
+      "Type": "Register",
+      "Address": 1835040,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "25",
+      "Type": "Register",
+      "Address": 1835041,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "26",
+      "Type": "Register",
+      "Address": 1835042,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "27",
+      "Type": "Register",
+      "Address": 1835043,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "28",
+      "Type": "Register",
+      "Address": 1835044,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "29",
+      "Type": "Register",
+      "Address": 1835045,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "30",
+      "Type": "Register",
+      "Address": 1835046,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "31",
+      "Type": "Register",
+      "Address": 1835047,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    }
+  ]
+},
+{
+  "Name": "base",
+  "Type": "RegisterFile",
+  "Address": 3407884,
+  "Version": "1.0.0.0",
+  "Registers": [
+    {
+      "Name": "0",
+      "Type": "Register",
+      "Address": 3407885,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "1",
+      "Type": "Register",
+      "Address": 3407886,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "2",
+      "Type": "Register",
+      "Address": 3407887,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "3",
+      "Type": "Register",
+      "Address": 3407888,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "4",
+      "Type": "Register",
+      "Address": 3407889,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "5",
+      "Type": "Register",
+      "Address": 3407890,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "6",
+      "Type": "Register",
+      "Address": 3407891,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "7",
+      "Type": "Register",
+      "Address": 3407892,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "8",
+      "Type": "Register",
+      "Address": 3407893,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "9",
+      "Type": "Register",
+      "Address": 3407894,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "10",
+      "Type": "Register",
+      "Address": 3407895,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "11",
+      "Type": "Register",
+      "Address": 3407896,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "12",
+      "Type": "Register",
+      "Address": 3407897,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "13",
+      "Type": "Register",
+      "Address": 3407898,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "14",
+      "Type": "Register",
+      "Address": 3407899,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "15",
+      "Type": "Register",
+      "Address": 3407900,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "16",
+      "Type": "Register",
+      "Address": 3407901,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "17",
+      "Type": "Register",
+      "Address": 3407902,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "18",
+      "Type": "Register",
+      "Address": 3407903,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "19",
+      "Type": "Register",
+      "Address": 3407904,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "20",
+      "Type": "Register",
+      "Address": 3407905,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "21",
+      "Type": "Register",
+      "Address": 3407906,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "22",
+      "Type": "Register",
+      "Address": 3407907,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "23",
+      "Type": "Register",
+      "Address": 3407908,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "24",
+      "Type": "Register",
+      "Address": 3407909,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "25",
+      "Type": "Register",
+      "Address": 3407910,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "26",
+      "Type": "Register",
+      "Address": 3407911,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "27",
+      "Type": "Register",
+      "Address": 3407912,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "28",
+      "Type": "Register",
+      "Address": 3407913,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "29",
+      "Type": "Register",
+      "Address": 3407914,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "30",
+      "Type": "Register",
+      "Address": 3407915,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "31",
+      "Type": "Register",
+      "Address": 3407916,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    }
+  ]
 }],"Device":"DT5560","Project":"R76Firmware"}
