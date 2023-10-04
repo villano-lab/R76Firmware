@@ -88,3 +88,6 @@ out.csv
 
 # Local Run Plans
 library/C/lib/local_scripts
+
+# Large files
+*_long*.csv
