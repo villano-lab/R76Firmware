@@ -11,7 +11,7 @@
 #include <math.h>
 
 //Text defines
-#define BOARD_IP_ADDRESS ("134.84.150.42")
+#define BOARD_IP_ADDRESS ("134.84.150.114")
 #define DET_TEXT      (" -D,	--det	    <# or source name>	    Choose which detectors to trigger on (default: all).\n				            Number values are bitwise from 0 to all 1s in 32 bit (4294967295).\n")
 #define GATE_TEXT     (" -g,	--gate	    '<lower #> <upper #>'   Set the gate times for the upper and lower triggers in clock ticks (integer. defaults: 10-100)\n					    The two entries are delimited by spaces, commas, or dashes. Both must be provided.\n")
 #define DELAY_TEXT    (" -d,	--delay	    <delay length>          Set the value of the delay time in clock ticks (integer. default: 50)\n")
@@ -170,5 +170,5 @@ int *spectra_STATUS(uint32_t *spectra_q);
 int *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, int *specread_q, int *specvalid_q);
 //utility functions
 int connect_staticaddr(int verbose);                                    //connect to the board, with print functions.
-int set_by_polarity(int (*f)(uint32_t, NI_HANDLE*), int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
+int set_by_polarity(uint32_t address, int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
 int kbhit(void);                                                        //allow keyboard interrupt

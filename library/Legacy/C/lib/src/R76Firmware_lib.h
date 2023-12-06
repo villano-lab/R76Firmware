@@ -599,7 +599,7 @@ SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -621,7 +621,7 @@ SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -643,7 +643,7 @@ SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -802,7 +802,7 @@ SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -824,7 +824,7 @@ SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -846,7 +846,7 @@ SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1005,7 +1005,7 @@ SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1027,7 +1027,7 @@ SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1049,7 +1049,7 @@ SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1208,7 +1208,7 @@ SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1230,7 +1230,7 @@ SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1252,7 +1252,7 @@ SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1411,7 +1411,7 @@ SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1433,7 +1433,7 @@ SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1455,7 +1455,7 @@ SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1614,7 +1614,7 @@ SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1636,7 +1636,7 @@ SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1658,7 +1658,7 @@ SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1817,7 +1817,7 @@ SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1839,7 +1839,7 @@ SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -1861,7 +1861,7 @@ SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2020,7 +2020,7 @@ SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2042,7 +2042,7 @@ SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2064,7 +2064,7 @@ SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2223,7 +2223,7 @@ SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2245,7 +2245,7 @@ SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2267,7 +2267,7 @@ SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2426,7 +2426,7 @@ SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2448,7 +2448,7 @@ SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2470,7 +2470,7 @@ SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2629,7 +2629,7 @@ SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_11_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2651,7 +2651,7 @@ SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_11_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2673,7 +2673,7 @@ SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_11_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2832,7 +2832,7 @@ SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2854,7 +2854,7 @@ SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -2876,7 +2876,7 @@ SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3035,7 +3035,7 @@ SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3057,7 +3057,7 @@ SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3079,7 +3079,7 @@ SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3238,7 +3238,7 @@ SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3260,7 +3260,7 @@ SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3282,7 +3282,7 @@ SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3441,7 +3441,7 @@ SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3463,7 +3463,7 @@ SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3485,7 +3485,7 @@ SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3644,7 +3644,7 @@ SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3666,7 +3666,7 @@ SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3688,7 +3688,7 @@ SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3847,7 +3847,7 @@ SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3869,7 +3869,7 @@ SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -3891,7 +3891,7 @@ SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4050,7 +4050,7 @@ SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4072,7 +4072,7 @@ SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4094,7 +4094,7 @@ SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4253,7 +4253,7 @@ SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4275,7 +4275,7 @@ SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4297,7 +4297,7 @@ SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4456,7 +4456,7 @@ SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4478,7 +4478,7 @@ SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4500,7 +4500,7 @@ SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4659,7 +4659,7 @@ SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4681,7 +4681,7 @@ SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4703,7 +4703,7 @@ SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4862,7 +4862,7 @@ SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4884,7 +4884,7 @@ SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -4906,7 +4906,7 @@ SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5043,7 +5043,7 @@ SCILIB int SPECTRUM_Spectrum_22_DOWNLOAD(uint32_t *val, uint32_t size, int32_t t
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_23_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5087,7 +5087,7 @@ SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_23_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5109,7 +5109,7 @@ SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_23_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5268,7 +5268,7 @@ SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_STOP(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5290,7 +5290,7 @@ SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_FLUSH(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5312,7 +5312,7 @@ SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_RESET(NI_HANDLE *handle)
 ;
 //-----------------------------------------------------------------
 //-
@@ -5970,4 +5970,4 @@ SCILIB int CPACK_All_Energies_DOWNLOAD(uint32_t *val, uint32_t size, int32_t tim
 //-
 //-----------------------------------------------------------------
 
-SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_event_collection *decoded_packets);
+SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_event_collection *decoded_packets, int verbose, NI_HANDLE handle);

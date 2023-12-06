@@ -200,11 +200,12 @@ int main(int argc, char* argv[])
 			printf("Error! Failed to check status of custom packet.\n");
 			return status_q;
 		}*/
+		/*no longer works this way
 		fifo_q = REG_fifo_GET(&fifo,&handle);
 		if(fifo_q != 0){
 			printf("Error! Failed to download data from fifo.\n");
 			return fifo_q;
-		}
+		}*/
 		end = clock();
 		if(verbose > 2){printf("Time spent retrieving an entry: %f us\n.",(double)(end - begin)*1000000/CLOCKS_PER_SEC);}
 		//print fifo variable
@@ -214,11 +215,12 @@ int main(int argc, char* argv[])
 		fflush(stdout); //flush the print buffer here
 		if(verbose > 0 && verbose < 3){printf("Result: %u (#%d)\n",fifo,i);}
 		if(logfile != NULL){fprintf(logfile,"%u (%d)\n",fifo,i);}
+		/*register no longer exists
 		empty_q = REG_empty_GET(&empty,&handle);
 		if(empty_q != 0){
 			printf("\nError! Failed to get the `empty` variable.\n");
 			return empty_q;
-		}
+		}*/
 		
 		end = clock();
 		if(verbose > 2){printf("Time spent setting up to start the loop over again: %f us\n.",(double)(end - begin)*1000000/CLOCKS_PER_SEC);}

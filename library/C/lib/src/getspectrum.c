@@ -89,13 +89,13 @@ int main(int argc, char* argv[])
 	}
 
 	int i=0;
-	
+
 	//Reset everything real quick
 	reset_q = REG_reset_SET(1,&handle);
 	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
-	}	
+	}
 	reset_q = REG_reset_SET(0,&handle);
 	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
@@ -110,13 +110,14 @@ int main(int argc, char* argv[])
 	}
 	
 	// Spectrum section
+	/* this doesn't work, and I don't think it has ever worked.
 	spectra_PARAMS(spectra_t,0,0,0);
 	for(i=0;i<24;i++){
 		if(spectra_t[i] != 0){
 			printf("Error! Failed to set parameters for spectrum %d.\n",i);
 			return spectra_t[i];
 		}
-	}
+	}*/
 
 	spectra_STOP(spectra_t);
 	for(i=0;i<24;i++){
