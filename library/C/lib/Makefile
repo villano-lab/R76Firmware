@@ -47,11 +47,11 @@ LibPath                := $(LibraryPathSwitch).
 AR       := ar rcus
 CXX      := gcc
 CC       := gcc
-CXXFLAGS :=  -g $(Preprocessors)
-CFLAGS   :=  -g -fPIC $(Preprocessors)
+CVER	 := -std=gnu99
+CXXFLAGS :=  -g $(Preprocessors) $(CVER)
+CFLAGS   :=  -g -fPIC $(Preprocessors) $(CVER)
 ASFLAGS  :=
 AS       := as
-
 
 ##
 ## User defined environment variables
@@ -78,23 +78,23 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	@echo rebuilt > ".build-debug/$(ProjectName)"
 
 fifotest: $(OutputFile)
-	gcc -o fifotest src/fifotest.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+	gcc -o fifotest src/fifotest.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CFLAGS) -lm -ldl
 getspectrum: $(OutputFile)
-	gcc -o getspectrum src/getspectrum.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+	gcc -o getspectrum src/getspectrum.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
 setregisters: $(OutputFile)
-	gcc -o setregisters src/setregisters.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+	gcc -o setregisters src/setregisters.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
 scanrate: $(OutputFile)
-	gcc -o scanrate src/scanrate.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+	gcc -o scanrate src/scanrate.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
 scanupper: $(OutputFile)
-	gcc -o scanupper src/scanupper.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+	gcc -o scanupper src/scanupper.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
 scanwindow: $(OutputFile)
-	gcc -o scanwindow src/scanwindow.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+	gcc -o scanwindow src/scanwindow.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
 singlerate: $(OutputFile)
-	gcc -o singlerate src/singlerate.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+	gcc -o singlerate src/singlerate.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
 teststatus: $(OutputFile)
-	gcc -o teststatus src/teststatus.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+	gcc -o teststatus src/teststatus.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
 packettest: $(OutputFile)
-	gcc -o packettest src/packettest.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0
+	gcc -o packettest src/packettest.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
 
 MakeIntermediateDirs:
 	@test -d ./Debug || $(MakeDirCommand) ./Debug
