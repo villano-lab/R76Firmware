@@ -328,7 +328,7 @@ SCILIB int ClearBuffer(void *buffer_handle);
 
 
 typedef struct  {
-    uint32_t row[18];
+    uint32_t row[19];
 }t_All_Energies_struct;
 
 

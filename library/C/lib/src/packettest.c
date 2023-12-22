@@ -139,7 +139,7 @@ int main(int argc, char* argv[])
                 for (int i = 0;i<decoded_packets.valid_packets;i++){
                     if(verbose>2){printf("Reading out decoded packet...\n");}
                     t_All_Energies_struct *data = decoded_packets.packets[i].payload;
-                    for(int n=0;n<18;n++){
+                    for(int n=0;n<19;n++){
                         //For now I'm abusing my log function in order to print to file.
                         if(logfile != NULL){
                             fprintf(logfile,"%d, ",j);
@@ -147,19 +147,21 @@ int main(int argc, char* argv[])
                                 fprintf(logfile, "timestamp, ");
                             }else if(n==1){
                                 fprintf(logfile,"trigger_code, ");
+                            }else if(n==2){
+                                fprintf(logfile,"gate value, ")
                             }else{
-                                fprintf(logfile,"energy_ch_%02d, ",n*2-4); //start on row 2, so going to be 4 off
+                                fprintf(logfile,"energy_ch_%02d, ",n*2-6); //start on row 3, so going to be 6 off
                             }
                             if(n<=1){
                                 fprintf(logfile,"%u\n",data->row[n]);
                             }else{
                                 uint16_t lower_word = (uint16_t) (data->row[n] & 0xFFFFUL);
                                 uint16_t upper_word = (uint16_t) ((data->row[n] >> 16) & 0xFFFFUL);
-                                fprintf(logfile,"%u\n%d, energy_ch_%02d, %u\n",(uint32_t)lower_word,j,n*2-3,(uint32_t)upper_word);
+                                fprintf(logfile,"%u\n%d, energy_ch_%02d, %u\n",(uint32_t)lower_word,j,n*2-5,(uint32_t)upper_word); //n*2-x should always be x 1 less than above, when it figures out which line it's on.
                             }
                         }
                         if(verbose > -1){printf("Row #%02d",n+1);}
-                        if(verbose > -1 && n > 13){printf(" (No input)");}
+                        if(verbose > -1 && n > 14){printf(" (No input)");} //append a note that these channels are unused.
                         if(verbose > -1){printf(": %08x\n", data->row[n]);}
                     }
                 if(verbose > 1){
