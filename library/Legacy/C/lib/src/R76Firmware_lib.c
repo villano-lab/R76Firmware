@@ -138,7 +138,22 @@ uint32_t gray_to_bin(uint32_t num, int nbit)
 }
 
 
-
+SCILIB int REG_len_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_len, handle);
+}
+SCILIB int REG_len_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_len, handle);
+}
+SCILIB int REG_count_GET(uint32_t *val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_read(val, SCI_REG_count, handle);
+}
+SCILIB int REG_count_SET(uint32_t val, NI_HANDLE *handle)
+{
+     return __abstracted_reg_write(val, SCI_REG_count, handle);
+}
 
 
 //-----------------------------------------------------------------

@@ -265,6 +265,22 @@ def REG_reset_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_reset, handle)
     return err
 
+def REG_len_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_len, handle)
+    return err, data
+
+def REG_len_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_len, handle)
+    return err
+
+def REG_count_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_count, handle)
+    return err, data
+
+def REG_count_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_count, handle)
+    return err
+
 
 
 
