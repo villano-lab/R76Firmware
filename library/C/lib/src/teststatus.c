@@ -88,12 +88,12 @@ int main(int argc, char* argv[])
 
 	int i=0;
 
-	int temp = SPECTRUM_Spectrum_0_START(&handle);
+	uint32_t temp = SPECTRUM_Spectrum_0_START(&handle);
     if(temp != 0){
 		printf("Error! Failed to start spectrum 0.\n");
 		return temp;
 	}
-	int temp2 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
+	uint32_t temp2 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
 	if(temp2 != 0){
 		printf("Error! Faield to retrieve status of spectrum 0.\n");
 		return temp2;
@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
         printf("Error! Failed to stop spectrum 0.\n");
         return temp3;
     }
-	int temp4 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
+	uint32_t temp4 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
 	if(temp4 != 0){
 		printf("Error! Faield to retrieve status of spectrum 0.\n");
 		return temp4;

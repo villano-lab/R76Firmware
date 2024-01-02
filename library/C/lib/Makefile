@@ -45,13 +45,14 @@ LibPath                := $(LibraryPathSwitch).
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
 AR       := ar rcus
-CXX      := gcc
-CC       := gcc
-CVER	 := -std=gnu99
-CXXFLAGS :=  -g $(Preprocessors) $(CVER)
-CFLAGS   :=  -g -fPIC $(Preprocessors) $(CVER)
+#CXX      := gcc
+#CC       := gcc
+#CVER	  := --std=c99
+CFLAGS   := -g -shared -fPIC $(Preprocessors) $(CVER)
+CXXFLAGS := -Wno-write-strings -fpermissive $(CFLAGS)
 ASFLAGS  :=
 AS       := as
+LIBFLAGS := -L../../../r5560_sdk/linux -lr5560 -L./gcc/ -lR76Firmware
 
 ##
 ## User defined environment variables
@@ -77,24 +78,27 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	@$(MakeDirCommand) ".build-debug"
 	@echo rebuilt > ".build-debug/$(ProjectName)"
 
+libUniversalTriggerShared.so: $(OutputFile) src/UniversalTriggerShared.c src/UniversalTriggerShared.h
+	$(CXX) -fPIC -c -o libUniversalTriggerShared.so src/UniversalTriggerShared.c $(CVER)
+	mv libUniversalTriggerShared.so ./gcc/libUniversalTriggerShared.so
 fifotest: $(OutputFile)
-	gcc -o fifotest src/fifotest.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CFLAGS) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o fifotest src/fifotest.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
 getspectrum: $(OutputFile)
-	gcc -o getspectrum src/getspectrum.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o getspectrum src/getspectrum.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
 setregisters: $(OutputFile)
-	gcc -o setregisters src/setregisters.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o setregisters src/setregisters.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
 scanrate: $(OutputFile)
-	gcc -o scanrate src/scanrate.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o scanrate src/scanrate.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
 scanupper: $(OutputFile)
-	gcc -o scanupper src/scanupper.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o scanupper src/scanupper.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
 scanwindow: $(OutputFile)
-	gcc -o scanwindow src/scanwindow.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o scanwindow src/scanwindow.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
 singlerate: $(OutputFile)
-	gcc -o singlerate src/singlerate.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o singlerate src/singlerate.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
 teststatus: $(OutputFile)
-	gcc -o teststatus src/teststatus.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o teststatus src/teststatus.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
 packettest: $(OutputFile)
-	gcc -o packettest src/packettest.c src/UniversalTriggerShared.c -L. ./gcc/libR76Firmware.so ../../../r5560_sdk/linux/libr5560.so.1.0.0 $(CVER) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o packettest src/packettest.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
 
 MakeIntermediateDirs:
 	@test -d ./Debug || $(MakeDirCommand) ./Debug
@@ -108,20 +112,20 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/circular_buffer.c$(ObjectSuffix): src/Legacy/circular_buffer.c $(IntermediateDirectory)/circular_buffer.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "src/Legacy/circular_buffer.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/circular_buffer.c$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(SourceSwitch) "src/Legacy/circular_buffer.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/circular_buffer.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/circular_buffer.c$(DependSuffix): src/Legacy/circular_buffer.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/circular_buffer.c$(ObjectSuffix) -MF$(IntermediateDirectory)/circular_buffer.c$(DependSuffix) -MM src/Legacy/circular_buffer.c
+	@$(CXX) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/circular_buffer.c$(ObjectSuffix) -MF$(IntermediateDirectory)/circular_buffer.c$(DependSuffix) -MM src/Legacy/circular_buffer.c
 
 $(IntermediateDirectory)/circular_buffer.c$(PreprocessSuffix): src/Legacy/circular_buffer.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/circular_buffer.c$(PreprocessSuffix) src/Legacy/circular_buffer.c
+	$(CXX) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/circular_buffer.c$(PreprocessSuffix) src/Legacy/circular_buffer.c
 
 $(IntermediateDirectory)/R76Firmware_lib.c$(ObjectSuffix): src/Legacy/R76Firmware_lib.c $(IntermediateDirectory)/R76Firmware_lib.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "src/Legacy/R76Firmware_lib.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/R76Firmware_lib.c$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(SourceSwitch) "src/Legacy/R76Firmware_lib.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/R76Firmware_lib.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/R76Firmware_lib.c$(DependSuffix): src/Legacy/R76Firmware_lib.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/R76Firmware_lib.c$(ObjectSuffix) -MF$(IntermediateDirectory)/R76Firmware_lib.c$(DependSuffix) -MM src/Legacy/R76Firmware_lib.c
+	@$(CXX) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/R76Firmware_lib.c$(ObjectSuffix) -MF$(IntermediateDirectory)/R76Firmware_lib.c$(DependSuffix) -MM src/Legacy/R76Firmware_lib.c
 
 $(IntermediateDirectory)/R76Firmware_lib.c$(PreprocessSuffix): src/Legacy/R76Firmware_lib.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/R76Firmware_lib.c$(PreprocessSuffix) src/Legacy/R76Firmware_lib.c
+	$(CXX) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/R76Firmware_lib.c$(PreprocessSuffix) src/Legacy/R76Firmware_lib.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
@@ -130,3 +134,4 @@ $(IntermediateDirectory)/R76Firmware_lib.c$(PreprocessSuffix): src/Legacy/R76Fir
 ##
 clean:
 	$(RM) -r ./Debug/
+	$(RM) -r gcc

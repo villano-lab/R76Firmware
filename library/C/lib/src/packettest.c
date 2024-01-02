@@ -123,7 +123,7 @@ int main(int argc, char* argv[])
         while(j<waittime){
             valid_data_frame = 0;
             if(verbose > 0){printf("Downloading new dataset.\n");}
-            if (CPACK_All_Energies_DOWNLOAD(&data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
+            if (CPACK_All_Energies_DOWNLOAD(data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
             
             valid_data_enqueued = 0;
             if(verbose > 1){printf("Enqueuing data.\n");}

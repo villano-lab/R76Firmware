@@ -1,7 +1,7 @@
-#include "UniversalTriggerShared.h"
-#include "Legacy/R76Firmware_lib.h"
-#include "Legacy/Def.h"
-#include "Legacy/RegisterFile.h"
+#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/UniversalTriggerShared.h"
+#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/Legacy/R76Firmware_lib.h"
+#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/Legacy/Def.h"
+#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/Legacy/RegisterFile.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -67,14 +67,15 @@ char* selection;
 int *disable_q; // array of disable instead of 24 initializations
 int *disable;
 int *thresh_q;
+//int *spectra_qs; //need separate type for spectra_q when holding values vs success
 uint32_t *spectra_q;
 uint32_t *specread_q;
 uint32_t *specvalid_q;
 int disable_t[32];
 int thresh_t[32];
-int spectra_t[32];
+uint32_t spectra_t[32];
 int specdat[32*17*BUFFER_SIZE];
-int specvalid_t[32];
+uint32_t specvalid_t[32];
 uint32_t spec_dl[32*17*BUFFER_SIZE];
 uint32_t size = 1024;
 int reset_q;
@@ -117,14 +118,13 @@ int baseflag=0;
 int reset=0;
 int force=0;
 int wait=1;
+const char* configfilename;
 char* rtemp;
 char* gtemp;
-char* configfilename;
 //Other Variables
 int i;
 char userinput[3];
 time_t tic, toc;
-FILE *fp;
 FILE *logfile;
 FILE *configfile;
 //Rate Counter Variables
@@ -205,7 +205,7 @@ void print_timestamp(int elapsed, int verbose){
 	if(verbose>-1){printf("Time elapsed: %02d:%02d:%02d \n",hours,minutes,seconds);};
 	if(verbose>1){printf("Closing files...");};
 }
-void read_config(char* filename){
+void read_config(const char* filename){
 	configfile = fopen(filename,"r");
 	char line[256]; //declare the line variable
 	int linenumber = 0;
@@ -557,7 +557,7 @@ int *disable_dets(int *disable_q, int disable[32]){
     return disable_q;
 }
 
-int *set_thresholds(char* side, int polarity, float energy, int *thresh_q){
+int *set_thresholds(const char* side, int polarity, float energy, int *thresh_q){
 	if(strcasecmp(side,"lower") == 0 || strcasecmp(side,"thrs") == 0 || strcasecmp(side,"thresh") == 0 || strcasecmp(side,"thrsh") == 0 || strcasecmp(side,"lo") == 0 || strcasecmp(side,"low") == 0){
 		thresh_q[0 ] = set_by_polarity(SCI_REG_thrsh_0, polarity,energy_to_bin(0 ,energy));
 		thresh_q[1 ] = set_by_polarity(SCI_REG_thrsh_1, polarity,energy_to_bin(1 ,energy));
@@ -623,7 +623,7 @@ int *set_thresholds(char* side, int polarity, float energy, int *thresh_q){
 	return thresh_q;
 }
 
-int *spectra_START(int *spectra_q){
+uint32_t *spectra_START(uint32_t *spectra_q){
 	spectra_q[0 ] = SPECTRUM_Spectrum_0_START (&handle);
 	spectra_q[1 ] = SPECTRUM_Spectrum_1_START (&handle);
 	spectra_q[2 ] = SPECTRUM_Spectrum_2_START (&handle);
@@ -651,7 +651,7 @@ int *spectra_START(int *spectra_q){
 	return spectra_q;
 }
 
-int *spectra_STOP(int *spectra_q){
+uint32_t *spectra_STOP(uint32_t *spectra_q){
 	spectra_q[0 ] = SPECTRUM_Spectrum_0_STOP (&handle);
 	spectra_q[1 ] = SPECTRUM_Spectrum_1_STOP (&handle);
 	spectra_q[2 ] = SPECTRUM_Spectrum_2_STOP (&handle);
@@ -679,7 +679,7 @@ int *spectra_STOP(int *spectra_q){
 	return spectra_q;
 }
 
-int *spectra_FLUSH(int *spectra_q){
+uint32_t *spectra_FLUSH(uint32_t *spectra_q){
 	spectra_q[0 ] = SPECTRUM_Spectrum_0_FLUSH (&handle);
 	spectra_q[1 ] = SPECTRUM_Spectrum_1_FLUSH (&handle);
 	spectra_q[2 ] = SPECTRUM_Spectrum_2_FLUSH (&handle);
@@ -707,7 +707,7 @@ int *spectra_FLUSH(int *spectra_q){
 	return spectra_q;
 }
 
-int *spectra_RESET(int *spectra_q){
+uint32_t *spectra_RESET(uint32_t *spectra_q){
 	spectra_q[0 ] = SPECTRUM_Spectrum_0_RESET (&handle);
 	spectra_q[1 ] = SPECTRUM_Spectrum_1_RESET (&handle);
 	spectra_q[2 ] = SPECTRUM_Spectrum_2_RESET (&handle);
@@ -735,7 +735,7 @@ int *spectra_RESET(int *spectra_q){
 	return spectra_q;
 }
 
-int *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint32_t limit_value, int *spectra_q){
+uint32_t *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint32_t limit_value, uint32_t *spectra_q){
 	spectra_q[0 ] = SPECTRUM_Spectrum_0_SET_PARAMETERS (rebin,limit_mode,limit_value,&handle);
 	spectra_q[1 ] = SPECTRUM_Spectrum_1_SET_PARAMETERS (rebin,limit_mode,limit_value,&handle);
 	spectra_q[2 ] = SPECTRUM_Spectrum_2_SET_PARAMETERS (rebin,limit_mode,limit_value,&handle);
@@ -763,7 +763,7 @@ int *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint32_t limit_value, int 
 	return spectra_q;
 }
 
-int *spectra_STATUS(uint32_t *spectra_q){
+uint32_t *spectra_STATUS(uint32_t *spectra_q){
 	SPECTRUM_Spectrum_0_STATUS (&spectra_q[0 ],&handle);
 	SPECTRUM_Spectrum_1_STATUS (&spectra_q[1 ],&handle);
 	SPECTRUM_Spectrum_2_STATUS (&spectra_q[2 ],&handle);
@@ -791,7 +791,7 @@ int *spectra_STATUS(uint32_t *spectra_q){
 	return spectra_q;
 }
 
-int *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, int *specread_q, int *specvalid_q){
+uint32_t *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, uint32_t *specread_q, uint32_t *specvalid_q){
 	SPECTRUM_Spectrum_0_DOWNLOAD (&specdat[0 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[0 ], &specvalid_q[0 ]);
 	SPECTRUM_Spectrum_1_DOWNLOAD (&specdat[1 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[1 ], &specvalid_q[1 ]);
 	SPECTRUM_Spectrum_2_DOWNLOAD (&specdat[2 *17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[2 ], &specvalid_q[2 ]);

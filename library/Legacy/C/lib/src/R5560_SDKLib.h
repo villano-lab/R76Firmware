@@ -8,9 +8,9 @@
 
 #ifdef __cplusplus
 #ifdef NIUSB3_CORE_EXPORTS
-#define R5560_SDKLIB_API extern "C" __declspec(dllexport)
+#define R5560_SDKLIB_API extern "C" //__declspec(dllexport)
 #else
-#define R5560_SDKLIB_API extern "C" __declspec(dllimport)
+#define R5560_SDKLIB_API extern "C" //__declspec(dllimport)
 #endif
 #else
 #define R5560_SDKLIB_API
