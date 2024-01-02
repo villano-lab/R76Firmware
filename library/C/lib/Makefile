@@ -68,7 +68,7 @@ Objects=$(Objects0)
 ## Main Build Targets
 ##
 .PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
-all: $(OutputFile) setregisters scanrate scanupper scanwindow singlerate fifotest getspectrum teststatus packettest
+all: $(OutputFile) libUniversalTriggerShared.so setregisters scanrate scanupper scanwindow singlerate fifotest getspectrum teststatus packettest
 
 $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	@$(MakeDirCommand) $(@D)

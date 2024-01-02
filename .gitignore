@@ -35,6 +35,7 @@
 *.i*86
 *.x86_64
 *.hex
+*.bin
 
 # Debug files
 *.dSYM/
@@ -63,15 +64,19 @@ currentrate
 getspectrum
 teststatus
 packettest
+readcal
+*diagnostics.root
 
 # Other make output
 library/C/lib/libR76Firmware.txt
 r5560_sdk/linux
+MIDAS_FORK/*.txt
 
 # Backups
 *.scf_bk
+*.old
 
-# VSCode settings
+# settings
 .vscode
 .build-debug/
 
@@ -82,12 +87,21 @@ output/R76Firmware
 
 # Unnamed output
 out.csv
+log.txt
+diff.txt
 
 # Backups
 .ipynb_checkpoints
 
-# Local Run Plans
+# Other Directories
 library/C/lib/local_scripts
+MIDAS_FORK/calibrations
 
 # Large files
 *_long*.csv
+*.odb
+
+# Other
+makefile_file_manip
+MIDAS_FORK/*.xml
+
