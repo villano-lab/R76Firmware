@@ -138,7 +138,7 @@ int main(int argc, char* argv[])
                 if(verbose>1){printf("Valid Packets: %d \n",decoded_packets.valid_packets);}
                 for (int i = 0;i<decoded_packets.valid_packets;i++){
                     if(verbose>2){printf("Reading out decoded packet...\n");}
-                    t_All_Energies_struct *data = decoded_packets.packets[i].payload;
+                    t_All_Energies_struct *data = (t_All_Energies_struct *)decoded_packets.packets[i].payload;
                     for(int n=0;n<18;n++){
                         //For now I'm abusing my log function in order to print to file.
                         if(logfile != NULL){

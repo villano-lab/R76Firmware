@@ -48,8 +48,9 @@ AR       := ar rcus
 #CXX      := gcc
 #CC       := gcc
 #CVER	  := --std=c99
-CFLAGS   := -g -shared -fPIC $(Preprocessors) $(CVER)
-CXXFLAGS := -Wno-write-strings -fpermissive $(CFLAGS)
+CFLAGS   := -g -fPIC $(Preprocessors) $(CVER)
+CXXFLAGS := -Wno-write-strings $(CFLAGS)
+# -fpermissive -shared
 ASFLAGS  :=
 AS       := as
 LIBFLAGS := -L../../../r5560_sdk/linux -lr5560 -L./gcc/ -lR76Firmware
