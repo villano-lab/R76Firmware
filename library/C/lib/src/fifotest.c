@@ -21,6 +21,7 @@
 #include  "UniversalTriggerShared.h"
 
 const char* program_name = "fifotest";
+FILE *fp;
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
 	fprintf (stream, "Usage:  %s options \n", program_name);

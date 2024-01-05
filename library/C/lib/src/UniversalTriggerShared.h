@@ -66,13 +66,11 @@ extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
 extern uint32_t *specread_q;
-extern int *specvalid;
-extern int spectra_t[32];
-extern int specvalid_t[32];
+extern uint32_t *specvalid;
+extern uint32_t spectra_t[32];
+extern uint32_t specvalid_t[32];
 extern int disable_t[32];
 extern int thresh_t[32];
-//extern uint32_t spectra_q[32];
-//extern uint32_t specvalid_q[32];
 extern int specdat[32*17*BUFFER_SIZE];
 extern uint32_t spec_dl[32*17*BUFFER_SIZE];
 extern uint32_t size;
@@ -121,13 +119,13 @@ extern int baseflag;
 extern int reset;
 extern int force;
 extern int wait;
-extern char* configfilename;
+extern const char* configfilename;
 //Other Variables
 extern int i;
 extern char userinput[3];
 extern time_t tic, toc;
-extern FILE *fp;
 extern FILE *logfile;
+extern FILE *fp;
 //Rate Counter Variables
 extern int rate_q;
 extern int unreduced_q;
@@ -150,7 +148,7 @@ int parse_detector_switch(char* selection);                             //parse 
 int parse_gate(char* gatestring, int verbose);                          //parse a string representing multiple gate values
 int parse_range(char* gatestring, int verbose);                         //parse a string representing a range of values with step size
 void print_timestamp(int elapsed, int verbose);                         //parse a time elapsed value and print it in readable format
-void read_config(char* filename);                                       //parse a config file for values
+void read_config(const char* filename);                                 //parse a config file for values
 //converting functions
 int *on_to_off(int *off, int on, int verbose);                          //convert a 'detectors on' bit vector to a 'detectors off' bit vector
 int energy_to_bin(int detnum, float energy);                            //convert an energy value to a bin value
@@ -159,15 +157,15 @@ int REG_top_SET(uint32_t value, NI_HANDLE* handle);                           //
 int REG_thrsh_SET(uint32_t value, NI_HANDLE* handle);                         //set all lower thesholds to a bin number
 //multichannel functions
 int *disable_dets(int *disable_q, int disable[24]);                     //disable detectors based on input array
-int *set_thresholds(char* side, int polarity, float energy, int *thresh_q);            //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
-int *spectra_PARAMS(int *spectra_q,int32_t Rebin, int32_t LimitMode, int32_t LimitValue); //set up spectrum parameters
-int *spectra_START(int *spectra_q);
-int *spectra_STOP(int *spectra_q);
-int *spectra_FLUSH(int *spectra_q);
-int *spectra_RESET(int *spectra_q);
-int *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint32_t limit_value, int *spectra_q);
-int *spectra_STATUS(uint32_t *spectra_q);
-int *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, int *specread_q, int *specvalid_q);
+int *set_thresholds(const char* side, int polarity, float energy, int *thresh_q);            //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
+uint32_t *spectra_PARAMS(int *spectra_q,int32_t Rebin, int32_t LimitMode, int32_t LimitValue); //set up spectrum parameters
+uint32_t *spectra_START(uint32_t *spectra_q);
+uint32_t *spectra_STOP(uint32_t *spectra_q);
+uint32_t *spectra_FLUSH(uint32_t *spectra_q);
+uint32_t *spectra_RESET(uint32_t *spectra_q);
+uint32_t *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint32_t limit_value, uint32_t *spectra_q);
+uint32_t *spectra_STATUS(uint32_t *spectra_q);
+uint32_t *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, uint32_t *specread_q, uint32_t *specvalid_q);
 //utility functions
 int connect_staticaddr(int verbose);                                    //connect to the board, with print functions.
 int set_by_polarity(uint32_t address, int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.

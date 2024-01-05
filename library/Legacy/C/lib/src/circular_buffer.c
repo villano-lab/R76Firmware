@@ -47,7 +47,7 @@ cbuf_handle_t circular_buf_init(uint32_t* buffer, size_t size)
 {
 	assert(buffer && size);
 
-	cbuf_handle_t cbuf = malloc(sizeof(circular_buf_t));
+	cbuf_handle_t cbuf = (cbuf_handle_t)malloc(sizeof(circular_buf_t));
 	assert(cbuf);
 
 	cbuf->buffer = buffer;

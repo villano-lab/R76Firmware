@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
 				configfilename = "example.config";
 			}
 			read_config(configfilename);
-			char* command = malloc(100);
+			char* command = (char*)malloc(100);
 			snprintf(command,100,"./setregisters -c %s -v%d",configfilename,verbose);
 			system(command);
 			free(command);
@@ -95,7 +95,7 @@ int main(int argc, char* argv[])
 	if(optind!=argc){ //if there are args to pass through, tell the user,
 		if(verbose > 0){printf("Running setregisters utility.\n");}
 		//then construct, run, and free the command.
-		char* command = malloc(100);
+		char* command = (char*)malloc(100);
 		snprintf(command,100,"./setregisters -v%d %s",verbose,argv[optind]);
 		if(configfilename){
             snprintf(command,100,"%s -c%s",command,configfilename);

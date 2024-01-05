@@ -99,9 +99,9 @@ SCILIB int __abstracted_fifo_read(uint32_t *data, uint32_t count,
 SCILIB int __abstracted_reg_write(uint32_t data, uint32_t address, NI_HANDLE *handle);
 SCILIB int __abstracted_reg_read(uint32_t *data, uint32_t address, NI_HANDLE *handle);
 
-SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, int32_t *val);
+SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t *val);
 
-SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, int32_t *val, uint32_t size, uint32_t *enqueued_data);
+SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t *val, uint32_t size, uint32_t *enqueued_data);
 
 SCILIB int Utility_ALLOCATE_DOWNLOAD_BUFFER(void **buffer_handle, uint32_t buffer_size);
 

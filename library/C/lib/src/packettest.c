@@ -123,7 +123,7 @@ int main(int argc, char* argv[])
         while(j<waittime){
             valid_data_frame = 0;
             if(verbose > 0){printf("Downloading new dataset.\n");}
-            if (CPACK_All_Energies_DOWNLOAD(&data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
+            if (CPACK_All_Energies_DOWNLOAD(data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
             
             valid_data_enqueued = 0;
             if(verbose > 1){printf("Enqueuing data.\n");}
@@ -138,7 +138,7 @@ int main(int argc, char* argv[])
                 if(verbose>1){printf("Valid Packets: %d \n",decoded_packets.valid_packets);}
                 for (int i = 0;i<decoded_packets.valid_packets;i++){
                     if(verbose>2){printf("Reading out decoded packet...\n");}
-                    t_All_Energies_struct *data = decoded_packets.packets[i].payload;
+                    t_All_Energies_struct *data = (t_All_Energies_struct *)decoded_packets.packets[i].payload;
                     for(int n=0;n<19;n++){
                         //For now I'm abusing my log function in order to print to file.
                         if(logfile != NULL){
@@ -148,7 +148,7 @@ int main(int argc, char* argv[])
                             }else if(n==1){
                                 fprintf(logfile,"trigger_code, ");
                             }else if(n==2){
-                                fprintf(logfile,"gate value, ")
+                                fprintf(logfile,"gate value, ");
                             }else{
                                 fprintf(logfile,"energy_ch_%02d, ",n*2-6); //start on row 3, so going to be 6 off
                             }

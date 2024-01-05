@@ -1,15 +1,9 @@
 #include "R5560_SDKLib.h"
 #include  <stdlib.h>
-
 #include <stdint.h>
-
 #include "RegisterFile.h"
-
 #include  "circular_buffer.h"
-
-
 #include  "R76Firmware_lib.h"
-
 
 #ifdef _MSC_VER
 
@@ -188,15 +182,12 @@ SCILIB int REG_count_SET(uint32_t val, NI_HANDLE *handle)
 
 SCILIB int Utility_ALLOCATE_DOWNLOAD_BUFFER(void **buffer_handle, uint32_t buffer_size)
 {
-	uint32_t * buffer = malloc(buffer_size * sizeof(uint32_t));
+	uint32_t * buffer = (uint32_t *)malloc(buffer_size * sizeof(uint32_t));
 	if (buffer == NULL) return -1;
 	cbuf_handle_t cbuf = circular_buf_init(buffer, buffer_size);
 	*buffer_handle = cbuf;
 	return 0;
 }
-
-
-
 
 //-----------------------------------------------------------------
 //-
@@ -240,7 +231,7 @@ SCILIB int Utility_ALLOCATE_DOWNLOAD_BUFFER(void **buffer_handle, uint32_t buffe
 //-		Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
 //-----------------------------------------------------------------
 
-SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, int32_t *val, uint32_t size, uint32_t *enqueued_data)
+SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t *val, uint32_t size, uint32_t *enqueued_data)
 {
 	cbuf_handle_t cbuf;
 	uint32_t i;
@@ -291,7 +282,7 @@ SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, int32_t 
 //-----------------------------------------------------------------
 
 
-SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, int32_t *val)
+SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t *val)
 {
 	cbuf_handle_t cbuf;
 	cbuf = (cbuf_handle_t)buffer_handle;
@@ -381,7 +372,7 @@ SCILIB void free_packet_collection (t_generic_event_collection *decoded_packets)
 
 
 
-SCILIB int ClearBuffer(void *buffer_handle)
+SCILIB int ClearBuffer(cbuf_handle_t buffer_handle)
 {
 	circular_buf_reset(buffer_handle);
 	return 0;
@@ -6618,7 +6609,7 @@ return __abstracted_reg_read(status, SCI_REG_Oscilloscope_0_READ_STATUS, handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Oscilloscope_0_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Oscilloscope_0_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Oscilloscope_0_READ_POSITION, handle);
 

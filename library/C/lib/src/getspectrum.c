@@ -17,6 +17,7 @@
 
 const char* program_name = "getspectrum";
 int waittime=12; //default 2 minutes data
+FILE *fp;
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
 	fprintf (stream, "Usage:  %s options \n", program_name);
@@ -172,12 +173,12 @@ int main(int argc, char* argv[])
 		}
 	}
 
-	int temp = SPECTRUM_Spectrum_0_STOP(&handle);
+	uint32_t temp = SPECTRUM_Spectrum_0_STOP(&handle);
 	if(temp != 0){
 		printf("Error! Failed to stop spectrum 0.\n");
 		return temp;
 	}
-	int temp2 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
+	uint32_t temp2 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
 	if(temp2 != 0){
 		printf("Error! Faield to retrieve status of spectrum 0.\n");
 		return temp2;
