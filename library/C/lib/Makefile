@@ -82,23 +82,32 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 libUniversalTriggerShared.so: $(OutputFile) src/UniversalTriggerShared.c src/UniversalTriggerShared.h
 	$(CXX) -fPIC -c -o libUniversalTriggerShared.so src/UniversalTriggerShared.c $(CVER)
 	mv libUniversalTriggerShared.so ./gcc/libUniversalTriggerShared.so
-fifotest: $(OutputFile)
+fifotest: %: $(OutputFile) src/%.c
+	echo %
 	$(CXX) $(CXXFLAGS) -o fifotest src/fifotest.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
-getspectrum: $(OutputFile)
+getspectrum: %: $(OutputFile) src/%.c
+	echo %
 	$(CXX) $(CXXFLAGS) -o getspectrum src/getspectrum.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
-setregisters: $(OutputFile)
+setregisters: %: $(OutputFile) src/%.c
+	echo %
 	$(CXX) $(CXXFLAGS) -o setregisters src/setregisters.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
-scanrate: $(OutputFile)
+scanrate: %: $(OutputFile) src/%.c
+	echo %
 	$(CXX) $(CXXFLAGS) -o scanrate src/scanrate.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
-scanupper: $(OutputFile)
+scanupper: %: $(OutputFile) src/%.c
+	echo %
 	$(CXX) $(CXXFLAGS) -o scanupper src/scanupper.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
-scanwindow: $(OutputFile)
+scanwindow: %: $(OutputFile) src/%.c
+	echo %
 	$(CXX) $(CXXFLAGS) -o scanwindow src/scanwindow.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
-singlerate: $(OutputFile)
+singlerate: %: $(OutputFile) src/%.c
+	echo %
 	$(CXX) $(CXXFLAGS) -o singlerate src/singlerate.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
-teststatus: $(OutputFile)
+teststatus: %: $(OutputFile) src/%.c
+	echo %
 	$(CXX) $(CXXFLAGS) -o teststatus src/teststatus.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
-packettest: $(OutputFile)
+packettest: %: $(OutputFile) src/%.c
+	echo %
 	$(CXX) $(CXXFLAGS) -o packettest src/packettest.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
 
 MakeIntermediateDirs:

@@ -139,6 +139,10 @@ int main(int argc, char* argv[])
                 for (int i = 0;i<decoded_packets.valid_packets;i++){
                     if(verbose>2){printf("Reading out decoded packet...\n");}
                     t_All_Energies_struct *data = (t_All_Energies_struct *)decoded_packets.packets[i].payload;
+		    //Gate width debugging
+		    if(verbose){
+			
+		    }
                     for(int n=0;n<19;n++){
                         //For now I'm abusing my log function in order to print to file.
                         if(logfile != NULL){
