@@ -207,7 +207,7 @@ int main(int argc, char* argv[])
         //write the rate
     	//fp = fopen("out.csv","a"); //already defined above
         fprintf(fp,"%f, %f, %f\n",thrs,top,cumulative/wait);
-		fclose(fp);
+		//fclose(fp);
 		if(verbose>1){printf("lower: %f ; upper: %f ; rate: %f Hz\n",thrs,top,cumulative/wait);};
 		thrs += range_s;
         top  += range_s;

@@ -144,4 +144,4 @@ $(IntermediateDirectory)/R76Firmware_lib.c$(PreprocessSuffix): src/Legacy/R76Fir
 ##
 clean:
 	$(RM) -r ./Debug/
-	$(RM) -r gcc
+	$(RM) -rf -dir gcc

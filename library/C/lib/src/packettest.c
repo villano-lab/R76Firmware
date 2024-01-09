@@ -100,17 +100,25 @@ int main(int argc, char* argv[])
 	int code;
 
     //Allocate buffer!
+	/*
 	code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
 	if(verbose>-1){printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);}
 	if(code != 0){printf("Buffer allocation failed.\n");}
+	*/
 
     //Reset everything right before starting, just in case.
     if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
 	if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
 
-    //Pull the data!
-	Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
+	code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
+    if(verbose>-1) printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);
+    if(code != 0) printf("Buffer allocation failed.\n");
 
+    //Pull the data!
+	/*
+	Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
+	if(verbose>-1) printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);
+	*/
 	if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
 	if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
 	if (CPACK_All_Energies_STATUS(&status_frame, &handle) != 0) printf("Status Error\n");
@@ -124,7 +132,7 @@ int main(int argc, char* argv[])
             valid_data_frame = 0;
             if(verbose > 0){printf("Downloading new dataset.\n");}
             if (CPACK_All_Energies_DOWNLOAD(data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
-            
+
             valid_data_enqueued = 0;
             if(verbose > 1){printf("Enqueuing data.\n");}
             Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
@@ -132,10 +140,11 @@ int main(int argc, char* argv[])
             if(verbose > 1){printf("Reconstructing data.\n");}
             if (CPACK_All_Energies_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets, verbose, handle) == 0)
             {
-                if(verbose>=0){printf(".");}
-                if(verbose>=0){printf("\n");}
-                if(verbose>2){printf("i: %d\n",i);}
-                if(verbose>1){printf("Valid Packets: %d \n",decoded_packets.valid_packets);}
+                if(verbose>=0) printf(".");
+                if(verbose>=0) printf("\n");
+                if(verbose>2) printf("i: %d\n",i);
+				if(verbose>2) printf("BufferDownloadHandler: %p\n",BufferDownloadHandler);
+                if(verbose>1) printf("Valid Packets: %d \n",decoded_packets.valid_packets);
                 for (int i = 0;i<decoded_packets.valid_packets;i++){
                     if(verbose>2){printf("Reading out decoded packet...\n");}
                     t_All_Energies_struct *data = (t_All_Energies_struct *)decoded_packets.packets[i].payload;

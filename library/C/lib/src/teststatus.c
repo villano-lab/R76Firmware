@@ -117,13 +117,14 @@ int main(int argc, char* argv[])
 
 	printf("Count initial value: %d\n",counts);
 
+/*
 	for(int i=0;i<numtries;i++){
 		/*not working yet
 		int temp = REG_gatewidth_GET(&gatewidth,&handle);
 		if(temp != 0){
 			printf("Error! Failed to retrieve gate width.\n");
 		}
-		printf("gate width: %d\n",gatewidth);//*/
+		printf("gate width: %d\n",gatewidth);//
 		int temp = REG_count_GET(&counts,&handle);
 		if(temp != 0){
 			printf("Error! Failed to retrieve count.\n");
@@ -131,5 +132,6 @@ int main(int argc, char* argv[])
 		printf("count: %d\n",counts);
 		sleep(1);
 	}
+*/
 	return 0;
 }

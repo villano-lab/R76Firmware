@@ -131,7 +131,7 @@ uint32_t gray_to_bin(uint32_t num, int nbit)
 	return temp;
 }
 
-
+/*
 SCILIB int REG_len_GET(uint32_t *val, NI_HANDLE *handle)
 {
      return __abstracted_reg_read(val, SCI_REG_len, handle);
@@ -148,7 +148,7 @@ SCILIB int REG_count_SET(uint32_t val, NI_HANDLE *handle)
 {
      return __abstracted_reg_write(val, SCI_REG_count, handle);
 }
-
+*/
 
 //-----------------------------------------------------------------
 //-
@@ -159,16 +159,16 @@ SCILIB int REG_count_SET(uint32_t val, NI_HANDLE *handle)
 //-  to be processed.
 //-  The buffer_size specify the size of the buffer to be allocated
 //-  ARGUMENTS:
-//- 	            buffer_handle   PARAM_OUT   void ** 
+//- 	            buffer_handle   PARAM_OUT   void **
 //-			Handle to the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
-//-  
+//-
 //- 	            buffer_size   PARAM_IN   uint32_t
 //- 		size in word (32 bit) of the buffer to be allocated
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
-//-  
+//-
 //-  RETURN [int]
 //- 	Return if the function has been succesfully executed
 //- 		0) Success
@@ -7078,7 +7078,8 @@ return __abstracted_fifo_read(val, size, SCI_REG_All_Energies_FIFOADDRESS, SCI_R
 //- RETURN [int]
 //- 	Return if the function has been succesfully executed
 //- 		0) Success
-//- 		-1) Error
+//- 		-1) Insufficient buffer size
+//-         -2) Other error
 //-
 //-----------------------------------------------------------------
 
@@ -7097,10 +7098,17 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 	decoded_packets->packets = NULL;
 	decoded_packets->allocated_packets = 0;
 	decoded_packets->valid_packets = 0;
-	
+
 	//check if we have elements in the circular buffer
 	int bfsize = circular_buf_size(cbuf);
-	if (bfsize < PacketSize + 1) return -1;
+	if (bfsize < PacketSize + 1){
+		printf("Buffer size insufficient. Buffer: %d, but must be larger than Packet Size: %d.\n",bfsize,PacketSize);
+		if(!bfsize){//if the buffer was empty, print additional diagnostics.
+			printf("The buffer appears to be empty. cbuf address: %p.\n",cbuf);
+			printf("cbuf was generated from buffer_handle: %p.\n",buffer_handle);
+		}
+		return -1;
+	}
 	//allocate output
 	int possible_packets = (circular_buf_size(cbuf) / PacketSize)+10;
 	if (possible_packets < 1) return -1;
