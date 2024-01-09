@@ -112,7 +112,10 @@ int main(int argc, char* argv[])
 
 	code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
     if(verbose>-1) printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);
-    if(code != 0) printf("Buffer allocation failed.\n");
+    if(code != 0){
+		printf("Buffer allocation failed.\n");
+		return code;
+	}
 
     //Pull the data!
 	/*
@@ -132,10 +135,15 @@ int main(int argc, char* argv[])
             valid_data_frame = 0;
             if(verbose > 0){printf("Downloading new dataset.\n");}
             if (CPACK_All_Energies_DOWNLOAD(data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
+			if(verbose>0) printf("Valid data: %d.\n",valid_data_frame);
 
             valid_data_enqueued = 0;
             if(verbose > 1){printf("Enqueuing data.\n");}
-            Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
+			code = Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
+			if(code != 0){
+				printf("Enqueue failed with code %d.\n",code);
+				return code;
+			}
 
             if(verbose > 1){printf("Reconstructing data.\n");}
             if (CPACK_All_Energies_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets, verbose, handle) == 0)
