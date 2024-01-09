@@ -6742,7 +6742,7 @@ for(int n=0; n< n_ch; n++)
 		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
 		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
 		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
+		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
              k++;
         }
 	    for (int i = 0; i < current - 1; i++)
