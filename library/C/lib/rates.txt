@@ -1,0 +1,5 @@
+# lower thresh, singlerate reported in Hz, lazylogger reported filesize in MB
+1, 192.60000, 16.468
+1.6, 54.10000, 14.610
+2, 32.20000, 8.879
+2.2, 26.90000, 
