@@ -1,9 +1,9 @@
 #include "R5560_SDKLib.h"
-#include  <stdlib.h>
+#include <stdlib.h>
 #include <stdint.h>
 #include "RegisterFile.h"
-#include  "circular_buffer.h"
-#include  "R76Firmware_lib.h"
+#include "circular_buffer.h"
+#include "R76Firmware_lib.h"
 
 #ifdef _MSC_VER
 

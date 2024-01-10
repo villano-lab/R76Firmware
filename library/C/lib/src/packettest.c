@@ -138,7 +138,7 @@ int main(int argc, char* argv[])
 	}
 	if (status_frame >0)
 	{
-		if(verbose>1) printf("Logging to %s.\n");
+		if(verbose>1) printf("Logging to %s.\n",logfile);
         if(logfile != NULL){
             fprintf(logfile,"Packet #,word label,value\n");
         }
@@ -148,6 +148,10 @@ int main(int argc, char* argv[])
             if(verbose > 0){printf("Downloading new dataset.\n");}
             if (CPACK_All_Energies_DOWNLOAD((uint32_t *)data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
 			if(verbose>0) printf("Valid data: %d.\n",valid_data_frame);
+			if(valid_data_frame == 0){
+				printf("No data available; nothing to do. Exiting.");
+				return -1;
+			}
 
             valid_data_enqueued = 0;
             if(verbose > 1){printf("Enqueuing data.\n");}
