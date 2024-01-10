@@ -24,11 +24,15 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	exit (exit_code);
 };
 
+int packet_setup(HANDLE handle,int verbose){
+
+}
+
 int main(int argc, char* argv[])
 {
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "l::sh?v::Vw:", longopts, &ind);
+		iarg = getopt_long(argc, argv, "l::sh?v::Vw:q", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -100,22 +104,19 @@ int main(int argc, char* argv[])
 	//exit codes for sub-whatevers.
 	int code;
 	//run time length troubleshooting
-	struct timeval start,stop;
+	struct timeval start,allocate,stop;
 
     //Allocate the buffer.
-	gettimeofday(&start,NULL);
 	code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
 	if(verbose>-1) printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);
 	if(code != 0){
 		printf("Buffer allocation failed.\n");
 		return code;
-	}
-	if(verbose>1) printf("Buffer allocation succeeded. Continuing to setup.\n");
+	}else if(verbose>1) printf("Buffer allocation succeeded. Continuing to setup.\n");
 
 	//Pull the data!
 	if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
 	if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
-	sleep(1); //maybe it needs time to get going? idk.
 	if (CPACK_All_Energies_STATUS(&status_frame, &handle) != 0) printf("Status Error\n");
 	if(verbose>1){
 		printf("Setup complete. Packet status %d (",status_frame);
@@ -134,6 +135,7 @@ int main(int argc, char* argv[])
         }
         int j = 0;
         while(j<waittime){
+			gettimeofday(&start,NULL);
             valid_data_frame = 0;
             if(verbose > 0){printf("Downloading new dataset.\n");}
             if (CPACK_All_Energies_DOWNLOAD((uint32_t *)data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
@@ -207,22 +209,19 @@ int main(int argc, char* argv[])
             if(verbose > 2){printf("Incrementing ReadDataNumber.\n");}
             ReadDataNumber = ReadDataNumber + N_Packet;
             j++;
+			gettimeofday(&stop,NULL);
+			printf ("Elapsed this iteration: %f\n",stop.tv_sec-start.tv_sec
+	          + 0.000001*(stop.tv_usec-start.tv_usec));
         }
 		if(verbose >-1){printf("Download completed\n");}
 	}
 	else printf("Status Error");
-	gettimeofday(&stop,NULL);
-	printf ("Elapsed: %f\n",stop.tv_sec-start.tv_sec
-          + 0.000001*(stop.tv_usec-start.tv_usec));
     return 0;
 }
 
 /* STATUS:
-Bulk of things are working. There are two major issues:
-1. The custom packet's copy of the trigger information always gives 0, why?
-- duplicating the previous row works, so it's not an issue reading this row number.
-2. free_packet_collection causes a seg fault, which means that our only 
-working option is probably leaking memory.
+Right now if I run `./packettest -q -w1` it takes about 1 second. I need it to be faster.
+- flag `-Ofast` did not have a noticeable impact.
 
 Something I am wondering: Am I getting the integration values at the right time?
 I think that I should be waiting until the energy data from the charge integrator
