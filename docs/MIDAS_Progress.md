@@ -2,6 +2,10 @@
 * We have verified that MIDAS' `triggerfe2_mod.exe` and `towerfe3.exe` appear to have correlating triggers. They do not print at the same time, and `towerfe3.exe` prints many instances of "Hi, I got 4 triggers on the readbuffer."
 However, after it has done this, the values in "Hi, I got x triggers on the readbuffer" appear to match the values in `triggerfe2_mod.exe`'s "Got x triggers in buffer at time ... for tower 1". We checked these by running them in the command line without the `-D` option.
 * `towerfe3.exe` and `towerfe3_NaI.exe` produce very different file sizes (~6 MB vs ~1.5 MB) -- is it possible that the calls being made to the NaI array regarding the custom packet are too slow and result in data loss?
+* `packettest` was also broken, not just the modified `towerfe3` program.
+  * by moving back to commit 9c7ed0f and then reverting files one at a time, I was able to narrow down which file change caused the issue.
+  * I was not able to narrow things down to a single file because some files have to be changed simultaneously or compiler errors will occur.
+  * The change is in one of the following `Legacy/` files: `circular_buffer.c`, `R76Firmware_lib.c`, or `R76Firmware_lib.h`.
 
 # triggerfe2_mod.exe output
 
