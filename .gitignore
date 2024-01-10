@@ -92,6 +92,7 @@ diff.txt
 
 # Backups
 .ipynb_checkpoints
+*.swp
 
 # Other Directories
 library/C/lib/local_scripts

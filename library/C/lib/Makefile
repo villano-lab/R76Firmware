@@ -17,27 +17,27 @@ SharedObjectLinkerName :=gcc -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
 PreprocessSuffix       :=.o.i
-DebugSwitch            :=-g 
+DebugSwitch            :=-g
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
-OutputSwitch           :=-o 
+OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
-SourceSwitch           :=-c 
+SourceSwitch           :=-c
 OutputFile             :=./gcc/$(ProjectName).so
-Preprocessors          :=$(PreprocessorSwitch)SCICOMPILER_EXPORTS 
-ObjectSwitch           :=-o 
-ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E 
+Preprocessors          :=$(PreprocessorSwitch)SCICOMPILER_EXPORTS
+ObjectSwitch           :=-o
+ArchiveOutputSwitch    :=
+PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="$(ProjectName).txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
-LinkOptions            :=  
-IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
-IncludePCH             := 
-RcIncludePath          := 
-Libs                   := 
-ArLibs                 :=  "r5560" 
+LinkOptions            :=
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch).
+IncludePCH             :=
+RcIncludePath          :=
+Libs                   :=
+ArLibs                 :=  "r5560"
 LibPath                := $(LibraryPathSwitch).
 
 ##
@@ -53,7 +53,7 @@ CXXFLAGS := -Wno-write-strings $(CFLAGS)
 # -fpermissive -shared
 ASFLAGS  :=
 AS       := as
-LIBFLAGS := -L../../../r5560_sdk/linux -lr5560 -L./gcc/ -lR76Firmware
+LIBFLAGS := -L./gcc/ -lR76Firmware -lUniversalTriggerShared -L../../../r5560_sdk/linux -lr5560
 
 ##
 ## User defined environment variables
@@ -84,31 +84,31 @@ libUniversalTriggerShared.so: $(OutputFile) src/UniversalTriggerShared.c src/Uni
 	mv libUniversalTriggerShared.so ./gcc/libUniversalTriggerShared.so
 fifotest: %: $(OutputFile) src/%.c
 	echo %
-	$(CXX) $(CXXFLAGS) -o fifotest src/fifotest.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o fifotest src/fifotest.c $(LIBFLAGS) -lm -ldl
 getspectrum: %: $(OutputFile) src/%.c
 	echo %
-	$(CXX) $(CXXFLAGS) -o getspectrum src/getspectrum.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o getspectrum src/getspectrum.c $(LIBFLAGS) -lm -ldl
 setregisters: %: $(OutputFile) src/%.c
 	echo %
-	$(CXX) $(CXXFLAGS) -o setregisters src/setregisters.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o setregisters src/setregisters.c $(LIBFLAGS) -lm -ldl
 scanrate: %: $(OutputFile) src/%.c
 	echo %
-	$(CXX) $(CXXFLAGS) -o scanrate src/scanrate.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o scanrate src/scanrate.c $(LIBFLAGS) -lm -ldl
 scanupper: %: $(OutputFile) src/%.c
 	echo %
-	$(CXX) $(CXXFLAGS) -o scanupper src/scanupper.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o scanupper src/scanupper.c $(LIBFLAGS) -lm -ldl
 scanwindow: %: $(OutputFile) src/%.c
 	echo %
-	$(CXX) $(CXXFLAGS) -o scanwindow src/scanwindow.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o scanwindow src/scanwindow.c $(LIBFLAGS) -lm -ldl
 singlerate: %: $(OutputFile) src/%.c
 	echo %
-	$(CXX) $(CXXFLAGS) -o singlerate src/singlerate.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o singlerate src/singlerate.c $(LIBFLAGS) -lm -ldl
 teststatus: %: $(OutputFile) src/%.c
 	echo %
-	$(CXX) $(CXXFLAGS) -o teststatus src/teststatus.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o teststatus src/teststatus.c $(LIBFLAGS) -lm -ldl
 packettest: %: $(OutputFile) src/%.c
 	echo %
-	$(CXX) $(CXXFLAGS) -o packettest src/packettest.c src/UniversalTriggerShared.c $(LIBFLAGS) -lm -ldl
+	$(CXX) $(CXXFLAGS) -o packettest src/packettest.c $(LIBFLAGS) -lm -ldl
 
 MakeIntermediateDirs:
 	@test -d ./Debug || $(MakeDirCommand) ./Debug
@@ -144,4 +144,4 @@ $(IntermediateDirectory)/R76Firmware_lib.c$(PreprocessSuffix): src/Legacy/R76Fir
 ##
 clean:
 	$(RM) -r ./Debug/
-	$(RM) -rf -dir gcc
+	$(RM) -r gcc

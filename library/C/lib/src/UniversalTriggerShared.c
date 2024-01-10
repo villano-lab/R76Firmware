@@ -1,7 +1,7 @@
-#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/UniversalTriggerShared.h"
-#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/Legacy/R76Firmware_lib.h"
-#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/Legacy/Def.h"
-#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/Legacy/RegisterFile.h"
+#include "UniversalTriggerShared.h"
+#include "Legacy/R76Firmware_lib.h"
+#include "Legacy/Def.h"
+#include "Legacy/RegisterFile.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>

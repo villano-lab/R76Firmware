@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <unistd.h>
+#include <sys/time.h>
 
 #include "Legacy/R76Firmware_lib.h"
 #include "UniversalTriggerShared.h"
@@ -98,31 +99,20 @@ int main(int argc, char* argv[])
 	int32_t	FrameOrTrigger = 1;
 	//exit codes for sub-whatevers.
 	int code;
+	//run time length troubleshooting
+	struct timeval start,stop;
 
-    //Allocate buffer!
-	/*
+    //Allocate the buffer.
+	gettimeofday(&start,NULL);
 	code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
-	if(verbose>-1){printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);}
-	if(code != 0){printf("Buffer allocation failed.\n");}
-	*/
-
-    //Reset everything right before starting, just in case.
-    if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
-	if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
-
-	code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
-    if(verbose>-1) printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);
-    if(code != 0){
+	if(verbose>-1) printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);
+	if(code != 0){
 		printf("Buffer allocation failed.\n");
 		return code;
 	}
 	if(verbose>1) printf("Buffer allocation succeeded. Continuing to setup.\n");
 
-    //Pull the data!
-	/*
-	Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
-	if(verbose>-1) printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);
-	*/
+	//Pull the data!
 	if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
 	if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
 	sleep(1); //maybe it needs time to get going? idk.
@@ -221,6 +211,9 @@ int main(int argc, char* argv[])
 		if(verbose >-1){printf("Download completed\n");}
 	}
 	else printf("Status Error");
+	gettimeofday(&stop,NULL);
+	printf ("Elapsed: %f\n",stop.tv_sec-start.tv_sec
+          + 0.000001*(stop.tv_usec-start.tv_usec));
     return 0;
 }
 
