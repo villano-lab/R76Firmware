@@ -231,7 +231,7 @@ SCILIB int Utility_ALLOCATE_DOWNLOAD_BUFFER(void **buffer_handle, uint32_t buffe
 //-		Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
 //-----------------------------------------------------------------
 
-SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t *val, uint32_t size, uint32_t *enqueued_data)
+SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, int32_t *val, uint32_t size, uint32_t *enqueued_data)
 {
 	cbuf_handle_t cbuf;
 	uint32_t i;
@@ -282,13 +282,13 @@ SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t
 //-----------------------------------------------------------------
 
 
-SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t *val)
+SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, int32_t *val)
 {
 	cbuf_handle_t cbuf;
 	cbuf = (cbuf_handle_t)buffer_handle;
 	if (circular_buf_empty(cbuf))
 		return -1;
-	circular_buf_get(cbuf, val);
+	circular_buf_get(cbuf, (uint32_t *)val);
 	return 0;
 }
 
@@ -7125,8 +7125,10 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 		if (in_sync == 0) {
 			if (mpe != 0x80000000)
 			{
+				if(verbose>-1){printf("Header not found! Moving to the next packet.\n");}
 				continue;
 			}
+			if(verbose>2) printf("Found header...\n");
 			in_sync = 1;
 		    ch_index =0;
 			continue;

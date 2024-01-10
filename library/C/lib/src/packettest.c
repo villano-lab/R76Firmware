@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 			break;
         case 'w':
             waittime = atoi(optarg);
-            break;        
+            break;
 		}
 	}
 
@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
     //Stuff to call later
     uint32_t status_frame = 0;
 	uint32_t N_Packet = 100;
-	uint32_t data_frame[100000];
+	int32_t data_frame[100000];
 	uint32_t read_data_frame;
 	uint32_t valid_data_frame;
 	uint32_t valid_data_enqueued;
@@ -116,6 +116,7 @@ int main(int argc, char* argv[])
 		printf("Buffer allocation failed.\n");
 		return code;
 	}
+	if(verbose>1) printf("Buffer allocation succeeded. Continuing to setup.\n");
 
     //Pull the data!
 	/*
@@ -124,9 +125,20 @@ int main(int argc, char* argv[])
 	*/
 	if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
 	if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
+	sleep(1); //maybe it needs time to get going? idk.
 	if (CPACK_All_Energies_STATUS(&status_frame, &handle) != 0) printf("Status Error\n");
+	if(verbose>1){
+		printf("Setup complete. Packet status %d (",status_frame);
+		if(status_frame & (1 << 0)){printf("Data available, ");
+		}else{printf("No data available, ");}
+		if(status_frame & (1 << 1)){printf("Running, ");
+		}else{printf("Not running, ");}
+		if(status_frame & (1 << 2)){printf("Full.)\n");
+		}else{printf("Not full.)\n");}
+	}
 	if (status_frame >0)
 	{
+		if(verbose>1) printf("Logging to %s.\n");
         if(logfile != NULL){
             fprintf(logfile,"Packet #,word label,value\n");
         }
@@ -134,7 +146,7 @@ int main(int argc, char* argv[])
         while(j<waittime){
             valid_data_frame = 0;
             if(verbose > 0){printf("Downloading new dataset.\n");}
-            if (CPACK_All_Energies_DOWNLOAD(data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
+            if (CPACK_All_Energies_DOWNLOAD((uint32_t *)data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
 			if(verbose>0) printf("Valid data: %d.\n",valid_data_frame);
 
             valid_data_enqueued = 0;

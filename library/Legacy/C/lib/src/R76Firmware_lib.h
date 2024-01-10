@@ -1,8 +1,8 @@
 #include "Def.h"
 #include <stdint.h>
 #include <stdlib.h>
-#include  <stdbool.h>
-
+#include <stdbool.h>
+#include "circular_buffer.h"
 
 #pragma once
 #ifndef __R5560_SCICOMPILER_H
@@ -99,9 +99,9 @@ SCILIB int __abstracted_fifo_read(uint32_t *data, uint32_t count,
 SCILIB int __abstracted_reg_write(uint32_t data, uint32_t address, NI_HANDLE *handle);
 SCILIB int __abstracted_reg_read(uint32_t *data, uint32_t address, NI_HANDLE *handle);
 
-SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t *val);
+SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, int32_t *val);
 
-SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t *val, uint32_t size, uint32_t *enqueued_data);
+SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, int32_t *val, uint32_t size, uint32_t *enqueued_data);
 
 SCILIB int Utility_ALLOCATE_DOWNLOAD_BUFFER(void **buffer_handle, uint32_t buffer_size);
 
@@ -111,7 +111,7 @@ SCILIB void free_FRAME_packet_collectionvoid(t_FRAME_packet_collection *decoded_
 SCILIB void free_PETIROCFRAME_packet_collection(t_ASIC_packet_collection *decoded_packets);
 
 
-SCILIB int ClearBuffer(void *buffer_handle);
+SCILIB int ClearBuffer(cbuf_handle_t *buffer_handle);
 
 #ifdef __cplusplus
 }
