@@ -95,7 +95,8 @@ SCILIB int __abstracted_fifo_read(uint32_t *data, uint32_t count,
 										uint32_t address_status, 
 										bool blocking,
 										uint32_t timeout_ms, NI_HANDLE *handle, 
-										uint32_t *read_data, uint32_t *valid_data);
+										uint32_t *read_data, uint32_t *valid_data,
+										int verbose);
 SCILIB int __abstracted_reg_write(uint32_t data, uint32_t address, NI_HANDLE *handle);
 SCILIB int __abstracted_reg_read(uint32_t *data, uint32_t address, NI_HANDLE *handle);
 
@@ -5686,7 +5687,7 @@ SCILIB int CPACK_All_Energies_DATA_AVAILABLE(uint32_t *status,NI_HANDLE *handle)
 //-
 //-----------------------------------------------------------------
 
-SCILIB int CPACK_All_Energies_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data);
+SCILIB int CPACK_All_Energies_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data, int verbose);
 //-----------------------------------------------------------------
 //-
 //- CPACK_All_Energies_RECONSTRUCT_DATA

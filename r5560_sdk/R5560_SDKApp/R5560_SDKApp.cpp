@@ -119,7 +119,7 @@ int main(int argc, char **argv)
 
 
 	printf("Read FIFO (BLOCKING) test:         ");
-	if (NI_ReadFifo(vector_test, 1024, 0x02, 0x03, STREAMING_BLOCKING,1000, &handle, &rc)!=0)
+	if (NI_ReadFifo(vector_test, 1024, 0x02, 0x03, STREAMING_BLOCKING,1000, &handle, &rc,0)!=0)
 	{
 		printf("[FAILED]\n");
 		return 0;

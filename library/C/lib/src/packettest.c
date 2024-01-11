@@ -11,7 +11,7 @@
 #include "UniversalTriggerShared.h"
 
 const char* program_name = "packettest";
-int waittime=100; //default 2 packets.
+int waittime=100; //default 100 packets.
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
 	fprintf (stream, "Usage:  %s options \n", program_name);
@@ -24,8 +24,32 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	exit (exit_code);
 };
 
-int packet_setup(HANDLE handle,int verbose){
+int packet_setup(NI_HANDLE handle,int verbose,void* BufferDownloadHandler){
+	//Allocate the buffer.
+	uint32_t status_frame;
+	//I think i need to *return* BufferDownloadHandler rather than take it as an arg if I want this to go away.
+    /*int code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
+    if(verbose>-1) printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);
+    if(code != 0){
+        printf("Buffer allocation failed.\n");
+        return code;
+    }else if(verbose>1) printf("Buffer allocation succeeded. Continuing to setup.\n");
+	*/
 
+    //Clear, restart, and check the status of the packet.
+    //if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
+    if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
+    if (CPACK_All_Energies_STATUS(&status_frame, &handle) != 0) printf("Status Error\n");
+    if(verbose>1){
+        printf("Setup complete. Packet status %d (",status_frame);
+        if(status_frame & (1 << 0)){printf("Data available, ");
+        }else{printf("No data available, ");}
+        if(status_frame & (1 << 1)){printf("Running, ");
+        }else{printf("Not running, ");}
+        if(status_frame & (1 << 2)){printf("Full.)\n");
+        }else{printf("Not full.)\n");}
+    }
+	return status_frame;
 }
 
 int main(int argc, char* argv[])
@@ -85,7 +109,7 @@ int main(int argc, char* argv[])
 
     //Stuff to call later
     uint32_t status_frame = 0;
-	uint32_t N_Packet = 100;
+	uint32_t N_Packet = 128;
 	int32_t data_frame[100000];
 	uint32_t read_data_frame;
 	uint32_t valid_data_frame;
@@ -104,9 +128,12 @@ int main(int argc, char* argv[])
 	//exit codes for sub-whatevers.
 	int code;
 	//run time length troubleshooting
-	struct timeval start,allocate,stop;
+	struct timeval start,stop;
+	struct timeval startReconstruct,stopReconstruct;
+	struct timeval startDownload,stopDownload;
+	struct timeval startEnqueue,stopEnqueue;
 
-    //Allocate the buffer.
+	//Allocate the buffer.
 	code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
 	if(verbose>-1) printf("BufferDownloadHandler: %p.\n",BufferDownloadHandler);
 	if(code != 0){
@@ -114,19 +141,7 @@ int main(int argc, char* argv[])
 		return code;
 	}else if(verbose>1) printf("Buffer allocation succeeded. Continuing to setup.\n");
 
-	//Pull the data!
-	if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
-	if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
-	if (CPACK_All_Energies_STATUS(&status_frame, &handle) != 0) printf("Status Error\n");
-	if(verbose>1){
-		printf("Setup complete. Packet status %d (",status_frame);
-		if(status_frame & (1 << 0)){printf("Data available, ");
-		}else{printf("No data available, ");}
-		if(status_frame & (1 << 1)){printf("Running, ");
-		}else{printf("Not running, ");}
-		if(status_frame & (1 << 2)){printf("Full.)\n");
-		}else{printf("Not full.)\n");}
-	}
+	status_frame = packet_setup(handle,verbose,BufferDownloadHandler);
 	if (status_frame >0)
 	{
 		if(verbose>1) printf("Logging to %s.\n",logfile);
@@ -136,26 +151,48 @@ int main(int argc, char* argv[])
         int j = 0;
         while(j<waittime){
 			gettimeofday(&start,NULL);
-            valid_data_frame = 0;
-            if(verbose > 0){printf("Downloading new dataset.\n");}
-            if (CPACK_All_Energies_DOWNLOAD((uint32_t *)data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
-			if(verbose>0) printf("Valid data: %d.\n",valid_data_frame);
-			if(valid_data_frame == 0){
-				printf("No data available; nothing to do. Exiting.");
-				return -1;
-			}
+            valid_data_frame = 0; //reset amount of valid data for checking.
+            if(verbose > 0) printf("Downloading new dataset.\n");
+			gettimeofday(&startDownload,NULL);
+			//usleep(1000);
+            if (CPACK_All_Energies_DOWNLOAD((uint32_t *)data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame,verbose) != 0) printf("Data Download Error\n");
+			gettimeofday(&stopDownload,NULL);
+			if(verbose>1) printf ("Elapsed for Download this iteration: %f\n",stopDownload.tv_sec-startDownload.tv_sec
+              + 0.000001*(stopDownload.tv_usec-startDownload.tv_usec));
+			if(verbose>0) printf("Valid data: %d. (read data: %d)\n",valid_data_frame,read_data_frame);
 
+			//Enqueue
             valid_data_enqueued = 0;
             if(verbose > 1){printf("Enqueuing data.\n");}
+			gettimeofday(&startEnqueue,NULL);
 			code = Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
+			gettimeofday(&stopEnqueue,NULL);
+			printf ("Elapsed for Enqueue this iteration: %f\n",stopEnqueue.tv_sec-startEnqueue.tv_sec
+              + 0.000001*(stopEnqueue.tv_usec-startEnqueue.tv_usec));
 			if(code != 0){
 				printf("Enqueue failed with code %d.\n",code);
 				return code;
 			}
 
+			if(valid_data_frame == 0){
+                if(j>0){
+                    printf("No data available; nothing to do. Exiting.\n");
+                    return 0;
+                }else{
+                    printf("No data initially available. Waiting for data and trying again.\n");
+					//timeout_frame = 100;
+                    sleep(10);
+                    continue;
+                }
+            }
+
             if(verbose > 1){printf("Reconstructing data.\n");}
+			gettimeofday(&startReconstruct,NULL);
             if (CPACK_All_Energies_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets, verbose, handle) == 0)
             {
+				gettimeofday(&stopReconstruct,NULL);
+				printf ("Elapsed for reconstruction this iteration: %f\n",stopReconstruct.tv_sec-startReconstruct.tv_sec
+		              + 0.000001*(stopReconstruct.tv_usec-startReconstruct.tv_usec));
                 if(verbose>=0) printf(".");
                 if(verbose>=0) printf("\n");
                 if(verbose>2) printf("i: %d\n",i);
@@ -206,11 +243,12 @@ int main(int argc, char* argv[])
                 printf("Reconstruction failed.\n");
                 return -1;
             }
-            if(verbose > 2){printf("Incrementing ReadDataNumber.\n");}
-            ReadDataNumber = ReadDataNumber + N_Packet;
+            /*if(verbose > 2){printf("Incrementing ReadDataNumber.\n");}
+            ReadDataNumber = ReadDataNumber + N_Packet;*///not actually called, just incremented
             j++;
+			//timeout_frame = 40; //should be same as initial value above!
 			gettimeofday(&stop,NULL);
-			printf ("Elapsed this iteration: %f\n",stop.tv_sec-start.tv_sec
+			printf ("Total elapsed this iteration: %f\n============\n",stop.tv_sec-start.tv_sec
 	          + 0.000001*(stop.tv_usec-start.tv_usec));
         }
 		if(verbose >-1){printf("Download completed\n");}

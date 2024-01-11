@@ -1,14 +1,8 @@
 // R5560_SDKLib.cpp: definisce le funzioni esportate per l'applicazione DLL.
 //
-
-
-	#include "stdafx.h"
-
-
+#include "stdafx.h"
 #include "zmq.h"
 #include "R5560_SDKLib.h"
-
-
 #ifdef _WIN32
   /* See http://stackoverflow.com/questions/12765743/getaddrinfo-on-win32 */
   #ifndef _WIN32_WINNT
@@ -25,7 +19,6 @@
   #include <unistd.h> /* Needed for close() */
   #include <string.h> /* Needed for close() */
 #endif
-
 #define ErrorHandler printf
 
 
@@ -34,6 +27,8 @@
 #else
 	#define SOCKET int
 #endif
+
+#include <sys/time.h>
 
 int sockInit(void);
 int sockQuit(void);
@@ -199,21 +194,25 @@ R5560_SDKLIB_API int NI_ReadData(uint32_t *data, uint32_t count,
 	return 0;
 }
 
-R5560_SDKLIB_API int NI_ReadFifo(uint32_t *data, uint32_t count, 
+R5560_SDKLIB_API int NI_ReadFifo(uint32_t *data, uint32_t count,
 										uint32_t address, uint32_t fifo_status_address, BUS_MODE bus_mode, 
-										uint32_t timeout_ms, tR5560_Handle *handle, 
-										uint32_t *read_data)
+										uint32_t timeout_ms, tR5560_Handle *handle,
+										uint32_t *read_data,int verbose)
 {
+	//setup
 	int Length;
 	uint32_t valid_word;
 	uint8_t *buffer;
 	*read_data=0;
 	if(handle->connected==0) return -1;
 
+	//allocate the buffer
 	buffer = (uint8_t *) malloc((10+count) * sizeof(uint32_t));
 	if (buffer==NULL) return -3;
 
-
+	//fill the buffer -- doing this as uint32_t allows us to fill 4 uint8_t words at a time
+	//I assume that the beginning here is a header so that it knows what to expect
+	//And the rest is being read by the fifo somehow.
 	*((uint32_t *)(buffer) + 0) = 0x80000000;
 	*((uint32_t *)(buffer) + 1) = 0x00000004;
 	*((uint32_t *)(buffer) + 2) = address;
@@ -222,25 +221,37 @@ R5560_SDKLIB_API int NI_ReadFifo(uint32_t *data, uint32_t count,
 	*((uint32_t *)(buffer) + 5) = timeout_ms + (bus_mode == STREAMING_BLOCKING ? 0x80000000 : 0);
 
 	Length = 6*4 ;
+	//send buffer to socket, and throw an error if we didn't send the expected amount of data.
 	if (send(handle->Csocket, (char*)buffer, Length, 0) != Length) {
 		free(buffer);
 		return -2;
 	}
 
-
 	int bytesRcvd;
 	int totalBytesRcvd = 0;
 	Length=1 * 4;
-	
-	while (Length>0) {
+
+	//Now receive the data
+	//Presumably there's something happening on the other end, at the socket, in the meantime --
+	//That is, overwriting the sent data with the data from the fifo
+	//recv can wait for the requested data -- this must be where the timing comes in,
+	//maybe it's calculated on the other end (in the firmware)
+	while (Length>0) { //iterate until all bytes are recovered.
+		struct timeval start,stop;
+		gettimeofday(&start,NULL);
 		if ((bytesRcvd = recv(handle->Csocket, (char*)(buffer + totalBytesRcvd), Length, 0)) <= 0) {
 			free(buffer);
 			return -3;
 		}
+		if(verbose>2){
+			gettimeofday(&stop,NULL);
+			printf ("Time spent waiting on receiving: %f\n",stop.tv_sec-start.tv_sec
+              + 0.000001*(stop.tv_usec-start.tv_usec));
+		}
 		totalBytesRcvd += bytesRcvd; // Keep tally of total bytes
 		Length -= bytesRcvd;
 	}
-	
+
 	memcpy(&valid_word, buffer, sizeof(uint32_t));
 
 	totalBytesRcvd = 0;
@@ -251,7 +262,7 @@ R5560_SDKLIB_API int NI_ReadFifo(uint32_t *data, uint32_t count,
 		free(buffer);
 		return -4;
 	}
-	
+
 	while (Length>0) {
 		if ((bytesRcvd = recv(handle->Csocket, (char*)(buffer + totalBytesRcvd), Length, 0)) <= 0) {
 			free(buffer);

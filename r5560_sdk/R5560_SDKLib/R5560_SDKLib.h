@@ -19,7 +19,7 @@
     #else
         #define R5560_SDKLIB_API
     #endif
-    
+
 #endif
 
 #define NO_ERROR 0
@@ -38,13 +38,13 @@
 
 #define ZMQ_ENDPOINT_COUNT 1
 
-typedef enum 
+typedef enum
 {
 	LOW_LEVEL_TCP = 0
 } SOCKET_TYPE;
 
 
-typedef enum 
+typedef enum
 {
 	REG_ACCESS = 0,
 	STREAMING_BLOCKING = 1,
@@ -52,11 +52,11 @@ typedef enum
 } BUS_MODE;
 
 
-typedef struct 
+typedef struct
 {
 	void *zmq_context;
 	void *zmq_pullsocket;
-	int zmq_connected;		
+	int zmq_connected;
 	int recv_blocking;
 }tZMQEndpoint;
 
@@ -92,7 +92,7 @@ typedef enum {
 } t_IREG;
 
 
-#ifndef _WIN32 
+#ifndef _WIN32
 	#pragma once
 #ifdef __cplusplus
 extern "C"
@@ -101,17 +101,17 @@ extern "C"
 #endif
 R5560_SDKLIB_API int R5560_ConnectTCP(char *ipaddress, uint32_t port, tR5560_Handle *handle);
 R5560_SDKLIB_API int NI_CloseConnection(tR5560_Handle *handle);
-R5560_SDKLIB_API int NI_WriteData(uint32_t *data, uint32_t count, 
-										uint32_t address, 
+R5560_SDKLIB_API int NI_WriteData(uint32_t *data, uint32_t count,
+										uint32_t address,
 										tR5560_Handle *handle,
 										uint32_t *written_data);
-R5560_SDKLIB_API int NI_ReadData(uint32_t *data, uint32_t count, 
-										uint32_t address, tR5560_Handle *handle, 
+R5560_SDKLIB_API int NI_ReadData(uint32_t *data, uint32_t count,
+										uint32_t address, tR5560_Handle *handle,
 										uint32_t *read_data);
-R5560_SDKLIB_API int NI_ReadFifo(uint32_t *data, uint32_t count, 
+R5560_SDKLIB_API int NI_ReadFifo(uint32_t *data, uint32_t count,
 										uint32_t address, uint32_t fifo_status_address, BUS_MODE bus_mode, 
-										uint32_t timeout_ms, tR5560_Handle *handle, 
-										uint32_t *read_data);
+										uint32_t timeout_ms, tR5560_Handle *handle,
+										uint32_t *read_data, int verbose);
 R5560_SDKLIB_API int NI_WriteReg(uint32_t data, uint32_t address, tR5560_Handle *handle);
 R5560_SDKLIB_API int NI_ReadReg(uint32_t *data, uint32_t address, tR5560_Handle *handle);
 R5560_SDKLIB_API int NI_DMA_Read(uint32_t dma_channel, char *buffer, uint32_t max_len, uint32_t *valid_data, tR5560_Handle *handle);
@@ -122,7 +122,7 @@ R5560_SDKLIB_API int NI_InternalWriteReg(uint32_t data, uint32_t address, tR5560
 R5560_SDKLIB_API int NI_InternalReadReg(uint32_t *data, uint32_t address, tR5560_Handle *handle);
 
 #ifndef _WIN32
-	
+
 #ifdef __cplusplus
 }
 #endif

@@ -42,6 +42,6 @@ R5560_SDKLIB_API int NI_ReadData(uint32_t *data, uint32_t count,
 R5560_SDKLIB_API int NI_ReadFifo(uint32_t *data, uint32_t count, 
 										uint32_t address, uint32_t fifo_status_address, BUS_MODE bus_mode, 
 										uint32_t timeout_ms, tR5560_Handle *handle, 
-										uint32_t *read_data);
+										uint32_t *read_data, int verbose);
 R5560_SDKLIB_API int NI_WriteReg(uint32_t data, uint32_t address, tR5560_Handle *handle);
 R5560_SDKLIB_API int NI_ReadReg(uint32_t *data, uint32_t address, tR5560_Handle *handle);

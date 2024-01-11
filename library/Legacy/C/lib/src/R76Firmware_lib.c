@@ -97,20 +97,21 @@ SCILIB int __abstracted_fifo_write(uint32_t *data, uint32_t count,
 {
 	return -1;
 }
-	
+
 SCILIB int __abstracted_fifo_read(uint32_t *data, uint32_t count, 
 										uint32_t address, 
 										uint32_t address_status, 
 										bool blocking,
 										uint32_t timeout_ms, NI_HANDLE *handle, 
-										uint32_t *read_data, uint32_t *valid_data)
+										uint32_t *read_data, uint32_t *valid_data,
+										int verbose)
 {
 	int err;
-	err= NI_ReadFifo(data,  count, address,  address_status, blocking ? STREAMING_BLOCKING : STREAMING_NONBLOCKING, timeout_ms, handle, read_data);
+	err= NI_ReadFifo(data,  count, address,  address_status, blocking ? STREAMING_BLOCKING : STREAMING_NONBLOCKING, timeout_ms, handle, read_data,verbose);
 	*valid_data = *read_data;
 	return err;
 }
-	
+
 SCILIB int __abstracted_reg_write(uint32_t data, uint32_t address, NI_HANDLE *handle)
 {
 	return NI_WriteReg(data, address, handle);
@@ -6960,39 +6961,39 @@ return __abstracted_reg_read(status, SCI_REG_All_Energies_READ_VALID_WORDS, hand
 //- CPACK_All_Energies_DOWNLOAD
 //-
 //- Download data from buffer. Data in the buffer respect the packet layout defined in the Packet Creator Tool
-//- 
-//- USAGE: 
-//- 
+//-
+//- USAGE:
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. 
-//- 		DEFAULT: 
+//- 	             size  PARAM_IN    uint32_t
+//- 		number of word to download from the buffer.
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
-//- 	             val   PARAM_IN    int32_t
+//- 	             timeout PARAM_IN  int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7003,9 +7004,9 @@ return __abstracted_reg_read(status, SCI_REG_All_Energies_READ_VALID_WORDS, hand
 //-
 //-----------------------------------------------------------------
 
-SCILIB int CPACK_All_Energies_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
+SCILIB int CPACK_All_Energies_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data, int verbose)
 {
-return __abstracted_fifo_read(val, size, SCI_REG_All_Energies_FIFOADDRESS, SCI_REG_All_Energies_READ_STATUS,1, timeout, handle, read_data, valid_data);
+return __abstracted_fifo_read(val, size, SCI_REG_All_Energies_FIFOADDRESS, SCI_REG_All_Energies_READ_STATUS,1, timeout, handle, read_data, valid_data, verbose);
 
 }
 //-----------------------------------------------------------------
