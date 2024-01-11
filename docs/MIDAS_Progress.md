@@ -6,6 +6,23 @@ However, after it has done this, the values in "Hi, I got x triggers on the read
 * We've been working on speeding up `packettest` and the copied code -- in `towerfe3_NaI.exe`, it starts out around 5ms and suddenly slows down until it's almost 2s. Previously, it was starting at ~1s and going up to ~2s (due to a memory error, the precision was 1s.)
   * We tried moving the memory allocation function in `towerfe3_NaI.cpp`, as well as some other one-time things like the startup of the packet block in the firmware. This did not fix the slowdown, but it does seem to have fixed some other issues.
   * This issue also occurs if we run `packettest` while `towerfe3_NaI.exe` is already running, or if we loop through many iterations of `packettest`. We have narrowed down that it is the `CPACK_All_Energies_DOWNLOAD` function that slows down.
+  * Tried reducing "Number per" in custom packet in the firmware diagram, this doesn't seem to alter behavior
+  * Rate seems to alter behavior; at ~200Hz then we cap at 0.5s, at ~20Hz is the 2s behavior, at ~450 it caps around a quarter second, ~1kHz is <10ms. Does this mean it's waiting for things to fill up before it'll feed back the data, perhaps?
+
+# Rate + packettest lag
+
+Table of rough values for rate vs time
+
+|thresh|rate|download time|
+|------|----|-------------|
+|0.1   |1100|0.09         |
+|0.5   |450 |0.25         |
+|1     |200 |0.5          |
+|2     |23  |1.9          |
+
+Sample output
+![image](https://github.com/villano-lab/R76Firmware/assets/45541156/b9812a4e-402c-477e-af41-7d33629c31fb)
+
 
 # triggerfe2_mod.exe output
 
