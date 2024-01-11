@@ -3,6 +3,9 @@
 However, after it has done this, the values in "Hi, I got x triggers on the readbuffer" appear to match the values in `triggerfe2_mod.exe`'s "Got x triggers in buffer at time ... for tower 1". We checked these by running them in the command line without the `-D` option.
 * `towerfe3.exe` and `towerfe3_NaI.exe` produce very different file sizes (~6 MB vs ~1.5 MB) -- is it possible that the calls being made to the NaI array regarding the custom packet are too slow and result in data loss?
 * `packettest` was also broken, not just the modified `towerfe3` program. It has been restored by modifying code based on commit number `9f083fd` (NOT the previously listed commit number; this was an error.)
+* We've been working on speeding up `packettest` and the copied code -- in `towerfe3_NaI.exe`, it starts out around 5ms and suddenly slows down until it's almost 2s. Previously, it was starting at ~1s and going up to ~2s (due to a memory error, the precision was 1s.)
+  * We tried moving the memory allocation function in `towerfe3_NaI.cpp`, as well as some other one-time things like the startup of the packet block in the firmware. This did not fix the slowdown, but it does seem to have fixed some other issues.
+  * This issue also occurs if we run `packettest` while `towerfe3_NaI.exe` is already running, or if we loop through many iterations of `packettest`. We have narrowed down that it is the `CPACK_All_Energies_DOWNLOAD` function that slows down.
 
 # triggerfe2_mod.exe output
 
@@ -69,410 +72,410 @@ Got 27 triggers in buffer at time 1704740797 for tower 1
 Got 30 triggers in buffer at time 1704740797 for tower 1  
 Got 35 triggers in buffer at time 1704740798 for tower 1  
 Got 40 triggers in buffer at time 1704740799 for tower 1  
-Got 38 triggers in buffer at time 1704740799 for tower 1 
-Got 35 triggers in buffer at time 1704740800 for tower 1 
-Got 33 triggers in buffer at time 1704740801 for tower 1 
-Got 37 triggers in buffer at time 1704740801 for tower 1 
-Got 37 triggers in buffer at time 1704740802 for tower 1 
-Got 28 triggers in buffer at time 1704740803 for tower 1 
-Got 32 triggers in buffer at time 1704740803 for tower 1 
-Got 33 triggers in buffer at time 1704740804 for tower 1 
-Got 47 triggers in buffer at time 1704740805 for tower 1 
-Got 40 triggers in buffer at time 1704740806 for tower 1 
-Got 24 triggers in buffer at time 1704740806 for tower 1 
-Got 34 triggers in buffer at time 1704740807 for tower 1 
-Got 35 triggers in buffer at time 1704740808 for tower 1 
-Got 31 triggers in buffer at time 1704740808 for tower 1 
-Got 29 triggers in buffer at time 1704740809 for tower 1 
-Got 30 triggers in buffer at time 1704740809 for tower 1 
-Got 33 triggers in buffer at time 1704740810 for tower 1 
-Got 33 triggers in buffer at time 1704740811 for tower 1 
-Got 27 triggers in buffer at time 1704740811 for tower 1 
-Got 39 triggers in buffer at time 1704740812 for tower 1 
-Got 34 triggers in buffer at time 1704740813 for tower 1 
-Got 32 triggers in buffer at time 1704740813 for tower 1 
-Got 33 triggers in buffer at time 1704740814 for tower 1 
-Got 42 triggers in buffer at time 1704740815 for tower 1 
-Got 46 triggers in buffer at time 1704740815 for tower 1 
-Got 39 triggers in buffer at time 1704740816 for tower 1 
-Got 55 triggers in buffer at time 1704740817 for tower 1 
-Got 58 triggers in buffer at time 1704740818 for tower 1 
-Got 60 triggers in buffer at time 1704740819 for tower 1 
-Got 58 triggers in buffer at time 1704740820 for tower 1 
-Got 52 triggers in buffer at time 1704740821 for tower 1 
-Got 44 triggers in buffer at time 1704740822 for tower 1 
-Got 44 triggers in buffer at time 1704740823 for tower 1 
-Got 43 triggers in buffer at time 1704740824 for tower 1 
-Got 51 triggers in buffer at time 1704740825 for tower 1 
-Got 36 triggers in buffer at time 1704740826 for tower 1 
-Got 28 triggers in buffer at time 1704740826 for tower 1 
-Got 46 triggers in buffer at time 1704740827 for tower 1 
-Got 41 triggers in buffer at time 1704740828 for tower 1 
-Got 39 triggers in buffer at time 1704740829 for tower 1 
-Got 34 triggers in buffer at time 1704740830 for tower 1 
-Got 33 triggers in buffer at time 1704740830 for tower 1 
-Got 28 triggers in buffer at time 1704740831 for tower 1 
-Got 37 triggers in buffer at time 1704740832 for tower 1 
-Got 38 triggers in buffer at time 1704740832 for tower 1 
-Got 28 triggers in buffer at time 1704740833 for tower 1 
-Got 30 triggers in buffer at time 1704740834 for tower 1 
-Got 39 triggers in buffer at time 1704740834 for tower 1 
-Got 42 triggers in buffer at time 1704740835 for tower 1 
-Got 52 triggers in buffer at time 1704740836 for tower 1 
-Got 53 triggers in buffer at time 1704740837 for tower 1 
-Got 51 triggers in buffer at time 1704740838 for tower 1 
-Got 52 triggers in buffer at time 1704740839 for tower 1 
-Got 57 triggers in buffer at time 1704740840 for tower 1 
-Got 46 triggers in buffer at time 1704740841 for tower 1 
-Got 47 triggers in buffer at time 1704740841 for tower 1 
-Got 57 triggers in buffer at time 1704740842 for tower 1 
-Got 65 triggers in buffer at time 1704740843 for tower 1 
-Got 51 triggers in buffer at time 1704740844 for tower 1 
-Got 46 triggers in buffer at time 1704740845 for tower 1 
-Got 37 triggers in buffer at time 1704740846 for tower 1 
-Got 41 triggers in buffer at time 1704740847 for tower 1 
-Got 44 triggers in buffer at time 1704740848 for tower 1 
-Got 54 triggers in buffer at time 1704740849 for tower 1 
-Got 50 triggers in buffer at time 1704740850 for tower 1 
-Got 42 triggers in buffer at time 1704740850 for tower 1 
-Got 29 triggers in buffer at time 1704740851 for tower 1 
-Got 30 triggers in buffer at time 1704740852 for tower 1 
-Got 32 triggers in buffer at time 1704740852 for tower 1 
-Got 31 triggers in buffer at time 1704740853 for tower 1 
-Got 32 triggers in buffer at time 1704740854 for tower 1 
-Got 28 triggers in buffer at time 1704740854 for tower 1 
-Got 33 triggers in buffer at time 1704740855 for tower 1 
-Got 38 triggers in buffer at time 1704740856 for tower 1 
-Got 42 triggers in buffer at time 1704740856 for tower 1 
-Got 43 triggers in buffer at time 1704740857 for tower 1 
-Got 33 triggers in buffer at time 1704740858 for tower 1 
-Got 42 triggers in buffer at time 1704740859 for tower 1 
-Got 37 triggers in buffer at time 1704740859 for tower 1 
-Got 38 triggers in buffer at time 1704740860 for tower 1 
-Got 43 triggers in buffer at time 1704740861 for tower 1 
-Got 48 triggers in buffer at time 1704740862 for tower 1 
-Got 37 triggers in buffer at time 1704740863 for tower 1 
-Got 35 triggers in buffer at time 1704740863 for tower 1 
-Got 30 triggers in buffer at time 1704740864 for tower 1 
-Got 36 triggers in buffer at time 1704740864 for tower 1 
-Got 38 triggers in buffer at time 1704740865 for tower 1 
-Got 37 triggers in buffer at time 1704740866 for tower 1 
-Got 43 triggers in buffer at time 1704740867 for tower 1 
-Got 38 triggers in buffer at time 1704740867 for tower 1 
-Got 33 triggers in buffer at time 1704740868 for tower 1 
-Got 37 triggers in buffer at time 1704740869 for tower 1 
+Got 38 triggers in buffer at time 1704740799 for tower 1  
+Got 35 triggers in buffer at time 1704740800 for tower 1  
+Got 33 triggers in buffer at time 1704740801 for tower 1  
+Got 37 triggers in buffer at time 1704740801 for tower 1  
+Got 37 triggers in buffer at time 1704740802 for tower 1  
+Got 28 triggers in buffer at time 1704740803 for tower 1  
+Got 32 triggers in buffer at time 1704740803 for tower 1  
+Got 33 triggers in buffer at time 1704740804 for tower 1  
+Got 47 triggers in buffer at time 1704740805 for tower 1  
+Got 40 triggers in buffer at time 1704740806 for tower 1  
+Got 24 triggers in buffer at time 1704740806 for tower 1  
+Got 34 triggers in buffer at time 1704740807 for tower 1  
+Got 35 triggers in buffer at time 1704740808 for tower 1  
+Got 31 triggers in buffer at time 1704740808 for tower 1  
+Got 29 triggers in buffer at time 1704740809 for tower 1  
+Got 30 triggers in buffer at time 1704740809 for tower 1  
+Got 33 triggers in buffer at time 1704740810 for tower 1  
+Got 33 triggers in buffer at time 1704740811 for tower 1  
+Got 27 triggers in buffer at time 1704740811 for tower 1  
+Got 39 triggers in buffer at time 1704740812 for tower 1  
+Got 34 triggers in buffer at time 1704740813 for tower 1  
+Got 32 triggers in buffer at time 1704740813 for tower 1  
+Got 33 triggers in buffer at time 1704740814 for tower 1  
+Got 42 triggers in buffer at time 1704740815 for tower 1  
+Got 46 triggers in buffer at time 1704740815 for tower 1  
+Got 39 triggers in buffer at time 1704740816 for tower 1  
+Got 55 triggers in buffer at time 1704740817 for tower 1  
+Got 58 triggers in buffer at time 1704740818 for tower 1  
+Got 60 triggers in buffer at time 1704740819 for tower 1  
+Got 58 triggers in buffer at time 1704740820 for tower 1  
+Got 52 triggers in buffer at time 1704740821 for tower 1  
+Got 44 triggers in buffer at time 1704740822 for tower 1  
+Got 44 triggers in buffer at time 1704740823 for tower 1  
+Got 43 triggers in buffer at time 1704740824 for tower 1  
+Got 51 triggers in buffer at time 1704740825 for tower 1  
+Got 36 triggers in buffer at time 1704740826 for tower 1  
+Got 28 triggers in buffer at time 1704740826 for tower 1  
+Got 46 triggers in buffer at time 1704740827 for tower 1  
+Got 41 triggers in buffer at time 1704740828 for tower 1  
+Got 39 triggers in buffer at time 1704740829 for tower 1  
+Got 34 triggers in buffer at time 1704740830 for tower 1  
+Got 33 triggers in buffer at time 1704740830 for tower 1  
+Got 28 triggers in buffer at time 1704740831 for tower 1  
+Got 37 triggers in buffer at time 1704740832 for tower 1  
+Got 38 triggers in buffer at time 1704740832 for tower 1  
+Got 28 triggers in buffer at time 1704740833 for tower 1  
+Got 30 triggers in buffer at time 1704740834 for tower 1  
+Got 39 triggers in buffer at time 1704740834 for tower 1  
+Got 42 triggers in buffer at time 1704740835 for tower 1  
+Got 52 triggers in buffer at time 1704740836 for tower 1  
+Got 53 triggers in buffer at time 1704740837 for tower 1  
+Got 51 triggers in buffer at time 1704740838 for tower 1  
+Got 52 triggers in buffer at time 1704740839 for tower 1  
+Got 57 triggers in buffer at time 1704740840 for tower 1  
+Got 46 triggers in buffer at time 1704740841 for tower 1  
+Got 47 triggers in buffer at time 1704740841 for tower 1  
+Got 57 triggers in buffer at time 1704740842 for tower 1  
+Got 65 triggers in buffer at time 1704740843 for tower 1  
+Got 51 triggers in buffer at time 1704740844 for tower 1  
+Got 46 triggers in buffer at time 1704740845 for tower 1  
+Got 37 triggers in buffer at time 1704740846 for tower 1  
+Got 41 triggers in buffer at time 1704740847 for tower 1  
+Got 44 triggers in buffer at time 1704740848 for tower 1  
+Got 54 triggers in buffer at time 1704740849 for tower 1  
+Got 50 triggers in buffer at time 1704740850 for tower 1  
+Got 42 triggers in buffer at time 1704740850 for tower 1  
+Got 29 triggers in buffer at time 1704740851 for tower 1  
+Got 30 triggers in buffer at time 1704740852 for tower 1  
+Got 32 triggers in buffer at time 1704740852 for tower 1  
+Got 31 triggers in buffer at time 1704740853 for tower 1  
+Got 32 triggers in buffer at time 1704740854 for tower 1  
+Got 28 triggers in buffer at time 1704740854 for tower 1  
+Got 33 triggers in buffer at time 1704740855 for tower 1  
+Got 38 triggers in buffer at time 1704740856 for tower 1  
+Got 42 triggers in buffer at time 1704740856 for tower 1  
+Got 43 triggers in buffer at time 1704740857 for tower 1  
+Got 33 triggers in buffer at time 1704740858 for tower 1   
+Got 42 triggers in buffer at time 1704740859 for tower 1   
+Got 37 triggers in buffer at time 1704740859 for tower 1  
+Got 38 triggers in buffer at time 1704740860 for tower 1  
+Got 43 triggers in buffer at time 1704740861 for tower 1  
+Got 48 triggers in buffer at time 1704740862 for tower 1  
+Got 37 triggers in buffer at time 1704740863 for tower 1  
+Got 35 triggers in buffer at time 1704740863 for tower 1  
+Got 30 triggers in buffer at time 1704740864 for tower 1  
+Got 36 triggers in buffer at time 1704740864 for tower 1  
+Got 38 triggers in buffer at time 1704740865 for tower 1  
+Got 37 triggers in buffer at time 1704740866 for tower 1  
+Got 43 triggers in buffer at time 1704740867 for tower 1  
+Got 38 triggers in buffer at time 1704740867 for tower 1  
+Got 33 triggers in buffer at time 1704740868 for tower 1  
+Got 37 triggers in buffer at time 1704740869 for tower 1  
  
 # towerfe3.exe output
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 4 triggers on the readbuffer
-Hi, I got 128 triggers on the readbuffer
-Hi, I got 87 triggers on the readbuffer
-Hi, I got 77 triggers on the readbuffer
-Hi, I got 79 triggers on the readbuffer
-Hi, I got 79 triggers on the readbuffer
-Hi, I got 81 triggers on the readbuffer
-Hi, I got 76 triggers on the readbuffer
-Hi, I got 66 triggers on the readbuffer
-Hi, I got 75 triggers on the readbuffer
-Hi, I got 70 triggers on the readbuffer
-Hi, I got 61 triggers on the readbuffer
-Hi, I got 64 triggers on the readbuffer
-Hi, I got 50 triggers on the readbuffer
-Hi, I got 52 triggers on the readbuffer
-Hi, I got 46 triggers on the readbuffer
-Hi, I got 59 triggers on the readbuffer
-Hi, I got 55 triggers on the readbuffer
-Hi, I got 56 triggers on the readbuffer
-Hi, I got 59 triggers on the readbuffer
-Hi, I got 57 triggers on the readbuffer
-Hi, I got 47 triggers on the readbuffer
-Hi, I got 37 triggers on the readbuffer
-Hi, I got 40 triggers on the readbuffer
-Hi, I got 44 triggers on the readbuffer
-Hi, I got 52 triggers on the readbuffer
-Hi, I got 49 triggers on the readbuffer
-Hi, I got 49 triggers on the readbuffer
-Hi, I got 57 triggers on the readbuffer
-Hi, I got 57 triggers on the readbuffer
-Hi, I got 54 triggers on the readbuffer
-Hi, I got 60 triggers on the readbuffer
-Hi, I got 55 triggers on the readbuffer
-Hi, I got 42 triggers on the readbuffer
-Hi, I got 44 triggers on the readbuffer
-Hi, I got 50 triggers on the readbuffer
-Hi, I got 42 triggers on the readbuffer
-Hi, I got 44 triggers on the readbuffer
-Hi, I got 40 triggers on the readbuffer
-Hi, I got 41 triggers on the readbuffer
-Hi, I got 47 triggers on the readbuffer
-Hi, I got 42 triggers on the readbuffer
-Hi, I got 46 triggers on the readbuffer
-Hi, I got 50 triggers on the readbuffer
-Hi, I got 52 triggers on the readbuffer
-Hi, I got 49 triggers on the readbuffer
-Hi, I got 49 triggers on the readbuffer
-Hi, I got 47 triggers on the readbuffer
-Hi, I got 48 triggers on the readbuffer
-Hi, I got 42 triggers on the readbuffer
-Hi, I got 41 triggers on the readbuffer
-Hi, I got 42 triggers on the readbuffer
-Hi, I got 38 triggers on the readbuffer
-Hi, I got 36 triggers on the readbuffer
-Hi, I got 32 triggers on the readbuffer
-Hi, I got 26 triggers on the readbuffer
-Hi, I got 34 triggers on the readbuffer
-Hi, I got 42 triggers on the readbuffer
-Hi, I got 25 triggers on the readbuffer
-Hi, I got 27 triggers on the readbuffer
-Hi, I got 27 triggers on the readbuffer
-Hi, I got 30 triggers on the readbuffer
-Hi, I got 35 triggers on the readbuffer
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer   
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer   
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer   
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer   
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 4 triggers on the readbuffer  
+Hi, I got 128 triggers on the readbuffer  
+Hi, I got 87 triggers on the readbuffer  
+Hi, I got 77 triggers on the readbuffer  
+Hi, I got 79 triggers on the readbuffer  
+Hi, I got 79 triggers on the readbuffer  
+Hi, I got 81 triggers on the readbuffer  
+Hi, I got 76 triggers on the readbuffer  
+Hi, I got 66 triggers on the readbuffer  
+Hi, I got 75 triggers on the readbuffer  
+Hi, I got 70 triggers on the readbuffer  
+Hi, I got 61 triggers on the readbuffer  
+Hi, I got 64 triggers on the readbuffer  
+Hi, I got 50 triggers on the readbuffer  
+Hi, I got 52 triggers on the readbuffer  
+Hi, I got 46 triggers on the readbuffer  
+Hi, I got 59 triggers on the readbuffer  
+Hi, I got 55 triggers on the readbuffer  
+Hi, I got 56 triggers on the readbuffer  
+Hi, I got 59 triggers on the readbuffer  
+Hi, I got 57 triggers on the readbuffer  
+Hi, I got 47 triggers on the readbuffer  
+Hi, I got 37 triggers on the readbuffer  
+Hi, I got 40 triggers on the readbuffer  
+Hi, I got 44 triggers on the readbuffer  
+Hi, I got 52 triggers on the readbuffer  
+Hi, I got 49 triggers on the readbuffer  
+Hi, I got 49 triggers on the readbuffer  
+Hi, I got 57 triggers on the readbuffer  
+Hi, I got 57 triggers on the readbuffer  
+Hi, I got 54 triggers on the readbuffer  
+Hi, I got 60 triggers on the readbuffer  
+Hi, I got 55 triggers on the readbuffer  
+Hi, I got 42 triggers on the readbuffer  
+Hi, I got 44 triggers on the readbuffer  
+Hi, I got 50 triggers on the readbuffer  
+Hi, I got 42 triggers on the readbuffer  
+Hi, I got 44 triggers on the readbuffer   
+Hi, I got 40 triggers on the readbuffer  
+Hi, I got 41 triggers on the readbuffer  
+Hi, I got 47 triggers on the readbuffer  
+Hi, I got 42 triggers on the readbuffer  
+Hi, I got 46 triggers on the readbuffer  
+Hi, I got 50 triggers on the readbuffer  
+Hi, I got 52 triggers on the readbuffer  
+Hi, I got 49 triggers on the readbuffer  
+Hi, I got 49 triggers on the readbuffer  
+Hi, I got 47 triggers on the readbuffer  
+Hi, I got 48 triggers on the readbuffer  
+Hi, I got 42 triggers on the readbuffer  
+Hi, I got 41 triggers on the readbuffer  
+Hi, I got 42 triggers on the readbuffer  
+Hi, I got 38 triggers on the readbuffer  
+Hi, I got 36 triggers on the readbuffer  
+Hi, I got 32 triggers on the readbuffer  
+Hi, I got 26 triggers on the readbuffer  
+Hi, I got 34 triggers on the readbuffer  
+Hi, I got 42 triggers on the readbuffer  
+Hi, I got 25 triggers on the readbuffer  
+Hi, I got 27 triggers on the readbuffer  
+Hi, I got 27 triggers on the readbuffer  
+Hi, I got 30 triggers on the readbuffer  
+Hi, I got 35 triggers on the readbuffer  
 Hi, I got 40 triggers on the readbuffer
