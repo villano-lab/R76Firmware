@@ -37,17 +37,17 @@
   {
     "Name": "utilization.clb.lut",
     "Description": "LUT(#)",
-    "Value": "30263"
+    "Value": "29581"
   },
   {
     "Name": "utilization.clb.ff",
     "Description": "FD(#)",
-    "Value": "37858"
+    "Value": "37315"
   },
   {
     "Name": "utilization.ram.tile",
     "Description": "RAMB/FIFO(#)",
-    "Value": "123"
+    "Value": "91"
   },
   {
     "Name": "utilization.uram.tile",
@@ -57,7 +57,7 @@
   {
     "Name": "utilization.dsp",
     "Description": "DSP48(#)",
-    "Value": "50"
+    "Value": "48"
   },
   {
     "Name": "design.failure",
@@ -67,17 +67,17 @@
   {
     "Name": "utilization.clb.lut.pct",
     "Description": "LUT(%)",
-    "Value": "38.50"
+    "Value": "37.63"
   },
   {
     "Name": "utilization.clb.ff.pct",
     "Description": "FD(%)",
-    "Value": "24.08"
+    "Value": "23.74"
   },
   {
     "Name": "utilization.clb.lutmem.pct",
     "Description": "LUTRAM+SRL(%)",
-    "Value": "2.31"
+    "Value": "2.26"
   },
   {
     "Name": "utilization.clb.carry8.pct",
@@ -87,37 +87,37 @@
   {
     "Name": "utilization.clb.f7mux.pct",
     "Description": "MUXF7(%)",
-    "Value": "3.38"
+    "Value": "2.51"
   },
   {
     "Name": "utilization.clb.f8mux.pct",
     "Description": "MUXF8(%)",
-    "Value": "1.74"
+    "Value": "1.07"
   },
   {
     "Name": "design.cells.hlutnm.pct",
     "Description": "LUT Combining(%)",
-    "Value": "11.20"
+    "Value": "10.33"
   },
   {
     "Name": "utilization.dsp.pct",
     "Description": "DSP48(%)",
-    "Value": "12.50"
+    "Value": "12.00"
   },
   {
     "Name": "utilization.ram.tile.pct",
     "Description": "RAMB/FIFO(%)",
-    "Value": "46.42"
+    "Value": "34.34"
   },
   {
     "Name": "utilization.uram.tile.pct",
     "Description": "URAM(%)",
-    "Value": "46.42"
+    "Value": "34.34"
   },
   {
     "Name": "utilization.bigblocks.pct",
     "Description": "DSP48+RAMB+URAM (Avg)(%)",
-    "Value": "29.46"
+    "Value": "23.17"
   },
   {
     "Name": "utilization.clk.all",
@@ -127,7 +127,7 @@
   {
     "Name": "utilization.ctrlsets.uniq",
     "Description": "Control Sets",
-    "Value": "1886"
+    "Value": "1876"
   },
   {
     "Name": "design.dont_touch",

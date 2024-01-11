@@ -2,7 +2,7 @@
 {
   "Name": "int_time",
   "Type": null,
-  "Address": 3407917,
+  "Address": 3342376,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -11,7 +11,7 @@
 {
   "Name": "pre_int",
   "Type": null,
-  "Address": 3407918,
+  "Address": 3342377,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -20,7 +20,7 @@
 {
   "Name": "baseline",
   "Type": null,
-  "Address": 3407919,
+  "Address": 3342378,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -29,7 +29,7 @@
 {
   "Name": "write",
   "Type": null,
-  "Address": 3407920,
+  "Address": 3342379,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -38,7 +38,7 @@
 {
   "Name": "read",
   "Type": null,
-  "Address": 3407921,
+  "Address": 3342380,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -47,7 +47,7 @@
 {
   "Name": "stopwrite",
   "Type": null,
-  "Address": 3407922,
+  "Address": 3342381,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -56,7 +56,7 @@
 {
   "Name": "gate_l",
   "Type": null,
-  "Address": 3407923,
+  "Address": 3342382,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -65,7 +65,7 @@
 {
   "Name": "gate_u",
   "Type": null,
-  "Address": 3407924,
+  "Address": 3342383,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -74,7 +74,7 @@
 {
   "Name": "inhib",
   "Type": null,
-  "Address": 3407925,
+  "Address": 3342384,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -83,7 +83,7 @@
 {
   "Name": "delay",
   "Type": null,
-  "Address": 3407926,
+  "Address": 3342385,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -92,7 +92,7 @@
 {
   "Name": "polarity",
   "Type": null,
-  "Address": 3407927,
+  "Address": 3342386,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -101,7 +101,7 @@
 {
   "Name": "skip",
   "Type": null,
-  "Address": 3407928,
+  "Address": 3342387,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -110,7 +110,7 @@
 {
   "Name": "full",
   "Type": null,
-  "Address": 3407929,
+  "Address": 3342388,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -119,7 +119,7 @@
 {
   "Name": "timestamp",
   "Type": null,
-  "Address": 3407930,
+  "Address": 3342389,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -128,7 +128,7 @@
 {
   "Name": "trigger_code",
   "Type": null,
-  "Address": 3407931,
+  "Address": 3342390,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -137,7 +137,7 @@
 {
   "Name": "reset",
   "Type": null,
-  "Address": 3407932,
+  "Address": 3342391,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -147,7 +147,7 @@
 {
   "Name": "RateMeter_NoSkip",
   "Type": "MCRateMeter",
-  "Address": 720896,
+  "Address": 655360,
   "Version": "1.0.0.0",
   "Channels": 1,
   "Registers": []
@@ -155,7 +155,7 @@
 {
   "Name": "RateMeter_0",
   "Type": "MCRateMeter",
-  "Address": 327680,
+  "Address": 262144,
   "Version": "1.0.0.0",
   "Channels": 1,
   "Registers": []
@@ -163,14 +163,14 @@
 {
   "Name": "Spectrum_1",
   "Type": "Spectrum",
-  "Address": 458752,
+  "Address": 393216,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 524288,
+      "Address": 458752,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -179,7 +179,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 524289,
+      "Address": 458753,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -188,7 +188,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 524290,
+      "Address": 458754,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -197,7 +197,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 524291,
+      "Address": 458755,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -206,7 +206,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 524292,
+      "Address": 458756,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -215,7 +215,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 524293,
+      "Address": 458757,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -227,14 +227,14 @@
 {
   "Name": "Spectrum_2",
   "Type": "Spectrum",
-  "Address": 851968,
+  "Address": 786432,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 917504,
+      "Address": 851968,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -243,7 +243,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 917505,
+      "Address": 851969,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -252,7 +252,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 917506,
+      "Address": 851970,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -261,7 +261,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 917507,
+      "Address": 851971,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -270,7 +270,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 917508,
+      "Address": 851972,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -279,7 +279,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 917509,
+      "Address": 851973,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -291,14 +291,14 @@
 {
   "Name": "Spectrum_3",
   "Type": "Spectrum",
-  "Address": 1114112,
+  "Address": 1048576,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 1179648,
+      "Address": 1114112,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -307,7 +307,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 1179649,
+      "Address": 1114113,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -316,7 +316,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 1179650,
+      "Address": 1114114,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -325,7 +325,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 1179651,
+      "Address": 1114115,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -334,7 +334,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 1179652,
+      "Address": 1114116,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -343,7 +343,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 1179653,
+      "Address": 1114117,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -355,14 +355,14 @@
 {
   "Name": "Spectrum_4",
   "Type": "Spectrum",
-  "Address": 1376256,
+  "Address": 1310720,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 1441792,
+      "Address": 1376256,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -371,7 +371,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 1441793,
+      "Address": 1376257,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -380,7 +380,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 1441794,
+      "Address": 1376258,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -389,7 +389,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 1441795,
+      "Address": 1376259,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -398,7 +398,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 1441796,
+      "Address": 1376260,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -407,7 +407,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 1441797,
+      "Address": 1376261,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -419,14 +419,14 @@
 {
   "Name": "Spectrum_5",
   "Type": "Spectrum",
-  "Address": 1638400,
+  "Address": 1572864,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 1703936,
+      "Address": 1638400,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -435,7 +435,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 1703937,
+      "Address": 1638401,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -444,7 +444,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 1703938,
+      "Address": 1638402,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -453,7 +453,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 1703939,
+      "Address": 1638403,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -462,7 +462,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 1703940,
+      "Address": 1638404,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -471,7 +471,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 1703941,
+      "Address": 1638405,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -483,14 +483,14 @@
 {
   "Name": "Spectrum_6",
   "Type": "Spectrum",
-  "Address": 1900544,
+  "Address": 1835008,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 1966080,
+      "Address": 1900544,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -499,7 +499,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 1966081,
+      "Address": 1900545,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -508,7 +508,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 1966082,
+      "Address": 1900546,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -517,7 +517,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 1966083,
+      "Address": 1900547,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -526,7 +526,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 1966084,
+      "Address": 1900548,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -535,7 +535,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 1966085,
+      "Address": 1900549,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -547,14 +547,14 @@
 {
   "Name": "Spectrum_7",
   "Type": "Spectrum",
-  "Address": 2162688,
+  "Address": 2097152,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 2228224,
+      "Address": 2162688,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -563,7 +563,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 2228225,
+      "Address": 2162689,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -572,7 +572,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 2228226,
+      "Address": 2162690,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -581,7 +581,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 2228227,
+      "Address": 2162691,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -590,7 +590,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 2228228,
+      "Address": 2162692,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -599,7 +599,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 2228229,
+      "Address": 2162693,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -611,14 +611,14 @@
 {
   "Name": "Spectrum_8",
   "Type": "Spectrum",
-  "Address": 2424832,
+  "Address": 2359296,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 2490368,
+      "Address": 2424832,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -627,7 +627,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 2490369,
+      "Address": 2424833,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -636,7 +636,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 2490370,
+      "Address": 2424834,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -645,7 +645,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 2490371,
+      "Address": 2424835,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -654,7 +654,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 2490372,
+      "Address": 2424836,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -663,7 +663,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 2490373,
+      "Address": 2424837,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -675,14 +675,14 @@
 {
   "Name": "Spectrum_9",
   "Type": "Spectrum",
-  "Address": 2686976,
+  "Address": 2621440,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 2752512,
+      "Address": 2686976,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -691,7 +691,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 2752513,
+      "Address": 2686977,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -700,7 +700,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 2752514,
+      "Address": 2686978,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -709,7 +709,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 2752515,
+      "Address": 2686979,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -718,7 +718,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 2752516,
+      "Address": 2686980,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -727,7 +727,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 2752517,
+      "Address": 2686981,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -739,14 +739,14 @@
 {
   "Name": "Spectrum_10",
   "Type": "Spectrum",
-  "Address": 2949120,
+  "Address": 2883584,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 3014656,
+      "Address": 2949120,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -755,7 +755,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 3014657,
+      "Address": 2949121,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -764,7 +764,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 3014658,
+      "Address": 2949122,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -773,7 +773,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 3014659,
+      "Address": 2949123,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -782,7 +782,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 3014660,
+      "Address": 2949124,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -791,7 +791,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 3014661,
+      "Address": 2949125,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -803,14 +803,14 @@
 {
   "Name": "Spectrum_11",
   "Type": "Spectrum",
-  "Address": 3211264,
+  "Address": 3145728,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 3276800,
+      "Address": 3211264,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -819,7 +819,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 3276801,
+      "Address": 3211265,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -828,7 +828,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 3276802,
+      "Address": 3211266,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -837,7 +837,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 3276803,
+      "Address": 3211267,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -846,7 +846,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 3276804,
+      "Address": 3211268,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -855,7 +855,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 3276805,
+      "Address": 3211269,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -867,14 +867,14 @@
 {
   "Name": "Spectrum_12",
   "Type": "Spectrum",
-  "Address": 196608,
+  "Address": 131072,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 262144,
+      "Address": 196608,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -883,7 +883,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 262145,
+      "Address": 196609,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -892,7 +892,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 262146,
+      "Address": 196610,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -901,7 +901,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 262147,
+      "Address": 196611,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -910,7 +910,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 262148,
+      "Address": 196612,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -919,7 +919,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 262149,
+      "Address": 196613,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -931,14 +931,14 @@
 {
   "Name": "Spectrum_13",
   "Type": "Spectrum",
-  "Address": 589824,
+  "Address": 524288,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 655360,
+      "Address": 589824,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -947,7 +947,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 655361,
+      "Address": 589825,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -956,7 +956,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 655362,
+      "Address": 589826,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -965,7 +965,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 655363,
+      "Address": 589827,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -974,7 +974,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 655364,
+      "Address": 589828,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -983,7 +983,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 655365,
+      "Address": 589829,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -995,14 +995,14 @@
 {
   "Name": "Spectrum_14",
   "Type": "Spectrum",
-  "Address": 983040,
+  "Address": 917504,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 1048576,
+      "Address": 983040,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1011,7 +1011,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 1048577,
+      "Address": 983041,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1020,7 +1020,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 1048578,
+      "Address": 983042,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1029,7 +1029,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 1048579,
+      "Address": 983043,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1038,7 +1038,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 1048580,
+      "Address": 983044,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1047,7 +1047,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 1048581,
+      "Address": 983045,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1059,14 +1059,14 @@
 {
   "Name": "Spectrum_15",
   "Type": "Spectrum",
-  "Address": 1245184,
+  "Address": 1179648,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 1310720,
+      "Address": 1245184,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1075,7 +1075,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 1310721,
+      "Address": 1245185,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1084,7 +1084,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 1310722,
+      "Address": 1245186,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1093,7 +1093,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 1310723,
+      "Address": 1245187,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1102,7 +1102,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 1310724,
+      "Address": 1245188,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1111,7 +1111,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 1310725,
+      "Address": 1245189,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1123,14 +1123,14 @@
 {
   "Name": "Spectrum_16",
   "Type": "Spectrum",
-  "Address": 1507328,
+  "Address": 1441792,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 1572864,
+      "Address": 1507328,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1139,7 +1139,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 1572865,
+      "Address": 1507329,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1148,7 +1148,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 1572866,
+      "Address": 1507330,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1157,7 +1157,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 1572867,
+      "Address": 1507331,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1166,7 +1166,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 1572868,
+      "Address": 1507332,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1175,7 +1175,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 1572869,
+      "Address": 1507333,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1187,14 +1187,14 @@
 {
   "Name": "Spectrum_17",
   "Type": "Spectrum",
-  "Address": 1769472,
+  "Address": 1703936,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 1835008,
+      "Address": 1769472,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1203,7 +1203,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 1835009,
+      "Address": 1769473,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1212,7 +1212,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 1835010,
+      "Address": 1769474,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1221,7 +1221,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 1835011,
+      "Address": 1769475,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1230,7 +1230,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 1835012,
+      "Address": 1769476,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1239,7 +1239,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 1835013,
+      "Address": 1769477,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1251,14 +1251,14 @@
 {
   "Name": "Spectrum_18",
   "Type": "Spectrum",
-  "Address": 2031616,
+  "Address": 1966080,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 2097152,
+      "Address": 2031616,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1267,7 +1267,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 2097153,
+      "Address": 2031617,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1276,7 +1276,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 2097154,
+      "Address": 2031618,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1285,7 +1285,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 2097155,
+      "Address": 2031619,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1294,7 +1294,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 2097156,
+      "Address": 2031620,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1303,7 +1303,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 2097157,
+      "Address": 2031621,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1315,14 +1315,14 @@
 {
   "Name": "Spectrum_19",
   "Type": "Spectrum",
-  "Address": 2293760,
+  "Address": 2228224,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 2359296,
+      "Address": 2293760,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1331,7 +1331,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 2359297,
+      "Address": 2293761,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1340,7 +1340,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 2359298,
+      "Address": 2293762,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1349,7 +1349,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 2359299,
+      "Address": 2293763,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1358,7 +1358,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 2359300,
+      "Address": 2293764,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1367,7 +1367,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 2359301,
+      "Address": 2293765,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1379,14 +1379,14 @@
 {
   "Name": "Spectrum_20",
   "Type": "Spectrum",
-  "Address": 2555904,
+  "Address": 2490368,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 2621440,
+      "Address": 2555904,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1395,7 +1395,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 2621441,
+      "Address": 2555905,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1404,7 +1404,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 2621442,
+      "Address": 2555906,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1413,7 +1413,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 2621443,
+      "Address": 2555907,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1422,7 +1422,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 2621444,
+      "Address": 2555908,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1431,7 +1431,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 2621445,
+      "Address": 2555909,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1443,14 +1443,14 @@
 {
   "Name": "Spectrum_21",
   "Type": "Spectrum",
-  "Address": 2818048,
+  "Address": 2752512,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 2883584,
+      "Address": 2818048,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1459,7 +1459,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 2883585,
+      "Address": 2818049,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1468,7 +1468,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 2883586,
+      "Address": 2818050,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1477,7 +1477,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 2883587,
+      "Address": 2818051,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1486,7 +1486,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 2883588,
+      "Address": 2818052,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1495,7 +1495,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 2883589,
+      "Address": 2818053,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1507,14 +1507,14 @@
 {
   "Name": "Spectrum_22",
   "Type": "Spectrum",
-  "Address": 3080192,
+  "Address": 3014656,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 3145728,
+      "Address": 3080192,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1523,7 +1523,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 3145729,
+      "Address": 3080193,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1532,7 +1532,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 3145730,
+      "Address": 3080194,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1541,7 +1541,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 3145731,
+      "Address": 3080195,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1550,7 +1550,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 3145732,
+      "Address": 3080196,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1559,7 +1559,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 3145733,
+      "Address": 3080197,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1571,14 +1571,14 @@
 {
   "Name": "Spectrum_23",
   "Type": "Spectrum",
-  "Address": 3342336,
+  "Address": 3276800,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 3407872,
+      "Address": 3342336,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1587,7 +1587,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 3407873,
+      "Address": 3342337,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1596,7 +1596,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 3407874,
+      "Address": 3342338,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1605,7 +1605,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 3407875,
+      "Address": 3342339,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1614,7 +1614,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 3407876,
+      "Address": 3342340,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1623,7 +1623,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 3407877,
+      "Address": 3342341,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1635,14 +1635,14 @@
 {
   "Name": "Spectrum_0",
   "Type": "Spectrum",
-  "Address": 65536,
+  "Address": 0,
   "Version": "1.0.1.0",
   "bins": 1024,
   "Registers": [
     {
       "Name": "STATUS",
       "Type": null,
-      "Address": 131072,
+      "Address": 65536,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1651,7 +1651,7 @@
     {
       "Name": "CONFIG",
       "Type": null,
-      "Address": 131073,
+      "Address": 65537,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1660,7 +1660,7 @@
     {
       "Name": "CONFIG_LIMIT",
       "Type": null,
-      "Address": 131074,
+      "Address": 65538,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1669,7 +1669,7 @@
     {
       "Name": "CONFIG_REBIN",
       "Type": null,
-      "Address": 131075,
+      "Address": 65539,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1678,7 +1678,7 @@
     {
       "Name": "CONFIG_MIN",
       "Type": null,
-      "Address": 131076,
+      "Address": 65540,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1687,7 +1687,7 @@
     {
       "Name": "CONFIG_MAX",
       "Type": null,
-      "Address": 131077,
+      "Address": 65541,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -1697,15 +1697,1199 @@
   "CountsBit": 16
 },
 {
+  "Name": "thrsh",
+  "Type": "RegisterFile",
+  "Address": 65543,
+  "Version": "1.0.0.0",
+  "Registers": [
+    {
+      "Name": "0",
+      "Type": "Register",
+      "Address": 65544,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "1",
+      "Type": "Register",
+      "Address": 65545,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "2",
+      "Type": "Register",
+      "Address": 65546,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "3",
+      "Type": "Register",
+      "Address": 65547,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "4",
+      "Type": "Register",
+      "Address": 65548,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "5",
+      "Type": "Register",
+      "Address": 65549,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "6",
+      "Type": "Register",
+      "Address": 65550,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "7",
+      "Type": "Register",
+      "Address": 65551,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "8",
+      "Type": "Register",
+      "Address": 65552,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "9",
+      "Type": "Register",
+      "Address": 65553,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "10",
+      "Type": "Register",
+      "Address": 65554,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "11",
+      "Type": "Register",
+      "Address": 65555,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "12",
+      "Type": "Register",
+      "Address": 65556,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "13",
+      "Type": "Register",
+      "Address": 65557,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "14",
+      "Type": "Register",
+      "Address": 65558,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "15",
+      "Type": "Register",
+      "Address": 65559,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "16",
+      "Type": "Register",
+      "Address": 65560,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "17",
+      "Type": "Register",
+      "Address": 65561,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "18",
+      "Type": "Register",
+      "Address": 65562,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "19",
+      "Type": "Register",
+      "Address": 65563,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "20",
+      "Type": "Register",
+      "Address": 65564,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "21",
+      "Type": "Register",
+      "Address": 65565,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "22",
+      "Type": "Register",
+      "Address": 65566,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "23",
+      "Type": "Register",
+      "Address": 65567,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "24",
+      "Type": "Register",
+      "Address": 65568,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "25",
+      "Type": "Register",
+      "Address": 65569,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "26",
+      "Type": "Register",
+      "Address": 65570,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "27",
+      "Type": "Register",
+      "Address": 65571,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "28",
+      "Type": "Register",
+      "Address": 65572,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "29",
+      "Type": "Register",
+      "Address": 65573,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "30",
+      "Type": "Register",
+      "Address": 65574,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "31",
+      "Type": "Register",
+      "Address": 65575,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    }
+  ]
+},
+{
+  "Name": "disable_det",
+  "Type": "RegisterFile",
+  "Address": 2031623,
+  "Version": "1.0.0.0",
+  "Registers": [
+    {
+      "Name": "0",
+      "Type": "Register",
+      "Address": 2031624,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "1",
+      "Type": "Register",
+      "Address": 2031625,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "2",
+      "Type": "Register",
+      "Address": 2031626,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "3",
+      "Type": "Register",
+      "Address": 2031627,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "4",
+      "Type": "Register",
+      "Address": 2031628,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "5",
+      "Type": "Register",
+      "Address": 2031629,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "6",
+      "Type": "Register",
+      "Address": 2031630,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "7",
+      "Type": "Register",
+      "Address": 2031631,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "8",
+      "Type": "Register",
+      "Address": 2031632,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "9",
+      "Type": "Register",
+      "Address": 2031633,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "10",
+      "Type": "Register",
+      "Address": 2031634,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "11",
+      "Type": "Register",
+      "Address": 2031635,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "12",
+      "Type": "Register",
+      "Address": 2031636,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "13",
+      "Type": "Register",
+      "Address": 2031637,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "14",
+      "Type": "Register",
+      "Address": 2031638,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "15",
+      "Type": "Register",
+      "Address": 2031639,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "16",
+      "Type": "Register",
+      "Address": 2031640,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "17",
+      "Type": "Register",
+      "Address": 2031641,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "18",
+      "Type": "Register",
+      "Address": 2031642,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "19",
+      "Type": "Register",
+      "Address": 2031643,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "20",
+      "Type": "Register",
+      "Address": 2031644,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "21",
+      "Type": "Register",
+      "Address": 2031645,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "22",
+      "Type": "Register",
+      "Address": 2031646,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "23",
+      "Type": "Register",
+      "Address": 2031647,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "24",
+      "Type": "Register",
+      "Address": 2031648,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "25",
+      "Type": "Register",
+      "Address": 2031649,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "26",
+      "Type": "Register",
+      "Address": 2031650,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "27",
+      "Type": "Register",
+      "Address": 2031651,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "28",
+      "Type": "Register",
+      "Address": 2031652,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "29",
+      "Type": "Register",
+      "Address": 2031653,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "30",
+      "Type": "Register",
+      "Address": 2031654,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "31",
+      "Type": "Register",
+      "Address": 2031655,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    }
+  ]
+},
+{
+  "Name": "top",
+  "Type": "RegisterFile",
+  "Address": 1769479,
+  "Version": "1.0.0.0",
+  "Registers": [
+    {
+      "Name": "0",
+      "Type": "Register",
+      "Address": 1769480,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "1",
+      "Type": "Register",
+      "Address": 1769481,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "2",
+      "Type": "Register",
+      "Address": 1769482,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "3",
+      "Type": "Register",
+      "Address": 1769483,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "4",
+      "Type": "Register",
+      "Address": 1769484,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "5",
+      "Type": "Register",
+      "Address": 1769485,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "6",
+      "Type": "Register",
+      "Address": 1769486,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "7",
+      "Type": "Register",
+      "Address": 1769487,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "8",
+      "Type": "Register",
+      "Address": 1769488,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "9",
+      "Type": "Register",
+      "Address": 1769489,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "10",
+      "Type": "Register",
+      "Address": 1769490,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "11",
+      "Type": "Register",
+      "Address": 1769491,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "12",
+      "Type": "Register",
+      "Address": 1769492,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "13",
+      "Type": "Register",
+      "Address": 1769493,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "14",
+      "Type": "Register",
+      "Address": 1769494,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "15",
+      "Type": "Register",
+      "Address": 1769495,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "16",
+      "Type": "Register",
+      "Address": 1769496,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "17",
+      "Type": "Register",
+      "Address": 1769497,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "18",
+      "Type": "Register",
+      "Address": 1769498,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "19",
+      "Type": "Register",
+      "Address": 1769499,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "20",
+      "Type": "Register",
+      "Address": 1769500,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "21",
+      "Type": "Register",
+      "Address": 1769501,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "22",
+      "Type": "Register",
+      "Address": 1769502,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "23",
+      "Type": "Register",
+      "Address": 1769503,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "24",
+      "Type": "Register",
+      "Address": 1769504,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "25",
+      "Type": "Register",
+      "Address": 1769505,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "26",
+      "Type": "Register",
+      "Address": 1769506,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "27",
+      "Type": "Register",
+      "Address": 1769507,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "28",
+      "Type": "Register",
+      "Address": 1769508,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "29",
+      "Type": "Register",
+      "Address": 1769509,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "30",
+      "Type": "Register",
+      "Address": 1769510,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "31",
+      "Type": "Register",
+      "Address": 1769511,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    }
+  ]
+},
+{
+  "Name": "base",
+  "Type": "RegisterFile",
+  "Address": 3342343,
+  "Version": "1.0.0.0",
+  "Registers": [
+    {
+      "Name": "0",
+      "Type": "Register",
+      "Address": 3342344,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "1",
+      "Type": "Register",
+      "Address": 3342345,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "2",
+      "Type": "Register",
+      "Address": 3342346,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "3",
+      "Type": "Register",
+      "Address": 3342347,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "4",
+      "Type": "Register",
+      "Address": 3342348,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "5",
+      "Type": "Register",
+      "Address": 3342349,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "6",
+      "Type": "Register",
+      "Address": 3342350,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "7",
+      "Type": "Register",
+      "Address": 3342351,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "8",
+      "Type": "Register",
+      "Address": 3342352,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "9",
+      "Type": "Register",
+      "Address": 3342353,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "10",
+      "Type": "Register",
+      "Address": 3342354,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "11",
+      "Type": "Register",
+      "Address": 3342355,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "12",
+      "Type": "Register",
+      "Address": 3342356,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "13",
+      "Type": "Register",
+      "Address": 3342357,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "14",
+      "Type": "Register",
+      "Address": 3342358,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "15",
+      "Type": "Register",
+      "Address": 3342359,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "16",
+      "Type": "Register",
+      "Address": 3342360,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "17",
+      "Type": "Register",
+      "Address": 3342361,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "18",
+      "Type": "Register",
+      "Address": 3342362,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "19",
+      "Type": "Register",
+      "Address": 3342363,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "20",
+      "Type": "Register",
+      "Address": 3342364,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "21",
+      "Type": "Register",
+      "Address": 3342365,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "22",
+      "Type": "Register",
+      "Address": 3342366,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "23",
+      "Type": "Register",
+      "Address": 3342367,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "24",
+      "Type": "Register",
+      "Address": 3342368,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "25",
+      "Type": "Register",
+      "Address": 3342369,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "26",
+      "Type": "Register",
+      "Address": 3342370,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "27",
+      "Type": "Register",
+      "Address": 3342371,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "28",
+      "Type": "Register",
+      "Address": 3342372,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "29",
+      "Type": "Register",
+      "Address": 3342373,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "30",
+      "Type": "Register",
+      "Address": 3342374,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    },
+    {
+      "Name": "31",
+      "Type": "Register",
+      "Address": 3342375,
+      "Version": "",
+      "RegionSize": 0,
+      "Description": null,
+      "Category": null
+    }
+  ]
+},
+{
   "Name": "Oscilloscope_0",
   "Type": "Oscilloscope",
-  "Address": 0,
+  "Address": 3375104,
   "Version": "1.0.0.0",
   "Registers": [
     {
       "Name": "READ_STATUS",
       "Type": "Register",
-      "Address": 32768,
+      "Address": 3407872,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -1714,7 +2898,7 @@
     {
       "Name": "READ_POSITION",
       "Type": "Register",
-      "Address": 32769,
+      "Address": 3407873,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -1723,7 +2907,7 @@
     {
       "Name": "CONFIG_TRIGGER_MODE",
       "Type": "Register",
-      "Address": 32770,
+      "Address": 3407874,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -1732,7 +2916,7 @@
     {
       "Name": "CONFIG_PRETRIGGER",
       "Type": "Register",
-      "Address": 32771,
+      "Address": 3407875,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -1741,7 +2925,7 @@
     {
       "Name": "CONFIG_TRIGGER_LEVEL",
       "Type": "Register",
-      "Address": 32772,
+      "Address": 3407876,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -1750,7 +2934,7 @@
     {
       "Name": "CONFIG_ARM",
       "Type": "Register",
-      "Address": 32773,
+      "Address": 3407877,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -1759,7 +2943,7 @@
     {
       "Name": "CONFIG_DECIMATOR",
       "Type": "Register",
-      "Address": 32774,
+      "Address": 3407878,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -1780,21 +2964,12 @@
 {
   "Name": "All_Energies",
   "Type": "CustomPacket",
-  "Address": 3407879,
+  "Address": 3407880,
   "Version": "1.1.0.0",
   "Channels": 0,
   "Registers": [
     {
       "Name": "READ_STATUS",
-      "Type": null,
-      "Address": 3407880,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "READ_VALID_WORDS",
       "Type": null,
       "Address": 3407881,
       "Version": null,
@@ -1803,9 +2978,18 @@
       "Category": "Undefined"
     },
     {
-      "Name": "CONFIG",
+      "Name": "READ_VALID_WORDS",
       "Type": null,
       "Address": 3407882,
+      "Version": null,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG",
+      "Type": null,
+      "Address": 3407883,
       "Version": null,
       "RegionSize": 1,
       "Description": "",
@@ -2242,1188 +3426,4 @@
     }
   ],
   "BufferLength": 0
-},
-{
-  "Name": "thrsh",
-  "Type": "RegisterFile",
-  "Address": 131079,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "0",
-      "Type": "Register",
-      "Address": 131080,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "1",
-      "Type": "Register",
-      "Address": 131081,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "2",
-      "Type": "Register",
-      "Address": 131082,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "3",
-      "Type": "Register",
-      "Address": 131083,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "4",
-      "Type": "Register",
-      "Address": 131084,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "5",
-      "Type": "Register",
-      "Address": 131085,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "6",
-      "Type": "Register",
-      "Address": 131086,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "7",
-      "Type": "Register",
-      "Address": 131087,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "8",
-      "Type": "Register",
-      "Address": 131088,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "9",
-      "Type": "Register",
-      "Address": 131089,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "10",
-      "Type": "Register",
-      "Address": 131090,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "11",
-      "Type": "Register",
-      "Address": 131091,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "12",
-      "Type": "Register",
-      "Address": 131092,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "13",
-      "Type": "Register",
-      "Address": 131093,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "14",
-      "Type": "Register",
-      "Address": 131094,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "15",
-      "Type": "Register",
-      "Address": 131095,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "16",
-      "Type": "Register",
-      "Address": 131096,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "17",
-      "Type": "Register",
-      "Address": 131097,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "18",
-      "Type": "Register",
-      "Address": 131098,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "19",
-      "Type": "Register",
-      "Address": 131099,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "20",
-      "Type": "Register",
-      "Address": 131100,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "21",
-      "Type": "Register",
-      "Address": 131101,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "22",
-      "Type": "Register",
-      "Address": 131102,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "23",
-      "Type": "Register",
-      "Address": 131103,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "24",
-      "Type": "Register",
-      "Address": 131104,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "25",
-      "Type": "Register",
-      "Address": 131105,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "26",
-      "Type": "Register",
-      "Address": 131106,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "27",
-      "Type": "Register",
-      "Address": 131107,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "28",
-      "Type": "Register",
-      "Address": 131108,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "29",
-      "Type": "Register",
-      "Address": 131109,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "30",
-      "Type": "Register",
-      "Address": 131110,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "31",
-      "Type": "Register",
-      "Address": 131111,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    }
-  ]
-},
-{
-  "Name": "disable_det",
-  "Type": "RegisterFile",
-  "Address": 2097159,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "0",
-      "Type": "Register",
-      "Address": 2097160,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "1",
-      "Type": "Register",
-      "Address": 2097161,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "2",
-      "Type": "Register",
-      "Address": 2097162,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "3",
-      "Type": "Register",
-      "Address": 2097163,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "4",
-      "Type": "Register",
-      "Address": 2097164,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "5",
-      "Type": "Register",
-      "Address": 2097165,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "6",
-      "Type": "Register",
-      "Address": 2097166,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "7",
-      "Type": "Register",
-      "Address": 2097167,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "8",
-      "Type": "Register",
-      "Address": 2097168,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "9",
-      "Type": "Register",
-      "Address": 2097169,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "10",
-      "Type": "Register",
-      "Address": 2097170,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "11",
-      "Type": "Register",
-      "Address": 2097171,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "12",
-      "Type": "Register",
-      "Address": 2097172,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "13",
-      "Type": "Register",
-      "Address": 2097173,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "14",
-      "Type": "Register",
-      "Address": 2097174,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "15",
-      "Type": "Register",
-      "Address": 2097175,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "16",
-      "Type": "Register",
-      "Address": 2097176,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "17",
-      "Type": "Register",
-      "Address": 2097177,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "18",
-      "Type": "Register",
-      "Address": 2097178,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "19",
-      "Type": "Register",
-      "Address": 2097179,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "20",
-      "Type": "Register",
-      "Address": 2097180,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "21",
-      "Type": "Register",
-      "Address": 2097181,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "22",
-      "Type": "Register",
-      "Address": 2097182,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "23",
-      "Type": "Register",
-      "Address": 2097183,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "24",
-      "Type": "Register",
-      "Address": 2097184,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "25",
-      "Type": "Register",
-      "Address": 2097185,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "26",
-      "Type": "Register",
-      "Address": 2097186,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "27",
-      "Type": "Register",
-      "Address": 2097187,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "28",
-      "Type": "Register",
-      "Address": 2097188,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "29",
-      "Type": "Register",
-      "Address": 2097189,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "30",
-      "Type": "Register",
-      "Address": 2097190,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "31",
-      "Type": "Register",
-      "Address": 2097191,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    }
-  ]
-},
-{
-  "Name": "top",
-  "Type": "RegisterFile",
-  "Address": 1835015,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "0",
-      "Type": "Register",
-      "Address": 1835016,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "1",
-      "Type": "Register",
-      "Address": 1835017,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "2",
-      "Type": "Register",
-      "Address": 1835018,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "3",
-      "Type": "Register",
-      "Address": 1835019,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "4",
-      "Type": "Register",
-      "Address": 1835020,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "5",
-      "Type": "Register",
-      "Address": 1835021,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "6",
-      "Type": "Register",
-      "Address": 1835022,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "7",
-      "Type": "Register",
-      "Address": 1835023,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "8",
-      "Type": "Register",
-      "Address": 1835024,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "9",
-      "Type": "Register",
-      "Address": 1835025,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "10",
-      "Type": "Register",
-      "Address": 1835026,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "11",
-      "Type": "Register",
-      "Address": 1835027,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "12",
-      "Type": "Register",
-      "Address": 1835028,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "13",
-      "Type": "Register",
-      "Address": 1835029,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "14",
-      "Type": "Register",
-      "Address": 1835030,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "15",
-      "Type": "Register",
-      "Address": 1835031,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "16",
-      "Type": "Register",
-      "Address": 1835032,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "17",
-      "Type": "Register",
-      "Address": 1835033,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "18",
-      "Type": "Register",
-      "Address": 1835034,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "19",
-      "Type": "Register",
-      "Address": 1835035,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "20",
-      "Type": "Register",
-      "Address": 1835036,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "21",
-      "Type": "Register",
-      "Address": 1835037,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "22",
-      "Type": "Register",
-      "Address": 1835038,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "23",
-      "Type": "Register",
-      "Address": 1835039,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "24",
-      "Type": "Register",
-      "Address": 1835040,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "25",
-      "Type": "Register",
-      "Address": 1835041,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "26",
-      "Type": "Register",
-      "Address": 1835042,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "27",
-      "Type": "Register",
-      "Address": 1835043,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "28",
-      "Type": "Register",
-      "Address": 1835044,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "29",
-      "Type": "Register",
-      "Address": 1835045,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "30",
-      "Type": "Register",
-      "Address": 1835046,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "31",
-      "Type": "Register",
-      "Address": 1835047,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    }
-  ]
-},
-{
-  "Name": "base",
-  "Type": "RegisterFile",
-  "Address": 3407884,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "0",
-      "Type": "Register",
-      "Address": 3407885,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "1",
-      "Type": "Register",
-      "Address": 3407886,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "2",
-      "Type": "Register",
-      "Address": 3407887,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "3",
-      "Type": "Register",
-      "Address": 3407888,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "4",
-      "Type": "Register",
-      "Address": 3407889,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "5",
-      "Type": "Register",
-      "Address": 3407890,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "6",
-      "Type": "Register",
-      "Address": 3407891,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "7",
-      "Type": "Register",
-      "Address": 3407892,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "8",
-      "Type": "Register",
-      "Address": 3407893,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "9",
-      "Type": "Register",
-      "Address": 3407894,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "10",
-      "Type": "Register",
-      "Address": 3407895,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "11",
-      "Type": "Register",
-      "Address": 3407896,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "12",
-      "Type": "Register",
-      "Address": 3407897,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "13",
-      "Type": "Register",
-      "Address": 3407898,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "14",
-      "Type": "Register",
-      "Address": 3407899,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "15",
-      "Type": "Register",
-      "Address": 3407900,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "16",
-      "Type": "Register",
-      "Address": 3407901,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "17",
-      "Type": "Register",
-      "Address": 3407902,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "18",
-      "Type": "Register",
-      "Address": 3407903,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "19",
-      "Type": "Register",
-      "Address": 3407904,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "20",
-      "Type": "Register",
-      "Address": 3407905,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "21",
-      "Type": "Register",
-      "Address": 3407906,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "22",
-      "Type": "Register",
-      "Address": 3407907,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "23",
-      "Type": "Register",
-      "Address": 3407908,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "24",
-      "Type": "Register",
-      "Address": 3407909,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "25",
-      "Type": "Register",
-      "Address": 3407910,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "26",
-      "Type": "Register",
-      "Address": 3407911,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "27",
-      "Type": "Register",
-      "Address": 3407912,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "28",
-      "Type": "Register",
-      "Address": 3407913,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "29",
-      "Type": "Register",
-      "Address": 3407914,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "30",
-      "Type": "Register",
-      "Address": 3407915,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "31",
-      "Type": "Register",
-      "Address": 3407916,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    }
-  ]
-}],"Device":"DT5560","Magic":"","Project":"R76Firmware"}
+}],"Device":"DT5560","Magic":"59FF724D","Project":"R76Firmware"}
