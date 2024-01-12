@@ -8,3 +8,5 @@ Some instructions are below. Keep in mind that line numbers may change from time
   * Enforce type conversions wherever `malloc` appears with the syntax `(type)malloc(...)`. This is present in `Legacy/circular_buffer.c` and `Legacy/R76Firmware_lib.c`.
   * In `Legacy/R5560_SDKLib.h`, toward the beginning, comment out all `__declspec(dllimport)` or `__declspec(dllexport)`. This is Windows code that we do not need and it will interfere with our compiler. DO  NOT COMMENT OUT THE ENTIRE LINE, just the end where it says `__declspec(dll...`
   * In `Legacy/R76Firmware_lib.c`, at line ~360, fix the type of the variable `buffer_handle` in `ClearBuffer` from `void *` to `cbuf_handle_t`.
+  * Here is a one-liner that may prove useful:
+    `sed "s/_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE \*handle);/_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE \*handle)/" src/Legacy/R76Firmware_lib.c > new.c && mv new.c src/Legacy/R76Firmware_lib.c`
