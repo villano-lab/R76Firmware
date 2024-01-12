@@ -29,22 +29,16 @@ The trigger code is always retrieved as 0 from the custom packet. There is no cl
 - There are some versions of the firmware that weren't compiled, so they don't show up in the git history in the method we used to get these versions.
 - So, now we are going back through everything, trying to figure out where the firmware first breaks. below is an outline of our progress on this.
 
-**Earliest non-working commit checked:** 3fc29dd629816072691334fe2bbe085ad91a7701, with some of the updates from the following commit because the commit does not compile as-is.
+**Earliest non-working commit checked:** 698e4dd1dda84a158d631a38b4b5a62c5368e871
 
-**Latest working commit checked:** 9f083fd
+**Latest working commit checked:** 09bf9119ff670f0e8eeea5bd6289bdb64ce82f8c
 
-**sorted log between them:**
+**log between them:**
 
-4746e2ae6eb342584ca3a36ebbb24dc134efc549 -- data only  
-698e4dd1dda84a158d631a38b4b5a62c5368e871 - [in-progress] firmware missing; recompiling  
-
-**unsorted log between them:**
-
-commit 110ee077e0f796eda12ce551eef599ca75a2c784  
-commit 1306d9dcfa68495641e0db5581dd47e78faf2d48  
-commit 469bfbb965db0b7dd55ee8d0a180bf9d375dc00f  
-commit a75c303f7314ec82c1663cce605af4f6a036d0ae  
-commit 09bf9119ff670f0e8eeea5bd6289bdb64ce82f8c  
+110ee077e0f796eda12ce551eef599ca75a2c784 - packets are broken (reconstruction failed), as before. 
+1306d9dcfa68495641e0db5581dd47e78faf2d48 - does not compile as-is, using master version of UniversalTriggerShared.c. packets are broken (reconstruction failed), as before.
+469bfbb965db0b7dd55ee8d0a180bf9d375dc00f - firmware missing, compiling. does not compile as-is, using master version of UniversalTriggerShared.c. packets are broken (reconstruction failed), as before.
+a75c303f7314ec82c1663cce605af4f6a036d0ae -- plotting only
 
 # triggerfe2_mod.exe output
 
