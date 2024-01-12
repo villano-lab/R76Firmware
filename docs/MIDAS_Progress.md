@@ -29,6 +29,7 @@ The trigger code is always retrieved as 0 from the custom packet. There is no cl
 - There are some versions of the firmware that weren't compiled, so they don't show up in the git history in the method we used to get these versions.
 - So, now we are going back through everything, trying to figure out where the firmware first breaks. below is an outline of our progress on this.
 - The latest working version didn't have to be recompiled -- does it still work if I recompile the firmware? **no, it doesn't --** I get the Reconstruction failed error, despite leaving everything else in place and recompiling from the same version.
+  - We're running 2023.12.8.1, but it was originally made with 2023.7.28.1.
 
 **Earliest non-working commit checked:** 698e4dd1dda84a158d631a38b4b5a62c5368e871
 
