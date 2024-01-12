@@ -35,9 +35,9 @@ The trigger code is always retrieved as 0 from the custom packet. There is no cl
 
 **log between them:**
 
-110ee077e0f796eda12ce551eef599ca75a2c784 - packets are broken (reconstruction failed), as before. 
-1306d9dcfa68495641e0db5581dd47e78faf2d48 - does not compile as-is, using master version of UniversalTriggerShared.c. packets are broken (reconstruction failed), as before.
-469bfbb965db0b7dd55ee8d0a180bf9d375dc00f - firmware missing, compiling. does not compile as-is, using master version of UniversalTriggerShared.c. packets are broken (reconstruction failed), as before.
+110ee077e0f796eda12ce551eef599ca75a2c784 - packets are broken (reconstruction failed), as before.  
+1306d9dcfa68495641e0db5581dd47e78faf2d48 - does not compile as-is, using master version of UniversalTriggerShared.c. packets are broken (reconstruction failed), as before.  
+469bfbb965db0b7dd55ee8d0a180bf9d375dc00f - firmware missing, compiling. does not compile as-is, using master version of UniversalTriggerShared.c. packets are broken (reconstruction failed), as before.  
 a75c303f7314ec82c1663cce605af4f6a036d0ae -- plotting only
 
 # triggerfe2_mod.exe output
