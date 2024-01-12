@@ -35,16 +35,16 @@ The trigger code is always retrieved as 0 from the custom packet. There is no cl
 
 **sorted log between them:**
 
-4746e2ae6eb342584ca3a36ebbb24dc134efc549 -- data only
-698e4dd1dda84a158d631a38b4b5a62c5368e871 - [in-progress] firmware missing; recompiling
+4746e2ae6eb342584ca3a36ebbb24dc134efc549 -- data only  
+698e4dd1dda84a158d631a38b4b5a62c5368e871 - [in-progress] firmware missing; recompiling  
 
 **unsorted log between them:**
 
-commit 110ee077e0f796eda12ce551eef599ca75a2c784
-commit 1306d9dcfa68495641e0db5581dd47e78faf2d48
-commit 469bfbb965db0b7dd55ee8d0a180bf9d375dc00f
-commit a75c303f7314ec82c1663cce605af4f6a036d0ae
-commit 09bf9119ff670f0e8eeea5bd6289bdb64ce82f8c
+commit 110ee077e0f796eda12ce551eef599ca75a2c784  
+commit 1306d9dcfa68495641e0db5581dd47e78faf2d48  
+commit 469bfbb965db0b7dd55ee8d0a180bf9d375dc00f  
+commit a75c303f7314ec82c1663cce605af4f6a036d0ae  
+commit 09bf9119ff670f0e8eeea5bd6289bdb64ce82f8c  
 
 # triggerfe2_mod.exe output
 
