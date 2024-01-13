@@ -24,7 +24,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	exit (exit_code);
 };
 
-int packet_setup(HANDLE handle,int verbose){
+int packet_setup(NI_HANDLE handle,int verbose){
 
 }
 
