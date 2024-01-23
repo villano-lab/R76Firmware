@@ -81,7 +81,6 @@ MIDAS_FORK/*.txt
 .build-debug/
 
 # Unwanted SCICompiler Output
-HDL/
 VC++/
 output/R76Firmware
 

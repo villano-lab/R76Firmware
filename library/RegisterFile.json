@@ -1,3429 +1,2902 @@
-{"Registers":[
 {
-  "Name": "int_time",
-  "Type": null,
-  "Address": 3342376,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "pre_int",
-  "Type": null,
-  "Address": 3342377,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "baseline",
-  "Type": null,
-  "Address": 3342378,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "write",
-  "Type": null,
-  "Address": 3342379,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "read",
-  "Type": null,
-  "Address": 3342380,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "stopwrite",
-  "Type": null,
-  "Address": 3342381,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "gate_l",
-  "Type": null,
-  "Address": 3342382,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "gate_u",
-  "Type": null,
-  "Address": 3342383,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "inhib",
-  "Type": null,
-  "Address": 3342384,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "delay",
-  "Type": null,
-  "Address": 3342385,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "polarity",
-  "Type": null,
-  "Address": 3342386,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "skip",
-  "Type": null,
-  "Address": 3342387,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "full",
-  "Type": null,
-  "Address": 3342388,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "timestamp",
-  "Type": null,
-  "Address": 3342389,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "trigger_code",
-  "Type": null,
-  "Address": 3342390,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "reset",
-  "Type": null,
-  "Address": 3342391,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-}],
-"MMCComponents":[
-{
-  "Name": "RateMeter_NoSkip",
-  "Type": "MCRateMeter",
-  "Address": 655360,
-  "Version": "1.0.0.0",
-  "Channels": 1,
-  "Registers": []
-},
-{
-  "Name": "RateMeter_0",
-  "Type": "MCRateMeter",
-  "Address": 262144,
-  "Version": "1.0.0.0",
-  "Channels": 1,
-  "Registers": []
-},
-{
-  "Name": "Spectrum_1",
-  "Type": "Spectrum",
-  "Address": 393216,
-  "Version": "1.0.1.0",
-  "bins": 1024,
+  "Device": "DT5560",
   "Registers": [
     {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 458752,
-      "Version": null,
+      "Name": "int_time",
+      "Address": 3080232,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 458753,
-      "Version": null,
+      "Name": "pre_int",
+      "Address": 3080233,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 458754,
-      "Version": null,
+      "Name": "baseline",
+      "Address": 3080234,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 458755,
-      "Version": null,
+      "Name": "write",
+      "Address": 3080235,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 458756,
-      "Version": null,
+      "Name": "read",
+      "Address": 3080236,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     },
     {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 458757,
-      "Version": null,
+      "Name": "stopwrite",
+      "Address": 3080237,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "gate_l",
+      "Address": 3080238,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "gate_u",
+      "Address": 3080239,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "inhib",
+      "Address": 3080240,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "delay",
+      "Address": 3080241,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "polarity",
+      "Address": 3080242,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "skip",
+      "Address": 3080243,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "full",
+      "Address": 3080244,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "timestamp",
+      "Address": 3080245,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "trigger_code",
+      "Address": 3080246,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "reset",
+      "Address": 3080247,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "sync0_between_sync2",
+      "Address": 3670016,
       "RegionSize": 1,
       "Description": "",
       "Category": "Undefined"
     }
   ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_2",
-  "Type": "Spectrum",
-  "Address": 786432,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 851968,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 851969,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 851970,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 851971,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 851972,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 851973,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_3",
-  "Type": "Spectrum",
-  "Address": 1048576,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 1114112,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 1114113,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 1114114,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 1114115,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 1114116,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 1114117,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_4",
-  "Type": "Spectrum",
-  "Address": 1310720,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 1376256,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 1376257,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 1376258,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 1376259,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 1376260,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 1376261,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_5",
-  "Type": "Spectrum",
-  "Address": 1572864,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 1638400,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 1638401,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 1638402,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 1638403,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 1638404,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 1638405,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_6",
-  "Type": "Spectrum",
-  "Address": 1835008,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 1900544,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 1900545,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 1900546,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 1900547,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 1900548,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 1900549,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_7",
-  "Type": "Spectrum",
-  "Address": 2097152,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 2162688,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 2162689,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 2162690,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 2162691,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 2162692,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 2162693,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_8",
-  "Type": "Spectrum",
-  "Address": 2359296,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 2424832,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 2424833,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 2424834,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 2424835,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 2424836,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 2424837,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_9",
-  "Type": "Spectrum",
-  "Address": 2621440,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 2686976,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 2686977,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 2686978,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 2686979,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 2686980,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 2686981,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_10",
-  "Type": "Spectrum",
-  "Address": 2883584,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 2949120,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 2949121,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 2949122,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 2949123,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 2949124,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 2949125,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_11",
-  "Type": "Spectrum",
-  "Address": 3145728,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 3211264,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 3211265,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 3211266,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 3211267,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 3211268,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 3211269,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_12",
-  "Type": "Spectrum",
-  "Address": 131072,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 196608,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 196609,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 196610,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 196611,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 196612,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 196613,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_13",
-  "Type": "Spectrum",
-  "Address": 524288,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 589824,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 589825,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 589826,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 589827,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 589828,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 589829,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_14",
-  "Type": "Spectrum",
-  "Address": 917504,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 983040,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 983041,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 983042,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 983043,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 983044,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 983045,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_15",
-  "Type": "Spectrum",
-  "Address": 1179648,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 1245184,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 1245185,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 1245186,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 1245187,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 1245188,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 1245189,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_16",
-  "Type": "Spectrum",
-  "Address": 1441792,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 1507328,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 1507329,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 1507330,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 1507331,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 1507332,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 1507333,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_17",
-  "Type": "Spectrum",
-  "Address": 1703936,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 1769472,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 1769473,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 1769474,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 1769475,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 1769476,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 1769477,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_18",
-  "Type": "Spectrum",
-  "Address": 1966080,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 2031616,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 2031617,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 2031618,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 2031619,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 2031620,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 2031621,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_19",
-  "Type": "Spectrum",
-  "Address": 2228224,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 2293760,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 2293761,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 2293762,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 2293763,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 2293764,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 2293765,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_20",
-  "Type": "Spectrum",
-  "Address": 2490368,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 2555904,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 2555905,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 2555906,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 2555907,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 2555908,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 2555909,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_21",
-  "Type": "Spectrum",
-  "Address": 2752512,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 2818048,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 2818049,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 2818050,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 2818051,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 2818052,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 2818053,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_22",
-  "Type": "Spectrum",
-  "Address": 3014656,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 3080192,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 3080193,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 3080194,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 3080195,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 3080196,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 3080197,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_23",
-  "Type": "Spectrum",
-  "Address": 3276800,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 3342336,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 3342337,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 3342338,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 3342339,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 3342340,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 3342341,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_0",
-  "Type": "Spectrum",
-  "Address": 0,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
-    {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 65536,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 65537,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 65538,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 65539,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 65540,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 65541,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "CountsBit": 16
-},
-{
-  "Name": "thrsh",
-  "Type": "RegisterFile",
-  "Address": 65543,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "0",
-      "Type": "Register",
-      "Address": 65544,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "1",
-      "Type": "Register",
-      "Address": 65545,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "2",
-      "Type": "Register",
-      "Address": 65546,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "3",
-      "Type": "Register",
-      "Address": 65547,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "4",
-      "Type": "Register",
-      "Address": 65548,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "5",
-      "Type": "Register",
-      "Address": 65549,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "6",
-      "Type": "Register",
-      "Address": 65550,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "7",
-      "Type": "Register",
-      "Address": 65551,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "8",
-      "Type": "Register",
-      "Address": 65552,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "9",
-      "Type": "Register",
-      "Address": 65553,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "10",
-      "Type": "Register",
-      "Address": 65554,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "11",
-      "Type": "Register",
-      "Address": 65555,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "12",
-      "Type": "Register",
-      "Address": 65556,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "13",
-      "Type": "Register",
-      "Address": 65557,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "14",
-      "Type": "Register",
-      "Address": 65558,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "15",
-      "Type": "Register",
-      "Address": 65559,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "16",
-      "Type": "Register",
-      "Address": 65560,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "17",
-      "Type": "Register",
-      "Address": 65561,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "18",
-      "Type": "Register",
-      "Address": 65562,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "19",
-      "Type": "Register",
-      "Address": 65563,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "20",
-      "Type": "Register",
-      "Address": 65564,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "21",
-      "Type": "Register",
-      "Address": 65565,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "22",
-      "Type": "Register",
-      "Address": 65566,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "23",
-      "Type": "Register",
-      "Address": 65567,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "24",
-      "Type": "Register",
-      "Address": 65568,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "25",
-      "Type": "Register",
-      "Address": 65569,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "26",
-      "Type": "Register",
-      "Address": 65570,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "27",
-      "Type": "Register",
-      "Address": 65571,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "28",
-      "Type": "Register",
-      "Address": 65572,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "29",
-      "Type": "Register",
-      "Address": 65573,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "30",
-      "Type": "Register",
-      "Address": 65574,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "31",
-      "Type": "Register",
-      "Address": 65575,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    }
-  ]
-},
-{
-  "Name": "disable_det",
-  "Type": "RegisterFile",
-  "Address": 2031623,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "0",
-      "Type": "Register",
-      "Address": 2031624,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "1",
-      "Type": "Register",
-      "Address": 2031625,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "2",
-      "Type": "Register",
-      "Address": 2031626,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "3",
-      "Type": "Register",
-      "Address": 2031627,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "4",
-      "Type": "Register",
-      "Address": 2031628,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "5",
-      "Type": "Register",
-      "Address": 2031629,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "6",
-      "Type": "Register",
-      "Address": 2031630,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "7",
-      "Type": "Register",
-      "Address": 2031631,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "8",
-      "Type": "Register",
-      "Address": 2031632,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "9",
-      "Type": "Register",
-      "Address": 2031633,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "10",
-      "Type": "Register",
-      "Address": 2031634,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "11",
-      "Type": "Register",
-      "Address": 2031635,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "12",
-      "Type": "Register",
-      "Address": 2031636,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "13",
-      "Type": "Register",
-      "Address": 2031637,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "14",
-      "Type": "Register",
-      "Address": 2031638,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "15",
-      "Type": "Register",
-      "Address": 2031639,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "16",
-      "Type": "Register",
-      "Address": 2031640,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "17",
-      "Type": "Register",
-      "Address": 2031641,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "18",
-      "Type": "Register",
-      "Address": 2031642,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "19",
-      "Type": "Register",
-      "Address": 2031643,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "20",
-      "Type": "Register",
-      "Address": 2031644,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "21",
-      "Type": "Register",
-      "Address": 2031645,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "22",
-      "Type": "Register",
-      "Address": 2031646,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "23",
-      "Type": "Register",
-      "Address": 2031647,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "24",
-      "Type": "Register",
-      "Address": 2031648,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "25",
-      "Type": "Register",
-      "Address": 2031649,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "26",
-      "Type": "Register",
-      "Address": 2031650,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "27",
-      "Type": "Register",
-      "Address": 2031651,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "28",
-      "Type": "Register",
-      "Address": 2031652,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "29",
-      "Type": "Register",
-      "Address": 2031653,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "30",
-      "Type": "Register",
-      "Address": 2031654,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "31",
-      "Type": "Register",
-      "Address": 2031655,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    }
-  ]
-},
-{
-  "Name": "top",
-  "Type": "RegisterFile",
-  "Address": 1769479,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "0",
-      "Type": "Register",
-      "Address": 1769480,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "1",
-      "Type": "Register",
-      "Address": 1769481,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "2",
-      "Type": "Register",
-      "Address": 1769482,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "3",
-      "Type": "Register",
-      "Address": 1769483,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "4",
-      "Type": "Register",
-      "Address": 1769484,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "5",
-      "Type": "Register",
-      "Address": 1769485,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "6",
-      "Type": "Register",
-      "Address": 1769486,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "7",
-      "Type": "Register",
-      "Address": 1769487,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "8",
-      "Type": "Register",
-      "Address": 1769488,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "9",
-      "Type": "Register",
-      "Address": 1769489,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "10",
-      "Type": "Register",
-      "Address": 1769490,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "11",
-      "Type": "Register",
-      "Address": 1769491,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "12",
-      "Type": "Register",
-      "Address": 1769492,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "13",
-      "Type": "Register",
-      "Address": 1769493,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "14",
-      "Type": "Register",
-      "Address": 1769494,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "15",
-      "Type": "Register",
-      "Address": 1769495,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "16",
-      "Type": "Register",
-      "Address": 1769496,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "17",
-      "Type": "Register",
-      "Address": 1769497,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "18",
-      "Type": "Register",
-      "Address": 1769498,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "19",
-      "Type": "Register",
-      "Address": 1769499,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "20",
-      "Type": "Register",
-      "Address": 1769500,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "21",
-      "Type": "Register",
-      "Address": 1769501,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "22",
-      "Type": "Register",
-      "Address": 1769502,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "23",
-      "Type": "Register",
-      "Address": 1769503,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "24",
-      "Type": "Register",
-      "Address": 1769504,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "25",
-      "Type": "Register",
-      "Address": 1769505,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "26",
-      "Type": "Register",
-      "Address": 1769506,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "27",
-      "Type": "Register",
-      "Address": 1769507,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "28",
-      "Type": "Register",
-      "Address": 1769508,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "29",
-      "Type": "Register",
-      "Address": 1769509,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "30",
-      "Type": "Register",
-      "Address": 1769510,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "31",
-      "Type": "Register",
-      "Address": 1769511,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    }
-  ]
-},
-{
-  "Name": "base",
-  "Type": "RegisterFile",
-  "Address": 3342343,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "0",
-      "Type": "Register",
-      "Address": 3342344,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "1",
-      "Type": "Register",
-      "Address": 3342345,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "2",
-      "Type": "Register",
-      "Address": 3342346,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "3",
-      "Type": "Register",
-      "Address": 3342347,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "4",
-      "Type": "Register",
-      "Address": 3342348,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "5",
-      "Type": "Register",
-      "Address": 3342349,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "6",
-      "Type": "Register",
-      "Address": 3342350,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "7",
-      "Type": "Register",
-      "Address": 3342351,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "8",
-      "Type": "Register",
-      "Address": 3342352,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "9",
-      "Type": "Register",
-      "Address": 3342353,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "10",
-      "Type": "Register",
-      "Address": 3342354,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "11",
-      "Type": "Register",
-      "Address": 3342355,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "12",
-      "Type": "Register",
-      "Address": 3342356,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "13",
-      "Type": "Register",
-      "Address": 3342357,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "14",
-      "Type": "Register",
-      "Address": 3342358,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "15",
-      "Type": "Register",
-      "Address": 3342359,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "16",
-      "Type": "Register",
-      "Address": 3342360,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "17",
-      "Type": "Register",
-      "Address": 3342361,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "18",
-      "Type": "Register",
-      "Address": 3342362,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "19",
-      "Type": "Register",
-      "Address": 3342363,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "20",
-      "Type": "Register",
-      "Address": 3342364,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "21",
-      "Type": "Register",
-      "Address": 3342365,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "22",
-      "Type": "Register",
-      "Address": 3342366,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "23",
-      "Type": "Register",
-      "Address": 3342367,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "24",
-      "Type": "Register",
-      "Address": 3342368,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "25",
-      "Type": "Register",
-      "Address": 3342369,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "26",
-      "Type": "Register",
-      "Address": 3342370,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "27",
-      "Type": "Register",
-      "Address": 3342371,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "28",
-      "Type": "Register",
-      "Address": 3342372,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "29",
-      "Type": "Register",
-      "Address": 3342373,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "30",
-      "Type": "Register",
-      "Address": 3342374,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    },
-    {
-      "Name": "31",
-      "Type": "Register",
-      "Address": 3342375,
-      "Version": "",
-      "RegionSize": 0,
-      "Description": null,
-      "Category": null
-    }
-  ]
-},
-{
-  "Name": "Oscilloscope_0",
-  "Type": "Oscilloscope",
-  "Address": 3375104,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "READ_STATUS",
-      "Type": "Register",
+  "Version": 0.0,
+  "GenerationData": "0001-01-01T00:00:00",
+  "MMCComponents": [
+    {
+      "Name": "Spectrum_1",
+      "Type": "Spectrum",
+      "Address": 262144,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 327680,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 327681,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 327682,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 327683,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 327684,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 327685,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_2",
+      "Type": "Spectrum",
+      "Address": 524288,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 589824,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 589825,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 589826,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 589827,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 589828,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 589829,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_3",
+      "Type": "Spectrum",
+      "Address": 786432,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 851968,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 851969,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 851970,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 851971,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 851972,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 851973,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_4",
+      "Type": "Spectrum",
+      "Address": 1048576,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 1114112,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 1114113,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 1114114,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 1114115,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 1114116,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 1114117,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_5",
+      "Type": "Spectrum",
+      "Address": 1310720,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 1376256,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 1376257,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 1376258,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 1376259,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 1376260,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 1376261,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_6",
+      "Type": "Spectrum",
+      "Address": 1572864,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 1638400,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 1638401,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 1638402,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 1638403,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 1638404,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 1638405,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_7",
+      "Type": "Spectrum",
+      "Address": 1835008,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 1900544,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 1900545,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 1900546,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 1900547,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 1900548,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 1900549,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_8",
+      "Type": "Spectrum",
+      "Address": 2097152,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 2162688,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 2162689,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 2162690,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 2162691,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 2162692,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 2162693,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_9",
+      "Type": "Spectrum",
+      "Address": 2359296,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 2424832,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 2424833,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 2424834,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 2424835,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 2424836,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 2424837,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_10",
+      "Type": "Spectrum",
+      "Address": 2621440,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 2686976,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 2686977,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 2686978,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 2686979,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 2686980,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 2686981,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_11",
+      "Type": "Spectrum",
+      "Address": 2883584,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 2949120,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 2949121,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 2949122,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 2949123,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 2949124,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 2949125,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_12",
+      "Type": "Spectrum",
+      "Address": 131072,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 196608,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 196609,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 196610,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 196611,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 196612,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 196613,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_13",
+      "Type": "Spectrum",
+      "Address": 393216,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 458752,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 458753,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 458754,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 458755,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 458756,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 458757,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_14",
+      "Type": "Spectrum",
+      "Address": 655360,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 720896,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 720897,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 720898,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 720899,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 720900,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 720901,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_15",
+      "Type": "Spectrum",
+      "Address": 917504,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 983040,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 983041,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 983042,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 983043,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 983044,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 983045,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_16",
+      "Type": "Spectrum",
+      "Address": 1179648,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 1245184,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 1245185,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 1245186,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 1245187,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 1245188,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 1245189,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_17",
+      "Type": "Spectrum",
+      "Address": 1441792,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 1507328,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 1507329,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 1507330,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 1507331,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 1507332,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 1507333,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_18",
+      "Type": "Spectrum",
+      "Address": 1703936,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 1769472,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 1769473,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 1769474,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 1769475,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 1769476,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 1769477,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_19",
+      "Type": "Spectrum",
+      "Address": 1966080,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 2031616,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 2031617,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 2031618,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 2031619,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 2031620,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 2031621,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_20",
+      "Type": "Spectrum",
+      "Address": 2228224,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 2293760,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 2293761,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 2293762,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 2293763,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 2293764,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 2293765,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_21",
+      "Type": "Spectrum",
+      "Address": 2490368,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 2555904,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 2555905,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 2555906,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 2555907,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 2555908,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 2555909,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_22",
+      "Type": "Spectrum",
+      "Address": 2752512,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 2818048,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 2818049,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 2818050,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 2818051,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 2818052,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 2818053,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_23",
+      "Type": "Spectrum",
+      "Address": 3014656,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 3080192,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 3080193,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 3080194,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 3080195,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 3080196,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 3080197,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Spectrum_0",
+      "Type": "Spectrum",
+      "Address": 0,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "CountsBit": 16,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Address": 65536,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 65537,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Address": 65538,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Address": 65539,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Address": 65540,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Address": 65541,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "thrsh",
+      "Type": "RegisterFile",
+      "Address": 65543,
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "0",
+          "Address": 65544,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "1",
+          "Address": 65545,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "2",
+          "Address": 65546,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "3",
+          "Address": 65547,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "4",
+          "Address": 65548,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "5",
+          "Address": 65549,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "6",
+          "Address": 65550,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "7",
+          "Address": 65551,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "8",
+          "Address": 65552,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "9",
+          "Address": 65553,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "10",
+          "Address": 65554,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "11",
+          "Address": 65555,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "12",
+          "Address": 65556,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "13",
+          "Address": 65557,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "14",
+          "Address": 65558,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "15",
+          "Address": 65559,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "16",
+          "Address": 65560,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "17",
+          "Address": 65561,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "18",
+          "Address": 65562,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "19",
+          "Address": 65563,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "20",
+          "Address": 65564,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "21",
+          "Address": 65565,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "22",
+          "Address": 65566,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "23",
+          "Address": 65567,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "24",
+          "Address": 65568,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "25",
+          "Address": 65569,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "26",
+          "Address": 65570,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "27",
+          "Address": 65571,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "28",
+          "Address": 65572,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "29",
+          "Address": 65573,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "30",
+          "Address": 65574,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "31",
+          "Address": 65575,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "disable_det",
+      "Type": "RegisterFile",
+      "Address": 1769479,
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "0",
+          "Address": 1769480,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "1",
+          "Address": 1769481,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "2",
+          "Address": 1769482,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "3",
+          "Address": 1769483,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "4",
+          "Address": 1769484,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "5",
+          "Address": 1769485,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "6",
+          "Address": 1769486,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "7",
+          "Address": 1769487,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "8",
+          "Address": 1769488,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "9",
+          "Address": 1769489,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "10",
+          "Address": 1769490,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "11",
+          "Address": 1769491,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "12",
+          "Address": 1769492,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "13",
+          "Address": 1769493,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "14",
+          "Address": 1769494,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "15",
+          "Address": 1769495,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "16",
+          "Address": 1769496,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "17",
+          "Address": 1769497,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "18",
+          "Address": 1769498,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "19",
+          "Address": 1769499,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "20",
+          "Address": 1769500,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "21",
+          "Address": 1769501,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "22",
+          "Address": 1769502,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "23",
+          "Address": 1769503,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "24",
+          "Address": 1769504,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "25",
+          "Address": 1769505,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "26",
+          "Address": 1769506,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "27",
+          "Address": 1769507,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "28",
+          "Address": 1769508,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "29",
+          "Address": 1769509,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "30",
+          "Address": 1769510,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "31",
+          "Address": 1769511,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "top",
+      "Type": "RegisterFile",
+      "Address": 1507335,
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "0",
+          "Address": 1507336,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "1",
+          "Address": 1507337,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "2",
+          "Address": 1507338,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "3",
+          "Address": 1507339,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "4",
+          "Address": 1507340,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "5",
+          "Address": 1507341,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "6",
+          "Address": 1507342,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "7",
+          "Address": 1507343,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "8",
+          "Address": 1507344,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "9",
+          "Address": 1507345,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "10",
+          "Address": 1507346,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "11",
+          "Address": 1507347,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "12",
+          "Address": 1507348,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "13",
+          "Address": 1507349,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "14",
+          "Address": 1507350,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "15",
+          "Address": 1507351,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "16",
+          "Address": 1507352,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "17",
+          "Address": 1507353,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "18",
+          "Address": 1507354,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "19",
+          "Address": 1507355,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "20",
+          "Address": 1507356,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "21",
+          "Address": 1507357,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "22",
+          "Address": 1507358,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "23",
+          "Address": 1507359,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "24",
+          "Address": 1507360,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "25",
+          "Address": 1507361,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "26",
+          "Address": 1507362,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "27",
+          "Address": 1507363,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "28",
+          "Address": 1507364,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "29",
+          "Address": 1507365,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "30",
+          "Address": 1507366,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "31",
+          "Address": 1507367,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "base",
+      "Type": "RegisterFile",
+      "Address": 3080199,
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "0",
+          "Address": 3080200,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "1",
+          "Address": 3080201,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "2",
+          "Address": 3080202,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "3",
+          "Address": 3080203,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "4",
+          "Address": 3080204,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "5",
+          "Address": 3080205,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "6",
+          "Address": 3080206,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "7",
+          "Address": 3080207,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "8",
+          "Address": 3080208,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "9",
+          "Address": 3080209,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "10",
+          "Address": 3080210,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "11",
+          "Address": 3080211,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "12",
+          "Address": 3080212,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "13",
+          "Address": 3080213,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "14",
+          "Address": 3080214,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "15",
+          "Address": 3080215,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "16",
+          "Address": 3080216,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "17",
+          "Address": 3080217,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "18",
+          "Address": 3080218,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "19",
+          "Address": 3080219,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "20",
+          "Address": 3080220,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "21",
+          "Address": 3080221,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "22",
+          "Address": 3080222,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "23",
+          "Address": 3080223,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "24",
+          "Address": 3080224,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "25",
+          "Address": 3080225,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "26",
+          "Address": 3080226,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "27",
+          "Address": 3080227,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "28",
+          "Address": 3080228,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "29",
+          "Address": 3080229,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "30",
+          "Address": 3080230,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        },
+        {
+          "Name": "31",
+          "Address": 3080231,
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "Oscilloscope_0",
+      "Type": "Oscilloscope",
+      "Address": 3244032,
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "READ_STATUS",
+          "Address": 3276800,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "READ_POSITION",
+          "Address": 3276801,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_TRIGGER_MODE",
+          "Address": 3276802,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_PRETRIGGER",
+          "Address": 3276803,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_TRIGGER_LEVEL",
+          "Address": 3276804,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_ARM",
+          "Address": 3276805,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_DECIMATOR",
+          "Address": 3276806,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 24,
+      "ChannelsList": null,
+      "nsamples": 1024,
+      "WordSize": 16,
+      "WordEnob": 16,
+      "AnalogInputs": 1,
+      "DigitalInputs": 4,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 1,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "All_Energies",
+      "Type": "CustomPacket",
+      "Address": 3080249,
+      "Version": "1.1.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "READ_STATUS",
+          "Address": 3080250,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "READ_VALID_WORDS",
+          "Address": 3080251,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG",
+          "Address": 3080252,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 0,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "RateMeter_0",
+      "Type": "MCRateMeter",
+      "Address": 3145728,
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [],
+      "Channels": 1,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
+    },
+    {
+      "Name": "RateMeter_NoSkip",
+      "Type": "MCRateMeter",
       "Address": 3407872,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [],
+      "Channels": 1,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
     },
     {
-      "Name": "READ_POSITION",
-      "Type": "Register",
-      "Address": 3407873,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
+      "Name": "Syncs",
+      "Type": "Oscilloscope",
+      "Address": 3280896,
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [
+        {
+          "Name": "READ_STATUS",
+          "Address": 3284992,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "READ_POSITION",
+          "Address": 3284993,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_TRIGGER_MODE",
+          "Address": 3284994,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_PRETRIGGER",
+          "Address": 3284995,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_TRIGGER_LEVEL",
+          "Address": 3284996,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_ARM",
+          "Address": 3284997,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        },
+        {
+          "Name": "CONFIG_DECIMATOR",
+          "Address": 3284998,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined"
+        }
+      ],
+      "Channels": 3,
+      "ChannelsList": null,
+      "nsamples": 1024,
+      "WordSize": 16,
+      "WordEnob": 16,
+      "AnalogInputs": 1,
+      "DigitalInputs": 4,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 1,
+      "DecimatorMax": 0
     },
     {
-      "Name": "CONFIG_TRIGGER_MODE",
-      "Type": "Register",
-      "Address": 3407874,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
+      "Name": "SyncIn1Meter",
+      "Type": "MCRateMeter",
+      "Address": 3342336,
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [],
+      "Channels": 1,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
     },
     {
-      "Name": "CONFIG_PRETRIGGER",
-      "Type": "Register",
-      "Address": 3407875,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
+      "Name": "SyncIn2Meter",
+      "Type": "MCRateMeter",
+      "Address": 3473408,
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [],
+      "Channels": 1,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
     },
     {
-      "Name": "CONFIG_TRIGGER_LEVEL",
-      "Type": "Register",
-      "Address": 3407876,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_ARM",
-      "Type": "Register",
-      "Address": 3407877,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_DECIMATOR",
-      "Type": "Register",
-      "Address": 3407878,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
+      "Name": "SyncIn0Meter",
+      "Type": "MCRateMeter",
+      "Address": 3604480,
+      "Version": "1.0.0.0",
+      "bins": 0,
+      "CountsBit": 0,
+      "UseDMA": false,
+      "Registers": [],
+      "Channels": 1,
+      "ChannelsList": null,
+      "nsamples": 0,
+      "WordSize": 0,
+      "WordEnob": 0,
+      "AnalogInputs": 0,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 0,
+      "DecimatorMax": 0
     }
-  ],
-  "nsamples": 1024,
-  "Channels": 24,
-  "WordSize": 16,
-  "WordEnob": 16,
-  "AnalogInputs": 1,
-  "DigitalInputs": 4,
-  "SamplingFrequency": 0,
-  "TimeMultiplexing": 1,
-  "DecimatorMax": 0,
-  "DecimatorAveraging": false
-},
-{
-  "Name": "All_Energies",
-  "Type": "CustomPacket",
-  "Address": 3407880,
-  "Version": "1.1.0.0",
-  "Channels": 0,
-  "Registers": [
-    {
-      "Name": "READ_STATUS",
-      "Type": null,
-      "Address": 3407881,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "READ_VALID_WORDS",
-      "Type": null,
-      "Address": 3407882,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 3407883,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "UseDMA": false,
-  "listOfWord": [
-    {
-      "PioWE": [
-        {
-          "Type": "Constant",
-          "Signal": "80000000",
-          "BitStart": 0,
-          "BitStop": 31,
-          "SliceStart": 31,
-          "SliceStop": 0,
-          "Value": "80000000",
-          "ValueFormat": "Hex"
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_34",
-          "BitStart": 0,
-          "BitStop": 31,
-          "SliceStart": 31,
-          "SliceStop": 0,
-          "Value": "IN_34",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_1",
-          "BitStart": 0,
-          "BitStop": 31,
-          "SliceStart": 31,
-          "SliceStop": 0,
-          "Value": "IN_1",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_2",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_2",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_3",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_3",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_4",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_4",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_5",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_5",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_6",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_6",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_7",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_7",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_8",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_8",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_9",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_9",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_10",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_10",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_11",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_11",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_12",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_12",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_13",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_13",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_14",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_14",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_15",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_15",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_16",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_16",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_17",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_17",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_18",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_18",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_19",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_19",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_20",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_20",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_21",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_21",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_22",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_22",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_23",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_23",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_24",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_24",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_25",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_25",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_26",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_26",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_27",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_27",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_28",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_28",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_29",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_29",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_30",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_30",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_31",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_31",
-          "ValueFormat": ""
-        }
-      ]
-    },
-    {
-      "PioWE": [
-        {
-          "Type": "Input",
-          "Signal": "IN_32",
-          "BitStart": 0,
-          "BitStop": 15,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_32",
-          "ValueFormat": ""
-        },
-        {
-          "Type": "Input",
-          "Signal": "IN_33",
-          "BitStart": 16,
-          "BitStop": 31,
-          "SliceStart": 15,
-          "SliceStop": 0,
-          "Value": "IN_33",
-          "ValueFormat": ""
-        }
-      ]
-    }
-  ],
-  "BufferLength": 0
-}],"Device":"DT5560","Magic":"59FF724D","Project":"R76Firmware"}
+  ]
+}

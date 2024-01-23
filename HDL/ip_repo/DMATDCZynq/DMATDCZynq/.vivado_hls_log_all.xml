@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Register 'obuffer_ack' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.281+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'bsq_1' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.273+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'bsq_0' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.267+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'bsc' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.260+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'buf_p' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.253+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'swap_timeout' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.247+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'bufsel' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.241+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'buftimeout' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.234+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'lost_counter' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.227+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'out_counter' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.221+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'inbuffer_pointer' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.214+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'bufstatus_1' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.208+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'bufstatus_0' is power-on initialization." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:57.202+0200" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-62] DmaTDC.cpp:161: warning: out of bound array access on variable 'stat_counter'." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:54.783+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Directive 'INTERFACE' cannot be applied: Function 'example' does not exist in any synthesis source file." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:51.628+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Directive 'INTERFACE' cannot be applied: Function 'example' does not exist in any synthesis source file." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:51.619+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Directive 'INTERFACE' cannot be applied: Function 'example' does not exist in any synthesis source file." projectName="DMATDCZynq" solutionName="solution1" date="2019-07-10T15:08:51.610+0200" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

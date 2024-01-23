@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER tft_display
+	OPTION supported_peripherals = (tft_display);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = tft_display;
+END DRIVER

@@ -1,0 +1,142 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="example" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="axis" value="" positionalBoolean="mode"/>
+                <option name="register" value="" positionalBoolean="1"/>
+                <option name="both" value="" positionalBoolean="register_mode"/>
+                <option name="port" value="stream0" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="example" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="read_pointer" positionalBoolean="4"/>
+                <option name="bundle" value="BUS_AL"/>
+            </pragma>
+        </directive>
+        <directive functionName="example" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="write_pointer" positionalBoolean="4"/>
+                <option name="bundle" value="BUS_AL"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_ctrl_none" value="" positionalBoolean="mode"/>
+                <option name="port" value="return" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="m_axi" value="" positionalBoolean="mode"/>
+                <option name="depth" value="32"/>
+                <option name="port" value="a" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="axis" value="" positionalBoolean="mode"/>
+                <option name="register" value="" positionalBoolean="1"/>
+                <option name="both" value="" positionalBoolean="register_mode"/>
+                <option name="port" value="stream0" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="buffer_status" positionalBoolean="4"/>
+                <option name="bundle" value="axil"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="buffer_ack" positionalBoolean="4"/>
+                <option name="bundle" value="axil"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="buffer_seq" positionalBoolean="4"/>
+                <option name="bundle" value="axil"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="bufsize" positionalBoolean="4"/>
+                <option name="bundle" value="axil"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_ovld" value="" positionalBoolean="mode"/>
+                <option name="port" value="debug_buffer_status" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_ovld" value="" positionalBoolean="mode"/>
+                <option name="port" value="debug_bufsel_0" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_ovld" value="" positionalBoolean="mode"/>
+                <option name="port" value="debug_buf0_p" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_ovld" value="" positionalBoolean="mode"/>
+                <option name="port" value="debug_inbuffer_pointer" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_ovld" value="" positionalBoolean="mode"/>
+                <option name="port" value="debug_dst_var" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="run" positionalBoolean="4"/>
+                <option name="bundle" value="axil"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="DDROFFSET" positionalBoolean="4"/>
+                <option name="bundle" value="axil"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="s_axilite" value="" positionalBoolean="mode"/>
+                <option name="port" value="stat_counter" positionalBoolean="4"/>
+                <option name="bundle" value="axil"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_ovld" value="" positionalBoolean="mode"/>
+                <option name="port" value="interrupt_r" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="data_mover" label="seq_buf" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="data_mover" label="reset_flag_loop" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="data_mover" label="seq_buf2" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+
