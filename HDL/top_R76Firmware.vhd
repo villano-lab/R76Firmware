@@ -1507,31 +1507,6 @@ component avalon_wrapper is
 	BUS_RateMeter_0_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_RateMeter_0_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_RateMeter_0_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Oscilloscope_0_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
-	BUS_Oscilloscope_0_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Oscilloscope_0_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Oscilloscope_0_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Oscilloscope_0_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Oscilloscope_0_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_RateMeter_NoSkip_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_RateMeter_NoSkip_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_RateMeter_NoSkip_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1585,6 +1560,31 @@ component avalon_wrapper is
 		REG_sync0_between_sync2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_sync0_between_sync2_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		INT_sync0_between_sync2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Oscilloscope_0_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
+	BUS_Oscilloscope_0_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Oscilloscope_0_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Oscilloscope_0_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Oscilloscope_0_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Oscilloscope_0_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Oscilloscope_0_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Oscilloscope_0_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -2377,49 +2377,13 @@ signal U90_29 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
 signal U90_30 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
 signal U90_31 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
 signal U91_hold : std_logic_vector(31 downto 0);
-	signal BUS_Oscilloscope_0_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_Oscilloscope_0_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal REG_Oscilloscope_0_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal REG_Oscilloscope_0_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
-
-	COMPONENT xlx_oscilloscope_sync
-		GENERIC( 
-			channels : INTEGER := 24;
-			memLength : INTEGER := 1024;
-			wordWidth : INTEGER := 16
-		);
-		PORT( 
-			ANALOG : in STD_LOGIC_VECTOR((wordWidth*channels)-1 downto 0);
-			D0 : in STD_LOGIC_VECTOR(channels-1 downto 0);
-			D1 : in STD_LOGIC_VECTOR(channels-1 downto 0);
-			D2 : in STD_LOGIC_VECTOR(channels-1 downto 0);
-			D3 : in STD_LOGIC_VECTOR(channels-1 downto 0);
-			TRIG : in STD_LOGIC_VECTOR(0 downto 0);
-			BUSY : out STD_LOGIC_VECTOR(0 downto 0);
-			CE : in STD_LOGIC_VECTOR(0 downto 0);
-			CLK_WRITE : in STD_LOGIC_VECTOR(0 downto 0);
-			RESET : in STD_LOGIC_VECTOR(0 downto 0);
-			CLK_READ : in STD_LOGIC_VECTOR(0 downto 0);
-			READ_ADDRESS : in STD_LOGIC_VECTOR(integer(ceil(log2(real(memLength*channels))))-1 downto 0);
-			READ_DATA : out STD_LOGIC_VECTOR(31 downto 0);
-			READ_DATAVALID : out STD_LOGIC_VECTOR(0 downto 0);
-			READ_STATUS : out STD_LOGIC_VECTOR(31 downto 0);
-			READ_POSITION : out STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_TRIGGER_MODE : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_TRIGGER_LEVEL : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_PRETRIGGER : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_DECIMATOR : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_ARM : in STD_LOGIC_VECTOR(31 downto 0)
-		);
-	END COMPONENT;
-
-	signal U93_FIFO_FULL : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U92_FIFO_FULL : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal BUS_All_Energies_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_All_Energies_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal REG_All_Energies_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal REG_All_Energies_READ_VALID_WORDS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
-	COMPONENT U93_custompacket
+	COMPONENT U92_custompacket
 		GENERIC( 
 			memLength : INTEGER := 32768;
 			wordWidth : INTEGER := 32
@@ -2478,7 +2442,7 @@ signal U91_hold : std_logic_vector(31 downto 0);
 		);
 	END COMPONENT;
 
-	signal U94_SYNC_0 : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U93_SYNC_0 : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal BUS_RateMeter_0_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_RateMeter_0_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 
@@ -2505,19 +2469,51 @@ signal U91_hold : std_logic_vector(31 downto 0);
 	signal BUS_Syncs_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal REG_Syncs_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal REG_Syncs_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+	COMPONENT xlx_oscilloscope_sync
+		GENERIC( 
+			channels : INTEGER := 3;
+			memLength : INTEGER := 1024;
+			wordWidth : INTEGER := 16
+		);
+		PORT( 
+			ANALOG : in STD_LOGIC_VECTOR((wordWidth*channels)-1 downto 0);
+			D0 : in STD_LOGIC_VECTOR(channels-1 downto 0);
+			D1 : in STD_LOGIC_VECTOR(channels-1 downto 0);
+			D2 : in STD_LOGIC_VECTOR(channels-1 downto 0);
+			D3 : in STD_LOGIC_VECTOR(channels-1 downto 0);
+			TRIG : in STD_LOGIC_VECTOR(0 downto 0);
+			BUSY : out STD_LOGIC_VECTOR(0 downto 0);
+			CE : in STD_LOGIC_VECTOR(0 downto 0);
+			CLK_WRITE : in STD_LOGIC_VECTOR(0 downto 0);
+			RESET : in STD_LOGIC_VECTOR(0 downto 0);
+			CLK_READ : in STD_LOGIC_VECTOR(0 downto 0);
+			READ_ADDRESS : in STD_LOGIC_VECTOR(integer(ceil(log2(real(memLength*channels))))-1 downto 0);
+			READ_DATA : out STD_LOGIC_VECTOR(31 downto 0);
+			READ_DATAVALID : out STD_LOGIC_VECTOR(0 downto 0);
+			READ_STATUS : out STD_LOGIC_VECTOR(31 downto 0);
+			READ_POSITION : out STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_TRIGGER_MODE : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_TRIGGER_LEVEL : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_PRETRIGGER : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_DECIMATOR : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_ARM : in STD_LOGIC_VECTOR(31 downto 0)
+		);
+	END COMPONENT;
+
+signal U97_out : std_logic_vector(15 downto 0) := (others => '0');
 signal U98_out : std_logic_vector(15 downto 0) := (others => '0');
 signal U99_out : std_logic_vector(15 downto 0) := (others => '0');
-signal U100_out : std_logic_vector(15 downto 0) := (others => '0');
-	signal U101_SYNC_1 : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal U102_SYNC_2 : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U100_SYNC_1 : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U101_SYNC_2 : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal BUS_SyncIn1Meter_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_SyncIn1Meter_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal BUS_SyncIn2Meter_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_SyncIn2Meter_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal BUS_SyncIn0Meter_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_SyncIn0Meter_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U105_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal U106_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal U107_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
 Component COUNTER_RISING Is
    Generic(bitSize : Integer := 1);
    port(        RESET :  IN STD_LOGIC_VECTOR (0 DOWNTO 0);
@@ -2529,8 +2525,13 @@ Component COUNTER_RISING Is
         OVERFLOW: OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
         );
 End component;
-signal U108_counts : std_logic_vector(31 downto 0) := (others => '0');
-signal U109_hold : std_logic_vector(31 downto 0);
+signal U107_counts : std_logic_vector(31 downto 0) := (others => '0');
+signal U108_hold : std_logic_vector(31 downto 0);
+	signal BUS_Oscilloscope_0_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_Oscilloscope_0_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal REG_Oscilloscope_0_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal REG_Oscilloscope_0_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+signal U111_out : std_logic_vector(15 downto 0) := (others => '0');
 	signal BUS_Spectrum_0_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_0_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_0_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -3183,22 +3184,6 @@ signal U109_hold : std_logic_vector(31 downto 0);
 	signal BUS_RateMeter_0_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_RateMeter_0_W_INT : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_RateMeter_0_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_Oscilloscope_0_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
-	signal BUS_Oscilloscope_0_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_Oscilloscope_0_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_Oscilloscope_0_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_Oscilloscope_0_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_Oscilloscope_0_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Oscilloscope_0_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Oscilloscope_0_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Oscilloscope_0_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Oscilloscope_0_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_RateMeter_NoSkip_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_RateMeter_NoSkip_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_RateMeter_NoSkip_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -3231,6 +3216,22 @@ signal U109_hold : std_logic_vector(31 downto 0);
 	signal BUS_SyncIn0Meter_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_SyncIn0Meter_W_INT : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_SyncIn0Meter_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Oscilloscope_0_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
+	signal BUS_Oscilloscope_0_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_Oscilloscope_0_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Oscilloscope_0_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Oscilloscope_0_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Oscilloscope_0_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Oscilloscope_0_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Oscilloscope_0_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Oscilloscope_0_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Oscilloscope_0_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_int_time_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal REG_int_time_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal INT_int_time_WR : STD_LOGIC_VECTOR(0 downto 0); 
@@ -4784,31 +4785,6 @@ AW_MEMORY_MANAGER : avalon_wrapper
 	BUS_RateMeter_0_W_INT => BUS_RateMeter_0_W_INT,
 	BUS_RateMeter_0_R_INT => BUS_RateMeter_0_R_INT,
 	BUS_RateMeter_0_VLD => BUS_RateMeter_0_VLD,
-	BUS_Oscilloscope_0_READ_ADDRESS => BUS_Oscilloscope_0_READ_ADDRESS,
-	BUS_Oscilloscope_0_READ_DATA => BUS_Oscilloscope_0_READ_DATA,
-	BUS_Oscilloscope_0_WRITE_DATA => BUS_Oscilloscope_0_WRITE_DATA,
-	BUS_Oscilloscope_0_W_INT => BUS_Oscilloscope_0_W_INT,
-	BUS_Oscilloscope_0_R_INT => BUS_Oscilloscope_0_R_INT,
-	BUS_Oscilloscope_0_VLD => BUS_Oscilloscope_0_VLD,
-		REG_Oscilloscope_0_READ_STATUS_RD => REG_Oscilloscope_0_READ_STATUS_RD,
-		INT_Oscilloscope_0_READ_STATUS_RD => INT_Oscilloscope_0_READ_STATUS_RD,
-		REG_Oscilloscope_0_READ_POSITION_RD => REG_Oscilloscope_0_READ_POSITION_RD,
-		INT_Oscilloscope_0_READ_POSITION_RD => INT_Oscilloscope_0_READ_POSITION_RD,
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR => REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
-		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR => INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_RD => REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR => REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
-		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR => INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_RD => REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR => REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
-		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR => INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_RD => REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
-		REG_Oscilloscope_0_CONFIG_ARM_WR => REG_Oscilloscope_0_CONFIG_ARM_WR,
-		INT_Oscilloscope_0_CONFIG_ARM_WR => INT_Oscilloscope_0_CONFIG_ARM_WR,
-		REG_Oscilloscope_0_CONFIG_ARM_RD => REG_Oscilloscope_0_CONFIG_ARM_WR,
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_WR => REG_Oscilloscope_0_CONFIG_DECIMATOR_WR,
-		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR => INT_Oscilloscope_0_CONFIG_DECIMATOR_WR,
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_RD => REG_Oscilloscope_0_CONFIG_DECIMATOR_WR,
 	BUS_RateMeter_NoSkip_READ_ADDRESS => BUS_RateMeter_NoSkip_READ_ADDRESS,
 	BUS_RateMeter_NoSkip_READ_DATA => BUS_RateMeter_NoSkip_READ_DATA,
 	BUS_RateMeter_NoSkip_WRITE_DATA => BUS_RateMeter_NoSkip_WRITE_DATA,
@@ -4862,6 +4838,31 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_sync0_between_sync2_WR => REG_sync0_between_sync2_WR,
 		INT_sync0_between_sync2_RD => INT_sync0_between_sync2_RD,
 		INT_sync0_between_sync2_WR => INT_sync0_between_sync2_WR,
+	BUS_Oscilloscope_0_READ_ADDRESS => BUS_Oscilloscope_0_READ_ADDRESS,
+	BUS_Oscilloscope_0_READ_DATA => BUS_Oscilloscope_0_READ_DATA,
+	BUS_Oscilloscope_0_WRITE_DATA => BUS_Oscilloscope_0_WRITE_DATA,
+	BUS_Oscilloscope_0_W_INT => BUS_Oscilloscope_0_W_INT,
+	BUS_Oscilloscope_0_R_INT => BUS_Oscilloscope_0_R_INT,
+	BUS_Oscilloscope_0_VLD => BUS_Oscilloscope_0_VLD,
+		REG_Oscilloscope_0_READ_STATUS_RD => REG_Oscilloscope_0_READ_STATUS_RD,
+		INT_Oscilloscope_0_READ_STATUS_RD => INT_Oscilloscope_0_READ_STATUS_RD,
+		REG_Oscilloscope_0_READ_POSITION_RD => REG_Oscilloscope_0_READ_POSITION_RD,
+		INT_Oscilloscope_0_READ_POSITION_RD => INT_Oscilloscope_0_READ_POSITION_RD,
+		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR => REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
+		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR => INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
+		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_RD => REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
+		REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR => REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
+		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR => INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
+		REG_Oscilloscope_0_CONFIG_PRETRIGGER_RD => REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
+		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR => REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
+		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR => INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
+		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_RD => REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
+		REG_Oscilloscope_0_CONFIG_ARM_WR => REG_Oscilloscope_0_CONFIG_ARM_WR,
+		INT_Oscilloscope_0_CONFIG_ARM_WR => INT_Oscilloscope_0_CONFIG_ARM_WR,
+		REG_Oscilloscope_0_CONFIG_ARM_RD => REG_Oscilloscope_0_CONFIG_ARM_WR,
+		REG_Oscilloscope_0_CONFIG_DECIMATOR_WR => REG_Oscilloscope_0_CONFIG_DECIMATOR_WR,
+		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR => INT_Oscilloscope_0_CONFIG_DECIMATOR_WR,
+		REG_Oscilloscope_0_CONFIG_DECIMATOR_RD => REG_Oscilloscope_0_CONFIG_DECIMATOR_WR,
 		REG_UNIQUE_RD => x"00112233",
 		REG_UNIQUE_WR => open,
    
@@ -7215,7 +7216,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7249,7 +7250,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7283,7 +7284,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7317,7 +7318,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7351,7 +7352,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7385,7 +7386,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7419,7 +7420,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7453,7 +7454,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7487,7 +7488,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7521,7 +7522,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7555,7 +7556,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7589,7 +7590,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7623,7 +7624,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7657,7 +7658,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7691,7 +7692,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7725,7 +7726,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7759,7 +7760,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7793,7 +7794,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7827,7 +7828,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7861,7 +7862,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7895,7 +7896,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7929,7 +7930,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7963,7 +7964,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -7997,7 +7998,7 @@ PORT MAP(
 	trig => U75_Reduced,
 	int_time => U36_out_0,
 	pre_int => U37_out_0,
-	cant_out => U93_FIFO_FULL,
+	cant_out => U92_FIFO_FULL,
 	force_out => U32_out_0,
 	force_stop => U33_out_0,
 	manual_base => U88_out_0,
@@ -8054,43 +8055,12 @@ U90_31 <= REG_base_31_WR( 15 downto 0 );
 PROCESS_REG_U91 : process(BUS_CLK,GlobalReset)
 begin
     if rising_edge(BUS_CLK(0))  then
-         U91_hold <= EXT(U93_FIFO_FULL,32);
+         U91_hold <= EXT(U92_FIFO_FULL,32);
     end if;
 end process;
-REG_full_RD <= EXT(U93_FIFO_FULL,32);
+REG_full_RD <= EXT(U92_FIFO_FULL,32);
 
-	U92 : xlx_oscilloscope_sync
-	Generic map(
-		channels => 	24,
-		memLength => 	1024,
-		wordWidth => 	16
-	)
-	PORT MAP(
-		ANALOG => U74_ANALOGOUT_23 & U74_ANALOGOUT_22 & U74_ANALOGOUT_21 & U74_ANALOGOUT_20 & U74_ANALOGOUT_19 & U74_ANALOGOUT_18 & U74_ANALOGOUT_17 & U74_ANALOGOUT_16 & U74_ANALOGOUT_15 & U74_ANALOGOUT_14 & U74_ANALOGOUT_13 & U74_ANALOGOUT_12 & U74_ANALOGOUT_11 & U74_ANALOGOUT_10 & U74_ANALOGOUT_9 & U74_ANALOGOUT_8 & U74_ANALOGOUT_7 & U74_ANALOGOUT_6 & U74_ANALOGOUT_5 & U74_ANALOGOUT_4 & U74_ANALOGOUT_3 & U74_ANALOGOUT_2 & U74_ANALOGOUT_1 & U74_ANALOGOUT_0,
-		D0 => U74_TRIGOUT_23 & U74_TRIGOUT_22 & U74_TRIGOUT_21 & U74_TRIGOUT_20 & U74_TRIGOUT_19 & U74_TRIGOUT_16 & U74_TRIGOUT_17 & U74_TRIGOUT_16 & U74_TRIGOUT_15 & U74_TRIGOUT_14 & U74_TRIGOUT_13 & U74_TRIGOUT_12 & U74_TRIGOUT_11 & U74_TRIGOUT_10 & U74_TRIGOUT_9 & U74_TRIGOUT_8 & U74_TRIGOUT_7 & U74_TRIGOUT_6 & U74_TRIGOUT_5 & U74_TRIGOUT_4 & U74_TRIGOUT_3 & U74_TRIGOUT_2 & U74_TRIGOUT_1 & U74_TRIGOUT_0,
-		D1 => U82_TRIGOUT_23 & U82_TRIGOUT_22 & U82_TRIGOUT_21 & U82_TRIGOUT_20 & U82_TRIGOUT_15 & U82_TRIGOUT_18 & U82_TRIGOUT_17 & U82_TRIGOUT_16 & U82_TRIGOUT_15 & U82_TRIGOUT_10 & U82_TRIGOUT_13 & U82_TRIGOUT_12 & U82_TRIGOUT_11 & U82_TRIGOUT_10 & U82_TRIGOUT_9 & U82_TRIGOUT_8 & U82_TRIGOUT_7 & U82_TRIGOUT_6 & U82_TRIGOUT_5 & U82_TRIGOUT_4 & U82_TRIGOUT_3 & U82_TRIGOUT_2 & U82_TRIGOUT_1 & U82_TRIGOUT_0,
-		D2 => U89_valid_23 & U89_valid_22 & U89_valid_21 & U89_valid_20 & U89_valid_19 & U89_valid_18 & U89_valid_17 & U89_valid_16 & U89_valid_15 & U89_valid_14 & U89_valid_13 & U89_valid_12 & U89_valid_11 & U89_valid_10 & U89_valid_9 & U89_valid_8 & U89_valid_7 & U89_valid_6 & U89_valid_5 & U89_valid_4 & U89_valid_3 & U89_valid_2 & U89_valid_1 & U89_valid_0,
-		D3 => U89_int_gate_23 & U89_int_gate_22 & U89_int_gate_21 & U89_int_gate_20 & U89_int_gate_19 & U89_int_gate_18 & U89_int_gate_17 & U89_int_gate_16 & U89_int_gate_15 & U89_int_gate_14 & U89_int_gate_13 & U89_int_gate_12 & U89_int_gate_11 & U89_int_gate_10 & U89_int_gate_9 & U89_int_gate_8 & U89_int_gate_7 & U89_int_gate_6 & U89_int_gate_5 & U89_int_gate_4 & U89_int_gate_3 & U89_int_gate_2 & U89_int_gate_1 & U89_int_gate_0,
-		TRIG => "0",
-		BUSY => open,
-		CE => "1",
-		CLK_WRITE => CLK_ACQ,
-		RESET => "0",
-		CLK_READ => BUS_CLK,
-		READ_ADDRESS => BUS_Oscilloscope_0_READ_ADDRESS,
-		READ_DATA => BUS_Oscilloscope_0_READ_DATA,
-		READ_DATAVALID => BUS_Oscilloscope_0_VLD,
-		READ_STATUS => REG_Oscilloscope_0_READ_STATUS_RD,
-		READ_POSITION => REG_Oscilloscope_0_READ_POSITION_RD,
-		CONFIG_TRIGGER_MODE => REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
-		CONFIG_TRIGGER_LEVEL => REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
-		CONFIG_PRETRIGGER => REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
-		CONFIG_DECIMATOR => REG_Oscilloscope_0_CONFIG_DECIMATOR_WR,
-		CONFIG_ARM => REG_Oscilloscope_0_CONFIG_ARM_WR
-	);
-
-
-	U93 : U93_custompacket
+	U92 : U92_custompacket
 	Generic map(
 		memLength => 	32768,
 		wordWidth => 	32
@@ -8136,7 +8106,7 @@ REG_full_RD <= EXT(U93_FIFO_FULL,32);
 		SYNC_RESET => "0",
 		SYNC_CLK => "0",
 		BUSY => open,
-		FIFO_FULL => U93_FIFO_FULL,
+		FIFO_FULL => U92_FIFO_FULL,
 		RUN => open,
 		RESET => "0",
 		CLK_READ => BUS_CLK,
@@ -8148,10 +8118,10 @@ REG_full_RD <= EXT(U93_FIFO_FULL,32);
 		CONFIG => REG_All_Energies_CONFIG_WR
 	);
 
-U94_SYNC_0 <= SYNC_0_IN;
+U93_SYNC_0 <= SYNC_0_IN;
 
 
-	U95 : MCRateMeter
+	U94 : MCRateMeter
 	Generic map(
 		CHANNEL_COUNT => 	1,
 		CLK_FREQ => 	1250000000
@@ -8168,7 +8138,7 @@ U94_SYNC_0 <= SYNC_0_IN;
 	);
 
 
-	U96 : MCRateMeter
+	U95 : MCRateMeter
 	Generic map(
 		CHANNEL_COUNT => 	1,
 		CLK_FREQ => 	1250000000
@@ -8185,16 +8155,16 @@ U94_SYNC_0 <= SYNC_0_IN;
 	);
 
 
-	U97 : xlx_oscilloscope_sync
+	U96 : xlx_oscilloscope_sync
 	Generic map(
 		channels => 	3,
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ANALOG => U99_out & U100_out & U98_out,
-		D0 => U102_SYNC_2 & U101_SYNC_1 & U94_SYNC_0,
-		D1 => U107_OUT & U106_OUT & "0",
+		ANALOG => U98_out & U99_out & U97_out,
+		D0 => U101_SYNC_2 & U100_SYNC_1 & U93_SYNC_0,
+		D1 => U106_OUT & U105_OUT & "0",
 		D2 => "0" & "0" & "0",
 		D3 => "0" & "0" & "0",
 		TRIG => "0",
@@ -8215,12 +8185,29 @@ U94_SYNC_0 <= SYNC_0_IN;
 		CONFIG_ARM => REG_Syncs_CONFIG_ARM_WR
 	);
 
-U98_out <= ext(U94_SYNC_0 , 16);
-U99_out <= ext(U102_SYNC_2 , 16);
-U100_out <= ext(U101_SYNC_1 , 16);
-U101_SYNC_1 <= SYNC_1_IN;
+U97_out <= ext(U93_SYNC_0 , 16);
+U98_out <= ext(U101_SYNC_2 , 16);
+U99_out <= ext(U100_SYNC_1 , 16);
+U100_SYNC_1 <= SYNC_1_IN;
 
-U102_SYNC_2 <= SYNC_2_IN;
+U101_SYNC_2 <= SYNC_2_IN;
+
+
+	U102 : MCRateMeter
+	Generic map(
+		CHANNEL_COUNT => 	1,
+		CLK_FREQ => 	1250000000
+	)
+	PORT MAP(
+		trigger => U105_OUT,
+		VETO => '0',
+		START => '0',
+		CLK => CLK_ACQ(0),
+		CLK_READ => BUS_CLK,
+		READ_ADDRESS => BUS_SyncIn1Meter_READ_ADDRESS,
+		READ_DATA => BUS_SyncIn1Meter_READ_DATA,
+		READ_DATAVALID => BUS_SyncIn1Meter_VLD
+	);
 
 
 	U103 : MCRateMeter
@@ -8234,9 +8221,9 @@ U102_SYNC_2 <= SYNC_2_IN;
 		START => '0',
 		CLK => CLK_ACQ(0),
 		CLK_READ => BUS_CLK,
-		READ_ADDRESS => BUS_SyncIn1Meter_READ_ADDRESS,
-		READ_DATA => BUS_SyncIn1Meter_READ_DATA,
-		READ_DATAVALID => BUS_SyncIn1Meter_VLD
+		READ_ADDRESS => BUS_SyncIn2Meter_READ_ADDRESS,
+		READ_DATA => BUS_SyncIn2Meter_READ_DATA,
+		READ_DATAVALID => BUS_SyncIn2Meter_VLD
 	);
 
 
@@ -8246,24 +8233,7 @@ U102_SYNC_2 <= SYNC_2_IN;
 		CLK_FREQ => 	1250000000
 	)
 	PORT MAP(
-		trigger => U107_OUT,
-		VETO => '0',
-		START => '0',
-		CLK => CLK_ACQ(0),
-		CLK_READ => BUS_CLK,
-		READ_ADDRESS => BUS_SyncIn2Meter_READ_ADDRESS,
-		READ_DATA => BUS_SyncIn2Meter_READ_DATA,
-		READ_DATAVALID => BUS_SyncIn2Meter_VLD
-	);
-
-
-	U105 : MCRateMeter
-	Generic map(
-		CHANNEL_COUNT => 	1,
-		CLK_FREQ => 	1250000000
-	)
-	PORT MAP(
-		trigger => U94_SYNC_0,
+		trigger => U93_SYNC_0,
 		VETO => '0',
 		START => '0',
 		CLK => CLK_ACQ(0),
@@ -8273,27 +8243,59 @@ U102_SYNC_2 <= SYNC_2_IN;
 		READ_DATAVALID => BUS_SyncIn0Meter_VLD
 	);
 
-U106_OUT <= NOT U101_SYNC_1;
-U107_OUT <= NOT U102_SYNC_2;
-U108 : COUNTER_RISING
+U105_OUT <= NOT U100_SYNC_1;
+U106_OUT <= NOT U101_SYNC_2;
+U107 : COUNTER_RISING
     Generic map(bitSize => 32 )
     port map( 
-        RESET => U107_OUT, 
+        RESET => U106_OUT, 
         CE => "1",
         CLK => async_clk,
-        SIGIN => U94_SYNC_0,
+        SIGIN => U93_SYNC_0,
         ENABLE => "1",
-        COUNTER => U108_counts,
+        COUNTER => U107_counts,
         OVERFLOW => open
     );
-PROCESS_REG_U109 : process(BUS_CLK,GlobalReset)
+PROCESS_REG_U108 : process(BUS_CLK,GlobalReset)
 begin
-    if rising_edge(BUS_CLK(0)) and U107_OUT = "1" then
-         U109_hold <= EXT(U108_counts,32);
+    if rising_edge(BUS_CLK(0)) and U106_OUT = "1" then
+         U108_hold <= EXT(U107_counts,32);
     end if;
 end process;
-REG_sync0_between_sync2_RD <= EXT(U108_counts,32) when U107_OUT="1" else U109_hold;
+REG_sync0_between_sync2_RD <= EXT(U107_counts,32) when U106_OUT="1" else U108_hold;
 SYNC_0_OUT <= U75_Reduced;
+
+	U110 : xlx_oscilloscope_sync
+	Generic map(
+		channels => 	25,
+		memLength => 	1024,
+		wordWidth => 	16
+	)
+	PORT MAP(
+		ANALOG => U111_out & U74_ANALOGOUT_23 & U74_ANALOGOUT_22 & U74_ANALOGOUT_21 & U74_ANALOGOUT_20 & U74_ANALOGOUT_19 & U74_ANALOGOUT_18 & U74_ANALOGOUT_17 & U74_ANALOGOUT_16 & U74_ANALOGOUT_15 & U74_ANALOGOUT_14 & U74_ANALOGOUT_13 & U74_ANALOGOUT_12 & U74_ANALOGOUT_11 & U74_ANALOGOUT_10 & U74_ANALOGOUT_9 & U74_ANALOGOUT_8 & U74_ANALOGOUT_7 & U74_ANALOGOUT_6 & U74_ANALOGOUT_5 & U74_ANALOGOUT_4 & U74_ANALOGOUT_3 & U74_ANALOGOUT_2 & U74_ANALOGOUT_1 & U74_ANALOGOUT_0,
+		D0 => U75_Reduced & U74_TRIGOUT_23 & U74_TRIGOUT_22 & U74_TRIGOUT_21 & U74_TRIGOUT_20 & U74_TRIGOUT_19 & U74_TRIGOUT_16 & U74_TRIGOUT_17 & U74_TRIGOUT_16 & U74_TRIGOUT_15 & U74_TRIGOUT_14 & U74_TRIGOUT_13 & U74_TRIGOUT_12 & U74_TRIGOUT_11 & U74_TRIGOUT_10 & U74_TRIGOUT_9 & U74_TRIGOUT_8 & U74_TRIGOUT_7 & U74_TRIGOUT_6 & U74_TRIGOUT_5 & U74_TRIGOUT_4 & U74_TRIGOUT_3 & U74_TRIGOUT_2 & U74_TRIGOUT_1 & U74_TRIGOUT_0,
+		D1 => U28_OUT & U82_TRIGOUT_23 & U82_TRIGOUT_22 & U82_TRIGOUT_21 & U82_TRIGOUT_20 & U82_TRIGOUT_15 & U82_TRIGOUT_18 & U82_TRIGOUT_17 & U82_TRIGOUT_16 & U82_TRIGOUT_15 & U82_TRIGOUT_10 & U82_TRIGOUT_13 & U82_TRIGOUT_12 & U82_TRIGOUT_11 & U82_TRIGOUT_10 & U82_TRIGOUT_9 & U82_TRIGOUT_8 & U82_TRIGOUT_7 & U82_TRIGOUT_6 & U82_TRIGOUT_5 & U82_TRIGOUT_4 & U82_TRIGOUT_3 & U82_TRIGOUT_2 & U82_TRIGOUT_1 & U82_TRIGOUT_0,
+		D2 => "0" & U89_valid_23 & U89_valid_22 & U89_valid_21 & U89_valid_20 & U89_valid_19 & U89_valid_18 & U89_valid_17 & U89_valid_16 & U89_valid_15 & U89_valid_14 & U89_valid_13 & U89_valid_12 & U89_valid_11 & U89_valid_10 & U89_valid_9 & U89_valid_8 & U89_valid_7 & U89_valid_6 & U89_valid_5 & U89_valid_4 & U89_valid_3 & U89_valid_2 & U89_valid_1 & U89_valid_0,
+		D3 => "0" & U89_int_gate_23 & U89_int_gate_22 & U89_int_gate_21 & U89_int_gate_20 & U89_int_gate_19 & U89_int_gate_18 & U89_int_gate_17 & U89_int_gate_16 & U89_int_gate_15 & U89_int_gate_14 & U89_int_gate_13 & U89_int_gate_12 & U89_int_gate_11 & U89_int_gate_10 & U89_int_gate_9 & U89_int_gate_8 & U89_int_gate_7 & U89_int_gate_6 & U89_int_gate_5 & U89_int_gate_4 & U89_int_gate_3 & U89_int_gate_2 & U89_int_gate_1 & U89_int_gate_0,
+		TRIG => "0",
+		BUSY => open,
+		CE => "1",
+		CLK_WRITE => CLK_ACQ,
+		RESET => "0",
+		CLK_READ => BUS_CLK,
+		READ_ADDRESS => BUS_Oscilloscope_0_READ_ADDRESS,
+		READ_DATA => BUS_Oscilloscope_0_READ_DATA,
+		READ_DATAVALID => BUS_Oscilloscope_0_VLD,
+		READ_STATUS => REG_Oscilloscope_0_READ_STATUS_RD,
+		READ_POSITION => REG_Oscilloscope_0_READ_POSITION_RD,
+		CONFIG_TRIGGER_MODE => REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
+		CONFIG_TRIGGER_LEVEL => REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
+		CONFIG_PRETRIGGER => REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
+		CONFIG_DECIMATOR => REG_Oscilloscope_0_CONFIG_DECIMATOR_WR,
+		CONFIG_ARM => REG_Oscilloscope_0_CONFIG_ARM_WR
+	);
+
+U111_out <= ext(U75_Reduced , 16);
 REG_FIRMWARE_BUILD <= x"20240213";
 FW_STRING_0 <= x"5237364669726D776172650000000000";
 

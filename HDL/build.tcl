@@ -15,7 +15,7 @@ puts $outfile1 "       <GUID0>C7F960A5-8051-45F0-B793-8899650BAB9D</GUID0>"
 puts $outfile1 "       <MODEL>A</MODEL>"
 puts $outfile1 "   </SUPPORTED_PLATFORM>"
 puts $outfile1 "   <FPGA>"
-puts $outfile1 "       <version>2024.02.13.1</version>"
+puts $outfile1 "       <version>2024.02.13.3</version>"
 puts $outfile1 "       <filename>R76Firmware.fpga</filename>"
 puts $outfile1 "   </FPGA>"
 puts $outfile1 "   <HWJSON>"
@@ -57,7 +57,7 @@ add_files -force ./pcores/MCRateMeter.vhd
 add_files -force ./pcores/polinvert.vhd
 add_files -force ./pcores/TimestampGenerator.vhd
 add_files -force ./pcores/trigger_leading.vhd
-add_files -force ./pcores/U93_custompacket.vhd
+add_files -force ./pcores/U92_custompacket.vhd
 add_files -force ./pcores/xlx_delay.vhd
 add_files -force ./pcores/xlx_oscilloscope_sync.vhd
 add_files -force ./pcores/xlx_soft_gd.vhd

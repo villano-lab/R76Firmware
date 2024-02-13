@@ -1094,31 +1094,6 @@ entity avalon_wrapper is
 	BUS_RateMeter_0_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_RateMeter_0_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_RateMeter_0_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Oscilloscope_0_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
-	BUS_Oscilloscope_0_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Oscilloscope_0_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Oscilloscope_0_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Oscilloscope_0_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Oscilloscope_0_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_RateMeter_NoSkip_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_RateMeter_NoSkip_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_RateMeter_NoSkip_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1172,6 +1147,31 @@ entity avalon_wrapper is
 		REG_sync0_between_sync2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_sync0_between_sync2_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		INT_sync0_between_sync2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Oscilloscope_0_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
+	BUS_Oscilloscope_0_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Oscilloscope_0_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Oscilloscope_0_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Oscilloscope_0_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Oscilloscope_0_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Oscilloscope_0_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Oscilloscope_0_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Oscilloscope_0_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -1234,13 +1234,13 @@ BUS_Spectrum_10_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00280000" 
 BUS_Spectrum_22_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002A0000" And addr < x"002B0000") else (others => '0');BUS_Spectrum_11_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002C0000" And addr < x"002D0000") else '0';
 BUS_Spectrum_11_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002C0000" And addr < x"002D0000") else (others => '0');BUS_Spectrum_23_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002E0000" And addr < x"002F0000") else '0';
 BUS_Spectrum_23_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002E0000" And addr < x"002F0000") else (others => '0');BUS_All_Energies_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002F0039" And addr < x"002F003A") else '0';BUS_RateMeter_0_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00300000" And addr < x"00310000") else '0';
-BUS_RateMeter_0_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00300000" And addr < x"00310000") else (others => '0');BUS_Oscilloscope_0_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00318000" And addr < x"00320000") else '0';
-BUS_Oscilloscope_0_READ_ADDRESS <= BUS_ADDR(14 downto 0) when (addr >= x"00318000" And addr < x"00320000") else (others => '0');BUS_RateMeter_NoSkip_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00340000" And addr < x"00350000") else '0';
-BUS_RateMeter_NoSkip_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00340000" And addr < x"00350000") else (others => '0');BUS_Syncs_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00321000" And addr < x"00322000") else '0';
-BUS_Syncs_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"00321000" And addr < x"00322000") else (others => '0');BUS_SyncIn1Meter_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00330000" And addr < x"00340000") else '0';
-BUS_SyncIn1Meter_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00330000" And addr < x"00340000") else (others => '0');BUS_SyncIn2Meter_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00350000" And addr < x"00360000") else '0';
-BUS_SyncIn2Meter_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00350000" And addr < x"00360000") else (others => '0');BUS_SyncIn0Meter_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00370000" And addr < x"00380000") else '0';
-BUS_SyncIn0Meter_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00370000" And addr < x"00380000") else (others => '0');
+BUS_RateMeter_0_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00300000" And addr < x"00310000") else (others => '0');BUS_RateMeter_NoSkip_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00340000" And addr < x"00350000") else '0';
+BUS_RateMeter_NoSkip_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00340000" And addr < x"00350000") else (others => '0');BUS_Syncs_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00311000" And addr < x"00312000") else '0';
+BUS_Syncs_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"00311000" And addr < x"00312000") else (others => '0');BUS_SyncIn1Meter_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00320000" And addr < x"00330000") else '0';
+BUS_SyncIn1Meter_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00320000" And addr < x"00330000") else (others => '0');BUS_SyncIn2Meter_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00690000" And addr < x"006A0000") else '0';
+BUS_SyncIn2Meter_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00690000" And addr < x"006A0000") else (others => '0');BUS_SyncIn0Meter_R_INT(0) <= f_BUS_INT_RD when (addr >= x"006B0000" And addr < x"006C0000") else '0';
+BUS_SyncIn0Meter_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"006B0000" And addr < x"006C0000") else (others => '0');BUS_Oscilloscope_0_R_INT(0) <= f_BUS_INT_RD when (addr >= x"006C8000" And addr < x"006D0000") else '0';
+BUS_Oscilloscope_0_READ_ADDRESS <= BUS_ADDR(14 downto 0) when (addr >= x"006C8000" And addr < x"006D0000") else (others => '0');
 f_BUS_DATA_RD <= BUS_Test_0_READ_DATA when  (addr >= x"03FE0000" And addr < x"03FEFFFF") else 
 BUS_Spectrum_0_READ_DATA  when  addr >= x"00000000" and addr < x"00010000" else 
 BUS_Spectrum_12_READ_DATA  when  addr >= x"00020000" and addr < x"00030000" else 
@@ -1267,12 +1267,12 @@ BUS_Spectrum_22_READ_DATA  when  addr >= x"002A0000" and addr < x"002B0000" else
 BUS_Spectrum_11_READ_DATA  when  addr >= x"002C0000" and addr < x"002D0000" else 
 BUS_Spectrum_23_READ_DATA  when  addr >= x"002E0000" and addr < x"002F0000" else 
  BUS_All_Energies_READ_DATA when (addr >= x"002F0039" And addr < x"002F003A") else BUS_RateMeter_0_READ_DATA  when  addr >= x"00300000" and addr < x"00310000" else 
-BUS_Oscilloscope_0_READ_DATA  when  addr >= x"00318000" and addr < x"00320000" else 
 BUS_RateMeter_NoSkip_READ_DATA  when  addr >= x"00340000" and addr < x"00350000" else 
-BUS_Syncs_READ_DATA  when  addr >= x"00321000" and addr < x"00322000" else 
-BUS_SyncIn1Meter_READ_DATA  when  addr >= x"00330000" and addr < x"00340000" else 
-BUS_SyncIn2Meter_READ_DATA  when  addr >= x"00350000" and addr < x"00360000" else 
-BUS_SyncIn0Meter_READ_DATA  when  addr >= x"00370000" and addr < x"00380000" else 
+BUS_Syncs_READ_DATA  when  addr >= x"00311000" and addr < x"00312000" else 
+BUS_SyncIn1Meter_READ_DATA  when  addr >= x"00320000" and addr < x"00330000" else 
+BUS_SyncIn2Meter_READ_DATA  when  addr >= x"00690000" and addr < x"006A0000" else 
+BUS_SyncIn0Meter_READ_DATA  when  addr >= x"006B0000" and addr < x"006C0000" else 
+BUS_Oscilloscope_0_READ_DATA  when  addr >= x"006C8000" and addr < x"006D0000" else 
  f_BUS_DATA_RD_REG;
  f_BUS_DATASTROBE <=BUS_Test_0_VLD(0) when  (addr >= x"03FE0000" And addr < x"03FEFFFF") else 
  BUS_Spectrum_0_VLD(0) when  addr >= x"00000000" and addr < x"00010000" else 
@@ -1300,12 +1300,12 @@ BUS_SyncIn0Meter_READ_DATA  when  addr >= x"00370000" and addr < x"00380000" els
  BUS_Spectrum_11_VLD(0) when  addr >= x"002C0000" and addr < x"002D0000" else 
  BUS_Spectrum_23_VLD(0) when  addr >= x"002E0000" and addr < x"002F0000" else 
   BUS_All_Energies_VLD(0) when (addr >= x"002F0039" And addr < x"002F003A") else  BUS_RateMeter_0_VLD(0) when  addr >= x"00300000" and addr < x"00310000" else 
- BUS_Oscilloscope_0_VLD(0) when  addr >= x"00318000" and addr < x"00320000" else 
  BUS_RateMeter_NoSkip_VLD(0) when  addr >= x"00340000" and addr < x"00350000" else 
- BUS_Syncs_VLD(0) when  addr >= x"00321000" and addr < x"00322000" else 
- BUS_SyncIn1Meter_VLD(0) when  addr >= x"00330000" and addr < x"00340000" else 
- BUS_SyncIn2Meter_VLD(0) when  addr >= x"00350000" and addr < x"00360000" else 
- BUS_SyncIn0Meter_VLD(0) when  addr >= x"00370000" and addr < x"00380000" else 
+ BUS_Syncs_VLD(0) when  addr >= x"00311000" and addr < x"00312000" else 
+ BUS_SyncIn1Meter_VLD(0) when  addr >= x"00320000" and addr < x"00330000" else 
+ BUS_SyncIn2Meter_VLD(0) when  addr >= x"00690000" and addr < x"006A0000" else 
+ BUS_SyncIn0Meter_VLD(0) when  addr >= x"006B0000" and addr < x"006C0000" else 
+ BUS_Oscilloscope_0_VLD(0) when  addr >= x"006C8000" and addr < x"006D0000" else 
  f_BUS_DATASTROBE_REG;    
 
         
@@ -1918,19 +1918,6 @@ BUS_SyncIn0Meter_READ_DATA  when  addr >= x"00370000" and addr < x"00380000" els
 		REG_All_Energies_CONFIG_WR <= (others => '0');
 		INT_All_Energies_CONFIG_WR <= "0";
 	BUS_RateMeter_0_W_INT <= "0";
-	BUS_Oscilloscope_0_W_INT <= "0";
-		INT_Oscilloscope_0_READ_STATUS_RD <= "0";
-		INT_Oscilloscope_0_READ_POSITION_RD <= "0";
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR <= (others => '0');
-		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR <= "0";
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR <= (others => '0');
-		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR <= "0";
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR <= (others => '0');
-		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR <= "0";
-		REG_Oscilloscope_0_CONFIG_ARM_WR <= (others => '0');
-		INT_Oscilloscope_0_CONFIG_ARM_WR <= "0";
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_WR <= (others => '0');
-		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR <= "0";
 	BUS_RateMeter_NoSkip_W_INT <= "0";
 	BUS_Syncs_W_INT <= "0";
 		INT_Syncs_READ_STATUS_RD <= "0";
@@ -1951,6 +1938,19 @@ BUS_SyncIn0Meter_READ_DATA  when  addr >= x"00370000" and addr < x"00380000" els
 		REG_sync0_between_sync2_WR <= (others => '0');
 		INT_sync0_between_sync2_WR <= "0";
 		INT_sync0_between_sync2_RD <= "0";
+	BUS_Oscilloscope_0_W_INT <= "0";
+		INT_Oscilloscope_0_READ_STATUS_RD <= "0";
+		INT_Oscilloscope_0_READ_POSITION_RD <= "0";
+		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR <= (others => '0');
+		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR <= "0";
+		REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR <= (others => '0');
+		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR <= "0";
+		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR <= (others => '0');
+		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR <= "0";
+		REG_Oscilloscope_0_CONFIG_ARM_WR <= (others => '0');
+		INT_Oscilloscope_0_CONFIG_ARM_WR <= "0";
+		REG_Oscilloscope_0_CONFIG_DECIMATOR_WR <= (others => '0');
+		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR <= "0";
             
                 f_BUS_DATASTROBE_REG <= '0';
                 M_AVALON_0_readdatavalid <= '0';
@@ -2294,14 +2294,6 @@ BUS_SyncIn0Meter_READ_DATA  when  addr >= x"00370000" and addr < x"00380000" els
 		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
 		INT_All_Energies_CONFIG_WR <= "0";
 	BUS_RateMeter_0_W_INT <= "0";
-	BUS_Oscilloscope_0_W_INT <= "0";
-		INT_Oscilloscope_0_READ_STATUS_RD <= "0";
-		INT_Oscilloscope_0_READ_POSITION_RD <= "0";
-		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR <= "0";
-		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR <= "0";
-		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR <= "0";
-		INT_Oscilloscope_0_CONFIG_ARM_WR <= "0";
-		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR <= "0";
 	BUS_RateMeter_NoSkip_W_INT <= "0";
 	BUS_Syncs_W_INT <= "0";
 		INT_Syncs_READ_STATUS_RD <= "0";
@@ -2316,6 +2308,14 @@ BUS_SyncIn0Meter_READ_DATA  when  addr >= x"00370000" and addr < x"00380000" els
 	BUS_SyncIn0Meter_W_INT <= "0";
 		INT_sync0_between_sync2_WR <= "0";
 		INT_sync0_between_sync2_RD <= "0";
+	BUS_Oscilloscope_0_W_INT <= "0";
+		INT_Oscilloscope_0_READ_STATUS_RD <= "0";
+		INT_Oscilloscope_0_READ_POSITION_RD <= "0";
+		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR <= "0";
+		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR <= "0";
+		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR <= "0";
+		INT_Oscilloscope_0_CONFIG_ARM_WR <= "0";
+		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR <= "0";
   
                 f_BUS_DATASTROBE_REG <= '0';
                 
@@ -3502,73 +3502,73 @@ BUS_SyncIn0Meter_READ_DATA  when  addr >= x"00370000" and addr < x"00380000" els
 			BUS_RateMeter_0_WRITE_DATA <= wreg; 
 			BUS_RateMeter_0_W_INT <= "1"; 
 		End If;
-		If addr >= x"00318000" And addr < x"00320000" Then
-			BUS_Oscilloscope_0_WRITE_DATA <= wreg; 
-			BUS_Oscilloscope_0_W_INT <= "1"; 
-		End If;
-		if addr = x"00320002" then
-			REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR <= wreg; 
-			INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR <= "1"; 
-		end if;
-		if addr = x"00320003" then
-			REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR <= wreg; 
-			INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR <= "1"; 
-		end if;
-		if addr = x"00320004" then
-			REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR <= wreg; 
-			INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR <= "1"; 
-		end if;
-		if addr = x"00320005" then
-			REG_Oscilloscope_0_CONFIG_ARM_WR <= wreg; 
-			INT_Oscilloscope_0_CONFIG_ARM_WR <= "1"; 
-		end if;
-		if addr = x"00320006" then
-			REG_Oscilloscope_0_CONFIG_DECIMATOR_WR <= wreg; 
-			INT_Oscilloscope_0_CONFIG_DECIMATOR_WR <= "1"; 
-		end if;
 		If addr >= x"00340000" And addr < x"00350000" Then
 			BUS_RateMeter_NoSkip_WRITE_DATA <= wreg; 
 			BUS_RateMeter_NoSkip_W_INT <= "1"; 
 		End If;
-		If addr >= x"00321000" And addr < x"00322000" Then
+		If addr >= x"00311000" And addr < x"00312000" Then
 			BUS_Syncs_WRITE_DATA <= wreg; 
 			BUS_Syncs_W_INT <= "1"; 
 		End If;
-		if addr = x"00322002" then
+		if addr = x"00312002" then
 			REG_Syncs_CONFIG_TRIGGER_MODE_WR <= wreg; 
 			INT_Syncs_CONFIG_TRIGGER_MODE_WR <= "1"; 
 		end if;
-		if addr = x"00322003" then
+		if addr = x"00312003" then
 			REG_Syncs_CONFIG_PRETRIGGER_WR <= wreg; 
 			INT_Syncs_CONFIG_PRETRIGGER_WR <= "1"; 
 		end if;
-		if addr = x"00322004" then
+		if addr = x"00312004" then
 			REG_Syncs_CONFIG_TRIGGER_LEVEL_WR <= wreg; 
 			INT_Syncs_CONFIG_TRIGGER_LEVEL_WR <= "1"; 
 		end if;
-		if addr = x"00322005" then
+		if addr = x"00312005" then
 			REG_Syncs_CONFIG_ARM_WR <= wreg; 
 			INT_Syncs_CONFIG_ARM_WR <= "1"; 
 		end if;
-		if addr = x"00322006" then
+		if addr = x"00312006" then
 			REG_Syncs_CONFIG_DECIMATOR_WR <= wreg; 
 			INT_Syncs_CONFIG_DECIMATOR_WR <= "1"; 
 		end if;
-		If addr >= x"00330000" And addr < x"00340000" Then
+		If addr >= x"00320000" And addr < x"00330000" Then
 			BUS_SyncIn1Meter_WRITE_DATA <= wreg; 
 			BUS_SyncIn1Meter_W_INT <= "1"; 
 		End If;
-		If addr >= x"00350000" And addr < x"00360000" Then
+		If addr >= x"00690000" And addr < x"006A0000" Then
 			BUS_SyncIn2Meter_WRITE_DATA <= wreg; 
 			BUS_SyncIn2Meter_W_INT <= "1"; 
 		End If;
-		If addr >= x"00370000" And addr < x"00380000" Then
+		If addr >= x"006B0000" And addr < x"006C0000" Then
 			BUS_SyncIn0Meter_WRITE_DATA <= wreg; 
 			BUS_SyncIn0Meter_W_INT <= "1"; 
 		End If;
-		if addr = x"00380000" then
+		if addr = x"006C0000" then
 			REG_sync0_between_sync2_WR <= wreg; 
 			INT_sync0_between_sync2_WR <= "1"; 
+		end if;
+		If addr >= x"006C8000" And addr < x"006D0000" Then
+			BUS_Oscilloscope_0_WRITE_DATA <= wreg; 
+			BUS_Oscilloscope_0_W_INT <= "1"; 
+		End If;
+		if addr = x"006D0002" then
+			REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR <= wreg; 
+			INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR <= "1"; 
+		end if;
+		if addr = x"006D0003" then
+			REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR <= wreg; 
+			INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR <= "1"; 
+		end if;
+		if addr = x"006D0004" then
+			REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR <= wreg; 
+			INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR <= "1"; 
+		end if;
+		if addr = x"006D0005" then
+			REG_Oscilloscope_0_CONFIG_ARM_WR <= wreg; 
+			INT_Oscilloscope_0_CONFIG_ARM_WR <= "1"; 
+		end if;
+		if addr = x"006D0006" then
+			REG_Oscilloscope_0_CONFIG_DECIMATOR_WR <= wreg; 
+			INT_Oscilloscope_0_CONFIG_DECIMATOR_WR <= "1"; 
 		end if;
 
                 end if;
@@ -4451,50 +4451,50 @@ BUS_SyncIn0Meter_READ_DATA  when  addr >= x"00370000" and addr < x"00380000" els
 		if addr = x"002F003C" then
 			rreg := REG_All_Energies_CONFIG_RD; 
 		End If;
-		if addr = x"00320000" then
-			rreg := REG_Oscilloscope_0_READ_STATUS_RD; 
-		End If;
-		if addr = x"00320001" then
-			rreg := REG_Oscilloscope_0_READ_POSITION_RD; 
-		End If;
-		if addr = x"00320002" then
-			rreg := REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_RD; 
-		End If;
-		if addr = x"00320003" then
-			rreg := REG_Oscilloscope_0_CONFIG_PRETRIGGER_RD; 
-		End If;
-		if addr = x"00320004" then
-			rreg := REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_RD; 
-		End If;
-		if addr = x"00320005" then
-			rreg := REG_Oscilloscope_0_CONFIG_ARM_RD; 
-		End If;
-		if addr = x"00320006" then
-			rreg := REG_Oscilloscope_0_CONFIG_DECIMATOR_RD; 
-		End If;
-		if addr = x"00322000" then
+		if addr = x"00312000" then
 			rreg := REG_Syncs_READ_STATUS_RD; 
 		End If;
-		if addr = x"00322001" then
+		if addr = x"00312001" then
 			rreg := REG_Syncs_READ_POSITION_RD; 
 		End If;
-		if addr = x"00322002" then
+		if addr = x"00312002" then
 			rreg := REG_Syncs_CONFIG_TRIGGER_MODE_RD; 
 		End If;
-		if addr = x"00322003" then
+		if addr = x"00312003" then
 			rreg := REG_Syncs_CONFIG_PRETRIGGER_RD; 
 		End If;
-		if addr = x"00322004" then
+		if addr = x"00312004" then
 			rreg := REG_Syncs_CONFIG_TRIGGER_LEVEL_RD; 
 		End If;
-		if addr = x"00322005" then
+		if addr = x"00312005" then
 			rreg := REG_Syncs_CONFIG_ARM_RD; 
 		End If;
-		if addr = x"00322006" then
+		if addr = x"00312006" then
 			rreg := REG_Syncs_CONFIG_DECIMATOR_RD; 
 		End If;
-		if addr = x"00380000" then
+		if addr = x"006C0000" then
 			rreg := REG_sync0_between_sync2_RD; 
+		End If;
+		if addr = x"006D0000" then
+			rreg := REG_Oscilloscope_0_READ_STATUS_RD; 
+		End If;
+		if addr = x"006D0001" then
+			rreg := REG_Oscilloscope_0_READ_POSITION_RD; 
+		End If;
+		if addr = x"006D0002" then
+			rreg := REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_RD; 
+		End If;
+		if addr = x"006D0003" then
+			rreg := REG_Oscilloscope_0_CONFIG_PRETRIGGER_RD; 
+		End If;
+		if addr = x"006D0004" then
+			rreg := REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_RD; 
+		End If;
+		if addr = x"006D0005" then
+			rreg := REG_Oscilloscope_0_CONFIG_ARM_RD; 
+		End If;
+		if addr = x"006D0006" then
+			rreg := REG_Oscilloscope_0_CONFIG_DECIMATOR_RD; 
 		End If;
     
                    

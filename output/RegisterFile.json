@@ -146,7 +146,7 @@
 {
   "Name": "sync0_between_sync2",
   "Type": null,
-  "Address": 3670016,
+  "Address": 7077888,
   "Version": null,
   "RegionSize": 1,
   "Description": "",
@@ -2874,87 +2874,6 @@
   ]
 },
 {
-  "Name": "Oscilloscope_0",
-  "Type": "Oscilloscope",
-  "Address": 3244032,
-  "Version": "1.0.0.0",
-  "Registers": [
-    {
-      "Name": "READ_STATUS",
-      "Type": "Register",
-      "Address": 3276800,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "READ_POSITION",
-      "Type": "Register",
-      "Address": 3276801,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_TRIGGER_MODE",
-      "Type": "Register",
-      "Address": 3276802,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_PRETRIGGER",
-      "Type": "Register",
-      "Address": 3276803,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_TRIGGER_LEVEL",
-      "Type": "Register",
-      "Address": 3276804,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_ARM",
-      "Type": "Register",
-      "Address": 3276805,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_DECIMATOR",
-      "Type": "Register",
-      "Address": 3276806,
-      "Version": "",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    }
-  ],
-  "nsamples": 1024,
-  "Channels": 24,
-  "WordSize": 16,
-  "WordEnob": 16,
-  "AnalogInputs": 1,
-  "DigitalInputs": 4,
-  "SamplingFrequency": 0,
-  "TimeMultiplexing": 1,
-  "DecimatorMax": 0,
-  "DecimatorAveraging": false
-},
-{
   "Name": "All_Energies",
   "Type": "CustomPacket",
   "Address": 3080249,
@@ -3439,13 +3358,13 @@
 {
   "Name": "Syncs",
   "Type": "Oscilloscope",
-  "Address": 3280896,
+  "Address": 3215360,
   "Version": "1.0.0.0",
   "Registers": [
     {
       "Name": "READ_STATUS",
       "Type": "Register",
-      "Address": 3284992,
+      "Address": 3219456,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -3454,7 +3373,7 @@
     {
       "Name": "READ_POSITION",
       "Type": "Register",
-      "Address": 3284993,
+      "Address": 3219457,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -3463,7 +3382,7 @@
     {
       "Name": "CONFIG_TRIGGER_MODE",
       "Type": "Register",
-      "Address": 3284994,
+      "Address": 3219458,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -3472,7 +3391,7 @@
     {
       "Name": "CONFIG_PRETRIGGER",
       "Type": "Register",
-      "Address": 3284995,
+      "Address": 3219459,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -3481,7 +3400,7 @@
     {
       "Name": "CONFIG_TRIGGER_LEVEL",
       "Type": "Register",
-      "Address": 3284996,
+      "Address": 3219460,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -3490,7 +3409,7 @@
     {
       "Name": "CONFIG_ARM",
       "Type": "Register",
-      "Address": 3284997,
+      "Address": 3219461,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -3499,7 +3418,7 @@
     {
       "Name": "CONFIG_DECIMATOR",
       "Type": "Register",
-      "Address": 3284998,
+      "Address": 3219462,
       "Version": "",
       "RegionSize": 1,
       "Description": "",
@@ -3520,7 +3439,7 @@
 {
   "Name": "SyncIn1Meter",
   "Type": "MCRateMeter",
-  "Address": 3342336,
+  "Address": 3276800,
   "Version": "1.0.0.0",
   "Channels": 1,
   "Registers": []
@@ -3528,7 +3447,7 @@
 {
   "Name": "SyncIn2Meter",
   "Type": "MCRateMeter",
-  "Address": 3473408,
+  "Address": 6881280,
   "Version": "1.0.0.0",
   "Channels": 1,
   "Registers": []
@@ -3536,8 +3455,89 @@
 {
   "Name": "SyncIn0Meter",
   "Type": "MCRateMeter",
-  "Address": 3604480,
+  "Address": 7012352,
   "Version": "1.0.0.0",
   "Channels": 1,
   "Registers": []
+},
+{
+  "Name": "Oscilloscope_0",
+  "Type": "Oscilloscope",
+  "Address": 7110656,
+  "Version": "1.0.0.0",
+  "Registers": [
+    {
+      "Name": "READ_STATUS",
+      "Type": "Register",
+      "Address": 7143424,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "READ_POSITION",
+      "Type": "Register",
+      "Address": 7143425,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG_TRIGGER_MODE",
+      "Type": "Register",
+      "Address": 7143426,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG_PRETRIGGER",
+      "Type": "Register",
+      "Address": 7143427,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG_TRIGGER_LEVEL",
+      "Type": "Register",
+      "Address": 7143428,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG_ARM",
+      "Type": "Register",
+      "Address": 7143429,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "CONFIG_DECIMATOR",
+      "Type": "Register",
+      "Address": 7143430,
+      "Version": "",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    }
+  ],
+  "nsamples": 1024,
+  "Channels": 25,
+  "WordSize": 16,
+  "WordEnob": 16,
+  "AnalogInputs": 1,
+  "DigitalInputs": 4,
+  "SamplingFrequency": 0,
+  "TimeMultiplexing": 1,
+  "DecimatorMax": 0,
+  "DecimatorAveraging": false
 }],"Device":"DT5560","Magic":"361567DF","Project":"R76Firmware"}
