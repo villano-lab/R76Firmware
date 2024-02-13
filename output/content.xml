@@ -1,0 +1,13 @@
+<OPENHARDWARE>
+   <SUPPORTED_PLATFORM>
+       <GUID0>C7F960A5-8051-45F0-B793-8899650BAB9D</GUID0>
+       <MODEL>A</MODEL>
+   </SUPPORTED_PLATFORM>
+   <FPGA>
+       <version>2024.02.13.1</version>
+       <filename>R76Firmware.fpga</filename>
+   </FPGA>
+   <HWJSON>
+       <filename>RegisterFile.json</filename>
+   </HWJSON>
+</OPENHARDWARE>

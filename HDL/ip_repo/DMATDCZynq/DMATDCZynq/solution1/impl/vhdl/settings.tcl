@@ -11,9 +11,9 @@
 set top_module data_mover
 set language vhdl
 set family zynq
-set device xc7z045
-set package ffg676
-set speed -1
+set device xc7z030
+set package fbg676
+set speed -2
 set clock ap_clk
 set fsm_ext "off"
 

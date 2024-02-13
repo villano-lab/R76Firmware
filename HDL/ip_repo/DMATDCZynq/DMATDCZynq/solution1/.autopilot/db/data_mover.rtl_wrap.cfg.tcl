@@ -148,42 +148,54 @@ set Interface11 "wire"
 set DataType11 "bool"
 set Port11 [list $PortName11 $Interface11 $DataType11 $Pointer11 $Dims11 $Const11 $Volatile11 $ArrayOpt11]
 lappend PortList $Port11
-set PortName12 "DDROFFSET"
-set BitWidth12 "32"
+set PortName12 "fifo_resetn"
+set BitWidth12 "64"
 set ArrayOpt12 ""
 set Const12 "0"
 set Volatile12 "0"
-set Pointer12 "0"
+set Pointer12 "1"
 set Reference12 "0"
 set Dims12 [list 0]
 set Interface12 "wire"
-set DataType12 "[list ap_uint 32 ]"
+set DataType12 "bool"
 set Port12 [list $PortName12 $Interface12 $DataType12 $Pointer12 $Dims12 $Const12 $Volatile12 $ArrayOpt12]
 lappend PortList $Port12
-set PortName13 "stat_counter"
-set BitWidth13 "64"
+set PortName13 "DDROFFSET"
+set BitWidth13 "32"
 set ArrayOpt13 ""
 set Const13 "0"
 set Volatile13 "0"
 set Pointer13 "0"
 set Reference13 "0"
-set Dims13 [list 4]
+set Dims13 [list 0]
 set Interface13 "wire"
-set DataType13 "long long unsigned int"
+set DataType13 "[list ap_uint 32 ]"
 set Port13 [list $PortName13 $Interface13 $DataType13 $Pointer13 $Dims13 $Const13 $Volatile13 $ArrayOpt13]
 lappend PortList $Port13
-set PortName14 "interrupt_r"
+set PortName14 "stat_counter"
 set BitWidth14 "64"
 set ArrayOpt14 ""
 set Const14 "0"
 set Volatile14 "0"
-set Pointer14 "1"
+set Pointer14 "0"
 set Reference14 "0"
-set Dims14 [list 0]
+set Dims14 [list 4]
 set Interface14 "wire"
-set DataType14 "bool"
+set DataType14 "long long unsigned int"
 set Port14 [list $PortName14 $Interface14 $DataType14 $Pointer14 $Dims14 $Const14 $Volatile14 $ArrayOpt14]
 lappend PortList $Port14
+set PortName15 "interrupt_r"
+set BitWidth15 "64"
+set ArrayOpt15 ""
+set Const15 "0"
+set Volatile15 "0"
+set Pointer15 "1"
+set Reference15 "0"
+set Dims15 [list 0]
+set Interface15 "wire"
+set DataType15 "bool"
+set Port15 [list $PortName15 $Interface15 $DataType15 $Pointer15 $Dims15 $Const15 $Volatile15 $ArrayOpt15]
+lappend PortList $Port15
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 1 

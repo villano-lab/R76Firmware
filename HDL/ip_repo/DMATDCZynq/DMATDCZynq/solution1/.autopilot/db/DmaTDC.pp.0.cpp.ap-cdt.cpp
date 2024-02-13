@@ -28301,59 +28301,63 @@ void data_mover( volatile ram_word *a,
      int *debug_inbuffer_pointer,
      bus_word *debug_dst_var,
      bool run,
+     bool *fifo_resetn,
      ap_uint<32> DDROFFSET,
      uint64_t stat_counter[4],
      bool *interrupt_r
      )
 #pragma empty_line
 {_ssdm_SpecArrayDimSize(buffer_seq,2);_ssdm_SpecArrayDimSize(bufsize,2);_ssdm_SpecArrayDimSize(stat_counter,4);
+#pragma HLS INTERFACE ap_none port=fifo_resetn
+#pragma line 36 "DmaTDC.cpp"
+
 #pragma HLS INTERFACE ap_ovld port=interrupt_r
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE s_axilite port=stat_counter bundle=axil
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE s_axilite port=&DDROFFSET bundle=axil
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE s_axilite port=run bundle=axil
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE ap_ovld port=debug_dst_var
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE ap_ovld port=debug_inbuffer_pointer
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE ap_ovld port=debug_buf0_p
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE ap_ovld port=debug_bufsel_0
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE ap_ovld port=debug_buffer_status
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE s_axilite port=bufsize bundle=axil
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE s_axilite port=buffer_seq bundle=axil
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE s_axilite port=buffer_ack bundle=axil
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE s_axilite port=buffer_status bundle=axil
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE axis register both port=&stream0
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE m_axi depth=32 port=a
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
 #pragma HLS INTERFACE ap_ctrl_none port=return
-#pragma line 35 "DmaTDC.cpp"
+#pragma line 36 "DmaTDC.cpp"
 
  static bool bufstatus[2]= {false};
  static uint64_t bsq[2] = {0};
@@ -28376,8 +28380,12 @@ void data_mover( volatile ram_word *a,
  static bus_word tmpvar[4];
  static short int inner_counter=0;
 #pragma empty_line
+ static bool clear_fifo = false;
+#pragma empty_line
  if (run)
  {
+#pragma empty_line
+  clear_fifo = false;
 #pragma empty_line
  if (bufstatus[bufsel] == false)
  {
@@ -28448,7 +28456,7 @@ void data_mover( volatile ram_word *a,
     seq_buf:for (i=0;i<2;i++)
     {
 #pragma HLS UNROLL
-#pragma line 127 "DmaTDC.cpp"
+#pragma line 132 "DmaTDC.cpp"
 
      buffer_seq[i] = bsq[i];
     }
@@ -28465,7 +28473,7 @@ void data_mover( volatile ram_word *a,
  reset_flag_loop:for (i=0;i<2;i++)
  {
 #pragma HLS UNROLL
-#pragma line 141 "DmaTDC.cpp"
+#pragma line 146 "DmaTDC.cpp"
 
   if (( ((obuffer_ack>>i) & 0x01) == false) && ( ((buffer_ack>>i) & 0x01) == true))
   {
@@ -28519,7 +28527,7 @@ void data_mover( volatile ram_word *a,
   seq_buf2:for (i=0;i<2;i++)
   {
 #pragma HLS UNROLL
-#pragma line 192 "DmaTDC.cpp"
+#pragma line 197 "DmaTDC.cpp"
 
   buffer_seq[i] = 0;
   bufsize[i] =0;
@@ -28527,5 +28535,7 @@ void data_mover( volatile ram_word *a,
  }
 #pragma empty_line
   *interrupt_r=false;
+  clear_fifo = true;
  }
+ *fifo_resetn = not clear_fifo;
 }

@@ -57,6 +57,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 import R76Firmware_RegisterFile
 from ctypes import *
 import array
@@ -265,49 +276,13 @@ def REG_reset_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_reset, handle)
     return err
 
-def REG_len_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_len, handle)
+def REG_sync0_between_sync2_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_sync0_between_sync2, handle)
     return err, data
 
-def REG_len_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_len, handle)
+def REG_sync0_between_sync2_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_sync0_between_sync2, handle)
     return err
-
-def REG_count_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_count, handle)
-    return err, data
-
-def REG_count_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_count, handle)
-    return err
-
-
-
-
-def RATE_METER_RateMeter_NoSkip_GET_DATA(channels, timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_NoSkip_FIFOADDRESS, timeout_ms, handle)
-    return err, data, read_data, valid_data
-
-
-
-
-def RATE_METER_RateMeter_NoSkip_GET_DATA_COUNTS(channels, timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_NoSkip_FIFOADDRESS + 512, timeout_ms, handle)
-    return err, data, read_data, valid_data
-
-
-
-
-def RATE_METER_RateMeter_0_GET_DATA(channels, timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_0_FIFOADDRESS, timeout_ms, handle)
-    return err, data, read_data, valid_data
-
-
-
-
-def RATE_METER_RateMeter_0_GET_DATA_COUNTS(channels, timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_0_FIFOADDRESS + 512, timeout_ms, handle)
-    return err, data, read_data, valid_data
 
 
 
@@ -1715,4 +1690,181 @@ def CPACK_All_Energies_RECONSTRUCT_DATA(FrameData):
                     event_energy = []
                     in_sync = 0
     return Time_Code, Pack_Id, Energy
+
+
+
+
+def RATE_METER_RateMeter_0_GET_DATA(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_0_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_RateMeter_0_GET_DATA_COUNTS(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_0_FIFOADDRESS + 512, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_RateMeter_NoSkip_GET_DATA(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_NoSkip_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_RateMeter_NoSkip_GET_DATA_COUNTS(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_NoSkip_FIFOADDRESS + 512, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+def OSCILLOSCOPE_Syncs_START(handle):
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    return True
+
+def OSCILLOSCOPE_Syncs_SET_DECIMATOR(OscilloscopeDecimator, handle):
+    err = __abstracted_reg_write(OscilloscopeDecimator, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_DECIMATOR, handle)
+    return err
+
+def OSCILLOSCOPE_Syncs_SET_PRETRIGGER(OscilloscopePreTrigger, handle):
+    err = __abstracted_reg_write(OscilloscopePreTrigger, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_PRETRIGGER, handle)
+    return err
+
+def OSCILLOSCOPE_Syncs_SET_TRIGGER_LEVEL(OscilloscopeTriggerLevel, handle):
+    err = __abstracted_reg_write(OscilloscopeTriggerLevel, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_TRIGGER_LEVEL, handle)
+    return err
+
+def OSCILLOSCOPE_Syncs_SET_TRIGGER_MODE(OscilloscopeTriggerMode, OscilloscopeTriggerChannel, OscilloscopeTriggerEdge, handle):
+    AnalogTrigger = 0
+    Digital0Trigger = 0
+    Digital1Trigger = 0
+    Digital2Trigger = 0
+    Digital3Trigger = 0
+    SoftwareTrigger = 0
+    if (OscilloscopeTriggerMode == "Analog"):
+        AnalogTrigger = 1
+    if (OscilloscopeTriggerMode == "Digital0"):
+        Digital0Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital1"):
+        Digital1Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital2"):
+        Digital2Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital3"):
+        Digital3Trigger = 1
+    if (OscilloscopeTriggerMode == "Free"):
+        SoftwareTrigger = 1
+    if (OscilloscopeTriggerEdge == "Rising"):
+        Edge = 0
+    else:
+        Edge = 1
+    triggermode = c_int(0)
+    triggermode = (OscilloscopeTriggerChannel << 8)  + (SoftwareTrigger << 7 ) + (Edge << 3) + (SoftwareTrigger << 1) + AnalogTrigger +(Digital0Trigger << 2) + (Digital1Trigger << 2) + Digital1Trigger + (Digital2Trigger << 2) + (Digital2Trigger << 1) + (Digital3Trigger << 2) + (Digital3Trigger << 1) + Digital3Trigger
+    err = __abstracted_reg_write(triggermode, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_TRIGGER_MODE, handle)
+    return err
+
+def OSCILLOSCOPE_Syncs_GET_STATUS(handle):
+    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Syncs_READ_STATUS, handle)
+    return err, status
+
+def OSCILLOSCOPE_Syncs_GET_POSITION(handle):
+    [err, position] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Syncs_READ_POSITION, handle)
+    return err, position
+
+def OSCILLOSCOPE_Syncs_GET_DATA(timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(3072, R76Firmware_RegisterFile.SCI_REG_Syncs_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+def OSCILLOSCOPE_Syncs_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePosition, OscilloscopePreTrigger):
+    OscilloscopeChannels = 3
+    OscilloscopeSamples = 1024
+    Analog = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital0 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital1 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital2 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital3 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    for n in range(OscilloscopeChannels):
+        current = OscilloscopePosition - OscilloscopePreTrigger
+        if ((current) > 0):
+            k = 0
+            for i in range(current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+            for i in range(0, current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+        else:
+            k = 0
+            for i in range(OscilloscopeSamples+current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+            for i in range(0, OscilloscopeSamples+current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+    return Analog, Digital0, Digital1,Digital2, Digital3
+
+
+
+
+def RATE_METER_SyncIn1Meter_GET_DATA(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_SyncIn1Meter_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_SyncIn1Meter_GET_DATA_COUNTS(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_SyncIn1Meter_FIFOADDRESS + 512, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_SyncIn2Meter_GET_DATA(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_SyncIn2Meter_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_SyncIn2Meter_GET_DATA_COUNTS(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_SyncIn2Meter_FIFOADDRESS + 512, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_SyncIn0Meter_GET_DATA(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_SyncIn0Meter_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_SyncIn0Meter_GET_DATA_COUNTS(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_SyncIn0Meter_FIFOADDRESS + 512, timeout_ms, handle)
+    return err, data, read_data, valid_data
 

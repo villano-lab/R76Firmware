@@ -1,0 +1,74 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Fri Dec 29 07:59:31 2023
+| Host         : ABBA-XPS-17 running 64-bit major release  (build 9200)
+| Command      : report_timing -file ./report/data_mover_timing_synth.rpt
+| Design       : data_mover
+| Device       : 7z030-fbg676
+| Speed File   : -2  PRODUCTION 1.11 2014-09-11
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             4.221ns  (required time - arrival time)
+  Source:                 buf_p_load_reg_1411_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            bsc_reg[0]/R
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (ap_clk rise@8.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        3.415ns  (logic 0.890ns (26.061%)  route 2.525ns (73.939%))
+  Logic Levels:           6  (CARRY4=1 LUT2=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 8.510 - 8.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=2053, unset)         0.537     0.537    ap_clk
+                         FDRE                                         r  buf_p_load_reg_1411_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.233     0.770 r  buf_p_load_reg_1411_reg[1]/Q
+                         net (fo=6, unplaced)         0.299     1.069    buf_p_load_reg_1411[1]
+                         LUT2 (Prop_lut2_I0_O)        0.123     1.192 r  gen_write[1].mem_reg_i_78/O
+                         net (fo=1, unplaced)         0.000     1.192    gen_write[1].mem_reg_i_78_n_0
+                         CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.278     1.470 r  gen_write[1].mem_reg_i_47/O[2]
+                         net (fo=2, unplaced)         0.418     1.888    data_mover_axil_s_axi_U/int_bufsize/tmp_10_fu_1044_p2[2]
+                         LUT4 (Prop_lut4_I1_O)        0.127     2.015 r  data_mover_axil_s_axi_U/int_bufsize/ap_CS_fsm[10]_i_8/O
+                         net (fo=1, unplaced)         0.539     2.554    data_mover_axil_s_axi_U/int_bufsize/ap_CS_fsm[10]_i_8_n_0
+                         LUT5 (Prop_lut5_I4_O)        0.043     2.597 f  data_mover_axil_s_axi_U/int_bufsize/ap_CS_fsm[10]_i_3/O
+                         net (fo=4, unplaced)         0.431     3.028    data_mover_a_V_m_axi_U/bus_write/fifo_resp_to_user/buf_p_load_reg_1411_reg[23]
+                         LUT6 (Prop_lut6_I1_O)        0.043     3.071 f  data_mover_a_V_m_axi_U/bus_write/fifo_resp_to_user/ap_CS_fsm[10]_i_1/O
+                         net (fo=73, unplaced)        0.362     3.433    data_mover_axil_s_axi_U/swap_timeout_load_reg_1405_reg[0][0]
+                         LUT3 (Prop_lut3_I2_O)        0.043     3.476 r  data_mover_axil_s_axi_U/bsc[0]_i_1/O
+                         net (fo=64, unplaced)        0.476     3.952    bsc
+                         FDRE                                         r  bsc_reg[0]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     8.000     8.000 r  
+                                                      0.000     8.000 r  ap_clk (IN)
+                         net (fo=2053, unset)         0.510     8.510    ap_clk
+                         FDRE                                         r  bsc_reg[0]/C
+                         clock pessimism              0.000     8.510    
+                         clock uncertainty           -0.035     8.475    
+                         FDRE (Setup_fdre_C_R)       -0.302     8.173    bsc_reg[0]
+  -------------------------------------------------------------------
+                         required time                          8.173    
+                         arrival time                          -3.952    
+  -------------------------------------------------------------------
+                         slack                                  4.221    
+
+
+
+

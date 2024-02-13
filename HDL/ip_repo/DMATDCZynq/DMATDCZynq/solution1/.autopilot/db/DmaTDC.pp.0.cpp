@@ -28285,6 +28285,7 @@ void data_mover( volatile ram_word *a,
      int *debug_inbuffer_pointer,
      bus_word *debug_dst_var,
      bool run,
+     bool *fifo_resetn,
      ap_uint<32> DDROFFSET,
      uint64_t stat_counter[4],
      bool *interrupt_r
@@ -28312,8 +28313,12 @@ void data_mover( volatile ram_word *a,
  static bus_word tmpvar[4];
  static short int inner_counter=0;
 
+ static bool clear_fifo = false;
+
  if (run)
  {
+
+  clear_fifo = false;
 
  if (bufstatus[bufsel] == false)
  {
@@ -28454,5 +28459,7 @@ void data_mover( volatile ram_word *a,
  }
 
   *interrupt_r=false;
+  clear_fifo = true;
  }
+ *fifo_resetn = not clear_fifo;
 }

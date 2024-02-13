@@ -133,7 +133,7 @@ xilinx.com:ip:aurora_64b66b:11.2\
 xilinx.com:ip:util_vector_logic:2.0\
 xilinx.com:ip:axi_amm_bridge:1.0\
 xilinx.com:ip:axi_iic:2.0\
-NuclearInstruments:hls:data_mover:1.0\
+NuclearInstruments:hls:data_mover:2.0\
 xilinx.com:ip:processing_system7:5.5\
 xilinx.com:ip:proc_sys_reset:5.0\
 xilinx.com:user:tft_display:2.0\
@@ -330,6 +330,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: FS_0_AXIFIFO, and set properties
   set FS_0_AXIFIFO [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_data_fifo:1.1 FS_0_AXIFIFO ]
+  set_property -dict [ list \
+   CONFIG.IS_ACLK_ASYNC {1} \
+ ] $FS_0_AXIFIFO
 
   # Create instance: FirmwareStatus_0, and set properties
   set FirmwareStatus_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:FirmwareStatus:1.0 FirmwareStatus_0 ]
@@ -449,7 +452,7 @@ proc create_root_design { parentCell } {
  ] $axis_data_fifo_3
 
   # Create instance: data_mover_0, and set properties
-  set data_mover_0 [ create_bd_cell -type ip -vlnv NuclearInstruments:hls:data_mover:1.0 data_mover_0 ]
+  set data_mover_0 [ create_bd_cell -type ip -vlnv NuclearInstruments:hls:data_mover:2.0 data_mover_0 ]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -1363,7 +1366,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net RESET_TX_Res [get_bd_pins RESET_TX/Res] [get_bd_pins axis_data_fifo_0/m_axis_aresetn] [get_bd_pins axis_data_fifo_2/m_axis_aresetn]
   connect_bd_net -net axi_iic_0_iic2intc_irpt [get_bd_pins axi_iic_0/iic2intc_irpt] [get_bd_pins processing_system7_0/IRQ_F2P]
   connect_bd_net -net cfg_selected_prw_0_1 [get_bd_ports cfg_selected_prw_0] [get_bd_pins ADCSyncModule_0/cfg_selected_prw]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_ports MAIN_CLOCK] [get_bd_pins FS_0_AXIFIFO/s_axis_aclk] [get_bd_pins FirmwareStatus_0/s00_axi_aclk] [get_bd_pins IICBaseInterconnection_0/s00_axi_aclk] [get_bd_pins NIDNAPort_0/s00_axi_aclk] [get_bd_pins OPTOLINK_0/drp_clk_in] [get_bd_pins OPTOLINK_0/init_clk] [get_bd_pins OPTOLINK_1/drp_clk_in] [get_bd_pins OPTOLINK_1/init_clk] [get_bd_pins axi_iic_0/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins data_mover_0/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/M06_ACLK] [get_bd_pins ps7_0_axi_periph/M07_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_125M/slowest_sync_clk] [get_bd_pins tft_display_0/s00_axi_aclk]
+  connect_bd_net -net data_mover_0_fifo_resetn [get_bd_pins FS_0_AXIFIFO/m_axis_aresetn] [get_bd_pins data_mover_0/fifo_resetn]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_ports MAIN_CLOCK] [get_bd_pins FS_0_AXIFIFO/m_axis_aclk] [get_bd_pins FS_0_AXIFIFO/s_axis_aclk] [get_bd_pins FirmwareStatus_0/s00_axi_aclk] [get_bd_pins IICBaseInterconnection_0/s00_axi_aclk] [get_bd_pins NIDNAPort_0/s00_axi_aclk] [get_bd_pins OPTOLINK_0/drp_clk_in] [get_bd_pins OPTOLINK_0/init_clk] [get_bd_pins OPTOLINK_1/drp_clk_in] [get_bd_pins OPTOLINK_1/init_clk] [get_bd_pins axi_iic_0/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins data_mover_0/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/M06_ACLK] [get_bd_pins ps7_0_axi_periph/M07_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_125M/slowest_sync_clk] [get_bd_pins tft_display_0/s00_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_125M/ext_reset_in] [get_bd_pins rst_ps7_0_125M1/ext_reset_in]
   connect_bd_net -net rst_ps7_0_125M1_peripheral_aresetn [get_bd_pins ADCSyncModule_0/s00_axi_aresetn] [get_bd_pins axi_amm_bridge_0/s_axi_aresetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins axis_data_fifo_1/m_axis_aresetn] [get_bd_pins axis_data_fifo_2/s_axis_aresetn] [get_bd_pins axis_data_fifo_3/m_axis_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins rst_ps7_0_125M1/peripheral_aresetn]
   connect_bd_net -net rst_ps7_0_125M_interconnect_aresetn [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_125M/interconnect_aresetn]
@@ -1562,5 +1566,4 @@ levelinfo -pg 1 -60 180 570 1090 1600 2170 2580 -top -1160 -bot 2990
 ##################################################################
 
 create_root_design ""
-
 

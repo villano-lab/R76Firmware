@@ -40,10 +40,10 @@ set ExportMCPathFlag "0"
 set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
-set TargetInfo "xc7z045:ffg676:-1"
+set TargetInfo "xc7z030:fbg676:-2"
 set SourceFiles {sc {} c ../../DmaTDC.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {C:/GIT/R5560_FRAMEWORK_45/ip_repo/DMATDCZynq/DMATDCZynq/solution1/solution1.directive}
+set DirectiveFile {C:/temp/fifodma5560/HDL/ip_repo/DMATDCZynq/DMATDCZynq/solution1/solution1.directive}
 set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

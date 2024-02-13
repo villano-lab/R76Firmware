@@ -25,3 +25,4 @@ set_directive_interface -mode ap_ovld "data_mover" interrupt_r
 set_directive_unroll "data_mover/seq_buf"
 set_directive_unroll "data_mover/reset_flag_loop"
 set_directive_unroll "data_mover/seq_buf2"
+set_directive_interface -mode ap_none "data_mover" fifo_resetn

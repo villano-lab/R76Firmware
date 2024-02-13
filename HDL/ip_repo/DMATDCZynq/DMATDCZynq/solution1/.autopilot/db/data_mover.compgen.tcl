@@ -16,7 +16,7 @@ set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
 set MaxLatency -1
-set DelayBudget 3.254
+set DelayBudget 2.771
 set ClkPeriod 8
 set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
@@ -287,6 +287,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 10 \
+    name fifo_resetn \
+    type other \
+    dir O \
+    reset_level 0 \
+    sync_rst true \
+    corename dc_fifo_resetn \
+    op interface \
+    ports { fifo_resetn { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 11 \
     name interrupt_r \
     type other \
     dir O \

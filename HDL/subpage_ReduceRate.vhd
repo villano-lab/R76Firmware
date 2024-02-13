@@ -127,7 +127,7 @@ U1_OUT <= U12_out AND ( NOT sxt(U6_out,1));
 	PORT MAP(
 		in1 => U0_counts,
 		in2 => U4_skip,
-		clk => CLK_ACQ(0),
+		clk => CLK_125(0),
 		comp_out => U2_OUT
 	);
 

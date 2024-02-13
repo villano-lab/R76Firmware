@@ -7,7 +7,7 @@
 
 
 Family       : zynq
-Device       : xc7z045
-Package      : ffg676
-Speed Grade  : -1
+Device       : xc7z030
+Package      : fbg676
+Speed Grade  : -2
 Clock Period : 8.000 ns
