@@ -104,4 +104,4 @@ MIDAS_FORK/calibrations
 # Other
 makefile_file_manip
 MIDAS_FORK/*.xml
-
+*.log

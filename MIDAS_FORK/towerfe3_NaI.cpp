@@ -39,10 +39,10 @@ Contact: Scott Oser
 #include <string.h>
 #include <getopt.h>
 //R76Firmware libraries
-#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/UniversalTriggerShared.h"
-#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/Legacy/R76Firmware_lib.h"
-#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/Legacy/Def.h"
-#include "/data/chocula/harrisk/R76Firmware/library/C/lib/src/Legacy/RegisterFile.h"
+#include "/home/light/git/R76Firmware/library/C/lib/src/UniversalTriggerShared.h"
+#include "/home/light/git/R76Firmware/library/C/lib/src/Legacy/R76Firmware_lib.h"
+#include "/home/light/git/R76Firmware/library/C/lib/src/Legacy/Def.h"
+#include "/home/light/git/R76Firmware/library/C/lib/src/Legacy/RegisterFile.h"
 
 /* make frontend functions callable from the C framework */
 #ifdef __cplusplus
@@ -61,12 +61,12 @@ const char *frontend_file_name = __FILE__;   //The frontend file name; don't cha
 BOOL frontend_call_loop = FALSE;  //Frontend loop is called periodically if this variable is TRUE
 INT display_period = 000;         //A frontend status page is displayed with this frequency in ms
 
-// MAXSAMPLES is the maximum number of 4-byte words to be stuffed into the 
+// MAXSAMPLES is the maximum number of 4-byte words to be stuffed into the
 // data bank for each trigger.  It should be at least 1/4 of the total number
 //  of bytes being read out for the trigger.  Calculate it from the maximum
-// allowed waveform lengths for charge and phonon channels. 
+// allowed waveform lengths for charge and phonon channels.
 //  int MAXSAMPLES = (2*16384 + 4*16384)/4+1;
-const  int MAXSAMPLES = (2*1000000 + 4*1000000)/4+1;
+const int MAXSAMPLES = (2*1000000 + 4*1000000)/4+1;
 char data_buffer2[7][4*MAXSAMPLES+1];
 
 //maximum event size produced by this frontend -- 6 is number of DCRCs it reads out.
@@ -76,7 +76,7 @@ INT max_event_size = 25600000;
 INT max_readouts_per_poll = max_event_size / (4*MAXSAMPLES);
 INT max_trigs_per_poll = 500;
 //maximum event size for fragmented events (EQ_FRAGMENTED); not really used
-INT max_event_size_frag = 100000;
+INT max_event_size_frag = 100000; //load-bearing coconut.
 // buffer size to hold events - must be >= 2*max_event_size
 INT event_buffer_size = 52 * 1000000;
 void **info;
@@ -172,7 +172,7 @@ int32_t	FrameMask = 3;
 int32_t	FrameExternalTrigger = 0;
 int32_t	FrameOrTrigger = 1;
 //exit codes for sub-whatevers.
-int code;
+int code, connect_success;
 
 INT readpacket(int verbose){
 	//reading time.
@@ -263,7 +263,7 @@ INT frontend_init()
   // in principle
   if (max_trigs_per_poll > 500) max_trigs_per_poll=500;
 
-  printf ("Starting front end.  Capacity of ODB trigger buffer: %d triggers\n", max_trigs_per_poll); 
+  printf ("Starting front end.  Capacity of ODB trigger buffer: %d triggers\n", max_trigs_per_poll);
 
   // Determine which tower we will talk to. If none specified, default to 1
   whichtower = frontend_index;
@@ -290,7 +290,7 @@ INT frontend_init()
   sprintf (set_str,"/Equipment/Tower%02d/TriggerList/rtAck", whichtower);
   odbReadAny(set_str,0,TID_BYTE,&junkbyte);
   int status = db_find_key(hDB, 0, set_str, &hkey_rtAck);
- 
+
   printf("\n\n\n\nsetting rtAck to zero\n\n");
   db_set_data(hDB,hkey_rtAck,&rtflag,sizeof(rtflag),1,TID_BYTE);
 
@@ -345,14 +345,16 @@ INT frontend_init()
 
   //Connect to the r5560 and allocate the buffer
   int connect_success = connect_staticaddr(0);
-  code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
-  if(code != 0){printf("Buffer allocation failed.\n");}
-  //Set up packet reader
-  if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
-  if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
-  if (CPACK_All_Energies_STATUS(&status_frame, &handle) != 0) printf("Status Error\n");
-  //run a quick test of readpacket.
-  readpacket(1);
+  if(!connect_success){
+	  code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
+	  if(code != 0){printf("Buffer allocation failed.\n");}
+	  //Set up packet reader
+	  if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
+	  if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
+	  if (CPACK_All_Energies_STATUS(&status_frame, &handle) != 0) printf("Status Error\n");
+	  //run a quick test of readpacket.
+	  readpacket(1);
+  }else{printf("Board was unreachable with code %d. Board functions unavailable.");}
 
   return SUCCESS;
 }
@@ -372,11 +374,10 @@ void things_to_do_when_starting_frontend_or_run (int initflag) {
 
 // Determine whether each DCRC is enabled or not
   for (int i=1;i<=6;i++) {
-    sprintf (set_str,"/Equipment/Tower%02d/Settings/DCRC%1d/Enabled", 
+    sprintf (set_str,"/Equipment/Tower%02d/Settings/DCRC%1d/Enabled",
 	               whichtower, i);
     dcrc_enabled[i] = odbReadBool(set_str,0,FALSE);
   }
-  
 
   char dcrckp[200];
 // Loop over DCRCs and start opening sockets
@@ -401,7 +402,7 @@ void things_to_do_when_starting_frontend_or_run (int initflag) {
 	//added this Feb 2015 for reading longerwaveforms.
 	//can now read trigger sizes >1.5MB at 5-7MB/s whereas previously
 	//trigger sizes >110kB caused readout slowing to 0.3MB/s
-	gDataSocket[i]->setReceiveBufferSize(3276800);	
+	gDataSocket[i]->setReceiveBufferSize(3276800);
 	gDataSocket[i]->setSoTimeout(3000);
       }
 
@@ -419,10 +420,10 @@ void things_to_do_when_starting_frontend_or_run (int initflag) {
       char tempbuffer[rtoutmaxlen]; // temporary buffer to put rt output into
       int bufferSize = sizeof(tempbuffer);
       for (int i=1; i<=6; i++) {
-	
+
 	if (dcrc_enabled[i] && !dummyreadout) {
-	  gDataSocket[i]->write("rt",3);  
-	  gDataSocket[i]->read(tempbuffer, bufferSize); 
+	  gDataSocket[i]->write("rt",3);
+	  gDataSocket[i]->read(tempbuffer, bufferSize);
 	}
       }
     }
@@ -435,14 +436,14 @@ void calc_buffer_capacity () {
   int max_charge_len = 0;
   int max_phonon_len = 0;
   for (int dcrc=1; dcrc<=6; dcrc++) {
-    if (dcrc_enabled[dcrc] && charge_nbytes[dcrc] > max_charge_len) 
+    if (dcrc_enabled[dcrc] && charge_nbytes[dcrc] > max_charge_len)
           max_charge_len=charge_nbytes[dcrc];
-    if (dcrc_enabled[dcrc] && phonon_nbytes[dcrc] > max_phonon_len) 
+    if (dcrc_enabled[dcrc] && phonon_nbytes[dcrc] > max_phonon_len)
           max_phonon_len=phonon_nbytes[dcrc];
   }
   if (max_charge_len == 0) max_charge_len = 16384;
   if (max_phonon_len == 0) max_phonon_len = 16384;
-  max_readouts_per_poll = 
+  max_readouts_per_poll =
        (max_event_size / (2*max_charge_len+4*max_phonon_len))-1;
   printf ("Capacity of MIDAS event buffer: %d DCRC waveform reads for current waveform lengths\n",
 	  max_readouts_per_poll);
@@ -569,15 +570,11 @@ INT read_trigger_event(char *pevent, INT off)
 // two DCRC samples, packed into one DWORD = one 4-byte word
   std::vector<DWORD> samples(MAXSAMPLES);
 
-
-
   // pdata_sam counts how many 4-byte words have been stuffed into the bank
   int pdata_sam = 0;
 
-
   /* init bank structure */
   bk_init32(pevent);
-
 
   int numTriggers = 0;
   int bytes[7] = {0,0,0,0,0,0,0};
@@ -604,15 +601,15 @@ INT read_trigger_event(char *pevent, INT off)
   printf("Readbuffer[0]: %s\n",readbuffer[0]);
   //printf("Readbuffer[1]: %s\n",readbuffer[1]);
   std::cout << "Readbuffer 0/1: " << readbuffer[0] << ", " << readbuffer[1] << std::endl;
-  printf ("Hi, I got %d triggers on the readbuffer\n", numTriggers);
-  struct timeval NaI_start,NaI_stop;
-  gettimeofday(&NaI_start,NULL);
-  readpacket(-1);
-  gettimeofday(&NaI_stop,NULL);
-  printf ("Elapsed during packet reading: %f\n",NaI_stop.tv_sec-NaI_start.tv_sec
-          + 0.000001*(NaI_stop.tv_usec-NaI_start.tv_usec));
-
-
+  if(numTriggers > 0) printf ("Hi, I got %d triggers on the readbuffer\n", numTriggers);
+  if(!connect_success){
+	  struct timeval NaI_start,NaI_stop;
+	  gettimeofday(&NaI_start,NULL);
+	  readpacket(-1);
+	  gettimeofday(&NaI_stop,NULL);
+	  printf ("Elapsed during packet reading: %f\n",NaI_stop.tv_sec-NaI_start.tv_sec
+  	        + 0.000001*(NaI_stop.tv_usec-NaI_start.tv_usec));
+  }
 
   int trigstoread[7] = {0,0,0,0,0,0,0};
 
@@ -630,8 +627,8 @@ INT read_trigger_event(char *pevent, INT off)
     for (int dcrc=1;dcrc<=6;dcrc++) {
       // If number of waveforms will exceed MIDAS buffer size, skip it
       if (numbertofetch >= max_readouts_per_poll) {
-	if (dcrc_enabled[dcrc]) 
-		printf ("Event size limit: dropping readout of trigger# %d, DCRC%d, address %c%c%c%c%c%c%c%c, source=%d\n", 
+	if (dcrc_enabled[dcrc])
+		printf ("Event size limit: dropping readout of trigger# %d, DCRC%d, address %c%c%c%c%c%c%c%c, source=%d\n",
 		i,dcrc,
 		addr[dcrc][trigstoread[dcrc]-1][0],
 		addr[dcrc][trigstoread[dcrc]-1][1],
@@ -641,7 +638,7 @@ INT read_trigger_event(char *pevent, INT off)
 		addr[dcrc][trigstoread[dcrc]-1][5],
 		addr[dcrc][trigstoread[dcrc]-1][6],
 		addr[dcrc][trigstoread[dcrc]-1][7],
-		trigsource[dcrc][trigstoread[dcrc]-1]); 
+		trigsource[dcrc][trigstoread[dcrc]-1]);
 	continue;
       }
       // Check if this trigger is marked to be read by this DCRC
@@ -650,34 +647,34 @@ INT read_trigger_event(char *pevent, INT off)
 				  readbuffer[(i-1)*13+8+k];
 	// Convert the trigger word to an integer so we can do math with it
 	std::stringstream ss1;
-	ss1 << std::hex << addr[dcrc][trigstoread[dcrc]][0] 
-	    << addr[dcrc][trigstoread[dcrc]][1] 
-	    << addr[dcrc][trigstoread[dcrc]][2] 
-	    << addr[dcrc][trigstoread[dcrc]][3] 
-	    << std::hex << addr[dcrc][trigstoread[dcrc]][4] 
-	    << addr[dcrc][trigstoread[dcrc]][5] 
-	    << addr[dcrc][trigstoread[dcrc]][6] 
+	ss1 << std::hex << addr[dcrc][trigstoread[dcrc]][0]
+	    << addr[dcrc][trigstoread[dcrc]][1]
+	    << addr[dcrc][trigstoread[dcrc]][2]
+	    << addr[dcrc][trigstoread[dcrc]][3]
+	    << std::hex << addr[dcrc][trigstoread[dcrc]][4]
+	    << addr[dcrc][trigstoread[dcrc]][5]
+	    << addr[dcrc][trigstoread[dcrc]][6]
 	    << addr[dcrc][trigstoread[dcrc]][7];
 	long unsigned int triggerword, ctriggerword,phtriggerword;
 	ss1 >> triggerword;
 
 	// Calculate the time at which this trigger occurred
-	double thistriggertime = 
+	double thistriggertime =
 	  ((triggerword & 0x3fffff) - (dcrctimestamp*65536.))/1.25e6 ;
 	if (thistriggertime > 0) thistriggertime -= 3.3554432;
 	thistriggertime += timeoflastrt;
-	triggertime[dcrc][trigstoread[dcrc]] = thistriggertime; 
-                      
+	triggertime[dcrc][trigstoread[dcrc]] = thistriggertime;
+
 	// Create new charge trigger address by subtracting prepulse amount;
 	ctriggerword = ( triggerword & 0x3fffff) - chargeprepulse[dcrc];
-	if ((triggerword & 0x3fffff) < chargeprepulse[dcrc]) 
+	if ((triggerword & 0x3fffff) < chargeprepulse[dcrc])
 	  ctriggerword=0x400000+(triggerword & 0x3fffff) - chargeprepulse[dcrc];
 	ctriggerword += (triggerword & 0xff000000);
 	sprintf (newaddr, "%08lx", ctriggerword);
 	for (int k=0; k<8; k++) caddr[dcrc][trigstoread[dcrc]][k]=newaddr[k];
 	// Create new phonon trigger address by subtracting prepulse amount;
 	phtriggerword = ( triggerword & 0x3fffff) - phononprepulse[dcrc];
-	if ((triggerword & 0x3fffff) < phononprepulse[dcrc]) 
+	if ((triggerword & 0x3fffff) < phononprepulse[dcrc])
 	 phtriggerword=0x400000+(triggerword & 0x3fffff) - phononprepulse[dcrc];
 	phtriggerword += (triggerword & 0xff000000);
 	sprintf (newaddr, "%08lx", phtriggerword);
@@ -713,12 +710,11 @@ INT read_trigger_event(char *pevent, INT off)
   int longesttriglist = 0;
   int totalnumberoftrigsread = 0;
   int totalnumberactuallywritten = 0;
-  for (int i=1;i<=6;i++) { 
+  for (int i=1;i<=6;i++) {
     totalnumberoftrigsread += trigstoread[i];
     if (trigstoread[i]>longesttriglist) longesttriglist=trigstoread[i];
   }
   printf ("Number of iterations to read triggers: %d\n", longesttriglist);
-
 
 
   struct timeval start_wf_fetch, stop_wf_fetch;
@@ -783,12 +779,12 @@ INT read_trigger_event(char *pevent, INT off)
 	} // end of thinsg to do if the trigger is dropped
       } // end of loop over DCRCs to see if it should be read this iteration
 
-      // Short array to hold commands to be written to DCRC      
+      // Short array to hold commands to be written to DCRC
       char command[40];
 
       // All 6 waveforms will be read into data_buffer2[]
       int bytesread[7]={0,0,0,0,0,0,0};
-      
+
       if (!dummyreadout) {
 	// Request inner charge waveform
 	//	printf("Request charge waveform %i\n",charge_nbytes[dcrc]);
@@ -802,16 +798,13 @@ INT read_trigger_event(char *pevent, INT off)
 	  }
 	}
 
-
-	
 	// Read requested waveform, and as soon as it is there request
 	// the next
 	for (int dcrc=1; dcrc<=6; dcrc++) {
 	  sprintf(command,"wr e %c%c%c%c\rwr f %c%c%c%c\rrdb 14 %x",
 		  caddr[dcrc][whichtrigger][0],caddr[dcrc][whichtrigger][1],caddr[dcrc][whichtrigger][2],caddr[dcrc][whichtrigger][3],
 		  caddr[dcrc][whichtrigger][4],caddr[dcrc][whichtrigger][5],caddr[dcrc][whichtrigger][6],caddr[dcrc][whichtrigger][7],charge_nbytes[dcrc]);
-	  
-	  
+
 	  if (!dcrcread[dcrc]) continue;
 	  int avail = gDataSocket[dcrc]->available();
 	  while(avail < charge_nbytes[dcrc]-2000){
@@ -821,11 +814,10 @@ INT read_trigger_event(char *pevent, INT off)
 	  bytes[dcrc] = charge_nbytes[dcrc];
 	  // Request outer charge waveform
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
-	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]); 
+	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
 	};
-	
-	
+
 	// Read the second waveform and request the third
 	for (int dcrc=1; dcrc<=6; dcrc++) {
 	  if (!dcrcread[dcrc]) continue;
@@ -839,10 +831,10 @@ INT read_trigger_event(char *pevent, INT off)
 	  }
 	  bytes[dcrc] = charge_nbytes[dcrc];
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
-	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]); 
+	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
 	};
-	
+
 	// Read the third waveform and request the fourth
 	for (int dcrc=1; dcrc<=6; dcrc++) {
 	  if (!dcrcread[dcrc]) continue;
@@ -856,7 +848,7 @@ INT read_trigger_event(char *pevent, INT off)
 	  }
 	  bytes[dcrc] = phonon_nbytes[dcrc];
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
-	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]); 
+	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
 	};
 
@@ -873,7 +865,7 @@ INT read_trigger_event(char *pevent, INT off)
 	  }
 	  bytes[dcrc] = phonon_nbytes[dcrc];
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
-	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]); 
+	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
 	};
 
@@ -891,7 +883,7 @@ INT read_trigger_event(char *pevent, INT off)
 	  }
 	  bytes[dcrc] = phonon_nbytes[dcrc];
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
-	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]); 
+	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
 	};
 
@@ -907,7 +899,7 @@ INT read_trigger_event(char *pevent, INT off)
 	  }
 	  // Number of bytes expected  = number of bytes per phonon waveform
 	  bytes[dcrc] = phonon_nbytes[dcrc];
-	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]); 
+	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
 	};
       } else { // Else you're doing dummy readout
@@ -917,9 +909,9 @@ INT read_trigger_event(char *pevent, INT off)
 	    printf ("Gonna make fake data\n");
 	    bytesread[dcrc] = 2*charge_nbytes[dcrc]+4*phonon_nbytes[dcrc];
 	    for (int i=0;i<bytesread[dcrc];i++) {
-	      if (i % 2 == 0) 
+	      if (i % 2 == 0)
 		{data_buffer2[dcrc][i]=1;}
-	      else 
+	      else
 		{data_buffer2[dcrc][i] = i%256;}
 	    };
 	  };
@@ -932,26 +924,25 @@ INT read_trigger_event(char *pevent, INT off)
 
 
       for (int dcrc=1;dcrc<=6;dcrc++) {
-	if (!dcrcread[dcrc]) continue; // Skip to next DCRC if readout not enabled 
+	if (!dcrcread[dcrc]) continue; // Skip to next DCRC if readout not enabled
 	totalnumberactuallywritten++;
       // The data string is composed of a set of 2-byte ADC samples.
       // We're going to pack them into 4-byte words
       WORD previous_sample = 0;
       WORD current_sample = 0;
-      
+
       // nsamples holds how many 4-byte words we have read out.
       int nsamples =0;
-      for(int i = 0; i < bytesread[dcrc]; i++){        
-	// This is stupid; what is the proper way of converting from 
+      for(int i = 0; i < bytesread[dcrc]; i++){
+	// This is stupid; what is the proper way of converting from
 	// char (1 byte) into DWORD without the 0xff masking.
 	WORD this_byte = data_buffer2[dcrc][i] & 0xff;
 	if(i%2 == 0){
 	  previous_sample = current_sample;
 	  current_sample = ((this_byte) << 8);
 	}else{
-	  current_sample += ((this_byte));     
+	  current_sample += ((this_byte));
 	}
-	
 	// finally, put together the two 2-byte samples into a 4-byte word.
 	if(i%4 == 3){
 	  DWORD this_word = previous_sample + (current_sample << 16);
@@ -959,15 +950,12 @@ INT read_trigger_event(char *pevent, INT off)
 	  samples[nsamples] = this_word;
 	  nsamples++;
 	}
-	
       }
 
       // Final check; the number of samples should be satisfy
       // nsamples == (charge_nbytes[dcrc]*2 + phonon_nbytes[dcrc]*4)/4
       if(nsamples == (charge_nbytes[dcrc]*2 + phonon_nbytes[dcrc]*4)/4){
 
-      
-	
 	// Shove the trigger word into the start of the bank before
 	// you store the data samples there
 	DWORD triggerword1 = 0;
@@ -983,9 +971,6 @@ INT read_trigger_event(char *pevent, INT off)
 		addr[dcrc][whichtrigger][6],addr[dcrc][whichtrigger][7],
 		triggerword1); */
 
-	
-
-
 	// Add trigger header---one word saying it's a trigger header, then
 	// three words giving the type and initiating card(s) of the trigger
 	// (one 4-byte word) and then trigger words itself (two x 4-bytes each)
@@ -993,8 +978,8 @@ INT read_trigger_event(char *pevent, INT off)
 	*pdata32++ = 0x40000000; pdata_sam++;                         ;
 	*pdata32++ = trigsource[dcrc][whichtrigger]; pdata_sam++;
 	*pdata32++ = triggerword1; pdata_sam++;
-	
-	std::cout << "Fetch iteration " << whichtrigger << 
+
+	std::cout << "Fetch iteration " << whichtrigger <<
  "---writing header for DCRC" << dcrc << ": "
 		  << addr[dcrc][whichtrigger][0] << addr[dcrc][whichtrigger][1] << addr[dcrc][whichtrigger][2] << addr[dcrc][whichtrigger][3]
 		  << std::hex << addr[dcrc][whichtrigger][4] << addr[dcrc][whichtrigger][5] << addr[dcrc][whichtrigger][6] << addr[dcrc][whichtrigger][7]
@@ -1007,7 +992,7 @@ INT read_trigger_event(char *pevent, INT off)
 	*pdata32++ = 0x20000000+8*whichtower+dcrc; pdata_sam++;
 
 	// Now store the data samples.
-	// Divide it into different channels, so that we can 
+	// Divide it into different channels, so that we can
 	// add channel headers.
 	for(int i = 0; i < 6; i++){
 	  int ch_nsamples;
@@ -1020,16 +1005,16 @@ INT read_trigger_event(char *pevent, INT off)
 	    ch_nsamples = phonon_nbytes[dcrc]/4;
 	    ch_offset = (charge_nbytes[dcrc]*2 + phonon_nbytes[dcrc]*(i-2))/4;
 	  }
-	  
+
 	  // Stuff a channel header 4-byte word into the bank, which contains the number of 4-byte words
 	  // for this waveform
-	  *pdata32++ = 0x00000000 + (i<<16) + ch_nsamples; pdata_sam++;                         
+	  *pdata32++ = 0x00000000 + (i<<16) + ch_nsamples; pdata_sam++;
 	  // Write the waveform data for the channel into the bank
 	  int min, max;
 	  for(int j = 0; j < ch_nsamples; j++){
 	    *pdata32++ = samples[ch_offset+j];
 	    pdata_sam++;
-            // KLUDGE TO CALC STUFF FOR CH2: Phonon A                         
+            // KLUDGE TO CALC STUFF FOR CH2: Phonon A
             if (i == 2) {
               int pt = samples[ch_offset+j] & 0xffff;
 	      //              printf ("KLUDGE PHONON A: %d %d\n",j,pt);
@@ -1039,14 +1024,14 @@ INT read_trigger_event(char *pevent, INT off)
               };
               if (pt > max) max=pt;
               if (pt < min) min=pt;
-            } // END OF Phonon A calc kludge                                  
+            } // END OF Phonon A calc kludge
           }
 	  //          if (i ==2) printf ("KLUDGE: spread of Phonon A: %d\n", max-min);
 	} // end of loop over all 6 charge/phonon channels
       } // end of if statement that executes if correct number of bytes is read
       else{
 	std::cerr << "Error: nsamples != (charge_nbytes[dcrc]*2 + phonon_nbytes[dcrc]*4)/4" << std::endl;
-      }       
+      }
 
       } // End of loop over DCRCs that shoves data into banks
 
@@ -1059,18 +1044,18 @@ INT read_trigger_event(char *pevent, INT off)
     printf ("End of writing: wrote %d, expected to write %d\n",
 	    totalnumberactuallywritten,numbertofetch);
 
-    //    int size2 = bk_close(pevent, pdata32);    
-    bk_close(pevent, pdata32);    
+    //    int size2 = bk_close(pevent, pdata32);
+    bk_close(pevent, pdata32);
 
-    
-    // Signal that all waveforms acquired by clearing the first two bytes of triggerlist 
+
+    // Signal that all waveforms acquired by clearing the first two bytes of triggerlist
     sprintf (keyname,"/Equipment/Tower%02d/TriggerList/triggerlist", whichtower);
     db_find_key(hDB,0,keyname, &hkey);
     readbuffer[0]=0;
     readbuffer[1]=0;
     db_set_data(hDB,hkey,readbuffer,sizeof(readbuffer),triglistlength,TID_CHAR);
 
-  
+
   } // end of if statement that executes only if there were triggers to read out
 
 
@@ -1079,7 +1064,7 @@ INT read_trigger_event(char *pevent, INT off)
 	  + 0.000001*(stop_wf_fetch.tv_usec-start_wf_fetch.tv_usec));
 
 
-  
+
   // close the bank
   return bk_size(pevent);
 }
@@ -1115,7 +1100,7 @@ INT synchronize_cards () {
     // Wait 3.2s to make sure all slave clocks have time to synch with master
 	usleep(3200000);
 
-	// Second pass: command master modules to start writing date---slaves 
+	// Second pass: command master modules to start writing date---slaves
 	//should automatically follow
     for (int i=1; i<=6; i++) {
       if (dcrc_enabled[i] && masterslave[i]==1) {
@@ -1167,19 +1152,19 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
 	while(!avail){
 	  avail = gDataSocket[thisdcrc]->available();
 	}
-	// Each "rd 0" returns 6 bytes---who knows why?  Probably /r/n at end.  
-	gDataSocket[thisdcrc]->readFully(tempbuffer,12); 
+	// Each "rd 0" returns 6 bytes---who knows why?  Probably /r/n at end.
+	gDataSocket[thisdcrc]->readFully(tempbuffer,12);
 	std::stringstream ss;
 	//	ss << std::hex << tempbuffer[2] << tempbuffer[3];
 	ss << std::hex << tempbuffer[8] << tempbuffer[9];
 	ss >> dcrctimestamp;
-	
+
 	// Get the trigger list by issuing the rt command
 	struct timeval now;
 	gettimeofday(&now,NULL);
 	printf ("rt time for DCRC%d = %lf\n", dcrc, now.tv_sec+0.000001*now.tv_usec);
-	gDataSocket[dcrc]->write("rt",3);  
-	bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, 10); 
+	gDataSocket[dcrc]->write("rt",3);
+	bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, 10);
 
 
         //[ANV] get sub buffer
@@ -1194,7 +1179,7 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
 	int nsamp = (int)strtol(subbuf, NULL, 16);
 
 	if(nsamp>0){
-	  bytes[dcrc] += gDataSocket[dcrc]->read(tempbuffer+10, nsamp*10); 
+	  bytes[dcrc] += gDataSocket[dcrc]->read(tempbuffer+10, nsamp*10);
 
           //[ANV] get sub buffer
           free(subbuf);
@@ -1204,7 +1189,7 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
 	  printf("ANV: read %d bytes with result: %s",bufferSize-10,subbuf);
 	}
 
-	//bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, bufferSize); 
+	//bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, bufferSize);
 	// copy the values returned by rt into the trigger buffer array
 	for (int i=0;i<bytes[dcrc];i++) trigaddr_buffer[dcrc][i]=tempbuffer[i];
 
@@ -1225,7 +1210,7 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   printf ("Last rt cycle phase %d\n", dcrctimestamp);
   struct timeval start2, stop2;
   gettimeofday(&start2, NULL);
-  
+
   int numTriggers = 0;
   char triglist[max_trigs_per_poll+1][8];
   DWORD trigorigin[max_trigs_per_poll+1];
@@ -1290,7 +1275,7 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   printf("Elapsed during polling cycle: %f\n",stop2.tv_sec-start2.tv_sec + 0.000001*(stop2.tv_usec-start2.tv_usec));
 
   time_t current_time = time(NULL);
-  printf ("%s  towerfe3_%02d: polling cycle finds %d triggers\n", 
+  printf ("%s  towerfe3_%02d: polling cycle finds %d triggers\n",
 	  ctime(&current_time),frontend_index, numTriggers);
 
 
@@ -1311,12 +1296,12 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   globaltriggerbuffer[4] = (current_time & 0x0000ff00) >> 8;
   globaltriggerbuffer[5] = (current_time & 0x000000ff);
   // Bytes 6 and 7 reserved for upper bytes of DCRC write address
-  // which we may implement as a secondary timestamp.  
+  // which we may implement as a secondary timestamp.
   // It is not certain that the result from "rd 0" being stored here
   // is reliable---there are some indications for it not always
   // increasing monotonically
-  globaltriggerbuffer[6] = (dcrctimestamp & 0xff00) >> 8;  
-  globaltriggerbuffer[7] = (dcrctimestamp & 0x00ff);  
+  globaltriggerbuffer[6] = (dcrctimestamp & 0xff00) >> 8;
+  globaltriggerbuffer[7] = (dcrctimestamp & 0x00ff);
 
   // For each trigger write the trigger address, a one-byte flag listing
   // which DCRCs to read for that trigger, and also the trigger origin word,
@@ -1324,10 +1309,10 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   for (int i=1; i<=numTriggers; i++) {
     for (int j=0;j<8;j++) globaltriggerbuffer[i*13+j-5]=triglist[i][j];
     // Mark all DCRCs to be read, for now---set lowest 6 bits to 1
-    // For selective readout instead use this: 
+    // For selective readout instead use this:
     //      globaltriggerbuffer[i*13+3]= 0x1 << ((trigorigin[i] & 0x7) - 1);
     // In general the global trigger module should overwrite this information
-    // but we have to assume something for now until that code exists. 
+    // but we have to assume something for now until that code exists.
     globaltriggerbuffer[i*13+3]=0x3f;
     // Add the four bytes of the trigger word
     globaltriggerbuffer[i*13+4]= (trigorigin[i] & 0xff000000) >> 24;
@@ -1351,7 +1336,7 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   gettimeofday(&stop,NULL);
   printf ("Elapsed during ODB write: %f\n",stop.tv_sec-start.tv_sec
 	  + 0.000001*(stop.tv_usec-start.tv_usec));
-  
+
 
 // Reset the rtAck flag to signal that the trigger primitives have been sent
   sprintf (keyname,"/Equipment/Tower%02d/TriggerList/rtAck", whichtower);
@@ -1375,7 +1360,7 @@ void get_waveform_settings (INT dcrc_index, INT b, void *c)
   char odbkp[150];
   char dcrckp[150];
 
- // Define the ODB path to this particular DCRC                                
+ // Define the ODB path to this particular DCRC
   sprintf (dcrckp,"/Equipment/Tower%02d/Settings/DCRC%1d", whichtower,
 	   dcrc_index);
 
@@ -1393,7 +1378,7 @@ ength of %i is not allowed. Defaulting to 4096.", charge_nbytes[dcrc_index]);
 ength of %i is not allowed. Defaulting to 8192.", phonon_nbytes[dcrc_index]);
     phonon_nbytes[dcrc_index] = 8192;
   };
-  // This keeps things from being too long.                                     
+  // This keeps things from being too long.
   if (2*charge_nbytes[dcrc_index]+4*phonon_nbytes[dcrc_index] > 4*MAXSAMPLES) {
     cm_msg(MERROR, frontend_name, "ERROR: Fixed array MAXSAMPLES is not big eno\
 ugh to hold these long waveforms.  Defaulting to 4096-byte charge waveforms and\
@@ -1403,8 +1388,8 @@ ugh to hold these long waveforms.  Defaulting to 4096-byte charge waveforms and\
   };
 
 
-  // Read charge and phonon pulse presample length.  This amount is             
-  // subtracted from the trigger address before requesting waveform             
+  // Read charge and phonon pulse presample length.  This amount is
+  // subtracted from the trigger address before requesting waveform
   sprintf(odbkp,"%s/General/ChargePrepulseSamples",dcrckp);
   chargeprepulse[dcrc_index] = odbReadInt(odbkp,0,0);
   sprintf(odbkp,"%s/General/PhononPrepulseSamples",dcrckp);
@@ -1446,6 +1431,6 @@ void update_waveform_settings (int dummy1, int dummy2, void *dummy3) {
 
   get_waveform_settings(dcrc,0,0);
 
-  calc_buffer_capacity(); 
+  calc_buffer_capacity();
 
 }

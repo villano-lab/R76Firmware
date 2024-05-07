@@ -14,8 +14,8 @@ LIB_DIR         = $(MIDASSYS)/linux/lib
 MIDASLIBS = $(MIDASSYS)/linux/lib/libmidas.a
 
 #R76 stuff
-R76LIBS = -L /data/chocula/harrisk/R76Firmware/library/C/lib/gcc/ -lR76Firmware -L /data/chocula/harrisk/R76Firmware/library/C/lib/gcc -lUniversalTriggerShared -L /data/chocula/harrisk/R76Firmware/r5560_sdk/linux/ -lr5560
-R76FLAGS = $(R76LIBS) -I/data/chocula/harrisk/R76Firmware/library/C/lib/src/ -I/data/chocula/harrisk/R76Firmware/library/C/lib/src/Legacy/
+R76LIBS = -L ~/git/R76Firmware/library/C/lib/gcc/ -lR76Firmware -L ~/git/R76Firmware/library/C/lib/gcc -lUniversalTriggerShared -L ~/git/R76Firmware/r5560_sdk/linux/ -lr5560
+R76FLAGS = $(R76LIBS) -I~/git/R76Firmware/library/C/lib/src/ -I~/git/R76Firmware/library/C/lib/src/Legacy/
 
 # ROOT library
 ifdef ROOTSYS
@@ -44,7 +44,8 @@ towerfe3.exe: %.exe:   %.o  KOsocket.o utils1.o
 
 #Experimental - NaI firmware integration.
 towerfe3_NaI.exe: %.exe:   %.o  KOsocket.o utils1.o
-	$(CXX) -g3 -fPIC -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS) $(R76LIBS) -lstdc++ -ldl
+	echo $(R76FLAGS)
+	$(CXX) -g3 -fPIC -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS) $(R76FLAGS) -lstdc++ -ldl
 	#-std=gnu99
 	#-shared
 
