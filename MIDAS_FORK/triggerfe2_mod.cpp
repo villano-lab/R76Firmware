@@ -448,7 +448,9 @@ INT form_triggers(char *pevent, INT off)
 
     // get those randoms
     int nrand=0;
+    printf("generating random sequence...\n");
     generate_random_sequence(trigout,FBOR,&nrand);
+    printf("randoms generated.\n");
 
     //add randoms to the RAND_ACCUMULATED
     RAND_ACCUMULATED+=nrand;

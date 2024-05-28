@@ -532,8 +532,6 @@ void KOsocket::readFully(char* buffer,int byteCount)
 #if defined(ONL_unix)||defined(ONL_winnt)
       if (fTimeout != 0)
 	{
-
-	  
 	  if (flag)
 	    {
 	      tv.tv_sec = fTimeout/1000;
@@ -557,15 +555,16 @@ void KOsocket::readFully(char* buffer,int byteCount)
                  continue;
               if (fError == EINTR)
                  continue;
+	      //std::string errstr = getErrorString();
+	      //std::cout << errstr << std::endl;
 	      throw KOsocketException("readFully: select() error: " + getErrorString());
             }
 
 	  if ((n == 0)||(!FD_ISSET(fSocket,&fdset)))
 	    {
-	      std::cout << "Oser debugging notes timeout\n";
+	      std::cout << "Oser debugging notes timeout " << n << std::endl;
 	      throw KOsocketException("Read timeout");
 	    }
-          
           //printf("n %d, isset %d\n", n, FD_ISSET(fSocket,&fdset));
 	  flag = 1;
 	}
@@ -575,16 +574,16 @@ void KOsocket::readFully(char* buffer,int byteCount)
 
 
       int ret = read(&buffer[dptr],toRecv);
-      
+
       if (ret == 0)
 	{
 	  if (dptr == 0) // we did not receive a single byte yet
 	    throw KOsocketException("Connection was closed");
-	  
+
 	  // otherwise, we got a connection reset in the middle
 	  // of the data, so consider it an error
 	  // and throw an exception.
-	  
+
 	  fError = 0;
 	  throw KOsocketException("Connection was closed unexpectedly");
 	}

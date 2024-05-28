@@ -436,7 +436,7 @@ void calc_buffer_capacity () {
   int max_charge_len = 0;
   int max_phonon_len = 0;
   for (int dcrc=1; dcrc<=6; dcrc++) {
-    if (dcrc_enabled[dcrc] && charge_nbytes[dcrc] > max_charge_len)
+    if (dcrc_enabled[dcrc] && charge_nbytes[dcrc] > max_charge_len) //charge_nbytes isn't declared above here -- i assume it's being set in ODB but where do I verify that?
           max_charge_len=charge_nbytes[dcrc];
     if (dcrc_enabled[dcrc] && phonon_nbytes[dcrc] > max_phonon_len)
           max_phonon_len=phonon_nbytes[dcrc];
@@ -598,9 +598,10 @@ INT read_trigger_event(char *pevent, INT off)
 
   // Unpack first two bytes: number of triggers for this tower
   numTriggers = readbuffer[0]*256 + readbuffer[1];
-  printf("Readbuffer[0]: %s\n",readbuffer[0]);
+  printf("got numtriggers, printing readbuffer. line 601. \n");
+  //printf("Readbuffer[0]: %s\n",readbuffer[0]);
   //printf("Readbuffer[1]: %s\n",readbuffer[1]);
-  std::cout << "Readbuffer 0/1: " << readbuffer[0] << ", " << readbuffer[1] << std::endl;
+  //std::cout << "Readbuffer 0/1: " << readbuffer[0] << ", " << readbuffer[1] << std::endl;
   if(numTriggers > 0) printf ("Hi, I got %d triggers on the readbuffer\n", numTriggers);
   if(!connect_success){
 	  struct timeval NaI_start,NaI_stop;
@@ -720,12 +721,15 @@ INT read_trigger_event(char *pevent, INT off)
   struct timeval start_wf_fetch, stop_wf_fetch;
   gettimeofday(&start_wf_fetch,NULL);
 
+  int datasize = 4;
+  char lemodata[datasize+1] = {'0'};
 
   // Waveform retrieval code follows
   if(longesttriglist > 0){
+    printf("longesttriglist was > 0; creating banks\n");
     uint32_t *pdata32;
     /* create structured ADC0 bank of double words (i.e. 4-byte words)  */
-    bk_create(pevent, "SCD0", TID_DWORD, (void**)&pdata32);
+    bk_create(pevent, "SCD0", TID_DWORD, (void**)&pdata32); //bank is a midas structure concept
 
     // Add a header, with number of words in event.
     // Use the top three bits to indicate different control words.
@@ -762,20 +766,21 @@ INT read_trigger_event(char *pevent, INT off)
 		  addr[dcrc][whichtrigger][5],
 		  addr[dcrc][whichtrigger][6],
 		  addr[dcrc][whichtrigger][7],
-		  trigsource[dcrc][whichtrigger]); 
+		  trigsource[dcrc][whichtrigger]);
 	  // Write empty header for dropped trigger, with waveform lengths of 0
 	  DWORD triggerword1 = 0;
 	  std::stringstream ss1;
 	  ss1 << std::hex << addr[dcrc][whichtrigger][0] << addr[dcrc][whichtrigger][1] << addr[dcrc][whichtrigger][2] << addr[dcrc][whichtrigger][3]
 	      << std::hex << addr[dcrc][whichtrigger][4] << addr[dcrc][whichtrigger][5] << addr[dcrc][whichtrigger][6] << addr[dcrc][whichtrigger][7];
 	  ss1 >> triggerword1;
-	  *pdata32++ = 0x40000000; pdata_sam++;                         ;
+	  *pdata32++ = 0x40000000; pdata_sam++;
 	  *pdata32++ = trigsource[dcrc][whichtrigger]; pdata_sam++;
 	  *pdata32++ = triggerword1; pdata_sam++;
 	  *pdata32++ = 0x20000000+8*whichtower+dcrc; pdata_sam++;
 	  for (int i=0; i<6; i++) {
 	    // use waveform length of zero for each channel
-	    *pdata32++ = 0x00000000 + (i<<16); pdata_sam++;                         };
+	    *pdata32++ = 0x00000000 + (i<<16); pdata_sam++;
+	  };
 	} // end of thinsg to do if the trigger is dropped
       } // end of loop over DCRCs to see if it should be read this iteration
 
@@ -788,10 +793,12 @@ INT read_trigger_event(char *pevent, INT off)
       if (!dummyreadout) {
 	// Request inner charge waveform
 	//	printf("Request charge waveform %i\n",charge_nbytes[dcrc]);
+	printf("Requesting inner charge waveform:\n");
 	for (int dcrc=1;dcrc<=6;dcrc++) {
 	  sprintf(command,"wr c %c%c%c%c\rwr d %c%c%c%c\rrdb 14 %x",
 		  caddr[dcrc][whichtrigger][0],caddr[dcrc][whichtrigger][1],caddr[dcrc][whichtrigger][2],caddr[dcrc][whichtrigger][3],
 		  caddr[dcrc][whichtrigger][4],caddr[dcrc][whichtrigger][5],caddr[dcrc][whichtrigger][6],caddr[dcrc][whichtrigger][7],charge_nbytes[dcrc]);
+	  printf("%s \n",command);
 	  if (dcrcread[dcrc]) {
 	    gDataSocket[dcrc]->write(command,strlen(command)+1);
 	    //	       printf ("Sent to DCRC %d: %s\n", dcrc,command);
@@ -811,16 +818,20 @@ INT read_trigger_event(char *pevent, INT off)
 	    //	  while(!avail){
 	    avail = gDataSocket[dcrc]->available();
 	  }
-	  bytes[dcrc] = charge_nbytes[dcrc];
+	  bytes[dcrc] = charge_nbytes[dcrc]; //last place bytes[dcrc] is modified -- equivalent one for each waveform
 	  // Request outer charge waveform
-	  gDataSocket[dcrc]->write(command,strlen(command)+1);
-	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
-	  bytesread[dcrc] += bytes[dcrc];
+	  printf("Requesting outer charge waveform.\n");
+	  gDataSocket[dcrc]->write(command,strlen(command)+1); //run the command we built here, then pull the response in the next line
+	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]); //put into data_buffer2 number of bytes requested (bytes[dcrc]) (?)
+	  bytesread[dcrc] += bytes[dcrc]; //add the number of bytes we just read to bytesread[dcrc].
 	};
 
 	// Read the second waveform and request the third
 	for (int dcrc=1; dcrc<=6; dcrc++) {
-	  if (!dcrcread[dcrc]) continue;
+	  if (!dcrcread[dcrc]){
+//		printf("Skipping current DCRC for 3rd waveform (PA?). Grep Requesting\n");
+		continue;
+	  }
 	  sprintf(command,"wr 4 %c%c%c%c\rwr 5 %c%c%c%c\rrdb 14 %x",
 		  phaddr[dcrc][whichtrigger][0],phaddr[dcrc][whichtrigger][1],phaddr[dcrc][whichtrigger][2],phaddr[dcrc][whichtrigger][3],
 		  phaddr[dcrc][whichtrigger][4],phaddr[dcrc][whichtrigger][5],phaddr[dcrc][whichtrigger][6],phaddr[dcrc][whichtrigger][7],phonon_nbytes[dcrc]);
@@ -830,6 +841,7 @@ INT read_trigger_event(char *pevent, INT off)
 	    avail = gDataSocket[dcrc]->available();
 	  }
 	  bytes[dcrc] = charge_nbytes[dcrc];
+	  printf("Requesting 3rd waveform (PA?)\n");
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
 	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
@@ -847,6 +859,7 @@ INT read_trigger_event(char *pevent, INT off)
 	    avail = gDataSocket[dcrc]->available();
 	  }
 	  bytes[dcrc] = phonon_nbytes[dcrc];
+	  printf("Requesting 4th waveform (PB?)\n");
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
 	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
@@ -864,11 +877,11 @@ INT read_trigger_event(char *pevent, INT off)
 	    avail = gDataSocket[dcrc]->available();
 	  }
 	  bytes[dcrc] = phonon_nbytes[dcrc];
+	  printf("Requesting 5th waveform (PC?)\n");
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
 	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
 	};
-
 
 	// Read the fourth waveform and request the sixth
 	for (int dcrc=1; dcrc<=6; dcrc++) {
@@ -882,12 +895,11 @@ INT read_trigger_event(char *pevent, INT off)
 	    avail = gDataSocket[dcrc]->available();
 	  }
 	  bytes[dcrc] = phonon_nbytes[dcrc];
+	  printf("Requesting 6th waveform (PD?)\n");
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
 	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
 	};
-
-
 
 	// Read the sixth from the buffer
 	for (int dcrc=1;dcrc<=6;dcrc++) {
@@ -916,12 +928,31 @@ INT read_trigger_event(char *pevent, INT off)
 	    };
 	  };
 	} // end loop over DCRCs writing dummy data
+      } // end of dummy readout segment
 
-      }
+	for (int dcrc=1;dcrc<=6;dcrc++) {
+		if (!dcrcread[dcrc]) continue;
+		lemodata[datasize+1] = '\0';
+		sprintf(command,"wr 10 %c%c%c%c\rwr 11 %c%c%c%c\rrdb 12 %x",
+		//sprintf(command,"wr 10 %c%c%c%c\rrdb 12 %x",
+			addr[dcrc][whichtrigger][0],addr[dcrc][whichtrigger][1],addr[dcrc][whichtrigger][2],addr[dcrc][whichtrigger][3],
+			addr[dcrc][whichtrigger][4],addr[dcrc][whichtrigger][5],addr[dcrc][whichtrigger][6],addr[dcrc][whichtrigger][7]
+			,datasize);
+		printf("%s \n",command);
+		gDataSocket[dcrc]->write(command,strlen(command)+1);
+		printf("Command sent, time to read! ");
+		gDataSocket[dcrc]->readFully(lemodata, datasize); //put into data_buffer2 number of bytes requested (bytes[dcrc]) (?)
+		//         printf ("Sent to DCRC %d: %s\n", dcrc,command);
+		printf("Data for dcrc %d: 0x%.2X/%.2X/%.2X/%.2X\n",dcrc,lemodata[1],lemodata[0],lemodata[3],lemodata[2]);
+		printf("Data for dcrc %d: 0x%hhX/%hhX/%hhX/%hhX\n",dcrc,lemodata[1],lemodata[0],lemodata[3],lemodata[2]);
+		printf("Data for dcrc %d: 0x%02x\n",dcrc,lemodata[1]);
+		printf("Data for dcrc %d: 0x%hhx\n",dcrc,lemodata[1]);
+		printf("or %c%c%c%c, or \n %s",lemodata[1],lemodata[0],lemodata[3],lemodata[2],//lemodata[5],lemodata[4],lemodata[7],lemodata[6],lemodata[8],
+			lemodata);
+	}//\*/
 
       // END OF CODE THAT GETS REAL/FAKE DATA FROM DCRCs.  Now to stuff it
       // in banks.
-
 
       for (int dcrc=1;dcrc<=6;dcrc++) {
 	if (!dcrcread[dcrc]) continue; // Skip to next DCRC if readout not enabled
@@ -932,8 +963,22 @@ INT read_trigger_event(char *pevent, INT off)
       WORD current_sample = 0;
 
       // nsamples holds how many 4-byte words we have read out.
-      int nsamples =0;
-      for(int i = 0; i < bytesread[dcrc]; i++){
+      int nsamples = 0;
+      for(int i = 0; i < bytesread[dcrc]; i++){ //where is bytesread set? looks like it starts at 0 and is added to in the "Requesting" stanza.
+	/*if(i<32){ //hijack the first 32 entries.
+		sprintf(command,"rd 12");
+		//int avail = gDataSocket[dcrc]->available();
+		printf("Requesting data sent by 1260. ");
+		//bytes[dcrc] = phonon_nbytes[dcrc];
+		/*gDataSocket[dcrc]->write(command,strlen(command)+1);
+		printf("Reading... ");
+		//printf("Data requested. reading...\n");
+		//gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc]+i, 2);
+		bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, 10);
+		printf("Success! got %x \n",tempbuffer);
+		//data_buffer2[dcrc][i] = tempbuffer;
+		sample[i] = 0xFFFF;
+	}*/
 	// This is stupid; what is the proper way of converting from
 	// char (1 byte) into DWORD without the 0xff masking.
 	WORD this_byte = data_buffer2[dcrc][i] & 0xff;
@@ -946,9 +991,39 @@ INT read_trigger_event(char *pevent, INT off)
 	// finally, put together the two 2-byte samples into a 4-byte word.
 	if(i%4 == 3){
 	  DWORD this_word = previous_sample + (current_sample << 16);
-	  //*pdata32++ = this_word;
+	  //\*pdata32++ = this_word;
 	  samples[nsamples] = this_word;
 	  nsamples++;
+	}
+	//printf("Requested data came back: %x\n",samples[i]); //too much printing, sometimes disconnects here.
+
+      }
+
+      int lemohexarr[4] = {lemodata[1],lemodata[0],lemodata[3],lemodata[2]};
+      int lemohex = (lemohexarr[0]<<24)+(lemohexarr[1]<<16)+(lemohexarr[2]<<8)+lemohexarr[3];
+      samples[0] = lemohex;
+      std::cout << "constructed lemo data: 0x" << lemohex << " (" << samples[0] << " / " << lemohexarr << ")" << std::endl; //lemodata is a char array; need to convert it to the actual hex data.
+      std::cout << "value by value: 0x" << lemohexarr[0] << lemohexarr[1] << lemohexarr[2] << lemohexarr[3] << std::endl;
+      printf("0x%x/%x/%x/%x\n",lemohexarr[0]<<24,lemohexarr[1]<<16,lemohexarr[2]<<8,lemohexarr[3]); //unshifted these are good, so maybe I'm having some kind of formatting issue?
+	//lemodata hasn't changed since i set it; good.
+//std::stoi(lemodata,nullptr,16); //overwrite first part of QI with lemodata, which has same size as 1 word
+
+      const int rtoutmaxlen = 2000;
+      char tempbuffer[rtoutmaxlen];
+      if(1){ //currently needs recompile each time. bad. fix.
+	for(int i=0;i<1;i++){
+		sprintf(command,"rd 12");
+		//int avail = gDataSocket[dcrc]->available();
+ 		printf("Requesting data sent by 1260. ");
+ 		//bytes[dcrc] = phonon_nbytes[dcrc];
+ 		gDataSocket[dcrc]->write(command,strlen(command)+1);
+ 		printf("Reading... ");
+ 		//printf("Data requested. reading...\n");
+ 		//gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc]+i, 2);
+ 		bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, 10);
+ 		printf("Success! got %c%c%c%c \n",tempbuffer[i],tempbuffer[i+1],tempbuffer[i+2],tempbuffer[i+3]);
+ 		//data_buffer2[dcrc][i] = tempbuffer;*/
+ 		//sample[i] = 0xFFFF;
 	}
       }
 
@@ -975,7 +1050,7 @@ INT read_trigger_event(char *pevent, INT off)
 	// three words giving the type and initiating card(s) of the trigger
 	// (one 4-byte word) and then trigger words itself (two x 4-bytes each)
 	// *******
-	*pdata32++ = 0x40000000; pdata_sam++;                         ;
+	*pdata32++ = 0x40000000; pdata_sam++;
 	*pdata32++ = trigsource[dcrc][whichtrigger]; pdata_sam++;
 	*pdata32++ = triggerword1; pdata_sam++;
 
@@ -984,7 +1059,6 @@ INT read_trigger_event(char *pevent, INT off)
 		  << addr[dcrc][whichtrigger][0] << addr[dcrc][whichtrigger][1] << addr[dcrc][whichtrigger][2] << addr[dcrc][whichtrigger][3]
 		  << std::hex << addr[dcrc][whichtrigger][4] << addr[dcrc][whichtrigger][5] << addr[dcrc][whichtrigger][6] << addr[dcrc][whichtrigger][7]
 		  << " source=" << std::dec << trigsource[dcrc][whichtrigger] << std::endl;
-
 
 	// Insert a header word here indicating which tower/DCRC we
 	// are about to write data for.  Then will write the 6 waveforms from
@@ -1008,7 +1082,9 @@ INT read_trigger_event(char *pevent, INT off)
 
 	  // Stuff a channel header 4-byte word into the bank, which contains the number of 4-byte words
 	  // for this waveform
-	  *pdata32++ = 0x00000000 + (i<<16) + ch_nsamples; pdata_sam++;
+	  //below we are moving the pointer to the next position and assigning it -- not incrementing the value by the listed expression.
+	  *pdata32++ = 0x00000000 + (i<<16) + ch_nsamples; pdata_sam++; //header is, roughly, 0x00(4i)0000n
+	  //does pdata_sam actually get used anywhere? it is incremented but I don't see it actually referenced.
 	  // Write the waveform data for the channel into the bank
 	  int min, max;
 	  for(int j = 0; j < ch_nsamples; j++){
@@ -1037,7 +1113,6 @@ INT read_trigger_event(char *pevent, INT off)
 
     } // end of loop over number of triggers to be read out
 
-
     // Add trailer to word; stick in number of triggers again.
     *pdata32++ = 0x80000000 + (DWORD) totalnumberactuallywritten;
     pdata_sam++;
@@ -1046,7 +1121,6 @@ INT read_trigger_event(char *pevent, INT off)
 
     //    int size2 = bk_close(pevent, pdata32);
     bk_close(pevent, pdata32);
-
 
     // Signal that all waveforms acquired by clearing the first two bytes of triggerlist
     sprintf (keyname,"/Equipment/Tower%02d/TriggerList/triggerlist", whichtower);
@@ -1122,12 +1196,10 @@ INT synchronize_cards () {
 // the ODB.  It is invoked by a hotlink to rtRequest
 void execute_rt (int dummy1, int dummy2, void *dummy3) {
 
-
   struct timeval start_ex_rt_time,stop_ex_rt_time;
   gettimeofday(&start_ex_rt_time,NULL);
   timeoflastrt = start_ex_rt_time.tv_sec + 0.000001*start_ex_rt_time.tv_usec;
   printf("\n\nStarting execute_rt_timer at %lf\n", timeoflastrt);
-
 
   // Buffer to read the trigger list.  6 DCRCs numbered from 1-6.
   // Up to 2000 bytes each;
@@ -1141,7 +1213,6 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   if (!dummyreadout) {
     for (int dcrc=1;dcrc<=6;dcrc++) {
       if (dcrc_enabled[dcrc]) {
-
 
 	// read the upper bytes of the write pointer on this DCRC
 	// Strangely, often the first read returns old values, not the
@@ -1165,7 +1236,6 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
 	printf ("rt time for DCRC%d = %lf\n", dcrc, now.tv_sec+0.000001*now.tv_usec);
 	gDataSocket[dcrc]->write("rt",3);
 	bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, 10);
-
 
         //[ANV] get sub buffer
         char *subbuf;
@@ -1266,9 +1336,6 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
 		triglist[numTriggers][6],triglist[numTriggers][7],
 		trigorigin[numTriggers]);
     } // end loop over trigger words received for this DCRC
-
-
-
   } // end of loop over DCRCs
 
   gettimeofday(&stop2, NULL);
@@ -1321,7 +1388,6 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
     globaltriggerbuffer[i*13+7]= trigorigin[i] & 0x000000ff;
   }
 
-
   // Find the ODB key pointing to the trigger list for this tower, through
   // which we'll pass the info to the global trigger module
   HNDLE hkey;
@@ -1337,7 +1403,6 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   printf ("Elapsed during ODB write: %f\n",stop.tv_sec-start.tv_sec
 	  + 0.000001*(stop.tv_usec-start.tv_usec));
 
-
 // Reset the rtAck flag to signal that the trigger primitives have been sent
   sprintf (keyname,"/Equipment/Tower%02d/TriggerList/rtAck", whichtower);
   int status = db_find_key(hDB, 0, keyname, &hkey);
@@ -1347,12 +1412,7 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   gettimeofday(&stop_ex_rt_time,NULL);
   printf ("\n\nWhole execute_rt time: %f\n\n",stop_ex_rt_time.tv_sec-start_ex_rt_time.tv_sec + 0.000001*(stop_ex_rt_time.tv_usec-start_ex_rt_time.tv_usec));
 
-
-
 }
-
-
-
 
 void get_waveform_settings (INT dcrc_index, INT b, void *c)
 {
@@ -1419,9 +1479,7 @@ ugh to hold these long waveforms.  Defaulting to 4096-byte charge waveforms and\
   odbWriteInt(set_str, 0, phononprepulse[dcrc_index]);
   cm_msg(MINFO, frontend_name, "PhononPrePulseSamples=%d updated in towerfe3 reading code and ReadbackODB", phononprepulse[dcrc_index]);
 
-
 }
-
 
 void update_waveform_settings (int dummy1, int dummy2, void *dummy3) {
 
