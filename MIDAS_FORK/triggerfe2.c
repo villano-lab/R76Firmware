@@ -8,9 +8,6 @@
  Creators: Scott Oser & Bill Page (UBC)
  \********************************************************************/
 
-
-
-
 #include <vector>
 #include <stdio.h>
 #include <time.h>
@@ -31,7 +28,6 @@ extern float ran1 (long *idum);
 //#define FETCH_PRIM_COMMENTS
 //#define  PILEUP_COMMENTS
 //#define TRIG_COMMENTS
-
 
  /* make frontend functions callable from the C framework */
  #ifdef __cplusplus
@@ -1196,12 +1192,7 @@ INT generate_inrun_randoms (unsigned char trigout[max_tower_number][trigoutbufsi
     }
   }
   return 0;
-  
 }
-
-
-
-
 
 // Command all of the towers to read triggers
 void request_rts (void) {
@@ -1213,11 +1204,9 @@ void request_rts (void) {
   printf("taking tower attendance from the start of requst rts\n");
   take_tower_attendance();
 
-
   struct timeval start_rttimer,stop_rttimer;
   gettimeofday(&start_rttimer, NULL);
   printf ("\n\nStarting the rt_timer\n\n");
-
 
   for (int tower=1; tower<max_tower_number; tower++)  {
     if(towermask[tower] == 1 || enable_tower[tower] == 0) continue;
@@ -1292,34 +1281,25 @@ void request_rts (void) {
     printf ("\n\nWhole rt_time: %f\n\n", rt_time);
   
   printf ("Acknowledgement received from rt ... continuing\n");
-
-
-
 }
-
 
 // Read triggerfe settings from the ODB
 int read_odb_trig_settings (void) {
 
   // Read trigger mode
   trigmode = odbReadInt("/Equipment/Triggerfe2/Settings/TrigMode (0=selective, 1=full)",0,0);
-  
+
  if (trigmode < 0 || trigmode > 1) {
    cm_msg(MERROR, frontend_name, "ERROR: trigger mode for triggerfe out of range, defaulting to 0 (selective readout mode)");
    trigmode = SELECTIVE_READOUT;
  }
- 
 
   // Read pileup timeout in seconds
   PILEUP_CUT = odbReadDouble("/Equipment/Triggerfe2/Settings/PileupCut (s)",0,0);
-  
+
  if (PILEUP_CUT < 0 || PILEUP_CUT > 1) {
    cm_msg(MERROR, frontend_name, "ERROR: requested pileup cut (%f) out of range, defaulting to 0.", PILEUP_CUT); 
    PILEUP_CUT = 0.;
  }
- 
-
  return 1;
-
 }
-

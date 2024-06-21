@@ -28,15 +28,15 @@ endif
 all:: dcrc_driver.exe towerfe.exe lock_manager.exe towerfe2.exe towerfe3.exe triggerfe2.exe triggerfe2_mod.exe towerfe3_NaI.exe
 
 dcrc_driver.exe: %.exe: %.o update_general_functions.o update_trigger_functions.o update_led_functions.o update_test_signal_functions.o update_phonon_functions.o update_charge_functions.o convert_functions.o utils1.o write_DCRC.o  KOsocket.o
-	$(CXX) -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS) 
+	$(CXX) -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS)
 
-towerfe.exe: %.exe:   %.o  KOsocket.o 
+towerfe.exe: %.exe:   %.o  KOsocket.o
 	$(CXX) -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS)
 
 lock_manager.exe: %.exe:   %.o utils1.o
 	$(CXX) -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS)
 
-towerfe2.exe: %.exe:   %.o  KOsocket.o 
+towerfe2.exe: %.exe:   %.o  KOsocket.o
 	$(CXX) -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS)
 
 towerfe3.exe: %.exe:   %.o  KOsocket.o utils1.o
@@ -45,20 +45,19 @@ towerfe3.exe: %.exe:   %.o  KOsocket.o utils1.o
 #Experimental - NaI firmware integration.
 towerfe3_NaI.exe: %.exe:   %.o  KOsocket.o utils1.o
 	echo $(R76FLAGS)
-	$(CXX) -g3 -fPIC -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS) $(R76FLAGS) -lstdc++ -ldl
-	#-std=gnu99
-	#-shared
+	$(CXX) -g3 -fPIC -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS) -lstdc++ -ldl
+	#-std=gnu99 -shared
 
 triggerfe2.exe: %.exe:   %.o utils1.o ran1.o
-	$(CXX) -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS) 
+	$(CXX) -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS)
 
-triggerfe2_test.exe: %.exe:   %.o  KOsocket.o 
+triggerfe2_test.exe: %.exe:   %.o  KOsocket.o
 	$(CXX) -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS)
 
 triggerfe2_mod.exe: %.exe:   %.o utils1.o ran1.o
 	$(CXX) -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS)
 
-feSlowControl.exe: %.exe:   %.o  KOsocket.o 
+feSlowControl.exe: %.exe:   %.o  KOsocket.o
 	$(CXX) -o $@ $(CFLAGS) $(OSFLAGS) $^ $(MIDASLIBS) $(LIB_DIR)/mfe.o $(MIDASLIBS) $(LIBS)
 
 KOsocket_NaI.o: KOsocket_NaI.cxx
