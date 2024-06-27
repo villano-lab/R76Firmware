@@ -469,6 +469,124 @@ component avalon_wrapper is
             BUS_Test_0_VLD : IN STD_LOGIC_VECTOR(0 downto 0);               
 
             -- Register interface          
+	BUS_Energies_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
+	BUS_Energies_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Energies_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Energies_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Energies_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Energies_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Energies_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Energies_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Energies_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Energies_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Energies_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Energies_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Energies_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Energies_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Energies_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Energies_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Energies_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Energies_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Energies_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Energies_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Energies_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Energies_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Energies_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Energies_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Energies_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
+	BUS_Analog_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Analog_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Analog_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_trig_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_trig_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_trig_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_trig_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_trig_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_polarity_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_polarity_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_polarity_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trig_inhib_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_inhib_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_inhib_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trig_gate_l_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_gate_l_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_gate_l_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trig_gate_u_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_gate_u_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_gate_u_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trig_delay_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_delay_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_delay_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trig_mode_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_mode_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_mode_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_RateMeter_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
+	BUS_RateMeter_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_RateMeter_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_RateMeter_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_RateMeter_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_RateMeter_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_diag_READ_ADDRESS : OUT STD_LOGIC_VECTOR(11 downto 0); 
+	BUS_diag_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_diag_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_diag_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_diag_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_diag_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_diag_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_diag_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_diag_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_diag_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_time_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_time_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_time_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_int_pre_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_pre_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_pre_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_int_base_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_base_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_base_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_0_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_0_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_0_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -492,107 +610,31 @@ component avalon_wrapper is
 		REG_Spectrum_0_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_0_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_0_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_thrsh_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_thrsh_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_thrsh_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_thrsh_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_thrsh_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_24_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_24_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_24_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_25_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_25_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_25_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_26_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_26_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_26_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_27_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_27_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_27_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_28_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_28_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_28_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_29_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_29_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_29_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_30_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_30_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_30_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_31_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_31_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_31_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_In_Unflipped_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
+	BUS_Analog_In_Unflipped_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_In_Unflipped_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_In_Unflipped_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Analog_In_Unflipped_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Analog_In_Unflipped_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_12_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_12_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_12_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -846,107 +888,6 @@ component avalon_wrapper is
 		REG_Spectrum_17_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_17_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_17_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_top_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_top_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_top_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_top_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_top_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_24_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_24_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_24_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_25_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_25_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_25_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_26_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_26_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_26_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_27_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_27_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_27_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_28_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_28_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_28_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_29_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_29_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_29_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_30_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_30_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_30_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_31_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_31_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_31_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_6_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_6_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_6_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -970,6 +911,23 @@ component avalon_wrapper is
 		REG_Spectrum_6_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_6_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_6_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_io_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_io_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_io_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_io_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_io_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_io_to_encode_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_io_to_encode_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_io_to_encode_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_io_stamptype_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_io_stamptype_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_io_stamptype_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_io_lemo2out_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_io_lemo2out_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_io_lemo2out_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_io_divide_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_io_divide_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_io_divide_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_18_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_18_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_18_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -993,107 +951,6 @@ component avalon_wrapper is
 		REG_Spectrum_18_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_18_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_18_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_disable_det_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_disable_det_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_disable_det_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_disable_det_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_disable_det_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_24_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_24_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_24_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_25_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_25_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_25_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_26_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_26_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_26_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_27_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_27_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_27_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_28_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_28_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_28_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_29_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_29_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_29_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_30_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_30_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_30_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_31_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_31_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_31_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_7_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_7_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_7_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1209,6 +1066,12 @@ component avalon_wrapper is
 		REG_Spectrum_9_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_9_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_9_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_SyncIn_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
+	BUS_SyncIn_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_SyncIn_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_SyncIn_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_SyncIn_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_SyncIn_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_Spectrum_21_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_21_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_21_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1324,195 +1187,6 @@ component avalon_wrapper is
 		REG_Spectrum_23_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_23_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_23_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_base_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_base_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_24_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_24_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_24_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_25_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_25_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_25_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_26_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_26_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_26_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_27_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_27_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_27_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_28_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_28_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_28_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_29_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_29_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_29_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_30_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_30_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_30_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_31_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_31_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_31_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_int_time_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_int_time_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_time_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_int_time_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_pre_int_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_pre_int_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_pre_int_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_pre_int_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_baseline_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_baseline_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_baseline_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_baseline_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_write_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_write_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_write_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_write_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_read_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_read_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_read_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_read_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_stopwrite_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_stopwrite_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_stopwrite_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_stopwrite_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_gate_l_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_gate_l_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_gate_l_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_gate_l_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_gate_u_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_gate_u_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_gate_u_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_gate_u_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_inhib_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_inhib_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_inhib_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_inhib_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_delay_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_delay_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_delay_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_delay_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_polarity_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_polarity_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_polarity_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_polarity_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_skip_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_skip_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_skip_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_skip_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_full_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_full_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_full_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_full_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_timestamp_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_timestamp_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_timestamp_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_timestamp_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_trigger_code_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_trigger_code_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_trigger_code_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_trigger_code_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_reset_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_reset_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_reset_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_reset_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_All_Energies_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_All_Energies_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_All_Energies_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_All_Energies_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_All_Energies_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_All_Energies_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_READ_VALID_WORDS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_All_Energies_READ_VALID_WORDS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_RateMeter_0_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_RateMeter_0_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_RateMeter_0_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_RateMeter_0_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_RateMeter_0_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_RateMeter_0_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_RateMeter_NoSkip_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_RateMeter_NoSkip_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_RateMeter_NoSkip_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_RateMeter_NoSkip_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_RateMeter_NoSkip_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_RateMeter_NoSkip_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_Syncs_READ_ADDRESS : OUT STD_LOGIC_VECTOR(11 downto 0); 
 	BUS_Syncs_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Syncs_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1538,53 +1212,358 @@ component avalon_wrapper is
 		REG_Syncs_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Syncs_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Syncs_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_SyncIn1Meter_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_SyncIn1Meter_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_SyncIn1Meter_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_SyncIn1Meter_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_SyncIn1Meter_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_SyncIn1Meter_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_SyncIn2Meter_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_SyncIn2Meter_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_SyncIn2Meter_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_SyncIn2Meter_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_SyncIn2Meter_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_SyncIn2Meter_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_SyncIn0Meter_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_SyncIn0Meter_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_SyncIn0Meter_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_SyncIn0Meter_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_SyncIn0Meter_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_SyncIn0Meter_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_forcetrig_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_forcetrig_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_forcetrig_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_forcetrig_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_full_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_full_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_full_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_full_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trigger_code_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trigger_code_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trigger_code_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_trigger_code_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_reset_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_reset_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_reset_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_reset_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_received_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_received_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_received_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_received_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_timestamp_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_timestamp_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_timestamp_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_timestamp_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_sync0_between_sync2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_sync0_between_sync2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_sync0_between_sync2_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		INT_sync0_between_sync2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Oscilloscope_0_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
-	BUS_Oscilloscope_0_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Oscilloscope_0_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Oscilloscope_0_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Oscilloscope_0_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Oscilloscope_0_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_disable_det_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_disable_det_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_disable_det_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_disable_det_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_disable_det_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_top_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_top_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_top_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_top_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_top_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_base_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_base_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_thrsh_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_thrsh_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_thrsh_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_thrsh_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_thrsh_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_dummy_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_dummy_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_dummy_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_dummy_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_All_Energies_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_All_Energies_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_All_Energies_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_All_Energies_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_All_Energies_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_All_Energies_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_READ_VALID_WORDS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_All_Energies_READ_VALID_WORDS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -1814,44 +1793,34 @@ end component;
     signal iSiClkOut : std_logic;
     signal iSiClkIn : std_logic;
 	
-signal U0_out_0 : std_logic_vector(0 downto 0);
-signal U1_out_0 : std_logic_vector(15 downto 0);
-signal U2_out_0 : std_logic_vector(15 downto 0);
-signal U3_A0 : std_logic_vector(15 downto 0);
-signal U4_A1 : std_logic_vector(15 downto 0);
-signal U5_A2 : std_logic_vector(15 downto 0);
-signal U6_A3 : std_logic_vector(15 downto 0);
-signal U7_A4 : std_logic_vector(15 downto 0);
-signal U8_A5 : std_logic_vector(15 downto 0);
-signal U9_A6 : std_logic_vector(15 downto 0);
-signal U10_A7 : std_logic_vector(15 downto 0);
-signal U11_A8 : std_logic_vector(15 downto 0);
-signal U12_A9 : std_logic_vector(15 downto 0);
-signal U13_A10 : std_logic_vector(15 downto 0);
-signal U14_A11 : std_logic_vector(15 downto 0);
-signal U15_A12 : std_logic_vector(15 downto 0);
-signal U16_A13 : std_logic_vector(15 downto 0);
-signal U17_A14 : std_logic_vector(15 downto 0);
-signal U18_A15 : std_logic_vector(15 downto 0);
-signal U19_A16 : std_logic_vector(15 downto 0);
-signal U20_A17 : std_logic_vector(15 downto 0);
-signal U21_A18 : std_logic_vector(15 downto 0);
-signal U22_A19 : std_logic_vector(15 downto 0);
-signal U23_A20 : std_logic_vector(15 downto 0);
-signal U24_A21 : std_logic_vector(15 downto 0);
-signal U25_A22 : std_logic_vector(15 downto 0);
-signal U26_A23 : std_logic_vector(15 downto 0);
-	signal U27_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal U28_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-signal U29_out_0 : std_logic_vector(15 downto 0);
-signal U30_out_0 : std_logic_vector(15 downto 0);
-signal U31_out_0 : std_logic_vector(0 downto 0);
-signal U32_out_0 : std_logic_vector(0 downto 0);
-signal U33_out_0 : std_logic_vector(0 downto 0);
-signal U34_out_0 : std_logic_vector(31 downto 0);
-signal U35_out_0 : std_logic_vector(0 downto 0);
-signal U36_out_0 : std_logic_vector(15 downto 0);
-signal U37_out_0 : std_logic_vector(15 downto 0);
+signal U0_A0 : std_logic_vector(15 downto 0);
+signal U1_A1 : std_logic_vector(15 downto 0);
+signal U2_A2 : std_logic_vector(15 downto 0);
+signal U3_A3 : std_logic_vector(15 downto 0);
+signal U4_A4 : std_logic_vector(15 downto 0);
+signal U5_A5 : std_logic_vector(15 downto 0);
+signal U6_A6 : std_logic_vector(15 downto 0);
+signal U7_A7 : std_logic_vector(15 downto 0);
+signal U8_A8 : std_logic_vector(15 downto 0);
+signal U9_A9 : std_logic_vector(15 downto 0);
+signal U10_A10 : std_logic_vector(15 downto 0);
+signal U11_A11 : std_logic_vector(15 downto 0);
+signal U12_A12 : std_logic_vector(15 downto 0);
+signal U13_A13 : std_logic_vector(15 downto 0);
+signal U14_A14 : std_logic_vector(15 downto 0);
+signal U15_A15 : std_logic_vector(15 downto 0);
+signal U16_A16 : std_logic_vector(15 downto 0);
+signal U17_A17 : std_logic_vector(15 downto 0);
+signal U18_A18 : std_logic_vector(15 downto 0);
+signal U19_A19 : std_logic_vector(15 downto 0);
+signal U20_A20 : std_logic_vector(15 downto 0);
+signal U21_A21 : std_logic_vector(15 downto 0);
+signal U22_A22 : std_logic_vector(15 downto 0);
+signal U23_A23 : std_logic_vector(15 downto 0);
+	signal U24_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U25_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+signal U26_out_0 : std_logic_vector(0 downto 0);
+signal U26_int : std_logic_vector(0 downto 0);
 	signal BUS_Spectrum_1_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_Spectrum_1_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal REG_Spectrum_1_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -1949,71 +1918,305 @@ signal U37_out_0 : std_logic_vector(15 downto 0);
 	signal BUS_Spectrum_23_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_Spectrum_23_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal REG_Spectrum_23_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
-signal U61_hold : std_logic_vector(31 downto 0);
-signal U62_hold : std_logic_vector(31 downto 0);
-signal U63_hold : std_logic_vector(31 downto 0);
-signal U64_hold : std_logic_vector(31 downto 0);
-signal U65_hold : std_logic_vector(31 downto 0);
-signal U66_hold : std_logic_vector(31 downto 0);
-signal U67_hold : std_logic_vector(31 downto 0);
-signal U68_hold : std_logic_vector(31 downto 0);
-signal U69_hold : std_logic_vector(31 downto 0);
-signal U70_hold : std_logic_vector(31 downto 0);
-signal U71_hold : std_logic_vector(31 downto 0);
-signal U72_hold : std_logic_vector(31 downto 0);
 	signal BUS_Spectrum_0_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_Spectrum_0_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal REG_Spectrum_0_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal U74_TRIGOUT_0 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_0 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_1 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_1 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_2 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_2 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_3 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_3 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_4 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_4 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_5 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_5 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_6 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_6 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_7 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_7 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_8 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_8 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_9 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_9 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_10 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_10 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_11 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_11 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_12 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_12 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_13 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_13 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_14 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_14 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_15 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_15 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_16 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_16 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_17 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_17 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_18 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_18 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_19 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_19 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_20 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_20 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_21 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_21 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_22 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_22 : std_logic_vector(15 downto 0);
-	signal U74_TRIGOUT_23 : std_logic_vector(0 downto 0);
-	signal U74_ANALOGOUT_23 : std_logic_vector(15 downto 0);
+signal U51_out_0 : std_logic_vector(23 downto 0) := (others => '0');
+	signal U52_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+signal U53_hold : std_logic_vector(31 downto 0);
+	signal U54_TIMESTAMP : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
-COMPONENT SUBPAGE_LowerTrigger
+	COMPONENT TimestampGenerator
+		GENERIC( 
+			nbits : INTEGER := 32
+		);
+		PORT( 
+			TIMESTAMP : out STD_LOGIC_VECTOR(nbits-1 downto 0);
+			T0 : in STD_LOGIC;
+			CLK_READ : in STD_LOGIC;
+			ClkCounter : in STD_LOGIC
+		);
+	END COMPONENT;
+
+signal U55_out : std_logic_vector(31 downto 0) := (others => '0');
+signal U56_hold : std_logic_vector(31 downto 0);
+	signal U57_SYNC_0 : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal BUS_Syncs_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_Syncs_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal REG_Syncs_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal REG_Syncs_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+	COMPONENT xlx_oscilloscope_sync
+		GENERIC( 
+			channels : INTEGER := 3;
+			memLength : INTEGER := 1024;
+			wordWidth : INTEGER := 16
+		);
+		PORT( 
+			ANALOG : in STD_LOGIC_VECTOR((wordWidth*channels)-1 downto 0);
+			D0 : in STD_LOGIC_VECTOR(channels-1 downto 0);
+			D1 : in STD_LOGIC_VECTOR(channels-1 downto 0);
+			D2 : in STD_LOGIC_VECTOR(channels-1 downto 0);
+			D3 : in STD_LOGIC_VECTOR(channels-1 downto 0);
+			TRIG : in STD_LOGIC_VECTOR(0 downto 0);
+			BUSY : out STD_LOGIC_VECTOR(0 downto 0);
+			CE : in STD_LOGIC_VECTOR(0 downto 0);
+			CLK_WRITE : in STD_LOGIC_VECTOR(0 downto 0);
+			RESET : in STD_LOGIC_VECTOR(0 downto 0);
+			CLK_READ : in STD_LOGIC_VECTOR(0 downto 0);
+			READ_ADDRESS : in STD_LOGIC_VECTOR(integer(ceil(log2(real(memLength*channels))))-1 downto 0);
+			READ_DATA : out STD_LOGIC_VECTOR(31 downto 0);
+			READ_DATAVALID : out STD_LOGIC_VECTOR(0 downto 0);
+			READ_STATUS : out STD_LOGIC_VECTOR(31 downto 0);
+			READ_POSITION : out STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_TRIGGER_MODE : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_TRIGGER_LEVEL : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_PRETRIGGER : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_DECIMATOR : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_ARM : in STD_LOGIC_VECTOR(31 downto 0)
+		);
+	END COMPONENT;
+
+signal U59_out : std_logic_vector(15 downto 0) := (others => '0');
+signal U60_out : std_logic_vector(15 downto 0) := (others => '0');
+signal U61_out : std_logic_vector(15 downto 0) := (others => '0');
+	signal U62_SYNC_1 : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U63_SYNC_2 : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U64_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U65_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+Component COUNTER_RISING Is
+   Generic(bitSize : Integer := 1);
+   port(        RESET :  IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+        CE: IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+        CLK: IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+        SIGIN : IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+        ENABLE : IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+        COUNTER: OUT STD_LOGIC_VECTOR (31 downto 0);
+        OVERFLOW: OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+        );
+End component;
+signal U66_counts : std_logic_vector(31 downto 0) := (others => '0');
+signal U67_hold : std_logic_vector(31 downto 0);
+signal U69_time : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U69_pre : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U69_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+	signal U70_clk : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
+signal U71_out : std_logic_vector(15 downto 0) := (others => '0');
+signal U72_out : std_logic_vector(15 downto 0);
+signal U73_out : std_logic_vector(15 downto 0) := (others => '0');
+signal U74_to_encode : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U74_stamptype : STD_LOGIC_VECTOR( 1 downto 0 ) := (others => '0');
+signal U74_lemo2out : STD_LOGIC_VECTOR( 1 downto 0 ) := (others => '0');
+signal U74_divide : STD_LOGIC_VECTOR( 31 downto 0 ) := (others => '0');
+signal U75_hold : std_logic_vector(31 downto 0);
+	signal U76_pdata_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	signal U76_Rx_Done : STD_LOGIC_VECTOR(0 downto 0) := "0";
+
+	COMPONENT U76_UserHDL_Serial_Rx
+		PORT( 
+			sysclk : in STD_LOGIC;
+			rxclock : in STD_LOGIC;
+			reset : in STD_LOGIC;
+			FMData_in : in STD_LOGIC;
+			Clr_Err : in STD_LOGIC;
+			pdata_out : out STD_LOGIC_VECTOR(15 downto 0);
+			Rx_Done : out STD_LOGIC;
+			Parity_Err : out STD_LOGIC_VECTOR(0 downto 0)
+		);
+	END COMPONENT;
+
+signal U78_hold : std_logic_vector(31 downto 0);
+signal U79_out : std_logic_vector(31 downto 0);
+signal U80_CONST : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+signal U81_CONST : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+	signal U82_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+
+	COMPONENT SW_GATE_AND_DELAY
+		GENERIC( 
+			maxDelay : INTEGER := 128
+		);
+		PORT( 
+			PORT_IN : in STD_LOGIC_VECTOR(0 downto 0);
+			GATE : in INTEGER;
+			DELAY : in INTEGER;
+			PORT_OUT : out STD_LOGIC_VECTOR(0 downto 0);
+			CLK : in STD_LOGIC_VECTOR(0 downto 0);
+			RESET : in STD_LOGIC_VECTOR(0 downto 0)
+		);
+	END COMPONENT;
+
+	signal U83_int : integer  := 0;
+signal U84_out : std_logic_vector(0 downto 0);
+signal U85_CONST : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
+	signal U86_Tx_Done : STD_LOGIC_VECTOR(0 downto 0) := "0";
+	signal U86_FMData_Out : STD_LOGIC_VECTOR(0 downto 0) := "0";
+
+	COMPONENT U86_UserHDL_Serial_Tx
+		PORT( 
+			clock : in STD_LOGIC;
+			reset : in STD_LOGIC;
+			Tx_En : in STD_LOGIC;
+			Tx_Done : out STD_LOGIC;
+			FMData_Out : out STD_LOGIC;
+			pdata_in : in STD_LOGIC_VECTOR(15 downto 0)
+		);
+	END COMPONENT;
+
+signal U87_out : std_logic_vector(0 downto 0);
+signal U88_out_0 : std_logic_vector(0 downto 0);
+signal U88_int : std_logic_vector(0 downto 0);
+signal U89_polarity : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U89_inhib : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U89_gate_l : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U89_gate_u : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U89_delay : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U89_mode : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+
+COMPONENT S_FIFO
+Generic (	memLength : integer := 8192;
+            busWidthWrite : integer := 16;
+        	busWidthRead : integer := 16);
+PORT(
+    RESET: IN STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    CLK_READ: IN STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    CLK_WRITE: IN STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    PORT_IN: IN STD_LOGIC_VECTOR(busWidthWrite-1 DOWNTO 0); 
+    RD: IN STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    WE: IN STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    EMPTY: OUT STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    FULL: OUT STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    OVERFLOW: OUT STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    UNDERFLOW: OUT STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    PORT_OUT: OUT STD_LOGIC_VECTOR(busWidthRead-1 DOWNTO 0)); 
+END COMPONENT;
+signal U91_out : std_logic_vector(15 downto 0) := (others => '0');
+signal U91_empty : std_logic_vector(0 downto 0) := (others => '0');
+signal U91_full : std_logic_vector(0 downto 0) := (others => '0');
+	signal U92_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal BUS_RateMeter_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_RateMeter_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+
+	COMPONENT MCRateMeter
+		GENERIC( 
+			CHANNEL_COUNT : INTEGER := 1;
+			CLK_FREQ : INTEGER := 1250000000
+		);
+		PORT( 
+			trigger : in STD_LOGIC_VECTOR(CHANNEL_COUNT-1 downto 0);
+			VETO : in STD_LOGIC;
+			START : in STD_LOGIC;
+			CLK : in STD_LOGIC;
+			CLK_READ : in STD_LOGIC_VECTOR(0 downto 0);
+			READ_ADDRESS : in STD_LOGIC_VECTOR(15 downto 0);
+			READ_DATA : out STD_LOGIC_VECTOR(31 downto 0);
+			READ_DATAVALID : out STD_LOGIC_VECTOR(0 downto 0)
+		);
+	END COMPONENT;
+
+	signal BUS_SyncIn_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_SyncIn_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+
+COMPONENT SCALER
+PORT(
+    RESET: IN STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    CE: IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+    PORT_IN: IN STD_LOGIC_VECTOR(0 DOWNTO 0); 
+    PORT_SCALE: IN INTEGER; 
+    PORT_OUT: OUT STD_LOGIC_VECTOR(0 DOWNTO 0)); 
+END COMPONENT;
+signal U95_out : std_logic_vector(0 downto 0) := (others => '0');
+	signal U96_int : integer  := 0;
+	signal BUS_Analog_In_Unflipped_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_Analog_In_Unflipped_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal REG_Analog_In_Unflipped_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal REG_Analog_In_Unflipped_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_Analog_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_Analog_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal REG_Analog_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal REG_Analog_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_Energies_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_Energies_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal REG_Energies_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal REG_Energies_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+signal U100_out : std_logic_vector(15 downto 0) := (others => '0');
+	signal BUS_diag_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_diag_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal REG_diag_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal REG_diag_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal U102_digital_out : std_logic_vector(0 downto 0);
+
+COMPONENT SUBPAGE_clean_interrupt
+PORT(
+	digital_in : IN std_logic_vector(0 downto 0);
+	digital_out : OUT std_logic_vector(0 downto 0);
+	GlobalReset: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+	CLK_ACQ: in std_logic_vector (0 downto 0);
+	BUS_CLK: in std_logic_vector (0 downto 0);
+	CLK_40: in std_logic_vector (0 downto 0);
+	CLK_50: in std_logic_vector (0 downto 0);
+	CLK_80: in std_logic_vector (0 downto 0);
+	clk_160: in std_logic_vector (0 downto 0);
+	clk_125: in std_logic_vector (0 downto 0);
+	clk_320: in std_logic_vector (0 downto 0);
+	FAST_CLK_100: in std_logic_vector (0 downto 0);
+	FAST_CLK_200: in std_logic_vector (0 downto 0);
+	FAST_CLK_250: in std_logic_vector (0 downto 0);
+	FAST_CLK_250_90: in std_logic_vector (0 downto 0);
+	FAST_CLK_500: in std_logic_vector (0 downto 0);
+	FAST_CLK_500_90: in std_logic_vector (0 downto 0);
+	GlobalClock: in std_logic_vector (0 downto 0);
+	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
+END COMPONENT;
+	signal U103_TRIGOUT_0 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_0 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_1 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_1 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_2 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_2 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_3 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_3 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_4 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_4 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_5 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_5 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_6 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_6 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_7 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_7 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_8 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_8 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_9 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_9 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_10 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_10 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_11 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_11 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_12 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_12 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_13 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_13 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_14 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_14 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_15 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_15 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_16 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_16 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_17 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_17 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_18 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_18 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_19 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_19 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_20 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_20 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_21 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_21 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_22 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_22 : std_logic_vector(15 downto 0);
+	signal U103_TRIGOUT_23 : std_logic_vector(0 downto 0);
+	signal U103_ANALOGOUT_23 : std_logic_vector(15 downto 0);
+
+COMPONENT SUBPAGE_Trigger
 PORT(
 	AIN : IN std_logic_vector(15 downto 0);
 	disable_det : IN std_logic_vector(0 downto 0);
@@ -2042,77 +2245,30 @@ PORT(
 	GlobalClock: in std_logic_vector (0 downto 0);
 	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
 END COMPONENT;
-	signal U75_Reduced : std_logic_vector(0 downto 0);
-
-COMPONENT SUBPAGE_ReduceRate
-PORT(
-	Original : IN std_logic_vector(0 downto 0);
-	skip : IN std_logic_vector(31 downto 0);
-	gate : IN std_logic_vector(15 downto 0);
-	reset : IN std_logic_vector(0 downto 0);
-	delay : IN std_logic_vector(15 downto 0);
-	Reduced : OUT std_logic_vector(0 downto 0);
-	GlobalReset: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-	CLK_ACQ: in std_logic_vector (0 downto 0);
-	BUS_CLK: in std_logic_vector (0 downto 0);
-	CLK_40: in std_logic_vector (0 downto 0);
-	CLK_50: in std_logic_vector (0 downto 0);
-	CLK_80: in std_logic_vector (0 downto 0);
-	clk_160: in std_logic_vector (0 downto 0);
-	clk_125: in std_logic_vector (0 downto 0);
-	clk_320: in std_logic_vector (0 downto 0);
-	FAST_CLK_100: in std_logic_vector (0 downto 0);
-	FAST_CLK_200: in std_logic_vector (0 downto 0);
-	FAST_CLK_250: in std_logic_vector (0 downto 0);
-	FAST_CLK_250_90: in std_logic_vector (0 downto 0);
-	FAST_CLK_500: in std_logic_vector (0 downto 0);
-	FAST_CLK_500_90: in std_logic_vector (0 downto 0);
-	GlobalClock: in std_logic_vector (0 downto 0);
-	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
-END COMPONENT;
-signal U76_out_0 : std_logic_vector(23 downto 0) := (others => '0');
-	signal U77_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-signal U78_hold : std_logic_vector(31 downto 0);
-	signal U79_TIMESTAMP : STD_LOGIC_VECTOR(31 DOWNTO 0);
-
-	COMPONENT TimestampGenerator
-		GENERIC( 
-			nbits : INTEGER := 32
-		);
-		PORT( 
-			TIMESTAMP : out STD_LOGIC_VECTOR(nbits-1 downto 0);
-			T0 : in STD_LOGIC;
-			CLK_READ : in STD_LOGIC;
-			ClkCounter : in STD_LOGIC
-		);
-	END COMPONENT;
-
-signal U80_hold : std_logic_vector(31 downto 0);
-signal U81_out : std_logic_vector(31 downto 0) := (others => '0');
-	signal U82_TRIGOUT_0 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_1 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_2 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_3 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_4 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_5 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_6 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_7 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_8 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_9 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_10 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_11 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_12 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_13 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_14 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_15 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_16 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_17 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_18 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_19 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_20 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_21 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_22 : std_logic_vector(0 downto 0);
-	signal U82_TRIGOUT_23 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_0 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_1 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_2 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_3 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_4 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_5 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_6 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_7 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_8 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_9 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_10 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_11 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_12 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_13 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_14 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_15 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_16 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_17 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_18 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_19 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_20 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_21 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_22 : std_logic_vector(0 downto 0);
+	signal U104_TRIGOUT_23 : std_logic_vector(0 downto 0);
 
 COMPONENT SUBPAGE_UpperTrigger
 PORT(
@@ -2139,177 +2295,78 @@ PORT(
 	GlobalClock: in std_logic_vector (0 downto 0);
 	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
 END COMPONENT;
-	signal U83_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-signal U84_CONST : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
-signal U85_0 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_1 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_2 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_3 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_4 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_5 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_6 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_7 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_8 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_9 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_10 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_11 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_12 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_13 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_14 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_15 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_16 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_17 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_18 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_19 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_20 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_21 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_22 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_23 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_24 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_25 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_26 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_27 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_28 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_29 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_30 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_31 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U86_0 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_1 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_2 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_3 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_4 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_5 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_6 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_7 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_8 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_9 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_10 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_11 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_12 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_13 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_14 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_15 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_16 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_17 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_18 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_19 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_20 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_21 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_22 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_23 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_24 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_25 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_26 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_27 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_28 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_29 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_30 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_31 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U87_0 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_1 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_2 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_3 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_4 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_5 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_6 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_7 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_8 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_9 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_10 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_11 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_12 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_13 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_14 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_15 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_16 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_17 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_18 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_19 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_20 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_21 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_22 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_23 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_24 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_25 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_26 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_27 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_28 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_29 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_30 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U87_31 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U88_out_0 : std_logic_vector(0 downto 0);
-	signal U89_energy_0 : std_logic_vector(15 downto 0);
-	signal U89_valid_0 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_0 : std_logic_vector(0 downto 0);
-	signal U89_energy_1 : std_logic_vector(15 downto 0);
-	signal U89_valid_1 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_1 : std_logic_vector(0 downto 0);
-	signal U89_energy_2 : std_logic_vector(15 downto 0);
-	signal U89_valid_2 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_2 : std_logic_vector(0 downto 0);
-	signal U89_energy_3 : std_logic_vector(15 downto 0);
-	signal U89_valid_3 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_3 : std_logic_vector(0 downto 0);
-	signal U89_energy_4 : std_logic_vector(15 downto 0);
-	signal U89_valid_4 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_4 : std_logic_vector(0 downto 0);
-	signal U89_energy_5 : std_logic_vector(15 downto 0);
-	signal U89_valid_5 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_5 : std_logic_vector(0 downto 0);
-	signal U89_energy_6 : std_logic_vector(15 downto 0);
-	signal U89_valid_6 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_6 : std_logic_vector(0 downto 0);
-	signal U89_energy_7 : std_logic_vector(15 downto 0);
-	signal U89_valid_7 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_7 : std_logic_vector(0 downto 0);
-	signal U89_energy_8 : std_logic_vector(15 downto 0);
-	signal U89_valid_8 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_8 : std_logic_vector(0 downto 0);
-	signal U89_energy_9 : std_logic_vector(15 downto 0);
-	signal U89_valid_9 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_9 : std_logic_vector(0 downto 0);
-	signal U89_energy_10 : std_logic_vector(15 downto 0);
-	signal U89_valid_10 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_10 : std_logic_vector(0 downto 0);
-	signal U89_energy_11 : std_logic_vector(15 downto 0);
-	signal U89_valid_11 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_11 : std_logic_vector(0 downto 0);
-	signal U89_energy_12 : std_logic_vector(15 downto 0);
-	signal U89_valid_12 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_12 : std_logic_vector(0 downto 0);
-	signal U89_energy_13 : std_logic_vector(15 downto 0);
-	signal U89_valid_13 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_13 : std_logic_vector(0 downto 0);
-	signal U89_energy_14 : std_logic_vector(15 downto 0);
-	signal U89_valid_14 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_14 : std_logic_vector(0 downto 0);
-	signal U89_energy_15 : std_logic_vector(15 downto 0);
-	signal U89_valid_15 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_15 : std_logic_vector(0 downto 0);
-	signal U89_energy_16 : std_logic_vector(15 downto 0);
-	signal U89_valid_16 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_16 : std_logic_vector(0 downto 0);
-	signal U89_energy_17 : std_logic_vector(15 downto 0);
-	signal U89_valid_17 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_17 : std_logic_vector(0 downto 0);
-	signal U89_energy_18 : std_logic_vector(15 downto 0);
-	signal U89_valid_18 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_18 : std_logic_vector(0 downto 0);
-	signal U89_energy_19 : std_logic_vector(15 downto 0);
-	signal U89_valid_19 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_19 : std_logic_vector(0 downto 0);
-	signal U89_energy_20 : std_logic_vector(15 downto 0);
-	signal U89_valid_20 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_20 : std_logic_vector(0 downto 0);
-	signal U89_energy_21 : std_logic_vector(15 downto 0);
-	signal U89_valid_21 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_21 : std_logic_vector(0 downto 0);
-	signal U89_energy_22 : std_logic_vector(15 downto 0);
-	signal U89_valid_22 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_22 : std_logic_vector(0 downto 0);
-	signal U89_energy_23 : std_logic_vector(15 downto 0);
-	signal U89_valid_23 : std_logic_vector(0 downto 0);
-	signal U89_int_gate_23 : std_logic_vector(0 downto 0);
+	signal U105_energy_0 : std_logic_vector(15 downto 0);
+	signal U105_valid_0 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_0 : std_logic_vector(0 downto 0);
+	signal U105_energy_1 : std_logic_vector(15 downto 0);
+	signal U105_valid_1 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_1 : std_logic_vector(0 downto 0);
+	signal U105_energy_2 : std_logic_vector(15 downto 0);
+	signal U105_valid_2 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_2 : std_logic_vector(0 downto 0);
+	signal U105_energy_3 : std_logic_vector(15 downto 0);
+	signal U105_valid_3 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_3 : std_logic_vector(0 downto 0);
+	signal U105_energy_4 : std_logic_vector(15 downto 0);
+	signal U105_valid_4 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_4 : std_logic_vector(0 downto 0);
+	signal U105_energy_5 : std_logic_vector(15 downto 0);
+	signal U105_valid_5 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_5 : std_logic_vector(0 downto 0);
+	signal U105_energy_6 : std_logic_vector(15 downto 0);
+	signal U105_valid_6 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_6 : std_logic_vector(0 downto 0);
+	signal U105_energy_7 : std_logic_vector(15 downto 0);
+	signal U105_valid_7 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_7 : std_logic_vector(0 downto 0);
+	signal U105_energy_8 : std_logic_vector(15 downto 0);
+	signal U105_valid_8 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_8 : std_logic_vector(0 downto 0);
+	signal U105_energy_9 : std_logic_vector(15 downto 0);
+	signal U105_valid_9 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_9 : std_logic_vector(0 downto 0);
+	signal U105_energy_10 : std_logic_vector(15 downto 0);
+	signal U105_valid_10 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_10 : std_logic_vector(0 downto 0);
+	signal U105_energy_11 : std_logic_vector(15 downto 0);
+	signal U105_valid_11 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_11 : std_logic_vector(0 downto 0);
+	signal U105_energy_12 : std_logic_vector(15 downto 0);
+	signal U105_valid_12 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_12 : std_logic_vector(0 downto 0);
+	signal U105_energy_13 : std_logic_vector(15 downto 0);
+	signal U105_valid_13 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_13 : std_logic_vector(0 downto 0);
+	signal U105_energy_14 : std_logic_vector(15 downto 0);
+	signal U105_valid_14 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_14 : std_logic_vector(0 downto 0);
+	signal U105_energy_15 : std_logic_vector(15 downto 0);
+	signal U105_valid_15 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_15 : std_logic_vector(0 downto 0);
+	signal U105_energy_16 : std_logic_vector(15 downto 0);
+	signal U105_valid_16 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_16 : std_logic_vector(0 downto 0);
+	signal U105_energy_17 : std_logic_vector(15 downto 0);
+	signal U105_valid_17 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_17 : std_logic_vector(0 downto 0);
+	signal U105_energy_18 : std_logic_vector(15 downto 0);
+	signal U105_valid_18 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_18 : std_logic_vector(0 downto 0);
+	signal U105_energy_19 : std_logic_vector(15 downto 0);
+	signal U105_valid_19 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_19 : std_logic_vector(0 downto 0);
+	signal U105_energy_20 : std_logic_vector(15 downto 0);
+	signal U105_valid_20 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_20 : std_logic_vector(0 downto 0);
+	signal U105_energy_21 : std_logic_vector(15 downto 0);
+	signal U105_valid_21 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_21 : std_logic_vector(0 downto 0);
+	signal U105_energy_22 : std_logic_vector(15 downto 0);
+	signal U105_valid_22 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_22 : std_logic_vector(0 downto 0);
+	signal U105_energy_23 : std_logic_vector(15 downto 0);
+	signal U105_valid_23 : std_logic_vector(0 downto 0);
+	signal U105_int_gate_23 : std_logic_vector(0 downto 0);
 
 COMPONENT SUBPAGE_ChargeIntegrator
 PORT(
@@ -2322,9 +2379,6 @@ PORT(
 	trig : IN std_logic_vector(0 downto 0);
 	int_time : IN std_logic_vector(15 downto 0);
 	pre_int : IN std_logic_vector(15 downto 0);
-	cant_out : IN std_logic_vector(0 downto 0);
-	force_out : IN std_logic_vector(0 downto 0);
-	force_stop : IN std_logic_vector(0 downto 0);
 	manual_base : IN std_logic_vector(0 downto 0);
 	GlobalReset: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
 	CLK_ACQ: in std_logic_vector (0 downto 0);
@@ -2344,46 +2398,111 @@ PORT(
 	GlobalClock: in std_logic_vector (0 downto 0);
 	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
 END COMPONENT;
-signal U90_0 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_1 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_2 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_3 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_4 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_5 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_6 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_7 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_8 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_9 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_10 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_11 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_12 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_13 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_14 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_15 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_16 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_17 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_18 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_19 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_20 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_21 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_22 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_23 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_24 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_25 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_26 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_27 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_28 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_29 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_30 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U90_31 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U91_hold : std_logic_vector(31 downto 0);
-	signal U92_FIFO_FULL : STD_LOGIC_VECTOR(0 DOWNTO 0);
+signal U106_CH0 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH1 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH2 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH3 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH4 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH5 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH6 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH7 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH8 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH9 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH10 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH11 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH12 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH13 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH14 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH15 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH16 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH17 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH18 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH19 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH20 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH21 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH22 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U106_CH23 : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U107_CH0 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH1 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH2 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH3 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH4 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH5 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH6 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH7 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH8 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH9 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH10 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH11 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH12 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH13 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH14 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH15 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH16 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH17 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH18 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH19 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH20 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH21 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH22 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U107_CH23 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH0 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH1 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH2 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH3 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH4 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH5 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH6 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH7 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH8 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH9 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH10 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH11 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH12 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH13 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH14 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH15 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH16 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH17 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH18 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH19 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH20 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH21 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH22 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U108_CH23 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH0 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH1 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH2 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH3 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH4 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH5 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH6 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH7 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH8 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH9 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH10 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH11 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH12 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH13 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH14 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH15 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH16 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH17 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH18 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH19 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH20 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH21 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH22 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_CH23 : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U110_hold : std_logic_vector(31 downto 0);
+	signal U111_BUSY : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U111_FIFO_FULL : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal BUS_All_Energies_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_All_Energies_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal REG_All_Energies_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal REG_All_Energies_READ_VALID_WORDS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
-	COMPONENT U92_custompacket
+	COMPONENT U111_custompacket
 		GENERIC( 
 			memLength : INTEGER := 32768;
 			wordWidth : INTEGER := 32
@@ -2421,8 +2540,9 @@ signal U91_hold : std_logic_vector(31 downto 0);
 			IN_31 : in STD_LOGIC_VECTOR(15 downto 0);
 			IN_32 : in STD_LOGIC_VECTOR(15 downto 0);
 			IN_33 : in STD_LOGIC_VECTOR(15 downto 0);
-			IN_1 : in STD_LOGIC_VECTOR(31 downto 0);
 			IN_34 : in STD_LOGIC_VECTOR(31 downto 0);
+			IN_35 : in STD_LOGIC_VECTOR(31 downto 0);
+			IN_1 : in STD_LOGIC_VECTOR(15 downto 0);
 			TRIG : in STD_LOGIC_VECTOR(0 downto 0);
 			CLK_WRITE : in STD_LOGIC_VECTOR(0 downto 0);
 			SYNC_TRIG : in STD_LOGIC_VECTOR(0 downto 0);
@@ -2442,96 +2562,88 @@ signal U91_hold : std_logic_vector(31 downto 0);
 		);
 	END COMPONENT;
 
-	signal U93_SYNC_0 : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal BUS_RateMeter_0_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_RateMeter_0_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
-
-	COMPONENT MCRateMeter
-		GENERIC( 
-			CHANNEL_COUNT : INTEGER := 1;
-			CLK_FREQ : INTEGER := 1250000000
-		);
-		PORT( 
-			trigger : in STD_LOGIC_VECTOR(CHANNEL_COUNT-1 downto 0);
-			VETO : in STD_LOGIC;
-			START : in STD_LOGIC;
-			CLK : in STD_LOGIC;
-			CLK_READ : in STD_LOGIC_VECTOR(0 downto 0);
-			READ_ADDRESS : in STD_LOGIC_VECTOR(15 downto 0);
-			READ_DATA : out STD_LOGIC_VECTOR(31 downto 0);
-			READ_DATAVALID : out STD_LOGIC_VECTOR(0 downto 0)
-		);
-	END COMPONENT;
-
-	signal BUS_RateMeter_NoSkip_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_RateMeter_NoSkip_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal BUS_Syncs_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_Syncs_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal REG_Syncs_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal REG_Syncs_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
-
-	COMPONENT xlx_oscilloscope_sync
-		GENERIC( 
-			channels : INTEGER := 3;
-			memLength : INTEGER := 1024;
-			wordWidth : INTEGER := 16
-		);
-		PORT( 
-			ANALOG : in STD_LOGIC_VECTOR((wordWidth*channels)-1 downto 0);
-			D0 : in STD_LOGIC_VECTOR(channels-1 downto 0);
-			D1 : in STD_LOGIC_VECTOR(channels-1 downto 0);
-			D2 : in STD_LOGIC_VECTOR(channels-1 downto 0);
-			D3 : in STD_LOGIC_VECTOR(channels-1 downto 0);
-			TRIG : in STD_LOGIC_VECTOR(0 downto 0);
-			BUSY : out STD_LOGIC_VECTOR(0 downto 0);
-			CE : in STD_LOGIC_VECTOR(0 downto 0);
-			CLK_WRITE : in STD_LOGIC_VECTOR(0 downto 0);
-			RESET : in STD_LOGIC_VECTOR(0 downto 0);
-			CLK_READ : in STD_LOGIC_VECTOR(0 downto 0);
-			READ_ADDRESS : in STD_LOGIC_VECTOR(integer(ceil(log2(real(memLength*channels))))-1 downto 0);
-			READ_DATA : out STD_LOGIC_VECTOR(31 downto 0);
-			READ_DATAVALID : out STD_LOGIC_VECTOR(0 downto 0);
-			READ_STATUS : out STD_LOGIC_VECTOR(31 downto 0);
-			READ_POSITION : out STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_TRIGGER_MODE : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_TRIGGER_LEVEL : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_PRETRIGGER : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_DECIMATOR : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_ARM : in STD_LOGIC_VECTOR(31 downto 0)
-		);
-	END COMPONENT;
-
-signal U97_out : std_logic_vector(15 downto 0) := (others => '0');
-signal U98_out : std_logic_vector(15 downto 0) := (others => '0');
-signal U99_out : std_logic_vector(15 downto 0) := (others => '0');
-	signal U100_SYNC_1 : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal U101_SYNC_2 : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal BUS_SyncIn1Meter_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_SyncIn1Meter_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal BUS_SyncIn2Meter_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_SyncIn2Meter_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal BUS_SyncIn0Meter_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_SyncIn0Meter_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal U105_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal U106_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-Component COUNTER_RISING Is
-   Generic(bitSize : Integer := 1);
-   port(        RESET :  IN STD_LOGIC_VECTOR (0 DOWNTO 0);
-        CE: IN STD_LOGIC_VECTOR (0 DOWNTO 0);
-        CLK: IN STD_LOGIC_VECTOR (0 DOWNTO 0);
-        SIGIN : IN STD_LOGIC_VECTOR (0 DOWNTO 0);
-        ENABLE : IN STD_LOGIC_VECTOR (0 DOWNTO 0);
-        COUNTER: OUT STD_LOGIC_VECTOR (31 downto 0);
-        OVERFLOW: OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
-        );
-End component;
-signal U107_counts : std_logic_vector(31 downto 0) := (others => '0');
-signal U108_hold : std_logic_vector(31 downto 0);
-	signal BUS_Oscilloscope_0_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_Oscilloscope_0_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal REG_Oscilloscope_0_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal REG_Oscilloscope_0_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
-signal U110_out : std_logic_vector(15 downto 0) := (others => '0');
+	signal BUS_Energies_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
+	signal BUS_Energies_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_Energies_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Energies_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Energies_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Energies_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Energies_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Energies_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Energies_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Energies_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Energies_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Energies_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Energies_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Energies_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Energies_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Energies_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Analog_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
+	signal BUS_Analog_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_Analog_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Analog_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Analog_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Analog_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_trig_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_trig_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_trig_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_trig_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_trig_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_trig_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_trig_polarity_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_trig_polarity_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_trig_inhib_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_trig_inhib_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_trig_gate_l_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_trig_gate_l_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_trig_gate_u_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_trig_gate_u_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_trig_delay_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_trig_delay_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_trig_mode_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_trig_mode_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_RateMeter_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
+	signal BUS_RateMeter_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_RateMeter_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_RateMeter_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_diag_READ_ADDRESS : STD_LOGIC_VECTOR(11 downto 0);
+	signal BUS_diag_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_diag_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_diag_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_diag_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_diag_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_diag_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_diag_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_diag_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_diag_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_diag_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_diag_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_diag_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_diag_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_diag_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_diag_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_int_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_int_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_int_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_int_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_int_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_int_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_int_time_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_int_time_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_int_pre_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_int_pre_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_int_base_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_int_base_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Spectrum_0_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_0_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_0_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -2547,76 +2659,22 @@ signal U110_out : std_logic_vector(15 downto 0) := (others => '0');
 	signal INT_Spectrum_0_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Spectrum_0_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Spectrum_0_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_thrsh_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_thrsh_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_thrsh_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_thrsh_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_thrsh_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_thrsh_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
-	signal REG_thrsh_0_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_0_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_1_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_1_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_2_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_2_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_3_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_3_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_4_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_4_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_5_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_5_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_6_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_6_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_7_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_7_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_8_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_8_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_9_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_9_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_10_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_10_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_11_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_11_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_12_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_12_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_13_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_13_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_14_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_14_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_15_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_15_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_16_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_16_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_17_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_17_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_18_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_18_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_19_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_19_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_20_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_20_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_21_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_21_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_22_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_22_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_23_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_23_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_24_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_24_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_25_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_25_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_26_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_26_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_27_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_27_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_28_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_28_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_29_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_29_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_30_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_30_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_31_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_31_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Analog_In_Unflipped_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
+	signal BUS_Analog_In_Unflipped_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_Analog_In_Unflipped_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Analog_In_Unflipped_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Analog_In_Unflipped_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Analog_In_Unflipped_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_In_Unflipped_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_In_Unflipped_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Spectrum_12_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_12_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_12_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -2782,76 +2840,6 @@ signal U110_out : std_logic_vector(15 downto 0) := (others => '0');
 	signal INT_Spectrum_17_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Spectrum_17_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Spectrum_17_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_top_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_top_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_top_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_top_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_top_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_top_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
-	signal REG_top_0_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_0_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_1_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_1_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_2_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_2_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_3_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_3_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_4_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_4_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_5_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_5_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_6_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_6_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_7_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_7_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_8_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_8_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_9_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_9_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_10_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_10_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_11_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_11_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_12_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_12_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_13_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_13_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_14_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_14_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_15_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_15_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_16_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_16_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_17_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_17_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_18_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_18_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_19_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_19_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_20_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_20_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_21_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_21_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_22_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_22_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_23_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_23_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_24_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_24_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_25_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_25_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_26_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_26_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_27_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_27_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_28_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_28_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_29_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_29_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_30_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_30_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_31_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_31_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Spectrum_6_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_6_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_6_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -2867,6 +2855,20 @@ signal U110_out : std_logic_vector(15 downto 0) := (others => '0');
 	signal INT_Spectrum_6_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Spectrum_6_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Spectrum_6_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_io_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_io_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_io_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_io_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_io_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_io_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_io_to_encode_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_io_to_encode_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_io_stamptype_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_io_stamptype_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_io_lemo2out_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_io_lemo2out_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_io_divide_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_io_divide_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Spectrum_18_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_18_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_18_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -2882,76 +2884,6 @@ signal U110_out : std_logic_vector(15 downto 0) := (others => '0');
 	signal INT_Spectrum_18_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Spectrum_18_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Spectrum_18_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_disable_det_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_disable_det_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_disable_det_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_disable_det_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_disable_det_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_disable_det_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
-	signal REG_disable_det_0_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_0_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_1_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_1_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_2_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_2_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_3_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_3_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_4_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_4_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_5_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_5_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_6_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_6_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_7_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_7_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_8_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_8_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_9_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_9_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_10_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_10_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_11_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_11_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_12_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_12_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_13_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_13_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_14_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_14_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_15_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_15_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_16_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_16_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_17_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_17_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_18_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_18_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_19_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_19_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_20_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_20_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_21_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_21_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_22_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_22_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_23_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_23_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_24_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_24_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_25_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_25_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_26_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_26_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_27_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_27_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_28_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_28_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_29_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_29_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_30_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_30_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_31_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_31_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Spectrum_7_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_7_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_7_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -3027,6 +2959,10 @@ signal U110_out : std_logic_vector(15 downto 0) := (others => '0');
 	signal INT_Spectrum_9_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Spectrum_9_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Spectrum_9_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_SyncIn_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
+	signal BUS_SyncIn_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_SyncIn_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_SyncIn_R_INT : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Spectrum_21_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_21_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_21_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -3102,92 +3038,6 @@ signal U110_out : std_logic_vector(15 downto 0) := (others => '0');
 	signal INT_Spectrum_23_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Spectrum_23_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Spectrum_23_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_base_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_base_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_base_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_base_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_base_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_base_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
-	signal REG_base_0_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_0_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_1_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_1_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_2_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_2_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_3_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_3_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_4_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_4_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_5_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_5_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_6_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_6_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_7_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_7_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_8_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_8_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_9_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_9_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_10_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_10_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_11_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_11_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_12_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_12_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_13_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_13_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_14_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_14_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_15_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_15_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_16_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_16_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_17_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_17_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_18_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_18_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_19_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_19_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_20_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_20_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_21_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_21_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_22_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_22_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_23_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_23_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_24_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_24_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_25_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_25_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_26_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_26_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_27_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_27_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_28_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_28_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_29_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_29_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_30_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_30_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_31_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_31_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_All_Energies_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_All_Energies_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_All_Energies_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_All_Energies_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_All_Energies_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_All_Energies_READ_VALID_WORDS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_All_Energies_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_All_Energies_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_RateMeter_0_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
-	signal BUS_RateMeter_0_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_RateMeter_0_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_RateMeter_0_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_RateMeter_NoSkip_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
-	signal BUS_RateMeter_NoSkip_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_RateMeter_NoSkip_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_RateMeter_NoSkip_R_INT : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Syncs_READ_ADDRESS : STD_LOGIC_VECTOR(11 downto 0);
 	signal BUS_Syncs_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Syncs_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -3204,90 +3054,238 @@ signal U110_out : std_logic_vector(15 downto 0) := (others => '0');
 	signal INT_Syncs_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Syncs_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Syncs_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_SyncIn1Meter_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
-	signal BUS_SyncIn1Meter_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_SyncIn1Meter_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_SyncIn1Meter_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_SyncIn2Meter_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
-	signal BUS_SyncIn2Meter_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_SyncIn2Meter_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_SyncIn2Meter_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_SyncIn0Meter_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
-	signal BUS_SyncIn0Meter_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_SyncIn0Meter_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_SyncIn0Meter_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_Oscilloscope_0_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
-	signal BUS_Oscilloscope_0_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_Oscilloscope_0_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_Oscilloscope_0_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_Oscilloscope_0_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_Oscilloscope_0_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Oscilloscope_0_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Oscilloscope_0_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Oscilloscope_0_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Oscilloscope_0_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_int_time_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_int_time_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_int_time_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_int_time_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_pre_int_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_pre_int_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_pre_int_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_pre_int_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_baseline_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_baseline_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_baseline_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_baseline_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_write_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_write_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_write_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_write_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_read_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_read_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_read_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_read_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_stopwrite_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_stopwrite_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_stopwrite_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_stopwrite_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_gate_l_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_gate_l_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_gate_l_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_gate_l_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_gate_u_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_gate_u_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_gate_u_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_gate_u_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_inhib_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_inhib_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_inhib_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_inhib_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_delay_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_delay_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_delay_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_delay_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_polarity_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_polarity_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_polarity_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_polarity_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_skip_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_skip_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_skip_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_skip_RD : STD_LOGIC_VECTOR(0 downto 0); 
+	signal BUS_disable_det_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_disable_det_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_disable_det_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_disable_det_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_disable_det_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_disable_det_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_disable_det_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_top_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_top_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_top_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_top_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_top_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_top_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_top_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_base_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_base_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_base_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_base_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_base_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_base_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_base_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_thrsh_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_thrsh_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_thrsh_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_thrsh_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_thrsh_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_thrsh_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_thrsh_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_All_Energies_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_All_Energies_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_All_Energies_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_All_Energies_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_All_Energies_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_All_Energies_READ_VALID_WORDS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_All_Energies_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_All_Energies_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_forcetrig_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal REG_forcetrig_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal INT_forcetrig_WR : STD_LOGIC_VECTOR(0 downto 0); 
+	signal INT_forcetrig_RD : STD_LOGIC_VECTOR(0 downto 0); 
 	signal REG_full_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal REG_full_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal INT_full_WR : STD_LOGIC_VECTOR(0 downto 0); 
 	signal INT_full_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_timestamp_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_timestamp_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_timestamp_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_timestamp_RD : STD_LOGIC_VECTOR(0 downto 0); 
 	signal REG_trigger_code_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal REG_trigger_code_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal INT_trigger_code_WR : STD_LOGIC_VECTOR(0 downto 0); 
@@ -3296,10 +3294,22 @@ signal U110_out : std_logic_vector(15 downto 0) := (others => '0');
 	signal REG_reset_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal INT_reset_WR : STD_LOGIC_VECTOR(0 downto 0); 
 	signal INT_reset_RD : STD_LOGIC_VECTOR(0 downto 0); 
+	signal REG_received_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal REG_received_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal INT_received_WR : STD_LOGIC_VECTOR(0 downto 0); 
+	signal INT_received_RD : STD_LOGIC_VECTOR(0 downto 0); 
+	signal REG_timestamp_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal REG_timestamp_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal INT_timestamp_WR : STD_LOGIC_VECTOR(0 downto 0); 
+	signal INT_timestamp_RD : STD_LOGIC_VECTOR(0 downto 0); 
 	signal REG_sync0_between_sync2_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal REG_sync0_between_sync2_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal INT_sync0_between_sync2_WR : STD_LOGIC_VECTOR(0 downto 0); 
 	signal INT_sync0_between_sync2_RD : STD_LOGIC_VECTOR(0 downto 0); 
+	signal REG_dummy_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal REG_dummy_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal INT_dummy_WR : STD_LOGIC_VECTOR(0 downto 0); 
+	signal INT_dummy_RD : STD_LOGIC_VECTOR(0 downto 0); 
 	
 	component main_clock 
      port (
@@ -3747,6 +3757,124 @@ AW_MEMORY_MANAGER : avalon_wrapper
             BUS_Test_0_VLD => BUS_Test_0_VLD,               
 
             -- Register interface          
+	BUS_Energies_READ_ADDRESS => BUS_Energies_READ_ADDRESS,
+	BUS_Energies_READ_DATA => BUS_Energies_READ_DATA,
+	BUS_Energies_WRITE_DATA => BUS_Energies_WRITE_DATA,
+	BUS_Energies_W_INT => BUS_Energies_W_INT,
+	BUS_Energies_R_INT => BUS_Energies_R_INT,
+	BUS_Energies_VLD => BUS_Energies_VLD,
+		REG_Energies_READ_STATUS_RD => REG_Energies_READ_STATUS_RD,
+		INT_Energies_READ_STATUS_RD => INT_Energies_READ_STATUS_RD,
+		REG_Energies_READ_POSITION_RD => REG_Energies_READ_POSITION_RD,
+		INT_Energies_READ_POSITION_RD => INT_Energies_READ_POSITION_RD,
+		REG_Energies_CONFIG_TRIGGER_MODE_WR => REG_Energies_CONFIG_TRIGGER_MODE_WR,
+		INT_Energies_CONFIG_TRIGGER_MODE_WR => INT_Energies_CONFIG_TRIGGER_MODE_WR,
+		REG_Energies_CONFIG_TRIGGER_MODE_RD => REG_Energies_CONFIG_TRIGGER_MODE_WR,
+		REG_Energies_CONFIG_PRETRIGGER_WR => REG_Energies_CONFIG_PRETRIGGER_WR,
+		INT_Energies_CONFIG_PRETRIGGER_WR => INT_Energies_CONFIG_PRETRIGGER_WR,
+		REG_Energies_CONFIG_PRETRIGGER_RD => REG_Energies_CONFIG_PRETRIGGER_WR,
+		REG_Energies_CONFIG_TRIGGER_LEVEL_WR => REG_Energies_CONFIG_TRIGGER_LEVEL_WR,
+		INT_Energies_CONFIG_TRIGGER_LEVEL_WR => INT_Energies_CONFIG_TRIGGER_LEVEL_WR,
+		REG_Energies_CONFIG_TRIGGER_LEVEL_RD => REG_Energies_CONFIG_TRIGGER_LEVEL_WR,
+		REG_Energies_CONFIG_ARM_WR => REG_Energies_CONFIG_ARM_WR,
+		INT_Energies_CONFIG_ARM_WR => INT_Energies_CONFIG_ARM_WR,
+		REG_Energies_CONFIG_ARM_RD => REG_Energies_CONFIG_ARM_WR,
+		REG_Energies_CONFIG_DECIMATOR_WR => REG_Energies_CONFIG_DECIMATOR_WR,
+		INT_Energies_CONFIG_DECIMATOR_WR => INT_Energies_CONFIG_DECIMATOR_WR,
+		REG_Energies_CONFIG_DECIMATOR_RD => REG_Energies_CONFIG_DECIMATOR_WR,
+	BUS_Analog_READ_ADDRESS => BUS_Analog_READ_ADDRESS,
+	BUS_Analog_READ_DATA => BUS_Analog_READ_DATA,
+	BUS_Analog_WRITE_DATA => BUS_Analog_WRITE_DATA,
+	BUS_Analog_W_INT => BUS_Analog_W_INT,
+	BUS_Analog_R_INT => BUS_Analog_R_INT,
+	BUS_Analog_VLD => BUS_Analog_VLD,
+		REG_Analog_READ_STATUS_RD => REG_Analog_READ_STATUS_RD,
+		INT_Analog_READ_STATUS_RD => INT_Analog_READ_STATUS_RD,
+		REG_Analog_READ_POSITION_RD => REG_Analog_READ_POSITION_RD,
+		INT_Analog_READ_POSITION_RD => INT_Analog_READ_POSITION_RD,
+		REG_Analog_CONFIG_TRIGGER_MODE_WR => REG_Analog_CONFIG_TRIGGER_MODE_WR,
+		INT_Analog_CONFIG_TRIGGER_MODE_WR => INT_Analog_CONFIG_TRIGGER_MODE_WR,
+		REG_Analog_CONFIG_TRIGGER_MODE_RD => REG_Analog_CONFIG_TRIGGER_MODE_WR,
+		REG_Analog_CONFIG_PRETRIGGER_WR => REG_Analog_CONFIG_PRETRIGGER_WR,
+		INT_Analog_CONFIG_PRETRIGGER_WR => INT_Analog_CONFIG_PRETRIGGER_WR,
+		REG_Analog_CONFIG_PRETRIGGER_RD => REG_Analog_CONFIG_PRETRIGGER_WR,
+		REG_Analog_CONFIG_TRIGGER_LEVEL_WR => REG_Analog_CONFIG_TRIGGER_LEVEL_WR,
+		INT_Analog_CONFIG_TRIGGER_LEVEL_WR => INT_Analog_CONFIG_TRIGGER_LEVEL_WR,
+		REG_Analog_CONFIG_TRIGGER_LEVEL_RD => REG_Analog_CONFIG_TRIGGER_LEVEL_WR,
+		REG_Analog_CONFIG_ARM_WR => REG_Analog_CONFIG_ARM_WR,
+		INT_Analog_CONFIG_ARM_WR => INT_Analog_CONFIG_ARM_WR,
+		REG_Analog_CONFIG_ARM_RD => REG_Analog_CONFIG_ARM_WR,
+		REG_Analog_CONFIG_DECIMATOR_WR => REG_Analog_CONFIG_DECIMATOR_WR,
+		INT_Analog_CONFIG_DECIMATOR_WR => INT_Analog_CONFIG_DECIMATOR_WR,
+		REG_Analog_CONFIG_DECIMATOR_RD => REG_Analog_CONFIG_DECIMATOR_WR,
+	BUS_trig_READ_DATA => BUS_trig_READ_DATA,
+	BUS_trig_WRITE_DATA => BUS_trig_WRITE_DATA,
+	BUS_trig_W_INT => BUS_trig_W_INT,
+	BUS_trig_R_INT => BUS_trig_R_INT,
+	BUS_trig_VLD => BUS_trig_VLD,
+		REG_trig_polarity_WR => REG_trig_polarity_WR,
+		INT_trig_polarity_WR => INT_trig_polarity_WR,
+		REG_trig_polarity_RD => REG_trig_polarity_WR,
+		REG_trig_inhib_WR => REG_trig_inhib_WR,
+		INT_trig_inhib_WR => INT_trig_inhib_WR,
+		REG_trig_inhib_RD => REG_trig_inhib_WR,
+		REG_trig_gate_l_WR => REG_trig_gate_l_WR,
+		INT_trig_gate_l_WR => INT_trig_gate_l_WR,
+		REG_trig_gate_l_RD => REG_trig_gate_l_WR,
+		REG_trig_gate_u_WR => REG_trig_gate_u_WR,
+		INT_trig_gate_u_WR => INT_trig_gate_u_WR,
+		REG_trig_gate_u_RD => REG_trig_gate_u_WR,
+		REG_trig_delay_WR => REG_trig_delay_WR,
+		INT_trig_delay_WR => INT_trig_delay_WR,
+		REG_trig_delay_RD => REG_trig_delay_WR,
+		REG_trig_mode_WR => REG_trig_mode_WR,
+		INT_trig_mode_WR => INT_trig_mode_WR,
+		REG_trig_mode_RD => REG_trig_mode_WR,
+	BUS_RateMeter_READ_ADDRESS => BUS_RateMeter_READ_ADDRESS,
+	BUS_RateMeter_READ_DATA => BUS_RateMeter_READ_DATA,
+	BUS_RateMeter_WRITE_DATA => BUS_RateMeter_WRITE_DATA,
+	BUS_RateMeter_W_INT => BUS_RateMeter_W_INT,
+	BUS_RateMeter_R_INT => BUS_RateMeter_R_INT,
+	BUS_RateMeter_VLD => BUS_RateMeter_VLD,
+	BUS_diag_READ_ADDRESS => BUS_diag_READ_ADDRESS,
+	BUS_diag_READ_DATA => BUS_diag_READ_DATA,
+	BUS_diag_WRITE_DATA => BUS_diag_WRITE_DATA,
+	BUS_diag_W_INT => BUS_diag_W_INT,
+	BUS_diag_R_INT => BUS_diag_R_INT,
+	BUS_diag_VLD => BUS_diag_VLD,
+		REG_diag_READ_STATUS_RD => REG_diag_READ_STATUS_RD,
+		INT_diag_READ_STATUS_RD => INT_diag_READ_STATUS_RD,
+		REG_diag_READ_POSITION_RD => REG_diag_READ_POSITION_RD,
+		INT_diag_READ_POSITION_RD => INT_diag_READ_POSITION_RD,
+		REG_diag_CONFIG_TRIGGER_MODE_WR => REG_diag_CONFIG_TRIGGER_MODE_WR,
+		INT_diag_CONFIG_TRIGGER_MODE_WR => INT_diag_CONFIG_TRIGGER_MODE_WR,
+		REG_diag_CONFIG_TRIGGER_MODE_RD => REG_diag_CONFIG_TRIGGER_MODE_WR,
+		REG_diag_CONFIG_PRETRIGGER_WR => REG_diag_CONFIG_PRETRIGGER_WR,
+		INT_diag_CONFIG_PRETRIGGER_WR => INT_diag_CONFIG_PRETRIGGER_WR,
+		REG_diag_CONFIG_PRETRIGGER_RD => REG_diag_CONFIG_PRETRIGGER_WR,
+		REG_diag_CONFIG_TRIGGER_LEVEL_WR => REG_diag_CONFIG_TRIGGER_LEVEL_WR,
+		INT_diag_CONFIG_TRIGGER_LEVEL_WR => INT_diag_CONFIG_TRIGGER_LEVEL_WR,
+		REG_diag_CONFIG_TRIGGER_LEVEL_RD => REG_diag_CONFIG_TRIGGER_LEVEL_WR,
+		REG_diag_CONFIG_ARM_WR => REG_diag_CONFIG_ARM_WR,
+		INT_diag_CONFIG_ARM_WR => INT_diag_CONFIG_ARM_WR,
+		REG_diag_CONFIG_ARM_RD => REG_diag_CONFIG_ARM_WR,
+		REG_diag_CONFIG_DECIMATOR_WR => REG_diag_CONFIG_DECIMATOR_WR,
+		INT_diag_CONFIG_DECIMATOR_WR => INT_diag_CONFIG_DECIMATOR_WR,
+		REG_diag_CONFIG_DECIMATOR_RD => REG_diag_CONFIG_DECIMATOR_WR,
+	BUS_int_READ_DATA => BUS_int_READ_DATA,
+	BUS_int_WRITE_DATA => BUS_int_WRITE_DATA,
+	BUS_int_W_INT => BUS_int_W_INT,
+	BUS_int_R_INT => BUS_int_R_INT,
+	BUS_int_VLD => BUS_int_VLD,
+		REG_int_time_WR => REG_int_time_WR,
+		INT_int_time_WR => INT_int_time_WR,
+		REG_int_time_RD => REG_int_time_WR,
+		REG_int_pre_WR => REG_int_pre_WR,
+		INT_int_pre_WR => INT_int_pre_WR,
+		REG_int_pre_RD => REG_int_pre_WR,
+		REG_int_base_WR => REG_int_base_WR,
+		INT_int_base_WR => INT_int_base_WR,
+		REG_int_base_RD => REG_int_base_WR,
 	BUS_Spectrum_0_READ_ADDRESS => BUS_Spectrum_0_READ_ADDRESS,
 	BUS_Spectrum_0_READ_DATA => BUS_Spectrum_0_READ_DATA,
 	BUS_Spectrum_0_WRITE_DATA => BUS_Spectrum_0_WRITE_DATA,
@@ -3770,107 +3898,31 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Spectrum_0_CONFIG_MAX_WR => REG_Spectrum_0_CONFIG_MAX_WR,
 		INT_Spectrum_0_CONFIG_MAX_WR => INT_Spectrum_0_CONFIG_MAX_WR,
 		REG_Spectrum_0_CONFIG_MAX_RD => REG_Spectrum_0_CONFIG_MAX_WR,
-	BUS_thrsh_READ_DATA => BUS_thrsh_READ_DATA,
-	BUS_thrsh_WRITE_DATA => BUS_thrsh_WRITE_DATA,
-	BUS_thrsh_W_INT => BUS_thrsh_W_INT,
-	BUS_thrsh_R_INT => BUS_thrsh_R_INT,
-	BUS_thrsh_VLD => BUS_thrsh_VLD,
-		REG_thrsh_0_WR => REG_thrsh_0_WR,
-		INT_thrsh_0_WR => INT_thrsh_0_WR,
-		REG_thrsh_0_RD => REG_thrsh_0_WR,
-		REG_thrsh_1_WR => REG_thrsh_1_WR,
-		INT_thrsh_1_WR => INT_thrsh_1_WR,
-		REG_thrsh_1_RD => REG_thrsh_1_WR,
-		REG_thrsh_2_WR => REG_thrsh_2_WR,
-		INT_thrsh_2_WR => INT_thrsh_2_WR,
-		REG_thrsh_2_RD => REG_thrsh_2_WR,
-		REG_thrsh_3_WR => REG_thrsh_3_WR,
-		INT_thrsh_3_WR => INT_thrsh_3_WR,
-		REG_thrsh_3_RD => REG_thrsh_3_WR,
-		REG_thrsh_4_WR => REG_thrsh_4_WR,
-		INT_thrsh_4_WR => INT_thrsh_4_WR,
-		REG_thrsh_4_RD => REG_thrsh_4_WR,
-		REG_thrsh_5_WR => REG_thrsh_5_WR,
-		INT_thrsh_5_WR => INT_thrsh_5_WR,
-		REG_thrsh_5_RD => REG_thrsh_5_WR,
-		REG_thrsh_6_WR => REG_thrsh_6_WR,
-		INT_thrsh_6_WR => INT_thrsh_6_WR,
-		REG_thrsh_6_RD => REG_thrsh_6_WR,
-		REG_thrsh_7_WR => REG_thrsh_7_WR,
-		INT_thrsh_7_WR => INT_thrsh_7_WR,
-		REG_thrsh_7_RD => REG_thrsh_7_WR,
-		REG_thrsh_8_WR => REG_thrsh_8_WR,
-		INT_thrsh_8_WR => INT_thrsh_8_WR,
-		REG_thrsh_8_RD => REG_thrsh_8_WR,
-		REG_thrsh_9_WR => REG_thrsh_9_WR,
-		INT_thrsh_9_WR => INT_thrsh_9_WR,
-		REG_thrsh_9_RD => REG_thrsh_9_WR,
-		REG_thrsh_10_WR => REG_thrsh_10_WR,
-		INT_thrsh_10_WR => INT_thrsh_10_WR,
-		REG_thrsh_10_RD => REG_thrsh_10_WR,
-		REG_thrsh_11_WR => REG_thrsh_11_WR,
-		INT_thrsh_11_WR => INT_thrsh_11_WR,
-		REG_thrsh_11_RD => REG_thrsh_11_WR,
-		REG_thrsh_12_WR => REG_thrsh_12_WR,
-		INT_thrsh_12_WR => INT_thrsh_12_WR,
-		REG_thrsh_12_RD => REG_thrsh_12_WR,
-		REG_thrsh_13_WR => REG_thrsh_13_WR,
-		INT_thrsh_13_WR => INT_thrsh_13_WR,
-		REG_thrsh_13_RD => REG_thrsh_13_WR,
-		REG_thrsh_14_WR => REG_thrsh_14_WR,
-		INT_thrsh_14_WR => INT_thrsh_14_WR,
-		REG_thrsh_14_RD => REG_thrsh_14_WR,
-		REG_thrsh_15_WR => REG_thrsh_15_WR,
-		INT_thrsh_15_WR => INT_thrsh_15_WR,
-		REG_thrsh_15_RD => REG_thrsh_15_WR,
-		REG_thrsh_16_WR => REG_thrsh_16_WR,
-		INT_thrsh_16_WR => INT_thrsh_16_WR,
-		REG_thrsh_16_RD => REG_thrsh_16_WR,
-		REG_thrsh_17_WR => REG_thrsh_17_WR,
-		INT_thrsh_17_WR => INT_thrsh_17_WR,
-		REG_thrsh_17_RD => REG_thrsh_17_WR,
-		REG_thrsh_18_WR => REG_thrsh_18_WR,
-		INT_thrsh_18_WR => INT_thrsh_18_WR,
-		REG_thrsh_18_RD => REG_thrsh_18_WR,
-		REG_thrsh_19_WR => REG_thrsh_19_WR,
-		INT_thrsh_19_WR => INT_thrsh_19_WR,
-		REG_thrsh_19_RD => REG_thrsh_19_WR,
-		REG_thrsh_20_WR => REG_thrsh_20_WR,
-		INT_thrsh_20_WR => INT_thrsh_20_WR,
-		REG_thrsh_20_RD => REG_thrsh_20_WR,
-		REG_thrsh_21_WR => REG_thrsh_21_WR,
-		INT_thrsh_21_WR => INT_thrsh_21_WR,
-		REG_thrsh_21_RD => REG_thrsh_21_WR,
-		REG_thrsh_22_WR => REG_thrsh_22_WR,
-		INT_thrsh_22_WR => INT_thrsh_22_WR,
-		REG_thrsh_22_RD => REG_thrsh_22_WR,
-		REG_thrsh_23_WR => REG_thrsh_23_WR,
-		INT_thrsh_23_WR => INT_thrsh_23_WR,
-		REG_thrsh_23_RD => REG_thrsh_23_WR,
-		REG_thrsh_24_WR => REG_thrsh_24_WR,
-		INT_thrsh_24_WR => INT_thrsh_24_WR,
-		REG_thrsh_24_RD => REG_thrsh_24_WR,
-		REG_thrsh_25_WR => REG_thrsh_25_WR,
-		INT_thrsh_25_WR => INT_thrsh_25_WR,
-		REG_thrsh_25_RD => REG_thrsh_25_WR,
-		REG_thrsh_26_WR => REG_thrsh_26_WR,
-		INT_thrsh_26_WR => INT_thrsh_26_WR,
-		REG_thrsh_26_RD => REG_thrsh_26_WR,
-		REG_thrsh_27_WR => REG_thrsh_27_WR,
-		INT_thrsh_27_WR => INT_thrsh_27_WR,
-		REG_thrsh_27_RD => REG_thrsh_27_WR,
-		REG_thrsh_28_WR => REG_thrsh_28_WR,
-		INT_thrsh_28_WR => INT_thrsh_28_WR,
-		REG_thrsh_28_RD => REG_thrsh_28_WR,
-		REG_thrsh_29_WR => REG_thrsh_29_WR,
-		INT_thrsh_29_WR => INT_thrsh_29_WR,
-		REG_thrsh_29_RD => REG_thrsh_29_WR,
-		REG_thrsh_30_WR => REG_thrsh_30_WR,
-		INT_thrsh_30_WR => INT_thrsh_30_WR,
-		REG_thrsh_30_RD => REG_thrsh_30_WR,
-		REG_thrsh_31_WR => REG_thrsh_31_WR,
-		INT_thrsh_31_WR => INT_thrsh_31_WR,
-		REG_thrsh_31_RD => REG_thrsh_31_WR,
+	BUS_Analog_In_Unflipped_READ_ADDRESS => BUS_Analog_In_Unflipped_READ_ADDRESS,
+	BUS_Analog_In_Unflipped_READ_DATA => BUS_Analog_In_Unflipped_READ_DATA,
+	BUS_Analog_In_Unflipped_WRITE_DATA => BUS_Analog_In_Unflipped_WRITE_DATA,
+	BUS_Analog_In_Unflipped_W_INT => BUS_Analog_In_Unflipped_W_INT,
+	BUS_Analog_In_Unflipped_R_INT => BUS_Analog_In_Unflipped_R_INT,
+	BUS_Analog_In_Unflipped_VLD => BUS_Analog_In_Unflipped_VLD,
+		REG_Analog_In_Unflipped_READ_STATUS_RD => REG_Analog_In_Unflipped_READ_STATUS_RD,
+		INT_Analog_In_Unflipped_READ_STATUS_RD => INT_Analog_In_Unflipped_READ_STATUS_RD,
+		REG_Analog_In_Unflipped_READ_POSITION_RD => REG_Analog_In_Unflipped_READ_POSITION_RD,
+		INT_Analog_In_Unflipped_READ_POSITION_RD => INT_Analog_In_Unflipped_READ_POSITION_RD,
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR => REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR,
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR => INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR,
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD => REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR,
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR => REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR,
+		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR => INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR,
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD => REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR,
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR => REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR,
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR => INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR,
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD => REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR,
+		REG_Analog_In_Unflipped_CONFIG_ARM_WR => REG_Analog_In_Unflipped_CONFIG_ARM_WR,
+		INT_Analog_In_Unflipped_CONFIG_ARM_WR => INT_Analog_In_Unflipped_CONFIG_ARM_WR,
+		REG_Analog_In_Unflipped_CONFIG_ARM_RD => REG_Analog_In_Unflipped_CONFIG_ARM_WR,
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR => REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR,
+		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR => INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR,
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD => REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR,
 	BUS_Spectrum_12_READ_ADDRESS => BUS_Spectrum_12_READ_ADDRESS,
 	BUS_Spectrum_12_READ_DATA => BUS_Spectrum_12_READ_DATA,
 	BUS_Spectrum_12_WRITE_DATA => BUS_Spectrum_12_WRITE_DATA,
@@ -4124,107 +4176,6 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Spectrum_17_CONFIG_MAX_WR => REG_Spectrum_17_CONFIG_MAX_WR,
 		INT_Spectrum_17_CONFIG_MAX_WR => INT_Spectrum_17_CONFIG_MAX_WR,
 		REG_Spectrum_17_CONFIG_MAX_RD => REG_Spectrum_17_CONFIG_MAX_WR,
-	BUS_top_READ_DATA => BUS_top_READ_DATA,
-	BUS_top_WRITE_DATA => BUS_top_WRITE_DATA,
-	BUS_top_W_INT => BUS_top_W_INT,
-	BUS_top_R_INT => BUS_top_R_INT,
-	BUS_top_VLD => BUS_top_VLD,
-		REG_top_0_WR => REG_top_0_WR,
-		INT_top_0_WR => INT_top_0_WR,
-		REG_top_0_RD => REG_top_0_WR,
-		REG_top_1_WR => REG_top_1_WR,
-		INT_top_1_WR => INT_top_1_WR,
-		REG_top_1_RD => REG_top_1_WR,
-		REG_top_2_WR => REG_top_2_WR,
-		INT_top_2_WR => INT_top_2_WR,
-		REG_top_2_RD => REG_top_2_WR,
-		REG_top_3_WR => REG_top_3_WR,
-		INT_top_3_WR => INT_top_3_WR,
-		REG_top_3_RD => REG_top_3_WR,
-		REG_top_4_WR => REG_top_4_WR,
-		INT_top_4_WR => INT_top_4_WR,
-		REG_top_4_RD => REG_top_4_WR,
-		REG_top_5_WR => REG_top_5_WR,
-		INT_top_5_WR => INT_top_5_WR,
-		REG_top_5_RD => REG_top_5_WR,
-		REG_top_6_WR => REG_top_6_WR,
-		INT_top_6_WR => INT_top_6_WR,
-		REG_top_6_RD => REG_top_6_WR,
-		REG_top_7_WR => REG_top_7_WR,
-		INT_top_7_WR => INT_top_7_WR,
-		REG_top_7_RD => REG_top_7_WR,
-		REG_top_8_WR => REG_top_8_WR,
-		INT_top_8_WR => INT_top_8_WR,
-		REG_top_8_RD => REG_top_8_WR,
-		REG_top_9_WR => REG_top_9_WR,
-		INT_top_9_WR => INT_top_9_WR,
-		REG_top_9_RD => REG_top_9_WR,
-		REG_top_10_WR => REG_top_10_WR,
-		INT_top_10_WR => INT_top_10_WR,
-		REG_top_10_RD => REG_top_10_WR,
-		REG_top_11_WR => REG_top_11_WR,
-		INT_top_11_WR => INT_top_11_WR,
-		REG_top_11_RD => REG_top_11_WR,
-		REG_top_12_WR => REG_top_12_WR,
-		INT_top_12_WR => INT_top_12_WR,
-		REG_top_12_RD => REG_top_12_WR,
-		REG_top_13_WR => REG_top_13_WR,
-		INT_top_13_WR => INT_top_13_WR,
-		REG_top_13_RD => REG_top_13_WR,
-		REG_top_14_WR => REG_top_14_WR,
-		INT_top_14_WR => INT_top_14_WR,
-		REG_top_14_RD => REG_top_14_WR,
-		REG_top_15_WR => REG_top_15_WR,
-		INT_top_15_WR => INT_top_15_WR,
-		REG_top_15_RD => REG_top_15_WR,
-		REG_top_16_WR => REG_top_16_WR,
-		INT_top_16_WR => INT_top_16_WR,
-		REG_top_16_RD => REG_top_16_WR,
-		REG_top_17_WR => REG_top_17_WR,
-		INT_top_17_WR => INT_top_17_WR,
-		REG_top_17_RD => REG_top_17_WR,
-		REG_top_18_WR => REG_top_18_WR,
-		INT_top_18_WR => INT_top_18_WR,
-		REG_top_18_RD => REG_top_18_WR,
-		REG_top_19_WR => REG_top_19_WR,
-		INT_top_19_WR => INT_top_19_WR,
-		REG_top_19_RD => REG_top_19_WR,
-		REG_top_20_WR => REG_top_20_WR,
-		INT_top_20_WR => INT_top_20_WR,
-		REG_top_20_RD => REG_top_20_WR,
-		REG_top_21_WR => REG_top_21_WR,
-		INT_top_21_WR => INT_top_21_WR,
-		REG_top_21_RD => REG_top_21_WR,
-		REG_top_22_WR => REG_top_22_WR,
-		INT_top_22_WR => INT_top_22_WR,
-		REG_top_22_RD => REG_top_22_WR,
-		REG_top_23_WR => REG_top_23_WR,
-		INT_top_23_WR => INT_top_23_WR,
-		REG_top_23_RD => REG_top_23_WR,
-		REG_top_24_WR => REG_top_24_WR,
-		INT_top_24_WR => INT_top_24_WR,
-		REG_top_24_RD => REG_top_24_WR,
-		REG_top_25_WR => REG_top_25_WR,
-		INT_top_25_WR => INT_top_25_WR,
-		REG_top_25_RD => REG_top_25_WR,
-		REG_top_26_WR => REG_top_26_WR,
-		INT_top_26_WR => INT_top_26_WR,
-		REG_top_26_RD => REG_top_26_WR,
-		REG_top_27_WR => REG_top_27_WR,
-		INT_top_27_WR => INT_top_27_WR,
-		REG_top_27_RD => REG_top_27_WR,
-		REG_top_28_WR => REG_top_28_WR,
-		INT_top_28_WR => INT_top_28_WR,
-		REG_top_28_RD => REG_top_28_WR,
-		REG_top_29_WR => REG_top_29_WR,
-		INT_top_29_WR => INT_top_29_WR,
-		REG_top_29_RD => REG_top_29_WR,
-		REG_top_30_WR => REG_top_30_WR,
-		INT_top_30_WR => INT_top_30_WR,
-		REG_top_30_RD => REG_top_30_WR,
-		REG_top_31_WR => REG_top_31_WR,
-		INT_top_31_WR => INT_top_31_WR,
-		REG_top_31_RD => REG_top_31_WR,
 	BUS_Spectrum_6_READ_ADDRESS => BUS_Spectrum_6_READ_ADDRESS,
 	BUS_Spectrum_6_READ_DATA => BUS_Spectrum_6_READ_DATA,
 	BUS_Spectrum_6_WRITE_DATA => BUS_Spectrum_6_WRITE_DATA,
@@ -4248,6 +4199,23 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Spectrum_6_CONFIG_MAX_WR => REG_Spectrum_6_CONFIG_MAX_WR,
 		INT_Spectrum_6_CONFIG_MAX_WR => INT_Spectrum_6_CONFIG_MAX_WR,
 		REG_Spectrum_6_CONFIG_MAX_RD => REG_Spectrum_6_CONFIG_MAX_WR,
+	BUS_io_READ_DATA => BUS_io_READ_DATA,
+	BUS_io_WRITE_DATA => BUS_io_WRITE_DATA,
+	BUS_io_W_INT => BUS_io_W_INT,
+	BUS_io_R_INT => BUS_io_R_INT,
+	BUS_io_VLD => BUS_io_VLD,
+		REG_io_to_encode_WR => REG_io_to_encode_WR,
+		INT_io_to_encode_WR => INT_io_to_encode_WR,
+		REG_io_to_encode_RD => REG_io_to_encode_WR,
+		REG_io_stamptype_WR => REG_io_stamptype_WR,
+		INT_io_stamptype_WR => INT_io_stamptype_WR,
+		REG_io_stamptype_RD => REG_io_stamptype_WR,
+		REG_io_lemo2out_WR => REG_io_lemo2out_WR,
+		INT_io_lemo2out_WR => INT_io_lemo2out_WR,
+		REG_io_lemo2out_RD => REG_io_lemo2out_WR,
+		REG_io_divide_WR => REG_io_divide_WR,
+		INT_io_divide_WR => INT_io_divide_WR,
+		REG_io_divide_RD => REG_io_divide_WR,
 	BUS_Spectrum_18_READ_ADDRESS => BUS_Spectrum_18_READ_ADDRESS,
 	BUS_Spectrum_18_READ_DATA => BUS_Spectrum_18_READ_DATA,
 	BUS_Spectrum_18_WRITE_DATA => BUS_Spectrum_18_WRITE_DATA,
@@ -4271,107 +4239,6 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Spectrum_18_CONFIG_MAX_WR => REG_Spectrum_18_CONFIG_MAX_WR,
 		INT_Spectrum_18_CONFIG_MAX_WR => INT_Spectrum_18_CONFIG_MAX_WR,
 		REG_Spectrum_18_CONFIG_MAX_RD => REG_Spectrum_18_CONFIG_MAX_WR,
-	BUS_disable_det_READ_DATA => BUS_disable_det_READ_DATA,
-	BUS_disable_det_WRITE_DATA => BUS_disable_det_WRITE_DATA,
-	BUS_disable_det_W_INT => BUS_disable_det_W_INT,
-	BUS_disable_det_R_INT => BUS_disable_det_R_INT,
-	BUS_disable_det_VLD => BUS_disable_det_VLD,
-		REG_disable_det_0_WR => REG_disable_det_0_WR,
-		INT_disable_det_0_WR => INT_disable_det_0_WR,
-		REG_disable_det_0_RD => REG_disable_det_0_WR,
-		REG_disable_det_1_WR => REG_disable_det_1_WR,
-		INT_disable_det_1_WR => INT_disable_det_1_WR,
-		REG_disable_det_1_RD => REG_disable_det_1_WR,
-		REG_disable_det_2_WR => REG_disable_det_2_WR,
-		INT_disable_det_2_WR => INT_disable_det_2_WR,
-		REG_disable_det_2_RD => REG_disable_det_2_WR,
-		REG_disable_det_3_WR => REG_disable_det_3_WR,
-		INT_disable_det_3_WR => INT_disable_det_3_WR,
-		REG_disable_det_3_RD => REG_disable_det_3_WR,
-		REG_disable_det_4_WR => REG_disable_det_4_WR,
-		INT_disable_det_4_WR => INT_disable_det_4_WR,
-		REG_disable_det_4_RD => REG_disable_det_4_WR,
-		REG_disable_det_5_WR => REG_disable_det_5_WR,
-		INT_disable_det_5_WR => INT_disable_det_5_WR,
-		REG_disable_det_5_RD => REG_disable_det_5_WR,
-		REG_disable_det_6_WR => REG_disable_det_6_WR,
-		INT_disable_det_6_WR => INT_disable_det_6_WR,
-		REG_disable_det_6_RD => REG_disable_det_6_WR,
-		REG_disable_det_7_WR => REG_disable_det_7_WR,
-		INT_disable_det_7_WR => INT_disable_det_7_WR,
-		REG_disable_det_7_RD => REG_disable_det_7_WR,
-		REG_disable_det_8_WR => REG_disable_det_8_WR,
-		INT_disable_det_8_WR => INT_disable_det_8_WR,
-		REG_disable_det_8_RD => REG_disable_det_8_WR,
-		REG_disable_det_9_WR => REG_disable_det_9_WR,
-		INT_disable_det_9_WR => INT_disable_det_9_WR,
-		REG_disable_det_9_RD => REG_disable_det_9_WR,
-		REG_disable_det_10_WR => REG_disable_det_10_WR,
-		INT_disable_det_10_WR => INT_disable_det_10_WR,
-		REG_disable_det_10_RD => REG_disable_det_10_WR,
-		REG_disable_det_11_WR => REG_disable_det_11_WR,
-		INT_disable_det_11_WR => INT_disable_det_11_WR,
-		REG_disable_det_11_RD => REG_disable_det_11_WR,
-		REG_disable_det_12_WR => REG_disable_det_12_WR,
-		INT_disable_det_12_WR => INT_disable_det_12_WR,
-		REG_disable_det_12_RD => REG_disable_det_12_WR,
-		REG_disable_det_13_WR => REG_disable_det_13_WR,
-		INT_disable_det_13_WR => INT_disable_det_13_WR,
-		REG_disable_det_13_RD => REG_disable_det_13_WR,
-		REG_disable_det_14_WR => REG_disable_det_14_WR,
-		INT_disable_det_14_WR => INT_disable_det_14_WR,
-		REG_disable_det_14_RD => REG_disable_det_14_WR,
-		REG_disable_det_15_WR => REG_disable_det_15_WR,
-		INT_disable_det_15_WR => INT_disable_det_15_WR,
-		REG_disable_det_15_RD => REG_disable_det_15_WR,
-		REG_disable_det_16_WR => REG_disable_det_16_WR,
-		INT_disable_det_16_WR => INT_disable_det_16_WR,
-		REG_disable_det_16_RD => REG_disable_det_16_WR,
-		REG_disable_det_17_WR => REG_disable_det_17_WR,
-		INT_disable_det_17_WR => INT_disable_det_17_WR,
-		REG_disable_det_17_RD => REG_disable_det_17_WR,
-		REG_disable_det_18_WR => REG_disable_det_18_WR,
-		INT_disable_det_18_WR => INT_disable_det_18_WR,
-		REG_disable_det_18_RD => REG_disable_det_18_WR,
-		REG_disable_det_19_WR => REG_disable_det_19_WR,
-		INT_disable_det_19_WR => INT_disable_det_19_WR,
-		REG_disable_det_19_RD => REG_disable_det_19_WR,
-		REG_disable_det_20_WR => REG_disable_det_20_WR,
-		INT_disable_det_20_WR => INT_disable_det_20_WR,
-		REG_disable_det_20_RD => REG_disable_det_20_WR,
-		REG_disable_det_21_WR => REG_disable_det_21_WR,
-		INT_disable_det_21_WR => INT_disable_det_21_WR,
-		REG_disable_det_21_RD => REG_disable_det_21_WR,
-		REG_disable_det_22_WR => REG_disable_det_22_WR,
-		INT_disable_det_22_WR => INT_disable_det_22_WR,
-		REG_disable_det_22_RD => REG_disable_det_22_WR,
-		REG_disable_det_23_WR => REG_disable_det_23_WR,
-		INT_disable_det_23_WR => INT_disable_det_23_WR,
-		REG_disable_det_23_RD => REG_disable_det_23_WR,
-		REG_disable_det_24_WR => REG_disable_det_24_WR,
-		INT_disable_det_24_WR => INT_disable_det_24_WR,
-		REG_disable_det_24_RD => REG_disable_det_24_WR,
-		REG_disable_det_25_WR => REG_disable_det_25_WR,
-		INT_disable_det_25_WR => INT_disable_det_25_WR,
-		REG_disable_det_25_RD => REG_disable_det_25_WR,
-		REG_disable_det_26_WR => REG_disable_det_26_WR,
-		INT_disable_det_26_WR => INT_disable_det_26_WR,
-		REG_disable_det_26_RD => REG_disable_det_26_WR,
-		REG_disable_det_27_WR => REG_disable_det_27_WR,
-		INT_disable_det_27_WR => INT_disable_det_27_WR,
-		REG_disable_det_27_RD => REG_disable_det_27_WR,
-		REG_disable_det_28_WR => REG_disable_det_28_WR,
-		INT_disable_det_28_WR => INT_disable_det_28_WR,
-		REG_disable_det_28_RD => REG_disable_det_28_WR,
-		REG_disable_det_29_WR => REG_disable_det_29_WR,
-		INT_disable_det_29_WR => INT_disable_det_29_WR,
-		REG_disable_det_29_RD => REG_disable_det_29_WR,
-		REG_disable_det_30_WR => REG_disable_det_30_WR,
-		INT_disable_det_30_WR => INT_disable_det_30_WR,
-		REG_disable_det_30_RD => REG_disable_det_30_WR,
-		REG_disable_det_31_WR => REG_disable_det_31_WR,
-		INT_disable_det_31_WR => INT_disable_det_31_WR,
-		REG_disable_det_31_RD => REG_disable_det_31_WR,
 	BUS_Spectrum_7_READ_ADDRESS => BUS_Spectrum_7_READ_ADDRESS,
 	BUS_Spectrum_7_READ_DATA => BUS_Spectrum_7_READ_DATA,
 	BUS_Spectrum_7_WRITE_DATA => BUS_Spectrum_7_WRITE_DATA,
@@ -4487,6 +4354,12 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Spectrum_9_CONFIG_MAX_WR => REG_Spectrum_9_CONFIG_MAX_WR,
 		INT_Spectrum_9_CONFIG_MAX_WR => INT_Spectrum_9_CONFIG_MAX_WR,
 		REG_Spectrum_9_CONFIG_MAX_RD => REG_Spectrum_9_CONFIG_MAX_WR,
+	BUS_SyncIn_READ_ADDRESS => BUS_SyncIn_READ_ADDRESS,
+	BUS_SyncIn_READ_DATA => BUS_SyncIn_READ_DATA,
+	BUS_SyncIn_WRITE_DATA => BUS_SyncIn_WRITE_DATA,
+	BUS_SyncIn_W_INT => BUS_SyncIn_W_INT,
+	BUS_SyncIn_R_INT => BUS_SyncIn_R_INT,
+	BUS_SyncIn_VLD => BUS_SyncIn_VLD,
 	BUS_Spectrum_21_READ_ADDRESS => BUS_Spectrum_21_READ_ADDRESS,
 	BUS_Spectrum_21_READ_DATA => BUS_Spectrum_21_READ_DATA,
 	BUS_Spectrum_21_WRITE_DATA => BUS_Spectrum_21_WRITE_DATA,
@@ -4602,195 +4475,6 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Spectrum_23_CONFIG_MAX_WR => REG_Spectrum_23_CONFIG_MAX_WR,
 		INT_Spectrum_23_CONFIG_MAX_WR => INT_Spectrum_23_CONFIG_MAX_WR,
 		REG_Spectrum_23_CONFIG_MAX_RD => REG_Spectrum_23_CONFIG_MAX_WR,
-	BUS_base_READ_DATA => BUS_base_READ_DATA,
-	BUS_base_WRITE_DATA => BUS_base_WRITE_DATA,
-	BUS_base_W_INT => BUS_base_W_INT,
-	BUS_base_R_INT => BUS_base_R_INT,
-	BUS_base_VLD => BUS_base_VLD,
-		REG_base_0_WR => REG_base_0_WR,
-		INT_base_0_WR => INT_base_0_WR,
-		REG_base_0_RD => REG_base_0_WR,
-		REG_base_1_WR => REG_base_1_WR,
-		INT_base_1_WR => INT_base_1_WR,
-		REG_base_1_RD => REG_base_1_WR,
-		REG_base_2_WR => REG_base_2_WR,
-		INT_base_2_WR => INT_base_2_WR,
-		REG_base_2_RD => REG_base_2_WR,
-		REG_base_3_WR => REG_base_3_WR,
-		INT_base_3_WR => INT_base_3_WR,
-		REG_base_3_RD => REG_base_3_WR,
-		REG_base_4_WR => REG_base_4_WR,
-		INT_base_4_WR => INT_base_4_WR,
-		REG_base_4_RD => REG_base_4_WR,
-		REG_base_5_WR => REG_base_5_WR,
-		INT_base_5_WR => INT_base_5_WR,
-		REG_base_5_RD => REG_base_5_WR,
-		REG_base_6_WR => REG_base_6_WR,
-		INT_base_6_WR => INT_base_6_WR,
-		REG_base_6_RD => REG_base_6_WR,
-		REG_base_7_WR => REG_base_7_WR,
-		INT_base_7_WR => INT_base_7_WR,
-		REG_base_7_RD => REG_base_7_WR,
-		REG_base_8_WR => REG_base_8_WR,
-		INT_base_8_WR => INT_base_8_WR,
-		REG_base_8_RD => REG_base_8_WR,
-		REG_base_9_WR => REG_base_9_WR,
-		INT_base_9_WR => INT_base_9_WR,
-		REG_base_9_RD => REG_base_9_WR,
-		REG_base_10_WR => REG_base_10_WR,
-		INT_base_10_WR => INT_base_10_WR,
-		REG_base_10_RD => REG_base_10_WR,
-		REG_base_11_WR => REG_base_11_WR,
-		INT_base_11_WR => INT_base_11_WR,
-		REG_base_11_RD => REG_base_11_WR,
-		REG_base_12_WR => REG_base_12_WR,
-		INT_base_12_WR => INT_base_12_WR,
-		REG_base_12_RD => REG_base_12_WR,
-		REG_base_13_WR => REG_base_13_WR,
-		INT_base_13_WR => INT_base_13_WR,
-		REG_base_13_RD => REG_base_13_WR,
-		REG_base_14_WR => REG_base_14_WR,
-		INT_base_14_WR => INT_base_14_WR,
-		REG_base_14_RD => REG_base_14_WR,
-		REG_base_15_WR => REG_base_15_WR,
-		INT_base_15_WR => INT_base_15_WR,
-		REG_base_15_RD => REG_base_15_WR,
-		REG_base_16_WR => REG_base_16_WR,
-		INT_base_16_WR => INT_base_16_WR,
-		REG_base_16_RD => REG_base_16_WR,
-		REG_base_17_WR => REG_base_17_WR,
-		INT_base_17_WR => INT_base_17_WR,
-		REG_base_17_RD => REG_base_17_WR,
-		REG_base_18_WR => REG_base_18_WR,
-		INT_base_18_WR => INT_base_18_WR,
-		REG_base_18_RD => REG_base_18_WR,
-		REG_base_19_WR => REG_base_19_WR,
-		INT_base_19_WR => INT_base_19_WR,
-		REG_base_19_RD => REG_base_19_WR,
-		REG_base_20_WR => REG_base_20_WR,
-		INT_base_20_WR => INT_base_20_WR,
-		REG_base_20_RD => REG_base_20_WR,
-		REG_base_21_WR => REG_base_21_WR,
-		INT_base_21_WR => INT_base_21_WR,
-		REG_base_21_RD => REG_base_21_WR,
-		REG_base_22_WR => REG_base_22_WR,
-		INT_base_22_WR => INT_base_22_WR,
-		REG_base_22_RD => REG_base_22_WR,
-		REG_base_23_WR => REG_base_23_WR,
-		INT_base_23_WR => INT_base_23_WR,
-		REG_base_23_RD => REG_base_23_WR,
-		REG_base_24_WR => REG_base_24_WR,
-		INT_base_24_WR => INT_base_24_WR,
-		REG_base_24_RD => REG_base_24_WR,
-		REG_base_25_WR => REG_base_25_WR,
-		INT_base_25_WR => INT_base_25_WR,
-		REG_base_25_RD => REG_base_25_WR,
-		REG_base_26_WR => REG_base_26_WR,
-		INT_base_26_WR => INT_base_26_WR,
-		REG_base_26_RD => REG_base_26_WR,
-		REG_base_27_WR => REG_base_27_WR,
-		INT_base_27_WR => INT_base_27_WR,
-		REG_base_27_RD => REG_base_27_WR,
-		REG_base_28_WR => REG_base_28_WR,
-		INT_base_28_WR => INT_base_28_WR,
-		REG_base_28_RD => REG_base_28_WR,
-		REG_base_29_WR => REG_base_29_WR,
-		INT_base_29_WR => INT_base_29_WR,
-		REG_base_29_RD => REG_base_29_WR,
-		REG_base_30_WR => REG_base_30_WR,
-		INT_base_30_WR => INT_base_30_WR,
-		REG_base_30_RD => REG_base_30_WR,
-		REG_base_31_WR => REG_base_31_WR,
-		INT_base_31_WR => INT_base_31_WR,
-		REG_base_31_RD => REG_base_31_WR,
-		REG_int_time_RD => REG_int_time_RD,
-		REG_int_time_WR => REG_int_time_WR,
-		INT_int_time_RD => INT_int_time_RD,
-		INT_int_time_WR => INT_int_time_WR,
-		REG_pre_int_RD => REG_pre_int_RD,
-		REG_pre_int_WR => REG_pre_int_WR,
-		INT_pre_int_RD => INT_pre_int_RD,
-		INT_pre_int_WR => INT_pre_int_WR,
-		REG_baseline_RD => REG_baseline_RD,
-		REG_baseline_WR => REG_baseline_WR,
-		INT_baseline_RD => INT_baseline_RD,
-		INT_baseline_WR => INT_baseline_WR,
-		REG_write_RD => REG_write_RD,
-		REG_write_WR => REG_write_WR,
-		INT_write_RD => INT_write_RD,
-		INT_write_WR => INT_write_WR,
-		REG_read_RD => REG_read_RD,
-		REG_read_WR => REG_read_WR,
-		INT_read_RD => INT_read_RD,
-		INT_read_WR => INT_read_WR,
-		REG_stopwrite_RD => REG_stopwrite_RD,
-		REG_stopwrite_WR => REG_stopwrite_WR,
-		INT_stopwrite_RD => INT_stopwrite_RD,
-		INT_stopwrite_WR => INT_stopwrite_WR,
-		REG_gate_l_RD => REG_gate_l_RD,
-		REG_gate_l_WR => REG_gate_l_WR,
-		INT_gate_l_RD => INT_gate_l_RD,
-		INT_gate_l_WR => INT_gate_l_WR,
-		REG_gate_u_RD => REG_gate_u_RD,
-		REG_gate_u_WR => REG_gate_u_WR,
-		INT_gate_u_RD => INT_gate_u_RD,
-		INT_gate_u_WR => INT_gate_u_WR,
-		REG_inhib_RD => REG_inhib_RD,
-		REG_inhib_WR => REG_inhib_WR,
-		INT_inhib_RD => INT_inhib_RD,
-		INT_inhib_WR => INT_inhib_WR,
-		REG_delay_RD => REG_delay_RD,
-		REG_delay_WR => REG_delay_WR,
-		INT_delay_RD => INT_delay_RD,
-		INT_delay_WR => INT_delay_WR,
-		REG_polarity_RD => REG_polarity_RD,
-		REG_polarity_WR => REG_polarity_WR,
-		INT_polarity_RD => INT_polarity_RD,
-		INT_polarity_WR => INT_polarity_WR,
-		REG_skip_RD => REG_skip_RD,
-		REG_skip_WR => REG_skip_WR,
-		INT_skip_RD => INT_skip_RD,
-		INT_skip_WR => INT_skip_WR,
-		REG_full_RD => REG_full_RD,
-		REG_full_WR => REG_full_WR,
-		INT_full_RD => INT_full_RD,
-		INT_full_WR => INT_full_WR,
-		REG_timestamp_RD => REG_timestamp_RD,
-		REG_timestamp_WR => REG_timestamp_WR,
-		INT_timestamp_RD => INT_timestamp_RD,
-		INT_timestamp_WR => INT_timestamp_WR,
-		REG_trigger_code_RD => REG_trigger_code_RD,
-		REG_trigger_code_WR => REG_trigger_code_WR,
-		INT_trigger_code_RD => INT_trigger_code_RD,
-		INT_trigger_code_WR => INT_trigger_code_WR,
-		REG_reset_RD => REG_reset_RD,
-		REG_reset_WR => REG_reset_WR,
-		INT_reset_RD => INT_reset_RD,
-		INT_reset_WR => INT_reset_WR,
-	BUS_All_Energies_READ_DATA => BUS_All_Energies_READ_DATA,
-	BUS_All_Energies_WRITE_DATA => BUS_All_Energies_WRITE_DATA,
-	BUS_All_Energies_W_INT => BUS_All_Energies_W_INT,
-	BUS_All_Energies_R_INT => BUS_All_Energies_R_INT,
-	BUS_All_Energies_VLD => BUS_All_Energies_VLD,
-		REG_All_Energies_READ_STATUS_RD => REG_All_Energies_READ_STATUS_RD,
-		INT_All_Energies_READ_STATUS_RD => INT_All_Energies_READ_STATUS_RD,
-		REG_All_Energies_READ_VALID_WORDS_RD => REG_All_Energies_READ_VALID_WORDS_RD,
-		INT_All_Energies_READ_VALID_WORDS_RD => INT_All_Energies_READ_VALID_WORDS_RD,
-		REG_All_Energies_CONFIG_WR => REG_All_Energies_CONFIG_WR,
-		INT_All_Energies_CONFIG_WR => INT_All_Energies_CONFIG_WR,
-		REG_All_Energies_CONFIG_RD => REG_All_Energies_CONFIG_WR,
-	BUS_RateMeter_0_READ_ADDRESS => BUS_RateMeter_0_READ_ADDRESS,
-	BUS_RateMeter_0_READ_DATA => BUS_RateMeter_0_READ_DATA,
-	BUS_RateMeter_0_WRITE_DATA => BUS_RateMeter_0_WRITE_DATA,
-	BUS_RateMeter_0_W_INT => BUS_RateMeter_0_W_INT,
-	BUS_RateMeter_0_R_INT => BUS_RateMeter_0_R_INT,
-	BUS_RateMeter_0_VLD => BUS_RateMeter_0_VLD,
-	BUS_RateMeter_NoSkip_READ_ADDRESS => BUS_RateMeter_NoSkip_READ_ADDRESS,
-	BUS_RateMeter_NoSkip_READ_DATA => BUS_RateMeter_NoSkip_READ_DATA,
-	BUS_RateMeter_NoSkip_WRITE_DATA => BUS_RateMeter_NoSkip_WRITE_DATA,
-	BUS_RateMeter_NoSkip_W_INT => BUS_RateMeter_NoSkip_W_INT,
-	BUS_RateMeter_NoSkip_R_INT => BUS_RateMeter_NoSkip_R_INT,
-	BUS_RateMeter_NoSkip_VLD => BUS_RateMeter_NoSkip_VLD,
 	BUS_Syncs_READ_ADDRESS => BUS_Syncs_READ_ADDRESS,
 	BUS_Syncs_READ_DATA => BUS_Syncs_READ_DATA,
 	BUS_Syncs_WRITE_DATA => BUS_Syncs_WRITE_DATA,
@@ -4816,54 +4500,359 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Syncs_CONFIG_DECIMATOR_WR => REG_Syncs_CONFIG_DECIMATOR_WR,
 		INT_Syncs_CONFIG_DECIMATOR_WR => INT_Syncs_CONFIG_DECIMATOR_WR,
 		REG_Syncs_CONFIG_DECIMATOR_RD => REG_Syncs_CONFIG_DECIMATOR_WR,
-	BUS_SyncIn1Meter_READ_ADDRESS => BUS_SyncIn1Meter_READ_ADDRESS,
-	BUS_SyncIn1Meter_READ_DATA => BUS_SyncIn1Meter_READ_DATA,
-	BUS_SyncIn1Meter_WRITE_DATA => BUS_SyncIn1Meter_WRITE_DATA,
-	BUS_SyncIn1Meter_W_INT => BUS_SyncIn1Meter_W_INT,
-	BUS_SyncIn1Meter_R_INT => BUS_SyncIn1Meter_R_INT,
-	BUS_SyncIn1Meter_VLD => BUS_SyncIn1Meter_VLD,
-	BUS_SyncIn2Meter_READ_ADDRESS => BUS_SyncIn2Meter_READ_ADDRESS,
-	BUS_SyncIn2Meter_READ_DATA => BUS_SyncIn2Meter_READ_DATA,
-	BUS_SyncIn2Meter_WRITE_DATA => BUS_SyncIn2Meter_WRITE_DATA,
-	BUS_SyncIn2Meter_W_INT => BUS_SyncIn2Meter_W_INT,
-	BUS_SyncIn2Meter_R_INT => BUS_SyncIn2Meter_R_INT,
-	BUS_SyncIn2Meter_VLD => BUS_SyncIn2Meter_VLD,
-	BUS_SyncIn0Meter_READ_ADDRESS => BUS_SyncIn0Meter_READ_ADDRESS,
-	BUS_SyncIn0Meter_READ_DATA => BUS_SyncIn0Meter_READ_DATA,
-	BUS_SyncIn0Meter_WRITE_DATA => BUS_SyncIn0Meter_WRITE_DATA,
-	BUS_SyncIn0Meter_W_INT => BUS_SyncIn0Meter_W_INT,
-	BUS_SyncIn0Meter_R_INT => BUS_SyncIn0Meter_R_INT,
-	BUS_SyncIn0Meter_VLD => BUS_SyncIn0Meter_VLD,
+		REG_forcetrig_RD => REG_forcetrig_RD,
+		REG_forcetrig_WR => REG_forcetrig_WR,
+		INT_forcetrig_RD => INT_forcetrig_RD,
+		INT_forcetrig_WR => INT_forcetrig_WR,
+		REG_full_RD => REG_full_RD,
+		REG_full_WR => REG_full_WR,
+		INT_full_RD => INT_full_RD,
+		INT_full_WR => INT_full_WR,
+		REG_trigger_code_RD => REG_trigger_code_RD,
+		REG_trigger_code_WR => REG_trigger_code_WR,
+		INT_trigger_code_RD => INT_trigger_code_RD,
+		INT_trigger_code_WR => INT_trigger_code_WR,
+		REG_reset_RD => REG_reset_RD,
+		REG_reset_WR => REG_reset_WR,
+		INT_reset_RD => INT_reset_RD,
+		INT_reset_WR => INT_reset_WR,
+		REG_received_RD => REG_received_RD,
+		REG_received_WR => REG_received_WR,
+		INT_received_RD => INT_received_RD,
+		INT_received_WR => INT_received_WR,
+		REG_timestamp_RD => REG_timestamp_RD,
+		REG_timestamp_WR => REG_timestamp_WR,
+		INT_timestamp_RD => INT_timestamp_RD,
+		INT_timestamp_WR => INT_timestamp_WR,
 		REG_sync0_between_sync2_RD => REG_sync0_between_sync2_RD,
 		REG_sync0_between_sync2_WR => REG_sync0_between_sync2_WR,
 		INT_sync0_between_sync2_RD => INT_sync0_between_sync2_RD,
 		INT_sync0_between_sync2_WR => INT_sync0_between_sync2_WR,
-	BUS_Oscilloscope_0_READ_ADDRESS => BUS_Oscilloscope_0_READ_ADDRESS,
-	BUS_Oscilloscope_0_READ_DATA => BUS_Oscilloscope_0_READ_DATA,
-	BUS_Oscilloscope_0_WRITE_DATA => BUS_Oscilloscope_0_WRITE_DATA,
-	BUS_Oscilloscope_0_W_INT => BUS_Oscilloscope_0_W_INT,
-	BUS_Oscilloscope_0_R_INT => BUS_Oscilloscope_0_R_INT,
-	BUS_Oscilloscope_0_VLD => BUS_Oscilloscope_0_VLD,
-		REG_Oscilloscope_0_READ_STATUS_RD => REG_Oscilloscope_0_READ_STATUS_RD,
-		INT_Oscilloscope_0_READ_STATUS_RD => INT_Oscilloscope_0_READ_STATUS_RD,
-		REG_Oscilloscope_0_READ_POSITION_RD => REG_Oscilloscope_0_READ_POSITION_RD,
-		INT_Oscilloscope_0_READ_POSITION_RD => INT_Oscilloscope_0_READ_POSITION_RD,
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR => REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
-		INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR => INT_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
-		REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_RD => REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR => REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
-		INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR => INT_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
-		REG_Oscilloscope_0_CONFIG_PRETRIGGER_RD => REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR => REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
-		INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR => INT_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
-		REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_RD => REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
-		REG_Oscilloscope_0_CONFIG_ARM_WR => REG_Oscilloscope_0_CONFIG_ARM_WR,
-		INT_Oscilloscope_0_CONFIG_ARM_WR => INT_Oscilloscope_0_CONFIG_ARM_WR,
-		REG_Oscilloscope_0_CONFIG_ARM_RD => REG_Oscilloscope_0_CONFIG_ARM_WR,
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_WR => REG_Oscilloscope_0_CONFIG_DECIMATOR_WR,
-		INT_Oscilloscope_0_CONFIG_DECIMATOR_WR => INT_Oscilloscope_0_CONFIG_DECIMATOR_WR,
-		REG_Oscilloscope_0_CONFIG_DECIMATOR_RD => REG_Oscilloscope_0_CONFIG_DECIMATOR_WR,
-		REG_UNIQUE_RD => x"00112233",
+	BUS_disable_det_READ_DATA => BUS_disable_det_READ_DATA,
+	BUS_disable_det_WRITE_DATA => BUS_disable_det_WRITE_DATA,
+	BUS_disable_det_W_INT => BUS_disable_det_W_INT,
+	BUS_disable_det_R_INT => BUS_disable_det_R_INT,
+	BUS_disable_det_VLD => BUS_disable_det_VLD,
+		REG_disable_det_CH0_WR => REG_disable_det_CH0_WR,
+		INT_disable_det_CH0_WR => INT_disable_det_CH0_WR,
+		REG_disable_det_CH0_RD => REG_disable_det_CH0_WR,
+		REG_disable_det_CH1_WR => REG_disable_det_CH1_WR,
+		INT_disable_det_CH1_WR => INT_disable_det_CH1_WR,
+		REG_disable_det_CH1_RD => REG_disable_det_CH1_WR,
+		REG_disable_det_CH2_WR => REG_disable_det_CH2_WR,
+		INT_disable_det_CH2_WR => INT_disable_det_CH2_WR,
+		REG_disable_det_CH2_RD => REG_disable_det_CH2_WR,
+		REG_disable_det_CH3_WR => REG_disable_det_CH3_WR,
+		INT_disable_det_CH3_WR => INT_disable_det_CH3_WR,
+		REG_disable_det_CH3_RD => REG_disable_det_CH3_WR,
+		REG_disable_det_CH4_WR => REG_disable_det_CH4_WR,
+		INT_disable_det_CH4_WR => INT_disable_det_CH4_WR,
+		REG_disable_det_CH4_RD => REG_disable_det_CH4_WR,
+		REG_disable_det_CH5_WR => REG_disable_det_CH5_WR,
+		INT_disable_det_CH5_WR => INT_disable_det_CH5_WR,
+		REG_disable_det_CH5_RD => REG_disable_det_CH5_WR,
+		REG_disable_det_CH6_WR => REG_disable_det_CH6_WR,
+		INT_disable_det_CH6_WR => INT_disable_det_CH6_WR,
+		REG_disable_det_CH6_RD => REG_disable_det_CH6_WR,
+		REG_disable_det_CH7_WR => REG_disable_det_CH7_WR,
+		INT_disable_det_CH7_WR => INT_disable_det_CH7_WR,
+		REG_disable_det_CH7_RD => REG_disable_det_CH7_WR,
+		REG_disable_det_CH8_WR => REG_disable_det_CH8_WR,
+		INT_disable_det_CH8_WR => INT_disable_det_CH8_WR,
+		REG_disable_det_CH8_RD => REG_disable_det_CH8_WR,
+		REG_disable_det_CH9_WR => REG_disable_det_CH9_WR,
+		INT_disable_det_CH9_WR => INT_disable_det_CH9_WR,
+		REG_disable_det_CH9_RD => REG_disable_det_CH9_WR,
+		REG_disable_det_CH10_WR => REG_disable_det_CH10_WR,
+		INT_disable_det_CH10_WR => INT_disable_det_CH10_WR,
+		REG_disable_det_CH10_RD => REG_disable_det_CH10_WR,
+		REG_disable_det_CH11_WR => REG_disable_det_CH11_WR,
+		INT_disable_det_CH11_WR => INT_disable_det_CH11_WR,
+		REG_disable_det_CH11_RD => REG_disable_det_CH11_WR,
+		REG_disable_det_CH12_WR => REG_disable_det_CH12_WR,
+		INT_disable_det_CH12_WR => INT_disable_det_CH12_WR,
+		REG_disable_det_CH12_RD => REG_disable_det_CH12_WR,
+		REG_disable_det_CH13_WR => REG_disable_det_CH13_WR,
+		INT_disable_det_CH13_WR => INT_disable_det_CH13_WR,
+		REG_disable_det_CH13_RD => REG_disable_det_CH13_WR,
+		REG_disable_det_CH14_WR => REG_disable_det_CH14_WR,
+		INT_disable_det_CH14_WR => INT_disable_det_CH14_WR,
+		REG_disable_det_CH14_RD => REG_disable_det_CH14_WR,
+		REG_disable_det_CH15_WR => REG_disable_det_CH15_WR,
+		INT_disable_det_CH15_WR => INT_disable_det_CH15_WR,
+		REG_disable_det_CH15_RD => REG_disable_det_CH15_WR,
+		REG_disable_det_CH16_WR => REG_disable_det_CH16_WR,
+		INT_disable_det_CH16_WR => INT_disable_det_CH16_WR,
+		REG_disable_det_CH16_RD => REG_disable_det_CH16_WR,
+		REG_disable_det_CH17_WR => REG_disable_det_CH17_WR,
+		INT_disable_det_CH17_WR => INT_disable_det_CH17_WR,
+		REG_disable_det_CH17_RD => REG_disable_det_CH17_WR,
+		REG_disable_det_CH18_WR => REG_disable_det_CH18_WR,
+		INT_disable_det_CH18_WR => INT_disable_det_CH18_WR,
+		REG_disable_det_CH18_RD => REG_disable_det_CH18_WR,
+		REG_disable_det_CH19_WR => REG_disable_det_CH19_WR,
+		INT_disable_det_CH19_WR => INT_disable_det_CH19_WR,
+		REG_disable_det_CH19_RD => REG_disable_det_CH19_WR,
+		REG_disable_det_CH20_WR => REG_disable_det_CH20_WR,
+		INT_disable_det_CH20_WR => INT_disable_det_CH20_WR,
+		REG_disable_det_CH20_RD => REG_disable_det_CH20_WR,
+		REG_disable_det_CH21_WR => REG_disable_det_CH21_WR,
+		INT_disable_det_CH21_WR => INT_disable_det_CH21_WR,
+		REG_disable_det_CH21_RD => REG_disable_det_CH21_WR,
+		REG_disable_det_CH22_WR => REG_disable_det_CH22_WR,
+		INT_disable_det_CH22_WR => INT_disable_det_CH22_WR,
+		REG_disable_det_CH22_RD => REG_disable_det_CH22_WR,
+		REG_disable_det_CH23_WR => REG_disable_det_CH23_WR,
+		INT_disable_det_CH23_WR => INT_disable_det_CH23_WR,
+		REG_disable_det_CH23_RD => REG_disable_det_CH23_WR,
+	BUS_top_READ_DATA => BUS_top_READ_DATA,
+	BUS_top_WRITE_DATA => BUS_top_WRITE_DATA,
+	BUS_top_W_INT => BUS_top_W_INT,
+	BUS_top_R_INT => BUS_top_R_INT,
+	BUS_top_VLD => BUS_top_VLD,
+		REG_top_CH0_WR => REG_top_CH0_WR,
+		INT_top_CH0_WR => INT_top_CH0_WR,
+		REG_top_CH0_RD => REG_top_CH0_WR,
+		REG_top_CH1_WR => REG_top_CH1_WR,
+		INT_top_CH1_WR => INT_top_CH1_WR,
+		REG_top_CH1_RD => REG_top_CH1_WR,
+		REG_top_CH2_WR => REG_top_CH2_WR,
+		INT_top_CH2_WR => INT_top_CH2_WR,
+		REG_top_CH2_RD => REG_top_CH2_WR,
+		REG_top_CH3_WR => REG_top_CH3_WR,
+		INT_top_CH3_WR => INT_top_CH3_WR,
+		REG_top_CH3_RD => REG_top_CH3_WR,
+		REG_top_CH4_WR => REG_top_CH4_WR,
+		INT_top_CH4_WR => INT_top_CH4_WR,
+		REG_top_CH4_RD => REG_top_CH4_WR,
+		REG_top_CH5_WR => REG_top_CH5_WR,
+		INT_top_CH5_WR => INT_top_CH5_WR,
+		REG_top_CH5_RD => REG_top_CH5_WR,
+		REG_top_CH6_WR => REG_top_CH6_WR,
+		INT_top_CH6_WR => INT_top_CH6_WR,
+		REG_top_CH6_RD => REG_top_CH6_WR,
+		REG_top_CH7_WR => REG_top_CH7_WR,
+		INT_top_CH7_WR => INT_top_CH7_WR,
+		REG_top_CH7_RD => REG_top_CH7_WR,
+		REG_top_CH8_WR => REG_top_CH8_WR,
+		INT_top_CH8_WR => INT_top_CH8_WR,
+		REG_top_CH8_RD => REG_top_CH8_WR,
+		REG_top_CH9_WR => REG_top_CH9_WR,
+		INT_top_CH9_WR => INT_top_CH9_WR,
+		REG_top_CH9_RD => REG_top_CH9_WR,
+		REG_top_CH10_WR => REG_top_CH10_WR,
+		INT_top_CH10_WR => INT_top_CH10_WR,
+		REG_top_CH10_RD => REG_top_CH10_WR,
+		REG_top_CH11_WR => REG_top_CH11_WR,
+		INT_top_CH11_WR => INT_top_CH11_WR,
+		REG_top_CH11_RD => REG_top_CH11_WR,
+		REG_top_CH12_WR => REG_top_CH12_WR,
+		INT_top_CH12_WR => INT_top_CH12_WR,
+		REG_top_CH12_RD => REG_top_CH12_WR,
+		REG_top_CH13_WR => REG_top_CH13_WR,
+		INT_top_CH13_WR => INT_top_CH13_WR,
+		REG_top_CH13_RD => REG_top_CH13_WR,
+		REG_top_CH14_WR => REG_top_CH14_WR,
+		INT_top_CH14_WR => INT_top_CH14_WR,
+		REG_top_CH14_RD => REG_top_CH14_WR,
+		REG_top_CH15_WR => REG_top_CH15_WR,
+		INT_top_CH15_WR => INT_top_CH15_WR,
+		REG_top_CH15_RD => REG_top_CH15_WR,
+		REG_top_CH16_WR => REG_top_CH16_WR,
+		INT_top_CH16_WR => INT_top_CH16_WR,
+		REG_top_CH16_RD => REG_top_CH16_WR,
+		REG_top_CH17_WR => REG_top_CH17_WR,
+		INT_top_CH17_WR => INT_top_CH17_WR,
+		REG_top_CH17_RD => REG_top_CH17_WR,
+		REG_top_CH18_WR => REG_top_CH18_WR,
+		INT_top_CH18_WR => INT_top_CH18_WR,
+		REG_top_CH18_RD => REG_top_CH18_WR,
+		REG_top_CH19_WR => REG_top_CH19_WR,
+		INT_top_CH19_WR => INT_top_CH19_WR,
+		REG_top_CH19_RD => REG_top_CH19_WR,
+		REG_top_CH20_WR => REG_top_CH20_WR,
+		INT_top_CH20_WR => INT_top_CH20_WR,
+		REG_top_CH20_RD => REG_top_CH20_WR,
+		REG_top_CH21_WR => REG_top_CH21_WR,
+		INT_top_CH21_WR => INT_top_CH21_WR,
+		REG_top_CH21_RD => REG_top_CH21_WR,
+		REG_top_CH22_WR => REG_top_CH22_WR,
+		INT_top_CH22_WR => INT_top_CH22_WR,
+		REG_top_CH22_RD => REG_top_CH22_WR,
+		REG_top_CH23_WR => REG_top_CH23_WR,
+		INT_top_CH23_WR => INT_top_CH23_WR,
+		REG_top_CH23_RD => REG_top_CH23_WR,
+	BUS_base_READ_DATA => BUS_base_READ_DATA,
+	BUS_base_WRITE_DATA => BUS_base_WRITE_DATA,
+	BUS_base_W_INT => BUS_base_W_INT,
+	BUS_base_R_INT => BUS_base_R_INT,
+	BUS_base_VLD => BUS_base_VLD,
+		REG_base_CH0_WR => REG_base_CH0_WR,
+		INT_base_CH0_WR => INT_base_CH0_WR,
+		REG_base_CH0_RD => REG_base_CH0_WR,
+		REG_base_CH1_WR => REG_base_CH1_WR,
+		INT_base_CH1_WR => INT_base_CH1_WR,
+		REG_base_CH1_RD => REG_base_CH1_WR,
+		REG_base_CH2_WR => REG_base_CH2_WR,
+		INT_base_CH2_WR => INT_base_CH2_WR,
+		REG_base_CH2_RD => REG_base_CH2_WR,
+		REG_base_CH3_WR => REG_base_CH3_WR,
+		INT_base_CH3_WR => INT_base_CH3_WR,
+		REG_base_CH3_RD => REG_base_CH3_WR,
+		REG_base_CH4_WR => REG_base_CH4_WR,
+		INT_base_CH4_WR => INT_base_CH4_WR,
+		REG_base_CH4_RD => REG_base_CH4_WR,
+		REG_base_CH5_WR => REG_base_CH5_WR,
+		INT_base_CH5_WR => INT_base_CH5_WR,
+		REG_base_CH5_RD => REG_base_CH5_WR,
+		REG_base_CH6_WR => REG_base_CH6_WR,
+		INT_base_CH6_WR => INT_base_CH6_WR,
+		REG_base_CH6_RD => REG_base_CH6_WR,
+		REG_base_CH7_WR => REG_base_CH7_WR,
+		INT_base_CH7_WR => INT_base_CH7_WR,
+		REG_base_CH7_RD => REG_base_CH7_WR,
+		REG_base_CH8_WR => REG_base_CH8_WR,
+		INT_base_CH8_WR => INT_base_CH8_WR,
+		REG_base_CH8_RD => REG_base_CH8_WR,
+		REG_base_CH9_WR => REG_base_CH9_WR,
+		INT_base_CH9_WR => INT_base_CH9_WR,
+		REG_base_CH9_RD => REG_base_CH9_WR,
+		REG_base_CH10_WR => REG_base_CH10_WR,
+		INT_base_CH10_WR => INT_base_CH10_WR,
+		REG_base_CH10_RD => REG_base_CH10_WR,
+		REG_base_CH11_WR => REG_base_CH11_WR,
+		INT_base_CH11_WR => INT_base_CH11_WR,
+		REG_base_CH11_RD => REG_base_CH11_WR,
+		REG_base_CH12_WR => REG_base_CH12_WR,
+		INT_base_CH12_WR => INT_base_CH12_WR,
+		REG_base_CH12_RD => REG_base_CH12_WR,
+		REG_base_CH13_WR => REG_base_CH13_WR,
+		INT_base_CH13_WR => INT_base_CH13_WR,
+		REG_base_CH13_RD => REG_base_CH13_WR,
+		REG_base_CH14_WR => REG_base_CH14_WR,
+		INT_base_CH14_WR => INT_base_CH14_WR,
+		REG_base_CH14_RD => REG_base_CH14_WR,
+		REG_base_CH15_WR => REG_base_CH15_WR,
+		INT_base_CH15_WR => INT_base_CH15_WR,
+		REG_base_CH15_RD => REG_base_CH15_WR,
+		REG_base_CH16_WR => REG_base_CH16_WR,
+		INT_base_CH16_WR => INT_base_CH16_WR,
+		REG_base_CH16_RD => REG_base_CH16_WR,
+		REG_base_CH17_WR => REG_base_CH17_WR,
+		INT_base_CH17_WR => INT_base_CH17_WR,
+		REG_base_CH17_RD => REG_base_CH17_WR,
+		REG_base_CH18_WR => REG_base_CH18_WR,
+		INT_base_CH18_WR => INT_base_CH18_WR,
+		REG_base_CH18_RD => REG_base_CH18_WR,
+		REG_base_CH19_WR => REG_base_CH19_WR,
+		INT_base_CH19_WR => INT_base_CH19_WR,
+		REG_base_CH19_RD => REG_base_CH19_WR,
+		REG_base_CH20_WR => REG_base_CH20_WR,
+		INT_base_CH20_WR => INT_base_CH20_WR,
+		REG_base_CH20_RD => REG_base_CH20_WR,
+		REG_base_CH21_WR => REG_base_CH21_WR,
+		INT_base_CH21_WR => INT_base_CH21_WR,
+		REG_base_CH21_RD => REG_base_CH21_WR,
+		REG_base_CH22_WR => REG_base_CH22_WR,
+		INT_base_CH22_WR => INT_base_CH22_WR,
+		REG_base_CH22_RD => REG_base_CH22_WR,
+		REG_base_CH23_WR => REG_base_CH23_WR,
+		INT_base_CH23_WR => INT_base_CH23_WR,
+		REG_base_CH23_RD => REG_base_CH23_WR,
+	BUS_thrsh_READ_DATA => BUS_thrsh_READ_DATA,
+	BUS_thrsh_WRITE_DATA => BUS_thrsh_WRITE_DATA,
+	BUS_thrsh_W_INT => BUS_thrsh_W_INT,
+	BUS_thrsh_R_INT => BUS_thrsh_R_INT,
+	BUS_thrsh_VLD => BUS_thrsh_VLD,
+		REG_thrsh_CH0_WR => REG_thrsh_CH0_WR,
+		INT_thrsh_CH0_WR => INT_thrsh_CH0_WR,
+		REG_thrsh_CH0_RD => REG_thrsh_CH0_WR,
+		REG_thrsh_CH1_WR => REG_thrsh_CH1_WR,
+		INT_thrsh_CH1_WR => INT_thrsh_CH1_WR,
+		REG_thrsh_CH1_RD => REG_thrsh_CH1_WR,
+		REG_thrsh_CH2_WR => REG_thrsh_CH2_WR,
+		INT_thrsh_CH2_WR => INT_thrsh_CH2_WR,
+		REG_thrsh_CH2_RD => REG_thrsh_CH2_WR,
+		REG_thrsh_CH3_WR => REG_thrsh_CH3_WR,
+		INT_thrsh_CH3_WR => INT_thrsh_CH3_WR,
+		REG_thrsh_CH3_RD => REG_thrsh_CH3_WR,
+		REG_thrsh_CH4_WR => REG_thrsh_CH4_WR,
+		INT_thrsh_CH4_WR => INT_thrsh_CH4_WR,
+		REG_thrsh_CH4_RD => REG_thrsh_CH4_WR,
+		REG_thrsh_CH5_WR => REG_thrsh_CH5_WR,
+		INT_thrsh_CH5_WR => INT_thrsh_CH5_WR,
+		REG_thrsh_CH5_RD => REG_thrsh_CH5_WR,
+		REG_thrsh_CH6_WR => REG_thrsh_CH6_WR,
+		INT_thrsh_CH6_WR => INT_thrsh_CH6_WR,
+		REG_thrsh_CH6_RD => REG_thrsh_CH6_WR,
+		REG_thrsh_CH7_WR => REG_thrsh_CH7_WR,
+		INT_thrsh_CH7_WR => INT_thrsh_CH7_WR,
+		REG_thrsh_CH7_RD => REG_thrsh_CH7_WR,
+		REG_thrsh_CH8_WR => REG_thrsh_CH8_WR,
+		INT_thrsh_CH8_WR => INT_thrsh_CH8_WR,
+		REG_thrsh_CH8_RD => REG_thrsh_CH8_WR,
+		REG_thrsh_CH9_WR => REG_thrsh_CH9_WR,
+		INT_thrsh_CH9_WR => INT_thrsh_CH9_WR,
+		REG_thrsh_CH9_RD => REG_thrsh_CH9_WR,
+		REG_thrsh_CH10_WR => REG_thrsh_CH10_WR,
+		INT_thrsh_CH10_WR => INT_thrsh_CH10_WR,
+		REG_thrsh_CH10_RD => REG_thrsh_CH10_WR,
+		REG_thrsh_CH11_WR => REG_thrsh_CH11_WR,
+		INT_thrsh_CH11_WR => INT_thrsh_CH11_WR,
+		REG_thrsh_CH11_RD => REG_thrsh_CH11_WR,
+		REG_thrsh_CH12_WR => REG_thrsh_CH12_WR,
+		INT_thrsh_CH12_WR => INT_thrsh_CH12_WR,
+		REG_thrsh_CH12_RD => REG_thrsh_CH12_WR,
+		REG_thrsh_CH13_WR => REG_thrsh_CH13_WR,
+		INT_thrsh_CH13_WR => INT_thrsh_CH13_WR,
+		REG_thrsh_CH13_RD => REG_thrsh_CH13_WR,
+		REG_thrsh_CH14_WR => REG_thrsh_CH14_WR,
+		INT_thrsh_CH14_WR => INT_thrsh_CH14_WR,
+		REG_thrsh_CH14_RD => REG_thrsh_CH14_WR,
+		REG_thrsh_CH15_WR => REG_thrsh_CH15_WR,
+		INT_thrsh_CH15_WR => INT_thrsh_CH15_WR,
+		REG_thrsh_CH15_RD => REG_thrsh_CH15_WR,
+		REG_thrsh_CH16_WR => REG_thrsh_CH16_WR,
+		INT_thrsh_CH16_WR => INT_thrsh_CH16_WR,
+		REG_thrsh_CH16_RD => REG_thrsh_CH16_WR,
+		REG_thrsh_CH17_WR => REG_thrsh_CH17_WR,
+		INT_thrsh_CH17_WR => INT_thrsh_CH17_WR,
+		REG_thrsh_CH17_RD => REG_thrsh_CH17_WR,
+		REG_thrsh_CH18_WR => REG_thrsh_CH18_WR,
+		INT_thrsh_CH18_WR => INT_thrsh_CH18_WR,
+		REG_thrsh_CH18_RD => REG_thrsh_CH18_WR,
+		REG_thrsh_CH19_WR => REG_thrsh_CH19_WR,
+		INT_thrsh_CH19_WR => INT_thrsh_CH19_WR,
+		REG_thrsh_CH19_RD => REG_thrsh_CH19_WR,
+		REG_thrsh_CH20_WR => REG_thrsh_CH20_WR,
+		INT_thrsh_CH20_WR => INT_thrsh_CH20_WR,
+		REG_thrsh_CH20_RD => REG_thrsh_CH20_WR,
+		REG_thrsh_CH21_WR => REG_thrsh_CH21_WR,
+		INT_thrsh_CH21_WR => INT_thrsh_CH21_WR,
+		REG_thrsh_CH21_RD => REG_thrsh_CH21_WR,
+		REG_thrsh_CH22_WR => REG_thrsh_CH22_WR,
+		INT_thrsh_CH22_WR => INT_thrsh_CH22_WR,
+		REG_thrsh_CH22_RD => REG_thrsh_CH22_WR,
+		REG_thrsh_CH23_WR => REG_thrsh_CH23_WR,
+		INT_thrsh_CH23_WR => INT_thrsh_CH23_WR,
+		REG_thrsh_CH23_RD => REG_thrsh_CH23_WR,
+		REG_dummy_RD => REG_dummy_RD,
+		REG_dummy_WR => REG_dummy_WR,
+		INT_dummy_RD => INT_dummy_RD,
+		INT_dummy_WR => INT_dummy_WR,
+	BUS_All_Energies_READ_DATA => BUS_All_Energies_READ_DATA,
+	BUS_All_Energies_WRITE_DATA => BUS_All_Energies_WRITE_DATA,
+	BUS_All_Energies_W_INT => BUS_All_Energies_W_INT,
+	BUS_All_Energies_R_INT => BUS_All_Energies_R_INT,
+	BUS_All_Energies_VLD => BUS_All_Energies_VLD,
+		REG_All_Energies_READ_STATUS_RD => REG_All_Energies_READ_STATUS_RD,
+		INT_All_Energies_READ_STATUS_RD => INT_All_Energies_READ_STATUS_RD,
+		REG_All_Energies_READ_VALID_WORDS_RD => REG_All_Energies_READ_VALID_WORDS_RD,
+		INT_All_Energies_READ_VALID_WORDS_RD => INT_All_Energies_READ_VALID_WORDS_RD,
+		REG_All_Energies_CONFIG_WR => REG_All_Energies_CONFIG_WR,
+		INT_All_Energies_CONFIG_WR => INT_All_Energies_CONFIG_WR,
+		REG_All_Energies_CONFIG_RD => REG_All_Energies_CONFIG_WR,
+		REG_UNIQUE_RD => x"361567DF",
 		REG_UNIQUE_WR => open,
    
 
@@ -4934,53 +4923,44 @@ AW_MEMORY_MANAGER : avalon_wrapper
   
   CLK_LINK(0) <= iSiClkIn;
 
-	  U0_out_0 <= REG_polarity_WR(0 downto 0);
-U1_out_0 <= REG_inhib_WR(15 downto 0);
-U2_out_0 <= REG_delay_WR(15 downto 0);
-U3_A0 <= CHA0;
-U4_A1 <= CHA1;
-U5_A2 <= CHA2;
-U6_A3 <= CHA3;
-U7_A4 <= CHA4;
-U8_A5 <= CHA5;
-U9_A6 <= CHA6;
-U10_A7 <= CHA7;
-U11_A8 <= CHA8;
-U12_A9 <= CHA9;
-U13_A10 <= CHA10;
-U14_A11 <= CHA11;
-U15_A12 <= CHA12;
-U16_A13 <= CHA13;
-U17_A14 <= CHA14;
-U18_A15 <= CHA15;
-U19_A16 <= CHA16;
-U20_A17 <= CHA17;
-U21_A18 <= CHA18;
-U22_A19 <= CHA19;
-U23_A20 <= CHA20;
-U24_A21 <= CHA21;
-U25_A22 <= CHA22;
-U26_A23 <= CHA23;
-U27_OUT <= U82_TRIGOUT_0 OR U82_TRIGOUT_1 OR U82_TRIGOUT_2 OR U82_TRIGOUT_3 OR U82_TRIGOUT_4 OR U82_TRIGOUT_5 OR U82_TRIGOUT_6 OR U82_TRIGOUT_7 OR U82_TRIGOUT_8 OR U82_TRIGOUT_9 OR U82_TRIGOUT_10 OR U82_TRIGOUT_11 OR U82_TRIGOUT_12 OR U82_TRIGOUT_13 OR U82_TRIGOUT_14 OR U82_TRIGOUT_15 OR U82_TRIGOUT_16 OR U82_TRIGOUT_17 OR U82_TRIGOUT_18 OR U82_TRIGOUT_19 OR U82_TRIGOUT_20 OR U82_TRIGOUT_21 OR U82_TRIGOUT_22 OR U82_TRIGOUT_23;
-U28_OUT <= U77_OUT AND ( NOT sxt(U27_OUT,1));
-U29_out_0 <= REG_gate_l_WR(15 downto 0);
-U30_out_0 <= REG_gate_u_WR(15 downto 0);
-U31_out_0 <= REG_read_WR(0 downto 0);
-U32_out_0 <= REG_write_WR(0 downto 0);
-U33_out_0 <= REG_stopwrite_WR(0 downto 0);
-U34_out_0 <= REG_skip_WR(31 downto 0);
-U35_out_0 <= REG_reset_WR(0 downto 0);
-U36_out_0 <= REG_int_time_WR(15 downto 0);
-U37_out_0 <= REG_pre_int_WR(15 downto 0);
+	  U0_A0 <= CHA0;
+U1_A1 <= CHA1;
+U2_A2 <= CHA2;
+U3_A3 <= CHA3;
+U4_A4 <= CHA4;
+U5_A5 <= CHA5;
+U6_A6 <= CHA6;
+U7_A7 <= CHA7;
+U8_A8 <= CHA8;
+U9_A9 <= CHA9;
+U10_A10 <= CHA10;
+U11_A11 <= CHA11;
+U12_A12 <= CHA12;
+U13_A13 <= CHA13;
+U14_A14 <= CHA14;
+U15_A15 <= CHA15;
+U16_A16 <= CHA16;
+U17_A17 <= CHA17;
+U18_A18 <= CHA18;
+U19_A19 <= CHA19;
+U20_A20 <= CHA20;
+U21_A21 <= CHA21;
+U22_A22 <= CHA22;
+U23_A23 <= CHA23;
+U24_OUT <= U104_TRIGOUT_0 OR U104_TRIGOUT_1 OR U104_TRIGOUT_2 OR U104_TRIGOUT_3 OR U104_TRIGOUT_4 OR U104_TRIGOUT_5 OR U104_TRIGOUT_6 OR U104_TRIGOUT_7 OR U104_TRIGOUT_8 OR U104_TRIGOUT_9 OR U104_TRIGOUT_10 OR U104_TRIGOUT_11 OR U104_TRIGOUT_12 OR U104_TRIGOUT_13 OR U104_TRIGOUT_14 OR U104_TRIGOUT_15 OR U104_TRIGOUT_16 OR U104_TRIGOUT_17 OR U104_TRIGOUT_18 OR U104_TRIGOUT_19 OR U104_TRIGOUT_20 OR U104_TRIGOUT_21 OR U104_TRIGOUT_22 OR U104_TRIGOUT_23;
+U25_OUT <= U52_OUT AND ( NOT sxt(U24_OUT,1));
+U26_int <= INT_reset_WR;
+U26_out_0 <= REG_reset_WR(0 downto 0);
+REG_reset_RD  <= REG_reset_WR;
 
-	U38 : xlx_spectrum
+	U27 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_1,
-		ENERGY_STROBE => U89_valid_1,
+		ENERGY => U105_energy_1,
+		ENERGY_STROBE => U105_valid_1,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5000,14 +4980,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U39 : xlx_spectrum
+	U28 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_2,
-		ENERGY_STROBE => U89_valid_2,
+		ENERGY => U105_energy_2,
+		ENERGY_STROBE => U105_valid_2,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5027,14 +5007,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U40 : xlx_spectrum
+	U29 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_3,
-		ENERGY_STROBE => U89_valid_3,
+		ENERGY => U105_energy_3,
+		ENERGY_STROBE => U105_valid_3,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5054,14 +5034,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U41 : xlx_spectrum
+	U30 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_4,
-		ENERGY_STROBE => U89_valid_4,
+		ENERGY => U105_energy_4,
+		ENERGY_STROBE => U105_valid_4,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5081,14 +5061,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U42 : xlx_spectrum
+	U31 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_5,
-		ENERGY_STROBE => U89_valid_5,
+		ENERGY => U105_energy_5,
+		ENERGY_STROBE => U105_valid_5,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5108,14 +5088,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U43 : xlx_spectrum
+	U32 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_6,
-		ENERGY_STROBE => U89_valid_6,
+		ENERGY => U105_energy_6,
+		ENERGY_STROBE => U105_valid_6,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5135,14 +5115,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U44 : xlx_spectrum
+	U33 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_7,
-		ENERGY_STROBE => U89_valid_7,
+		ENERGY => U105_energy_7,
+		ENERGY_STROBE => U105_valid_7,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5162,14 +5142,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U45 : xlx_spectrum
+	U34 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_8,
-		ENERGY_STROBE => U89_valid_8,
+		ENERGY => U105_energy_8,
+		ENERGY_STROBE => U105_valid_8,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5189,14 +5169,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U46 : xlx_spectrum
+	U35 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_9,
-		ENERGY_STROBE => U89_valid_9,
+		ENERGY => U105_energy_9,
+		ENERGY_STROBE => U105_valid_9,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5216,14 +5196,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U47 : xlx_spectrum
+	U36 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_10,
-		ENERGY_STROBE => U89_valid_10,
+		ENERGY => U105_energy_10,
+		ENERGY_STROBE => U105_valid_10,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5243,14 +5223,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U48 : xlx_spectrum
+	U37 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_11,
-		ENERGY_STROBE => U89_valid_11,
+		ENERGY => U105_energy_11,
+		ENERGY_STROBE => U105_valid_11,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5270,14 +5250,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U49 : xlx_spectrum
+	U38 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_12,
-		ENERGY_STROBE => U89_valid_12,
+		ENERGY => U105_energy_12,
+		ENERGY_STROBE => U105_valid_12,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5297,14 +5277,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U50 : xlx_spectrum
+	U39 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_13,
-		ENERGY_STROBE => U89_valid_13,
+		ENERGY => U105_energy_13,
+		ENERGY_STROBE => U105_valid_13,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5324,14 +5304,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U51 : xlx_spectrum
+	U40 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_14,
-		ENERGY_STROBE => U89_valid_14,
+		ENERGY => U105_energy_14,
+		ENERGY_STROBE => U105_valid_14,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5351,14 +5331,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U52 : xlx_spectrum
+	U41 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_15,
-		ENERGY_STROBE => U89_valid_15,
+		ENERGY => U105_energy_15,
+		ENERGY_STROBE => U105_valid_15,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5378,14 +5358,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U53 : xlx_spectrum
+	U42 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_16,
-		ENERGY_STROBE => U89_valid_16,
+		ENERGY => U105_energy_16,
+		ENERGY_STROBE => U105_valid_16,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5405,14 +5385,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U54 : xlx_spectrum
+	U43 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_17,
-		ENERGY_STROBE => U89_valid_17,
+		ENERGY => U105_energy_17,
+		ENERGY_STROBE => U105_valid_17,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5432,14 +5412,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U55 : xlx_spectrum
+	U44 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_18,
-		ENERGY_STROBE => U89_valid_18,
+		ENERGY => U105_energy_18,
+		ENERGY_STROBE => U105_valid_18,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5459,14 +5439,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U56 : xlx_spectrum
+	U45 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_19,
-		ENERGY_STROBE => U89_valid_19,
+		ENERGY => U105_energy_19,
+		ENERGY_STROBE => U105_valid_19,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5486,14 +5466,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U57 : xlx_spectrum
+	U46 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_20,
-		ENERGY_STROBE => U89_valid_20,
+		ENERGY => U105_energy_20,
+		ENERGY_STROBE => U105_valid_20,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5513,14 +5493,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U58 : xlx_spectrum
+	U47 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_21,
-		ENERGY_STROBE => U89_valid_21,
+		ENERGY => U105_energy_21,
+		ENERGY_STROBE => U105_valid_21,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5540,14 +5520,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U59 : xlx_spectrum
+	U48 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_22,
-		ENERGY_STROBE => U89_valid_22,
+		ENERGY => U105_energy_22,
+		ENERGY_STROBE => U105_valid_22,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5567,14 +5547,14 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 	);
 
 
-	U60 : xlx_spectrum
+	U49 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_23,
-		ENERGY_STROBE => U89_valid_23,
+		ENERGY => U105_energy_23,
+		ENERGY_STROBE => U105_valid_23,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5593,99 +5573,15 @@ U37_out_0 <= REG_pre_int_WR(15 downto 0);
 		CONFIG_MAX => REG_Spectrum_23_CONFIG_MAX_WR
 	);
 
-PROCESS_REG_U61 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U61_hold <= EXT(U34_out_0,32);
-    end if;
-end process;
-REG_skip_RD <= EXT(U34_out_0,32);
-PROCESS_REG_U62 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U62_hold <= EXT(U35_out_0,32);
-    end if;
-end process;
-REG_reset_RD <= EXT(U35_out_0,32);
-PROCESS_REG_U63 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U63_hold <= EXT(U36_out_0,32);
-    end if;
-end process;
-REG_int_time_RD <= EXT(U36_out_0,32);
-PROCESS_REG_U64 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U64_hold <= EXT(U37_out_0,32);
-    end if;
-end process;
-REG_pre_int_RD <= EXT(U37_out_0,32);
-PROCESS_REG_U65 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U65_hold <= EXT(U33_out_0,32);
-    end if;
-end process;
-REG_stopwrite_RD <= EXT(U33_out_0,32);
-PROCESS_REG_U66 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U66_hold <= EXT(U31_out_0,32);
-    end if;
-end process;
-REG_read_RD <= EXT(U31_out_0,32);
-PROCESS_REG_U67 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U67_hold <= EXT(U32_out_0,32);
-    end if;
-end process;
-REG_write_RD <= EXT(U32_out_0,32);
-PROCESS_REG_U68 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U68_hold <= EXT(U30_out_0,32);
-    end if;
-end process;
-REG_gate_u_RD <= EXT(U30_out_0,32);
-PROCESS_REG_U69 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U69_hold <= EXT(U29_out_0,32);
-    end if;
-end process;
-REG_gate_l_RD <= EXT(U29_out_0,32);
-PROCESS_REG_U70 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U70_hold <= EXT(U0_out_0,32);
-    end if;
-end process;
-REG_polarity_RD <= EXT(U0_out_0,32);
-PROCESS_REG_U71 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U71_hold <= EXT(U1_out_0,32);
-    end if;
-end process;
-REG_inhib_RD <= EXT(U1_out_0,32);
-PROCESS_REG_U72 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0))  then
-         U72_hold <= EXT(U2_out_0,32);
-    end if;
-end process;
-REG_delay_RD <= EXT(U2_out_0,32);
 
-	U73 : xlx_spectrum
+	U50 : xlx_spectrum
 	Generic map(
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U89_energy_0,
-		ENERGY_STROBE => U89_valid_0,
+		ENERGY => U105_energy_0,
+		ENERGY_STROBE => U105_valid_0,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5704,2473 +5600,54 @@ REG_delay_RD <= EXT(U2_out_0,32);
 		CONFIG_MAX => REG_Spectrum_0_CONFIG_MAX_WR
 	);
 
-
-U74_0:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U3_A0,
-	disable_det => U86_0,
-	thrsh => U85_0,
-	TRIGOUT => U74_TRIGOUT_0,
-	ANALOGOUT => U74_ANALOGOUT_0,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_1:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U4_A1,
-	disable_det => U86_1,
-	thrsh => U85_1,
-	TRIGOUT => U74_TRIGOUT_1,
-	ANALOGOUT => U74_ANALOGOUT_1,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_2:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U5_A2,
-	disable_det => U86_2,
-	thrsh => U85_2,
-	TRIGOUT => U74_TRIGOUT_2,
-	ANALOGOUT => U74_ANALOGOUT_2,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_3:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U6_A3,
-	disable_det => U86_3,
-	thrsh => U85_3,
-	TRIGOUT => U74_TRIGOUT_3,
-	ANALOGOUT => U74_ANALOGOUT_3,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_4:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U7_A4,
-	disable_det => U86_4,
-	thrsh => U85_4,
-	TRIGOUT => U74_TRIGOUT_4,
-	ANALOGOUT => U74_ANALOGOUT_4,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_5:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U8_A5,
-	disable_det => U86_5,
-	thrsh => U85_5,
-	TRIGOUT => U74_TRIGOUT_5,
-	ANALOGOUT => U74_ANALOGOUT_5,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_6:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U9_A6,
-	disable_det => U86_6,
-	thrsh => U85_6,
-	TRIGOUT => U74_TRIGOUT_6,
-	ANALOGOUT => U74_ANALOGOUT_6,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_7:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U10_A7,
-	disable_det => U86_7,
-	thrsh => U85_7,
-	TRIGOUT => U74_TRIGOUT_7,
-	ANALOGOUT => U74_ANALOGOUT_7,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_8:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U11_A8,
-	disable_det => U86_8,
-	thrsh => U85_8,
-	TRIGOUT => U74_TRIGOUT_8,
-	ANALOGOUT => U74_ANALOGOUT_8,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_9:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U12_A9,
-	disable_det => U86_9,
-	thrsh => U85_9,
-	TRIGOUT => U74_TRIGOUT_9,
-	ANALOGOUT => U74_ANALOGOUT_9,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_10:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U13_A10,
-	disable_det => U86_10,
-	thrsh => U85_10,
-	TRIGOUT => U74_TRIGOUT_10,
-	ANALOGOUT => U74_ANALOGOUT_10,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_11:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U14_A11,
-	disable_det => U86_11,
-	thrsh => U85_11,
-	TRIGOUT => U74_TRIGOUT_11,
-	ANALOGOUT => U74_ANALOGOUT_11,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_12:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U15_A12,
-	disable_det => U86_12,
-	thrsh => U85_12,
-	TRIGOUT => U74_TRIGOUT_12,
-	ANALOGOUT => U74_ANALOGOUT_12,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_13:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U16_A13,
-	disable_det => U86_13,
-	thrsh => U85_13,
-	TRIGOUT => U74_TRIGOUT_13,
-	ANALOGOUT => U74_ANALOGOUT_13,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_14:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U17_A14,
-	disable_det => U86_14,
-	thrsh => U85_14,
-	TRIGOUT => U74_TRIGOUT_14,
-	ANALOGOUT => U74_ANALOGOUT_14,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_15:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U18_A15,
-	disable_det => U86_15,
-	thrsh => U85_15,
-	TRIGOUT => U74_TRIGOUT_15,
-	ANALOGOUT => U74_ANALOGOUT_15,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_16:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U19_A16,
-	disable_det => U86_16,
-	thrsh => U85_16,
-	TRIGOUT => U74_TRIGOUT_16,
-	ANALOGOUT => U74_ANALOGOUT_16,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_17:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U20_A17,
-	disable_det => U86_17,
-	thrsh => U85_17,
-	TRIGOUT => U74_TRIGOUT_17,
-	ANALOGOUT => U74_ANALOGOUT_17,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_18:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U21_A18,
-	disable_det => U86_18,
-	thrsh => U85_18,
-	TRIGOUT => U74_TRIGOUT_18,
-	ANALOGOUT => U74_ANALOGOUT_18,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_19:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U22_A19,
-	disable_det => U86_19,
-	thrsh => U85_19,
-	TRIGOUT => U74_TRIGOUT_19,
-	ANALOGOUT => U74_ANALOGOUT_19,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_20:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U23_A20,
-	disable_det => U86_20,
-	thrsh => U85_20,
-	TRIGOUT => U74_TRIGOUT_20,
-	ANALOGOUT => U74_ANALOGOUT_20,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_21:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U24_A21,
-	disable_det => U86_21,
-	thrsh => U85_21,
-	TRIGOUT => U74_TRIGOUT_21,
-	ANALOGOUT => U74_ANALOGOUT_21,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_22:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U25_A22,
-	disable_det => U86_22,
-	thrsh => U85_22,
-	TRIGOUT => U74_TRIGOUT_22,
-	ANALOGOUT => U74_ANALOGOUT_22,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U74_23:SUBPAGE_LowerTrigger
-PORT MAP(
-	AIN => U26_A23,
-	disable_det => U86_23,
-	thrsh => U85_23,
-	TRIGOUT => U74_TRIGOUT_23,
-	ANALOGOUT => U74_ANALOGOUT_23,
-	gate => U29_out_0,
-	polarity => U0_out_0,
-	inhib => U1_out_0,
-	delay => U2_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U75:SUBPAGE_ReduceRate
-PORT MAP(
-	Original => U28_OUT,
-	skip => U34_out_0,
-	gate => U30_out_0,
-	reset => U35_out_0,
-	delay => U2_out_0,
-	Reduced => U75_Reduced,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-U76_out_0 <= U74_TRIGOUT_0 & U74_TRIGOUT_1 & U74_TRIGOUT_2 & U74_TRIGOUT_3 & U74_TRIGOUT_4 & U74_TRIGOUT_5 & U74_TRIGOUT_6 & U74_TRIGOUT_7 & U74_TRIGOUT_8 & U74_TRIGOUT_9 & U74_TRIGOUT_10 & U74_TRIGOUT_11 & U74_TRIGOUT_12 & U74_TRIGOUT_13 & U74_TRIGOUT_14 & U74_TRIGOUT_15 & U74_TRIGOUT_16 & U74_TRIGOUT_17 & U74_TRIGOUT_18 & U74_TRIGOUT_19 & U74_TRIGOUT_20 & U74_TRIGOUT_21 & U74_TRIGOUT_22 & U74_TRIGOUT_23 ;
-U77_OUT <= U74_TRIGOUT_0 OR U74_TRIGOUT_1 OR U74_TRIGOUT_2 OR U74_TRIGOUT_3 OR U74_TRIGOUT_4 OR U74_TRIGOUT_5 OR U74_TRIGOUT_6 OR U74_TRIGOUT_7 OR U74_TRIGOUT_8 OR U74_TRIGOUT_9 OR U74_TRIGOUT_10 OR U74_TRIGOUT_11 OR U74_TRIGOUT_12 OR U74_TRIGOUT_13 OR U74_TRIGOUT_14 OR U74_TRIGOUT_15 OR U74_TRIGOUT_16 OR U74_TRIGOUT_17 OR U74_TRIGOUT_18 OR U74_TRIGOUT_19 OR U74_TRIGOUT_20 OR U74_TRIGOUT_21 OR U74_TRIGOUT_22 OR U74_TRIGOUT_23 OR "0" OR "0" OR "0" OR "0" OR "0" OR "0" OR "0" OR "0";
-PROCESS_REG_U78 : process(BUS_CLK,GlobalReset)
+U51_out_0 <= U103_TRIGOUT_0 & U103_TRIGOUT_1 & U103_TRIGOUT_2 & U103_TRIGOUT_3 & U103_TRIGOUT_4 & U103_TRIGOUT_5 & U103_TRIGOUT_6 & U103_TRIGOUT_7 & U103_TRIGOUT_8 & U103_TRIGOUT_9 & U103_TRIGOUT_10 & U103_TRIGOUT_11 & U103_TRIGOUT_12 & U103_TRIGOUT_13 & U103_TRIGOUT_14 & U103_TRIGOUT_15 & U103_TRIGOUT_16 & U103_TRIGOUT_17 & U103_TRIGOUT_18 & U103_TRIGOUT_19 & U103_TRIGOUT_20 & U103_TRIGOUT_21 & U103_TRIGOUT_22 & U103_TRIGOUT_23 ;
+U52_OUT <= U103_TRIGOUT_0 OR U103_TRIGOUT_1 OR U103_TRIGOUT_2 OR U103_TRIGOUT_3 OR U103_TRIGOUT_4 OR U103_TRIGOUT_5 OR U103_TRIGOUT_6 OR U103_TRIGOUT_7 OR U103_TRIGOUT_8 OR U103_TRIGOUT_9 OR U103_TRIGOUT_10 OR U103_TRIGOUT_11 OR U103_TRIGOUT_12 OR U103_TRIGOUT_13 OR U103_TRIGOUT_14 OR U103_TRIGOUT_15 OR U103_TRIGOUT_16 OR U103_TRIGOUT_17 OR U103_TRIGOUT_18 OR U103_TRIGOUT_19 OR U103_TRIGOUT_20 OR U103_TRIGOUT_21 OR U103_TRIGOUT_22 OR U103_TRIGOUT_23 OR "0" OR "0" OR "0" OR "0" OR "0" OR "0" OR "0" OR "0";
+PROCESS_REG_U53 : process(BUS_CLK,GlobalReset)
 begin
-    if rising_edge(BUS_CLK(0)) and U28_OUT = "1" then
-         U78_hold <= EXT(U76_out_0,32);
+    if rising_edge(BUS_CLK(0)) and U84_out = "1" then
+         U53_hold <= EXT(U51_out_0,32);
     end if;
 end process;
-REG_trigger_code_RD <= EXT(U76_out_0,32) when U28_OUT="1" else U78_hold;
+REG_trigger_code_RD <= EXT(U51_out_0,32) when U84_out="1" else U53_hold;
 
-	U79 : TimestampGenerator
+	U54 : TimestampGenerator
 	Generic map(
 		nbits => 	32
 	)
 	PORT MAP(
-		TIMESTAMP => U79_TIMESTAMP,
+		TIMESTAMP => U54_TIMESTAMP,
 		T0 => '0',
 		CLK_READ => CLK_125(0),
 		ClkCounter => CLK_125(0)
 	);
 
-PROCESS_REG_U80 : process(BUS_CLK,GlobalReset)
-begin
-    if rising_edge(BUS_CLK(0)) and U28_OUT = "1" then
-         U80_hold <= EXT(U79_TIMESTAMP,32);
-    end if;
-end process;
-REG_timestamp_RD <= EXT(U79_TIMESTAMP,32) when U28_OUT="1" else U80_hold;
-U81_out <= ext(U76_out_0 , 32);
-
-U82_0:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U3_A0,
-	top => U87_0,
-	TRIGOUT => U82_TRIGOUT_0,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_1:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U4_A1,
-	top => U87_1,
-	TRIGOUT => U82_TRIGOUT_1,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_2:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U5_A2,
-	top => U87_2,
-	TRIGOUT => U82_TRIGOUT_2,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_3:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U6_A3,
-	top => U87_3,
-	TRIGOUT => U82_TRIGOUT_3,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_4:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U7_A4,
-	top => U87_4,
-	TRIGOUT => U82_TRIGOUT_4,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_5:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U8_A5,
-	top => U87_5,
-	TRIGOUT => U82_TRIGOUT_5,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_6:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U9_A6,
-	top => U87_6,
-	TRIGOUT => U82_TRIGOUT_6,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_7:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U10_A7,
-	top => U87_7,
-	TRIGOUT => U82_TRIGOUT_7,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_8:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U11_A8,
-	top => U87_8,
-	TRIGOUT => U82_TRIGOUT_8,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_9:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U12_A9,
-	top => U87_9,
-	TRIGOUT => U82_TRIGOUT_9,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_10:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U13_A10,
-	top => U87_10,
-	TRIGOUT => U82_TRIGOUT_10,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_11:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U14_A11,
-	top => U87_11,
-	TRIGOUT => U82_TRIGOUT_11,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_12:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U15_A12,
-	top => U87_12,
-	TRIGOUT => U82_TRIGOUT_12,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_13:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U16_A13,
-	top => U87_13,
-	TRIGOUT => U82_TRIGOUT_13,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_14:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U17_A14,
-	top => U87_14,
-	TRIGOUT => U82_TRIGOUT_14,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_15:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U18_A15,
-	top => U87_15,
-	TRIGOUT => U82_TRIGOUT_15,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_16:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U19_A16,
-	top => U87_16,
-	TRIGOUT => U82_TRIGOUT_16,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_17:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U20_A17,
-	top => U87_17,
-	TRIGOUT => U82_TRIGOUT_17,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_18:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U21_A18,
-	top => U87_18,
-	TRIGOUT => U82_TRIGOUT_18,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_19:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U22_A19,
-	top => U87_19,
-	TRIGOUT => U82_TRIGOUT_19,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_20:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U23_A20,
-	top => U87_20,
-	TRIGOUT => U82_TRIGOUT_20,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_21:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U24_A21,
-	top => U87_21,
-	TRIGOUT => U82_TRIGOUT_21,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_22:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U25_A22,
-	top => U87_22,
-	TRIGOUT => U82_TRIGOUT_22,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U82_23:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U26_A23,
-	top => U87_23,
-	TRIGOUT => U82_TRIGOUT_23,
-	polarity => U0_out_0,
-	gate => U30_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-U83_OUT <= U89_valid_0 AND U89_valid_1 AND U89_valid_2 AND U89_valid_3 AND U89_valid_4 AND U89_valid_5 AND U89_valid_6 AND U89_valid_7 AND U89_valid_8 AND U89_valid_9 AND U89_valid_10 AND U89_valid_11 AND U89_valid_12 AND U89_valid_13 AND U89_valid_14 AND U89_valid_15 AND U89_valid_16 AND U89_valid_17 AND U89_valid_18 AND U89_valid_19 AND U89_valid_20 AND U89_valid_21 AND U89_valid_22 AND U89_valid_23 AND U84_CONST AND U84_CONST AND U84_CONST AND U84_CONST AND U84_CONST AND U84_CONST AND U84_CONST AND U84_CONST;
-U84_CONST <= conv_std_logic_vector(1,1);
-U85_0 <= REG_thrsh_0_WR( 15 downto 0 );
-U85_1 <= REG_thrsh_1_WR( 15 downto 0 );
-U85_2 <= REG_thrsh_2_WR( 15 downto 0 );
-U85_3 <= REG_thrsh_3_WR( 15 downto 0 );
-U85_4 <= REG_thrsh_4_WR( 15 downto 0 );
-U85_5 <= REG_thrsh_5_WR( 15 downto 0 );
-U85_6 <= REG_thrsh_6_WR( 15 downto 0 );
-U85_7 <= REG_thrsh_7_WR( 15 downto 0 );
-U85_8 <= REG_thrsh_8_WR( 15 downto 0 );
-U85_9 <= REG_thrsh_9_WR( 15 downto 0 );
-U85_10 <= REG_thrsh_10_WR( 15 downto 0 );
-U85_11 <= REG_thrsh_11_WR( 15 downto 0 );
-U85_12 <= REG_thrsh_12_WR( 15 downto 0 );
-U85_13 <= REG_thrsh_13_WR( 15 downto 0 );
-U85_14 <= REG_thrsh_14_WR( 15 downto 0 );
-U85_15 <= REG_thrsh_15_WR( 15 downto 0 );
-U85_16 <= REG_thrsh_16_WR( 15 downto 0 );
-U85_17 <= REG_thrsh_17_WR( 15 downto 0 );
-U85_18 <= REG_thrsh_18_WR( 15 downto 0 );
-U85_19 <= REG_thrsh_19_WR( 15 downto 0 );
-U85_20 <= REG_thrsh_20_WR( 15 downto 0 );
-U85_21 <= REG_thrsh_21_WR( 15 downto 0 );
-U85_22 <= REG_thrsh_22_WR( 15 downto 0 );
-U85_23 <= REG_thrsh_23_WR( 15 downto 0 );
-U85_24 <= REG_thrsh_24_WR( 15 downto 0 );
-U85_25 <= REG_thrsh_25_WR( 15 downto 0 );
-U85_26 <= REG_thrsh_26_WR( 15 downto 0 );
-U85_27 <= REG_thrsh_27_WR( 15 downto 0 );
-U85_28 <= REG_thrsh_28_WR( 15 downto 0 );
-U85_29 <= REG_thrsh_29_WR( 15 downto 0 );
-U85_30 <= REG_thrsh_30_WR( 15 downto 0 );
-U85_31 <= REG_thrsh_31_WR( 15 downto 0 );
-U86_0 <= REG_disable_det_0_WR( 0 downto 0 );
-U86_1 <= REG_disable_det_1_WR( 0 downto 0 );
-U86_2 <= REG_disable_det_2_WR( 0 downto 0 );
-U86_3 <= REG_disable_det_3_WR( 0 downto 0 );
-U86_4 <= REG_disable_det_4_WR( 0 downto 0 );
-U86_5 <= REG_disable_det_5_WR( 0 downto 0 );
-U86_6 <= REG_disable_det_6_WR( 0 downto 0 );
-U86_7 <= REG_disable_det_7_WR( 0 downto 0 );
-U86_8 <= REG_disable_det_8_WR( 0 downto 0 );
-U86_9 <= REG_disable_det_9_WR( 0 downto 0 );
-U86_10 <= REG_disable_det_10_WR( 0 downto 0 );
-U86_11 <= REG_disable_det_11_WR( 0 downto 0 );
-U86_12 <= REG_disable_det_12_WR( 0 downto 0 );
-U86_13 <= REG_disable_det_13_WR( 0 downto 0 );
-U86_14 <= REG_disable_det_14_WR( 0 downto 0 );
-U86_15 <= REG_disable_det_15_WR( 0 downto 0 );
-U86_16 <= REG_disable_det_16_WR( 0 downto 0 );
-U86_17 <= REG_disable_det_17_WR( 0 downto 0 );
-U86_18 <= REG_disable_det_18_WR( 0 downto 0 );
-U86_19 <= REG_disable_det_19_WR( 0 downto 0 );
-U86_20 <= REG_disable_det_20_WR( 0 downto 0 );
-U86_21 <= REG_disable_det_21_WR( 0 downto 0 );
-U86_22 <= REG_disable_det_22_WR( 0 downto 0 );
-U86_23 <= REG_disable_det_23_WR( 0 downto 0 );
-U86_24 <= REG_disable_det_24_WR( 0 downto 0 );
-U86_25 <= REG_disable_det_25_WR( 0 downto 0 );
-U86_26 <= REG_disable_det_26_WR( 0 downto 0 );
-U86_27 <= REG_disable_det_27_WR( 0 downto 0 );
-U86_28 <= REG_disable_det_28_WR( 0 downto 0 );
-U86_29 <= REG_disable_det_29_WR( 0 downto 0 );
-U86_30 <= REG_disable_det_30_WR( 0 downto 0 );
-U86_31 <= REG_disable_det_31_WR( 0 downto 0 );
-U87_0 <= REG_top_0_WR( 15 downto 0 );
-U87_1 <= REG_top_1_WR( 15 downto 0 );
-U87_2 <= REG_top_2_WR( 15 downto 0 );
-U87_3 <= REG_top_3_WR( 15 downto 0 );
-U87_4 <= REG_top_4_WR( 15 downto 0 );
-U87_5 <= REG_top_5_WR( 15 downto 0 );
-U87_6 <= REG_top_6_WR( 15 downto 0 );
-U87_7 <= REG_top_7_WR( 15 downto 0 );
-U87_8 <= REG_top_8_WR( 15 downto 0 );
-U87_9 <= REG_top_9_WR( 15 downto 0 );
-U87_10 <= REG_top_10_WR( 15 downto 0 );
-U87_11 <= REG_top_11_WR( 15 downto 0 );
-U87_12 <= REG_top_12_WR( 15 downto 0 );
-U87_13 <= REG_top_13_WR( 15 downto 0 );
-U87_14 <= REG_top_14_WR( 15 downto 0 );
-U87_15 <= REG_top_15_WR( 15 downto 0 );
-U87_16 <= REG_top_16_WR( 15 downto 0 );
-U87_17 <= REG_top_17_WR( 15 downto 0 );
-U87_18 <= REG_top_18_WR( 15 downto 0 );
-U87_19 <= REG_top_19_WR( 15 downto 0 );
-U87_20 <= REG_top_20_WR( 15 downto 0 );
-U87_21 <= REG_top_21_WR( 15 downto 0 );
-U87_22 <= REG_top_22_WR( 15 downto 0 );
-U87_23 <= REG_top_23_WR( 15 downto 0 );
-U87_24 <= REG_top_24_WR( 15 downto 0 );
-U87_25 <= REG_top_25_WR( 15 downto 0 );
-U87_26 <= REG_top_26_WR( 15 downto 0 );
-U87_27 <= REG_top_27_WR( 15 downto 0 );
-U87_28 <= REG_top_28_WR( 15 downto 0 );
-U87_29 <= REG_top_29_WR( 15 downto 0 );
-U87_30 <= REG_top_30_WR( 15 downto 0 );
-U87_31 <= REG_top_31_WR( 15 downto 0 );
-U88_out_0 <= REG_baseline_WR(0 downto 0);
-REG_baseline_RD  <= REG_baseline_WR;
-
-U89_0:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_0,
-	base => U90_0,
-	energy => U89_energy_0,
-	valid => U89_valid_0,
-	int_gate => U89_int_gate_0,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_1:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_1,
-	base => U90_1,
-	energy => U89_energy_1,
-	valid => U89_valid_1,
-	int_gate => U89_int_gate_1,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_2:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_2,
-	base => U90_2,
-	energy => U89_energy_2,
-	valid => U89_valid_2,
-	int_gate => U89_int_gate_2,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_3:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_3,
-	base => U90_3,
-	energy => U89_energy_3,
-	valid => U89_valid_3,
-	int_gate => U89_int_gate_3,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_4:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_4,
-	base => U90_4,
-	energy => U89_energy_4,
-	valid => U89_valid_4,
-	int_gate => U89_int_gate_4,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_5:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_5,
-	base => U90_5,
-	energy => U89_energy_5,
-	valid => U89_valid_5,
-	int_gate => U89_int_gate_5,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_6:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_6,
-	base => U90_6,
-	energy => U89_energy_6,
-	valid => U89_valid_6,
-	int_gate => U89_int_gate_6,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_7:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_7,
-	base => U90_7,
-	energy => U89_energy_7,
-	valid => U89_valid_7,
-	int_gate => U89_int_gate_7,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_8:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_8,
-	base => U90_8,
-	energy => U89_energy_8,
-	valid => U89_valid_8,
-	int_gate => U89_int_gate_8,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_9:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_9,
-	base => U90_9,
-	energy => U89_energy_9,
-	valid => U89_valid_9,
-	int_gate => U89_int_gate_9,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_10:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_10,
-	base => U90_10,
-	energy => U89_energy_10,
-	valid => U89_valid_10,
-	int_gate => U89_int_gate_10,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_11:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_11,
-	base => U90_11,
-	energy => U89_energy_11,
-	valid => U89_valid_11,
-	int_gate => U89_int_gate_11,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_12:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_12,
-	base => U90_12,
-	energy => U89_energy_12,
-	valid => U89_valid_12,
-	int_gate => U89_int_gate_12,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_13:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_13,
-	base => U90_13,
-	energy => U89_energy_13,
-	valid => U89_valid_13,
-	int_gate => U89_int_gate_13,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_14:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_14,
-	base => U90_14,
-	energy => U89_energy_14,
-	valid => U89_valid_14,
-	int_gate => U89_int_gate_14,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_15:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_15,
-	base => U90_15,
-	energy => U89_energy_15,
-	valid => U89_valid_15,
-	int_gate => U89_int_gate_15,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_16:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_16,
-	base => U90_16,
-	energy => U89_energy_16,
-	valid => U89_valid_16,
-	int_gate => U89_int_gate_16,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_17:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_17,
-	base => U90_17,
-	energy => U89_energy_17,
-	valid => U89_valid_17,
-	int_gate => U89_int_gate_17,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_18:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_18,
-	base => U90_18,
-	energy => U89_energy_18,
-	valid => U89_valid_18,
-	int_gate => U89_int_gate_18,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_19:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_19,
-	base => U90_19,
-	energy => U89_energy_19,
-	valid => U89_valid_19,
-	int_gate => U89_int_gate_19,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_20:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_20,
-	base => U90_20,
-	energy => U89_energy_20,
-	valid => U89_valid_20,
-	int_gate => U89_int_gate_20,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_21:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_21,
-	base => U90_21,
-	energy => U89_energy_21,
-	valid => U89_valid_21,
-	int_gate => U89_int_gate_21,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_22:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_22,
-	base => U90_22,
-	energy => U89_energy_22,
-	valid => U89_valid_22,
-	int_gate => U89_int_gate_22,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-
-U89_23:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U74_ANALOGOUT_23,
-	base => U90_23,
-	energy => U89_energy_23,
-	valid => U89_valid_23,
-	int_gate => U89_int_gate_23,
-	dummy => open,
-	trig => U75_Reduced,
-	int_time => U36_out_0,
-	pre_int => U37_out_0,
-	cant_out => U92_FIFO_FULL,
-	force_out => U32_out_0,
-	force_stop => U33_out_0,
-	manual_base => U88_out_0,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk 
-);
-U90_0 <= REG_base_0_WR( 15 downto 0 );
-U90_1 <= REG_base_1_WR( 15 downto 0 );
-U90_2 <= REG_base_2_WR( 15 downto 0 );
-U90_3 <= REG_base_3_WR( 15 downto 0 );
-U90_4 <= REG_base_4_WR( 15 downto 0 );
-U90_5 <= REG_base_5_WR( 15 downto 0 );
-U90_6 <= REG_base_6_WR( 15 downto 0 );
-U90_7 <= REG_base_7_WR( 15 downto 0 );
-U90_8 <= REG_base_8_WR( 15 downto 0 );
-U90_9 <= REG_base_9_WR( 15 downto 0 );
-U90_10 <= REG_base_10_WR( 15 downto 0 );
-U90_11 <= REG_base_11_WR( 15 downto 0 );
-U90_12 <= REG_base_12_WR( 15 downto 0 );
-U90_13 <= REG_base_13_WR( 15 downto 0 );
-U90_14 <= REG_base_14_WR( 15 downto 0 );
-U90_15 <= REG_base_15_WR( 15 downto 0 );
-U90_16 <= REG_base_16_WR( 15 downto 0 );
-U90_17 <= REG_base_17_WR( 15 downto 0 );
-U90_18 <= REG_base_18_WR( 15 downto 0 );
-U90_19 <= REG_base_19_WR( 15 downto 0 );
-U90_20 <= REG_base_20_WR( 15 downto 0 );
-U90_21 <= REG_base_21_WR( 15 downto 0 );
-U90_22 <= REG_base_22_WR( 15 downto 0 );
-U90_23 <= REG_base_23_WR( 15 downto 0 );
-U90_24 <= REG_base_24_WR( 15 downto 0 );
-U90_25 <= REG_base_25_WR( 15 downto 0 );
-U90_26 <= REG_base_26_WR( 15 downto 0 );
-U90_27 <= REG_base_27_WR( 15 downto 0 );
-U90_28 <= REG_base_28_WR( 15 downto 0 );
-U90_29 <= REG_base_29_WR( 15 downto 0 );
-U90_30 <= REG_base_30_WR( 15 downto 0 );
-U90_31 <= REG_base_31_WR( 15 downto 0 );
-PROCESS_REG_U91 : process(BUS_CLK,GlobalReset)
+U55_out <= ext(U51_out_0 , 32);
+PROCESS_REG_U56 : process(BUS_CLK,GlobalReset)
 begin
     if rising_edge(BUS_CLK(0))  then
-         U91_hold <= EXT(U92_FIFO_FULL,32);
+         U56_hold <= EXT(U111_FIFO_FULL,32);
     end if;
 end process;
-REG_full_RD <= EXT(U92_FIFO_FULL,32);
-
-	U92 : U92_custompacket
-	Generic map(
-		memLength => 	32768,
-		wordWidth => 	32
-	)
-	PORT MAP(
-		IN_2 => U89_energy_0,
-		IN_3 => U89_energy_1,
-		IN_4 => U89_energy_2,
-		IN_5 => U89_energy_3,
-		IN_6 => U89_energy_4,
-		IN_7 => U89_energy_5,
-		IN_8 => U89_energy_6,
-		IN_9 => U89_energy_7,
-		IN_10 => U89_energy_8,
-		IN_11 => U89_energy_9,
-		IN_12 => U89_energy_10,
-		IN_13 => U89_energy_11,
-		IN_14 => U89_energy_12,
-		IN_15 => U89_energy_13,
-		IN_16 => U89_energy_14,
-		IN_17 => U89_energy_15,
-		IN_18 => U89_energy_16,
-		IN_19 => U89_energy_17,
-		IN_20 => U89_energy_18,
-		IN_21 => U89_energy_19,
-		IN_22 => U89_energy_20,
-		IN_23 => U89_energy_21,
-		IN_24 => U89_energy_22,
-		IN_25 => U89_energy_23,
-		IN_26 => x"0000",
-		IN_27 => x"0000",
-		IN_28 => x"0000",
-		IN_29 => x"0000",
-		IN_30 => x"0000",
-		IN_31 => x"0000",
-		IN_32 => x"0000",
-		IN_33 => x"0000",
-		IN_1 => U79_TIMESTAMP,
-		IN_34 => U81_out,
-		TRIG => U83_OUT,
-		CLK_WRITE => CLK_ACQ,
-		SYNC_TRIG => "0",
-		SYNC_RESET => "0",
-		SYNC_CLK => "0",
-		BUSY => open,
-		FIFO_FULL => U92_FIFO_FULL,
-		RUN => open,
-		RESET => "0",
-		CLK_READ => BUS_CLK,
-		READ_DATA => BUS_All_Energies_READ_DATA,
-		READ_DATAVALID => BUS_All_Energies_VLD,
-		READ_RD_INT => BUS_All_Energies_R_INT,
-		READ_STATUS => REG_All_Energies_READ_STATUS_RD,
-		READ_VALID_WORDS => REG_All_Energies_READ_VALID_WORDS_RD,
-		CONFIG => REG_All_Energies_CONFIG_WR
-	);
-
-U93_SYNC_0 <= SYNC_0_IN;
+REG_full_RD <= EXT(U111_FIFO_FULL,32);
+U57_SYNC_0 <= SYNC_0_IN;
 
 
-	U94 : MCRateMeter
-	Generic map(
-		CHANNEL_COUNT => 	1,
-		CLK_FREQ => 	1250000000
-	)
-	PORT MAP(
-		trigger => U75_Reduced,
-		VETO => '0',
-		START => U35_out_0(0),
-		CLK => CLK_ACQ(0),
-		CLK_READ => BUS_CLK,
-		READ_ADDRESS => BUS_RateMeter_0_READ_ADDRESS,
-		READ_DATA => BUS_RateMeter_0_READ_DATA,
-		READ_DATAVALID => BUS_RateMeter_0_VLD
-	);
-
-
-	U95 : MCRateMeter
-	Generic map(
-		CHANNEL_COUNT => 	1,
-		CLK_FREQ => 	1250000000
-	)
-	PORT MAP(
-		trigger => U28_OUT,
-		VETO => '0',
-		START => U35_out_0(0),
-		CLK => CLK_ACQ(0),
-		CLK_READ => BUS_CLK,
-		READ_ADDRESS => BUS_RateMeter_NoSkip_READ_ADDRESS,
-		READ_DATA => BUS_RateMeter_NoSkip_READ_DATA,
-		READ_DATAVALID => BUS_RateMeter_NoSkip_VLD
-	);
-
-
-	U96 : xlx_oscilloscope_sync
+	U58 : xlx_oscilloscope_sync
 	Generic map(
 		channels => 	3,
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ANALOG => U98_out & U99_out & U97_out,
-		D0 => U101_SYNC_2 & U100_SYNC_1 & U93_SYNC_0,
-		D1 => U106_OUT & U105_OUT & "0",
+		ANALOG => U60_out & U61_out & U59_out,
+		D0 => U63_SYNC_2 & U62_SYNC_1 & U57_SYNC_0,
+		D1 => U65_OUT & U64_OUT & "0",
 		D2 => "0" & "0" & "0",
 		D3 => "0" & "0" & "0",
-		TRIG => "0",
+		TRIG => U87_out,
 		BUSY => open,
 		CE => "1",
-		CLK_WRITE => CLK_ACQ,
+		CLK_WRITE => U70_clk,
 		RESET => "0",
 		CLK_READ => BUS_CLK,
 		READ_ADDRESS => BUS_Syncs_READ_ADDRESS,
@@ -8185,119 +5662,2528 @@ U93_SYNC_0 <= SYNC_0_IN;
 		CONFIG_ARM => REG_Syncs_CONFIG_ARM_WR
 	);
 
-U97_out <= ext(U93_SYNC_0 , 16);
-U98_out <= ext(U101_SYNC_2 , 16);
-U99_out <= ext(U100_SYNC_1 , 16);
-U100_SYNC_1 <= SYNC_1_IN;
+U59_out <= ext(U57_SYNC_0 , 16);
+U60_out <= ext(U63_SYNC_2 , 16);
+U61_out <= ext(U62_SYNC_1 , 16);
+U62_SYNC_1 <= SYNC_1_IN;
 
-U101_SYNC_2 <= SYNC_2_IN;
+U63_SYNC_2 <= SYNC_2_IN;
 
-
-	U102 : MCRateMeter
-	Generic map(
-		CHANNEL_COUNT => 	1,
-		CLK_FREQ => 	1250000000
-	)
-	PORT MAP(
-		trigger => U105_OUT,
-		VETO => '0',
-		START => '0',
-		CLK => CLK_ACQ(0),
-		CLK_READ => BUS_CLK,
-		READ_ADDRESS => BUS_SyncIn1Meter_READ_ADDRESS,
-		READ_DATA => BUS_SyncIn1Meter_READ_DATA,
-		READ_DATAVALID => BUS_SyncIn1Meter_VLD
-	);
-
-
-	U103 : MCRateMeter
-	Generic map(
-		CHANNEL_COUNT => 	1,
-		CLK_FREQ => 	1250000000
-	)
-	PORT MAP(
-		trigger => U106_OUT,
-		VETO => '0',
-		START => '0',
-		CLK => CLK_ACQ(0),
-		CLK_READ => BUS_CLK,
-		READ_ADDRESS => BUS_SyncIn2Meter_READ_ADDRESS,
-		READ_DATA => BUS_SyncIn2Meter_READ_DATA,
-		READ_DATAVALID => BUS_SyncIn2Meter_VLD
-	);
-
-
-	U104 : MCRateMeter
-	Generic map(
-		CHANNEL_COUNT => 	1,
-		CLK_FREQ => 	1250000000
-	)
-	PORT MAP(
-		trigger => U93_SYNC_0,
-		VETO => '0',
-		START => '0',
-		CLK => CLK_ACQ(0),
-		CLK_READ => BUS_CLK,
-		READ_ADDRESS => BUS_SyncIn0Meter_READ_ADDRESS,
-		READ_DATA => BUS_SyncIn0Meter_READ_DATA,
-		READ_DATAVALID => BUS_SyncIn0Meter_VLD
-	);
-
-U105_OUT <= NOT U100_SYNC_1;
-U106_OUT <= NOT U101_SYNC_2;
-U107 : COUNTER_RISING
+U64_OUT <= NOT U62_SYNC_1;
+U65_OUT <= NOT U63_SYNC_2;
+U66 : COUNTER_RISING
     Generic map(bitSize => 32 )
     port map( 
-        RESET => U106_OUT, 
+        RESET => U65_OUT, 
         CE => "1",
         CLK => async_clk,
-        SIGIN => U93_SYNC_0,
+        SIGIN => U57_SYNC_0,
         ENABLE => "1",
-        COUNTER => U107_counts,
+        COUNTER => U66_counts,
         OVERFLOW => open
     );
-PROCESS_REG_U108 : process(BUS_CLK,GlobalReset)
+PROCESS_REG_U67 : process(BUS_CLK,GlobalReset)
 begin
-    if rising_edge(BUS_CLK(0)) and U106_OUT = "1" then
-         U108_hold <= EXT(U107_counts,32);
+    if rising_edge(BUS_CLK(0)) and U65_OUT = "1" then
+         U67_hold <= EXT(U66_counts,32);
     end if;
 end process;
-REG_sync0_between_sync2_RD <= EXT(U107_counts,32) when U106_OUT="1" else U108_hold;
+REG_sync0_between_sync2_RD <= EXT(U66_counts,32) when U65_OUT="1" else U67_hold;
+SYNC_0_OUT <= U84_out;
 
-	U109 : xlx_oscilloscope_sync
+U69_time <= REG_int_time_WR( 15 downto 0 );
+U69_pre <= REG_int_pre_WR( 15 downto 0 );
+U69_base <= REG_int_base_WR( 0 downto 0 );
+	U70_clk <= FAST_CLK_100;
+U71_out <= U54_TIMESTAMP(15 downto 0);
+
+U72 : block
+begin
+U72_out <= U71_out when U74_stamptype = "00" else U73_out when U74_stamptype = "01" else U74_to_encode when U74_stamptype = "10" else U74_to_encode when U74_stamptype = "11"  else U74_to_encode;
+
+end block;
+U73_out <= U54_TIMESTAMP(31 downto 16);
+U74_to_encode <= REG_io_to_encode_WR( 15 downto 0 );
+U74_stamptype <= REG_io_stamptype_WR( 1 downto 0 );
+U74_lemo2out <= REG_io_lemo2out_WR( 1 downto 0 );
+U74_divide <= REG_io_divide_WR( 31 downto 0 );
+PROCESS_REG_U75 : process(BUS_CLK,GlobalReset)
+begin
+    if rising_edge(BUS_CLK(0)) and U84_out = "1" then
+         U75_hold <= EXT(U72_out,32);
+    end if;
+end process;
+REG_timestamp_RD <= EXT(U72_out,32) when U84_out="1" else U75_hold;
+
+	U76 : U76_UserHDL_Serial_Rx
+	PORT MAP(
+		sysclk => U70_clk(0),
+		rxclock => U70_clk(0),
+		reset => U26_out_0(0),
+		FMData_in => U86_FMData_Out(0),
+		Clr_Err => '0',
+		pdata_out => U76_pdata_out,
+		Rx_Done => U76_Rx_Done(0),
+		Parity_Err => open
+	);
+
+SYNC_0_OUT <= U86_FMData_Out;
+PROCESS_REG_U78 : process(BUS_CLK,GlobalReset)
+begin
+    if rising_edge(BUS_CLK(0)) and U76_Rx_Done = "1" then
+         U78_hold <= EXT(U76_pdata_out,32);
+    end if;
+end process;
+REG_received_RD <= EXT(U76_pdata_out,32) when U76_Rx_Done="1" else U78_hold;
+
+U79 : block
+begin
+U79_out <= U80_CONST when U82_OUT = "0" else U81_CONST when U82_OUT = "1"  else (others=>'0');
+
+end block;
+U80_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"14A14A14A"),32));
+U81_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"80000000"),32));
+
+	U82 : SW_GATE_AND_DELAY
 	Generic map(
-		channels => 	25,
+		maxDelay => 	128
+	)
+	PORT MAP(
+		PORT_IN => U86_Tx_Done,
+		GATE => U83_int,
+		DELAY => 0,
+		PORT_OUT => U82_OUT,
+		CLK => CLK_ACQ,
+		RESET => U26_int
+	);
+
+	U83_int <= conv_integer(U69_time);
+
+U84 : block
+begin
+U84_out <= U25_OUT when U89_mode = "0" else U102_digital_out when U89_mode = "1"  else U102_digital_out;
+
+end block;
+U85_CONST <= conv_std_logic_vector(1,1);
+
+	U86 : U86_UserHDL_Serial_Tx
+	PORT MAP(
+		clock => U70_clk(0),
+		reset => U26_out_0(0),
+		Tx_En => U84_out(0),
+		Tx_Done => U86_Tx_Done(0),
+		FMData_Out => U86_FMData_Out(0),
+		pdata_in => U72_out
+	);
+
+
+U87 : block
+begin
+U87_out <= U84_out when U74_lemo2out = "00" else U86_FMData_Out when U74_lemo2out = "01" else U95_out when U74_lemo2out = "10" else U95_out when U74_lemo2out = "11"  else U95_out;
+
+end block;
+U88_int <= INT_forcetrig_WR;
+U88_out_0 <= REG_forcetrig_WR(0 downto 0);
+REG_forcetrig_RD  <= REG_forcetrig_WR;
+U89_polarity <= REG_trig_polarity_WR( 0 downto 0 );
+U89_inhib <= REG_trig_inhib_WR( 15 downto 0 );
+U89_gate_l <= REG_trig_gate_l_WR( 15 downto 0 );
+U89_gate_u <= REG_trig_gate_u_WR( 15 downto 0 );
+U89_delay <= REG_trig_delay_WR( 15 downto 0 );
+U89_mode <= REG_trig_mode_WR( 0 downto 0 );
+SYNC_1_OUT <= U87_out;
+
+U91:S_FIFO
+GENERIC MAP(
+    memLength => 8192,
+    busWidthWrite => 16,
+    busWidthRead => 16)
+PORT MAP(
+    RESET => GlobalReset,
+    CLK_READ => U92_OUT,
+    CLK_WRITE => U84_out,
+    WE => U26_out_0,
+    PORT_IN => U72_out,
+    RD => U26_out_0,
+    EMPTY => U91_empty,
+    FULL => U91_full,
+    OVERFLOW => OPEN,
+    UNDERFLOW => OPEN,
+    PORT_OUT => U91_out
+);
+U92_OUT <= U105_valid_0 AND U105_valid_1 AND U105_valid_2 AND U105_valid_3 AND U105_valid_4 AND U105_valid_5 AND U105_valid_6 AND U105_valid_7 AND U105_valid_8 AND U105_valid_9 AND U105_valid_10 AND U105_valid_11 AND U105_valid_12 AND U105_valid_13 AND U105_valid_14 AND U105_valid_15 AND U105_valid_16 AND U105_valid_17 AND U105_valid_18 AND U105_valid_19 AND U105_valid_20 AND U105_valid_21 AND U105_valid_22 AND U105_valid_23 AND U85_CONST AND U85_CONST AND U85_CONST AND U85_CONST AND U85_CONST AND U85_CONST AND U85_CONST AND U85_CONST;
+
+	U93 : MCRateMeter
+	Generic map(
+		CHANNEL_COUNT => 	1,
+		CLK_FREQ => 	1250000000
+	)
+	PORT MAP(
+		trigger => U84_out,
+		VETO => '0',
+		START => U26_int(0),
+		CLK => CLK_ACQ(0),
+		CLK_READ => BUS_CLK,
+		READ_ADDRESS => BUS_RateMeter_READ_ADDRESS,
+		READ_DATA => BUS_RateMeter_READ_DATA,
+		READ_DATAVALID => BUS_RateMeter_VLD
+	);
+
+
+	U94 : MCRateMeter
+	Generic map(
+		CHANNEL_COUNT => 	3,
+		CLK_FREQ => 	1250000000
+	)
+	PORT MAP(
+		trigger => U65_OUT & U64_OUT & U57_SYNC_0,
+		VETO => '0',
+		START => '0',
+		CLK => CLK_ACQ(0),
+		CLK_READ => BUS_CLK,
+		READ_ADDRESS => BUS_SyncIn_READ_ADDRESS,
+		READ_DATA => BUS_SyncIn_READ_DATA,
+		READ_DATAVALID => BUS_SyncIn_VLD
+	);
+
+
+U95:SCALER
+PORT MAP(
+    RESET => GlobalReset,
+    CE => "1",
+    PORT_IN => U70_clk,
+    PORT_SCALE => U96_int,
+    PORT_OUT => U95_out
+);
+	U96_int <= conv_integer(U74_divide);
+
+	U97 : xlx_oscilloscope_sync
+	Generic map(
+		channels => 	32,
 		memLength => 	1024,
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ANALOG => U110_out & U74_ANALOGOUT_23 & U74_ANALOGOUT_22 & U74_ANALOGOUT_21 & U74_ANALOGOUT_20 & U74_ANALOGOUT_19 & U74_ANALOGOUT_18 & U74_ANALOGOUT_17 & U74_ANALOGOUT_16 & U74_ANALOGOUT_15 & U74_ANALOGOUT_14 & U74_ANALOGOUT_13 & U74_ANALOGOUT_12 & U74_ANALOGOUT_11 & U74_ANALOGOUT_10 & U74_ANALOGOUT_9 & U74_ANALOGOUT_8 & U74_ANALOGOUT_7 & U74_ANALOGOUT_6 & U74_ANALOGOUT_5 & U74_ANALOGOUT_4 & U74_ANALOGOUT_3 & U74_ANALOGOUT_2 & U74_ANALOGOUT_1 & U74_ANALOGOUT_0,
-		D0 => U75_Reduced & U74_TRIGOUT_23 & U74_TRIGOUT_22 & U74_TRIGOUT_21 & U74_TRIGOUT_20 & U74_TRIGOUT_19 & U74_TRIGOUT_16 & U74_TRIGOUT_17 & U74_TRIGOUT_16 & U74_TRIGOUT_15 & U74_TRIGOUT_14 & U74_TRIGOUT_13 & U74_TRIGOUT_12 & U74_TRIGOUT_11 & U74_TRIGOUT_10 & U74_TRIGOUT_9 & U74_TRIGOUT_8 & U74_TRIGOUT_7 & U74_TRIGOUT_6 & U74_TRIGOUT_5 & U74_TRIGOUT_4 & U74_TRIGOUT_3 & U74_TRIGOUT_2 & U74_TRIGOUT_1 & U74_TRIGOUT_0,
-		D1 => U28_OUT & U82_TRIGOUT_23 & U82_TRIGOUT_22 & U82_TRIGOUT_21 & U82_TRIGOUT_20 & U82_TRIGOUT_15 & U82_TRIGOUT_18 & U82_TRIGOUT_17 & U82_TRIGOUT_16 & U82_TRIGOUT_15 & U82_TRIGOUT_10 & U82_TRIGOUT_13 & U82_TRIGOUT_12 & U82_TRIGOUT_11 & U82_TRIGOUT_10 & U82_TRIGOUT_9 & U82_TRIGOUT_8 & U82_TRIGOUT_7 & U82_TRIGOUT_6 & U82_TRIGOUT_5 & U82_TRIGOUT_4 & U82_TRIGOUT_3 & U82_TRIGOUT_2 & U82_TRIGOUT_1 & U82_TRIGOUT_0,
-		D2 => "0" & U89_valid_23 & U89_valid_22 & U89_valid_21 & U89_valid_20 & U89_valid_19 & U89_valid_18 & U89_valid_17 & U89_valid_16 & U89_valid_15 & U89_valid_14 & U89_valid_13 & U89_valid_12 & U89_valid_11 & U89_valid_10 & U89_valid_9 & U89_valid_8 & U89_valid_7 & U89_valid_6 & U89_valid_5 & U89_valid_4 & U89_valid_3 & U89_valid_2 & U89_valid_1 & U89_valid_0,
-		D3 => "0" & U89_int_gate_23 & U89_int_gate_22 & U89_int_gate_21 & U89_int_gate_20 & U89_int_gate_19 & U89_int_gate_18 & U89_int_gate_17 & U89_int_gate_16 & U89_int_gate_15 & U89_int_gate_14 & U89_int_gate_13 & U89_int_gate_12 & U89_int_gate_11 & U89_int_gate_10 & U89_int_gate_9 & U89_int_gate_8 & U89_int_gate_7 & U89_int_gate_6 & U89_int_gate_5 & U89_int_gate_4 & U89_int_gate_3 & U89_int_gate_2 & U89_int_gate_1 & U89_int_gate_0,
+		ANALOG => x"0000" & x"0000" & x"0000" & x"0000" & x"0000" & x"0000" & x"0000" & x"0000" & U23_A23 & U22_A22 & U21_A21 & U20_A20 & U19_A19 & U18_A18 & U17_A17 & U16_A16 & U15_A15 & U14_A14 & U13_A13 & U12_A12 & U11_A11 & U10_A10 & U9_A9 & U8_A8 & U7_A7 & U6_A6 & U5_A5 & U4_A4 & U3_A3 & U2_A2 & U1_A1 & U0_A0,
+		D0 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		D1 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		D2 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		D3 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		TRIG => U84_out,
+		BUSY => open,
+		CE => "1",
+		CLK_WRITE => U70_clk,
+		RESET => "0",
+		CLK_READ => BUS_CLK,
+		READ_ADDRESS => BUS_Analog_In_Unflipped_READ_ADDRESS,
+		READ_DATA => BUS_Analog_In_Unflipped_READ_DATA,
+		READ_DATAVALID => BUS_Analog_In_Unflipped_VLD,
+		READ_STATUS => REG_Analog_In_Unflipped_READ_STATUS_RD,
+		READ_POSITION => REG_Analog_In_Unflipped_READ_POSITION_RD,
+		CONFIG_TRIGGER_MODE => REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR,
+		CONFIG_TRIGGER_LEVEL => REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR,
+		CONFIG_PRETRIGGER => REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR,
+		CONFIG_DECIMATOR => REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR,
+		CONFIG_ARM => REG_Analog_In_Unflipped_CONFIG_ARM_WR
+	);
+
+
+	U98 : xlx_oscilloscope_sync
+	Generic map(
+		channels => 	24,
+		memLength => 	1024,
+		wordWidth => 	16
+	)
+	PORT MAP(
+		ANALOG => U103_ANALOGOUT_23 & U103_ANALOGOUT_22 & U103_ANALOGOUT_21 & U103_ANALOGOUT_20 & U103_ANALOGOUT_19 & U103_ANALOGOUT_18 & U103_ANALOGOUT_17 & U103_ANALOGOUT_16 & U103_ANALOGOUT_15 & U103_ANALOGOUT_14 & U103_ANALOGOUT_13 & U103_ANALOGOUT_12 & U103_ANALOGOUT_11 & U103_ANALOGOUT_10 & U103_ANALOGOUT_9 & U103_ANALOGOUT_8 & U103_ANALOGOUT_7 & U103_ANALOGOUT_6 & U103_ANALOGOUT_5 & U103_ANALOGOUT_4 & U103_ANALOGOUT_3 & U103_ANALOGOUT_2 & U103_ANALOGOUT_1 & U103_ANALOGOUT_0,
+		D0 => U103_TRIGOUT_23 & U103_TRIGOUT_22 & U103_TRIGOUT_21 & U103_TRIGOUT_20 & U103_TRIGOUT_19 & U103_TRIGOUT_18 & U103_TRIGOUT_17 & U103_TRIGOUT_16 & U103_TRIGOUT_15 & U103_TRIGOUT_14 & U103_TRIGOUT_13 & U103_TRIGOUT_12 & U103_TRIGOUT_11 & U103_TRIGOUT_10 & U103_TRIGOUT_9 & U103_TRIGOUT_8 & U103_TRIGOUT_7 & U103_TRIGOUT_6 & U103_TRIGOUT_5 & U103_TRIGOUT_4 & U103_TRIGOUT_3 & U103_TRIGOUT_2 & U103_TRIGOUT_1 & U103_TRIGOUT_0,
+		D1 => U104_TRIGOUT_23 & U104_TRIGOUT_22 & U104_TRIGOUT_21 & U104_TRIGOUT_20 & U104_TRIGOUT_19 & U104_TRIGOUT_18 & U104_TRIGOUT_17 & U104_TRIGOUT_16 & U104_TRIGOUT_15 & U104_TRIGOUT_14 & U104_TRIGOUT_13 & U104_TRIGOUT_12 & U104_TRIGOUT_11 & U104_TRIGOUT_10 & U104_TRIGOUT_9 & U104_TRIGOUT_8 & U104_TRIGOUT_7 & U104_TRIGOUT_6 & U104_TRIGOUT_5 & U104_TRIGOUT_4 & U104_TRIGOUT_3 & U104_TRIGOUT_2 & U104_TRIGOUT_1 & U104_TRIGOUT_0,
+		D2 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		D3 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		TRIG => U84_out,
+		BUSY => open,
+		CE => "1",
+		CLK_WRITE => CLK_ACQ,
+		RESET => "0",
+		CLK_READ => BUS_CLK,
+		READ_ADDRESS => BUS_Analog_READ_ADDRESS,
+		READ_DATA => BUS_Analog_READ_DATA,
+		READ_DATAVALID => BUS_Analog_VLD,
+		READ_STATUS => REG_Analog_READ_STATUS_RD,
+		READ_POSITION => REG_Analog_READ_POSITION_RD,
+		CONFIG_TRIGGER_MODE => REG_Analog_CONFIG_TRIGGER_MODE_WR,
+		CONFIG_TRIGGER_LEVEL => REG_Analog_CONFIG_TRIGGER_LEVEL_WR,
+		CONFIG_PRETRIGGER => REG_Analog_CONFIG_PRETRIGGER_WR,
+		CONFIG_DECIMATOR => REG_Analog_CONFIG_DECIMATOR_WR,
+		CONFIG_ARM => REG_Analog_CONFIG_ARM_WR
+	);
+
+
+	U99 : xlx_oscilloscope_sync
+	Generic map(
+		channels => 	24,
+		memLength => 	1024,
+		wordWidth => 	16
+	)
+	PORT MAP(
+		ANALOG => U105_energy_23 & U105_energy_22 & U105_energy_21 & U105_energy_20 & U105_energy_19 & U105_energy_18 & U105_energy_17 & U105_energy_16 & U105_energy_15 & U105_energy_14 & U105_energy_13 & U105_energy_12 & U105_energy_11 & U105_energy_10 & U105_energy_9 & U105_energy_8 & U105_energy_7 & U105_energy_6 & U105_energy_5 & U105_energy_4 & U105_energy_3 & U105_energy_2 & U105_energy_1 & U105_energy_0,
+		D0 => U105_valid_23 & U105_valid_22 & U105_valid_21 & U105_valid_20 & U105_valid_19 & U105_valid_18 & U105_valid_17 & U105_valid_16 & U105_valid_15 & U105_valid_14 & U105_valid_13 & U105_valid_12 & U105_valid_11 & U105_valid_10 & U105_valid_9 & U105_valid_8 & U105_valid_7 & U105_valid_6 & U105_valid_5 & U105_valid_4 & U105_valid_3 & U105_valid_2 & U105_valid_1 & U105_valid_0,
+		D1 => U105_int_gate_23 & U105_int_gate_22 & U105_int_gate_21 & U105_int_gate_20 & U105_int_gate_19 & U105_int_gate_18 & U105_int_gate_17 & U105_int_gate_16 & U105_int_gate_15 & U105_int_gate_14 & U105_int_gate_13 & U105_int_gate_12 & U105_int_gate_11 & U105_int_gate_10 & U105_int_gate_9 & U105_int_gate_8 & U105_int_gate_7 & U105_int_gate_6 & U105_int_gate_5 & U105_int_gate_4 & U105_int_gate_3 & U105_int_gate_2 & U105_int_gate_1 & U105_int_gate_0,
+		D2 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		D3 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		TRIG => "0",
 		BUSY => open,
 		CE => "1",
 		CLK_WRITE => CLK_ACQ,
 		RESET => "0",
 		CLK_READ => BUS_CLK,
-		READ_ADDRESS => BUS_Oscilloscope_0_READ_ADDRESS,
-		READ_DATA => BUS_Oscilloscope_0_READ_DATA,
-		READ_DATAVALID => BUS_Oscilloscope_0_VLD,
-		READ_STATUS => REG_Oscilloscope_0_READ_STATUS_RD,
-		READ_POSITION => REG_Oscilloscope_0_READ_POSITION_RD,
-		CONFIG_TRIGGER_MODE => REG_Oscilloscope_0_CONFIG_TRIGGER_MODE_WR,
-		CONFIG_TRIGGER_LEVEL => REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL_WR,
-		CONFIG_PRETRIGGER => REG_Oscilloscope_0_CONFIG_PRETRIGGER_WR,
-		CONFIG_DECIMATOR => REG_Oscilloscope_0_CONFIG_DECIMATOR_WR,
-		CONFIG_ARM => REG_Oscilloscope_0_CONFIG_ARM_WR
+		READ_ADDRESS => BUS_Energies_READ_ADDRESS,
+		READ_DATA => BUS_Energies_READ_DATA,
+		READ_DATAVALID => BUS_Energies_VLD,
+		READ_STATUS => REG_Energies_READ_STATUS_RD,
+		READ_POSITION => REG_Energies_READ_POSITION_RD,
+		CONFIG_TRIGGER_MODE => REG_Energies_CONFIG_TRIGGER_MODE_WR,
+		CONFIG_TRIGGER_LEVEL => REG_Energies_CONFIG_TRIGGER_LEVEL_WR,
+		CONFIG_PRETRIGGER => REG_Energies_CONFIG_PRETRIGGER_WR,
+		CONFIG_DECIMATOR => REG_Energies_CONFIG_DECIMATOR_WR,
+		CONFIG_ARM => REG_Energies_CONFIG_ARM_WR
 	);
 
-U110_out <= ext(U75_Reduced , 16);
-SYNC_0_OUT <= U75_Reduced;
+U100_out <= U79_out(15 downto 0);
 
-REG_FIRMWARE_BUILD <= x"20240219";
+	U101 : xlx_oscilloscope_sync
+	Generic map(
+		channels => 	4,
+		memLength => 	1024,
+		wordWidth => 	16
+	)
+	PORT MAP(
+		ANALOG => x"0000" & x"0000" & x"0000" & U100_out,
+		D0 => "0" & U86_FMData_Out & U86_FMData_Out & U87_out,
+		D1 => U92_OUT & U24_OUT & U52_OUT & U84_out,
+		D2 => U111_FIFO_FULL & U111_BUSY & U91_full & U91_empty,
+		D3 => "0" & "0" & U82_OUT & U86_Tx_Done,
+		TRIG => U84_out,
+		BUSY => open,
+		CE => "1",
+		CLK_WRITE => U70_clk,
+		RESET => "0",
+		CLK_READ => BUS_CLK,
+		READ_ADDRESS => BUS_diag_READ_ADDRESS,
+		READ_DATA => BUS_diag_READ_DATA,
+		READ_DATAVALID => BUS_diag_VLD,
+		READ_STATUS => REG_diag_READ_STATUS_RD,
+		READ_POSITION => REG_diag_READ_POSITION_RD,
+		CONFIG_TRIGGER_MODE => REG_diag_CONFIG_TRIGGER_MODE_WR,
+		CONFIG_TRIGGER_LEVEL => REG_diag_CONFIG_TRIGGER_LEVEL_WR,
+		CONFIG_PRETRIGGER => REG_diag_CONFIG_PRETRIGGER_WR,
+		CONFIG_DECIMATOR => REG_diag_CONFIG_DECIMATOR_WR,
+		CONFIG_ARM => REG_diag_CONFIG_ARM_WR
+	);
+
+
+U102:SUBPAGE_clean_interrupt
+PORT MAP(
+	digital_in => U88_int,
+	digital_out => U102_digital_out,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_0:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U0_A0,
+	disable_det => U106_CH0,
+	thrsh => U109_CH0,
+	TRIGOUT => U103_TRIGOUT_0,
+	ANALOGOUT => U103_ANALOGOUT_0,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_1:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U1_A1,
+	disable_det => U106_CH1,
+	thrsh => U109_CH1,
+	TRIGOUT => U103_TRIGOUT_1,
+	ANALOGOUT => U103_ANALOGOUT_1,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_2:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U2_A2,
+	disable_det => U106_CH2,
+	thrsh => U109_CH2,
+	TRIGOUT => U103_TRIGOUT_2,
+	ANALOGOUT => U103_ANALOGOUT_2,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_3:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U3_A3,
+	disable_det => U106_CH3,
+	thrsh => U109_CH3,
+	TRIGOUT => U103_TRIGOUT_3,
+	ANALOGOUT => U103_ANALOGOUT_3,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_4:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U4_A4,
+	disable_det => U106_CH4,
+	thrsh => U109_CH4,
+	TRIGOUT => U103_TRIGOUT_4,
+	ANALOGOUT => U103_ANALOGOUT_4,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_5:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U5_A5,
+	disable_det => U106_CH5,
+	thrsh => U109_CH5,
+	TRIGOUT => U103_TRIGOUT_5,
+	ANALOGOUT => U103_ANALOGOUT_5,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_6:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U6_A6,
+	disable_det => U106_CH6,
+	thrsh => U109_CH6,
+	TRIGOUT => U103_TRIGOUT_6,
+	ANALOGOUT => U103_ANALOGOUT_6,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_7:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U7_A7,
+	disable_det => U106_CH7,
+	thrsh => U109_CH7,
+	TRIGOUT => U103_TRIGOUT_7,
+	ANALOGOUT => U103_ANALOGOUT_7,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_8:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U8_A8,
+	disable_det => U106_CH8,
+	thrsh => U109_CH8,
+	TRIGOUT => U103_TRIGOUT_8,
+	ANALOGOUT => U103_ANALOGOUT_8,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_9:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U9_A9,
+	disable_det => U106_CH9,
+	thrsh => U109_CH9,
+	TRIGOUT => U103_TRIGOUT_9,
+	ANALOGOUT => U103_ANALOGOUT_9,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_10:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U10_A10,
+	disable_det => U106_CH10,
+	thrsh => U109_CH10,
+	TRIGOUT => U103_TRIGOUT_10,
+	ANALOGOUT => U103_ANALOGOUT_10,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_11:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U11_A11,
+	disable_det => U106_CH11,
+	thrsh => U109_CH11,
+	TRIGOUT => U103_TRIGOUT_11,
+	ANALOGOUT => U103_ANALOGOUT_11,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_12:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U12_A12,
+	disable_det => U106_CH12,
+	thrsh => U109_CH12,
+	TRIGOUT => U103_TRIGOUT_12,
+	ANALOGOUT => U103_ANALOGOUT_12,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_13:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U13_A13,
+	disable_det => U106_CH13,
+	thrsh => U109_CH13,
+	TRIGOUT => U103_TRIGOUT_13,
+	ANALOGOUT => U103_ANALOGOUT_13,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_14:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U14_A14,
+	disable_det => U106_CH14,
+	thrsh => U109_CH14,
+	TRIGOUT => U103_TRIGOUT_14,
+	ANALOGOUT => U103_ANALOGOUT_14,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_15:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U15_A15,
+	disable_det => U106_CH15,
+	thrsh => U109_CH15,
+	TRIGOUT => U103_TRIGOUT_15,
+	ANALOGOUT => U103_ANALOGOUT_15,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_16:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U16_A16,
+	disable_det => U106_CH16,
+	thrsh => U109_CH16,
+	TRIGOUT => U103_TRIGOUT_16,
+	ANALOGOUT => U103_ANALOGOUT_16,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_17:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U17_A17,
+	disable_det => U106_CH17,
+	thrsh => U109_CH17,
+	TRIGOUT => U103_TRIGOUT_17,
+	ANALOGOUT => U103_ANALOGOUT_17,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_18:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U18_A18,
+	disable_det => U106_CH18,
+	thrsh => U109_CH18,
+	TRIGOUT => U103_TRIGOUT_18,
+	ANALOGOUT => U103_ANALOGOUT_18,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_19:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U19_A19,
+	disable_det => U106_CH19,
+	thrsh => U109_CH19,
+	TRIGOUT => U103_TRIGOUT_19,
+	ANALOGOUT => U103_ANALOGOUT_19,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_20:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U20_A20,
+	disable_det => U106_CH20,
+	thrsh => U109_CH20,
+	TRIGOUT => U103_TRIGOUT_20,
+	ANALOGOUT => U103_ANALOGOUT_20,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_21:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U21_A21,
+	disable_det => U106_CH21,
+	thrsh => U109_CH21,
+	TRIGOUT => U103_TRIGOUT_21,
+	ANALOGOUT => U103_ANALOGOUT_21,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_22:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U22_A22,
+	disable_det => U106_CH22,
+	thrsh => U109_CH22,
+	TRIGOUT => U103_TRIGOUT_22,
+	ANALOGOUT => U103_ANALOGOUT_22,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U103_23:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U23_A23,
+	disable_det => U106_CH23,
+	thrsh => U109_CH23,
+	TRIGOUT => U103_TRIGOUT_23,
+	ANALOGOUT => U103_ANALOGOUT_23,
+	gate => U89_gate_l,
+	polarity => U89_polarity,
+	inhib => U89_inhib,
+	delay => U89_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_0:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U0_A0,
+	top => U107_CH0,
+	TRIGOUT => U104_TRIGOUT_0,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_1:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U1_A1,
+	top => U107_CH1,
+	TRIGOUT => U104_TRIGOUT_1,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_2:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U2_A2,
+	top => U107_CH2,
+	TRIGOUT => U104_TRIGOUT_2,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_3:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U3_A3,
+	top => U107_CH3,
+	TRIGOUT => U104_TRIGOUT_3,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_4:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U4_A4,
+	top => U107_CH4,
+	TRIGOUT => U104_TRIGOUT_4,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_5:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U5_A5,
+	top => U107_CH5,
+	TRIGOUT => U104_TRIGOUT_5,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_6:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U6_A6,
+	top => U107_CH6,
+	TRIGOUT => U104_TRIGOUT_6,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_7:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U7_A7,
+	top => U107_CH7,
+	TRIGOUT => U104_TRIGOUT_7,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_8:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U8_A8,
+	top => U107_CH8,
+	TRIGOUT => U104_TRIGOUT_8,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_9:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U9_A9,
+	top => U107_CH9,
+	TRIGOUT => U104_TRIGOUT_9,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_10:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U10_A10,
+	top => U107_CH10,
+	TRIGOUT => U104_TRIGOUT_10,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_11:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U11_A11,
+	top => U107_CH11,
+	TRIGOUT => U104_TRIGOUT_11,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_12:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U12_A12,
+	top => U107_CH12,
+	TRIGOUT => U104_TRIGOUT_12,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_13:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U13_A13,
+	top => U107_CH13,
+	TRIGOUT => U104_TRIGOUT_13,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_14:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U14_A14,
+	top => U107_CH14,
+	TRIGOUT => U104_TRIGOUT_14,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_15:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U15_A15,
+	top => U107_CH15,
+	TRIGOUT => U104_TRIGOUT_15,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_16:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U16_A16,
+	top => U107_CH16,
+	TRIGOUT => U104_TRIGOUT_16,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_17:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U17_A17,
+	top => U107_CH17,
+	TRIGOUT => U104_TRIGOUT_17,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_18:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U18_A18,
+	top => U107_CH18,
+	TRIGOUT => U104_TRIGOUT_18,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_19:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U19_A19,
+	top => U107_CH19,
+	TRIGOUT => U104_TRIGOUT_19,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_20:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U20_A20,
+	top => U107_CH20,
+	TRIGOUT => U104_TRIGOUT_20,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_21:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U21_A21,
+	top => U107_CH21,
+	TRIGOUT => U104_TRIGOUT_21,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_22:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U22_A22,
+	top => U107_CH22,
+	TRIGOUT => U104_TRIGOUT_22,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U104_23:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U23_A23,
+	top => U107_CH23,
+	TRIGOUT => U104_TRIGOUT_23,
+	polarity => U89_polarity,
+	gate => U89_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_0:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_0,
+	base => U108_CH0,
+	energy => U105_energy_0,
+	valid => U105_valid_0,
+	int_gate => U105_int_gate_0,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_1:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_1,
+	base => U108_CH1,
+	energy => U105_energy_1,
+	valid => U105_valid_1,
+	int_gate => U105_int_gate_1,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_2:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_2,
+	base => U108_CH2,
+	energy => U105_energy_2,
+	valid => U105_valid_2,
+	int_gate => U105_int_gate_2,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_3:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_3,
+	base => U108_CH3,
+	energy => U105_energy_3,
+	valid => U105_valid_3,
+	int_gate => U105_int_gate_3,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_4:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_4,
+	base => U108_CH4,
+	energy => U105_energy_4,
+	valid => U105_valid_4,
+	int_gate => U105_int_gate_4,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_5:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_5,
+	base => U108_CH5,
+	energy => U105_energy_5,
+	valid => U105_valid_5,
+	int_gate => U105_int_gate_5,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_6:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_6,
+	base => U108_CH6,
+	energy => U105_energy_6,
+	valid => U105_valid_6,
+	int_gate => U105_int_gate_6,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_7:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_7,
+	base => U108_CH7,
+	energy => U105_energy_7,
+	valid => U105_valid_7,
+	int_gate => U105_int_gate_7,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_8:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_8,
+	base => U108_CH8,
+	energy => U105_energy_8,
+	valid => U105_valid_8,
+	int_gate => U105_int_gate_8,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_9:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_9,
+	base => U108_CH9,
+	energy => U105_energy_9,
+	valid => U105_valid_9,
+	int_gate => U105_int_gate_9,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_10:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_10,
+	base => U108_CH10,
+	energy => U105_energy_10,
+	valid => U105_valid_10,
+	int_gate => U105_int_gate_10,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_11:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_11,
+	base => U108_CH11,
+	energy => U105_energy_11,
+	valid => U105_valid_11,
+	int_gate => U105_int_gate_11,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_12:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_12,
+	base => U108_CH12,
+	energy => U105_energy_12,
+	valid => U105_valid_12,
+	int_gate => U105_int_gate_12,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_13:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_13,
+	base => U108_CH13,
+	energy => U105_energy_13,
+	valid => U105_valid_13,
+	int_gate => U105_int_gate_13,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_14:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_14,
+	base => U108_CH14,
+	energy => U105_energy_14,
+	valid => U105_valid_14,
+	int_gate => U105_int_gate_14,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_15:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_15,
+	base => U108_CH15,
+	energy => U105_energy_15,
+	valid => U105_valid_15,
+	int_gate => U105_int_gate_15,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_16:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_16,
+	base => U108_CH16,
+	energy => U105_energy_16,
+	valid => U105_valid_16,
+	int_gate => U105_int_gate_16,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_17:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_17,
+	base => U108_CH17,
+	energy => U105_energy_17,
+	valid => U105_valid_17,
+	int_gate => U105_int_gate_17,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_18:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_18,
+	base => U108_CH18,
+	energy => U105_energy_18,
+	valid => U105_valid_18,
+	int_gate => U105_int_gate_18,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_19:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_19,
+	base => U108_CH19,
+	energy => U105_energy_19,
+	valid => U105_valid_19,
+	int_gate => U105_int_gate_19,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_20:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_20,
+	base => U108_CH20,
+	energy => U105_energy_20,
+	valid => U105_valid_20,
+	int_gate => U105_int_gate_20,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_21:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_21,
+	base => U108_CH21,
+	energy => U105_energy_21,
+	valid => U105_valid_21,
+	int_gate => U105_int_gate_21,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_22:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_22,
+	base => U108_CH22,
+	energy => U105_energy_22,
+	valid => U105_valid_22,
+	int_gate => U105_int_gate_22,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U105_23:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U103_ANALOGOUT_23,
+	base => U108_CH23,
+	energy => U105_energy_23,
+	valid => U105_valid_23,
+	int_gate => U105_int_gate_23,
+	dummy => open,
+	trig => U84_out,
+	int_time => U69_time,
+	pre_int => U69_pre,
+	manual_base => U69_base,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+U106_CH0 <= REG_disable_det_CH0_WR( 0 downto 0 );
+U106_CH1 <= REG_disable_det_CH1_WR( 0 downto 0 );
+U106_CH2 <= REG_disable_det_CH2_WR( 0 downto 0 );
+U106_CH3 <= REG_disable_det_CH3_WR( 0 downto 0 );
+U106_CH4 <= REG_disable_det_CH4_WR( 0 downto 0 );
+U106_CH5 <= REG_disable_det_CH5_WR( 0 downto 0 );
+U106_CH6 <= REG_disable_det_CH6_WR( 0 downto 0 );
+U106_CH7 <= REG_disable_det_CH7_WR( 0 downto 0 );
+U106_CH8 <= REG_disable_det_CH8_WR( 0 downto 0 );
+U106_CH9 <= REG_disable_det_CH9_WR( 0 downto 0 );
+U106_CH10 <= REG_disable_det_CH10_WR( 0 downto 0 );
+U106_CH11 <= REG_disable_det_CH11_WR( 0 downto 0 );
+U106_CH12 <= REG_disable_det_CH12_WR( 0 downto 0 );
+U106_CH13 <= REG_disable_det_CH13_WR( 0 downto 0 );
+U106_CH14 <= REG_disable_det_CH14_WR( 0 downto 0 );
+U106_CH15 <= REG_disable_det_CH15_WR( 0 downto 0 );
+U106_CH16 <= REG_disable_det_CH16_WR( 0 downto 0 );
+U106_CH17 <= REG_disable_det_CH17_WR( 0 downto 0 );
+U106_CH18 <= REG_disable_det_CH18_WR( 0 downto 0 );
+U106_CH19 <= REG_disable_det_CH19_WR( 0 downto 0 );
+U106_CH20 <= REG_disable_det_CH20_WR( 0 downto 0 );
+U106_CH21 <= REG_disable_det_CH21_WR( 0 downto 0 );
+U106_CH22 <= REG_disable_det_CH22_WR( 0 downto 0 );
+U106_CH23 <= REG_disable_det_CH23_WR( 0 downto 0 );
+U107_CH0 <= REG_top_CH0_WR( 15 downto 0 );
+U107_CH1 <= REG_top_CH1_WR( 15 downto 0 );
+U107_CH2 <= REG_top_CH2_WR( 15 downto 0 );
+U107_CH3 <= REG_top_CH3_WR( 15 downto 0 );
+U107_CH4 <= REG_top_CH4_WR( 15 downto 0 );
+U107_CH5 <= REG_top_CH5_WR( 15 downto 0 );
+U107_CH6 <= REG_top_CH6_WR( 15 downto 0 );
+U107_CH7 <= REG_top_CH7_WR( 15 downto 0 );
+U107_CH8 <= REG_top_CH8_WR( 15 downto 0 );
+U107_CH9 <= REG_top_CH9_WR( 15 downto 0 );
+U107_CH10 <= REG_top_CH10_WR( 15 downto 0 );
+U107_CH11 <= REG_top_CH11_WR( 15 downto 0 );
+U107_CH12 <= REG_top_CH12_WR( 15 downto 0 );
+U107_CH13 <= REG_top_CH13_WR( 15 downto 0 );
+U107_CH14 <= REG_top_CH14_WR( 15 downto 0 );
+U107_CH15 <= REG_top_CH15_WR( 15 downto 0 );
+U107_CH16 <= REG_top_CH16_WR( 15 downto 0 );
+U107_CH17 <= REG_top_CH17_WR( 15 downto 0 );
+U107_CH18 <= REG_top_CH18_WR( 15 downto 0 );
+U107_CH19 <= REG_top_CH19_WR( 15 downto 0 );
+U107_CH20 <= REG_top_CH20_WR( 15 downto 0 );
+U107_CH21 <= REG_top_CH21_WR( 15 downto 0 );
+U107_CH22 <= REG_top_CH22_WR( 15 downto 0 );
+U107_CH23 <= REG_top_CH23_WR( 15 downto 0 );
+U108_CH0 <= REG_base_CH0_WR( 15 downto 0 );
+U108_CH1 <= REG_base_CH1_WR( 15 downto 0 );
+U108_CH2 <= REG_base_CH2_WR( 15 downto 0 );
+U108_CH3 <= REG_base_CH3_WR( 15 downto 0 );
+U108_CH4 <= REG_base_CH4_WR( 15 downto 0 );
+U108_CH5 <= REG_base_CH5_WR( 15 downto 0 );
+U108_CH6 <= REG_base_CH6_WR( 15 downto 0 );
+U108_CH7 <= REG_base_CH7_WR( 15 downto 0 );
+U108_CH8 <= REG_base_CH8_WR( 15 downto 0 );
+U108_CH9 <= REG_base_CH9_WR( 15 downto 0 );
+U108_CH10 <= REG_base_CH10_WR( 15 downto 0 );
+U108_CH11 <= REG_base_CH11_WR( 15 downto 0 );
+U108_CH12 <= REG_base_CH12_WR( 15 downto 0 );
+U108_CH13 <= REG_base_CH13_WR( 15 downto 0 );
+U108_CH14 <= REG_base_CH14_WR( 15 downto 0 );
+U108_CH15 <= REG_base_CH15_WR( 15 downto 0 );
+U108_CH16 <= REG_base_CH16_WR( 15 downto 0 );
+U108_CH17 <= REG_base_CH17_WR( 15 downto 0 );
+U108_CH18 <= REG_base_CH18_WR( 15 downto 0 );
+U108_CH19 <= REG_base_CH19_WR( 15 downto 0 );
+U108_CH20 <= REG_base_CH20_WR( 15 downto 0 );
+U108_CH21 <= REG_base_CH21_WR( 15 downto 0 );
+U108_CH22 <= REG_base_CH22_WR( 15 downto 0 );
+U108_CH23 <= REG_base_CH23_WR( 15 downto 0 );
+U109_CH0 <= REG_thrsh_CH0_WR( 15 downto 0 );
+U109_CH1 <= REG_thrsh_CH1_WR( 15 downto 0 );
+U109_CH2 <= REG_thrsh_CH2_WR( 15 downto 0 );
+U109_CH3 <= REG_thrsh_CH3_WR( 15 downto 0 );
+U109_CH4 <= REG_thrsh_CH4_WR( 15 downto 0 );
+U109_CH5 <= REG_thrsh_CH5_WR( 15 downto 0 );
+U109_CH6 <= REG_thrsh_CH6_WR( 15 downto 0 );
+U109_CH7 <= REG_thrsh_CH7_WR( 15 downto 0 );
+U109_CH8 <= REG_thrsh_CH8_WR( 15 downto 0 );
+U109_CH9 <= REG_thrsh_CH9_WR( 15 downto 0 );
+U109_CH10 <= REG_thrsh_CH10_WR( 15 downto 0 );
+U109_CH11 <= REG_thrsh_CH11_WR( 15 downto 0 );
+U109_CH12 <= REG_thrsh_CH12_WR( 15 downto 0 );
+U109_CH13 <= REG_thrsh_CH13_WR( 15 downto 0 );
+U109_CH14 <= REG_thrsh_CH14_WR( 15 downto 0 );
+U109_CH15 <= REG_thrsh_CH15_WR( 15 downto 0 );
+U109_CH16 <= REG_thrsh_CH16_WR( 15 downto 0 );
+U109_CH17 <= REG_thrsh_CH17_WR( 15 downto 0 );
+U109_CH18 <= REG_thrsh_CH18_WR( 15 downto 0 );
+U109_CH19 <= REG_thrsh_CH19_WR( 15 downto 0 );
+U109_CH20 <= REG_thrsh_CH20_WR( 15 downto 0 );
+U109_CH21 <= REG_thrsh_CH21_WR( 15 downto 0 );
+U109_CH22 <= REG_thrsh_CH22_WR( 15 downto 0 );
+U109_CH23 <= REG_thrsh_CH23_WR( 15 downto 0 );
+PROCESS_REG_U110 : process(BUS_CLK,GlobalReset)
+begin
+    if rising_edge(BUS_CLK(0))  then
+         U110_hold <= EXT(U88_out_0,32);
+    end if;
+end process;
+REG_dummy_RD <= EXT(U88_out_0,32);
+
+	U111 : U111_custompacket
+	Generic map(
+		memLength => 	32768,
+		wordWidth => 	32
+	)
+	PORT MAP(
+		IN_2 => U105_energy_0,
+		IN_3 => U105_energy_1,
+		IN_4 => U105_energy_2,
+		IN_5 => U105_energy_3,
+		IN_6 => U105_energy_4,
+		IN_7 => U105_energy_5,
+		IN_8 => U105_energy_6,
+		IN_9 => U105_energy_7,
+		IN_10 => U105_energy_8,
+		IN_11 => U105_energy_9,
+		IN_12 => U105_energy_10,
+		IN_13 => U105_energy_11,
+		IN_14 => U105_energy_12,
+		IN_15 => U105_energy_13,
+		IN_16 => U105_energy_14,
+		IN_17 => U105_energy_15,
+		IN_18 => U105_energy_16,
+		IN_19 => U105_energy_17,
+		IN_20 => U105_energy_18,
+		IN_21 => U105_energy_19,
+		IN_22 => U105_energy_20,
+		IN_23 => U105_energy_21,
+		IN_24 => U105_energy_22,
+		IN_25 => U105_energy_23,
+		IN_26 => x"0000",
+		IN_27 => x"0000",
+		IN_28 => x"0000",
+		IN_29 => x"0000",
+		IN_30 => x"0000",
+		IN_31 => x"0000",
+		IN_32 => x"0000",
+		IN_33 => x"0000",
+		IN_34 => U55_out,
+		IN_35 => U79_out,
+		IN_1 => U91_out,
+		TRIG => U92_OUT,
+		CLK_WRITE => U70_clk,
+		SYNC_TRIG => "0",
+		SYNC_RESET => "0",
+		SYNC_CLK => "0",
+		BUSY => U111_BUSY,
+		FIFO_FULL => U111_FIFO_FULL,
+		RUN => open,
+		RESET => "0",
+		CLK_READ => BUS_CLK,
+		READ_DATA => BUS_All_Energies_READ_DATA,
+		READ_DATAVALID => BUS_All_Energies_VLD,
+		READ_RD_INT => BUS_All_Energies_R_INT,
+		READ_STATUS => REG_All_Energies_READ_STATUS_RD,
+		READ_VALID_WORDS => REG_All_Energies_READ_VALID_WORDS_RD,
+		CONFIG => REG_All_Energies_CONFIG_WR
+	);
+
+REG_FIRMWARE_BUILD <= x"20240627";
+REG_FIRMWARE_UNIQUE <= x"361567DF";
 FW_STRING_0 <= x"5237364669726D776172650000000000";
 
 end Behavioral;

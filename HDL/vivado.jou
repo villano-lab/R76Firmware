@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Jun 27 14:07:07 2024
+# Process ID: 16912
+# Current directory: C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL
+# Command line: vivado.exe -mode batch -source C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/R76Firmware.tcl
+# Log file: C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/vivado.log
+# Journal file: C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL\vivado.jou
+#-----------------------------------------------------------
+source C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/R76Firmware.tcl
+create_project -in_memory generateNetlistIP -part xc7z030fbg676-2
+read_ip C:/Users/CDMS/Documents/GitHub/R76Firmware/output/R76Firmware/R76Firmware.srcs/sources_1/ip/clk_wiz_0.xcix
+create_project -in_memory generateNetlistIP -part xc7z030fbg676-2
+read_ip C:/Users/CDMS/Documents/GitHub/R76Firmware/output/R76Firmware/R76Firmware.srcs/sources_1/ip/fifo_generator_0.xcix
+create_project -in_memory generateNetlistIP -part xc7z030fbg676-2
+read_ip C:/Users/CDMS/Documents/GitHub/R76Firmware/output/R76Firmware/R76Firmware.srcs/sources_1/ip/main_clock/main_clock.xci

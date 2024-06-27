@@ -10,10 +10,7 @@ use ieee.math_real.all;
 
 entity SUBPAGE_ChargeIntegrator is
     Port (	
-		cant_out : in std_logic_vector(0 downto 0);
-force_out : in std_logic_vector(0 downto 0);
-force_stop : in std_logic_vector(0 downto 0);
-energy : out std_logic_vector(15 downto 0);
+		energy : out std_logic_vector(15 downto 0);
 valid : out std_logic_vector(0 downto 0);
 trig : in std_logic_vector(0 downto 0);
 int_time : in std_logic_vector(15 downto 0);
@@ -71,18 +68,12 @@ END COMPONENT;
 signal U0_ind_integrate : std_logic_vector(0 downto 0) := (others => '0');
 signal U0_energy : std_logic_vector(15 downto 0) := (others => '0');
 signal U0_energy_valid : std_logic_vector(0 downto 0) := (others => '0');
-	signal U1_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal U2_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal U3_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-signal U4_cant_out : std_logic_vector(0 downto 0);
-signal U5_force_out : std_logic_vector(0 downto 0);
-signal U6_force_stop : std_logic_vector(0 downto 0);
-signal U9_trig : std_logic_vector(0 downto 0);
-signal U10_int_time : std_logic_vector(15 downto 0);
-signal U11_pre_int : std_logic_vector(15 downto 0);
-signal U12_analog_in : std_logic_vector(15 downto 0);
-signal U14_base : std_logic_vector(15 downto 0);
-signal U15_manual_base : std_logic_vector(0 downto 0);
+signal U3_trig : std_logic_vector(0 downto 0);
+signal U4_int_time : std_logic_vector(15 downto 0);
+signal U5_pre_int : std_logic_vector(15 downto 0);
+signal U6_analog_in : std_logic_vector(15 downto 0);
+signal U8_base : std_logic_vector(15 downto 0);
+signal U9_manual_base : std_logic_vector(0 downto 0);
 
 begin
 
@@ -90,12 +81,12 @@ U0: charge_integration
 PORT MAP(
     ap_clk  => async_clk(0),
     ap_rst  => GlobalReset(0),
-    in1_V  => U12_analog_in,
+    in1_V  => U6_analog_in,
     in1_V_ap_vld  => '1',
-    base_line_V  => U14_base,
-    trigger_signal  => U9_trig(0),
-    p_int_length_V  => U10_int_time,
-    p_pre_length_V  => U11_pre_int,
+    base_line_V  => U8_base,
+    trigger_signal  => U3_trig(0),
+    p_int_length_V  => U4_int_time,
+    p_pre_length_V  => U5_pre_int,
     p_gain_V  => x"FFFF",
     p_offset_V  => x"0000",
     p_pileup_inib_V  => x"0000",
@@ -107,21 +98,15 @@ PORT MAP(
     p_pileup => open,
     p_busy => open
 );
-U1_OUT <= U0_energy_valid AND ( NOT sxt(U4_cant_out,1));
-U2_OUT <= U1_OUT OR U5_force_out;
-U3_OUT <= U2_OUT AND ( NOT sxt(U6_force_stop,1));
-U4_cant_out <= cant_out;
-U5_force_out <= force_out;
-U6_force_stop <= force_stop;
 energy <= U0_energy;
-valid <= U3_OUT;
-U9_trig <= trig;
-U10_int_time <= int_time;
-U11_pre_int <= pre_int;
-U12_analog_in <= analog_in;
+valid <= U0_energy_valid;
+U3_trig <= trig;
+U4_int_time <= int_time;
+U5_pre_int <= pre_int;
+U6_analog_in <= analog_in;
 int_gate <= U0_ind_integrate;
-U14_base <= base;
-U15_manual_base <= manual_base;
-dummy <= U15_manual_base;
+U8_base <= base;
+U9_manual_base <= manual_base;
+dummy <= U9_manual_base;
 
 end Behavioral;

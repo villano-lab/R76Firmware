@@ -111,7 +111,7 @@ USE_RAM:
 		xpm_memory_sdpram_inst : xpm_memory_sdpram
 		generic map (
 			-- Common module generics
-			MEMORY_SIZE => maxDelay, --positive integer
+			MEMORY_SIZE => maxDelay * busWidth, --positive integer
 			MEMORY_PRIMITIVE => "auto", --string; "auto", "distributed", "block" or "ultra" ;
 			CLOCKING_MODE => "common_clock",--string; "common_clock", "independent_clock"
 			MEMORY_INIT_FILE => "none", --string; "none" or "<filename>.mem"
