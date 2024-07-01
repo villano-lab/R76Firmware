@@ -2561,6 +2561,7 @@ signal U114_to_encode : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
 signal U114_stamptype : STD_LOGIC_VECTOR( 1 downto 0 ) := (others => '0');
 signal U114_lemo2out : STD_LOGIC_VECTOR( 1 downto 0 ) := (others => '0');
 signal U114_divide : STD_LOGIC_VECTOR( 31 downto 0 ) := (others => '0');
+	signal U115_OUT : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_Energies_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
 	signal BUS_Energies_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Energies_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -5907,7 +5908,7 @@ PORT MAP(
 		D1 => U103_int_gate_23 & U103_int_gate_22 & U103_int_gate_21 & U103_int_gate_20 & U103_int_gate_19 & U103_int_gate_18 & U103_int_gate_17 & U103_int_gate_16 & U103_int_gate_15 & U103_int_gate_14 & U103_int_gate_13 & U103_int_gate_12 & U103_int_gate_11 & U103_int_gate_10 & U103_int_gate_9 & U103_int_gate_8 & U103_int_gate_7 & U103_int_gate_6 & U103_int_gate_5 & U103_int_gate_4 & U103_int_gate_3 & U103_int_gate_2 & U103_int_gate_1 & U103_int_gate_0,
 		D2 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		D3 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
-		TRIG => "0",
+		TRIG => U83_out,
 		BUSY => open,
 		CE => "1",
 		CLK_WRITE => CLK_ACQ,
@@ -8113,7 +8114,7 @@ REG_dummy_RD <= EXT(U87_out_0,32);
 		IN_31 => x"0000",
 		IN_32 => x"0000",
 		IN_33 => x"0000",
-		IN_34 => U55_out,
+		IN_34 => U115_OUT,
 		IN_35 => U78_out,
 		IN_1 => U110_OUT,
 		TRIG => U90_OUT,
@@ -8190,6 +8191,21 @@ U114_to_encode <= REG_io_to_encode_WR( 15 downto 0 );
 U114_stamptype <= REG_io_stamptype_WR( 1 downto 0 );
 U114_lemo2out <= REG_io_lemo2out_WR( 1 downto 0 );
 U114_divide <= REG_io_divide_WR( 31 downto 0 );
+
+	U115 : d_latch
+	Generic map(
+		IN_SIZE => 	32,
+		EDGE => 	"rising"
+	)
+	PORT MAP(
+		a => U55_out,
+		CE => U83_out(0),
+		clk => U70_clk(0),
+		reset => U26_int(0),
+		reset_val => x"00000000",
+		b => U115_OUT
+	);
+
 REG_FIRMWARE_BUILD <= x"20240701";
 REG_FIRMWARE_UNIQUE <= x"361567DF";
 FW_STRING_0 <= x"5237364669726D776172650000000000";
