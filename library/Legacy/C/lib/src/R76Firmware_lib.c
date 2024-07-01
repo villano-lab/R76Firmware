@@ -6139,9 +6139,9 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_0_FIFOADDRESS, timeout,
 }
 //-----------------------------------------------------------------
 //-
-//- CPACK_All_Energies_START
+//- OSCILLOSCOPE_Syncs_START
 //-
-//- Start acquisition.
+//- Start Oscilloscope acquisition.
 //-
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE

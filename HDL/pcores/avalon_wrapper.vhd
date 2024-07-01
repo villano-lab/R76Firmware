@@ -498,23 +498,6 @@ entity avalon_wrapper is
 		REG_Spectrum_6_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_6_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_6_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_io_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_io_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_io_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_io_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_io_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_io_to_encode_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_io_to_encode_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_io_to_encode_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_io_stamptype_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_io_stamptype_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_io_stamptype_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_io_lemo2out_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_io_lemo2out_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_io_lemo2out_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_io_divide_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_io_divide_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_io_divide_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_18_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_18_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_18_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -981,83 +964,6 @@ entity avalon_wrapper is
 		REG_top_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_top_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_top_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_base_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_base_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_thrsh_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_thrsh_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_thrsh_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
@@ -1151,6 +1057,100 @@ entity avalon_wrapper is
 		REG_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_All_Energies_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_base_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_base_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_io_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_io_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_io_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_io_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_io_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_io_to_encode_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_io_to_encode_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_io_to_encode_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_io_stamptype_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_io_stamptype_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_io_stamptype_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_io_lemo2out_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_io_lemo2out_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_io_lemo2out_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_io_divide_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_io_divide_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_io_divide_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -1219,7 +1219,7 @@ BUS_Spectrum_10_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002D0000" 
 BUS_Spectrum_22_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002F0000" And addr < x"00300000") else (others => '0');BUS_Spectrum_11_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00310000" And addr < x"00320000") else '0';
 BUS_Spectrum_11_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00310000" And addr < x"00320000") else (others => '0');BUS_Spectrum_23_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00670000" And addr < x"00680000") else '0';
 BUS_Spectrum_23_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00670000" And addr < x"00680000") else (others => '0');BUS_Syncs_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00681000" And addr < x"00682000") else '0';
-BUS_Syncs_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"00681000" And addr < x"00682000") else (others => '0');BUS_All_Energies_R_INT(0) <= f_BUS_INT_RD when (addr >= x"0001A008" And addr < x"0001A009") else '0';
+BUS_Syncs_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"00681000" And addr < x"00682000") else (others => '0');BUS_All_Energies_R_INT(0) <= f_BUS_INT_RD when (addr >= x"0068205E" And addr < x"0068205F") else '0';
 f_BUS_DATA_RD <= BUS_Test_0_READ_DATA when  (addr >= x"03FE0000" And addr < x"03FEFFFF") else 
 BUS_Energies_READ_DATA  when  addr >= x"00000000" and addr < x"00008000" else 
 BUS_Analog_READ_DATA  when  addr >= x"00010000" and addr < x"00018000" else 
@@ -1252,7 +1252,7 @@ BUS_Spectrum_22_READ_DATA  when  addr >= x"002F0000" and addr < x"00300000" else
 BUS_Spectrum_11_READ_DATA  when  addr >= x"00310000" and addr < x"00320000" else 
 BUS_Spectrum_23_READ_DATA  when  addr >= x"00670000" and addr < x"00680000" else 
 BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else 
- BUS_All_Energies_READ_DATA when (addr >= x"0001A008" And addr < x"0001A009") else  f_BUS_DATA_RD_REG;
+ BUS_All_Energies_READ_DATA when (addr >= x"0068205E" And addr < x"0068205F") else  f_BUS_DATA_RD_REG;
  f_BUS_DATASTROBE <=BUS_Test_0_VLD(0) when  (addr >= x"03FE0000" And addr < x"03FEFFFF") else 
  BUS_Energies_VLD(0) when  addr >= x"00000000" and addr < x"00008000" else 
  BUS_Analog_VLD(0) when  addr >= x"00010000" and addr < x"00018000" else 
@@ -1285,7 +1285,7 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
  BUS_Spectrum_11_VLD(0) when  addr >= x"00310000" and addr < x"00320000" else 
  BUS_Spectrum_23_VLD(0) when  addr >= x"00670000" and addr < x"00680000" else 
  BUS_Syncs_VLD(0) when  addr >= x"00681000" and addr < x"00682000" else 
-  BUS_All_Energies_VLD(0) when (addr >= x"0001A008" And addr < x"0001A009") else  f_BUS_DATASTROBE_REG;    
+  BUS_All_Energies_VLD(0) when (addr >= x"0068205E" And addr < x"0068205F") else  f_BUS_DATASTROBE_REG;    
 
         
     addr <= BUS_ADDR;
@@ -1524,15 +1524,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_Spectrum_6_CONFIG_MIN_WR <= "0";
 		REG_Spectrum_6_CONFIG_MAX_WR <= (others => '0');
 		INT_Spectrum_6_CONFIG_MAX_WR <= "0";
-	BUS_io_W_INT <= "0";
-		REG_io_to_encode_WR <= (others => '0');
-		INT_io_to_encode_WR <= "0";
-		REG_io_stamptype_WR <= (others => '0');
-		INT_io_stamptype_WR <= "0";
-		REG_io_lemo2out_WR <= (others => '0');
-		INT_io_lemo2out_WR <= "0";
-		REG_io_divide_WR <= (others => '0');
-		INT_io_divide_WR <= "0";
 	BUS_Spectrum_18_W_INT <= "0";
 		INT_Spectrum_18_STATUS_RD <= "0";
 		REG_Spectrum_18_CONFIG_WR <= (others => '0');
@@ -1798,55 +1789,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_top_CH22_WR <= "0";
 		REG_top_CH23_WR <= (others => '0');
 		INT_top_CH23_WR <= "0";
-	BUS_base_W_INT <= "0";
-		REG_base_CH0_WR <= (others => '0');
-		INT_base_CH0_WR <= "0";
-		REG_base_CH1_WR <= (others => '0');
-		INT_base_CH1_WR <= "0";
-		REG_base_CH2_WR <= (others => '0');
-		INT_base_CH2_WR <= "0";
-		REG_base_CH3_WR <= (others => '0');
-		INT_base_CH3_WR <= "0";
-		REG_base_CH4_WR <= (others => '0');
-		INT_base_CH4_WR <= "0";
-		REG_base_CH5_WR <= (others => '0');
-		INT_base_CH5_WR <= "0";
-		REG_base_CH6_WR <= (others => '0');
-		INT_base_CH6_WR <= "0";
-		REG_base_CH7_WR <= (others => '0');
-		INT_base_CH7_WR <= "0";
-		REG_base_CH8_WR <= (others => '0');
-		INT_base_CH8_WR <= "0";
-		REG_base_CH9_WR <= (others => '0');
-		INT_base_CH9_WR <= "0";
-		REG_base_CH10_WR <= (others => '0');
-		INT_base_CH10_WR <= "0";
-		REG_base_CH11_WR <= (others => '0');
-		INT_base_CH11_WR <= "0";
-		REG_base_CH12_WR <= (others => '0');
-		INT_base_CH12_WR <= "0";
-		REG_base_CH13_WR <= (others => '0');
-		INT_base_CH13_WR <= "0";
-		REG_base_CH14_WR <= (others => '0');
-		INT_base_CH14_WR <= "0";
-		REG_base_CH15_WR <= (others => '0');
-		INT_base_CH15_WR <= "0";
-		REG_base_CH16_WR <= (others => '0');
-		INT_base_CH16_WR <= "0";
-		REG_base_CH17_WR <= (others => '0');
-		INT_base_CH17_WR <= "0";
-		REG_base_CH18_WR <= (others => '0');
-		INT_base_CH18_WR <= "0";
-		REG_base_CH19_WR <= (others => '0');
-		INT_base_CH19_WR <= "0";
-		REG_base_CH20_WR <= (others => '0');
-		INT_base_CH20_WR <= "0";
-		REG_base_CH21_WR <= (others => '0');
-		INT_base_CH21_WR <= "0";
-		REG_base_CH22_WR <= (others => '0');
-		INT_base_CH22_WR <= "0";
-		REG_base_CH23_WR <= (others => '0');
-		INT_base_CH23_WR <= "0";
 	BUS_thrsh_W_INT <= "0";
 		REG_thrsh_CH0_WR <= (others => '0');
 		INT_thrsh_CH0_WR <= "0";
@@ -1904,6 +1846,64 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
 		REG_All_Energies_CONFIG_WR <= (others => '0');
 		INT_All_Energies_CONFIG_WR <= "0";
+	BUS_base_W_INT <= "0";
+		REG_base_CH0_WR <= (others => '0');
+		INT_base_CH0_WR <= "0";
+		REG_base_CH1_WR <= (others => '0');
+		INT_base_CH1_WR <= "0";
+		REG_base_CH2_WR <= (others => '0');
+		INT_base_CH2_WR <= "0";
+		REG_base_CH3_WR <= (others => '0');
+		INT_base_CH3_WR <= "0";
+		REG_base_CH4_WR <= (others => '0');
+		INT_base_CH4_WR <= "0";
+		REG_base_CH5_WR <= (others => '0');
+		INT_base_CH5_WR <= "0";
+		REG_base_CH6_WR <= (others => '0');
+		INT_base_CH6_WR <= "0";
+		REG_base_CH7_WR <= (others => '0');
+		INT_base_CH7_WR <= "0";
+		REG_base_CH8_WR <= (others => '0');
+		INT_base_CH8_WR <= "0";
+		REG_base_CH9_WR <= (others => '0');
+		INT_base_CH9_WR <= "0";
+		REG_base_CH10_WR <= (others => '0');
+		INT_base_CH10_WR <= "0";
+		REG_base_CH11_WR <= (others => '0');
+		INT_base_CH11_WR <= "0";
+		REG_base_CH12_WR <= (others => '0');
+		INT_base_CH12_WR <= "0";
+		REG_base_CH13_WR <= (others => '0');
+		INT_base_CH13_WR <= "0";
+		REG_base_CH14_WR <= (others => '0');
+		INT_base_CH14_WR <= "0";
+		REG_base_CH15_WR <= (others => '0');
+		INT_base_CH15_WR <= "0";
+		REG_base_CH16_WR <= (others => '0');
+		INT_base_CH16_WR <= "0";
+		REG_base_CH17_WR <= (others => '0');
+		INT_base_CH17_WR <= "0";
+		REG_base_CH18_WR <= (others => '0');
+		INT_base_CH18_WR <= "0";
+		REG_base_CH19_WR <= (others => '0');
+		INT_base_CH19_WR <= "0";
+		REG_base_CH20_WR <= (others => '0');
+		INT_base_CH20_WR <= "0";
+		REG_base_CH21_WR <= (others => '0');
+		INT_base_CH21_WR <= "0";
+		REG_base_CH22_WR <= (others => '0');
+		INT_base_CH22_WR <= "0";
+		REG_base_CH23_WR <= (others => '0');
+		INT_base_CH23_WR <= "0";
+	BUS_io_W_INT <= "0";
+		REG_io_to_encode_WR <= (others => '0');
+		INT_io_to_encode_WR <= "0";
+		REG_io_stamptype_WR <= (others => '0');
+		INT_io_stamptype_WR <= "0";
+		REG_io_lemo2out_WR <= (others => '0');
+		INT_io_lemo2out_WR <= "0";
+		REG_io_divide_WR <= (others => '0');
+		INT_io_divide_WR <= "0";
             
                 f_BUS_DATASTROBE_REG <= '0';
                 M_AVALON_0_readdatavalid <= '0';
@@ -2045,11 +2045,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_Spectrum_6_CONFIG_REBIN_WR <= "0";
 		INT_Spectrum_6_CONFIG_MIN_WR <= "0";
 		INT_Spectrum_6_CONFIG_MAX_WR <= "0";
-	BUS_io_W_INT <= "0";
-		INT_io_to_encode_WR <= "0";
-		INT_io_stamptype_WR <= "0";
-		INT_io_lemo2out_WR <= "0";
-		INT_io_divide_WR <= "0";
 	BUS_Spectrum_18_W_INT <= "0";
 		INT_Spectrum_18_STATUS_RD <= "0";
 		INT_Spectrum_18_CONFIG_WR <= "0";
@@ -2200,31 +2195,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_top_CH21_WR <= "0";
 		INT_top_CH22_WR <= "0";
 		INT_top_CH23_WR <= "0";
-	BUS_base_W_INT <= "0";
-		INT_base_CH0_WR <= "0";
-		INT_base_CH1_WR <= "0";
-		INT_base_CH2_WR <= "0";
-		INT_base_CH3_WR <= "0";
-		INT_base_CH4_WR <= "0";
-		INT_base_CH5_WR <= "0";
-		INT_base_CH6_WR <= "0";
-		INT_base_CH7_WR <= "0";
-		INT_base_CH8_WR <= "0";
-		INT_base_CH9_WR <= "0";
-		INT_base_CH10_WR <= "0";
-		INT_base_CH11_WR <= "0";
-		INT_base_CH12_WR <= "0";
-		INT_base_CH13_WR <= "0";
-		INT_base_CH14_WR <= "0";
-		INT_base_CH15_WR <= "0";
-		INT_base_CH16_WR <= "0";
-		INT_base_CH17_WR <= "0";
-		INT_base_CH18_WR <= "0";
-		INT_base_CH19_WR <= "0";
-		INT_base_CH20_WR <= "0";
-		INT_base_CH21_WR <= "0";
-		INT_base_CH22_WR <= "0";
-		INT_base_CH23_WR <= "0";
 	BUS_thrsh_W_INT <= "0";
 		INT_thrsh_CH0_WR <= "0";
 		INT_thrsh_CH1_WR <= "0";
@@ -2256,6 +2226,36 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_All_Energies_READ_STATUS_RD <= "0";
 		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
 		INT_All_Energies_CONFIG_WR <= "0";
+	BUS_base_W_INT <= "0";
+		INT_base_CH0_WR <= "0";
+		INT_base_CH1_WR <= "0";
+		INT_base_CH2_WR <= "0";
+		INT_base_CH3_WR <= "0";
+		INT_base_CH4_WR <= "0";
+		INT_base_CH5_WR <= "0";
+		INT_base_CH6_WR <= "0";
+		INT_base_CH7_WR <= "0";
+		INT_base_CH8_WR <= "0";
+		INT_base_CH9_WR <= "0";
+		INT_base_CH10_WR <= "0";
+		INT_base_CH11_WR <= "0";
+		INT_base_CH12_WR <= "0";
+		INT_base_CH13_WR <= "0";
+		INT_base_CH14_WR <= "0";
+		INT_base_CH15_WR <= "0";
+		INT_base_CH16_WR <= "0";
+		INT_base_CH17_WR <= "0";
+		INT_base_CH18_WR <= "0";
+		INT_base_CH19_WR <= "0";
+		INT_base_CH20_WR <= "0";
+		INT_base_CH21_WR <= "0";
+		INT_base_CH22_WR <= "0";
+		INT_base_CH23_WR <= "0";
+	BUS_io_W_INT <= "0";
+		INT_io_to_encode_WR <= "0";
+		INT_io_stamptype_WR <= "0";
+		INT_io_lemo2out_WR <= "0";
+		INT_io_divide_WR <= "0";
   
                 f_BUS_DATASTROBE_REG <= '0';
                 
@@ -2366,19 +2366,19 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 			REG_diag_CONFIG_DECIMATOR_WR <= wreg; 
 			INT_diag_CONFIG_DECIMATOR_WR <= "1"; 
 		end if;
-		If addr >= x"0001A00D" And addr < x"0001A00E" Then
+		If addr >= x"0001A008" And addr < x"0001A009" Then
 			BUS_int_WRITE_DATA <= wreg; 
 			BUS_int_W_INT <= "1"; 
 		End If;
-		if addr = x"0001A00E" then
+		if addr = x"0001A009" then
 			REG_int_time_WR <= wreg; 
 			INT_int_time_WR <= "1"; 
 		end if;
-		if addr = x"0001A00F" then
+		if addr = x"0001A00A" then
 			REG_int_pre_WR <= wreg; 
 			INT_int_pre_WR <= "1"; 
 		end if;
-		if addr = x"0001A010" then
+		if addr = x"0001A00B" then
 			REG_int_base_WR <= wreg; 
 			INT_int_base_WR <= "1"; 
 		end if;
@@ -2717,26 +2717,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		if addr = x"001C0005" then
 			REG_Spectrum_6_CONFIG_MAX_WR <= wreg; 
 			INT_Spectrum_6_CONFIG_MAX_WR <= "1"; 
-		end if;
-		If addr >= x"001C0007" And addr < x"001C0008" Then
-			BUS_io_WRITE_DATA <= wreg; 
-			BUS_io_W_INT <= "1"; 
-		End If;
-		if addr = x"001C0008" then
-			REG_io_to_encode_WR <= wreg; 
-			INT_io_to_encode_WR <= "1"; 
-		end if;
-		if addr = x"001C0009" then
-			REG_io_stamptype_WR <= wreg; 
-			INT_io_stamptype_WR <= "1"; 
-		end if;
-		if addr = x"001C000A" then
-			REG_io_lemo2out_WR <= wreg; 
-			INT_io_lemo2out_WR <= "1"; 
-		end if;
-		if addr = x"001C000B" then
-			REG_io_divide_WR <= wreg; 
-			INT_io_divide_WR <= "1"; 
 		end if;
 		If addr >= x"001D0000" And addr < x"001E0000" Then
 			BUS_Spectrum_18_WRITE_DATA <= wreg; 
@@ -3259,216 +3239,236 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 			INT_top_CH23_WR <= "1"; 
 		end if;
 		If addr >= x"00682043" And addr < x"00682044" Then
-			BUS_base_WRITE_DATA <= wreg; 
-			BUS_base_W_INT <= "1"; 
-		End If;
-		if addr = x"00682044" then
-			REG_base_CH0_WR <= wreg; 
-			INT_base_CH0_WR <= "1"; 
-		end if;
-		if addr = x"00682045" then
-			REG_base_CH1_WR <= wreg; 
-			INT_base_CH1_WR <= "1"; 
-		end if;
-		if addr = x"00682046" then
-			REG_base_CH2_WR <= wreg; 
-			INT_base_CH2_WR <= "1"; 
-		end if;
-		if addr = x"00682047" then
-			REG_base_CH3_WR <= wreg; 
-			INT_base_CH3_WR <= "1"; 
-		end if;
-		if addr = x"00682048" then
-			REG_base_CH4_WR <= wreg; 
-			INT_base_CH4_WR <= "1"; 
-		end if;
-		if addr = x"00682049" then
-			REG_base_CH5_WR <= wreg; 
-			INT_base_CH5_WR <= "1"; 
-		end if;
-		if addr = x"0068204A" then
-			REG_base_CH6_WR <= wreg; 
-			INT_base_CH6_WR <= "1"; 
-		end if;
-		if addr = x"0068204B" then
-			REG_base_CH7_WR <= wreg; 
-			INT_base_CH7_WR <= "1"; 
-		end if;
-		if addr = x"0068204C" then
-			REG_base_CH8_WR <= wreg; 
-			INT_base_CH8_WR <= "1"; 
-		end if;
-		if addr = x"0068204D" then
-			REG_base_CH9_WR <= wreg; 
-			INT_base_CH9_WR <= "1"; 
-		end if;
-		if addr = x"0068204E" then
-			REG_base_CH10_WR <= wreg; 
-			INT_base_CH10_WR <= "1"; 
-		end if;
-		if addr = x"0068204F" then
-			REG_base_CH11_WR <= wreg; 
-			INT_base_CH11_WR <= "1"; 
-		end if;
-		if addr = x"00682050" then
-			REG_base_CH12_WR <= wreg; 
-			INT_base_CH12_WR <= "1"; 
-		end if;
-		if addr = x"00682051" then
-			REG_base_CH13_WR <= wreg; 
-			INT_base_CH13_WR <= "1"; 
-		end if;
-		if addr = x"00682052" then
-			REG_base_CH14_WR <= wreg; 
-			INT_base_CH14_WR <= "1"; 
-		end if;
-		if addr = x"00682053" then
-			REG_base_CH15_WR <= wreg; 
-			INT_base_CH15_WR <= "1"; 
-		end if;
-		if addr = x"00682054" then
-			REG_base_CH16_WR <= wreg; 
-			INT_base_CH16_WR <= "1"; 
-		end if;
-		if addr = x"00682055" then
-			REG_base_CH17_WR <= wreg; 
-			INT_base_CH17_WR <= "1"; 
-		end if;
-		if addr = x"00682056" then
-			REG_base_CH18_WR <= wreg; 
-			INT_base_CH18_WR <= "1"; 
-		end if;
-		if addr = x"00682057" then
-			REG_base_CH19_WR <= wreg; 
-			INT_base_CH19_WR <= "1"; 
-		end if;
-		if addr = x"00682058" then
-			REG_base_CH20_WR <= wreg; 
-			INT_base_CH20_WR <= "1"; 
-		end if;
-		if addr = x"00682059" then
-			REG_base_CH21_WR <= wreg; 
-			INT_base_CH21_WR <= "1"; 
-		end if;
-		if addr = x"0068205A" then
-			REG_base_CH22_WR <= wreg; 
-			INT_base_CH22_WR <= "1"; 
-		end if;
-		if addr = x"0068205B" then
-			REG_base_CH23_WR <= wreg; 
-			INT_base_CH23_WR <= "1"; 
-		end if;
-		If addr >= x"0068205D" And addr < x"0068205E" Then
 			BUS_thrsh_WRITE_DATA <= wreg; 
 			BUS_thrsh_W_INT <= "1"; 
 		End If;
-		if addr = x"0068205E" then
+		if addr = x"00682044" then
 			REG_thrsh_CH0_WR <= wreg; 
 			INT_thrsh_CH0_WR <= "1"; 
 		end if;
-		if addr = x"0068205F" then
+		if addr = x"00682045" then
 			REG_thrsh_CH1_WR <= wreg; 
 			INT_thrsh_CH1_WR <= "1"; 
 		end if;
-		if addr = x"00682060" then
+		if addr = x"00682046" then
 			REG_thrsh_CH2_WR <= wreg; 
 			INT_thrsh_CH2_WR <= "1"; 
 		end if;
-		if addr = x"00682061" then
+		if addr = x"00682047" then
 			REG_thrsh_CH3_WR <= wreg; 
 			INT_thrsh_CH3_WR <= "1"; 
 		end if;
-		if addr = x"00682062" then
+		if addr = x"00682048" then
 			REG_thrsh_CH4_WR <= wreg; 
 			INT_thrsh_CH4_WR <= "1"; 
 		end if;
-		if addr = x"00682063" then
+		if addr = x"00682049" then
 			REG_thrsh_CH5_WR <= wreg; 
 			INT_thrsh_CH5_WR <= "1"; 
 		end if;
-		if addr = x"00682064" then
+		if addr = x"0068204A" then
 			REG_thrsh_CH6_WR <= wreg; 
 			INT_thrsh_CH6_WR <= "1"; 
 		end if;
-		if addr = x"00682065" then
+		if addr = x"0068204B" then
 			REG_thrsh_CH7_WR <= wreg; 
 			INT_thrsh_CH7_WR <= "1"; 
 		end if;
-		if addr = x"00682066" then
+		if addr = x"0068204C" then
 			REG_thrsh_CH8_WR <= wreg; 
 			INT_thrsh_CH8_WR <= "1"; 
 		end if;
-		if addr = x"00682067" then
+		if addr = x"0068204D" then
 			REG_thrsh_CH9_WR <= wreg; 
 			INT_thrsh_CH9_WR <= "1"; 
 		end if;
-		if addr = x"00682068" then
+		if addr = x"0068204E" then
 			REG_thrsh_CH10_WR <= wreg; 
 			INT_thrsh_CH10_WR <= "1"; 
 		end if;
-		if addr = x"00682069" then
+		if addr = x"0068204F" then
 			REG_thrsh_CH11_WR <= wreg; 
 			INT_thrsh_CH11_WR <= "1"; 
 		end if;
-		if addr = x"0068206A" then
+		if addr = x"00682050" then
 			REG_thrsh_CH12_WR <= wreg; 
 			INT_thrsh_CH12_WR <= "1"; 
 		end if;
-		if addr = x"0068206B" then
+		if addr = x"00682051" then
 			REG_thrsh_CH13_WR <= wreg; 
 			INT_thrsh_CH13_WR <= "1"; 
 		end if;
-		if addr = x"0068206C" then
+		if addr = x"00682052" then
 			REG_thrsh_CH14_WR <= wreg; 
 			INT_thrsh_CH14_WR <= "1"; 
 		end if;
-		if addr = x"0068206D" then
+		if addr = x"00682053" then
 			REG_thrsh_CH15_WR <= wreg; 
 			INT_thrsh_CH15_WR <= "1"; 
 		end if;
-		if addr = x"0068206E" then
+		if addr = x"00682054" then
 			REG_thrsh_CH16_WR <= wreg; 
 			INT_thrsh_CH16_WR <= "1"; 
 		end if;
-		if addr = x"0068206F" then
+		if addr = x"00682055" then
 			REG_thrsh_CH17_WR <= wreg; 
 			INT_thrsh_CH17_WR <= "1"; 
 		end if;
-		if addr = x"00682070" then
+		if addr = x"00682056" then
 			REG_thrsh_CH18_WR <= wreg; 
 			INT_thrsh_CH18_WR <= "1"; 
 		end if;
-		if addr = x"00682071" then
+		if addr = x"00682057" then
 			REG_thrsh_CH19_WR <= wreg; 
 			INT_thrsh_CH19_WR <= "1"; 
 		end if;
-		if addr = x"00682072" then
+		if addr = x"00682058" then
 			REG_thrsh_CH20_WR <= wreg; 
 			INT_thrsh_CH20_WR <= "1"; 
 		end if;
-		if addr = x"00682073" then
+		if addr = x"00682059" then
 			REG_thrsh_CH21_WR <= wreg; 
 			INT_thrsh_CH21_WR <= "1"; 
 		end if;
-		if addr = x"00682074" then
+		if addr = x"0068205A" then
 			REG_thrsh_CH22_WR <= wreg; 
 			INT_thrsh_CH22_WR <= "1"; 
 		end if;
-		if addr = x"00682075" then
+		if addr = x"0068205B" then
 			REG_thrsh_CH23_WR <= wreg; 
 			INT_thrsh_CH23_WR <= "1"; 
 		end if;
-		if addr = x"00682076" then
+		if addr = x"0068205C" then
 			REG_dummy_WR <= wreg; 
 			INT_dummy_WR <= "1"; 
 		end if;
-		If addr >= x"0001A008" And addr < x"0001A009" Then
+		If addr >= x"0068205E" And addr < x"0068205F" Then
 			BUS_All_Energies_WRITE_DATA <= wreg; 
 			BUS_All_Energies_W_INT <= "1"; 
 		End If;
-		if addr = x"0001A00B" then
+		if addr = x"00682061" then
 			REG_All_Energies_CONFIG_WR <= wreg; 
 			INT_All_Energies_CONFIG_WR <= "1"; 
+		end if;
+		If addr >= x"00682063" And addr < x"00682064" Then
+			BUS_base_WRITE_DATA <= wreg; 
+			BUS_base_W_INT <= "1"; 
+		End If;
+		if addr = x"00682064" then
+			REG_base_CH0_WR <= wreg; 
+			INT_base_CH0_WR <= "1"; 
+		end if;
+		if addr = x"00682065" then
+			REG_base_CH1_WR <= wreg; 
+			INT_base_CH1_WR <= "1"; 
+		end if;
+		if addr = x"00682066" then
+			REG_base_CH2_WR <= wreg; 
+			INT_base_CH2_WR <= "1"; 
+		end if;
+		if addr = x"00682067" then
+			REG_base_CH3_WR <= wreg; 
+			INT_base_CH3_WR <= "1"; 
+		end if;
+		if addr = x"00682068" then
+			REG_base_CH4_WR <= wreg; 
+			INT_base_CH4_WR <= "1"; 
+		end if;
+		if addr = x"00682069" then
+			REG_base_CH5_WR <= wreg; 
+			INT_base_CH5_WR <= "1"; 
+		end if;
+		if addr = x"0068206A" then
+			REG_base_CH6_WR <= wreg; 
+			INT_base_CH6_WR <= "1"; 
+		end if;
+		if addr = x"0068206B" then
+			REG_base_CH7_WR <= wreg; 
+			INT_base_CH7_WR <= "1"; 
+		end if;
+		if addr = x"0068206C" then
+			REG_base_CH8_WR <= wreg; 
+			INT_base_CH8_WR <= "1"; 
+		end if;
+		if addr = x"0068206D" then
+			REG_base_CH9_WR <= wreg; 
+			INT_base_CH9_WR <= "1"; 
+		end if;
+		if addr = x"0068206E" then
+			REG_base_CH10_WR <= wreg; 
+			INT_base_CH10_WR <= "1"; 
+		end if;
+		if addr = x"0068206F" then
+			REG_base_CH11_WR <= wreg; 
+			INT_base_CH11_WR <= "1"; 
+		end if;
+		if addr = x"00682070" then
+			REG_base_CH12_WR <= wreg; 
+			INT_base_CH12_WR <= "1"; 
+		end if;
+		if addr = x"00682071" then
+			REG_base_CH13_WR <= wreg; 
+			INT_base_CH13_WR <= "1"; 
+		end if;
+		if addr = x"00682072" then
+			REG_base_CH14_WR <= wreg; 
+			INT_base_CH14_WR <= "1"; 
+		end if;
+		if addr = x"00682073" then
+			REG_base_CH15_WR <= wreg; 
+			INT_base_CH15_WR <= "1"; 
+		end if;
+		if addr = x"00682074" then
+			REG_base_CH16_WR <= wreg; 
+			INT_base_CH16_WR <= "1"; 
+		end if;
+		if addr = x"00682075" then
+			REG_base_CH17_WR <= wreg; 
+			INT_base_CH17_WR <= "1"; 
+		end if;
+		if addr = x"00682076" then
+			REG_base_CH18_WR <= wreg; 
+			INT_base_CH18_WR <= "1"; 
+		end if;
+		if addr = x"00682077" then
+			REG_base_CH19_WR <= wreg; 
+			INT_base_CH19_WR <= "1"; 
+		end if;
+		if addr = x"00682078" then
+			REG_base_CH20_WR <= wreg; 
+			INT_base_CH20_WR <= "1"; 
+		end if;
+		if addr = x"00682079" then
+			REG_base_CH21_WR <= wreg; 
+			INT_base_CH21_WR <= "1"; 
+		end if;
+		if addr = x"0068207A" then
+			REG_base_CH22_WR <= wreg; 
+			INT_base_CH22_WR <= "1"; 
+		end if;
+		if addr = x"0068207B" then
+			REG_base_CH23_WR <= wreg; 
+			INT_base_CH23_WR <= "1"; 
+		end if;
+		If addr >= x"0068207D" And addr < x"0068207E" Then
+			BUS_io_WRITE_DATA <= wreg; 
+			BUS_io_W_INT <= "1"; 
+		End If;
+		if addr = x"0068207E" then
+			REG_io_to_encode_WR <= wreg; 
+			INT_io_to_encode_WR <= "1"; 
+		end if;
+		if addr = x"0068207F" then
+			REG_io_stamptype_WR <= wreg; 
+			INT_io_stamptype_WR <= "1"; 
+		end if;
+		if addr = x"00682080" then
+			REG_io_lemo2out_WR <= wreg; 
+			INT_io_lemo2out_WR <= "1"; 
+		end if;
+		if addr = x"00682081" then
+			REG_io_divide_WR <= wreg; 
+			INT_io_divide_WR <= "1"; 
 		end if;
 
                 end if;
@@ -3559,13 +3559,13 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		if addr = x"0001A006" then
 			rreg := REG_diag_CONFIG_DECIMATOR_RD; 
 		End If;
-		if addr = x"0001A00E" then
+		if addr = x"0001A009" then
 			rreg := REG_int_time_RD; 
 		End If;
-		if addr = x"0001A00F" then
+		if addr = x"0001A00A" then
 			rreg := REG_int_pre_RD; 
 		End If;
-		if addr = x"0001A010" then
+		if addr = x"0001A00B" then
 			rreg := REG_int_base_RD; 
 		End If;
 		if addr = x"00030000" then
@@ -3822,18 +3822,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		End If;
 		if addr = x"001C0005" then
 			rreg := REG_Spectrum_6_CONFIG_MAX_RD; 
-		End If;
-		if addr = x"001C0008" then
-			rreg := REG_io_to_encode_RD; 
-		End If;
-		if addr = x"001C0009" then
-			rreg := REG_io_stamptype_RD; 
-		End If;
-		if addr = x"001C000A" then
-			rreg := REG_io_lemo2out_RD; 
-		End If;
-		if addr = x"001C000B" then
-			rreg := REG_io_divide_RD; 
 		End If;
 		if addr = x"001E0000" then
 			rreg := REG_Spectrum_18_STATUS_RD; 
@@ -4220,160 +4208,172 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 			rreg := REG_top_CH23_RD; 
 		End If;
 		if addr = x"00682044" then
-			rreg := REG_base_CH0_RD; 
-		End If;
-		if addr = x"00682045" then
-			rreg := REG_base_CH1_RD; 
-		End If;
-		if addr = x"00682046" then
-			rreg := REG_base_CH2_RD; 
-		End If;
-		if addr = x"00682047" then
-			rreg := REG_base_CH3_RD; 
-		End If;
-		if addr = x"00682048" then
-			rreg := REG_base_CH4_RD; 
-		End If;
-		if addr = x"00682049" then
-			rreg := REG_base_CH5_RD; 
-		End If;
-		if addr = x"0068204A" then
-			rreg := REG_base_CH6_RD; 
-		End If;
-		if addr = x"0068204B" then
-			rreg := REG_base_CH7_RD; 
-		End If;
-		if addr = x"0068204C" then
-			rreg := REG_base_CH8_RD; 
-		End If;
-		if addr = x"0068204D" then
-			rreg := REG_base_CH9_RD; 
-		End If;
-		if addr = x"0068204E" then
-			rreg := REG_base_CH10_RD; 
-		End If;
-		if addr = x"0068204F" then
-			rreg := REG_base_CH11_RD; 
-		End If;
-		if addr = x"00682050" then
-			rreg := REG_base_CH12_RD; 
-		End If;
-		if addr = x"00682051" then
-			rreg := REG_base_CH13_RD; 
-		End If;
-		if addr = x"00682052" then
-			rreg := REG_base_CH14_RD; 
-		End If;
-		if addr = x"00682053" then
-			rreg := REG_base_CH15_RD; 
-		End If;
-		if addr = x"00682054" then
-			rreg := REG_base_CH16_RD; 
-		End If;
-		if addr = x"00682055" then
-			rreg := REG_base_CH17_RD; 
-		End If;
-		if addr = x"00682056" then
-			rreg := REG_base_CH18_RD; 
-		End If;
-		if addr = x"00682057" then
-			rreg := REG_base_CH19_RD; 
-		End If;
-		if addr = x"00682058" then
-			rreg := REG_base_CH20_RD; 
-		End If;
-		if addr = x"00682059" then
-			rreg := REG_base_CH21_RD; 
-		End If;
-		if addr = x"0068205A" then
-			rreg := REG_base_CH22_RD; 
-		End If;
-		if addr = x"0068205B" then
-			rreg := REG_base_CH23_RD; 
-		End If;
-		if addr = x"0068205E" then
 			rreg := REG_thrsh_CH0_RD; 
 		End If;
-		if addr = x"0068205F" then
+		if addr = x"00682045" then
 			rreg := REG_thrsh_CH1_RD; 
 		End If;
-		if addr = x"00682060" then
+		if addr = x"00682046" then
 			rreg := REG_thrsh_CH2_RD; 
 		End If;
-		if addr = x"00682061" then
+		if addr = x"00682047" then
 			rreg := REG_thrsh_CH3_RD; 
 		End If;
-		if addr = x"00682062" then
+		if addr = x"00682048" then
 			rreg := REG_thrsh_CH4_RD; 
 		End If;
-		if addr = x"00682063" then
+		if addr = x"00682049" then
 			rreg := REG_thrsh_CH5_RD; 
 		End If;
-		if addr = x"00682064" then
+		if addr = x"0068204A" then
 			rreg := REG_thrsh_CH6_RD; 
 		End If;
-		if addr = x"00682065" then
+		if addr = x"0068204B" then
 			rreg := REG_thrsh_CH7_RD; 
 		End If;
-		if addr = x"00682066" then
+		if addr = x"0068204C" then
 			rreg := REG_thrsh_CH8_RD; 
 		End If;
-		if addr = x"00682067" then
+		if addr = x"0068204D" then
 			rreg := REG_thrsh_CH9_RD; 
 		End If;
-		if addr = x"00682068" then
+		if addr = x"0068204E" then
 			rreg := REG_thrsh_CH10_RD; 
 		End If;
-		if addr = x"00682069" then
+		if addr = x"0068204F" then
 			rreg := REG_thrsh_CH11_RD; 
 		End If;
-		if addr = x"0068206A" then
+		if addr = x"00682050" then
 			rreg := REG_thrsh_CH12_RD; 
 		End If;
-		if addr = x"0068206B" then
+		if addr = x"00682051" then
 			rreg := REG_thrsh_CH13_RD; 
 		End If;
-		if addr = x"0068206C" then
+		if addr = x"00682052" then
 			rreg := REG_thrsh_CH14_RD; 
 		End If;
-		if addr = x"0068206D" then
+		if addr = x"00682053" then
 			rreg := REG_thrsh_CH15_RD; 
 		End If;
-		if addr = x"0068206E" then
+		if addr = x"00682054" then
 			rreg := REG_thrsh_CH16_RD; 
 		End If;
-		if addr = x"0068206F" then
+		if addr = x"00682055" then
 			rreg := REG_thrsh_CH17_RD; 
 		End If;
-		if addr = x"00682070" then
+		if addr = x"00682056" then
 			rreg := REG_thrsh_CH18_RD; 
 		End If;
-		if addr = x"00682071" then
+		if addr = x"00682057" then
 			rreg := REG_thrsh_CH19_RD; 
 		End If;
-		if addr = x"00682072" then
+		if addr = x"00682058" then
 			rreg := REG_thrsh_CH20_RD; 
 		End If;
-		if addr = x"00682073" then
+		if addr = x"00682059" then
 			rreg := REG_thrsh_CH21_RD; 
 		End If;
-		if addr = x"00682074" then
+		if addr = x"0068205A" then
 			rreg := REG_thrsh_CH22_RD; 
 		End If;
-		if addr = x"00682075" then
+		if addr = x"0068205B" then
 			rreg := REG_thrsh_CH23_RD; 
 		End If;
-		if addr = x"00682076" then
+		if addr = x"0068205C" then
 			rreg := REG_dummy_RD; 
 		End If;
-		if addr = x"0001A009" then
+		if addr = x"0068205F" then
 			rreg := REG_All_Energies_READ_STATUS_RD; 
 		End If;
-		if addr = x"0001A00A" then
+		if addr = x"00682060" then
 			rreg := REG_All_Energies_READ_VALID_WORDS_RD; 
 		End If;
-		if addr = x"0001A00B" then
+		if addr = x"00682061" then
 			rreg := REG_All_Energies_CONFIG_RD; 
+		End If;
+		if addr = x"00682064" then
+			rreg := REG_base_CH0_RD; 
+		End If;
+		if addr = x"00682065" then
+			rreg := REG_base_CH1_RD; 
+		End If;
+		if addr = x"00682066" then
+			rreg := REG_base_CH2_RD; 
+		End If;
+		if addr = x"00682067" then
+			rreg := REG_base_CH3_RD; 
+		End If;
+		if addr = x"00682068" then
+			rreg := REG_base_CH4_RD; 
+		End If;
+		if addr = x"00682069" then
+			rreg := REG_base_CH5_RD; 
+		End If;
+		if addr = x"0068206A" then
+			rreg := REG_base_CH6_RD; 
+		End If;
+		if addr = x"0068206B" then
+			rreg := REG_base_CH7_RD; 
+		End If;
+		if addr = x"0068206C" then
+			rreg := REG_base_CH8_RD; 
+		End If;
+		if addr = x"0068206D" then
+			rreg := REG_base_CH9_RD; 
+		End If;
+		if addr = x"0068206E" then
+			rreg := REG_base_CH10_RD; 
+		End If;
+		if addr = x"0068206F" then
+			rreg := REG_base_CH11_RD; 
+		End If;
+		if addr = x"00682070" then
+			rreg := REG_base_CH12_RD; 
+		End If;
+		if addr = x"00682071" then
+			rreg := REG_base_CH13_RD; 
+		End If;
+		if addr = x"00682072" then
+			rreg := REG_base_CH14_RD; 
+		End If;
+		if addr = x"00682073" then
+			rreg := REG_base_CH15_RD; 
+		End If;
+		if addr = x"00682074" then
+			rreg := REG_base_CH16_RD; 
+		End If;
+		if addr = x"00682075" then
+			rreg := REG_base_CH17_RD; 
+		End If;
+		if addr = x"00682076" then
+			rreg := REG_base_CH18_RD; 
+		End If;
+		if addr = x"00682077" then
+			rreg := REG_base_CH19_RD; 
+		End If;
+		if addr = x"00682078" then
+			rreg := REG_base_CH20_RD; 
+		End If;
+		if addr = x"00682079" then
+			rreg := REG_base_CH21_RD; 
+		End If;
+		if addr = x"0068207A" then
+			rreg := REG_base_CH22_RD; 
+		End If;
+		if addr = x"0068207B" then
+			rreg := REG_base_CH23_RD; 
+		End If;
+		if addr = x"0068207E" then
+			rreg := REG_io_to_encode_RD; 
+		End If;
+		if addr = x"0068207F" then
+			rreg := REG_io_stamptype_RD; 
+		End If;
+		if addr = x"00682080" then
+			rreg := REG_io_lemo2out_RD; 
+		End If;
+		if addr = x"00682081" then
+			rreg := REG_io_divide_RD; 
 		End If;
     
                    
