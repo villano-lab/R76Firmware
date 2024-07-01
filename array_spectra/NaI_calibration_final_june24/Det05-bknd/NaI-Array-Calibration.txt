@@ -1,0 +1,67 @@
+Run ID = NaI-Array-Calibration
+Start time = Thu Jun 27 18:44:26 2024
+
+CH0@DT5751_626
+	Energy calibration: C0 = 0; C1 = 1; C2 = 0; unit = keV
+	Real time = 0:01:46.602
+	Live time = 0:01:46.513
+	Dead time = 0.08 %
+	Input counts = 7164; rate (cps) = 67.2±0.79
+	Pile up counts = 3; rate (cps) = 0.028±0.016
+	Saturation counts = 0; rate (cps) = 0
+	E cut counts = 0; rate (cps) = 0
+	PSD cut counts = 0; rate (cps) = 0
+	T cut counts = 0; rate (cps) = 0
+	Singles counts = 0; rate (cps) = 0
+	Output counts = 7158; rate (cps) = 67.15±0.79
+	Gamma counts = 0; rate (cps) = 0
+	Neutron counts = 7158; rate (cps) = 67.15±0.79
+
+CH1@DT5751_626
+	Energy calibration: C0 = 0; C1 = 1; C2 = 0; unit = keV
+	Real time = 0:00:00.000
+	Live time = 0:00:00.000
+	Dead time = 0.00 %
+	Input counts = 0; rate (cps) = 0
+	Pile up counts = 0; rate (cps) = 0
+	Saturation counts = 0; rate (cps) = 0
+	E cut counts = 0; rate (cps) = 0
+	PSD cut counts = 0; rate (cps) = 0
+	T cut counts = 0; rate (cps) = 0
+	Singles counts = 0; rate (cps) = 0
+	Output counts = 0; rate (cps) = 0
+	Gamma counts = 0; rate (cps) = 0
+	Neutron counts = 0; rate (cps) = 0
+
+CH2@DT5751_626
+	Energy calibration: C0 = 0; C1 = 1; C2 = 0; unit = keV
+	Real time = 0:00:00.000
+	Live time = 0:00:00.000
+	Dead time = 0.00 %
+	Input counts = 0; rate (cps) = 0
+	Pile up counts = 0; rate (cps) = 0
+	Saturation counts = 0; rate (cps) = 0
+	E cut counts = 0; rate (cps) = 0
+	PSD cut counts = 0; rate (cps) = 0
+	T cut counts = 0; rate (cps) = 0
+	Singles counts = 0; rate (cps) = 0
+	Output counts = 0; rate (cps) = 0
+	Gamma counts = 0; rate (cps) = 0
+	Neutron counts = 0; rate (cps) = 0
+
+CH3@DT5751_626
+	Energy calibration: C0 = 0; C1 = 1; C2 = 0; unit = keV
+	Real time = 0:00:00.000
+	Live time = 0:00:00.000
+	Dead time = 0.00 %
+	Input counts = 0; rate (cps) = 0
+	Pile up counts = 0; rate (cps) = 0
+	Saturation counts = 0; rate (cps) = 0
+	E cut counts = 0; rate (cps) = 0
+	PSD cut counts = 0; rate (cps) = 0
+	T cut counts = 0; rate (cps) = 0
+	Singles counts = 0; rate (cps) = 0
+	Output counts = 0; rate (cps) = 0
+	Gamma counts = 0; rate (cps) = 0
+	Neutron counts = 0; rate (cps) = 0
+
