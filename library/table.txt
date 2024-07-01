@@ -1,0 +1,2 @@
+name;type;address;value
+disable_det_CH0;Decimal;682010;0
