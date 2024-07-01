@@ -151,7 +151,7 @@ int main(int argc, char* argv[])
 
 	//Final run setup
     int top = thrs + range_l; //top of the window in trigger window
-	
+
 	if(logfile != NULL){
 		fprintf(logfile,"============ Settings ============\n");
 		fprintf(logfile,"Starting threshold:			%f\n",thrs);
@@ -166,7 +166,7 @@ int main(int argc, char* argv[])
 		}
 		fprintf(logfile,"\b\b\n\n"); //clear trailing comma and space before inserting two newlines.
 	};
-	
+
 	//Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
 	thresh_q = set_thresholds("low",polarity,thrs,thresh_t);
@@ -176,19 +176,19 @@ int main(int argc, char* argv[])
 			return thresh_q[i];
 		}
 	}
-	inhib_q = REG_inhib_SET(inhib,&handle);		//Set number of clock ticks to inhibit data by
-	delay_q = REG_delay_SET(delay,&handle);			
-	gate_uq = REG_gate_u_SET(gate_u,&handle);			
-	gate_lq = REG_gate_l_SET(gate_l,&handle);	
-	polarity_q = REG_polarity_SET(polarity,&handle);	//Set polarity to negative
+	inhib_q = __abstracted_reg_write(inhib,SCI_REG_trig_inhib,&handle);		//Set number of clock ticks to inhibit data by
+	delay_q = __abstracted_reg_write(delay,SCI_REG_trig_delay,&handle);
+	gate_uq = __abstracted_reg_write(gate_u,SCI_REG_trig_gate_u,&handle);
+	gate_lq = __abstracted_reg_write(gate_l,SCI_REG_trig_gate_l,&handle);
+	polarity_q = __abstracted_reg_write(polarity,SCI_REG_trig_polarity,&handle);	//Set polarity to negative
 
 	if(verbose>0){printf("Skipping every %dth value.\n",skip);}
-	skip_q = REG_skip_SET(skip,&handle);
+	skip_q = __abstracted_reg_write(skip,SCI_REG_io_divide,&handle);
 	if(skip_q != 0){
 		printf("Error from REG_skip_SET. Aborting.\n");
 		return skip_q;
 	}
-	
+
 	if(verbose>1){printf("Updated top threshold to initial value:\n");};
 	if(verbose>1){printf("%d\n",top);};
 
@@ -203,7 +203,7 @@ int main(int argc, char* argv[])
 	//Run phase - undo reset
 	if(verbose>0){printf("Setting up rate counter... \n");};
 	tic = time(NULL);
-	
+
 	fprintf(fp,"top, rate\n"); // add a header row
 	if(verbose>0){printf("Collecting data! \n");};
 	sleep(5); //let the board catch up to settings.
@@ -224,13 +224,11 @@ int main(int argc, char* argv[])
 
 		//wait
 		sleep(10);
-		
+
 		//get the rate
 		if(verbose > 1){printf("Retreiving data...\n");};
-		rate_q=RATE_METER_RateMeter_0_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
+		rate_q=RATE_METER_RateMeter_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
 		if(verbose > 1){printf("Rateval: %f\n",rateval[0]/10.0);};
-		unreduced_q=RATE_METER_RateMeter_NoSkip_GET_DATA(unreduced,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
-		if(verbose > 1){printf("Unreduced: %f\n",unreduced[0]/10.0);};
 
 		//write the rate
 		fprintf(fp,"%d, %f, %f\n",top,rateval[0]/10.0,unreduced[0]/10.0);

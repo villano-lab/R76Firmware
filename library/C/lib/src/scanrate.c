@@ -168,7 +168,7 @@ int main(int argc, char* argv[])
 		}
 		fprintf(logfile,"\b\b\n\n"); //clear trailing comma and space before inserting two newlines.
 	};
-	
+
 	//Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
 	thrs = range_l;
@@ -186,21 +186,21 @@ int main(int argc, char* argv[])
 			return thresh_q[i];
 		}
 	}
-	inhib_q = REG_inhib_SET(inhib,&handle);			//Set number of samples to delay data by
-	delay_q = REG_delay_SET(delay,&handle);			//Set number of samples to delay data by
-	gate_uq = REG_gate_u_SET(gate_u,&handle);			
-	gate_lq = REG_gate_l_SET(gate_l,&handle);
-	polarity_q = REG_polarity_SET(polarity,&handle);	//Set polarity to negative
-	
+	inhib_q = __abstracted_reg_write(inhib,SCI_REG_trig_inhib,&handle);			//Set number of samples to delay data by
+	delay_q = __abstracted_reg_write(delay,SCI_REG_trig_delay,&handle);			//Set number of samples to delay data by
+	gate_uq = __abstracted_reg_write(gate_u,SCI_REG_trig_gate_u,&handle);
+	gate_lq = __abstracted_reg_write(gate_l,SCI_REG_trig_gate_l,&handle);
+	polarity_q = __abstracted_reg_write(polarity,SCI_REG_trig_polarity,&handle);	//Set polarity to negative
+
 	//Run phase - undo reset
 	if(verbose>0){printf("Setting up rate counter... \n");};
 	tic = time(NULL);
-    
+
 	fprintf(fp,"threshold, rate\n"); // add a header row
 	if(verbose>0){printf("Collecting data! \n");};
 	//Collect data
 	int i;
-	while(thrs < range_u){	
+	while(thrs < range_u){
 		//reset the threshold
 		if(verbose>1){
 			printf("Updated threshold:\n");
@@ -219,10 +219,10 @@ int main(int argc, char* argv[])
 		for(i = 0; i<wait; i++){
 			//wait
 			sleep(10);
-			
+
 			//get the rate
 			if(verbose > 2){printf("Retreiving data...\n");};
-			rate_q=RATE_METER_RateMeter_0_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
+			rate_q=RATE_METER_RateMeter_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
 			if(verbose > 2){printf("Rateval: %f\n",rateval[0]/10.0);};
 			cumulative += rateval[0]/10.0;
 		}

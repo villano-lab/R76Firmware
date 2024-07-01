@@ -139,7 +139,7 @@ int main(int argc, char* argv[])
 		
 	//get the rate
 	if(verbose > 1){printf("Retreiving data...\n");};
-	rate_q=RATE_METER_RateMeter_0_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
+	rate_q=RATE_METER_RateMeter_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
 	if(verbose > 1){printf("Rateval: %f\n",rateval[0]/10.0);};
 
 	//print the rate

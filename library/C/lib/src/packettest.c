@@ -154,7 +154,7 @@ int main(int argc, char* argv[])
 			}
 
             if(verbose > 1){printf("Reconstructing data.\n");}
-            if (CPACK_All_Energies_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets, verbose, handle) == 0)
+            if (CPACK_All_Energies_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets) == 0)
             {
                 if(verbose>=0) printf(".");
                 if(verbose>=0) printf("\n");

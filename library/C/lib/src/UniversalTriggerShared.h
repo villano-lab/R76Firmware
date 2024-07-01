@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "Legacy/R76Firmware_lib.h"
 #include "Legacy/Def.h"
+#include "Legacy/RegisterFile.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
