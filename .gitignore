@@ -106,3 +106,4 @@ makefile_file_manip
 MIDAS_FORK/*.xml
 *.log
 midas.log
+plots/.virtual_documents/
