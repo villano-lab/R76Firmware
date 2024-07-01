@@ -42,7 +42,7 @@ const struct option longopts[] =
 //Defaults
 int verbose = 0;
 float thrs = 1.;	        //distance from baseline for threshold.
-uint32_t value = 4294967295;
+uint32_t value = 4294967294;	//default: disable detector 0 (never present) and enable the rest.
 int gate_u = 100;
 int gate_l = 10;
 float range_l = 0;
