@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "R76Firmware_lib.h"
-#include "Def.h"
+#include "Legacy/R76Firmware_lib.h"
+#include "Legacy/Def.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -11,27 +11,28 @@
 #include <math.h>
 
 //Text defines
-#define BOARD_IP_ADDRESS ("134.84.150.42")
-#define DET_TEXT (" -D,	--det	<# or source name>	Choose which detectors to trigger on (default: all).\n					Number values are bitwise from 0 to all 1s in 32 bit (4294967295).\n")
-#define GATE_TEXT (" -g,	--gate	'<lower #> <upper #>'	Set the gate times for the upper and lower triggers in clock ticks (integer. defaults: 0-100)\n					The two entries are delimited by spaces, commas, or dashes. Both must be provided.\n")
-#define DELAY_TEXT (" -d,	--delay	<delay length>	Set the value of the delay time in clock ticks (integer. default: 50)\n")
-#define INHIB_TEXT (" -i,	--inhibit	<inhibit>	Set the value of the inhibit time in clock ticks (integer. default: 1000)\n")
-#define THRESH_TEXT (" -t,	--thresh	<threshold>		Set the value of the (lower) threshold in MeV (default: 1). \n")
-#define RANGE_TEXT (" -r,	--range	'<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned, in MeV (default: min 0, max 8, step size 1).\n")
-#define SKIP_TEXT (" -S,    --skip <#>  Skip every # trigger to reduce the rate.\n")
-#define VERBOSE_TEXT (" -v,	--verbose	<level>		Print verbose messages at the specified level (1 if unspecified).\n")
-#define SILENT_TEXT (" -s,-q,	--silent,--quiet,		Print nothing.\n")
-#define LOG_TEXT (" -l,	--log		<file>		Log terminal output. (default: log.txt) \n")
-#define VERSION_TEXT (" -V, 	--version			Print version and exit.\n")
-#define HELP_TEXT (" -h,-?,	--help				Print this help function.\n")
-#define TOP_TEXT (" -T,   --top   <value> Set the upper threshold to the given value in MeV (default: 8).\n")
-#define RESET_TEXT (" -R,   --reset     Reset all unsupplied values to their defaults.\n")
-#define FORCE_TEXT (" -f,   --force     Skip all user input.\n")
-#define POLARITY_TEXT (" -p, --polarity  <1 or 0>    Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
-#define PRE_INT_TEXT (" -P,  --pre-int   <#> Set the pre-integration time in clock cycles. (integer. default: 30)\n")
-#define INT_TIME_TEXT (" -I, --int-time  <#> Set the integration time in clock cycles. (integer. default: 250)\n")
-#define CONFIG_TEXT (" -c,   --config    <file>  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
-#define WAIT_TEXT (" -w,    --wait  <#> Set the number of 10-second cycles to wait through for data collection. (integer. if not supplied, uses one cycle.)\n")
+#define BOARD_IP_ADDRESS ("134.84.150.114")
+#define DET_TEXT      (" -D,	--det	    <# or source name>	    Choose which detectors to trigger on (default: all).\n				            Number values are bitwise from 0 to all 1s in 32 bit (4294967295).\n")
+#define GATE_TEXT     (" -g,	--gate	    '<lower #> <upper #>'   Set the gate times for the upper and lower triggers in clock ticks (integer. defaults: 10-100)\n					    The two entries are delimited by spaces, commas, or dashes. Both must be provided.\n")
+#define DELAY_TEXT    (" -d,	--delay	    <delay length>          Set the value of the delay time in clock ticks (integer. default: 50)\n")
+#define INHIB_TEXT    (" -i,	--inhibit   <inhibit>	            Set the value of the inhibit time in clock ticks (integer. default: 1000)\n")
+#define THRESH_TEXT   (" -t,    --thresh    <threshold>	            Set the value of the (lower) threshold in MeV (default: 1). \n")
+#define RANGE_TEXT    (" -r,	--range	    '<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned, in MeV (default: min 0, max 8, step size 1).\n")
+#define SKIP_TEXT     (" -S,    --skip      <#>                     Skip every # trigger to reduce the rate.\n")
+#define BASELINE_TEXT (" -b,    --baseline  <baseline>              Set the baseline in ADC units (positive integer) and force manual baseline mode. A baseline of 0 indicates automatic baseline mode. (default: 0/automatic)\n                                            WARNING! This will have unintended consequences for calibration, thresholds, and pulse integration. USE FOR DEV ONLY!\n")
+#define VERBOSE_TEXT  (" -v,	--verbose   <level>                 Print verbose messages at the specified level (1 if unspecified).\n")
+#define SILENT_TEXT   (" -s,-q,	--silent,--quiet,                   Print nothing. (Negative verbosity) \n")
+#define LOG_TEXT      (" -l,	--log	    <file>                  Log terminal output. (default: log.txt) \n")
+#define VERSION_TEXT  (" -V, 	--version                           Print version and exit.\n")
+#define HELP_TEXT     (" -h,-?,	--help                              Print this help function.\n")
+#define TOP_TEXT      (" -T,    --top       <value>                 Set the upper threshold to the given value in MeV (default: 8).\n")
+#define RESET_TEXT    (" -R,    --reset                             Reset all unsupplied values to their defaults.\n")
+#define FORCE_TEXT    (" -f,    --force                             Skip all requests for user input.\n")
+#define POLARITY_TEXT (" -p,    --polarity  <1 or 0>                Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
+#define PRE_INT_TEXT  (" -P,    --pre-int   <#>                     Set the pre-integration time in clock cycles. (integer. default: 30)\n")
+#define INT_TIME_TEXT (" -I,    --int-time  <#>                     Set the integration time in clock cycles. (integer. default: 250)\n")
+#define CONFIG_TEXT   (" -c,    --config    <file>                  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
+#define WAIT_TEXT     (" -w,    --wait      <#>                     Set the number of 10-second cycles to wait through for data collection. (integer. if not supplied, uses one cycle.)\n")
 //Assigning buffer sizes
 #define BUFFER_SIZE (1024)
 
@@ -49,6 +50,7 @@ extern int inhib;
 extern int delay;
 extern int polarity;
 extern int baseline;
+extern int manual_baseline;
 extern float top;
 extern int int_time;
 extern int pre_int;
@@ -64,13 +66,11 @@ extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
 extern uint32_t *specread_q;
-extern int *specvalid;
-extern int spectra_t[32];
-extern int specvalid_t[32];
+extern uint32_t *specvalid;
+extern uint32_t spectra_t[32];
+extern uint32_t specvalid_t[32];
 extern int disable_t[32];
 extern int thresh_t[32];
-//extern uint32_t spectra_q[32];
-//extern uint32_t specvalid_q[32];
 extern int specdat[32*17*BUFFER_SIZE];
 extern uint32_t spec_dl[32*17*BUFFER_SIZE];
 extern uint32_t size;
@@ -113,16 +113,19 @@ extern int threshflag;
 extern int topflag;
 extern int polflag;
 extern int skipflag;
+extern int preflag;
+extern int intflag;
+extern int baseflag;
 extern int reset;
 extern int force;
 extern int wait;
-extern char* configfilename;
+extern const char* configfilename;
 //Other Variables
 extern int i;
 extern char userinput[3];
 extern time_t tic, toc;
-extern FILE *fp;
 extern FILE *logfile;
+extern FILE *fp;
 //Rate Counter Variables
 extern int rate_q;
 extern int unreduced_q;
@@ -136,6 +139,7 @@ extern uint32_t ratevalid_data;
 //Functions
 //===========================================================================
 //printing functions
+void printbits(unsigned char v);                                        //print bits of an int https://stackoverflow.com/a/700184
 void print_usage(FILE* stream, int exit_code);                          //print usage of the program
 void copyright();                                                       //print copyright information
 void subhelp(FILE* stream);
@@ -144,7 +148,7 @@ int parse_detector_switch(char* selection);                             //parse 
 int parse_gate(char* gatestring, int verbose);                          //parse a string representing multiple gate values
 int parse_range(char* gatestring, int verbose);                         //parse a string representing a range of values with step size
 void print_timestamp(int elapsed, int verbose);                         //parse a time elapsed value and print it in readable format
-void read_config(char* filename);                                       //parse a config file for values
+void read_config(const char* filename);                                 //parse a config file for values
 //converting functions
 int *on_to_off(int *off, int on, int verbose);                          //convert a 'detectors on' bit vector to a 'detectors off' bit vector
 int energy_to_bin(int detnum, float energy);                            //convert an energy value to a bin value
@@ -153,15 +157,16 @@ int REG_top_SET(uint32_t value, NI_HANDLE* handle);                           //
 int REG_thrsh_SET(uint32_t value, NI_HANDLE* handle);                         //set all lower thesholds to a bin number
 //multichannel functions
 int *disable_dets(int *disable_q, int disable[24]);                     //disable detectors based on input array
-int *set_thresholds(char* side, int polarity, float energy, int *thresh_q);            //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
-int *spectra_START(int *spectra_q);
-int *spectra_STOP(int *spectra_q);
-int *spectra_FLUSH(int *spectra_q);
-int *spectra_RESET(int *spectra_q);
-int *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint32_t limit_value, int *spectra_q);
-int *spectra_STATUS(uint32_t *spectra_q);
-int *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, int *specread_q, int *specvalid_q);
+int *set_thresholds(const char* side, int polarity, float energy, int *thresh_q);            //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
+uint32_t *spectra_PARAMS(int *spectra_q,int32_t Rebin, int32_t LimitMode, int32_t LimitValue); //set up spectrum parameters
+uint32_t *spectra_START(uint32_t *spectra_q);
+uint32_t *spectra_STOP(uint32_t *spectra_q);
+uint32_t *spectra_FLUSH(uint32_t *spectra_q);
+uint32_t *spectra_RESET(uint32_t *spectra_q);
+uint32_t *spectra_SET(uint32_t rebin, uint32_t limit_mode, uint32_t limit_value, uint32_t *spectra_q);
+uint32_t *spectra_STATUS(uint32_t *spectra_q);
+uint32_t *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, uint32_t *specread_q, uint32_t *specvalid_q);
 //utility functions
 int connect_staticaddr(int verbose);                                    //connect to the board, with print functions.
-int set_by_polarity(int (*f)(uint32_t, NI_HANDLE*), int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
+int set_by_polarity(uint32_t address, int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
 int kbhit(void);                                                        //allow keyboard interrupt

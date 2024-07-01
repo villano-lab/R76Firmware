@@ -57,6 +57,14 @@
 
 
 
+
+
+
+
+
+
+
+
 import R76Firmware_RegisterFile
 from ctypes import *
 import array
@@ -137,700 +145,12 @@ def gray_to_bin(num, nbit):
     temp ^= (temp >> 1)
     return temp    
 
-def REG_gate_l_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_gate_l, handle)
+def REG_forcetrig_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_forcetrig, handle)
     return err, data
 
-def REG_gate_l_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_gate_l, handle)
-    return err
-
-def REG_gate_u_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_gate_u, handle)
-    return err, data
-
-def REG_gate_u_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_gate_u, handle)
-    return err
-
-def REG_inhib_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_inhib, handle)
-    return err, data
-
-def REG_inhib_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_inhib, handle)
-    return err
-
-def REG_delay_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_delay, handle)
-    return err, data
-
-def REG_delay_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_delay, handle)
-    return err
-
-def REG_polarity_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_polarity, handle)
-    return err, data
-
-def REG_polarity_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_polarity, handle)
-    return err
-
-def REG_thrsh_1_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_1, handle)
-    return err, data
-
-def REG_thrsh_1_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_1, handle)
-    return err
-
-def REG_thrsh_2_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_2, handle)
-    return err, data
-
-def REG_thrsh_2_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_2, handle)
-    return err
-
-def REG_thrsh_3_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_3, handle)
-    return err, data
-
-def REG_thrsh_3_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_3, handle)
-    return err
-
-def REG_thrsh_4_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_4, handle)
-    return err, data
-
-def REG_thrsh_4_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_4, handle)
-    return err
-
-def REG_thrsh_5_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_5, handle)
-    return err, data
-
-def REG_thrsh_5_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_5, handle)
-    return err
-
-def REG_thrsh_6_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_6, handle)
-    return err, data
-
-def REG_thrsh_6_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_6, handle)
-    return err
-
-def REG_thrsh_7_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_7, handle)
-    return err, data
-
-def REG_thrsh_7_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_7, handle)
-    return err
-
-def REG_thrsh_8_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_8, handle)
-    return err, data
-
-def REG_thrsh_8_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_8, handle)
-    return err
-
-def REG_thrsh_9_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_9, handle)
-    return err, data
-
-def REG_thrsh_9_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_9, handle)
-    return err
-
-def REG_thrsh_10_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_10, handle)
-    return err, data
-
-def REG_thrsh_10_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_10, handle)
-    return err
-
-def REG_thrsh_11_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_11, handle)
-    return err, data
-
-def REG_thrsh_11_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_11, handle)
-    return err
-
-def REG_thrsh_12_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_12, handle)
-    return err, data
-
-def REG_thrsh_12_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_12, handle)
-    return err
-
-def REG_thrsh_13_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_13, handle)
-    return err, data
-
-def REG_thrsh_13_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_13, handle)
-    return err
-
-def REG_thrsh_14_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_14, handle)
-    return err, data
-
-def REG_thrsh_14_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_14, handle)
-    return err
-
-def REG_thrsh_15_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_15, handle)
-    return err, data
-
-def REG_thrsh_15_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_15, handle)
-    return err
-
-def REG_thrsh_16_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_16, handle)
-    return err, data
-
-def REG_thrsh_16_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_16, handle)
-    return err
-
-def REG_thrsh_17_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_17, handle)
-    return err, data
-
-def REG_thrsh_17_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_17, handle)
-    return err
-
-def REG_thrsh_18_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_18, handle)
-    return err, data
-
-def REG_thrsh_18_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_18, handle)
-    return err
-
-def REG_thrsh_19_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_19, handle)
-    return err, data
-
-def REG_thrsh_19_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_19, handle)
-    return err
-
-def REG_thrsh_20_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_20, handle)
-    return err, data
-
-def REG_thrsh_20_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_20, handle)
-    return err
-
-def REG_thrsh_21_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_21, handle)
-    return err, data
-
-def REG_thrsh_21_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_21, handle)
-    return err
-
-def REG_thrsh_22_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_22, handle)
-    return err, data
-
-def REG_thrsh_22_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_22, handle)
-    return err
-
-def REG_thrsh_23_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_23, handle)
-    return err, data
-
-def REG_thrsh_23_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_23, handle)
-    return err
-
-def REG_thrsh_0_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_thrsh_0, handle)
-    return err, data
-
-def REG_thrsh_0_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_thrsh_0, handle)
-    return err
-
-def REG_disable_det_0_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_0, handle)
-    return err, data
-
-def REG_disable_det_0_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_0, handle)
-    return err
-
-def REG_disable_det_1_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_1, handle)
-    return err, data
-
-def REG_disable_det_1_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_1, handle)
-    return err
-
-def REG_disable_det_2_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_2, handle)
-    return err, data
-
-def REG_disable_det_2_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_2, handle)
-    return err
-
-def REG_disable_det_3_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_3, handle)
-    return err, data
-
-def REG_disable_det_3_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_3, handle)
-    return err
-
-def REG_disable_det_4_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_4, handle)
-    return err, data
-
-def REG_disable_det_4_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_4, handle)
-    return err
-
-def REG_disable_det_5_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_5, handle)
-    return err, data
-
-def REG_disable_det_5_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_5, handle)
-    return err
-
-def REG_disable_det_6_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_6, handle)
-    return err, data
-
-def REG_disable_det_6_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_6, handle)
-    return err
-
-def REG_disable_det_7_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_7, handle)
-    return err, data
-
-def REG_disable_det_7_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_7, handle)
-    return err
-
-def REG_disable_det_8_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_8, handle)
-    return err, data
-
-def REG_disable_det_8_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_8, handle)
-    return err
-
-def REG_disable_det_9_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_9, handle)
-    return err, data
-
-def REG_disable_det_9_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_9, handle)
-    return err
-
-def REG_disale_det_10_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disale_det_10, handle)
-    return err, data
-
-def REG_disale_det_10_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disale_det_10, handle)
-    return err
-
-def REG_disable_det_11_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_11, handle)
-    return err, data
-
-def REG_disable_det_11_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_11, handle)
-    return err
-
-def REG_disable_det_12_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_12, handle)
-    return err, data
-
-def REG_disable_det_12_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_12, handle)
-    return err
-
-def REG_disable_det_13_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_13, handle)
-    return err, data
-
-def REG_disable_det_13_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_13, handle)
-    return err
-
-def REG_disable_det_14_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_14, handle)
-    return err, data
-
-def REG_disable_det_14_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_14, handle)
-    return err
-
-def REG_disable_det_15_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_15, handle)
-    return err, data
-
-def REG_disable_det_15_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_15, handle)
-    return err
-
-def REG_disable_det_16_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_16, handle)
-    return err, data
-
-def REG_disable_det_16_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_16, handle)
-    return err
-
-def REG_disable_det_17_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_17, handle)
-    return err, data
-
-def REG_disable_det_17_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_17, handle)
-    return err
-
-def REG_disable_det_18_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_18, handle)
-    return err, data
-
-def REG_disable_det_18_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_18, handle)
-    return err
-
-def REG_disable_det_19_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_19, handle)
-    return err, data
-
-def REG_disable_det_19_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_19, handle)
-    return err
-
-def REG_disable_det_20_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_20, handle)
-    return err, data
-
-def REG_disable_det_20_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_20, handle)
-    return err
-
-def REG_disable_det_21_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_21, handle)
-    return err, data
-
-def REG_disable_det_21_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_21, handle)
-    return err
-
-def REG_disable_det_22_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_22, handle)
-    return err, data
-
-def REG_disable_det_22_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_22, handle)
-    return err
-
-def REG_disable_det_23_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_23, handle)
-    return err, data
-
-def REG_disable_det_23_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_23, handle)
-    return err
-
-def REG_top_0_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_0, handle)
-    return err, data
-
-def REG_top_0_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_0, handle)
-    return err
-
-def REG_top_1_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_1, handle)
-    return err, data
-
-def REG_top_1_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_1, handle)
-    return err
-
-def REG_top_2_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_2, handle)
-    return err, data
-
-def REG_top_2_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_2, handle)
-    return err
-
-def REG_top_3_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_3, handle)
-    return err, data
-
-def REG_top_3_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_3, handle)
-    return err
-
-def REG_top_4_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_4, handle)
-    return err, data
-
-def REG_top_4_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_4, handle)
-    return err
-
-def REG_top_5_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_5, handle)
-    return err, data
-
-def REG_top_5_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_5, handle)
-    return err
-
-def REG_top_6_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_6, handle)
-    return err, data
-
-def REG_top_6_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_6, handle)
-    return err
-
-def REG_top_7_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_7, handle)
-    return err, data
-
-def REG_top_7_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_7, handle)
-    return err
-
-def REG_top_8_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_8, handle)
-    return err, data
-
-def REG_top_8_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_8, handle)
-    return err
-
-def REG_top_9_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_9, handle)
-    return err, data
-
-def REG_top_9_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_9, handle)
-    return err
-
-def REG_top_10_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_10, handle)
-    return err, data
-
-def REG_top_10_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_10, handle)
-    return err
-
-def REG_top_11_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_11, handle)
-    return err, data
-
-def REG_top_11_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_11, handle)
-    return err
-
-def REG_top_12_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_12, handle)
-    return err, data
-
-def REG_top_12_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_12, handle)
-    return err
-
-def REG_top_13_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_13, handle)
-    return err, data
-
-def REG_top_13_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_13, handle)
-    return err
-
-def REG_top_14_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_14, handle)
-    return err, data
-
-def REG_top_14_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_14, handle)
-    return err
-
-def REG_top_15_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_15, handle)
-    return err, data
-
-def REG_top_15_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_15, handle)
-    return err
-
-def REG_top_16_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_16, handle)
-    return err, data
-
-def REG_top_16_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_16, handle)
-    return err
-
-def REG_top_17_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_17, handle)
-    return err, data
-
-def REG_top_17_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_17, handle)
-    return err
-
-def REG_top_18_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_18, handle)
-    return err, data
-
-def REG_top_18_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_18, handle)
-    return err
-
-def REG_top_19_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_19, handle)
-    return err, data
-
-def REG_top_19_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_19, handle)
-    return err
-
-def REG_top_20_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_20, handle)
-    return err, data
-
-def REG_top_20_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_20, handle)
-    return err
-
-def REG_top_21_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_21, handle)
-    return err, data
-
-def REG_top_21_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_21, handle)
-    return err
-
-def REG_top_22_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_22, handle)
-    return err, data
-
-def REG_top_22_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_22, handle)
-    return err
-
-def REG_top_23_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_top_23, handle)
-    return err, data
-
-def REG_top_23_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_top_23, handle)
-    return err
-
-def REG_int_time_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_int_time, handle)
-    return err, data
-
-def REG_int_time_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_int_time, handle)
-    return err
-
-def REG_pre_int_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
-    return err, data
-
-def REG_pre_int_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_pre_int, handle)
-    return err
-
-def REG_baseline_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_baseline, handle)
-    return err, data
-
-def REG_baseline_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_baseline, handle)
-    return err
-
-def REG_skip_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_skip, handle)
-    return err, data
-
-def REG_skip_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_skip, handle)
-    return err
-
-def REG_reset_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_reset, handle)
-    return err, data
-
-def REG_reset_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_reset, handle)
-    return err
-
-def REG_read_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_read, handle)
-    return err, data
-
-def REG_read_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_read, handle)
-    return err
-
-def REG_write_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_write, handle)
-    return err, data
-
-def REG_write_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_write, handle)
-    return err
-
-def REG_stopwrite_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
-    return err, data
-
-def REG_stopwrite_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_stopwrite, handle)
-    return err
-
-def REG_fifo_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_fifo, handle)
-    return err, data
-
-def REG_fifo_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_fifo, handle)
-    return err
-
-def REG_empty_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_empty, handle)
-    return err, data
-
-def REG_empty_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_empty, handle)
+def REG_forcetrig_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_forcetrig, handle)
     return err
 
 def REG_full_GET(handle):
@@ -841,20 +161,28 @@ def REG_full_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_full, handle)
     return err
 
-def REG_disable_det_10_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_disable_det_10, handle)
-    return err, data
-
-def REG_disable_det_10_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_disable_det_10, handle)
-    return err
-
 def REG_trigger_code_GET(handle):
     [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_trigger_code, handle)
     return err, data
 
 def REG_trigger_code_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_trigger_code, handle)
+    return err
+
+def REG_reset_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_reset, handle)
+    return err, data
+
+def REG_reset_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_reset, handle)
+    return err
+
+def REG_received_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_received, handle)
+    return err, data
+
+def REG_received_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_received, handle)
     return err
 
 def REG_timestamp_GET(handle):
@@ -865,33 +193,21 @@ def REG_timestamp_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
     return err
 
+def REG_sync0_between_sync2_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_sync0_between_sync2, handle)
+    return err, data
 
+def REG_sync0_between_sync2_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_sync0_between_sync2, handle)
+    return err
 
+def REG_dummy_GET(handle):
+    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_dummy, handle)
+    return err, data
 
-def RATE_METER_RateMeter_NoSkip_GET_DATA(channels, timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_NoSkip_FIFOADDRESS, timeout_ms, handle)
-    return err, data, read_data, valid_data
-
-
-
-
-def RATE_METER_RateMeter_NoSkip_GET_DATA_COUNTS(channels, timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_NoSkip_FIFOADDRESS + 512, timeout_ms, handle)
-    return err, data, read_data, valid_data
-
-
-
-
-def RATE_METER_RateMeter_0_GET_DATA(channels, timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_0_FIFOADDRESS, timeout_ms, handle)
-    return err, data, read_data, valid_data
-
-
-
-
-def RATE_METER_RateMeter_0_GET_DATA_COUNTS(channels, timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_0_FIFOADDRESS + 512, timeout_ms, handle)
-    return err, data, read_data, valid_data
+def REG_dummy_SET(data, handle):
+    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_dummy, handle)
+    return err
 
 
 
@@ -2119,28 +1435,28 @@ def SPECTRUM_Spectrum_0_GET_DATA(Bin, timeout_ms, handle):
 
 
 
-def OSCILLOSCOPE_Oscilloscope_0_START(handle):
-    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_Oscilloscope_0_CONFIG_ARM, handle)
+def OSCILLOSCOPE_Syncs_START(handle):
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_ARM, handle)
     if (err != 0):
        return False
-    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_Oscilloscope_0_CONFIG_ARM, handle)
+    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_ARM, handle)
     if (err != 0):
        return False
     return True
 
-def OSCILLOSCOPE_Oscilloscope_0_SET_DECIMATOR(OscilloscopeDecimator, handle):
-    err = __abstracted_reg_write(OscilloscopeDecimator, R76Firmware_RegisterFile.SCI_REG_Oscilloscope_0_CONFIG_DECIMATOR, handle)
+def OSCILLOSCOPE_Syncs_SET_DECIMATOR(OscilloscopeDecimator, handle):
+    err = __abstracted_reg_write(OscilloscopeDecimator, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_DECIMATOR, handle)
     return err
 
-def OSCILLOSCOPE_Oscilloscope_0_SET_PRETRIGGER(OscilloscopePreTrigger, handle):
-    err = __abstracted_reg_write(OscilloscopePreTrigger, R76Firmware_RegisterFile.SCI_REG_Oscilloscope_0_CONFIG_PRETRIGGER, handle)
+def OSCILLOSCOPE_Syncs_SET_PRETRIGGER(OscilloscopePreTrigger, handle):
+    err = __abstracted_reg_write(OscilloscopePreTrigger, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_PRETRIGGER, handle)
     return err
 
-def OSCILLOSCOPE_Oscilloscope_0_SET_TRIGGER_LEVEL(OscilloscopeTriggerLevel, handle):
-    err = __abstracted_reg_write(OscilloscopeTriggerLevel, R76Firmware_RegisterFile.SCI_REG_Oscilloscope_0_CONFIG_TRIGGER_LEVEL, handle)
+def OSCILLOSCOPE_Syncs_SET_TRIGGER_LEVEL(OscilloscopeTriggerLevel, handle):
+    err = __abstracted_reg_write(OscilloscopeTriggerLevel, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_TRIGGER_LEVEL, handle)
     return err
 
-def OSCILLOSCOPE_Oscilloscope_0_SET_TRIGGER_MODE(OscilloscopeTriggerMode, OscilloscopeTriggerChannel, OscilloscopeTriggerEdge, handle):
+def OSCILLOSCOPE_Syncs_SET_TRIGGER_MODE(OscilloscopeTriggerMode, OscilloscopeTriggerChannel, OscilloscopeTriggerEdge, handle):
     AnalogTrigger = 0
     Digital0Trigger = 0
     Digital1Trigger = 0
@@ -2165,23 +1481,463 @@ def OSCILLOSCOPE_Oscilloscope_0_SET_TRIGGER_MODE(OscilloscopeTriggerMode, Oscill
         Edge = 1
     triggermode = c_int(0)
     triggermode = (OscilloscopeTriggerChannel << 8)  + (SoftwareTrigger << 7 ) + (Edge << 3) + (SoftwareTrigger << 1) + AnalogTrigger +(Digital0Trigger << 2) + (Digital1Trigger << 2) + Digital1Trigger + (Digital2Trigger << 2) + (Digital2Trigger << 1) + (Digital3Trigger << 2) + (Digital3Trigger << 1) + Digital3Trigger
-    err = __abstracted_reg_write(triggermode, R76Firmware_RegisterFile.SCI_REG_Oscilloscope_0_CONFIG_TRIGGER_MODE, handle)
+    err = __abstracted_reg_write(triggermode, R76Firmware_RegisterFile.SCI_REG_Syncs_CONFIG_TRIGGER_MODE, handle)
     return err
 
-def OSCILLOSCOPE_Oscilloscope_0_GET_STATUS(handle):
-    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Oscilloscope_0_READ_STATUS, handle)
+def OSCILLOSCOPE_Syncs_GET_STATUS(handle):
+    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Syncs_READ_STATUS, handle)
     return err, status
 
-def OSCILLOSCOPE_Oscilloscope_0_GET_POSITION(handle):
-    [err, position] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Oscilloscope_0_READ_POSITION, handle)
+def OSCILLOSCOPE_Syncs_GET_POSITION(handle):
+    [err, position] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Syncs_READ_POSITION, handle)
     return err, position
 
-def OSCILLOSCOPE_Oscilloscope_0_GET_DATA(timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(24576, R76Firmware_RegisterFile.SCI_REG_Oscilloscope_0_FIFOADDRESS, timeout_ms, handle)
+def OSCILLOSCOPE_Syncs_GET_DATA(timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(3072, R76Firmware_RegisterFile.SCI_REG_Syncs_FIFOADDRESS, timeout_ms, handle)
     return err, data, read_data, valid_data
 
-def OSCILLOSCOPE_Oscilloscope_0_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePosition, OscilloscopePreTrigger):
+def OSCILLOSCOPE_Syncs_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePosition, OscilloscopePreTrigger):
+    OscilloscopeChannels = 3
+    OscilloscopeSamples = 1024
+    Analog = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital0 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital1 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital2 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital3 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    for n in range(OscilloscopeChannels):
+        current = OscilloscopePosition - OscilloscopePreTrigger
+        if ((current) > 0):
+            k = 0
+            for i in range(current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+            for i in range(0, current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+        else:
+            k = 0
+            for i in range(OscilloscopeSamples+current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+            for i in range(0, OscilloscopeSamples+current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+    return Analog, Digital0, Digital1,Digital2, Digital3
+
+
+
+
+def RATE_METER_RateMeter_GET_DATA(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_RateMeter_GET_DATA_COUNTS(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_RateMeter_FIFOADDRESS + 512, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_SyncIn_GET_DATA(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_SyncIn_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+
+def RATE_METER_SyncIn_GET_DATA_COUNTS(channels, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(channels, R76Firmware_RegisterFile.SCI_REG_SyncIn_FIFOADDRESS + 512, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
+def OSCILLOSCOPE_Analog_In_Unflipped_START(handle):
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_Analog_In_Unflipped_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_Analog_In_Unflipped_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    return True
+
+def OSCILLOSCOPE_Analog_In_Unflipped_SET_DECIMATOR(OscilloscopeDecimator, handle):
+    err = __abstracted_reg_write(OscilloscopeDecimator, R76Firmware_RegisterFile.SCI_REG_Analog_In_Unflipped_CONFIG_DECIMATOR, handle)
+    return err
+
+def OSCILLOSCOPE_Analog_In_Unflipped_SET_PRETRIGGER(OscilloscopePreTrigger, handle):
+    err = __abstracted_reg_write(OscilloscopePreTrigger, R76Firmware_RegisterFile.SCI_REG_Analog_In_Unflipped_CONFIG_PRETRIGGER, handle)
+    return err
+
+def OSCILLOSCOPE_Analog_In_Unflipped_SET_TRIGGER_LEVEL(OscilloscopeTriggerLevel, handle):
+    err = __abstracted_reg_write(OscilloscopeTriggerLevel, R76Firmware_RegisterFile.SCI_REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL, handle)
+    return err
+
+def OSCILLOSCOPE_Analog_In_Unflipped_SET_TRIGGER_MODE(OscilloscopeTriggerMode, OscilloscopeTriggerChannel, OscilloscopeTriggerEdge, handle):
+    AnalogTrigger = 0
+    Digital0Trigger = 0
+    Digital1Trigger = 0
+    Digital2Trigger = 0
+    Digital3Trigger = 0
+    SoftwareTrigger = 0
+    if (OscilloscopeTriggerMode == "Analog"):
+        AnalogTrigger = 1
+    if (OscilloscopeTriggerMode == "Digital0"):
+        Digital0Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital1"):
+        Digital1Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital2"):
+        Digital2Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital3"):
+        Digital3Trigger = 1
+    if (OscilloscopeTriggerMode == "Free"):
+        SoftwareTrigger = 1
+    if (OscilloscopeTriggerEdge == "Rising"):
+        Edge = 0
+    else:
+        Edge = 1
+    triggermode = c_int(0)
+    triggermode = (OscilloscopeTriggerChannel << 8)  + (SoftwareTrigger << 7 ) + (Edge << 3) + (SoftwareTrigger << 1) + AnalogTrigger +(Digital0Trigger << 2) + (Digital1Trigger << 2) + Digital1Trigger + (Digital2Trigger << 2) + (Digital2Trigger << 1) + (Digital3Trigger << 2) + (Digital3Trigger << 1) + Digital3Trigger
+    err = __abstracted_reg_write(triggermode, R76Firmware_RegisterFile.SCI_REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE, handle)
+    return err
+
+def OSCILLOSCOPE_Analog_In_Unflipped_GET_STATUS(handle):
+    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Analog_In_Unflipped_READ_STATUS, handle)
+    return err, status
+
+def OSCILLOSCOPE_Analog_In_Unflipped_GET_POSITION(handle):
+    [err, position] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Analog_In_Unflipped_READ_POSITION, handle)
+    return err, position
+
+def OSCILLOSCOPE_Analog_In_Unflipped_GET_DATA(timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(32768, R76Firmware_RegisterFile.SCI_REG_Analog_In_Unflipped_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+def OSCILLOSCOPE_Analog_In_Unflipped_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePosition, OscilloscopePreTrigger):
+    OscilloscopeChannels = 32
+    OscilloscopeSamples = 1024
+    Analog = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital0 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital1 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital2 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital3 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    for n in range(OscilloscopeChannels):
+        current = OscilloscopePosition - OscilloscopePreTrigger
+        if ((current) > 0):
+            k = 0
+            for i in range(current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                k = k + 1
+            for i in range(0, current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                k = k + 1
+        else:
+            k = 0
+            for i in range(OscilloscopeSamples+current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                k = k + 1
+            for i in range(0, OscilloscopeSamples+current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                k = k + 1
+    return Analog, Digital0, Digital1,Digital2, Digital3
+
+
+
+def OSCILLOSCOPE_Analog_START(handle):
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_Analog_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_Analog_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    return True
+
+def OSCILLOSCOPE_Analog_SET_DECIMATOR(OscilloscopeDecimator, handle):
+    err = __abstracted_reg_write(OscilloscopeDecimator, R76Firmware_RegisterFile.SCI_REG_Analog_CONFIG_DECIMATOR, handle)
+    return err
+
+def OSCILLOSCOPE_Analog_SET_PRETRIGGER(OscilloscopePreTrigger, handle):
+    err = __abstracted_reg_write(OscilloscopePreTrigger, R76Firmware_RegisterFile.SCI_REG_Analog_CONFIG_PRETRIGGER, handle)
+    return err
+
+def OSCILLOSCOPE_Analog_SET_TRIGGER_LEVEL(OscilloscopeTriggerLevel, handle):
+    err = __abstracted_reg_write(OscilloscopeTriggerLevel, R76Firmware_RegisterFile.SCI_REG_Analog_CONFIG_TRIGGER_LEVEL, handle)
+    return err
+
+def OSCILLOSCOPE_Analog_SET_TRIGGER_MODE(OscilloscopeTriggerMode, OscilloscopeTriggerChannel, OscilloscopeTriggerEdge, handle):
+    AnalogTrigger = 0
+    Digital0Trigger = 0
+    Digital1Trigger = 0
+    Digital2Trigger = 0
+    Digital3Trigger = 0
+    SoftwareTrigger = 0
+    if (OscilloscopeTriggerMode == "Analog"):
+        AnalogTrigger = 1
+    if (OscilloscopeTriggerMode == "Digital0"):
+        Digital0Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital1"):
+        Digital1Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital2"):
+        Digital2Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital3"):
+        Digital3Trigger = 1
+    if (OscilloscopeTriggerMode == "Free"):
+        SoftwareTrigger = 1
+    if (OscilloscopeTriggerEdge == "Rising"):
+        Edge = 0
+    else:
+        Edge = 1
+    triggermode = c_int(0)
+    triggermode = (OscilloscopeTriggerChannel << 8)  + (SoftwareTrigger << 7 ) + (Edge << 3) + (SoftwareTrigger << 1) + AnalogTrigger +(Digital0Trigger << 2) + (Digital1Trigger << 2) + Digital1Trigger + (Digital2Trigger << 2) + (Digital2Trigger << 1) + (Digital3Trigger << 2) + (Digital3Trigger << 1) + Digital3Trigger
+    err = __abstracted_reg_write(triggermode, R76Firmware_RegisterFile.SCI_REG_Analog_CONFIG_TRIGGER_MODE, handle)
+    return err
+
+def OSCILLOSCOPE_Analog_GET_STATUS(handle):
+    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Analog_READ_STATUS, handle)
+    return err, status
+
+def OSCILLOSCOPE_Analog_GET_POSITION(handle):
+    [err, position] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Analog_READ_POSITION, handle)
+    return err, position
+
+def OSCILLOSCOPE_Analog_GET_DATA(timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(24576, R76Firmware_RegisterFile.SCI_REG_Analog_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+def OSCILLOSCOPE_Analog_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePosition, OscilloscopePreTrigger):
     OscilloscopeChannels = 24
+    OscilloscopeSamples = 1024
+    Analog = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital0 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital1 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital2 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital3 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    for n in range(OscilloscopeChannels):
+        current = OscilloscopePosition - OscilloscopePreTrigger
+        if ((current) > 0):
+            k = 0
+            for i in range(current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+            for i in range(0, current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+        else:
+            k = 0
+            for i in range(OscilloscopeSamples+current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+            for i in range(0, OscilloscopeSamples+current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+    return Analog, Digital0, Digital1,Digital2, Digital3
+
+
+
+def OSCILLOSCOPE_Energies_START(handle):
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_Energies_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_Energies_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    return True
+
+def OSCILLOSCOPE_Energies_SET_DECIMATOR(OscilloscopeDecimator, handle):
+    err = __abstracted_reg_write(OscilloscopeDecimator, R76Firmware_RegisterFile.SCI_REG_Energies_CONFIG_DECIMATOR, handle)
+    return err
+
+def OSCILLOSCOPE_Energies_SET_PRETRIGGER(OscilloscopePreTrigger, handle):
+    err = __abstracted_reg_write(OscilloscopePreTrigger, R76Firmware_RegisterFile.SCI_REG_Energies_CONFIG_PRETRIGGER, handle)
+    return err
+
+def OSCILLOSCOPE_Energies_SET_TRIGGER_LEVEL(OscilloscopeTriggerLevel, handle):
+    err = __abstracted_reg_write(OscilloscopeTriggerLevel, R76Firmware_RegisterFile.SCI_REG_Energies_CONFIG_TRIGGER_LEVEL, handle)
+    return err
+
+def OSCILLOSCOPE_Energies_SET_TRIGGER_MODE(OscilloscopeTriggerMode, OscilloscopeTriggerChannel, OscilloscopeTriggerEdge, handle):
+    AnalogTrigger = 0
+    Digital0Trigger = 0
+    Digital1Trigger = 0
+    Digital2Trigger = 0
+    Digital3Trigger = 0
+    SoftwareTrigger = 0
+    if (OscilloscopeTriggerMode == "Analog"):
+        AnalogTrigger = 1
+    if (OscilloscopeTriggerMode == "Digital0"):
+        Digital0Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital1"):
+        Digital1Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital2"):
+        Digital2Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital3"):
+        Digital3Trigger = 1
+    if (OscilloscopeTriggerMode == "Free"):
+        SoftwareTrigger = 1
+    if (OscilloscopeTriggerEdge == "Rising"):
+        Edge = 0
+    else:
+        Edge = 1
+    triggermode = c_int(0)
+    triggermode = (OscilloscopeTriggerChannel << 8)  + (SoftwareTrigger << 7 ) + (Edge << 3) + (SoftwareTrigger << 1) + AnalogTrigger +(Digital0Trigger << 2) + (Digital1Trigger << 2) + Digital1Trigger + (Digital2Trigger << 2) + (Digital2Trigger << 1) + (Digital3Trigger << 2) + (Digital3Trigger << 1) + Digital3Trigger
+    err = __abstracted_reg_write(triggermode, R76Firmware_RegisterFile.SCI_REG_Energies_CONFIG_TRIGGER_MODE, handle)
+    return err
+
+def OSCILLOSCOPE_Energies_GET_STATUS(handle):
+    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Energies_READ_STATUS, handle)
+    return err, status
+
+def OSCILLOSCOPE_Energies_GET_POSITION(handle):
+    [err, position] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Energies_READ_POSITION, handle)
+    return err, position
+
+def OSCILLOSCOPE_Energies_GET_DATA(timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(24576, R76Firmware_RegisterFile.SCI_REG_Energies_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+def OSCILLOSCOPE_Energies_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePosition, OscilloscopePreTrigger):
+    OscilloscopeChannels = 24
+    OscilloscopeSamples = 1024
+    Analog = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital0 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital1 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital2 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital3 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    for n in range(OscilloscopeChannels):
+        current = OscilloscopePosition - OscilloscopePreTrigger
+        if ((current) > 0):
+            k = 0
+            for i in range(current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+            for i in range(0, current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+        else:
+            k = 0
+            for i in range(OscilloscopeSamples+current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+            for i in range(0, OscilloscopeSamples+current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+    return Analog, Digital0, Digital1,Digital2, Digital3
+
+
+
+def OSCILLOSCOPE_diag_START(handle):
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    return True
+
+def OSCILLOSCOPE_diag_SET_DECIMATOR(OscilloscopeDecimator, handle):
+    err = __abstracted_reg_write(OscilloscopeDecimator, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_DECIMATOR, handle)
+    return err
+
+def OSCILLOSCOPE_diag_SET_PRETRIGGER(OscilloscopePreTrigger, handle):
+    err = __abstracted_reg_write(OscilloscopePreTrigger, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_PRETRIGGER, handle)
+    return err
+
+def OSCILLOSCOPE_diag_SET_TRIGGER_LEVEL(OscilloscopeTriggerLevel, handle):
+    err = __abstracted_reg_write(OscilloscopeTriggerLevel, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_TRIGGER_LEVEL, handle)
+    return err
+
+def OSCILLOSCOPE_diag_SET_TRIGGER_MODE(OscilloscopeTriggerMode, OscilloscopeTriggerChannel, OscilloscopeTriggerEdge, handle):
+    AnalogTrigger = 0
+    Digital0Trigger = 0
+    Digital1Trigger = 0
+    Digital2Trigger = 0
+    Digital3Trigger = 0
+    SoftwareTrigger = 0
+    if (OscilloscopeTriggerMode == "Analog"):
+        AnalogTrigger = 1
+    if (OscilloscopeTriggerMode == "Digital0"):
+        Digital0Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital1"):
+        Digital1Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital2"):
+        Digital2Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital3"):
+        Digital3Trigger = 1
+    if (OscilloscopeTriggerMode == "Free"):
+        SoftwareTrigger = 1
+    if (OscilloscopeTriggerEdge == "Rising"):
+        Edge = 0
+    else:
+        Edge = 1
+    triggermode = c_int(0)
+    triggermode = (OscilloscopeTriggerChannel << 8)  + (SoftwareTrigger << 7 ) + (Edge << 3) + (SoftwareTrigger << 1) + AnalogTrigger +(Digital0Trigger << 2) + (Digital1Trigger << 2) + Digital1Trigger + (Digital2Trigger << 2) + (Digital2Trigger << 1) + (Digital3Trigger << 2) + (Digital3Trigger << 1) + Digital3Trigger
+    err = __abstracted_reg_write(triggermode, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_TRIGGER_MODE, handle)
+    return err
+
+def OSCILLOSCOPE_diag_GET_STATUS(handle):
+    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_diag_READ_STATUS, handle)
+    return err, status
+
+def OSCILLOSCOPE_diag_GET_POSITION(handle):
+    [err, position] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_diag_READ_POSITION, handle)
+    return err, position
+
+def OSCILLOSCOPE_diag_GET_DATA(timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(4096, R76Firmware_RegisterFile.SCI_REG_diag_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+def OSCILLOSCOPE_diag_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePosition, OscilloscopePreTrigger):
+    OscilloscopeChannels = 4
     OscilloscopeSamples = 1024
     Analog = list(range(OscilloscopeSamples*OscilloscopeChannels))
     Digital0 = list(range(OscilloscopeSamples*OscilloscopeChannels))

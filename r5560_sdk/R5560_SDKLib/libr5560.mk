@@ -47,8 +47,8 @@ LibPath                := $(LibraryPathSwitch).
 AR       := ar rcus
 CXX      := gcc
 CC       := gcc
-CXXFLAGS :=  -g $(Preprocessors)
-CFLAGS   :=  -g -fPIC $(Preprocessors)
+CXXFLAGS :=  -g $(Preprocessors) -std=gnu99
+CFLAGS   :=  -g -fPIC $(Preprocessors) -std=gnu99
 ASFLAGS  := 
 AS       := as
 

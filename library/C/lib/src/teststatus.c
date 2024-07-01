@@ -1,4 +1,4 @@
-#include "Def.h"
+#include "Legacy/Def.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -12,11 +12,14 @@
 #include <sys/time.h>
 #include <getopt.h>
 
-#include  "R76Firmware_lib.h"
+#include  "Legacy/R76Firmware_lib.h"
 #include  "UniversalTriggerShared.h"
 
 const char* program_name = "teststatus";
 int waittime=12; //default 2 minutes data
+uint32_t gatewidth;
+uint32_t counts;
+int numtries = 10;
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
 	fprintf (stream, "Usage:  %s options \n", program_name);
@@ -78,7 +81,7 @@ int main(int argc, char* argv[])
 	if(verbose > 0){
 		printf("Running in verbose mode. Verbosity: %d\n",verbose);
 	};
-	
+
 	//Connect to the board.
 	int connect_q = connect_staticaddr(verbose);
 	if(connect_q != 0){
@@ -88,29 +91,47 @@ int main(int argc, char* argv[])
 
 	int i=0;
 
-	int temp = SPECTRUM_Spectrum_0_START(&handle);
+	uint32_t temp = SPECTRUM_Spectrum_0_START(&handle);
     if(temp != 0){
 		printf("Error! Failed to start spectrum 0.\n");
 		return temp;
 	}
-	int temp2 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
+	uint32_t temp2 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
 	if(temp2 != 0){
 		printf("Error! Faield to retrieve status of spectrum 0.\n");
 		return temp2;
 	}
-    printf("%d\n",temp);
+    printf("Spectrum status (started) %d\n",temp);
 
     int temp3 = SPECTRUM_Spectrum_0_STOP(&handle);
     if(temp3 != 0){
         printf("Error! Failed to stop spectrum 0.\n");
         return temp3;
     }
-	int temp4 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
+	uint32_t temp4 = SPECTRUM_Spectrum_0_STATUS(&temp,&handle);
 	if(temp4 != 0){
-		printf("Error! Faield to retrieve status of spectrum 0.\n");
+		printf("Error! Failed to retrieve status of spectrum 0.\n");
 		return temp4;
 	}
-    printf("%d\n",temp);
+    printf("Spectrum status (stopped): %d\n",temp);
 
+	printf("Count initial value: %d\n",counts);
+
+/*
+	for(int i=0;i<numtries;i++){
+		/*not working yet
+		int temp = REG_gatewidth_GET(&gatewidth,&handle);
+		if(temp != 0){
+			printf("Error! Failed to retrieve gate width.\n");
+		}
+		printf("gate width: %d\n",gatewidth);//
+		int temp = REG_count_GET(&counts,&handle);
+		if(temp != 0){
+			printf("Error! Failed to retrieve count.\n");
+		}
+		printf("count: %d\n",counts);
+		sleep(1);
+	}
+*/
 	return 0;
-}	
+}

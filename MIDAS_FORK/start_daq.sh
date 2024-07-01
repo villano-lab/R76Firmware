@@ -1,0 +1,1 @@
+scripts/cdms2_start_daq_umn.sh
