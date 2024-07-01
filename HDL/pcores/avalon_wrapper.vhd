@@ -197,31 +197,6 @@ entity avalon_wrapper is
 		REG_Spectrum_0_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_0_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_0_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Analog_In_Unflipped_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
-	BUS_Analog_In_Unflipped_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Analog_In_Unflipped_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Analog_In_Unflipped_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Analog_In_Unflipped_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Analog_In_Unflipped_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_12_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_12_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_12_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1045,18 +1020,6 @@ entity avalon_wrapper is
 		REG_dummy_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_dummy_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		INT_dummy_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_All_Energies_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_All_Energies_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_All_Energies_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_All_Energies_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_All_Energies_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_All_Energies_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_READ_VALID_WORDS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_All_Energies_READ_VALID_WORDS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_base_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_base_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_base_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
@@ -1151,6 +1114,43 @@ entity avalon_wrapper is
 		REG_io_divide_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_io_divide_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_io_divide_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_In_Unflipped_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
+	BUS_Analog_In_Unflipped_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_In_Unflipped_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_In_Unflipped_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Analog_In_Unflipped_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Analog_In_Unflipped_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_All_Energies_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_All_Energies_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_All_Energies_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_All_Energies_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_All_Energies_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_All_Energies_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_READ_VALID_WORDS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_All_Energies_READ_VALID_WORDS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -1193,8 +1193,7 @@ BUS_Energies_READ_ADDRESS <= BUS_ADDR(14 downto 0) when (addr >= x"00000000" And
 BUS_Analog_READ_ADDRESS <= BUS_ADDR(14 downto 0) when (addr >= x"00010000" And addr < x"00018000") else (others => '0');BUS_RateMeter_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00340000" And addr < x"00350000") else '0';
 BUS_RateMeter_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00340000" And addr < x"00350000") else (others => '0');BUS_diag_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00019000" And addr < x"0001A000") else '0';
 BUS_diag_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"00019000" And addr < x"0001A000") else (others => '0');BUS_Spectrum_0_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00020000" And addr < x"00030000") else '0';
-BUS_Spectrum_0_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00020000" And addr < x"00030000") else (others => '0');BUS_Analog_In_Unflipped_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00038000" And addr < x"00040000") else '0';
-BUS_Analog_In_Unflipped_READ_ADDRESS <= BUS_ADDR(14 downto 0) when (addr >= x"00038000" And addr < x"00040000") else (others => '0');BUS_Spectrum_12_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00050000" And addr < x"00060000") else '0';
+BUS_Spectrum_0_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00020000" And addr < x"00030000") else (others => '0');BUS_Spectrum_12_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00050000" And addr < x"00060000") else '0';
 BUS_Spectrum_12_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00050000" And addr < x"00060000") else (others => '0');BUS_Spectrum_1_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00070000" And addr < x"00080000") else '0';
 BUS_Spectrum_1_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00070000" And addr < x"00080000") else (others => '0');BUS_Spectrum_13_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00090000" And addr < x"000A0000") else '0';
 BUS_Spectrum_13_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00090000" And addr < x"000A0000") else (others => '0');BUS_Spectrum_2_R_INT(0) <= f_BUS_INT_RD when (addr >= x"000B0000" And addr < x"000C0000") else '0';
@@ -1219,14 +1218,14 @@ BUS_Spectrum_10_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002D0000" 
 BUS_Spectrum_22_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002F0000" And addr < x"00300000") else (others => '0');BUS_Spectrum_11_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00310000" And addr < x"00320000") else '0';
 BUS_Spectrum_11_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00310000" And addr < x"00320000") else (others => '0');BUS_Spectrum_23_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00670000" And addr < x"00680000") else '0';
 BUS_Spectrum_23_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00670000" And addr < x"00680000") else (others => '0');BUS_Syncs_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00681000" And addr < x"00682000") else '0';
-BUS_Syncs_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"00681000" And addr < x"00682000") else (others => '0');BUS_All_Energies_R_INT(0) <= f_BUS_INT_RD when (addr >= x"0068205E" And addr < x"0068205F") else '0';
+BUS_Syncs_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"00681000" And addr < x"00682000") else (others => '0');BUS_Analog_In_Unflipped_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00038000" And addr < x"00040000") else '0';
+BUS_Analog_In_Unflipped_READ_ADDRESS <= BUS_ADDR(14 downto 0) when (addr >= x"00038000" And addr < x"00040000") else (others => '0');BUS_All_Energies_R_INT(0) <= f_BUS_INT_RD when (addr >= x"0068205E" And addr < x"0068205F") else '0';
 f_BUS_DATA_RD <= BUS_Test_0_READ_DATA when  (addr >= x"03FE0000" And addr < x"03FEFFFF") else 
 BUS_Energies_READ_DATA  when  addr >= x"00000000" and addr < x"00008000" else 
 BUS_Analog_READ_DATA  when  addr >= x"00010000" and addr < x"00018000" else 
 BUS_RateMeter_READ_DATA  when  addr >= x"00340000" and addr < x"00350000" else 
 BUS_diag_READ_DATA  when  addr >= x"00019000" and addr < x"0001A000" else 
 BUS_Spectrum_0_READ_DATA  when  addr >= x"00020000" and addr < x"00030000" else 
-BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"00040000" else 
 BUS_Spectrum_12_READ_DATA  when  addr >= x"00050000" and addr < x"00060000" else 
 BUS_Spectrum_1_READ_DATA  when  addr >= x"00070000" and addr < x"00080000" else 
 BUS_Spectrum_13_READ_DATA  when  addr >= x"00090000" and addr < x"000A0000" else 
@@ -1252,6 +1251,7 @@ BUS_Spectrum_22_READ_DATA  when  addr >= x"002F0000" and addr < x"00300000" else
 BUS_Spectrum_11_READ_DATA  when  addr >= x"00310000" and addr < x"00320000" else 
 BUS_Spectrum_23_READ_DATA  when  addr >= x"00670000" and addr < x"00680000" else 
 BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else 
+BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"00040000" else 
  BUS_All_Energies_READ_DATA when (addr >= x"0068205E" And addr < x"0068205F") else  f_BUS_DATA_RD_REG;
  f_BUS_DATASTROBE <=BUS_Test_0_VLD(0) when  (addr >= x"03FE0000" And addr < x"03FEFFFF") else 
  BUS_Energies_VLD(0) when  addr >= x"00000000" and addr < x"00008000" else 
@@ -1259,7 +1259,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
  BUS_RateMeter_VLD(0) when  addr >= x"00340000" and addr < x"00350000" else 
  BUS_diag_VLD(0) when  addr >= x"00019000" and addr < x"0001A000" else 
  BUS_Spectrum_0_VLD(0) when  addr >= x"00020000" and addr < x"00030000" else 
- BUS_Analog_In_Unflipped_VLD(0) when  addr >= x"00038000" and addr < x"00040000" else 
  BUS_Spectrum_12_VLD(0) when  addr >= x"00050000" and addr < x"00060000" else 
  BUS_Spectrum_1_VLD(0) when  addr >= x"00070000" and addr < x"00080000" else 
  BUS_Spectrum_13_VLD(0) when  addr >= x"00090000" and addr < x"000A0000" else 
@@ -1285,6 +1284,7 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
  BUS_Spectrum_11_VLD(0) when  addr >= x"00310000" and addr < x"00320000" else 
  BUS_Spectrum_23_VLD(0) when  addr >= x"00670000" and addr < x"00680000" else 
  BUS_Syncs_VLD(0) when  addr >= x"00681000" and addr < x"00682000" else 
+ BUS_Analog_In_Unflipped_VLD(0) when  addr >= x"00038000" and addr < x"00040000" else 
   BUS_All_Energies_VLD(0) when (addr >= x"0068205E" And addr < x"0068205F") else  f_BUS_DATASTROBE_REG;    
 
         
@@ -1367,19 +1367,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_Spectrum_0_CONFIG_MIN_WR <= "0";
 		REG_Spectrum_0_CONFIG_MAX_WR <= (others => '0');
 		INT_Spectrum_0_CONFIG_MAX_WR <= "0";
-	BUS_Analog_In_Unflipped_W_INT <= "0";
-		INT_Analog_In_Unflipped_READ_STATUS_RD <= "0";
-		INT_Analog_In_Unflipped_READ_POSITION_RD <= "0";
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= (others => '0');
-		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= "0";
-		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= (others => '0');
-		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= "0";
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= (others => '0');
-		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= "0";
-		REG_Analog_In_Unflipped_CONFIG_ARM_WR <= (others => '0');
-		INT_Analog_In_Unflipped_CONFIG_ARM_WR <= "0";
-		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= (others => '0');
-		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= "0";
 	BUS_Spectrum_12_W_INT <= "0";
 		INT_Spectrum_12_STATUS_RD <= "0";
 		REG_Spectrum_12_CONFIG_WR <= (others => '0');
@@ -1841,11 +1828,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		REG_dummy_WR <= (others => '0');
 		INT_dummy_WR <= "0";
 		INT_dummy_RD <= "0";
-	BUS_All_Energies_W_INT <= "0";
-		INT_All_Energies_READ_STATUS_RD <= "0";
-		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
-		REG_All_Energies_CONFIG_WR <= (others => '0');
-		INT_All_Energies_CONFIG_WR <= "0";
 	BUS_base_W_INT <= "0";
 		REG_base_CH0_WR <= (others => '0');
 		INT_base_CH0_WR <= "0";
@@ -1904,6 +1886,24 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_io_lemo2out_WR <= "0";
 		REG_io_divide_WR <= (others => '0');
 		INT_io_divide_WR <= "0";
+	BUS_Analog_In_Unflipped_W_INT <= "0";
+		INT_Analog_In_Unflipped_READ_STATUS_RD <= "0";
+		INT_Analog_In_Unflipped_READ_POSITION_RD <= "0";
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= (others => '0');
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= "0";
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= (others => '0');
+		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= "0";
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= (others => '0');
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= "0";
+		REG_Analog_In_Unflipped_CONFIG_ARM_WR <= (others => '0');
+		INT_Analog_In_Unflipped_CONFIG_ARM_WR <= "0";
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= (others => '0');
+		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= "0";
+	BUS_All_Energies_W_INT <= "0";
+		INT_All_Energies_READ_STATUS_RD <= "0";
+		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
+		REG_All_Energies_CONFIG_WR <= (others => '0');
+		INT_All_Energies_CONFIG_WR <= "0";
             
                 f_BUS_DATASTROBE_REG <= '0';
                 M_AVALON_0_readdatavalid <= '0';
@@ -1953,14 +1953,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_Spectrum_0_CONFIG_REBIN_WR <= "0";
 		INT_Spectrum_0_CONFIG_MIN_WR <= "0";
 		INT_Spectrum_0_CONFIG_MAX_WR <= "0";
-	BUS_Analog_In_Unflipped_W_INT <= "0";
-		INT_Analog_In_Unflipped_READ_STATUS_RD <= "0";
-		INT_Analog_In_Unflipped_READ_POSITION_RD <= "0";
-		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= "0";
-		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= "0";
-		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= "0";
-		INT_Analog_In_Unflipped_CONFIG_ARM_WR <= "0";
-		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= "0";
 	BUS_Spectrum_12_W_INT <= "0";
 		INT_Spectrum_12_STATUS_RD <= "0";
 		INT_Spectrum_12_CONFIG_WR <= "0";
@@ -2222,10 +2214,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_thrsh_CH23_WR <= "0";
 		INT_dummy_WR <= "0";
 		INT_dummy_RD <= "0";
-	BUS_All_Energies_W_INT <= "0";
-		INT_All_Energies_READ_STATUS_RD <= "0";
-		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
-		INT_All_Energies_CONFIG_WR <= "0";
 	BUS_base_W_INT <= "0";
 		INT_base_CH0_WR <= "0";
 		INT_base_CH1_WR <= "0";
@@ -2256,6 +2244,18 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		INT_io_stamptype_WR <= "0";
 		INT_io_lemo2out_WR <= "0";
 		INT_io_divide_WR <= "0";
+	BUS_Analog_In_Unflipped_W_INT <= "0";
+		INT_Analog_In_Unflipped_READ_STATUS_RD <= "0";
+		INT_Analog_In_Unflipped_READ_POSITION_RD <= "0";
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= "0";
+		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= "0";
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= "0";
+		INT_Analog_In_Unflipped_CONFIG_ARM_WR <= "0";
+		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= "0";
+	BUS_All_Energies_W_INT <= "0";
+		INT_All_Energies_READ_STATUS_RD <= "0";
+		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
+		INT_All_Energies_CONFIG_WR <= "0";
   
                 f_BUS_DATASTROBE_REG <= '0';
                 
@@ -2405,30 +2405,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		if addr = x"00030005" then
 			REG_Spectrum_0_CONFIG_MAX_WR <= wreg; 
 			INT_Spectrum_0_CONFIG_MAX_WR <= "1"; 
-		end if;
-		If addr >= x"00038000" And addr < x"00040000" Then
-			BUS_Analog_In_Unflipped_WRITE_DATA <= wreg; 
-			BUS_Analog_In_Unflipped_W_INT <= "1"; 
-		End If;
-		if addr = x"00040002" then
-			REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= wreg; 
-			INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= "1"; 
-		end if;
-		if addr = x"00040003" then
-			REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= wreg; 
-			INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= "1"; 
-		end if;
-		if addr = x"00040004" then
-			REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= wreg; 
-			INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= "1"; 
-		end if;
-		if addr = x"00040005" then
-			REG_Analog_In_Unflipped_CONFIG_ARM_WR <= wreg; 
-			INT_Analog_In_Unflipped_CONFIG_ARM_WR <= "1"; 
-		end if;
-		if addr = x"00040006" then
-			REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= wreg; 
-			INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= "1"; 
 		end if;
 		If addr >= x"00050000" And addr < x"00060000" Then
 			BUS_Spectrum_12_WRITE_DATA <= wreg; 
@@ -3342,14 +3318,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 			REG_dummy_WR <= wreg; 
 			INT_dummy_WR <= "1"; 
 		end if;
-		If addr >= x"0068205E" And addr < x"0068205F" Then
-			BUS_All_Energies_WRITE_DATA <= wreg; 
-			BUS_All_Energies_W_INT <= "1"; 
-		End If;
-		if addr = x"00682061" then
-			REG_All_Energies_CONFIG_WR <= wreg; 
-			INT_All_Energies_CONFIG_WR <= "1"; 
-		end if;
 		If addr >= x"00682063" And addr < x"00682064" Then
 			BUS_base_WRITE_DATA <= wreg; 
 			BUS_base_W_INT <= "1"; 
@@ -3470,6 +3438,38 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 			REG_io_divide_WR <= wreg; 
 			INT_io_divide_WR <= "1"; 
 		end if;
+		If addr >= x"00038000" And addr < x"00040000" Then
+			BUS_Analog_In_Unflipped_WRITE_DATA <= wreg; 
+			BUS_Analog_In_Unflipped_W_INT <= "1"; 
+		End If;
+		if addr = x"00040002" then
+			REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= wreg; 
+			INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= "1"; 
+		end if;
+		if addr = x"00040003" then
+			REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= wreg; 
+			INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= "1"; 
+		end if;
+		if addr = x"00040004" then
+			REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= wreg; 
+			INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= "1"; 
+		end if;
+		if addr = x"00040005" then
+			REG_Analog_In_Unflipped_CONFIG_ARM_WR <= wreg; 
+			INT_Analog_In_Unflipped_CONFIG_ARM_WR <= "1"; 
+		end if;
+		if addr = x"00040006" then
+			REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= wreg; 
+			INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= "1"; 
+		end if;
+		If addr >= x"0068205E" And addr < x"0068205F" Then
+			BUS_All_Energies_WRITE_DATA <= wreg; 
+			BUS_All_Energies_W_INT <= "1"; 
+		End If;
+		if addr = x"00682061" then
+			REG_All_Energies_CONFIG_WR <= wreg; 
+			INT_All_Energies_CONFIG_WR <= "1"; 
+		end if;
 
                 end if;
         
@@ -3585,27 +3585,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		End If;
 		if addr = x"00030005" then
 			rreg := REG_Spectrum_0_CONFIG_MAX_RD; 
-		End If;
-		if addr = x"00040000" then
-			rreg := REG_Analog_In_Unflipped_READ_STATUS_RD; 
-		End If;
-		if addr = x"00040001" then
-			rreg := REG_Analog_In_Unflipped_READ_POSITION_RD; 
-		End If;
-		if addr = x"00040002" then
-			rreg := REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD; 
-		End If;
-		if addr = x"00040003" then
-			rreg := REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD; 
-		End If;
-		if addr = x"00040004" then
-			rreg := REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD; 
-		End If;
-		if addr = x"00040005" then
-			rreg := REG_Analog_In_Unflipped_CONFIG_ARM_RD; 
-		End If;
-		if addr = x"00040006" then
-			rreg := REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD; 
 		End If;
 		if addr = x"00060000" then
 			rreg := REG_Spectrum_12_STATUS_RD; 
@@ -4282,15 +4261,6 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		if addr = x"0068205C" then
 			rreg := REG_dummy_RD; 
 		End If;
-		if addr = x"0068205F" then
-			rreg := REG_All_Energies_READ_STATUS_RD; 
-		End If;
-		if addr = x"00682060" then
-			rreg := REG_All_Energies_READ_VALID_WORDS_RD; 
-		End If;
-		if addr = x"00682061" then
-			rreg := REG_All_Energies_CONFIG_RD; 
-		End If;
 		if addr = x"00682064" then
 			rreg := REG_base_CH0_RD; 
 		End If;
@@ -4374,6 +4344,36 @@ BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else
 		End If;
 		if addr = x"00682081" then
 			rreg := REG_io_divide_RD; 
+		End If;
+		if addr = x"00040000" then
+			rreg := REG_Analog_In_Unflipped_READ_STATUS_RD; 
+		End If;
+		if addr = x"00040001" then
+			rreg := REG_Analog_In_Unflipped_READ_POSITION_RD; 
+		End If;
+		if addr = x"00040002" then
+			rreg := REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD; 
+		End If;
+		if addr = x"00040003" then
+			rreg := REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD; 
+		End If;
+		if addr = x"00040004" then
+			rreg := REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD; 
+		End If;
+		if addr = x"00040005" then
+			rreg := REG_Analog_In_Unflipped_CONFIG_ARM_RD; 
+		End If;
+		if addr = x"00040006" then
+			rreg := REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD; 
+		End If;
+		if addr = x"0068205F" then
+			rreg := REG_All_Energies_READ_STATUS_RD; 
+		End If;
+		if addr = x"00682060" then
+			rreg := REG_All_Energies_READ_VALID_WORDS_RD; 
+		End If;
+		if addr = x"00682061" then
+			rreg := REG_All_Energies_CONFIG_RD; 
 		End If;
     
                    

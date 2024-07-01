@@ -1920,95 +1920,6 @@
       "Path": "/SyncIn"
     },
     {
-      "Name": "Analog_In_Unflipped",
-      "Type": "Oscilloscope",
-      "Address": 229376,
-      "Version": "1.0.0.0",
-      "Registers": [
-        {
-          "Name": "READ_STATUS",
-          "Type": "Register",
-          "Address": 262144,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "READ_POSITION",
-          "Type": "Register",
-          "Address": 262145,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_TRIGGER_MODE",
-          "Type": "Register",
-          "Address": 262146,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_PRETRIGGER",
-          "Type": "Register",
-          "Address": 262147,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_TRIGGER_LEVEL",
-          "Type": "Register",
-          "Address": 262148,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_ARM",
-          "Type": "Register",
-          "Address": 262149,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_DECIMATOR",
-          "Type": "Register",
-          "Address": 262150,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        }
-      ],
-      "nsamples": 1024,
-      "Channels": 32,
-      "WordSize": 16,
-      "WordEnob": 16,
-      "AnalogInputs": 1,
-      "DigitalInputs": 0,
-      "SamplingFrequency": 0,
-      "TimeMultiplexing": 1,
-      "DecimatorMax": 0,
-      "DecimatorAveraging": false,
-      "Path": "/Analog_In_Unflipped"
-    },
-    {
       "Name": "Analog",
       "Type": "Oscilloscope",
       "Address": 65536,
@@ -3023,6 +2934,393 @@
       "Path": "/thrsh"
     },
     {
+      "Name": "base",
+      "Type": "MultiChannelRegister",
+      "Address": 6824035,
+      "Version": "1.0.0.0",
+      "Registers": [
+        {
+          "Name": "CH0",
+          "Type": "11",
+          "Address": 6824036,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH1",
+          "Type": "11",
+          "Address": 6824037,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH2",
+          "Type": "11",
+          "Address": 6824038,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH3",
+          "Type": "11",
+          "Address": 6824039,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH4",
+          "Type": "11",
+          "Address": 6824040,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH5",
+          "Type": "11",
+          "Address": 6824041,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH6",
+          "Type": "11",
+          "Address": 6824042,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH7",
+          "Type": "11",
+          "Address": 6824043,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH8",
+          "Type": "11",
+          "Address": 6824044,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH9",
+          "Type": "11",
+          "Address": 6824045,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH10",
+          "Type": "11",
+          "Address": 6824046,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH11",
+          "Type": "11",
+          "Address": 6824047,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH12",
+          "Type": "11",
+          "Address": 6824048,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH13",
+          "Type": "11",
+          "Address": 6824049,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH14",
+          "Type": "11",
+          "Address": 6824050,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH15",
+          "Type": "11",
+          "Address": 6824051,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH16",
+          "Type": "11",
+          "Address": 6824052,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH17",
+          "Type": "11",
+          "Address": 6824053,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH18",
+          "Type": "11",
+          "Address": 6824054,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH19",
+          "Type": "11",
+          "Address": 6824055,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH20",
+          "Type": "11",
+          "Address": 6824056,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH21",
+          "Type": "11",
+          "Address": 6824057,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH22",
+          "Type": "11",
+          "Address": 6824058,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CH23",
+          "Type": "11",
+          "Address": 6824059,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        }
+      ],
+      "Path": "/base"
+    },
+    {
+      "Name": "io",
+      "Type": "RegisterFile",
+      "Address": 6824061,
+      "Version": "1.0.0.0",
+      "Registers": [
+        {
+          "Name": "to_encode",
+          "Type": "Register",
+          "Address": 6824062,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        },
+        {
+          "Name": "stamptype",
+          "Type": "Register",
+          "Address": 6824063,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        },
+        {
+          "Name": "lemo2out",
+          "Type": "Register",
+          "Address": 6824064,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        },
+        {
+          "Name": "divide",
+          "Type": "Register",
+          "Address": 6824065,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        }
+      ],
+      "Path": "/io"
+    },
+    {
+      "Name": "Analog_In_Unflipped",
+      "Type": "Oscilloscope",
+      "Address": 229376,
+      "Version": "1.0.0.0",
+      "Registers": [
+        {
+          "Name": "READ_STATUS",
+          "Type": "Register",
+          "Address": 262144,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "READ_POSITION",
+          "Type": "Register",
+          "Address": 262145,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_TRIGGER_MODE",
+          "Type": "Register",
+          "Address": 262146,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_PRETRIGGER",
+          "Type": "Register",
+          "Address": 262147,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_TRIGGER_LEVEL",
+          "Type": "Register",
+          "Address": 262148,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_ARM",
+          "Type": "Register",
+          "Address": 262149,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_DECIMATOR",
+          "Type": "Register",
+          "Address": 262150,
+          "Version": "",
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        }
+      ],
+      "nsamples": 1024,
+      "Channels": 32,
+      "WordSize": 16,
+      "WordEnob": 16,
+      "AnalogInputs": 1,
+      "DigitalInputs": 0,
+      "SamplingFrequency": 0,
+      "TimeMultiplexing": 1,
+      "DecimatorMax": 0,
+      "DecimatorAveraging": false,
+      "Path": "/Analog_In_Unflipped"
+    },
+    {
       "Name": "All_Energies",
       "Type": "CustomPacket",
       "Address": 6824030,
@@ -3501,304 +3799,6 @@
       ],
       "BufferLength": 32768,
       "Path": "/All_Energies"
-    },
-    {
-      "Name": "base",
-      "Type": "MultiChannelRegister",
-      "Address": 6824035,
-      "Version": "1.0.0.0",
-      "Registers": [
-        {
-          "Name": "CH0",
-          "Type": "11",
-          "Address": 6824036,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH1",
-          "Type": "11",
-          "Address": 6824037,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH2",
-          "Type": "11",
-          "Address": 6824038,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH3",
-          "Type": "11",
-          "Address": 6824039,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH4",
-          "Type": "11",
-          "Address": 6824040,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH5",
-          "Type": "11",
-          "Address": 6824041,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH6",
-          "Type": "11",
-          "Address": 6824042,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH7",
-          "Type": "11",
-          "Address": 6824043,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH8",
-          "Type": "11",
-          "Address": 6824044,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH9",
-          "Type": "11",
-          "Address": 6824045,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH10",
-          "Type": "11",
-          "Address": 6824046,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH11",
-          "Type": "11",
-          "Address": 6824047,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH12",
-          "Type": "11",
-          "Address": 6824048,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH13",
-          "Type": "11",
-          "Address": 6824049,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH14",
-          "Type": "11",
-          "Address": 6824050,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH15",
-          "Type": "11",
-          "Address": 6824051,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH16",
-          "Type": "11",
-          "Address": 6824052,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH17",
-          "Type": "11",
-          "Address": 6824053,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH18",
-          "Type": "11",
-          "Address": 6824054,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH19",
-          "Type": "11",
-          "Address": 6824055,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH20",
-          "Type": "11",
-          "Address": 6824056,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH21",
-          "Type": "11",
-          "Address": 6824057,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH22",
-          "Type": "11",
-          "Address": 6824058,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CH23",
-          "Type": "11",
-          "Address": 6824059,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        }
-      ],
-      "Path": "/base"
-    },
-    {
-      "Name": "io",
-      "Type": "RegisterFile",
-      "Address": 6824061,
-      "Version": "1.0.0.0",
-      "Registers": [
-        {
-          "Name": "to_encode",
-          "Type": "Register",
-          "Address": 6824062,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        },
-        {
-          "Name": "stamptype",
-          "Type": "Register",
-          "Address": 6824063,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        },
-        {
-          "Name": "lemo2out",
-          "Type": "Register",
-          "Address": 6824064,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        },
-        {
-          "Name": "divide",
-          "Type": "Register",
-          "Address": 6824065,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        }
-      ],
-      "Path": "/io"
     }
   ],
   "Registers": [
@@ -3888,5 +3888,5 @@
   "Magic": "361567DF",
   "Version": null,
   "FPGA": "xc7z030fbg676-2",
-  "BuildDate": "2024-07-01T15:45:38.6404014-05:00"
+  "BuildDate": "2024-07-01T17:24:33.4338546-05:00"
 }

@@ -222,15 +222,6 @@
 
 #define SCI_REG_SyncIn_FIFOADDRESS 0x290000
 
-#define SCI_REG_Analog_In_Unflipped_FIFOADDRESS 0x38000
-#define SCI_REG_Analog_In_Unflipped_READ_STATUS 0x40000
-#define SCI_REG_Analog_In_Unflipped_READ_POSITION 0x40001
-#define SCI_REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE 0x40002
-#define SCI_REG_Analog_In_Unflipped_CONFIG_PRETRIGGER 0x40003
-#define SCI_REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL 0x40004
-#define SCI_REG_Analog_In_Unflipped_CONFIG_ARM 0x40005
-#define SCI_REG_Analog_In_Unflipped_CONFIG_DECIMATOR 0x40006
-
 #define SCI_REG_Analog_FIFOADDRESS 0x10000
 #define SCI_REG_Analog_READ_STATUS 0x18000
 #define SCI_REG_Analog_READ_POSITION 0x18001
@@ -333,11 +324,6 @@
 #define SCI_REG_thrsh_CH22 0x68205A
 #define SCI_REG_thrsh_CH23 0x68205B
 
-#define SCI_REG_All_Energies_FIFOADDRESS 0x68205E
-#define SCI_REG_All_Energies_READ_STATUS 0x68205F
-#define SCI_REG_All_Energies_READ_VALID_WORDS 0x682060
-#define SCI_REG_All_Energies_CONFIG 0x682061
-
 #define SCI_REG_base_CH0 0x682064
 #define SCI_REG_base_CH1 0x682065
 #define SCI_REG_base_CH2 0x682066
@@ -367,4 +353,18 @@
 #define SCI_REG_io_stamptype 0x68207F
 #define SCI_REG_io_lemo2out 0x682080
 #define SCI_REG_io_divide 0x682081
+
+#define SCI_REG_Analog_In_Unflipped_FIFOADDRESS 0x38000
+#define SCI_REG_Analog_In_Unflipped_READ_STATUS 0x40000
+#define SCI_REG_Analog_In_Unflipped_READ_POSITION 0x40001
+#define SCI_REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE 0x40002
+#define SCI_REG_Analog_In_Unflipped_CONFIG_PRETRIGGER 0x40003
+#define SCI_REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL 0x40004
+#define SCI_REG_Analog_In_Unflipped_CONFIG_ARM 0x40005
+#define SCI_REG_Analog_In_Unflipped_CONFIG_DECIMATOR 0x40006
+
+#define SCI_REG_All_Energies_FIFOADDRESS 0x68205E
+#define SCI_REG_All_Energies_READ_STATUS 0x68205F
+#define SCI_REG_All_Energies_READ_VALID_WORDS 0x682060
+#define SCI_REG_All_Energies_CONFIG 0x682061
 
