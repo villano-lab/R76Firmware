@@ -37,7 +37,7 @@
   {
     "Name": "utilization.clb.lut",
     "Description": "LUT(#)",
-    "Value": "35059"
+    "Value": "35246"
   },
   {
     "Name": "utilization.clb.ff",
@@ -67,7 +67,7 @@
   {
     "Name": "utilization.clb.lut.pct",
     "Description": "LUT(%)",
-    "Value": "44.60"
+    "Value": "44.84"
   },
   {
     "Name": "utilization.clb.ff.pct",
@@ -97,7 +97,7 @@
   {
     "Name": "design.cells.hlutnm.pct",
     "Description": "LUT Combining(%)",
-    "Value": "9.04"
+    "Value": "8.20"
   },
   {
     "Name": "utilization.dsp.pct",
@@ -172,11 +172,11 @@
   {
     "Name": "design.device.maxlvls.lut",
     "Description": "Number of paths above max LUT budgeting 0.500ns",
-    "Value": "98"
+    "Value": "130"
   },
   {
     "Name": "design.device.maxlvls.net",
     "Description": "Number of paths above max Net budgeting 0.350ns",
-    "Value": "131"
+    "Value": "132"
   }
 ]
