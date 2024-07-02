@@ -1733,113 +1733,6 @@ def OSCILLOSCOPE_Energies_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePositio
 
 
 
-def OSCILLOSCOPE_diag_START(handle):
-    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_ARM, handle)
-    if (err != 0):
-       return False
-    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_ARM, handle)
-    if (err != 0):
-       return False
-    return True
-
-def OSCILLOSCOPE_diag_SET_DECIMATOR(OscilloscopeDecimator, handle):
-    err = __abstracted_reg_write(OscilloscopeDecimator, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_DECIMATOR, handle)
-    return err
-
-def OSCILLOSCOPE_diag_SET_PRETRIGGER(OscilloscopePreTrigger, handle):
-    err = __abstracted_reg_write(OscilloscopePreTrigger, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_PRETRIGGER, handle)
-    return err
-
-def OSCILLOSCOPE_diag_SET_TRIGGER_LEVEL(OscilloscopeTriggerLevel, handle):
-    err = __abstracted_reg_write(OscilloscopeTriggerLevel, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_TRIGGER_LEVEL, handle)
-    return err
-
-def OSCILLOSCOPE_diag_SET_TRIGGER_MODE(OscilloscopeTriggerMode, OscilloscopeTriggerChannel, OscilloscopeTriggerEdge, handle):
-    AnalogTrigger = 0
-    Digital0Trigger = 0
-    Digital1Trigger = 0
-    Digital2Trigger = 0
-    Digital3Trigger = 0
-    SoftwareTrigger = 0
-    if (OscilloscopeTriggerMode == "Analog"):
-        AnalogTrigger = 1
-    if (OscilloscopeTriggerMode == "Digital0"):
-        Digital0Trigger = 1
-    if (OscilloscopeTriggerMode == "Digital1"):
-        Digital1Trigger = 1
-    if (OscilloscopeTriggerMode == "Digital2"):
-        Digital2Trigger = 1
-    if (OscilloscopeTriggerMode == "Digital3"):
-        Digital3Trigger = 1
-    if (OscilloscopeTriggerMode == "Free"):
-        SoftwareTrigger = 1
-    if (OscilloscopeTriggerEdge == "Rising"):
-        Edge = 0
-    else:
-        Edge = 1
-    triggermode = c_int(0)
-    triggermode = (OscilloscopeTriggerChannel << 8)  + (SoftwareTrigger << 7 ) + (Edge << 3) + (SoftwareTrigger << 1) + AnalogTrigger +(Digital0Trigger << 2) + (Digital1Trigger << 2) + Digital1Trigger + (Digital2Trigger << 2) + (Digital2Trigger << 1) + (Digital3Trigger << 2) + (Digital3Trigger << 1) + Digital3Trigger
-    err = __abstracted_reg_write(triggermode, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_TRIGGER_MODE, handle)
-    return err
-
-def OSCILLOSCOPE_diag_GET_STATUS(handle):
-    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_diag_READ_STATUS, handle)
-    return err, status
-
-def OSCILLOSCOPE_diag_GET_POSITION(handle):
-    [err, position] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_diag_READ_POSITION, handle)
-    return err, position
-
-def OSCILLOSCOPE_diag_GET_DATA(timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(4096, R76Firmware_RegisterFile.SCI_REG_diag_FIFOADDRESS, timeout_ms, handle)
-    return err, data, read_data, valid_data
-
-def OSCILLOSCOPE_diag_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePosition, OscilloscopePreTrigger):
-    OscilloscopeChannels = 4
-    OscilloscopeSamples = 1024
-    Analog = list(range(OscilloscopeSamples*OscilloscopeChannels))
-    Digital0 = list(range(OscilloscopeSamples*OscilloscopeChannels))
-    Digital1 = list(range(OscilloscopeSamples*OscilloscopeChannels))
-    Digital2 = list(range(OscilloscopeSamples*OscilloscopeChannels))
-    Digital3 = list(range(OscilloscopeSamples*OscilloscopeChannels))
-    for n in range(OscilloscopeChannels):
-        current = OscilloscopePosition - OscilloscopePreTrigger
-        if ((current) > 0):
-            k = 0
-            for i in range(current, OscilloscopeSamples-1):
-                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
-                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
-                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
-                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
-                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
-                k = k + 1
-            for i in range(0, current-1):
-                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
-                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
-                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
-                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
-                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
-                k = k + 1
-        else:
-            k = 0
-            for i in range(OscilloscopeSamples+current, OscilloscopeSamples-1):
-                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
-                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
-                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
-                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
-                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
-                k = k + 1
-            for i in range(0, OscilloscopeSamples+current-1):
-                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
-                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
-                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
-                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
-                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
-                k = k + 1
-    return Analog, Digital0, Digital1,Digital2, Digital3
-
-
-
 def OSCILLOSCOPE_Analog_In_Unflipped_START(handle):
     err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_Analog_In_Unflipped_CONFIG_ARM, handle)
     if (err != 0):
@@ -2055,4 +1948,111 @@ def SPECTRUM_Spectrum_10_GET_STATUS(handle):
 def SPECTRUM_Spectrum_10_GET_DATA(Bin, timeout_ms, handle):
     [err, data, read_data, valid_data] = __abstracted_mem_read(Bin, R76Firmware_RegisterFile.SCI_REG_Spectrum_10_FIFOADDRESS, timeout_ms, handle)
     return err, data, read_data, valid_data
+
+
+
+def OSCILLOSCOPE_diag_START(handle):
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_ARM, handle)
+    if (err != 0):
+       return False
+    return True
+
+def OSCILLOSCOPE_diag_SET_DECIMATOR(OscilloscopeDecimator, handle):
+    err = __abstracted_reg_write(OscilloscopeDecimator, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_DECIMATOR, handle)
+    return err
+
+def OSCILLOSCOPE_diag_SET_PRETRIGGER(OscilloscopePreTrigger, handle):
+    err = __abstracted_reg_write(OscilloscopePreTrigger, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_PRETRIGGER, handle)
+    return err
+
+def OSCILLOSCOPE_diag_SET_TRIGGER_LEVEL(OscilloscopeTriggerLevel, handle):
+    err = __abstracted_reg_write(OscilloscopeTriggerLevel, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_TRIGGER_LEVEL, handle)
+    return err
+
+def OSCILLOSCOPE_diag_SET_TRIGGER_MODE(OscilloscopeTriggerMode, OscilloscopeTriggerChannel, OscilloscopeTriggerEdge, handle):
+    AnalogTrigger = 0
+    Digital0Trigger = 0
+    Digital1Trigger = 0
+    Digital2Trigger = 0
+    Digital3Trigger = 0
+    SoftwareTrigger = 0
+    if (OscilloscopeTriggerMode == "Analog"):
+        AnalogTrigger = 1
+    if (OscilloscopeTriggerMode == "Digital0"):
+        Digital0Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital1"):
+        Digital1Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital2"):
+        Digital2Trigger = 1
+    if (OscilloscopeTriggerMode == "Digital3"):
+        Digital3Trigger = 1
+    if (OscilloscopeTriggerMode == "Free"):
+        SoftwareTrigger = 1
+    if (OscilloscopeTriggerEdge == "Rising"):
+        Edge = 0
+    else:
+        Edge = 1
+    triggermode = c_int(0)
+    triggermode = (OscilloscopeTriggerChannel << 8)  + (SoftwareTrigger << 7 ) + (Edge << 3) + (SoftwareTrigger << 1) + AnalogTrigger +(Digital0Trigger << 2) + (Digital1Trigger << 2) + Digital1Trigger + (Digital2Trigger << 2) + (Digital2Trigger << 1) + (Digital3Trigger << 2) + (Digital3Trigger << 1) + Digital3Trigger
+    err = __abstracted_reg_write(triggermode, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_TRIGGER_MODE, handle)
+    return err
+
+def OSCILLOSCOPE_diag_GET_STATUS(handle):
+    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_diag_READ_STATUS, handle)
+    return err, status
+
+def OSCILLOSCOPE_diag_GET_POSITION(handle):
+    [err, position] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_diag_READ_POSITION, handle)
+    return err, position
+
+def OSCILLOSCOPE_diag_GET_DATA(timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(5120, R76Firmware_RegisterFile.SCI_REG_diag_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+def OSCILLOSCOPE_diag_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePosition, OscilloscopePreTrigger):
+    OscilloscopeChannels = 5
+    OscilloscopeSamples = 1024
+    Analog = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital0 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital1 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital2 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    Digital3 = list(range(OscilloscopeSamples*OscilloscopeChannels))
+    for n in range(OscilloscopeChannels):
+        current = OscilloscopePosition - OscilloscopePreTrigger
+        if ((current) > 0):
+            k = 0
+            for i in range(current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+            for i in range(0, current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+        else:
+            k = 0
+            for i in range(OscilloscopeSamples+current, OscilloscopeSamples-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+            for i in range(0, OscilloscopeSamples+current-1):
+                Analog[k+ OscilloscopeSamples * n] = OscilloscopeData[i+ OscilloscopeSamples * n] & 65535
+                Digital0[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 16 & 1)
+                Digital1[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 17 & 1)
+                Digital2[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 18 & 1)
+                Digital3[k+ OscilloscopeSamples * n] = (OscilloscopeData[i+ OscilloscopeSamples * n] >> 19 & 1)
+                k = k + 1
+    return Analog, Digital0, Digital1,Digital2, Digital3
 

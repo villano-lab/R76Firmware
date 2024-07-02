@@ -37,17 +37,17 @@
   {
     "Name": "utilization.clb.lut",
     "Description": "LUT(#)",
-    "Value": "35023"
+    "Value": "34451"
   },
   {
     "Name": "utilization.clb.ff",
     "Description": "FD(#)",
-    "Value": "40384"
+    "Value": "40419"
   },
   {
     "Name": "utilization.ram.tile",
     "Description": "RAMB/FIFO(#)",
-    "Value": "184.5"
+    "Value": "185.5"
   },
   {
     "Name": "utilization.uram.tile",
@@ -67,12 +67,12 @@
   {
     "Name": "utilization.clb.lut.pct",
     "Description": "LUT(%)",
-    "Value": "44.56"
+    "Value": "43.83"
   },
   {
     "Name": "utilization.clb.ff.pct",
     "Description": "FD(%)",
-    "Value": "25.69"
+    "Value": "25.71"
   },
   {
     "Name": "utilization.clb.lutmem.pct",
@@ -87,17 +87,17 @@
   {
     "Name": "utilization.clb.f7mux.pct",
     "Description": "MUXF7(%)",
-    "Value": "3.57"
+    "Value": "3.27"
   },
   {
     "Name": "utilization.clb.f8mux.pct",
     "Description": "MUXF8(%)",
-    "Value": "1.13"
+    "Value": "1.09"
   },
   {
     "Name": "design.cells.hlutnm.pct",
     "Description": "LUT Combining(%)",
-    "Value": "9.64"
+    "Value": "7.66"
   },
   {
     "Name": "utilization.dsp.pct",
@@ -107,17 +107,17 @@
   {
     "Name": "utilization.ram.tile.pct",
     "Description": "RAMB/FIFO(%)",
-    "Value": "69.62"
+    "Value": "70.00"
   },
   {
     "Name": "utilization.uram.tile.pct",
     "Description": "URAM(%)",
-    "Value": "69.62"
+    "Value": "70.00"
   },
   {
     "Name": "utilization.bigblocks.pct",
     "Description": "DSP48+RAMB+URAM (Avg)(%)",
-    "Value": "40.81"
+    "Value": "41.00"
   },
   {
     "Name": "utilization.clk.all",
@@ -127,7 +127,7 @@
   {
     "Name": "utilization.ctrlsets.uniq",
     "Description": "Control Sets",
-    "Value": "1900"
+    "Value": "1901"
   },
   {
     "Name": "design.dont_touch",
@@ -172,7 +172,7 @@
   {
     "Name": "design.device.maxlvls.lut",
     "Description": "Number of paths above max LUT budgeting 0.500ns",
-    "Value": "129"
+    "Value": "132"
   },
   {
     "Name": "design.device.maxlvls.net",
