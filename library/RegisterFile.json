@@ -640,77 +640,6 @@
       "Path": "/Spectrum_9"
     },
     {
-      "Name": "Spectrum_10",
-      "Type": "Spectrum",
-      "Address": 2949120,
-      "Version": "1.0.1.0",
-      "bins": 1024,
-      "Registers": [
-        {
-          "Name": "STATUS",
-          "Type": null,
-          "Address": 3014656,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG",
-          "Type": null,
-          "Address": 3014657,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_LIMIT",
-          "Type": null,
-          "Address": 3014658,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_REBIN",
-          "Type": null,
-          "Address": 3014659,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_MIN",
-          "Type": null,
-          "Address": 3014660,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_MAX",
-          "Type": null,
-          "Address": 3014661,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        }
-      ],
-      "CountsBit": 16,
-      "Path": "/Spectrum_10"
-    },
-    {
       "Name": "Spectrum_11",
       "Type": "Spectrum",
       "Address": 3211264,
@@ -3799,6 +3728,77 @@
       ],
       "BufferLength": 32768,
       "Path": "/All_Energies"
+    },
+    {
+      "Name": "Spectrum_10",
+      "Type": "Spectrum",
+      "Address": 2949120,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Type": null,
+          "Address": 3014656,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG",
+          "Type": null,
+          "Address": 3014657,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Type": null,
+          "Address": 3014658,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Type": null,
+          "Address": 3014659,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Type": null,
+          "Address": 3014660,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Type": null,
+          "Address": 3014661,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        }
+      ],
+      "CountsBit": 16,
+      "Path": "/Spectrum_10"
     }
   ],
   "Registers": [
@@ -3888,5 +3888,5 @@
   "Magic": "361567DF",
   "Version": null,
   "FPGA": "xc7z030fbg676-2",
-  "BuildDate": "2024-07-02T12:05:05.9673276-05:00"
+  "BuildDate": "2024-07-02T13:55:02.1188722-05:00"
 }

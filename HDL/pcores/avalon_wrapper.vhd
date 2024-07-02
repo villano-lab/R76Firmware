@@ -640,29 +640,6 @@ entity avalon_wrapper is
 		REG_Spectrum_21_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_21_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_21_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_10_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_Spectrum_10_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_10_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_10_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Spectrum_10_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Spectrum_10_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_10_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_10_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_10_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_10_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_22_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_22_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_22_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1151,6 +1128,29 @@ entity avalon_wrapper is
 		REG_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_All_Energies_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Spectrum_10_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
+	BUS_Spectrum_10_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Spectrum_10_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Spectrum_10_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Spectrum_10_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Spectrum_10_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_10_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_10_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_10_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_10_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -1213,13 +1213,13 @@ BUS_Spectrum_8_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00230000" A
 BUS_Spectrum_20_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00250000" And addr < x"00260000") else (others => '0');BUS_Spectrum_9_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00270000" And addr < x"00280000") else '0';
 BUS_Spectrum_9_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00270000" And addr < x"00280000") else (others => '0');BUS_SyncIn_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00290000" And addr < x"002A0000") else '0';
 BUS_SyncIn_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00290000" And addr < x"002A0000") else (others => '0');BUS_Spectrum_21_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002B0000" And addr < x"002C0000") else '0';
-BUS_Spectrum_21_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002B0000" And addr < x"002C0000") else (others => '0');BUS_Spectrum_10_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002D0000" And addr < x"002E0000") else '0';
-BUS_Spectrum_10_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002D0000" And addr < x"002E0000") else (others => '0');BUS_Spectrum_22_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002F0000" And addr < x"00300000") else '0';
+BUS_Spectrum_21_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002B0000" And addr < x"002C0000") else (others => '0');BUS_Spectrum_22_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002F0000" And addr < x"00300000") else '0';
 BUS_Spectrum_22_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002F0000" And addr < x"00300000") else (others => '0');BUS_Spectrum_11_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00310000" And addr < x"00320000") else '0';
 BUS_Spectrum_11_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00310000" And addr < x"00320000") else (others => '0');BUS_Spectrum_23_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00670000" And addr < x"00680000") else '0';
 BUS_Spectrum_23_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00670000" And addr < x"00680000") else (others => '0');BUS_Syncs_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00681000" And addr < x"00682000") else '0';
 BUS_Syncs_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"00681000" And addr < x"00682000") else (others => '0');BUS_Analog_In_Unflipped_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00038000" And addr < x"00040000") else '0';
-BUS_Analog_In_Unflipped_READ_ADDRESS <= BUS_ADDR(14 downto 0) when (addr >= x"00038000" And addr < x"00040000") else (others => '0');BUS_All_Energies_R_INT(0) <= f_BUS_INT_RD when (addr >= x"0068205E" And addr < x"0068205F") else '0';
+BUS_Analog_In_Unflipped_READ_ADDRESS <= BUS_ADDR(14 downto 0) when (addr >= x"00038000" And addr < x"00040000") else (others => '0');BUS_All_Energies_R_INT(0) <= f_BUS_INT_RD when (addr >= x"0068205E" And addr < x"0068205F") else '0';BUS_Spectrum_10_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002D0000" And addr < x"002E0000") else '0';
+BUS_Spectrum_10_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002D0000" And addr < x"002E0000") else (others => '0');
 f_BUS_DATA_RD <= BUS_Test_0_READ_DATA when  (addr >= x"03FE0000" And addr < x"03FEFFFF") else 
 BUS_Energies_READ_DATA  when  addr >= x"00000000" and addr < x"00008000" else 
 BUS_Analog_READ_DATA  when  addr >= x"00010000" and addr < x"00018000" else 
@@ -1246,13 +1246,13 @@ BUS_Spectrum_20_READ_DATA  when  addr >= x"00250000" and addr < x"00260000" else
 BUS_Spectrum_9_READ_DATA  when  addr >= x"00270000" and addr < x"00280000" else 
 BUS_SyncIn_READ_DATA  when  addr >= x"00290000" and addr < x"002A0000" else 
 BUS_Spectrum_21_READ_DATA  when  addr >= x"002B0000" and addr < x"002C0000" else 
-BUS_Spectrum_10_READ_DATA  when  addr >= x"002D0000" and addr < x"002E0000" else 
 BUS_Spectrum_22_READ_DATA  when  addr >= x"002F0000" and addr < x"00300000" else 
 BUS_Spectrum_11_READ_DATA  when  addr >= x"00310000" and addr < x"00320000" else 
 BUS_Spectrum_23_READ_DATA  when  addr >= x"00670000" and addr < x"00680000" else 
 BUS_Syncs_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else 
 BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"00040000" else 
- BUS_All_Energies_READ_DATA when (addr >= x"0068205E" And addr < x"0068205F") else  f_BUS_DATA_RD_REG;
+ BUS_All_Energies_READ_DATA when (addr >= x"0068205E" And addr < x"0068205F") else BUS_Spectrum_10_READ_DATA  when  addr >= x"002D0000" and addr < x"002E0000" else 
+ f_BUS_DATA_RD_REG;
  f_BUS_DATASTROBE <=BUS_Test_0_VLD(0) when  (addr >= x"03FE0000" And addr < x"03FEFFFF") else 
  BUS_Energies_VLD(0) when  addr >= x"00000000" and addr < x"00008000" else 
  BUS_Analog_VLD(0) when  addr >= x"00010000" and addr < x"00018000" else 
@@ -1279,13 +1279,13 @@ BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"000400
  BUS_Spectrum_9_VLD(0) when  addr >= x"00270000" and addr < x"00280000" else 
  BUS_SyncIn_VLD(0) when  addr >= x"00290000" and addr < x"002A0000" else 
  BUS_Spectrum_21_VLD(0) when  addr >= x"002B0000" and addr < x"002C0000" else 
- BUS_Spectrum_10_VLD(0) when  addr >= x"002D0000" and addr < x"002E0000" else 
  BUS_Spectrum_22_VLD(0) when  addr >= x"002F0000" and addr < x"00300000" else 
  BUS_Spectrum_11_VLD(0) when  addr >= x"00310000" and addr < x"00320000" else 
  BUS_Spectrum_23_VLD(0) when  addr >= x"00670000" and addr < x"00680000" else 
  BUS_Syncs_VLD(0) when  addr >= x"00681000" and addr < x"00682000" else 
  BUS_Analog_In_Unflipped_VLD(0) when  addr >= x"00038000" and addr < x"00040000" else 
-  BUS_All_Energies_VLD(0) when (addr >= x"0068205E" And addr < x"0068205F") else  f_BUS_DATASTROBE_REG;    
+  BUS_All_Energies_VLD(0) when (addr >= x"0068205E" And addr < x"0068205F") else  BUS_Spectrum_10_VLD(0) when  addr >= x"002D0000" and addr < x"002E0000" else 
+ f_BUS_DATASTROBE_REG;    
 
         
     addr <= BUS_ADDR;
@@ -1596,18 +1596,6 @@ BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"000400
 		INT_Spectrum_21_CONFIG_MIN_WR <= "0";
 		REG_Spectrum_21_CONFIG_MAX_WR <= (others => '0');
 		INT_Spectrum_21_CONFIG_MAX_WR <= "0";
-	BUS_Spectrum_10_W_INT <= "0";
-		INT_Spectrum_10_STATUS_RD <= "0";
-		REG_Spectrum_10_CONFIG_WR <= (others => '0');
-		INT_Spectrum_10_CONFIG_WR <= "0";
-		REG_Spectrum_10_CONFIG_LIMIT_WR <= (others => '0');
-		INT_Spectrum_10_CONFIG_LIMIT_WR <= "0";
-		REG_Spectrum_10_CONFIG_REBIN_WR <= (others => '0');
-		INT_Spectrum_10_CONFIG_REBIN_WR <= "0";
-		REG_Spectrum_10_CONFIG_MIN_WR <= (others => '0');
-		INT_Spectrum_10_CONFIG_MIN_WR <= "0";
-		REG_Spectrum_10_CONFIG_MAX_WR <= (others => '0');
-		INT_Spectrum_10_CONFIG_MAX_WR <= "0";
 	BUS_Spectrum_22_W_INT <= "0";
 		INT_Spectrum_22_STATUS_RD <= "0";
 		REG_Spectrum_22_CONFIG_WR <= (others => '0');
@@ -1904,6 +1892,18 @@ BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"000400
 		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
 		REG_All_Energies_CONFIG_WR <= (others => '0');
 		INT_All_Energies_CONFIG_WR <= "0";
+	BUS_Spectrum_10_W_INT <= "0";
+		INT_Spectrum_10_STATUS_RD <= "0";
+		REG_Spectrum_10_CONFIG_WR <= (others => '0');
+		INT_Spectrum_10_CONFIG_WR <= "0";
+		REG_Spectrum_10_CONFIG_LIMIT_WR <= (others => '0');
+		INT_Spectrum_10_CONFIG_LIMIT_WR <= "0";
+		REG_Spectrum_10_CONFIG_REBIN_WR <= (others => '0');
+		INT_Spectrum_10_CONFIG_REBIN_WR <= "0";
+		REG_Spectrum_10_CONFIG_MIN_WR <= (others => '0');
+		INT_Spectrum_10_CONFIG_MIN_WR <= "0";
+		REG_Spectrum_10_CONFIG_MAX_WR <= (others => '0');
+		INT_Spectrum_10_CONFIG_MAX_WR <= "0";
             
                 f_BUS_DATASTROBE_REG <= '0';
                 M_AVALON_0_readdatavalid <= '0';
@@ -2087,13 +2087,6 @@ BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"000400
 		INT_Spectrum_21_CONFIG_REBIN_WR <= "0";
 		INT_Spectrum_21_CONFIG_MIN_WR <= "0";
 		INT_Spectrum_21_CONFIG_MAX_WR <= "0";
-	BUS_Spectrum_10_W_INT <= "0";
-		INT_Spectrum_10_STATUS_RD <= "0";
-		INT_Spectrum_10_CONFIG_WR <= "0";
-		INT_Spectrum_10_CONFIG_LIMIT_WR <= "0";
-		INT_Spectrum_10_CONFIG_REBIN_WR <= "0";
-		INT_Spectrum_10_CONFIG_MIN_WR <= "0";
-		INT_Spectrum_10_CONFIG_MAX_WR <= "0";
 	BUS_Spectrum_22_W_INT <= "0";
 		INT_Spectrum_22_STATUS_RD <= "0";
 		INT_Spectrum_22_CONFIG_WR <= "0";
@@ -2256,6 +2249,13 @@ BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"000400
 		INT_All_Energies_READ_STATUS_RD <= "0";
 		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
 		INT_All_Energies_CONFIG_WR <= "0";
+	BUS_Spectrum_10_W_INT <= "0";
+		INT_Spectrum_10_STATUS_RD <= "0";
+		INT_Spectrum_10_CONFIG_WR <= "0";
+		INT_Spectrum_10_CONFIG_LIMIT_WR <= "0";
+		INT_Spectrum_10_CONFIG_REBIN_WR <= "0";
+		INT_Spectrum_10_CONFIG_MIN_WR <= "0";
+		INT_Spectrum_10_CONFIG_MAX_WR <= "0";
   
                 f_BUS_DATASTROBE_REG <= '0';
                 
@@ -2866,30 +2866,6 @@ BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"000400
 			REG_Spectrum_21_CONFIG_MAX_WR <= wreg; 
 			INT_Spectrum_21_CONFIG_MAX_WR <= "1"; 
 		end if;
-		If addr >= x"002D0000" And addr < x"002E0000" Then
-			BUS_Spectrum_10_WRITE_DATA <= wreg; 
-			BUS_Spectrum_10_W_INT <= "1"; 
-		End If;
-		if addr = x"002E0001" then
-			REG_Spectrum_10_CONFIG_WR <= wreg; 
-			INT_Spectrum_10_CONFIG_WR <= "1"; 
-		end if;
-		if addr = x"002E0002" then
-			REG_Spectrum_10_CONFIG_LIMIT_WR <= wreg; 
-			INT_Spectrum_10_CONFIG_LIMIT_WR <= "1"; 
-		end if;
-		if addr = x"002E0003" then
-			REG_Spectrum_10_CONFIG_REBIN_WR <= wreg; 
-			INT_Spectrum_10_CONFIG_REBIN_WR <= "1"; 
-		end if;
-		if addr = x"002E0004" then
-			REG_Spectrum_10_CONFIG_MIN_WR <= wreg; 
-			INT_Spectrum_10_CONFIG_MIN_WR <= "1"; 
-		end if;
-		if addr = x"002E0005" then
-			REG_Spectrum_10_CONFIG_MAX_WR <= wreg; 
-			INT_Spectrum_10_CONFIG_MAX_WR <= "1"; 
-		end if;
 		If addr >= x"002F0000" And addr < x"00300000" Then
 			BUS_Spectrum_22_WRITE_DATA <= wreg; 
 			BUS_Spectrum_22_W_INT <= "1"; 
@@ -3470,6 +3446,30 @@ BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"000400
 			REG_All_Energies_CONFIG_WR <= wreg; 
 			INT_All_Energies_CONFIG_WR <= "1"; 
 		end if;
+		If addr >= x"002D0000" And addr < x"002E0000" Then
+			BUS_Spectrum_10_WRITE_DATA <= wreg; 
+			BUS_Spectrum_10_W_INT <= "1"; 
+		End If;
+		if addr = x"002E0001" then
+			REG_Spectrum_10_CONFIG_WR <= wreg; 
+			INT_Spectrum_10_CONFIG_WR <= "1"; 
+		end if;
+		if addr = x"002E0002" then
+			REG_Spectrum_10_CONFIG_LIMIT_WR <= wreg; 
+			INT_Spectrum_10_CONFIG_LIMIT_WR <= "1"; 
+		end if;
+		if addr = x"002E0003" then
+			REG_Spectrum_10_CONFIG_REBIN_WR <= wreg; 
+			INT_Spectrum_10_CONFIG_REBIN_WR <= "1"; 
+		end if;
+		if addr = x"002E0004" then
+			REG_Spectrum_10_CONFIG_MIN_WR <= wreg; 
+			INT_Spectrum_10_CONFIG_MIN_WR <= "1"; 
+		end if;
+		if addr = x"002E0005" then
+			REG_Spectrum_10_CONFIG_MAX_WR <= wreg; 
+			INT_Spectrum_10_CONFIG_MAX_WR <= "1"; 
+		end if;
 
                 end if;
         
@@ -3928,24 +3928,6 @@ BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"000400
 		if addr = x"002C0005" then
 			rreg := REG_Spectrum_21_CONFIG_MAX_RD; 
 		End If;
-		if addr = x"002E0000" then
-			rreg := REG_Spectrum_10_STATUS_RD; 
-		End If;
-		if addr = x"002E0001" then
-			rreg := REG_Spectrum_10_CONFIG_RD; 
-		End If;
-		if addr = x"002E0002" then
-			rreg := REG_Spectrum_10_CONFIG_LIMIT_RD; 
-		End If;
-		if addr = x"002E0003" then
-			rreg := REG_Spectrum_10_CONFIG_REBIN_RD; 
-		End If;
-		if addr = x"002E0004" then
-			rreg := REG_Spectrum_10_CONFIG_MIN_RD; 
-		End If;
-		if addr = x"002E0005" then
-			rreg := REG_Spectrum_10_CONFIG_MAX_RD; 
-		End If;
 		if addr = x"00300000" then
 			rreg := REG_Spectrum_22_STATUS_RD; 
 		End If;
@@ -4374,6 +4356,24 @@ BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00038000" and addr < x"000400
 		End If;
 		if addr = x"00682061" then
 			rreg := REG_All_Energies_CONFIG_RD; 
+		End If;
+		if addr = x"002E0000" then
+			rreg := REG_Spectrum_10_STATUS_RD; 
+		End If;
+		if addr = x"002E0001" then
+			rreg := REG_Spectrum_10_CONFIG_RD; 
+		End If;
+		if addr = x"002E0002" then
+			rreg := REG_Spectrum_10_CONFIG_LIMIT_RD; 
+		End If;
+		if addr = x"002E0003" then
+			rreg := REG_Spectrum_10_CONFIG_REBIN_RD; 
+		End If;
+		if addr = x"002E0004" then
+			rreg := REG_Spectrum_10_CONFIG_MIN_RD; 
+		End If;
+		if addr = x"002E0005" then
+			rreg := REG_Spectrum_10_CONFIG_MAX_RD; 
 		End If;
     
                    
