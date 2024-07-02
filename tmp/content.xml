@@ -4,7 +4,7 @@
         <MODEL>A</MODEL>
     </SUPPORTED_PLATFORM>
    <FPGA>
-       <version>2024.07.02.6</version>
+       <version>2024.07.02.7</version>
        <filename>R76Firmware.fpga</filename>
    </FPGA>
    <HWJSON>
