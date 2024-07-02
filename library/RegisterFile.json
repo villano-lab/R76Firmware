@@ -3833,16 +3833,6 @@
       "Path": "/full"
     },
     {
-      "Name": "sync0_between_sync2",
-      "Type": "Register",
-      "Address": 6823949,
-      "Version": "1.0.0.0",
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined",
-      "Path": "/sync0_between_sync2"
-    },
-    {
       "Name": "timestamp",
       "Type": "Register",
       "Address": 6823948,
@@ -3888,5 +3878,5 @@
   "Magic": "361567DF",
   "Version": null,
   "FPGA": "xc7z030fbg676-2",
-  "BuildDate": "2024-07-02T13:55:02.1188722-05:00"
+  "BuildDate": "2024-07-02T14:39:07.5691646-05:00"
 }

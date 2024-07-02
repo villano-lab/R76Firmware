@@ -337,16 +337,16 @@ use IEEE.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 USE work.Global_Defs.all;
 
-entity U112_UserHDL_Serial_Tx is
+entity U109_UserHDL_Serial_Tx is
 generic (size : positive := 16);
 port (
  clock, reset, Tx_En: in STD_LOGIC;
  pdata_in: in std_logic_vector(size-1 downto 0);
  Tx_Done, FMData_Out: buffer STD_LOGIC
 );
-end U112_UserHDL_Serial_Tx;
+end U109_UserHDL_Serial_Tx;
 
-architecture behavioural of U112_UserHDL_Serial_Tx is
+architecture behavioural of U109_UserHDL_Serial_Tx is
 
 -- Serializer state machine
 Type FMTx is (TxIdle,TxStrtA,TxStrtB,ShftTx,ParityTx);
