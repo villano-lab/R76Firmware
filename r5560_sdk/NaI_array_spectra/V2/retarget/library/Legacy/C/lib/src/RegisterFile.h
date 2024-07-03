@@ -1,0 +1,56 @@
+#define SCI_REG_REGFILE_0_pol 0x1
+#define SCI_REG_REGFILE_0_lo_thrs 0x2
+#define SCI_REG_REGFILE_0_hi_thrs 0x3
+#define SCI_REG_REGFILE_0_gate_l 0x4
+#define SCI_REG_REGFILE_0_gate_u 0x5
+#define SCI_REG_REGFILE_0_delay 0x6
+#define SCI_REG_REGFILE_0_xdelay 0x7
+#define SCI_REG_REGFILE_0_inhib 0x8
+
+#define SCI_REG_INTEGRATION_REGS_inttime 0x20008
+#define SCI_REG_INTEGRATION_REGS_preint 0x20009
+#define SCI_REG_INTEGRATION_REGS_gain 0x2000A
+#define SCI_REG_INTEGRATION_REGS_ofs 0x2000B
+#define SCI_REG_INTEGRATION_REGS_bl 0x2000C
+#define SCI_REG_INTEGRATION_REGS_pileup 0x2000D
+
+#define SCI_REG_CH1_spectrum_FIFOADDRESS 0x10000
+#define SCI_REG_CH1_spectrum_STATUS 0x20000
+#define SCI_REG_CH1_spectrum_CONFIG 0x20001
+#define SCI_REG_CH1_spectrum_CONFIG_LIMIT 0x20002
+#define SCI_REG_CH1_spectrum_CONFIG_REBIN 0x20003
+#define SCI_REG_CH1_spectrum_CONFIG_MIN 0x20004
+#define SCI_REG_CH1_spectrum_CONFIG_MAX 0x20005
+
+#define SCI_REG_CH2_spectrum_FIFOADDRESS 0xF0000
+#define SCI_REG_CH2_spectrum_STATUS 0x100000
+#define SCI_REG_CH2_spectrum_CONFIG 0x100001
+#define SCI_REG_CH2_spectrum_CONFIG_LIMIT 0x100002
+#define SCI_REG_CH2_spectrum_CONFIG_REBIN 0x100003
+#define SCI_REG_CH2_spectrum_CONFIG_MIN 0x100004
+#define SCI_REG_CH2_spectrum_CONFIG_MAX 0x100005
+
+#define SCI_REG_CH3_spectrum_FIFOADDRESS 0x110000
+#define SCI_REG_CH3_spectrum_STATUS 0x120000
+#define SCI_REG_CH3_spectrum_CONFIG 0x120001
+#define SCI_REG_CH3_spectrum_CONFIG_LIMIT 0x120002
+#define SCI_REG_CH3_spectrum_CONFIG_REBIN 0x120003
+#define SCI_REG_CH3_spectrum_CONFIG_MIN 0x120004
+#define SCI_REG_CH3_spectrum_CONFIG_MAX 0x120005
+
+#define SCI_REG_CH4_spectrum_FIFOADDRESS 0x130000
+#define SCI_REG_CH4_spectrum_STATUS 0x140000
+#define SCI_REG_CH4_spectrum_CONFIG 0x140001
+#define SCI_REG_CH4_spectrum_CONFIG_LIMIT 0x140002
+#define SCI_REG_CH4_spectrum_CONFIG_REBIN 0x140003
+#define SCI_REG_CH4_spectrum_CONFIG_MIN 0x140004
+#define SCI_REG_CH4_spectrum_CONFIG_MAX 0x140005
+
+#define SCI_REG_CH5_spectrum_FIFOADDRESS 0x150000
+#define SCI_REG_CH5_spectrum_STATUS 0x160000
+#define SCI_REG_CH5_spectrum_CONFIG 0x160001
+#define SCI_REG_CH5_spectrum_CONFIG_LIMIT 0x160002
+#define SCI_REG_CH5_spectrum_CONFIG_REBIN 0x160003
+#define SCI_REG_CH5_spectrum_CONFIG_MIN 0x160004
+#define SCI_REG_CH5_spectrum_CONFIG_MAX 0x160005
+

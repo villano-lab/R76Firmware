@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Jul  3 12:49:42 2024
+# Process ID: 11344
+# Current directory: C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_FS_0_AXIFIFO_0_synth_1
+# Command line: vivado.exe -log ZynqDesign_FS_0_AXIFIFO_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ZynqDesign_FS_0_AXIFIFO_0.tcl
+# Log file: C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_FS_0_AXIFIFO_0_synth_1/ZynqDesign_FS_0_AXIFIFO_0.vds
+# Journal file: C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_FS_0_AXIFIFO_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source ZynqDesign_FS_0_AXIFIFO_0.tcl -notrace

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="ZynqDesign_axis_data_fifo_3_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_axis_data_fifo_3_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_data_mover_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_data_mover_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_axis_data_fifo_1_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_axis_data_fifo_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="ZynqDesign_axis_data_fifo_3_0_synth_1"/>
+	</Run>
+	<Run Id="ZynqDesign_axis_data_fifo_2_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_axis_data_fifo_2_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_processing_system7_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_RESET_RX_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_RESET_RX_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_ADCSyncModule_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_ADCSyncModule_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_RESET_TX_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_RESET_TX_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="ZynqDesign_RESET_RX_0_synth_1"/>
+	</Run>
+	<Run Id="ZynqDesign_FirmwareStatus_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_FirmwareStatus_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_NIDNAPort_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_NIDNAPort_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_OPTOLINK_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_OPTOLINK_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_FIRMWAREVERSION_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_FIRMWAREVERSION_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_axi_iic_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_axi_iic_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_FIRMWAREOPTIONS_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="ZynqDesign_FIRMWAREVERSION_0_synth_1"/>
+	</Run>
+	<Run Id="ZynqDesign_IICBaseInterconnection_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_IICBaseInterconnection_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_OPTOLINK_1_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_OPTOLINK_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_axi_amm_bridge_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_axi_amm_bridge_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_FS_0_AXIFIFO_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_FS_0_AXIFIFO_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_FIRMWAREBUILD_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_FIRMWAREBUILD_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_axis_data_fifo_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_axis_data_fifo_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="ZynqDesign_axis_data_fifo_2_0_synth_1"/>
+	</Run>
+	<Run Id="ZynqDesign_xbar_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_auto_cc_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_auto_cc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_rst_ps7_0_125M_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_rst_ps7_0_125M_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_auto_pc_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_auto_pc_1_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_auto_pc_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_tft_display_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_tft_display_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_auto_cc_1_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_auto_cc_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_auto_us_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_auto_us_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ZynqDesign_rst_ps7_0_125M1_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_rst_ps7_0_125M1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="ZynqDesign_rst_ps7_0_125M_0_synth_1"/>
+	</Run>
+	<Run Id="ZynqDesign_util_vector_logic_0_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_util_vector_logic_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="ZynqDesign_RESET_RX_0_synth_1"/>
+	</Run>
+	<Run Id="ZynqDesign_util_vector_logic_1_0_synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/ZynqDesign_util_vector_logic_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="ZynqDesign_RESET_RX_0_synth_1"/>
+	</Run>
+	<Run Id="synth_1" LaunchDir="C:/Users/Owner/Documents/GitHub/R76Firmware/r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="ZynqDesign_axis_data_fifo_3_0_synth_1"/>
+		<Parent Id="ZynqDesign_data_mover_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_axis_data_fifo_1_0_synth_1"/>
+		<Parent Id="ZynqDesign_axis_data_fifo_2_0_synth_1"/>
+		<Parent Id="ZynqDesign_processing_system7_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_RESET_RX_0_synth_1"/>
+		<Parent Id="ZynqDesign_ADCSyncModule_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_RESET_TX_0_synth_1"/>
+		<Parent Id="ZynqDesign_FirmwareStatus_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_NIDNAPort_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_OPTOLINK_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_FIRMWAREVERSION_0_synth_1"/>
+		<Parent Id="ZynqDesign_axi_iic_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_FIRMWAREOPTIONS_0_synth_1"/>
+		<Parent Id="ZynqDesign_IICBaseInterconnection_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_OPTOLINK_1_0_synth_1"/>
+		<Parent Id="ZynqDesign_axi_amm_bridge_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_FS_0_AXIFIFO_0_synth_1"/>
+		<Parent Id="ZynqDesign_FIRMWAREBUILD_0_synth_1"/>
+		<Parent Id="ZynqDesign_axis_data_fifo_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_xbar_0_synth_1"/>
+		<Parent Id="ZynqDesign_auto_cc_0_synth_1"/>
+		<Parent Id="ZynqDesign_rst_ps7_0_125M_0_synth_1"/>
+		<Parent Id="ZynqDesign_auto_pc_0_synth_1"/>
+		<Parent Id="ZynqDesign_auto_pc_1_synth_1"/>
+		<Parent Id="ZynqDesign_tft_display_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_auto_cc_1_synth_1"/>
+		<Parent Id="ZynqDesign_auto_us_0_synth_1"/>
+		<Parent Id="ZynqDesign_rst_ps7_0_125M1_0_synth_1"/>
+		<Parent Id="ZynqDesign_util_vector_logic_0_0_synth_1"/>
+		<Parent Id="ZynqDesign_util_vector_logic_1_0_synth_1"/>
+	</Run>
+</Runs>
+
