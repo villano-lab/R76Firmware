@@ -129,3 +129,4 @@ r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.srcs/sour
 r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_1_0/ZynqDesign_OPTOLINK_1_0/src/ZynqDesign_OPTOLINK_1_0_tx_channel_init_sm_simplex.v
 r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_1_0/ZynqDesign_OPTOLINK_1_0/src/ZynqDesign_OPTOLINK_1_0_tx_stream_control_sm_simplex.v
 r5560_sdk/NaI_array_spectra/V2/retarget/output/killspectra/killspectra.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_1_0/ZynqDesign_OPTOLINK_1_0/src/ZynqDesign_OPTOLINK_1_0_tx_stream_datapath_simplex.v
+/r5560_sdk
