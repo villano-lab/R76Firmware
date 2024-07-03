@@ -92,13 +92,13 @@
     {
       "Name": "INTEGRATION_REGS",
       "Type": "RegisterFile",
-      "Address": 131079,
+      "Address": 10,
       "Version": "1.0.0.0",
       "Registers": [
         {
           "Name": "inttime",
           "Type": "Register",
-          "Address": 131080,
+          "Address": 11,
           "Version": "",
           "RegionSize": 0,
           "Description": null,
@@ -108,7 +108,7 @@
         {
           "Name": "preint",
           "Type": "Register",
-          "Address": 131081,
+          "Address": 12,
           "Version": "",
           "RegionSize": 0,
           "Description": null,
@@ -118,7 +118,7 @@
         {
           "Name": "gain",
           "Type": "Register",
-          "Address": 131082,
+          "Address": 13,
           "Version": "",
           "RegionSize": 0,
           "Description": null,
@@ -128,7 +128,7 @@
         {
           "Name": "ofs",
           "Type": "Register",
-          "Address": 131083,
+          "Address": 14,
           "Version": "",
           "RegionSize": 0,
           "Description": null,
@@ -138,7 +138,7 @@
         {
           "Name": "bl",
           "Type": "Register",
-          "Address": 131084,
+          "Address": 15,
           "Version": "",
           "RegionSize": 0,
           "Description": null,
@@ -148,7 +148,7 @@
         {
           "Name": "pileup",
           "Type": "Register",
-          "Address": 131085,
+          "Address": 16,
           "Version": "",
           "RegionSize": 0,
           "Description": null,
@@ -161,14 +161,14 @@
     {
       "Name": "CH1_spectrum",
       "Type": "Spectrum",
-      "Address": 65536,
+      "Address": 851968,
       "Version": "1.0.1.0",
-      "bins": 1024,
+      "bins": 256,
       "Registers": [
         {
           "Name": "STATUS",
           "Type": null,
-          "Address": 131072,
+          "Address": 917504,
           "Version": null,
           "RegionSize": 1,
           "Description": "",
@@ -178,7 +178,7 @@
         {
           "Name": "CONFIG",
           "Type": null,
-          "Address": 131073,
+          "Address": 917505,
           "Version": null,
           "RegionSize": 1,
           "Description": "",
@@ -188,7 +188,7 @@
         {
           "Name": "CONFIG_LIMIT",
           "Type": null,
-          "Address": 131074,
+          "Address": 917506,
           "Version": null,
           "RegionSize": 1,
           "Description": "",
@@ -198,7 +198,7 @@
         {
           "Name": "CONFIG_REBIN",
           "Type": null,
-          "Address": 131075,
+          "Address": 917507,
           "Version": null,
           "RegionSize": 1,
           "Description": "",
@@ -208,7 +208,7 @@
         {
           "Name": "CONFIG_MIN",
           "Type": null,
-          "Address": 131076,
+          "Address": 917508,
           "Version": null,
           "RegionSize": 1,
           "Description": "",
@@ -218,7 +218,7 @@
         {
           "Name": "CONFIG_MAX",
           "Type": null,
-          "Address": 131077,
+          "Address": 917509,
           "Version": null,
           "RegionSize": 1,
           "Description": "",
@@ -234,7 +234,7 @@
       "Type": "Spectrum",
       "Address": 983040,
       "Version": "1.0.1.0",
-      "bins": 1024,
+      "bins": 256,
       "Registers": [
         {
           "Name": "STATUS",
@@ -305,7 +305,7 @@
       "Type": "Spectrum",
       "Address": 1114112,
       "Version": "1.0.1.0",
-      "bins": 1024,
+      "bins": 256,
       "Registers": [
         {
           "Name": "STATUS",
@@ -376,7 +376,7 @@
       "Type": "Spectrum",
       "Address": 1245184,
       "Version": "1.0.1.0",
-      "bins": 1024,
+      "bins": 256,
       "Registers": [
         {
           "Name": "STATUS",
@@ -441,77 +441,6 @@
       ],
       "CountsBit": 16,
       "Path": "/CH4_spectrum"
-    },
-    {
-      "Name": "CH5_spectrum",
-      "Type": "Spectrum",
-      "Address": 1376256,
-      "Version": "1.0.1.0",
-      "bins": 1024,
-      "Registers": [
-        {
-          "Name": "STATUS",
-          "Type": null,
-          "Address": 1441792,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG",
-          "Type": null,
-          "Address": 1441793,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_LIMIT",
-          "Type": null,
-          "Address": 1441794,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_REBIN",
-          "Type": null,
-          "Address": 1441795,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_MIN",
-          "Type": null,
-          "Address": 1441796,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_MAX",
-          "Type": null,
-          "Address": 1441797,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        }
-      ],
-      "CountsBit": 16,
-      "Path": "/CH5_spectrum"
     }
   ],
   "Registers": [],
@@ -520,5 +449,5 @@
   "Magic": "4A1769B3",
   "Version": null,
   "FPGA": "xc7z030fbg676-2",
-  "BuildDate": "2024-07-03T12:41:05.5940849-05:00"
+  "BuildDate": "2024-07-03T13:42:28.2228704-05:00"
 }

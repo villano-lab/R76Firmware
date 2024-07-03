@@ -498,29 +498,6 @@ component avalon_wrapper is
 		REG_REGFILE_0_inhib_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_REGFILE_0_inhib_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_REGFILE_0_inhib_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_CH1_spectrum_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_CH1_spectrum_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_CH1_spectrum_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_CH1_spectrum_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_CH1_spectrum_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_CH1_spectrum_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH1_spectrum_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH1_spectrum_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH1_spectrum_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH1_spectrum_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH1_spectrum_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_CH1_spectrum_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH1_spectrum_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH1_spectrum_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_CH1_spectrum_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH1_spectrum_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH1_spectrum_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_CH1_spectrum_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH1_spectrum_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH1_spectrum_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_CH1_spectrum_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH1_spectrum_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH1_spectrum_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_INTEGRATION_REGS_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_INTEGRATION_REGS_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_INTEGRATION_REGS_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
@@ -682,6 +659,29 @@ component avalon_wrapper is
 		REG_CH12_spectrum_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_CH12_spectrum_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_CH12_spectrum_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_CH1_spectrum_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
+	BUS_CH1_spectrum_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_CH1_spectrum_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_CH1_spectrum_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_CH1_spectrum_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_CH1_spectrum_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_CH1_spectrum_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_CH1_spectrum_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_CH1_spectrum_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_CH1_spectrum_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_CH1_spectrum_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_CH1_spectrum_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_CH1_spectrum_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_CH1_spectrum_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_CH1_spectrum_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_CH1_spectrum_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_CH1_spectrum_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_CH1_spectrum_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_CH1_spectrum_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_CH1_spectrum_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_CH1_spectrum_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_CH1_spectrum_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_CH1_spectrum_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_CH2_spectrum_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_CH2_spectrum_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_CH2_spectrum_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -751,29 +751,6 @@ component avalon_wrapper is
 		REG_CH4_spectrum_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_CH4_spectrum_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_CH4_spectrum_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_CH5_spectrum_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_CH5_spectrum_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_CH5_spectrum_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_CH5_spectrum_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_CH5_spectrum_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_CH5_spectrum_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH5_spectrum_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH5_spectrum_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH5_spectrum_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH5_spectrum_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH5_spectrum_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_CH5_spectrum_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH5_spectrum_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH5_spectrum_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_CH5_spectrum_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH5_spectrum_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH5_spectrum_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_CH5_spectrum_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH5_spectrum_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH5_spectrum_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_CH5_spectrum_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_CH5_spectrum_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_CH5_spectrum_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -1039,7 +1016,6 @@ signal U23_inhib : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
 	signal U25_E_1 : std_logic_vector(15 downto 0);
 	signal U25_E_2 : std_logic_vector(15 downto 0);
 	signal U25_E_3 : std_logic_vector(15 downto 0);
-	signal U25_E_4 : std_logic_vector(15 downto 0);
 
 COMPONENT SUBPAGE_int
 PORT(
@@ -1077,83 +1053,52 @@ signal U26_gain : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
 signal U26_ofs : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
 signal U26_bl : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
 signal U26_pileup : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-	signal BUS_CH1_spectrum_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_CH1_spectrum_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal REG_CH1_spectrum_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
-
-	COMPONENT xlx_spectrum
-		GENERIC( 
-			memLength : INTEGER := 1024;
-			wordWidth : INTEGER := 16
-		);
-		PORT( 
-			ENERGY : in STD_LOGIC_VECTOR(15 downto 0);
-			ENERGY_STROBE : in STD_LOGIC_VECTOR(0 downto 0);
-			P_running : out STD_LOGIC_VECTOR(0 downto 0);
-			P_acceptedPulse : out STD_LOGIC_VECTOR(0 downto 0);
-			CLK_WRITE : in STD_LOGIC_VECTOR(0 downto 0);
-			CE : in STD_LOGIC_VECTOR(0 downto 0);
-			RESET : in STD_LOGIC_VECTOR(0 downto 0);
-			CLK_READ : in STD_LOGIC_VECTOR(0 downto 0);
-			READ_ADDRESS : in STD_LOGIC_VECTOR(15 downto 0);
-			READ_DATA : out STD_LOGIC_VECTOR(31 downto 0);
-			READ_INT : in STD_LOGIC_VECTOR(0 downto 0);
-			READ_DATAVALID : out STD_LOGIC_VECTOR(0 downto 0);
-			STATUS : out STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_LIMIT : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_REBIN : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_MIN : in STD_LOGIC_VECTOR(31 downto 0);
-			CONFIG_MAX : in STD_LOGIC_VECTOR(31 downto 0)
-		);
-	END COMPONENT;
-
-	signal U28_delayed_data_0 : std_logic_vector(15 downto 0);
-	signal U28_trig_0 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_1 : std_logic_vector(15 downto 0);
-	signal U28_trig_1 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_2 : std_logic_vector(15 downto 0);
-	signal U28_trig_2 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_3 : std_logic_vector(15 downto 0);
-	signal U28_trig_3 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_4 : std_logic_vector(15 downto 0);
-	signal U28_trig_4 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_5 : std_logic_vector(15 downto 0);
-	signal U28_trig_5 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_6 : std_logic_vector(15 downto 0);
-	signal U28_trig_6 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_7 : std_logic_vector(15 downto 0);
-	signal U28_trig_7 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_8 : std_logic_vector(15 downto 0);
-	signal U28_trig_8 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_9 : std_logic_vector(15 downto 0);
-	signal U28_trig_9 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_10 : std_logic_vector(15 downto 0);
-	signal U28_trig_10 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_11 : std_logic_vector(15 downto 0);
-	signal U28_trig_11 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_12 : std_logic_vector(15 downto 0);
-	signal U28_trig_12 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_13 : std_logic_vector(15 downto 0);
-	signal U28_trig_13 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_14 : std_logic_vector(15 downto 0);
-	signal U28_trig_14 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_15 : std_logic_vector(15 downto 0);
-	signal U28_trig_15 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_16 : std_logic_vector(15 downto 0);
-	signal U28_trig_16 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_17 : std_logic_vector(15 downto 0);
-	signal U28_trig_17 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_18 : std_logic_vector(15 downto 0);
-	signal U28_trig_18 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_19 : std_logic_vector(15 downto 0);
-	signal U28_trig_19 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_20 : std_logic_vector(15 downto 0);
-	signal U28_trig_20 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_21 : std_logic_vector(15 downto 0);
-	signal U28_trig_21 : std_logic_vector(0 downto 0);
-	signal U28_delayed_data_22 : std_logic_vector(15 downto 0);
-	signal U28_trig_22 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_0 : std_logic_vector(15 downto 0);
+	signal U27_trig_0 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_1 : std_logic_vector(15 downto 0);
+	signal U27_trig_1 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_2 : std_logic_vector(15 downto 0);
+	signal U27_trig_2 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_3 : std_logic_vector(15 downto 0);
+	signal U27_trig_3 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_4 : std_logic_vector(15 downto 0);
+	signal U27_trig_4 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_5 : std_logic_vector(15 downto 0);
+	signal U27_trig_5 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_6 : std_logic_vector(15 downto 0);
+	signal U27_trig_6 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_7 : std_logic_vector(15 downto 0);
+	signal U27_trig_7 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_8 : std_logic_vector(15 downto 0);
+	signal U27_trig_8 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_9 : std_logic_vector(15 downto 0);
+	signal U27_trig_9 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_10 : std_logic_vector(15 downto 0);
+	signal U27_trig_10 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_11 : std_logic_vector(15 downto 0);
+	signal U27_trig_11 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_12 : std_logic_vector(15 downto 0);
+	signal U27_trig_12 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_13 : std_logic_vector(15 downto 0);
+	signal U27_trig_13 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_14 : std_logic_vector(15 downto 0);
+	signal U27_trig_14 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_15 : std_logic_vector(15 downto 0);
+	signal U27_trig_15 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_16 : std_logic_vector(15 downto 0);
+	signal U27_trig_16 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_17 : std_logic_vector(15 downto 0);
+	signal U27_trig_17 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_18 : std_logic_vector(15 downto 0);
+	signal U27_trig_18 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_19 : std_logic_vector(15 downto 0);
+	signal U27_trig_19 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_20 : std_logic_vector(15 downto 0);
+	signal U27_trig_20 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_21 : std_logic_vector(15 downto 0);
+	signal U27_trig_21 : std_logic_vector(0 downto 0);
+	signal U27_delayed_data_22 : std_logic_vector(15 downto 0);
+	signal U27_trig_22 : std_logic_vector(0 downto 0);
 
 COMPONENT SUBPAGE_trig
 PORT(
@@ -1187,6 +1132,37 @@ PORT(
 	GlobalClock: in std_logic_vector (0 downto 0);
 	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
 END COMPONENT;
+	signal BUS_CH1_spectrum_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_CH1_spectrum_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal REG_CH1_spectrum_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+	COMPONENT xlx_spectrum
+		GENERIC( 
+			memLength : INTEGER := 256;
+			wordWidth : INTEGER := 16
+		);
+		PORT( 
+			ENERGY : in STD_LOGIC_VECTOR(15 downto 0);
+			ENERGY_STROBE : in STD_LOGIC_VECTOR(0 downto 0);
+			P_running : out STD_LOGIC_VECTOR(0 downto 0);
+			P_acceptedPulse : out STD_LOGIC_VECTOR(0 downto 0);
+			CLK_WRITE : in STD_LOGIC_VECTOR(0 downto 0);
+			CE : in STD_LOGIC_VECTOR(0 downto 0);
+			RESET : in STD_LOGIC_VECTOR(0 downto 0);
+			CLK_READ : in STD_LOGIC_VECTOR(0 downto 0);
+			READ_ADDRESS : in STD_LOGIC_VECTOR(15 downto 0);
+			READ_DATA : out STD_LOGIC_VECTOR(31 downto 0);
+			READ_INT : in STD_LOGIC_VECTOR(0 downto 0);
+			READ_DATAVALID : out STD_LOGIC_VECTOR(0 downto 0);
+			STATUS : out STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_LIMIT : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_REBIN : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_MIN : in STD_LOGIC_VECTOR(31 downto 0);
+			CONFIG_MAX : in STD_LOGIC_VECTOR(31 downto 0)
+		);
+	END COMPONENT;
+
 	signal BUS_CH2_spectrum_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_CH2_spectrum_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal REG_CH2_spectrum_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -1196,9 +1172,6 @@ END COMPONENT;
 	signal BUS_CH4_spectrum_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_CH4_spectrum_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal REG_CH4_spectrum_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_CH5_spectrum_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal BUS_CH5_spectrum_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal REG_CH5_spectrum_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_REGFILE_0_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
 	signal BUS_REGFILE_0_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_REGFILE_0_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
@@ -1221,21 +1194,6 @@ END COMPONENT;
 	signal INT_REGFILE_0_xdelay_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_REGFILE_0_inhib_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_REGFILE_0_inhib_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_CH1_spectrum_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
-	signal BUS_CH1_spectrum_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_CH1_spectrum_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_CH1_spectrum_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_CH1_spectrum_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_CH1_spectrum_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_CH1_spectrum_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_CH1_spectrum_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_CH1_spectrum_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_CH1_spectrum_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_CH1_spectrum_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_CH1_spectrum_CONFIG_MIN_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_CH1_spectrum_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_CH1_spectrum_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_CH1_spectrum_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_INTEGRATION_REGS_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
 	signal BUS_INTEGRATION_REGS_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_INTEGRATION_REGS_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
@@ -1362,6 +1320,21 @@ END COMPONENT;
 	signal INT_CH12_spectrum_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_CH12_spectrum_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_CH12_spectrum_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_CH1_spectrum_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
+	signal BUS_CH1_spectrum_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_CH1_spectrum_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_CH1_spectrum_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_CH1_spectrum_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_CH1_spectrum_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_CH1_spectrum_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_CH1_spectrum_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_CH1_spectrum_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_CH1_spectrum_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_CH1_spectrum_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_CH1_spectrum_CONFIG_MIN_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_CH1_spectrum_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_CH1_spectrum_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_CH1_spectrum_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_CH2_spectrum_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_CH2_spectrum_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_CH2_spectrum_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -1407,21 +1380,6 @@ END COMPONENT;
 	signal INT_CH4_spectrum_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_CH4_spectrum_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_CH4_spectrum_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_CH5_spectrum_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
-	signal BUS_CH5_spectrum_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_CH5_spectrum_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_CH5_spectrum_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_CH5_spectrum_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_CH5_spectrum_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_CH5_spectrum_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_CH5_spectrum_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_CH5_spectrum_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_CH5_spectrum_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_CH5_spectrum_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_CH5_spectrum_CONFIG_MIN_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_CH5_spectrum_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_CH5_spectrum_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_CH5_spectrum_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
 	
 	component main_clock 
      port (
@@ -1898,29 +1856,6 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_REGFILE_0_inhib_WR => REG_REGFILE_0_inhib_WR,
 		INT_REGFILE_0_inhib_WR => INT_REGFILE_0_inhib_WR,
 		REG_REGFILE_0_inhib_RD => REG_REGFILE_0_inhib_WR,
-	BUS_CH1_spectrum_READ_ADDRESS => BUS_CH1_spectrum_READ_ADDRESS,
-	BUS_CH1_spectrum_READ_DATA => BUS_CH1_spectrum_READ_DATA,
-	BUS_CH1_spectrum_WRITE_DATA => BUS_CH1_spectrum_WRITE_DATA,
-	BUS_CH1_spectrum_W_INT => BUS_CH1_spectrum_W_INT,
-	BUS_CH1_spectrum_R_INT => BUS_CH1_spectrum_R_INT,
-	BUS_CH1_spectrum_VLD => BUS_CH1_spectrum_VLD,
-		REG_CH1_spectrum_STATUS_RD => REG_CH1_spectrum_STATUS_RD,
-		INT_CH1_spectrum_STATUS_RD => INT_CH1_spectrum_STATUS_RD,
-		REG_CH1_spectrum_CONFIG_WR => REG_CH1_spectrum_CONFIG_WR,
-		INT_CH1_spectrum_CONFIG_WR => INT_CH1_spectrum_CONFIG_WR,
-		REG_CH1_spectrum_CONFIG_RD => REG_CH1_spectrum_CONFIG_WR,
-		REG_CH1_spectrum_CONFIG_LIMIT_WR => REG_CH1_spectrum_CONFIG_LIMIT_WR,
-		INT_CH1_spectrum_CONFIG_LIMIT_WR => INT_CH1_spectrum_CONFIG_LIMIT_WR,
-		REG_CH1_spectrum_CONFIG_LIMIT_RD => REG_CH1_spectrum_CONFIG_LIMIT_WR,
-		REG_CH1_spectrum_CONFIG_REBIN_WR => REG_CH1_spectrum_CONFIG_REBIN_WR,
-		INT_CH1_spectrum_CONFIG_REBIN_WR => INT_CH1_spectrum_CONFIG_REBIN_WR,
-		REG_CH1_spectrum_CONFIG_REBIN_RD => REG_CH1_spectrum_CONFIG_REBIN_WR,
-		REG_CH1_spectrum_CONFIG_MIN_WR => REG_CH1_spectrum_CONFIG_MIN_WR,
-		INT_CH1_spectrum_CONFIG_MIN_WR => INT_CH1_spectrum_CONFIG_MIN_WR,
-		REG_CH1_spectrum_CONFIG_MIN_RD => REG_CH1_spectrum_CONFIG_MIN_WR,
-		REG_CH1_spectrum_CONFIG_MAX_WR => REG_CH1_spectrum_CONFIG_MAX_WR,
-		INT_CH1_spectrum_CONFIG_MAX_WR => INT_CH1_spectrum_CONFIG_MAX_WR,
-		REG_CH1_spectrum_CONFIG_MAX_RD => REG_CH1_spectrum_CONFIG_MAX_WR,
 	BUS_INTEGRATION_REGS_READ_DATA => BUS_INTEGRATION_REGS_READ_DATA,
 	BUS_INTEGRATION_REGS_WRITE_DATA => BUS_INTEGRATION_REGS_WRITE_DATA,
 	BUS_INTEGRATION_REGS_W_INT => BUS_INTEGRATION_REGS_W_INT,
@@ -2082,6 +2017,29 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_CH12_spectrum_CONFIG_MAX_WR => REG_CH12_spectrum_CONFIG_MAX_WR,
 		INT_CH12_spectrum_CONFIG_MAX_WR => INT_CH12_spectrum_CONFIG_MAX_WR,
 		REG_CH12_spectrum_CONFIG_MAX_RD => REG_CH12_spectrum_CONFIG_MAX_WR,
+	BUS_CH1_spectrum_READ_ADDRESS => BUS_CH1_spectrum_READ_ADDRESS,
+	BUS_CH1_spectrum_READ_DATA => BUS_CH1_spectrum_READ_DATA,
+	BUS_CH1_spectrum_WRITE_DATA => BUS_CH1_spectrum_WRITE_DATA,
+	BUS_CH1_spectrum_W_INT => BUS_CH1_spectrum_W_INT,
+	BUS_CH1_spectrum_R_INT => BUS_CH1_spectrum_R_INT,
+	BUS_CH1_spectrum_VLD => BUS_CH1_spectrum_VLD,
+		REG_CH1_spectrum_STATUS_RD => REG_CH1_spectrum_STATUS_RD,
+		INT_CH1_spectrum_STATUS_RD => INT_CH1_spectrum_STATUS_RD,
+		REG_CH1_spectrum_CONFIG_WR => REG_CH1_spectrum_CONFIG_WR,
+		INT_CH1_spectrum_CONFIG_WR => INT_CH1_spectrum_CONFIG_WR,
+		REG_CH1_spectrum_CONFIG_RD => REG_CH1_spectrum_CONFIG_WR,
+		REG_CH1_spectrum_CONFIG_LIMIT_WR => REG_CH1_spectrum_CONFIG_LIMIT_WR,
+		INT_CH1_spectrum_CONFIG_LIMIT_WR => INT_CH1_spectrum_CONFIG_LIMIT_WR,
+		REG_CH1_spectrum_CONFIG_LIMIT_RD => REG_CH1_spectrum_CONFIG_LIMIT_WR,
+		REG_CH1_spectrum_CONFIG_REBIN_WR => REG_CH1_spectrum_CONFIG_REBIN_WR,
+		INT_CH1_spectrum_CONFIG_REBIN_WR => INT_CH1_spectrum_CONFIG_REBIN_WR,
+		REG_CH1_spectrum_CONFIG_REBIN_RD => REG_CH1_spectrum_CONFIG_REBIN_WR,
+		REG_CH1_spectrum_CONFIG_MIN_WR => REG_CH1_spectrum_CONFIG_MIN_WR,
+		INT_CH1_spectrum_CONFIG_MIN_WR => INT_CH1_spectrum_CONFIG_MIN_WR,
+		REG_CH1_spectrum_CONFIG_MIN_RD => REG_CH1_spectrum_CONFIG_MIN_WR,
+		REG_CH1_spectrum_CONFIG_MAX_WR => REG_CH1_spectrum_CONFIG_MAX_WR,
+		INT_CH1_spectrum_CONFIG_MAX_WR => INT_CH1_spectrum_CONFIG_MAX_WR,
+		REG_CH1_spectrum_CONFIG_MAX_RD => REG_CH1_spectrum_CONFIG_MAX_WR,
 	BUS_CH2_spectrum_READ_ADDRESS => BUS_CH2_spectrum_READ_ADDRESS,
 	BUS_CH2_spectrum_READ_DATA => BUS_CH2_spectrum_READ_DATA,
 	BUS_CH2_spectrum_WRITE_DATA => BUS_CH2_spectrum_WRITE_DATA,
@@ -2151,29 +2109,6 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_CH4_spectrum_CONFIG_MAX_WR => REG_CH4_spectrum_CONFIG_MAX_WR,
 		INT_CH4_spectrum_CONFIG_MAX_WR => INT_CH4_spectrum_CONFIG_MAX_WR,
 		REG_CH4_spectrum_CONFIG_MAX_RD => REG_CH4_spectrum_CONFIG_MAX_WR,
-	BUS_CH5_spectrum_READ_ADDRESS => BUS_CH5_spectrum_READ_ADDRESS,
-	BUS_CH5_spectrum_READ_DATA => BUS_CH5_spectrum_READ_DATA,
-	BUS_CH5_spectrum_WRITE_DATA => BUS_CH5_spectrum_WRITE_DATA,
-	BUS_CH5_spectrum_W_INT => BUS_CH5_spectrum_W_INT,
-	BUS_CH5_spectrum_R_INT => BUS_CH5_spectrum_R_INT,
-	BUS_CH5_spectrum_VLD => BUS_CH5_spectrum_VLD,
-		REG_CH5_spectrum_STATUS_RD => REG_CH5_spectrum_STATUS_RD,
-		INT_CH5_spectrum_STATUS_RD => INT_CH5_spectrum_STATUS_RD,
-		REG_CH5_spectrum_CONFIG_WR => REG_CH5_spectrum_CONFIG_WR,
-		INT_CH5_spectrum_CONFIG_WR => INT_CH5_spectrum_CONFIG_WR,
-		REG_CH5_spectrum_CONFIG_RD => REG_CH5_spectrum_CONFIG_WR,
-		REG_CH5_spectrum_CONFIG_LIMIT_WR => REG_CH5_spectrum_CONFIG_LIMIT_WR,
-		INT_CH5_spectrum_CONFIG_LIMIT_WR => INT_CH5_spectrum_CONFIG_LIMIT_WR,
-		REG_CH5_spectrum_CONFIG_LIMIT_RD => REG_CH5_spectrum_CONFIG_LIMIT_WR,
-		REG_CH5_spectrum_CONFIG_REBIN_WR => REG_CH5_spectrum_CONFIG_REBIN_WR,
-		INT_CH5_spectrum_CONFIG_REBIN_WR => INT_CH5_spectrum_CONFIG_REBIN_WR,
-		REG_CH5_spectrum_CONFIG_REBIN_RD => REG_CH5_spectrum_CONFIG_REBIN_WR,
-		REG_CH5_spectrum_CONFIG_MIN_WR => REG_CH5_spectrum_CONFIG_MIN_WR,
-		INT_CH5_spectrum_CONFIG_MIN_WR => INT_CH5_spectrum_CONFIG_MIN_WR,
-		REG_CH5_spectrum_CONFIG_MIN_RD => REG_CH5_spectrum_CONFIG_MIN_WR,
-		REG_CH5_spectrum_CONFIG_MAX_WR => REG_CH5_spectrum_CONFIG_MAX_WR,
-		INT_CH5_spectrum_CONFIG_MAX_WR => INT_CH5_spectrum_CONFIG_MAX_WR,
-		REG_CH5_spectrum_CONFIG_MAX_RD => REG_CH5_spectrum_CONFIG_MAX_WR,
 		REG_UNIQUE_RD => x"4A1769B3",
 		REG_UNIQUE_WR => open,
    
@@ -2276,11 +2211,11 @@ U23_gate_u <= REG_REGFILE_0_gate_u_WR( 15 downto 0 );
 U23_delay <= REG_REGFILE_0_delay_WR( 15 downto 0 );
 U23_xdelay <= REG_REGFILE_0_xdelay_WR( 15 downto 0 );
 U23_inhib <= REG_REGFILE_0_inhib_WR( 15 downto 0 );
-U24_OUT <= U28_trig_0 OR U28_trig_1 OR U28_trig_2 OR U28_trig_3 OR U28_trig_4 OR U28_trig_5 OR U28_trig_6 OR U28_trig_7 OR U28_trig_8 OR U28_trig_9 OR U28_trig_10 OR U28_trig_11 OR U28_trig_12 OR U28_trig_13 OR U28_trig_14 OR U28_trig_15 OR U28_trig_16 OR U28_trig_17 OR U28_trig_18 OR U28_trig_19 OR U28_trig_20 OR U28_trig_21 OR U28_trig_22;
+U24_OUT <= U27_trig_0 OR U27_trig_1 OR U27_trig_2 OR U27_trig_3 OR U27_trig_4 OR U27_trig_5 OR U27_trig_6 OR U27_trig_7 OR U27_trig_8 OR U27_trig_9 OR U27_trig_10 OR U27_trig_11 OR U27_trig_12 OR U27_trig_13 OR U27_trig_14 OR U27_trig_15 OR U27_trig_16 OR U27_trig_17 OR U27_trig_18 OR U27_trig_19 OR U27_trig_20 OR U27_trig_21 OR U27_trig_22;
 
 U25_0:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_0,
+	data_in => U27_delayed_data_0,
 	E => U25_E_0,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2310,7 +2245,7 @@ PORT MAP(
 
 U25_1:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_1,
+	data_in => U27_delayed_data_1,
 	E => U25_E_1,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2340,7 +2275,7 @@ PORT MAP(
 
 U25_2:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_2,
+	data_in => U27_delayed_data_2,
 	E => U25_E_2,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2370,7 +2305,7 @@ PORT MAP(
 
 U25_3:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_3,
+	data_in => U27_delayed_data_3,
 	E => U25_E_3,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2400,8 +2335,8 @@ PORT MAP(
 
 U25_4:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_4,
-	E => U25_E_4,
+	data_in => U27_delayed_data_4,
+	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
 	inttime => U26_inttime,
@@ -2430,7 +2365,7 @@ PORT MAP(
 
 U25_5:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_5,
+	data_in => U27_delayed_data_5,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2460,7 +2395,7 @@ PORT MAP(
 
 U25_6:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_6,
+	data_in => U27_delayed_data_6,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2490,7 +2425,7 @@ PORT MAP(
 
 U25_7:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_7,
+	data_in => U27_delayed_data_7,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2520,7 +2455,7 @@ PORT MAP(
 
 U25_8:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_8,
+	data_in => U27_delayed_data_8,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2550,7 +2485,7 @@ PORT MAP(
 
 U25_9:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_9,
+	data_in => U27_delayed_data_9,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2580,7 +2515,7 @@ PORT MAP(
 
 U25_10:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_10,
+	data_in => U27_delayed_data_10,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2610,7 +2545,7 @@ PORT MAP(
 
 U25_11:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_11,
+	data_in => U27_delayed_data_11,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2640,7 +2575,7 @@ PORT MAP(
 
 U25_12:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_12,
+	data_in => U27_delayed_data_12,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2670,7 +2605,7 @@ PORT MAP(
 
 U25_13:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_13,
+	data_in => U27_delayed_data_13,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2700,7 +2635,7 @@ PORT MAP(
 
 U25_14:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_14,
+	data_in => U27_delayed_data_14,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2730,7 +2665,7 @@ PORT MAP(
 
 U25_15:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_15,
+	data_in => U27_delayed_data_15,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2760,7 +2695,7 @@ PORT MAP(
 
 U25_16:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_16,
+	data_in => U27_delayed_data_16,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2790,7 +2725,7 @@ PORT MAP(
 
 U25_17:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_17,
+	data_in => U27_delayed_data_17,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2820,7 +2755,7 @@ PORT MAP(
 
 U25_18:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_18,
+	data_in => U27_delayed_data_18,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2850,7 +2785,7 @@ PORT MAP(
 
 U25_19:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_19,
+	data_in => U27_delayed_data_19,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2880,7 +2815,7 @@ PORT MAP(
 
 U25_20:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_20,
+	data_in => U27_delayed_data_20,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2910,7 +2845,7 @@ PORT MAP(
 
 U25_21:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_21,
+	data_in => U27_delayed_data_21,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2940,7 +2875,7 @@ PORT MAP(
 
 U25_22:SUBPAGE_int
 PORT MAP(
-	data_in => U28_delayed_data_22,
+	data_in => U27_delayed_data_22,
 	E => open,
 	Int_gate => open,
 	trig => U24_OUT,
@@ -2974,9 +2909,745 @@ U26_ofs <= REG_INTEGRATION_REGS_ofs_WR( 15 downto 0 );
 U26_bl <= REG_INTEGRATION_REGS_bl_WR( 15 downto 0 );
 U26_pileup <= REG_INTEGRATION_REGS_pileup_WR( 15 downto 0 );
 
-	U27 : xlx_spectrum
+U27_0:SUBPAGE_trig
+PORT MAP(
+	AIN => U0_A1,
+	delayed_data => U27_delayed_data_0,
+	OG_data => open,
+	trig => U27_trig_0,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_1:SUBPAGE_trig
+PORT MAP(
+	AIN => U1_A2,
+	delayed_data => U27_delayed_data_1,
+	OG_data => open,
+	trig => U27_trig_1,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_2:SUBPAGE_trig
+PORT MAP(
+	AIN => U2_A3,
+	delayed_data => U27_delayed_data_2,
+	OG_data => open,
+	trig => U27_trig_2,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_3:SUBPAGE_trig
+PORT MAP(
+	AIN => U3_A4,
+	delayed_data => U27_delayed_data_3,
+	OG_data => open,
+	trig => U27_trig_3,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_4:SUBPAGE_trig
+PORT MAP(
+	AIN => U4_A5,
+	delayed_data => U27_delayed_data_4,
+	OG_data => open,
+	trig => U27_trig_4,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_5:SUBPAGE_trig
+PORT MAP(
+	AIN => U5_A6,
+	delayed_data => U27_delayed_data_5,
+	OG_data => open,
+	trig => U27_trig_5,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_6:SUBPAGE_trig
+PORT MAP(
+	AIN => U6_A7,
+	delayed_data => U27_delayed_data_6,
+	OG_data => open,
+	trig => U27_trig_6,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_7:SUBPAGE_trig
+PORT MAP(
+	AIN => U7_A8,
+	delayed_data => U27_delayed_data_7,
+	OG_data => open,
+	trig => U27_trig_7,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_8:SUBPAGE_trig
+PORT MAP(
+	AIN => U8_A9,
+	delayed_data => U27_delayed_data_8,
+	OG_data => open,
+	trig => U27_trig_8,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_9:SUBPAGE_trig
+PORT MAP(
+	AIN => U9_A10,
+	delayed_data => U27_delayed_data_9,
+	OG_data => open,
+	trig => U27_trig_9,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_10:SUBPAGE_trig
+PORT MAP(
+	AIN => U10_A11,
+	delayed_data => U27_delayed_data_10,
+	OG_data => open,
+	trig => U27_trig_10,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_11:SUBPAGE_trig
+PORT MAP(
+	AIN => U11_A12,
+	delayed_data => U27_delayed_data_11,
+	OG_data => open,
+	trig => U27_trig_11,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_12:SUBPAGE_trig
+PORT MAP(
+	AIN => U12_A13,
+	delayed_data => U27_delayed_data_12,
+	OG_data => open,
+	trig => U27_trig_12,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_13:SUBPAGE_trig
+PORT MAP(
+	AIN => U13_A14,
+	delayed_data => U27_delayed_data_13,
+	OG_data => open,
+	trig => U27_trig_13,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_14:SUBPAGE_trig
+PORT MAP(
+	AIN => U14_A15,
+	delayed_data => U27_delayed_data_14,
+	OG_data => open,
+	trig => U27_trig_14,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_15:SUBPAGE_trig
+PORT MAP(
+	AIN => U15_A16,
+	delayed_data => U27_delayed_data_15,
+	OG_data => open,
+	trig => U27_trig_15,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_16:SUBPAGE_trig
+PORT MAP(
+	AIN => U16_A17,
+	delayed_data => U27_delayed_data_16,
+	OG_data => open,
+	trig => U27_trig_16,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_17:SUBPAGE_trig
+PORT MAP(
+	AIN => U17_A18,
+	delayed_data => U27_delayed_data_17,
+	OG_data => open,
+	trig => U27_trig_17,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_18:SUBPAGE_trig
+PORT MAP(
+	AIN => U18_A19,
+	delayed_data => U27_delayed_data_18,
+	OG_data => open,
+	trig => U27_trig_18,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_19:SUBPAGE_trig
+PORT MAP(
+	AIN => U19_A20,
+	delayed_data => U27_delayed_data_19,
+	OG_data => open,
+	trig => U27_trig_19,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_20:SUBPAGE_trig
+PORT MAP(
+	AIN => U20_A21,
+	delayed_data => U27_delayed_data_20,
+	OG_data => open,
+	trig => U27_trig_20,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_21:SUBPAGE_trig
+PORT MAP(
+	AIN => U21_A22,
+	delayed_data => U27_delayed_data_21,
+	OG_data => open,
+	trig => U27_trig_21,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U27_22:SUBPAGE_trig
+PORT MAP(
+	AIN => U22_A23,
+	delayed_data => U27_delayed_data_22,
+	OG_data => open,
+	trig => U27_trig_22,
+	pol => U23_pol,
+	hithrs => U23_hi_thrs,
+	lothrs => U23_lo_thrs,
+	delay => U23_delay,
+	xdelay => U23_xdelay,
+	inhib => U23_inhib,
+	gate_u => U23_gate_u,
+	gate_l => U23_gate_l,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+	U28 : xlx_spectrum
 	Generic map(
-		memLength => 	1024,
+		memLength => 	256,
 		wordWidth => 	16
 	)
 	PORT MAP(
@@ -3001,745 +3672,9 @@ U26_pileup <= REG_INTEGRATION_REGS_pileup_WR( 15 downto 0 );
 	);
 
 
-U28_0:SUBPAGE_trig
-PORT MAP(
-	AIN => U0_A1,
-	delayed_data => U28_delayed_data_0,
-	OG_data => open,
-	trig => U28_trig_0,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_1:SUBPAGE_trig
-PORT MAP(
-	AIN => U1_A2,
-	delayed_data => U28_delayed_data_1,
-	OG_data => open,
-	trig => U28_trig_1,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_2:SUBPAGE_trig
-PORT MAP(
-	AIN => U2_A3,
-	delayed_data => U28_delayed_data_2,
-	OG_data => open,
-	trig => U28_trig_2,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_3:SUBPAGE_trig
-PORT MAP(
-	AIN => U3_A4,
-	delayed_data => U28_delayed_data_3,
-	OG_data => open,
-	trig => U28_trig_3,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_4:SUBPAGE_trig
-PORT MAP(
-	AIN => U4_A5,
-	delayed_data => U28_delayed_data_4,
-	OG_data => open,
-	trig => U28_trig_4,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_5:SUBPAGE_trig
-PORT MAP(
-	AIN => U5_A6,
-	delayed_data => U28_delayed_data_5,
-	OG_data => open,
-	trig => U28_trig_5,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_6:SUBPAGE_trig
-PORT MAP(
-	AIN => U6_A7,
-	delayed_data => U28_delayed_data_6,
-	OG_data => open,
-	trig => U28_trig_6,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_7:SUBPAGE_trig
-PORT MAP(
-	AIN => U7_A8,
-	delayed_data => U28_delayed_data_7,
-	OG_data => open,
-	trig => U28_trig_7,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_8:SUBPAGE_trig
-PORT MAP(
-	AIN => U8_A9,
-	delayed_data => U28_delayed_data_8,
-	OG_data => open,
-	trig => U28_trig_8,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_9:SUBPAGE_trig
-PORT MAP(
-	AIN => U9_A10,
-	delayed_data => U28_delayed_data_9,
-	OG_data => open,
-	trig => U28_trig_9,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_10:SUBPAGE_trig
-PORT MAP(
-	AIN => U10_A11,
-	delayed_data => U28_delayed_data_10,
-	OG_data => open,
-	trig => U28_trig_10,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_11:SUBPAGE_trig
-PORT MAP(
-	AIN => U11_A12,
-	delayed_data => U28_delayed_data_11,
-	OG_data => open,
-	trig => U28_trig_11,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_12:SUBPAGE_trig
-PORT MAP(
-	AIN => U12_A13,
-	delayed_data => U28_delayed_data_12,
-	OG_data => open,
-	trig => U28_trig_12,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_13:SUBPAGE_trig
-PORT MAP(
-	AIN => U13_A14,
-	delayed_data => U28_delayed_data_13,
-	OG_data => open,
-	trig => U28_trig_13,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_14:SUBPAGE_trig
-PORT MAP(
-	AIN => U14_A15,
-	delayed_data => U28_delayed_data_14,
-	OG_data => open,
-	trig => U28_trig_14,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_15:SUBPAGE_trig
-PORT MAP(
-	AIN => U15_A16,
-	delayed_data => U28_delayed_data_15,
-	OG_data => open,
-	trig => U28_trig_15,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_16:SUBPAGE_trig
-PORT MAP(
-	AIN => U16_A17,
-	delayed_data => U28_delayed_data_16,
-	OG_data => open,
-	trig => U28_trig_16,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_17:SUBPAGE_trig
-PORT MAP(
-	AIN => U17_A18,
-	delayed_data => U28_delayed_data_17,
-	OG_data => open,
-	trig => U28_trig_17,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_18:SUBPAGE_trig
-PORT MAP(
-	AIN => U18_A19,
-	delayed_data => U28_delayed_data_18,
-	OG_data => open,
-	trig => U28_trig_18,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_19:SUBPAGE_trig
-PORT MAP(
-	AIN => U19_A20,
-	delayed_data => U28_delayed_data_19,
-	OG_data => open,
-	trig => U28_trig_19,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_20:SUBPAGE_trig
-PORT MAP(
-	AIN => U20_A21,
-	delayed_data => U28_delayed_data_20,
-	OG_data => open,
-	trig => U28_trig_20,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_21:SUBPAGE_trig
-PORT MAP(
-	AIN => U21_A22,
-	delayed_data => U28_delayed_data_21,
-	OG_data => open,
-	trig => U28_trig_21,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U28_22:SUBPAGE_trig
-PORT MAP(
-	AIN => U22_A23,
-	delayed_data => U28_delayed_data_22,
-	OG_data => open,
-	trig => U28_trig_22,
-	pol => U23_pol,
-	hithrs => U23_hi_thrs,
-	lothrs => U23_lo_thrs,
-	delay => U23_delay,
-	xdelay => U23_xdelay,
-	inhib => U23_inhib,
-	gate_u => U23_gate_u,
-	gate_l => U23_gate_l,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
 	U29 : xlx_spectrum
 	Generic map(
-		memLength => 	1024,
+		memLength => 	256,
 		wordWidth => 	16
 	)
 	PORT MAP(
@@ -3766,7 +3701,7 @@ PORT MAP(
 
 	U30 : xlx_spectrum
 	Generic map(
-		memLength => 	1024,
+		memLength => 	256,
 		wordWidth => 	16
 	)
 	PORT MAP(
@@ -3793,7 +3728,7 @@ PORT MAP(
 
 	U31 : xlx_spectrum
 	Generic map(
-		memLength => 	1024,
+		memLength => 	256,
 		wordWidth => 	16
 	)
 	PORT MAP(
@@ -3815,33 +3750,6 @@ PORT MAP(
 		CONFIG_REBIN => REG_CH4_spectrum_CONFIG_REBIN_WR,
 		CONFIG_MIN => REG_CH4_spectrum_CONFIG_MIN_WR,
 		CONFIG_MAX => REG_CH4_spectrum_CONFIG_MAX_WR
-	);
-
-
-	U32 : xlx_spectrum
-	Generic map(
-		memLength => 	1024,
-		wordWidth => 	16
-	)
-	PORT MAP(
-		ENERGY => U25_E_4,
-		ENERGY_STROBE => U24_OUT,
-		P_running => open,
-		P_acceptedPulse => open,
-		CLK_WRITE => CLK_ACQ,
-		CE => "1",
-		RESET => "0",
-		CLK_READ => BUS_CLK,
-		READ_ADDRESS => BUS_CH5_spectrum_READ_ADDRESS,
-		READ_DATA => BUS_CH5_spectrum_READ_DATA,
-		READ_INT => BUS_CH5_spectrum_R_INT,
-		READ_DATAVALID => BUS_CH5_spectrum_VLD,
-		STATUS => REG_CH5_spectrum_STATUS_RD,
-		CONFIG => REG_CH5_spectrum_CONFIG_WR,
-		CONFIG_LIMIT => REG_CH5_spectrum_CONFIG_LIMIT_WR,
-		CONFIG_REBIN => REG_CH5_spectrum_CONFIG_REBIN_WR,
-		CONFIG_MIN => REG_CH5_spectrum_CONFIG_MIN_WR,
-		CONFIG_MAX => REG_CH5_spectrum_CONFIG_MAX_WR
 	);
 
 REG_FIRMWARE_BUILD <= x"20240703";
