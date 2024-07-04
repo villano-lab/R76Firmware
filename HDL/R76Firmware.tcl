@@ -32,9 +32,9 @@ add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/scaler.vh
 add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/SW_GATE_AND_DELAY.vhd
 add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/TimestampGenerator.vhd
 add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/trigger_leading.vhd
-add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/U105_custompacket.vhd
-add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/U107_UserHDL_Serial_Tx.vhd
-add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/U110_UserHDL_Serial_Rx.vhd
+add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/U103_custompacket.vhd
+add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/U105_UserHDL_Serial_Tx.vhd
+add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/U108_UserHDL_Serial_Rx.vhd
 add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/xlx_delay.vhd
 add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/xlx_oscilloscope_sync.vhd
 add_files -force C:/Users/CDMS/Documents/GitHub/R76Firmware/HDL/pcores/xlx_soft_gd.vhd

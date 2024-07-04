@@ -9,7 +9,7 @@
     Library xpm;
     use xpm.vcomponents.all;
 
-entity U105_custompacket is
+entity U166_custompacket is
   Generic (	wordWidth : integer := 32;
 			memLength : integer := 4096);
   port (
@@ -49,9 +49,8 @@ entity U105_custompacket is
 	IN_31 : STD_LOGIC_VECTOR(15 downto 0);
 	IN_32 : STD_LOGIC_VECTOR(15 downto 0);
 	IN_33 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_1 : STD_LOGIC_VECTOR(31 downto 0);
 	IN_34 : STD_LOGIC_VECTOR(31 downto 0);
-	IN_35 : STD_LOGIC_VECTOR(31 downto 0);
-	IN_1 : STD_LOGIC_VECTOR(15 downto 0);
 
 	
 	TRIG : IN STD_LOGIC_VECTOR (0 DOWNTO 0);
@@ -73,7 +72,7 @@ entity U105_custompacket is
 	FIFO_FULL: OUT STD_LOGIC_VECTOR (0 downto 0)
 	);
 end;
-    architecture Behavioral of  U105_custompacket  is
+    architecture Behavioral of  U166_custompacket  is
     constant MaxPacketSize : integer := 19;
 	constant TotalWords : integer := memLength;
 	
@@ -116,9 +115,8 @@ end;
 	signal lIN_31 : STD_LOGIC_VECTOR(15 downto 0);
 	signal lIN_32 : STD_LOGIC_VECTOR(15 downto 0);
 	signal lIN_33 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_1 : STD_LOGIC_VECTOR(31 downto 0);
 	signal lIN_34 : STD_LOGIC_VECTOR(31 downto 0);
-	signal lIN_35 : STD_LOGIC_VECTOR(31 downto 0);
-	signal lIN_1 : STD_LOGIC_VECTOR(15 downto 0);
 
 
 	signal FIFO_PORT_IN : STD_LOGIC_VECTOR (31 DOWNTO 0); 
@@ -270,14 +268,15 @@ end;
 		elsif rising_edge(CLK_WRITE(0)) then
 			FIFO_FLUSH <= CONFIG (2);
 			FIFO_WE <= '0';
-			oTrig <= TRIG(0);
+			iTrig <= TRIG(0);
+			oTrig <= iTrig;
             
             RUN(0) <= CONFIG (0);
 
 			case SMSI is
 				when 0 =>
 					BUSY(0) <= (not CONFIG (0)) or  FIFO_FULL_IN ;
-					if TRIG(0) = '1' and oTrig = '0' and CONFIG (0) = '1' and FIFO_FULL_IN = '0' then
+					if iTrig = '1' and oTrig = '0' and CONFIG (0) = '1' and FIFO_FULL_IN = '0' then
 						SMSI <= 1;
 						COUNTER_IN <= COUNTER_IN +1;
 						BUSY <= "1";
@@ -313,27 +312,23 @@ lIN_30 <= IN_30;
 lIN_31 <= IN_31;
 lIN_32 <= IN_32;
 lIN_33 <= IN_33;
-lIN_34 <= IN_34;
-lIN_35 <= IN_35;
 lIN_1 <= IN_1;
+lIN_34 <= IN_34;
 
 					end if;
 						 when 1 =>
 		 FIFO_PORT_IN <= (others => '0');
-		 FIFO_PORT_IN(31 downto 0) <= lIN_35(31 downto 0);
+		 FIFO_PORT_IN(31 downto 0) <= x"80000000";
 FIFO_WE <= '1';
 SMSI <= 2;
 		 when 2 =>
 		 FIFO_PORT_IN <= (others => '0');
-		 FIFO_PORT_IN(31 downto 0) <= lIN_34(31 downto 0);
+		 FIFO_PORT_IN(31 downto 0) <= lIN_1(31 downto 0);
 FIFO_WE <= '1';
 SMSI <= 3;
 		 when 3 =>
 		 FIFO_PORT_IN <= (others => '0');
-		 FIFO_PORT_IN(31 downto 16) <= lIN_1(15 downto 0);
-FIFO_WE <= '1';
-SMSI <= 4;
-		 FIFO_PORT_IN(15 downto 0) <= x"c001";
+		 FIFO_PORT_IN(31 downto 0) <= lIN_34(31 downto 0);
 FIFO_WE <= '1';
 SMSI <= 4;
 		 when 4 =>
