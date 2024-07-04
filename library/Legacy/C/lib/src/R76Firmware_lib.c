@@ -54,7 +54,7 @@
 
 SCILIB int R_Init()
 {
-
+	return 0;
 }
 
 
@@ -6473,7 +6473,7 @@ return __abstracted_mem_read(val, channels, SCI_REG_SyncIn_FIFOADDRESS+512, time
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6653,7 +6653,7 @@ return __abstracted_reg_read(status, SCI_REG_Analog_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Analog_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Analog_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Analog_READ_POSITION, handle);
 
@@ -7014,7 +7014,7 @@ return __abstracted_reg_read(status, SCI_REG_Energies_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Energies_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Energies_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Energies_READ_POSITION, handle);
 
@@ -7195,7 +7195,7 @@ return 0;
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7206,7 +7206,7 @@ return 0;
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Analog_In_Unflipped_START(NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Analog_START(NI_HANDLE *handle)
 
 {
 int r1 = __abstracted_reg_write(0,SCI_REG_Analog_In_Unflipped_CONFIG_ARM, handle);
@@ -7226,7 +7226,7 @@ else
 //- ARGUMENTS:
 //- 	       decimator   PARAM_IN    int32_t
 //- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             pre   PARAM_IN    int32_t
@@ -7359,12 +7359,12 @@ return __abstracted_reg_read(status, SCI_REG_Analog_In_Unflipped_READ_STATUS, ha
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7375,7 +7375,7 @@ return __abstracted_reg_read(status, SCI_REG_Analog_In_Unflipped_READ_STATUS, ha
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Analog_In_Unflipped_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Analog_In_Unflipped_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Analog_In_Unflipped_READ_POSITION, handle);
 
@@ -7385,20 +7385,20 @@ return __abstracted_reg_read(position, SCI_REG_Analog_In_Unflipped_READ_POSITION
 //- OSCILLOSCOPE_Analog_In_Unflipped_DOWNLOAD
 //-
 //- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Analog_In_UnflippedPOSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Analog_In_Unflipped_DOWNLOAD(data_buffer, BUFFER_SIZE_Analog_In_Unflipped, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Analog_In_Unflipped to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
@@ -7561,7 +7561,7 @@ return __abstracted_reg_write(1,SCI_REG_All_Energies_CONFIG, handle);
 //-
 //- CPACK_All_Energies_STOP
 //-
-//- Start acquisition.
+//- Stop acquisition.
 //-
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -7778,19 +7778,19 @@ return __abstracted_fifo_read(val, size, SCI_REG_All_Energies_FIFOADDRESS, SCI_R
 //-   .... initialize frame transfer ....
 //-   while (1){
 //-     CPACK_CP0_DOWNLOAD(&data_frame, N_Packet * (PacketSize), timeout_frame, &handle, &read_data_frame, &valid_data_frame); 
-//-     Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued); 
-//-     if (CPACK_CP_0_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets) == 0) { 
+//-     Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
+//-     if (CPACK_CP_0_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets) == 0) {
 //-         .... process data contained in decoded_packets....
 //-         free_FRAME_packet_collectionvoid(&decoded_packets);
 //-     }
-//- 
-//- 
-//- 
-//- 
+//-
+//-
+//-
+//-
 //- THIS FUNCTION MUST BE CONFIGURED IN FUNCTION OF THE PACKET LAYOUT DEFINED IN THE TOOL!
-//- 
-//- 
-//- 
+//-
+//-
+//-
 //- This Is just the skeleton for the decoded function!
 //- In the state 3 of the thate machine in the code the packet decoder extract every line from the packet
 //- for example if the payload of your packet Is 8 channels of 16 bits alligned 2 channels per row
@@ -7811,17 +7811,17 @@ return __abstracted_fifo_read(val, size, SCI_REG_All_Energies_FIFOADDRESS, SCI_R
 //- 5:   IN2             %%32 BIT DATA                       Decoded in state 3
 //- 6:   IN3             %%32 BIT DATA                       Decoded in state 3
 //- 7:   IN4             %%32 BIT DATA                       Decoded in state 3
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	   buffer_handle   PARAM_IN       void
 //- 		void pointer to the allocated memory area
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	 decoded_packets  PARAM_OUT t_FRAME_packet_collection
 //- 		Output vector containing the decoded data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7865,7 +7865,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 		circular_buf_get(cbuf, &mpe);
 
 		if (in_sync == 0) {
-			if (mpe != 0xIN_35)
+			if (mpe != 0x80000000 && mpe != 0x4a14a14a)
 			{
 				continue;
 			}
@@ -8097,17 +8097,17 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8118,9 +8118,7 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_10_CONFIG_REBIN, handle);
      limit = (1 << (limit_mode + 29)) + limit_value; 
@@ -8140,7 +8138,7 @@ SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
@@ -8389,12 +8387,12 @@ return __abstracted_reg_read(status, SCI_REG_diag_READ_STATUS, handle);
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8405,7 +8403,7 @@ return __abstracted_reg_read(status, SCI_REG_diag_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_diag_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_diag_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_diag_READ_POSITION, handle);
 
@@ -8415,20 +8413,20 @@ return __abstracted_reg_read(position, SCI_REG_diag_READ_POSITION, handle);
 //- OSCILLOSCOPE_diag_DOWNLOAD
 //-
 //- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_diagPOSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_diag_DOWNLOAD(data_buffer, BUFFER_SIZE_diag, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_diag to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
