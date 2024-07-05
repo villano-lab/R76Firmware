@@ -1,0 +1,9 @@
+NaI Array Channel/Energy Correlations
+
+Background Calibration
+Peak 1 = Channel 250, 1462 keV (Potassium-40)
+Peak 2 = Channel 400, 2600 keV (Thalium-208)
+
+Na-22 Calibration
+Peak 1 = Channel 90, 511 keV
+Peak 2 = Channel 200, 1274 keV
