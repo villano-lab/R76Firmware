@@ -661,29 +661,6 @@ entity avalon_wrapper is
 		REG_Spectrum_11_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_11_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_11_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_23_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_Spectrum_23_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_23_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_23_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Spectrum_23_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Spectrum_23_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_23_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_23_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_23_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_23_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Syncs_READ_ADDRESS : OUT STD_LOGIC_VECTOR(11 downto 0); 
 	BUS_Syncs_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Syncs_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1126,7 +1103,30 @@ entity avalon_wrapper is
 		REG_Spectrum_10_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_10_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_10_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_diag_READ_ADDRESS : OUT STD_LOGIC_VECTOR(12 downto 0); 
+	BUS_Spectrum_23_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
+	BUS_Spectrum_23_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Spectrum_23_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Spectrum_23_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Spectrum_23_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Spectrum_23_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_23_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_23_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_23_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_23_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_diag_READ_ADDRESS : OUT STD_LOGIC_VECTOR(11 downto 0); 
 	BUS_diag_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_diag_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_diag_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
@@ -1214,12 +1214,12 @@ BUS_Spectrum_9_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00260000" A
 BUS_SyncIn_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00280000" And addr < x"00290000") else (others => '0');BUS_Spectrum_21_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002A0000" And addr < x"002B0000") else '0';
 BUS_Spectrum_21_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002A0000" And addr < x"002B0000") else (others => '0');BUS_Spectrum_22_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002C0000" And addr < x"002D0000") else '0';
 BUS_Spectrum_22_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002C0000" And addr < x"002D0000") else (others => '0');BUS_Spectrum_11_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002E0000" And addr < x"002F0000") else '0';
-BUS_Spectrum_11_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002E0000" And addr < x"002F0000") else (others => '0');BUS_Spectrum_23_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00300000" And addr < x"00310000") else '0';
-BUS_Spectrum_23_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00300000" And addr < x"00310000") else (others => '0');BUS_Syncs_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00311000" And addr < x"00312000") else '0';
-BUS_Syncs_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"00311000" And addr < x"00312000") else (others => '0');BUS_Analog_In_Unflipped_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00318000" And addr < x"00320000") else '0';
-BUS_Analog_In_Unflipped_READ_ADDRESS <= BUS_ADDR(14 downto 0) when (addr >= x"00318000" And addr < x"00320000") else (others => '0');BUS_All_Energies_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00320008" And addr < x"00320009") else '0';BUS_Spectrum_10_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00670000" And addr < x"00680000") else '0';
-BUS_Spectrum_10_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00670000" And addr < x"00680000") else (others => '0');BUS_diag_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00682000" And addr < x"00684000") else '0';
-BUS_diag_READ_ADDRESS <= BUS_ADDR(12 downto 0) when (addr >= x"00682000" And addr < x"00684000") else (others => '0');
+BUS_Spectrum_11_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"002E0000" And addr < x"002F0000") else (others => '0');BUS_Syncs_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002F1000" And addr < x"002F2000") else '0';
+BUS_Syncs_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"002F1000" And addr < x"002F2000") else (others => '0');BUS_Analog_In_Unflipped_R_INT(0) <= f_BUS_INT_RD when (addr >= x"002F8000" And addr < x"00300000") else '0';
+BUS_Analog_In_Unflipped_READ_ADDRESS <= BUS_ADDR(14 downto 0) when (addr >= x"002F8000" And addr < x"00300000") else (others => '0');BUS_All_Energies_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00300008" And addr < x"00300009") else '0';BUS_Spectrum_10_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00310000" And addr < x"00320000") else '0';
+BUS_Spectrum_10_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00310000" And addr < x"00320000") else (others => '0');BUS_Spectrum_23_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00670000" And addr < x"00680000") else '0';
+BUS_Spectrum_23_READ_ADDRESS <= BUS_ADDR(15 downto 0) when (addr >= x"00670000" And addr < x"00680000") else (others => '0');BUS_diag_R_INT(0) <= f_BUS_INT_RD when (addr >= x"00681000" And addr < x"00682000") else '0';
+BUS_diag_READ_ADDRESS <= BUS_ADDR(11 downto 0) when (addr >= x"00681000" And addr < x"00682000") else (others => '0');
 f_BUS_DATA_RD <= BUS_Test_0_READ_DATA when  (addr >= x"03FE0000" And addr < x"03FEFFFF") else 
 BUS_Energies_READ_DATA  when  addr >= x"00000000" and addr < x"00008000" else 
 BUS_Analog_READ_DATA  when  addr >= x"00010000" and addr < x"00018000" else 
@@ -1247,11 +1247,11 @@ BUS_SyncIn_READ_DATA  when  addr >= x"00280000" and addr < x"00290000" else
 BUS_Spectrum_21_READ_DATA  when  addr >= x"002A0000" and addr < x"002B0000" else 
 BUS_Spectrum_22_READ_DATA  when  addr >= x"002C0000" and addr < x"002D0000" else 
 BUS_Spectrum_11_READ_DATA  when  addr >= x"002E0000" and addr < x"002F0000" else 
-BUS_Spectrum_23_READ_DATA  when  addr >= x"00300000" and addr < x"00310000" else 
-BUS_Syncs_READ_DATA  when  addr >= x"00311000" and addr < x"00312000" else 
-BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"00318000" and addr < x"00320000" else 
- BUS_All_Energies_READ_DATA when (addr >= x"00320008" And addr < x"00320009") else BUS_Spectrum_10_READ_DATA  when  addr >= x"00670000" and addr < x"00680000" else 
-BUS_diag_READ_DATA  when  addr >= x"00682000" and addr < x"00684000" else 
+BUS_Syncs_READ_DATA  when  addr >= x"002F1000" and addr < x"002F2000" else 
+BUS_Analog_In_Unflipped_READ_DATA  when  addr >= x"002F8000" and addr < x"00300000" else 
+ BUS_All_Energies_READ_DATA when (addr >= x"00300008" And addr < x"00300009") else BUS_Spectrum_10_READ_DATA  when  addr >= x"00310000" and addr < x"00320000" else 
+BUS_Spectrum_23_READ_DATA  when  addr >= x"00670000" and addr < x"00680000" else 
+BUS_diag_READ_DATA  when  addr >= x"00681000" and addr < x"00682000" else 
  f_BUS_DATA_RD_REG;
  f_BUS_DATASTROBE <=BUS_Test_0_VLD(0) when  (addr >= x"03FE0000" And addr < x"03FEFFFF") else 
  BUS_Energies_VLD(0) when  addr >= x"00000000" and addr < x"00008000" else 
@@ -1280,11 +1280,11 @@ BUS_diag_READ_DATA  when  addr >= x"00682000" and addr < x"00684000" else
  BUS_Spectrum_21_VLD(0) when  addr >= x"002A0000" and addr < x"002B0000" else 
  BUS_Spectrum_22_VLD(0) when  addr >= x"002C0000" and addr < x"002D0000" else 
  BUS_Spectrum_11_VLD(0) when  addr >= x"002E0000" and addr < x"002F0000" else 
- BUS_Spectrum_23_VLD(0) when  addr >= x"00300000" and addr < x"00310000" else 
- BUS_Syncs_VLD(0) when  addr >= x"00311000" and addr < x"00312000" else 
- BUS_Analog_In_Unflipped_VLD(0) when  addr >= x"00318000" and addr < x"00320000" else 
-  BUS_All_Energies_VLD(0) when (addr >= x"00320008" And addr < x"00320009") else  BUS_Spectrum_10_VLD(0) when  addr >= x"00670000" and addr < x"00680000" else 
- BUS_diag_VLD(0) when  addr >= x"00682000" and addr < x"00684000" else 
+ BUS_Syncs_VLD(0) when  addr >= x"002F1000" and addr < x"002F2000" else 
+ BUS_Analog_In_Unflipped_VLD(0) when  addr >= x"002F8000" and addr < x"00300000" else 
+  BUS_All_Energies_VLD(0) when (addr >= x"00300008" And addr < x"00300009") else  BUS_Spectrum_10_VLD(0) when  addr >= x"00310000" and addr < x"00320000" else 
+ BUS_Spectrum_23_VLD(0) when  addr >= x"00670000" and addr < x"00680000" else 
+ BUS_diag_VLD(0) when  addr >= x"00681000" and addr < x"00682000" else 
  f_BUS_DATASTROBE_REG;    
 
         
@@ -1607,18 +1607,6 @@ BUS_diag_READ_DATA  when  addr >= x"00682000" and addr < x"00684000" else
 		INT_Spectrum_11_CONFIG_MIN_WR <= "0";
 		REG_Spectrum_11_CONFIG_MAX_WR <= (others => '0');
 		INT_Spectrum_11_CONFIG_MAX_WR <= "0";
-	BUS_Spectrum_23_W_INT <= "0";
-		INT_Spectrum_23_STATUS_RD <= "0";
-		REG_Spectrum_23_CONFIG_WR <= (others => '0');
-		INT_Spectrum_23_CONFIG_WR <= "0";
-		REG_Spectrum_23_CONFIG_LIMIT_WR <= (others => '0');
-		INT_Spectrum_23_CONFIG_LIMIT_WR <= "0";
-		REG_Spectrum_23_CONFIG_REBIN_WR <= (others => '0');
-		INT_Spectrum_23_CONFIG_REBIN_WR <= "0";
-		REG_Spectrum_23_CONFIG_MIN_WR <= (others => '0');
-		INT_Spectrum_23_CONFIG_MIN_WR <= "0";
-		REG_Spectrum_23_CONFIG_MAX_WR <= (others => '0');
-		INT_Spectrum_23_CONFIG_MAX_WR <= "0";
 	BUS_Syncs_W_INT <= "0";
 		INT_Syncs_READ_STATUS_RD <= "0";
 		INT_Syncs_READ_POSITION_RD <= "0";
@@ -1891,6 +1879,18 @@ BUS_diag_READ_DATA  when  addr >= x"00682000" and addr < x"00684000" else
 		INT_Spectrum_10_CONFIG_MIN_WR <= "0";
 		REG_Spectrum_10_CONFIG_MAX_WR <= (others => '0');
 		INT_Spectrum_10_CONFIG_MAX_WR <= "0";
+	BUS_Spectrum_23_W_INT <= "0";
+		INT_Spectrum_23_STATUS_RD <= "0";
+		REG_Spectrum_23_CONFIG_WR <= (others => '0');
+		INT_Spectrum_23_CONFIG_WR <= "0";
+		REG_Spectrum_23_CONFIG_LIMIT_WR <= (others => '0');
+		INT_Spectrum_23_CONFIG_LIMIT_WR <= "0";
+		REG_Spectrum_23_CONFIG_REBIN_WR <= (others => '0');
+		INT_Spectrum_23_CONFIG_REBIN_WR <= "0";
+		REG_Spectrum_23_CONFIG_MIN_WR <= (others => '0');
+		INT_Spectrum_23_CONFIG_MIN_WR <= "0";
+		REG_Spectrum_23_CONFIG_MAX_WR <= (others => '0');
+		INT_Spectrum_23_CONFIG_MAX_WR <= "0";
 	BUS_diag_W_INT <= "0";
 		INT_diag_READ_STATUS_RD <= "0";
 		INT_diag_READ_POSITION_RD <= "0";
@@ -2093,13 +2093,6 @@ BUS_diag_READ_DATA  when  addr >= x"00682000" and addr < x"00684000" else
 		INT_Spectrum_11_CONFIG_REBIN_WR <= "0";
 		INT_Spectrum_11_CONFIG_MIN_WR <= "0";
 		INT_Spectrum_11_CONFIG_MAX_WR <= "0";
-	BUS_Spectrum_23_W_INT <= "0";
-		INT_Spectrum_23_STATUS_RD <= "0";
-		INT_Spectrum_23_CONFIG_WR <= "0";
-		INT_Spectrum_23_CONFIG_LIMIT_WR <= "0";
-		INT_Spectrum_23_CONFIG_REBIN_WR <= "0";
-		INT_Spectrum_23_CONFIG_MIN_WR <= "0";
-		INT_Spectrum_23_CONFIG_MAX_WR <= "0";
 	BUS_Syncs_W_INT <= "0";
 		INT_Syncs_READ_STATUS_RD <= "0";
 		INT_Syncs_READ_POSITION_RD <= "0";
@@ -2248,6 +2241,13 @@ BUS_diag_READ_DATA  when  addr >= x"00682000" and addr < x"00684000" else
 		INT_Spectrum_10_CONFIG_REBIN_WR <= "0";
 		INT_Spectrum_10_CONFIG_MIN_WR <= "0";
 		INT_Spectrum_10_CONFIG_MAX_WR <= "0";
+	BUS_Spectrum_23_W_INT <= "0";
+		INT_Spectrum_23_STATUS_RD <= "0";
+		INT_Spectrum_23_CONFIG_WR <= "0";
+		INT_Spectrum_23_CONFIG_LIMIT_WR <= "0";
+		INT_Spectrum_23_CONFIG_REBIN_WR <= "0";
+		INT_Spectrum_23_CONFIG_MIN_WR <= "0";
+		INT_Spectrum_23_CONFIG_MAX_WR <= "0";
 	BUS_diag_W_INT <= "0";
 		INT_diag_READ_STATUS_RD <= "0";
 		INT_diag_READ_POSITION_RD <= "0";
@@ -2890,583 +2890,583 @@ BUS_diag_READ_DATA  when  addr >= x"00682000" and addr < x"00684000" else
 			REG_Spectrum_11_CONFIG_MAX_WR <= wreg; 
 			INT_Spectrum_11_CONFIG_MAX_WR <= "1"; 
 		end if;
-		If addr >= x"00300000" And addr < x"00310000" Then
-			BUS_Spectrum_23_WRITE_DATA <= wreg; 
-			BUS_Spectrum_23_W_INT <= "1"; 
-		End If;
-		if addr = x"00310001" then
-			REG_Spectrum_23_CONFIG_WR <= wreg; 
-			INT_Spectrum_23_CONFIG_WR <= "1"; 
-		end if;
-		if addr = x"00310002" then
-			REG_Spectrum_23_CONFIG_LIMIT_WR <= wreg; 
-			INT_Spectrum_23_CONFIG_LIMIT_WR <= "1"; 
-		end if;
-		if addr = x"00310003" then
-			REG_Spectrum_23_CONFIG_REBIN_WR <= wreg; 
-			INT_Spectrum_23_CONFIG_REBIN_WR <= "1"; 
-		end if;
-		if addr = x"00310004" then
-			REG_Spectrum_23_CONFIG_MIN_WR <= wreg; 
-			INT_Spectrum_23_CONFIG_MIN_WR <= "1"; 
-		end if;
-		if addr = x"00310005" then
-			REG_Spectrum_23_CONFIG_MAX_WR <= wreg; 
-			INT_Spectrum_23_CONFIG_MAX_WR <= "1"; 
-		end if;
-		If addr >= x"00311000" And addr < x"00312000" Then
+		If addr >= x"002F1000" And addr < x"002F2000" Then
 			BUS_Syncs_WRITE_DATA <= wreg; 
 			BUS_Syncs_W_INT <= "1"; 
 		End If;
-		if addr = x"00312002" then
+		if addr = x"002F2002" then
 			REG_Syncs_CONFIG_TRIGGER_MODE_WR <= wreg; 
 			INT_Syncs_CONFIG_TRIGGER_MODE_WR <= "1"; 
 		end if;
-		if addr = x"00312003" then
+		if addr = x"002F2003" then
 			REG_Syncs_CONFIG_PRETRIGGER_WR <= wreg; 
 			INT_Syncs_CONFIG_PRETRIGGER_WR <= "1"; 
 		end if;
-		if addr = x"00312004" then
+		if addr = x"002F2004" then
 			REG_Syncs_CONFIG_TRIGGER_LEVEL_WR <= wreg; 
 			INT_Syncs_CONFIG_TRIGGER_LEVEL_WR <= "1"; 
 		end if;
-		if addr = x"00312005" then
+		if addr = x"002F2005" then
 			REG_Syncs_CONFIG_ARM_WR <= wreg; 
 			INT_Syncs_CONFIG_ARM_WR <= "1"; 
 		end if;
-		if addr = x"00312006" then
+		if addr = x"002F2006" then
 			REG_Syncs_CONFIG_DECIMATOR_WR <= wreg; 
 			INT_Syncs_CONFIG_DECIMATOR_WR <= "1"; 
 		end if;
-		if addr = x"00312007" then
+		if addr = x"002F2007" then
 			REG_forcetrig_WR <= wreg; 
 			INT_forcetrig_WR <= "1"; 
 		end if;
-		if addr = x"00312008" then
+		if addr = x"002F2008" then
 			REG_full_WR <= wreg; 
 			INT_full_WR <= "1"; 
 		end if;
-		if addr = x"00312009" then
+		if addr = x"002F2009" then
 			REG_trigger_code_WR <= wreg; 
 			INT_trigger_code_WR <= "1"; 
 		end if;
-		if addr = x"0031200A" then
+		if addr = x"002F200A" then
 			REG_reset_WR <= wreg; 
 			INT_reset_WR <= "1"; 
 		end if;
-		if addr = x"0031200B" then
+		if addr = x"002F200B" then
 			REG_received_WR <= wreg; 
 			INT_received_WR <= "1"; 
 		end if;
-		if addr = x"0031200C" then
+		if addr = x"002F200C" then
 			REG_timestamp_WR <= wreg; 
 			INT_timestamp_WR <= "1"; 
 		end if;
-		if addr = x"0031200D" then
+		if addr = x"002F200D" then
 			REG_sync0_between_sync2_WR <= wreg; 
 			INT_sync0_between_sync2_WR <= "1"; 
 		end if;
-		If addr >= x"0031200F" And addr < x"00312010" Then
+		If addr >= x"002F200F" And addr < x"002F2010" Then
 			BUS_disable_det_WRITE_DATA <= wreg; 
 			BUS_disable_det_W_INT <= "1"; 
 		End If;
-		if addr = x"00312010" then
+		if addr = x"002F2010" then
 			REG_disable_det_CH0_WR <= wreg; 
 			INT_disable_det_CH0_WR <= "1"; 
 		end if;
-		if addr = x"00312011" then
+		if addr = x"002F2011" then
 			REG_disable_det_CH1_WR <= wreg; 
 			INT_disable_det_CH1_WR <= "1"; 
 		end if;
-		if addr = x"00312012" then
+		if addr = x"002F2012" then
 			REG_disable_det_CH2_WR <= wreg; 
 			INT_disable_det_CH2_WR <= "1"; 
 		end if;
-		if addr = x"00312013" then
+		if addr = x"002F2013" then
 			REG_disable_det_CH3_WR <= wreg; 
 			INT_disable_det_CH3_WR <= "1"; 
 		end if;
-		if addr = x"00312014" then
+		if addr = x"002F2014" then
 			REG_disable_det_CH4_WR <= wreg; 
 			INT_disable_det_CH4_WR <= "1"; 
 		end if;
-		if addr = x"00312015" then
+		if addr = x"002F2015" then
 			REG_disable_det_CH5_WR <= wreg; 
 			INT_disable_det_CH5_WR <= "1"; 
 		end if;
-		if addr = x"00312016" then
+		if addr = x"002F2016" then
 			REG_disable_det_CH6_WR <= wreg; 
 			INT_disable_det_CH6_WR <= "1"; 
 		end if;
-		if addr = x"00312017" then
+		if addr = x"002F2017" then
 			REG_disable_det_CH7_WR <= wreg; 
 			INT_disable_det_CH7_WR <= "1"; 
 		end if;
-		if addr = x"00312018" then
+		if addr = x"002F2018" then
 			REG_disable_det_CH8_WR <= wreg; 
 			INT_disable_det_CH8_WR <= "1"; 
 		end if;
-		if addr = x"00312019" then
+		if addr = x"002F2019" then
 			REG_disable_det_CH9_WR <= wreg; 
 			INT_disable_det_CH9_WR <= "1"; 
 		end if;
-		if addr = x"0031201A" then
+		if addr = x"002F201A" then
 			REG_disable_det_CH10_WR <= wreg; 
 			INT_disable_det_CH10_WR <= "1"; 
 		end if;
-		if addr = x"0031201B" then
+		if addr = x"002F201B" then
 			REG_disable_det_CH11_WR <= wreg; 
 			INT_disable_det_CH11_WR <= "1"; 
 		end if;
-		if addr = x"0031201C" then
+		if addr = x"002F201C" then
 			REG_disable_det_CH12_WR <= wreg; 
 			INT_disable_det_CH12_WR <= "1"; 
 		end if;
-		if addr = x"0031201D" then
+		if addr = x"002F201D" then
 			REG_disable_det_CH13_WR <= wreg; 
 			INT_disable_det_CH13_WR <= "1"; 
 		end if;
-		if addr = x"0031201E" then
+		if addr = x"002F201E" then
 			REG_disable_det_CH14_WR <= wreg; 
 			INT_disable_det_CH14_WR <= "1"; 
 		end if;
-		if addr = x"0031201F" then
+		if addr = x"002F201F" then
 			REG_disable_det_CH15_WR <= wreg; 
 			INT_disable_det_CH15_WR <= "1"; 
 		end if;
-		if addr = x"00312020" then
+		if addr = x"002F2020" then
 			REG_disable_det_CH16_WR <= wreg; 
 			INT_disable_det_CH16_WR <= "1"; 
 		end if;
-		if addr = x"00312021" then
+		if addr = x"002F2021" then
 			REG_disable_det_CH17_WR <= wreg; 
 			INT_disable_det_CH17_WR <= "1"; 
 		end if;
-		if addr = x"00312022" then
+		if addr = x"002F2022" then
 			REG_disable_det_CH18_WR <= wreg; 
 			INT_disable_det_CH18_WR <= "1"; 
 		end if;
-		if addr = x"00312023" then
+		if addr = x"002F2023" then
 			REG_disable_det_CH19_WR <= wreg; 
 			INT_disable_det_CH19_WR <= "1"; 
 		end if;
-		if addr = x"00312024" then
+		if addr = x"002F2024" then
 			REG_disable_det_CH20_WR <= wreg; 
 			INT_disable_det_CH20_WR <= "1"; 
 		end if;
-		if addr = x"00312025" then
+		if addr = x"002F2025" then
 			REG_disable_det_CH21_WR <= wreg; 
 			INT_disable_det_CH21_WR <= "1"; 
 		end if;
-		if addr = x"00312026" then
+		if addr = x"002F2026" then
 			REG_disable_det_CH22_WR <= wreg; 
 			INT_disable_det_CH22_WR <= "1"; 
 		end if;
-		if addr = x"00312027" then
+		if addr = x"002F2027" then
 			REG_disable_det_CH23_WR <= wreg; 
 			INT_disable_det_CH23_WR <= "1"; 
 		end if;
-		If addr >= x"00312029" And addr < x"0031202A" Then
+		If addr >= x"002F2029" And addr < x"002F202A" Then
 			BUS_top_WRITE_DATA <= wreg; 
 			BUS_top_W_INT <= "1"; 
 		End If;
-		if addr = x"0031202A" then
+		if addr = x"002F202A" then
 			REG_top_CH0_WR <= wreg; 
 			INT_top_CH0_WR <= "1"; 
 		end if;
-		if addr = x"0031202B" then
+		if addr = x"002F202B" then
 			REG_top_CH1_WR <= wreg; 
 			INT_top_CH1_WR <= "1"; 
 		end if;
-		if addr = x"0031202C" then
+		if addr = x"002F202C" then
 			REG_top_CH2_WR <= wreg; 
 			INT_top_CH2_WR <= "1"; 
 		end if;
-		if addr = x"0031202D" then
+		if addr = x"002F202D" then
 			REG_top_CH3_WR <= wreg; 
 			INT_top_CH3_WR <= "1"; 
 		end if;
-		if addr = x"0031202E" then
+		if addr = x"002F202E" then
 			REG_top_CH4_WR <= wreg; 
 			INT_top_CH4_WR <= "1"; 
 		end if;
-		if addr = x"0031202F" then
+		if addr = x"002F202F" then
 			REG_top_CH5_WR <= wreg; 
 			INT_top_CH5_WR <= "1"; 
 		end if;
-		if addr = x"00312030" then
+		if addr = x"002F2030" then
 			REG_top_CH6_WR <= wreg; 
 			INT_top_CH6_WR <= "1"; 
 		end if;
-		if addr = x"00312031" then
+		if addr = x"002F2031" then
 			REG_top_CH7_WR <= wreg; 
 			INT_top_CH7_WR <= "1"; 
 		end if;
-		if addr = x"00312032" then
+		if addr = x"002F2032" then
 			REG_top_CH8_WR <= wreg; 
 			INT_top_CH8_WR <= "1"; 
 		end if;
-		if addr = x"00312033" then
+		if addr = x"002F2033" then
 			REG_top_CH9_WR <= wreg; 
 			INT_top_CH9_WR <= "1"; 
 		end if;
-		if addr = x"00312034" then
+		if addr = x"002F2034" then
 			REG_top_CH10_WR <= wreg; 
 			INT_top_CH10_WR <= "1"; 
 		end if;
-		if addr = x"00312035" then
+		if addr = x"002F2035" then
 			REG_top_CH11_WR <= wreg; 
 			INT_top_CH11_WR <= "1"; 
 		end if;
-		if addr = x"00312036" then
+		if addr = x"002F2036" then
 			REG_top_CH12_WR <= wreg; 
 			INT_top_CH12_WR <= "1"; 
 		end if;
-		if addr = x"00312037" then
+		if addr = x"002F2037" then
 			REG_top_CH13_WR <= wreg; 
 			INT_top_CH13_WR <= "1"; 
 		end if;
-		if addr = x"00312038" then
+		if addr = x"002F2038" then
 			REG_top_CH14_WR <= wreg; 
 			INT_top_CH14_WR <= "1"; 
 		end if;
-		if addr = x"00312039" then
+		if addr = x"002F2039" then
 			REG_top_CH15_WR <= wreg; 
 			INT_top_CH15_WR <= "1"; 
 		end if;
-		if addr = x"0031203A" then
+		if addr = x"002F203A" then
 			REG_top_CH16_WR <= wreg; 
 			INT_top_CH16_WR <= "1"; 
 		end if;
-		if addr = x"0031203B" then
+		if addr = x"002F203B" then
 			REG_top_CH17_WR <= wreg; 
 			INT_top_CH17_WR <= "1"; 
 		end if;
-		if addr = x"0031203C" then
+		if addr = x"002F203C" then
 			REG_top_CH18_WR <= wreg; 
 			INT_top_CH18_WR <= "1"; 
 		end if;
-		if addr = x"0031203D" then
+		if addr = x"002F203D" then
 			REG_top_CH19_WR <= wreg; 
 			INT_top_CH19_WR <= "1"; 
 		end if;
-		if addr = x"0031203E" then
+		if addr = x"002F203E" then
 			REG_top_CH20_WR <= wreg; 
 			INT_top_CH20_WR <= "1"; 
 		end if;
-		if addr = x"0031203F" then
+		if addr = x"002F203F" then
 			REG_top_CH21_WR <= wreg; 
 			INT_top_CH21_WR <= "1"; 
 		end if;
-		if addr = x"00312040" then
+		if addr = x"002F2040" then
 			REG_top_CH22_WR <= wreg; 
 			INT_top_CH22_WR <= "1"; 
 		end if;
-		if addr = x"00312041" then
+		if addr = x"002F2041" then
 			REG_top_CH23_WR <= wreg; 
 			INT_top_CH23_WR <= "1"; 
 		end if;
-		If addr >= x"00312043" And addr < x"00312044" Then
+		If addr >= x"002F2043" And addr < x"002F2044" Then
 			BUS_thrsh_WRITE_DATA <= wreg; 
 			BUS_thrsh_W_INT <= "1"; 
 		End If;
-		if addr = x"00312044" then
+		if addr = x"002F2044" then
 			REG_thrsh_CH0_WR <= wreg; 
 			INT_thrsh_CH0_WR <= "1"; 
 		end if;
-		if addr = x"00312045" then
+		if addr = x"002F2045" then
 			REG_thrsh_CH1_WR <= wreg; 
 			INT_thrsh_CH1_WR <= "1"; 
 		end if;
-		if addr = x"00312046" then
+		if addr = x"002F2046" then
 			REG_thrsh_CH2_WR <= wreg; 
 			INT_thrsh_CH2_WR <= "1"; 
 		end if;
-		if addr = x"00312047" then
+		if addr = x"002F2047" then
 			REG_thrsh_CH3_WR <= wreg; 
 			INT_thrsh_CH3_WR <= "1"; 
 		end if;
-		if addr = x"00312048" then
+		if addr = x"002F2048" then
 			REG_thrsh_CH4_WR <= wreg; 
 			INT_thrsh_CH4_WR <= "1"; 
 		end if;
-		if addr = x"00312049" then
+		if addr = x"002F2049" then
 			REG_thrsh_CH5_WR <= wreg; 
 			INT_thrsh_CH5_WR <= "1"; 
 		end if;
-		if addr = x"0031204A" then
+		if addr = x"002F204A" then
 			REG_thrsh_CH6_WR <= wreg; 
 			INT_thrsh_CH6_WR <= "1"; 
 		end if;
-		if addr = x"0031204B" then
+		if addr = x"002F204B" then
 			REG_thrsh_CH7_WR <= wreg; 
 			INT_thrsh_CH7_WR <= "1"; 
 		end if;
-		if addr = x"0031204C" then
+		if addr = x"002F204C" then
 			REG_thrsh_CH8_WR <= wreg; 
 			INT_thrsh_CH8_WR <= "1"; 
 		end if;
-		if addr = x"0031204D" then
+		if addr = x"002F204D" then
 			REG_thrsh_CH9_WR <= wreg; 
 			INT_thrsh_CH9_WR <= "1"; 
 		end if;
-		if addr = x"0031204E" then
+		if addr = x"002F204E" then
 			REG_thrsh_CH10_WR <= wreg; 
 			INT_thrsh_CH10_WR <= "1"; 
 		end if;
-		if addr = x"0031204F" then
+		if addr = x"002F204F" then
 			REG_thrsh_CH11_WR <= wreg; 
 			INT_thrsh_CH11_WR <= "1"; 
 		end if;
-		if addr = x"00312050" then
+		if addr = x"002F2050" then
 			REG_thrsh_CH12_WR <= wreg; 
 			INT_thrsh_CH12_WR <= "1"; 
 		end if;
-		if addr = x"00312051" then
+		if addr = x"002F2051" then
 			REG_thrsh_CH13_WR <= wreg; 
 			INT_thrsh_CH13_WR <= "1"; 
 		end if;
-		if addr = x"00312052" then
+		if addr = x"002F2052" then
 			REG_thrsh_CH14_WR <= wreg; 
 			INT_thrsh_CH14_WR <= "1"; 
 		end if;
-		if addr = x"00312053" then
+		if addr = x"002F2053" then
 			REG_thrsh_CH15_WR <= wreg; 
 			INT_thrsh_CH15_WR <= "1"; 
 		end if;
-		if addr = x"00312054" then
+		if addr = x"002F2054" then
 			REG_thrsh_CH16_WR <= wreg; 
 			INT_thrsh_CH16_WR <= "1"; 
 		end if;
-		if addr = x"00312055" then
+		if addr = x"002F2055" then
 			REG_thrsh_CH17_WR <= wreg; 
 			INT_thrsh_CH17_WR <= "1"; 
 		end if;
-		if addr = x"00312056" then
+		if addr = x"002F2056" then
 			REG_thrsh_CH18_WR <= wreg; 
 			INT_thrsh_CH18_WR <= "1"; 
 		end if;
-		if addr = x"00312057" then
+		if addr = x"002F2057" then
 			REG_thrsh_CH19_WR <= wreg; 
 			INT_thrsh_CH19_WR <= "1"; 
 		end if;
-		if addr = x"00312058" then
+		if addr = x"002F2058" then
 			REG_thrsh_CH20_WR <= wreg; 
 			INT_thrsh_CH20_WR <= "1"; 
 		end if;
-		if addr = x"00312059" then
+		if addr = x"002F2059" then
 			REG_thrsh_CH21_WR <= wreg; 
 			INT_thrsh_CH21_WR <= "1"; 
 		end if;
-		if addr = x"0031205A" then
+		if addr = x"002F205A" then
 			REG_thrsh_CH22_WR <= wreg; 
 			INT_thrsh_CH22_WR <= "1"; 
 		end if;
-		if addr = x"0031205B" then
+		if addr = x"002F205B" then
 			REG_thrsh_CH23_WR <= wreg; 
 			INT_thrsh_CH23_WR <= "1"; 
 		end if;
-		if addr = x"0031205C" then
+		if addr = x"002F205C" then
 			REG_dummy_WR <= wreg; 
 			INT_dummy_WR <= "1"; 
 		end if;
-		If addr >= x"0031205E" And addr < x"0031205F" Then
+		If addr >= x"002F205E" And addr < x"002F205F" Then
 			BUS_base_WRITE_DATA <= wreg; 
 			BUS_base_W_INT <= "1"; 
 		End If;
-		if addr = x"0031205F" then
+		if addr = x"002F205F" then
 			REG_base_CH0_WR <= wreg; 
 			INT_base_CH0_WR <= "1"; 
 		end if;
-		if addr = x"00312060" then
+		if addr = x"002F2060" then
 			REG_base_CH1_WR <= wreg; 
 			INT_base_CH1_WR <= "1"; 
 		end if;
-		if addr = x"00312061" then
+		if addr = x"002F2061" then
 			REG_base_CH2_WR <= wreg; 
 			INT_base_CH2_WR <= "1"; 
 		end if;
-		if addr = x"00312062" then
+		if addr = x"002F2062" then
 			REG_base_CH3_WR <= wreg; 
 			INT_base_CH3_WR <= "1"; 
 		end if;
-		if addr = x"00312063" then
+		if addr = x"002F2063" then
 			REG_base_CH4_WR <= wreg; 
 			INT_base_CH4_WR <= "1"; 
 		end if;
-		if addr = x"00312064" then
+		if addr = x"002F2064" then
 			REG_base_CH5_WR <= wreg; 
 			INT_base_CH5_WR <= "1"; 
 		end if;
-		if addr = x"00312065" then
+		if addr = x"002F2065" then
 			REG_base_CH6_WR <= wreg; 
 			INT_base_CH6_WR <= "1"; 
 		end if;
-		if addr = x"00312066" then
+		if addr = x"002F2066" then
 			REG_base_CH7_WR <= wreg; 
 			INT_base_CH7_WR <= "1"; 
 		end if;
-		if addr = x"00312067" then
+		if addr = x"002F2067" then
 			REG_base_CH8_WR <= wreg; 
 			INT_base_CH8_WR <= "1"; 
 		end if;
-		if addr = x"00312068" then
+		if addr = x"002F2068" then
 			REG_base_CH9_WR <= wreg; 
 			INT_base_CH9_WR <= "1"; 
 		end if;
-		if addr = x"00312069" then
+		if addr = x"002F2069" then
 			REG_base_CH10_WR <= wreg; 
 			INT_base_CH10_WR <= "1"; 
 		end if;
-		if addr = x"0031206A" then
+		if addr = x"002F206A" then
 			REG_base_CH11_WR <= wreg; 
 			INT_base_CH11_WR <= "1"; 
 		end if;
-		if addr = x"0031206B" then
+		if addr = x"002F206B" then
 			REG_base_CH12_WR <= wreg; 
 			INT_base_CH12_WR <= "1"; 
 		end if;
-		if addr = x"0031206C" then
+		if addr = x"002F206C" then
 			REG_base_CH13_WR <= wreg; 
 			INT_base_CH13_WR <= "1"; 
 		end if;
-		if addr = x"0031206D" then
+		if addr = x"002F206D" then
 			REG_base_CH14_WR <= wreg; 
 			INT_base_CH14_WR <= "1"; 
 		end if;
-		if addr = x"0031206E" then
+		if addr = x"002F206E" then
 			REG_base_CH15_WR <= wreg; 
 			INT_base_CH15_WR <= "1"; 
 		end if;
-		if addr = x"0031206F" then
+		if addr = x"002F206F" then
 			REG_base_CH16_WR <= wreg; 
 			INT_base_CH16_WR <= "1"; 
 		end if;
-		if addr = x"00312070" then
+		if addr = x"002F2070" then
 			REG_base_CH17_WR <= wreg; 
 			INT_base_CH17_WR <= "1"; 
 		end if;
-		if addr = x"00312071" then
+		if addr = x"002F2071" then
 			REG_base_CH18_WR <= wreg; 
 			INT_base_CH18_WR <= "1"; 
 		end if;
-		if addr = x"00312072" then
+		if addr = x"002F2072" then
 			REG_base_CH19_WR <= wreg; 
 			INT_base_CH19_WR <= "1"; 
 		end if;
-		if addr = x"00312073" then
+		if addr = x"002F2073" then
 			REG_base_CH20_WR <= wreg; 
 			INT_base_CH20_WR <= "1"; 
 		end if;
-		if addr = x"00312074" then
+		if addr = x"002F2074" then
 			REG_base_CH21_WR <= wreg; 
 			INT_base_CH21_WR <= "1"; 
 		end if;
-		if addr = x"00312075" then
+		if addr = x"002F2075" then
 			REG_base_CH22_WR <= wreg; 
 			INT_base_CH22_WR <= "1"; 
 		end if;
-		if addr = x"00312076" then
+		if addr = x"002F2076" then
 			REG_base_CH23_WR <= wreg; 
 			INT_base_CH23_WR <= "1"; 
 		end if;
-		If addr >= x"00312078" And addr < x"00312079" Then
+		If addr >= x"002F2078" And addr < x"002F2079" Then
 			BUS_io_WRITE_DATA <= wreg; 
 			BUS_io_W_INT <= "1"; 
 		End If;
-		if addr = x"00312079" then
+		if addr = x"002F2079" then
 			REG_io_to_encode_WR <= wreg; 
 			INT_io_to_encode_WR <= "1"; 
 		end if;
-		if addr = x"0031207A" then
+		if addr = x"002F207A" then
 			REG_io_stamptype_WR <= wreg; 
 			INT_io_stamptype_WR <= "1"; 
 		end if;
-		if addr = x"0031207B" then
+		if addr = x"002F207B" then
 			REG_io_lemo2out_WR <= wreg; 
 			INT_io_lemo2out_WR <= "1"; 
 		end if;
-		if addr = x"0031207C" then
+		if addr = x"002F207C" then
 			REG_io_divide_WR <= wreg; 
 			INT_io_divide_WR <= "1"; 
 		end if;
-		If addr >= x"00318000" And addr < x"00320000" Then
+		If addr >= x"002F8000" And addr < x"00300000" Then
 			BUS_Analog_In_Unflipped_WRITE_DATA <= wreg; 
 			BUS_Analog_In_Unflipped_W_INT <= "1"; 
 		End If;
-		if addr = x"00320002" then
+		if addr = x"00300002" then
 			REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= wreg; 
 			INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR <= "1"; 
 		end if;
-		if addr = x"00320003" then
+		if addr = x"00300003" then
 			REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= wreg; 
 			INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR <= "1"; 
 		end if;
-		if addr = x"00320004" then
+		if addr = x"00300004" then
 			REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= wreg; 
 			INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR <= "1"; 
 		end if;
-		if addr = x"00320005" then
+		if addr = x"00300005" then
 			REG_Analog_In_Unflipped_CONFIG_ARM_WR <= wreg; 
 			INT_Analog_In_Unflipped_CONFIG_ARM_WR <= "1"; 
 		end if;
-		if addr = x"00320006" then
+		if addr = x"00300006" then
 			REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= wreg; 
 			INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR <= "1"; 
 		end if;
-		If addr >= x"00320008" And addr < x"00320009" Then
+		If addr >= x"00300008" And addr < x"00300009" Then
 			BUS_All_Energies_WRITE_DATA <= wreg; 
 			BUS_All_Energies_W_INT <= "1"; 
 		End If;
-		if addr = x"0032000B" then
+		if addr = x"0030000B" then
 			REG_All_Energies_CONFIG_WR <= wreg; 
 			INT_All_Energies_CONFIG_WR <= "1"; 
 		end if;
-		If addr >= x"00670000" And addr < x"00680000" Then
+		If addr >= x"00310000" And addr < x"00320000" Then
 			BUS_Spectrum_10_WRITE_DATA <= wreg; 
 			BUS_Spectrum_10_W_INT <= "1"; 
 		End If;
-		if addr = x"00680001" then
+		if addr = x"00320001" then
 			REG_Spectrum_10_CONFIG_WR <= wreg; 
 			INT_Spectrum_10_CONFIG_WR <= "1"; 
 		end if;
-		if addr = x"00680002" then
+		if addr = x"00320002" then
 			REG_Spectrum_10_CONFIG_LIMIT_WR <= wreg; 
 			INT_Spectrum_10_CONFIG_LIMIT_WR <= "1"; 
 		end if;
-		if addr = x"00680003" then
+		if addr = x"00320003" then
 			REG_Spectrum_10_CONFIG_REBIN_WR <= wreg; 
 			INT_Spectrum_10_CONFIG_REBIN_WR <= "1"; 
 		end if;
-		if addr = x"00680004" then
+		if addr = x"00320004" then
 			REG_Spectrum_10_CONFIG_MIN_WR <= wreg; 
 			INT_Spectrum_10_CONFIG_MIN_WR <= "1"; 
 		end if;
-		if addr = x"00680005" then
+		if addr = x"00320005" then
 			REG_Spectrum_10_CONFIG_MAX_WR <= wreg; 
 			INT_Spectrum_10_CONFIG_MAX_WR <= "1"; 
 		end if;
-		If addr >= x"00682000" And addr < x"00684000" Then
+		If addr >= x"00670000" And addr < x"00680000" Then
+			BUS_Spectrum_23_WRITE_DATA <= wreg; 
+			BUS_Spectrum_23_W_INT <= "1"; 
+		End If;
+		if addr = x"00680001" then
+			REG_Spectrum_23_CONFIG_WR <= wreg; 
+			INT_Spectrum_23_CONFIG_WR <= "1"; 
+		end if;
+		if addr = x"00680002" then
+			REG_Spectrum_23_CONFIG_LIMIT_WR <= wreg; 
+			INT_Spectrum_23_CONFIG_LIMIT_WR <= "1"; 
+		end if;
+		if addr = x"00680003" then
+			REG_Spectrum_23_CONFIG_REBIN_WR <= wreg; 
+			INT_Spectrum_23_CONFIG_REBIN_WR <= "1"; 
+		end if;
+		if addr = x"00680004" then
+			REG_Spectrum_23_CONFIG_MIN_WR <= wreg; 
+			INT_Spectrum_23_CONFIG_MIN_WR <= "1"; 
+		end if;
+		if addr = x"00680005" then
+			REG_Spectrum_23_CONFIG_MAX_WR <= wreg; 
+			INT_Spectrum_23_CONFIG_MAX_WR <= "1"; 
+		end if;
+		If addr >= x"00681000" And addr < x"00682000" Then
 			BUS_diag_WRITE_DATA <= wreg; 
 			BUS_diag_W_INT <= "1"; 
 		End If;
-		if addr = x"00684002" then
+		if addr = x"00682002" then
 			REG_diag_CONFIG_TRIGGER_MODE_WR <= wreg; 
 			INT_diag_CONFIG_TRIGGER_MODE_WR <= "1"; 
 		end if;
-		if addr = x"00684003" then
+		if addr = x"00682003" then
 			REG_diag_CONFIG_PRETRIGGER_WR <= wreg; 
 			INT_diag_CONFIG_PRETRIGGER_WR <= "1"; 
 		end if;
-		if addr = x"00684004" then
+		if addr = x"00682004" then
 			REG_diag_CONFIG_TRIGGER_LEVEL_WR <= wreg; 
 			INT_diag_CONFIG_TRIGGER_LEVEL_WR <= "1"; 
 		end if;
-		if addr = x"00684005" then
+		if addr = x"00682005" then
 			REG_diag_CONFIG_ARM_WR <= wreg; 
 			INT_diag_CONFIG_ARM_WR <= "1"; 
 		end if;
-		if addr = x"00684006" then
+		if addr = x"00682006" then
 			REG_diag_CONFIG_DECIMATOR_WR <= wreg; 
 			INT_diag_CONFIG_DECIMATOR_WR <= "1"; 
 		end if;
@@ -3943,436 +3943,436 @@ BUS_diag_READ_DATA  when  addr >= x"00682000" and addr < x"00684000" else
 		if addr = x"002F0005" then
 			rreg := REG_Spectrum_11_CONFIG_MAX_RD; 
 		End If;
-		if addr = x"00310000" then
-			rreg := REG_Spectrum_23_STATUS_RD; 
-		End If;
-		if addr = x"00310001" then
-			rreg := REG_Spectrum_23_CONFIG_RD; 
-		End If;
-		if addr = x"00310002" then
-			rreg := REG_Spectrum_23_CONFIG_LIMIT_RD; 
-		End If;
-		if addr = x"00310003" then
-			rreg := REG_Spectrum_23_CONFIG_REBIN_RD; 
-		End If;
-		if addr = x"00310004" then
-			rreg := REG_Spectrum_23_CONFIG_MIN_RD; 
-		End If;
-		if addr = x"00310005" then
-			rreg := REG_Spectrum_23_CONFIG_MAX_RD; 
-		End If;
-		if addr = x"00312000" then
+		if addr = x"002F2000" then
 			rreg := REG_Syncs_READ_STATUS_RD; 
 		End If;
-		if addr = x"00312001" then
+		if addr = x"002F2001" then
 			rreg := REG_Syncs_READ_POSITION_RD; 
 		End If;
-		if addr = x"00312002" then
+		if addr = x"002F2002" then
 			rreg := REG_Syncs_CONFIG_TRIGGER_MODE_RD; 
 		End If;
-		if addr = x"00312003" then
+		if addr = x"002F2003" then
 			rreg := REG_Syncs_CONFIG_PRETRIGGER_RD; 
 		End If;
-		if addr = x"00312004" then
+		if addr = x"002F2004" then
 			rreg := REG_Syncs_CONFIG_TRIGGER_LEVEL_RD; 
 		End If;
-		if addr = x"00312005" then
+		if addr = x"002F2005" then
 			rreg := REG_Syncs_CONFIG_ARM_RD; 
 		End If;
-		if addr = x"00312006" then
+		if addr = x"002F2006" then
 			rreg := REG_Syncs_CONFIG_DECIMATOR_RD; 
 		End If;
-		if addr = x"00312007" then
+		if addr = x"002F2007" then
 			rreg := REG_forcetrig_RD; 
 		End If;
-		if addr = x"00312008" then
+		if addr = x"002F2008" then
 			rreg := REG_full_RD; 
 		End If;
-		if addr = x"00312009" then
+		if addr = x"002F2009" then
 			rreg := REG_trigger_code_RD; 
 		End If;
-		if addr = x"0031200A" then
+		if addr = x"002F200A" then
 			rreg := REG_reset_RD; 
 		End If;
-		if addr = x"0031200B" then
+		if addr = x"002F200B" then
 			rreg := REG_received_RD; 
 		End If;
-		if addr = x"0031200C" then
+		if addr = x"002F200C" then
 			rreg := REG_timestamp_RD; 
 		End If;
-		if addr = x"0031200D" then
+		if addr = x"002F200D" then
 			rreg := REG_sync0_between_sync2_RD; 
 		End If;
-		if addr = x"00312010" then
+		if addr = x"002F2010" then
 			rreg := REG_disable_det_CH0_RD; 
 		End If;
-		if addr = x"00312011" then
+		if addr = x"002F2011" then
 			rreg := REG_disable_det_CH1_RD; 
 		End If;
-		if addr = x"00312012" then
+		if addr = x"002F2012" then
 			rreg := REG_disable_det_CH2_RD; 
 		End If;
-		if addr = x"00312013" then
+		if addr = x"002F2013" then
 			rreg := REG_disable_det_CH3_RD; 
 		End If;
-		if addr = x"00312014" then
+		if addr = x"002F2014" then
 			rreg := REG_disable_det_CH4_RD; 
 		End If;
-		if addr = x"00312015" then
+		if addr = x"002F2015" then
 			rreg := REG_disable_det_CH5_RD; 
 		End If;
-		if addr = x"00312016" then
+		if addr = x"002F2016" then
 			rreg := REG_disable_det_CH6_RD; 
 		End If;
-		if addr = x"00312017" then
+		if addr = x"002F2017" then
 			rreg := REG_disable_det_CH7_RD; 
 		End If;
-		if addr = x"00312018" then
+		if addr = x"002F2018" then
 			rreg := REG_disable_det_CH8_RD; 
 		End If;
-		if addr = x"00312019" then
+		if addr = x"002F2019" then
 			rreg := REG_disable_det_CH9_RD; 
 		End If;
-		if addr = x"0031201A" then
+		if addr = x"002F201A" then
 			rreg := REG_disable_det_CH10_RD; 
 		End If;
-		if addr = x"0031201B" then
+		if addr = x"002F201B" then
 			rreg := REG_disable_det_CH11_RD; 
 		End If;
-		if addr = x"0031201C" then
+		if addr = x"002F201C" then
 			rreg := REG_disable_det_CH12_RD; 
 		End If;
-		if addr = x"0031201D" then
+		if addr = x"002F201D" then
 			rreg := REG_disable_det_CH13_RD; 
 		End If;
-		if addr = x"0031201E" then
+		if addr = x"002F201E" then
 			rreg := REG_disable_det_CH14_RD; 
 		End If;
-		if addr = x"0031201F" then
+		if addr = x"002F201F" then
 			rreg := REG_disable_det_CH15_RD; 
 		End If;
-		if addr = x"00312020" then
+		if addr = x"002F2020" then
 			rreg := REG_disable_det_CH16_RD; 
 		End If;
-		if addr = x"00312021" then
+		if addr = x"002F2021" then
 			rreg := REG_disable_det_CH17_RD; 
 		End If;
-		if addr = x"00312022" then
+		if addr = x"002F2022" then
 			rreg := REG_disable_det_CH18_RD; 
 		End If;
-		if addr = x"00312023" then
+		if addr = x"002F2023" then
 			rreg := REG_disable_det_CH19_RD; 
 		End If;
-		if addr = x"00312024" then
+		if addr = x"002F2024" then
 			rreg := REG_disable_det_CH20_RD; 
 		End If;
-		if addr = x"00312025" then
+		if addr = x"002F2025" then
 			rreg := REG_disable_det_CH21_RD; 
 		End If;
-		if addr = x"00312026" then
+		if addr = x"002F2026" then
 			rreg := REG_disable_det_CH22_RD; 
 		End If;
-		if addr = x"00312027" then
+		if addr = x"002F2027" then
 			rreg := REG_disable_det_CH23_RD; 
 		End If;
-		if addr = x"0031202A" then
+		if addr = x"002F202A" then
 			rreg := REG_top_CH0_RD; 
 		End If;
-		if addr = x"0031202B" then
+		if addr = x"002F202B" then
 			rreg := REG_top_CH1_RD; 
 		End If;
-		if addr = x"0031202C" then
+		if addr = x"002F202C" then
 			rreg := REG_top_CH2_RD; 
 		End If;
-		if addr = x"0031202D" then
+		if addr = x"002F202D" then
 			rreg := REG_top_CH3_RD; 
 		End If;
-		if addr = x"0031202E" then
+		if addr = x"002F202E" then
 			rreg := REG_top_CH4_RD; 
 		End If;
-		if addr = x"0031202F" then
+		if addr = x"002F202F" then
 			rreg := REG_top_CH5_RD; 
 		End If;
-		if addr = x"00312030" then
+		if addr = x"002F2030" then
 			rreg := REG_top_CH6_RD; 
 		End If;
-		if addr = x"00312031" then
+		if addr = x"002F2031" then
 			rreg := REG_top_CH7_RD; 
 		End If;
-		if addr = x"00312032" then
+		if addr = x"002F2032" then
 			rreg := REG_top_CH8_RD; 
 		End If;
-		if addr = x"00312033" then
+		if addr = x"002F2033" then
 			rreg := REG_top_CH9_RD; 
 		End If;
-		if addr = x"00312034" then
+		if addr = x"002F2034" then
 			rreg := REG_top_CH10_RD; 
 		End If;
-		if addr = x"00312035" then
+		if addr = x"002F2035" then
 			rreg := REG_top_CH11_RD; 
 		End If;
-		if addr = x"00312036" then
+		if addr = x"002F2036" then
 			rreg := REG_top_CH12_RD; 
 		End If;
-		if addr = x"00312037" then
+		if addr = x"002F2037" then
 			rreg := REG_top_CH13_RD; 
 		End If;
-		if addr = x"00312038" then
+		if addr = x"002F2038" then
 			rreg := REG_top_CH14_RD; 
 		End If;
-		if addr = x"00312039" then
+		if addr = x"002F2039" then
 			rreg := REG_top_CH15_RD; 
 		End If;
-		if addr = x"0031203A" then
+		if addr = x"002F203A" then
 			rreg := REG_top_CH16_RD; 
 		End If;
-		if addr = x"0031203B" then
+		if addr = x"002F203B" then
 			rreg := REG_top_CH17_RD; 
 		End If;
-		if addr = x"0031203C" then
+		if addr = x"002F203C" then
 			rreg := REG_top_CH18_RD; 
 		End If;
-		if addr = x"0031203D" then
+		if addr = x"002F203D" then
 			rreg := REG_top_CH19_RD; 
 		End If;
-		if addr = x"0031203E" then
+		if addr = x"002F203E" then
 			rreg := REG_top_CH20_RD; 
 		End If;
-		if addr = x"0031203F" then
+		if addr = x"002F203F" then
 			rreg := REG_top_CH21_RD; 
 		End If;
-		if addr = x"00312040" then
+		if addr = x"002F2040" then
 			rreg := REG_top_CH22_RD; 
 		End If;
-		if addr = x"00312041" then
+		if addr = x"002F2041" then
 			rreg := REG_top_CH23_RD; 
 		End If;
-		if addr = x"00312044" then
+		if addr = x"002F2044" then
 			rreg := REG_thrsh_CH0_RD; 
 		End If;
-		if addr = x"00312045" then
+		if addr = x"002F2045" then
 			rreg := REG_thrsh_CH1_RD; 
 		End If;
-		if addr = x"00312046" then
+		if addr = x"002F2046" then
 			rreg := REG_thrsh_CH2_RD; 
 		End If;
-		if addr = x"00312047" then
+		if addr = x"002F2047" then
 			rreg := REG_thrsh_CH3_RD; 
 		End If;
-		if addr = x"00312048" then
+		if addr = x"002F2048" then
 			rreg := REG_thrsh_CH4_RD; 
 		End If;
-		if addr = x"00312049" then
+		if addr = x"002F2049" then
 			rreg := REG_thrsh_CH5_RD; 
 		End If;
-		if addr = x"0031204A" then
+		if addr = x"002F204A" then
 			rreg := REG_thrsh_CH6_RD; 
 		End If;
-		if addr = x"0031204B" then
+		if addr = x"002F204B" then
 			rreg := REG_thrsh_CH7_RD; 
 		End If;
-		if addr = x"0031204C" then
+		if addr = x"002F204C" then
 			rreg := REG_thrsh_CH8_RD; 
 		End If;
-		if addr = x"0031204D" then
+		if addr = x"002F204D" then
 			rreg := REG_thrsh_CH9_RD; 
 		End If;
-		if addr = x"0031204E" then
+		if addr = x"002F204E" then
 			rreg := REG_thrsh_CH10_RD; 
 		End If;
-		if addr = x"0031204F" then
+		if addr = x"002F204F" then
 			rreg := REG_thrsh_CH11_RD; 
 		End If;
-		if addr = x"00312050" then
+		if addr = x"002F2050" then
 			rreg := REG_thrsh_CH12_RD; 
 		End If;
-		if addr = x"00312051" then
+		if addr = x"002F2051" then
 			rreg := REG_thrsh_CH13_RD; 
 		End If;
-		if addr = x"00312052" then
+		if addr = x"002F2052" then
 			rreg := REG_thrsh_CH14_RD; 
 		End If;
-		if addr = x"00312053" then
+		if addr = x"002F2053" then
 			rreg := REG_thrsh_CH15_RD; 
 		End If;
-		if addr = x"00312054" then
+		if addr = x"002F2054" then
 			rreg := REG_thrsh_CH16_RD; 
 		End If;
-		if addr = x"00312055" then
+		if addr = x"002F2055" then
 			rreg := REG_thrsh_CH17_RD; 
 		End If;
-		if addr = x"00312056" then
+		if addr = x"002F2056" then
 			rreg := REG_thrsh_CH18_RD; 
 		End If;
-		if addr = x"00312057" then
+		if addr = x"002F2057" then
 			rreg := REG_thrsh_CH19_RD; 
 		End If;
-		if addr = x"00312058" then
+		if addr = x"002F2058" then
 			rreg := REG_thrsh_CH20_RD; 
 		End If;
-		if addr = x"00312059" then
+		if addr = x"002F2059" then
 			rreg := REG_thrsh_CH21_RD; 
 		End If;
-		if addr = x"0031205A" then
+		if addr = x"002F205A" then
 			rreg := REG_thrsh_CH22_RD; 
 		End If;
-		if addr = x"0031205B" then
+		if addr = x"002F205B" then
 			rreg := REG_thrsh_CH23_RD; 
 		End If;
-		if addr = x"0031205C" then
+		if addr = x"002F205C" then
 			rreg := REG_dummy_RD; 
 		End If;
-		if addr = x"0031205F" then
+		if addr = x"002F205F" then
 			rreg := REG_base_CH0_RD; 
 		End If;
-		if addr = x"00312060" then
+		if addr = x"002F2060" then
 			rreg := REG_base_CH1_RD; 
 		End If;
-		if addr = x"00312061" then
+		if addr = x"002F2061" then
 			rreg := REG_base_CH2_RD; 
 		End If;
-		if addr = x"00312062" then
+		if addr = x"002F2062" then
 			rreg := REG_base_CH3_RD; 
 		End If;
-		if addr = x"00312063" then
+		if addr = x"002F2063" then
 			rreg := REG_base_CH4_RD; 
 		End If;
-		if addr = x"00312064" then
+		if addr = x"002F2064" then
 			rreg := REG_base_CH5_RD; 
 		End If;
-		if addr = x"00312065" then
+		if addr = x"002F2065" then
 			rreg := REG_base_CH6_RD; 
 		End If;
-		if addr = x"00312066" then
+		if addr = x"002F2066" then
 			rreg := REG_base_CH7_RD; 
 		End If;
-		if addr = x"00312067" then
+		if addr = x"002F2067" then
 			rreg := REG_base_CH8_RD; 
 		End If;
-		if addr = x"00312068" then
+		if addr = x"002F2068" then
 			rreg := REG_base_CH9_RD; 
 		End If;
-		if addr = x"00312069" then
+		if addr = x"002F2069" then
 			rreg := REG_base_CH10_RD; 
 		End If;
-		if addr = x"0031206A" then
+		if addr = x"002F206A" then
 			rreg := REG_base_CH11_RD; 
 		End If;
-		if addr = x"0031206B" then
+		if addr = x"002F206B" then
 			rreg := REG_base_CH12_RD; 
 		End If;
-		if addr = x"0031206C" then
+		if addr = x"002F206C" then
 			rreg := REG_base_CH13_RD; 
 		End If;
-		if addr = x"0031206D" then
+		if addr = x"002F206D" then
 			rreg := REG_base_CH14_RD; 
 		End If;
-		if addr = x"0031206E" then
+		if addr = x"002F206E" then
 			rreg := REG_base_CH15_RD; 
 		End If;
-		if addr = x"0031206F" then
+		if addr = x"002F206F" then
 			rreg := REG_base_CH16_RD; 
 		End If;
-		if addr = x"00312070" then
+		if addr = x"002F2070" then
 			rreg := REG_base_CH17_RD; 
 		End If;
-		if addr = x"00312071" then
+		if addr = x"002F2071" then
 			rreg := REG_base_CH18_RD; 
 		End If;
-		if addr = x"00312072" then
+		if addr = x"002F2072" then
 			rreg := REG_base_CH19_RD; 
 		End If;
-		if addr = x"00312073" then
+		if addr = x"002F2073" then
 			rreg := REG_base_CH20_RD; 
 		End If;
-		if addr = x"00312074" then
+		if addr = x"002F2074" then
 			rreg := REG_base_CH21_RD; 
 		End If;
-		if addr = x"00312075" then
+		if addr = x"002F2075" then
 			rreg := REG_base_CH22_RD; 
 		End If;
-		if addr = x"00312076" then
+		if addr = x"002F2076" then
 			rreg := REG_base_CH23_RD; 
 		End If;
-		if addr = x"00312079" then
+		if addr = x"002F2079" then
 			rreg := REG_io_to_encode_RD; 
 		End If;
-		if addr = x"0031207A" then
+		if addr = x"002F207A" then
 			rreg := REG_io_stamptype_RD; 
 		End If;
-		if addr = x"0031207B" then
+		if addr = x"002F207B" then
 			rreg := REG_io_lemo2out_RD; 
 		End If;
-		if addr = x"0031207C" then
+		if addr = x"002F207C" then
 			rreg := REG_io_divide_RD; 
 		End If;
-		if addr = x"00320000" then
+		if addr = x"00300000" then
 			rreg := REG_Analog_In_Unflipped_READ_STATUS_RD; 
 		End If;
-		if addr = x"00320001" then
+		if addr = x"00300001" then
 			rreg := REG_Analog_In_Unflipped_READ_POSITION_RD; 
 		End If;
-		if addr = x"00320002" then
+		if addr = x"00300002" then
 			rreg := REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD; 
 		End If;
-		if addr = x"00320003" then
+		if addr = x"00300003" then
 			rreg := REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD; 
 		End If;
-		if addr = x"00320004" then
+		if addr = x"00300004" then
 			rreg := REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD; 
 		End If;
-		if addr = x"00320005" then
+		if addr = x"00300005" then
 			rreg := REG_Analog_In_Unflipped_CONFIG_ARM_RD; 
 		End If;
-		if addr = x"00320006" then
+		if addr = x"00300006" then
 			rreg := REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD; 
 		End If;
-		if addr = x"00320009" then
+		if addr = x"00300009" then
 			rreg := REG_All_Energies_READ_STATUS_RD; 
 		End If;
-		if addr = x"0032000A" then
+		if addr = x"0030000A" then
 			rreg := REG_All_Energies_READ_VALID_WORDS_RD; 
 		End If;
-		if addr = x"0032000B" then
+		if addr = x"0030000B" then
 			rreg := REG_All_Energies_CONFIG_RD; 
 		End If;
-		if addr = x"00680000" then
+		if addr = x"00320000" then
 			rreg := REG_Spectrum_10_STATUS_RD; 
 		End If;
-		if addr = x"00680001" then
+		if addr = x"00320001" then
 			rreg := REG_Spectrum_10_CONFIG_RD; 
 		End If;
-		if addr = x"00680002" then
+		if addr = x"00320002" then
 			rreg := REG_Spectrum_10_CONFIG_LIMIT_RD; 
 		End If;
-		if addr = x"00680003" then
+		if addr = x"00320003" then
 			rreg := REG_Spectrum_10_CONFIG_REBIN_RD; 
 		End If;
-		if addr = x"00680004" then
+		if addr = x"00320004" then
 			rreg := REG_Spectrum_10_CONFIG_MIN_RD; 
 		End If;
-		if addr = x"00680005" then
+		if addr = x"00320005" then
 			rreg := REG_Spectrum_10_CONFIG_MAX_RD; 
 		End If;
-		if addr = x"00684000" then
+		if addr = x"00680000" then
+			rreg := REG_Spectrum_23_STATUS_RD; 
+		End If;
+		if addr = x"00680001" then
+			rreg := REG_Spectrum_23_CONFIG_RD; 
+		End If;
+		if addr = x"00680002" then
+			rreg := REG_Spectrum_23_CONFIG_LIMIT_RD; 
+		End If;
+		if addr = x"00680003" then
+			rreg := REG_Spectrum_23_CONFIG_REBIN_RD; 
+		End If;
+		if addr = x"00680004" then
+			rreg := REG_Spectrum_23_CONFIG_MIN_RD; 
+		End If;
+		if addr = x"00680005" then
+			rreg := REG_Spectrum_23_CONFIG_MAX_RD; 
+		End If;
+		if addr = x"00682000" then
 			rreg := REG_diag_READ_STATUS_RD; 
 		End If;
-		if addr = x"00684001" then
+		if addr = x"00682001" then
 			rreg := REG_diag_READ_POSITION_RD; 
 		End If;
-		if addr = x"00684002" then
+		if addr = x"00682002" then
 			rreg := REG_diag_CONFIG_TRIGGER_MODE_RD; 
 		End If;
-		if addr = x"00684003" then
+		if addr = x"00682003" then
 			rreg := REG_diag_CONFIG_PRETRIGGER_RD; 
 		End If;
-		if addr = x"00684004" then
+		if addr = x"00682004" then
 			rreg := REG_diag_CONFIG_TRIGGER_LEVEL_RD; 
 		End If;
-		if addr = x"00684005" then
+		if addr = x"00682005" then
 			rreg := REG_diag_CONFIG_ARM_RD; 
 		End If;
-		if addr = x"00684006" then
+		if addr = x"00682006" then
 			rreg := REG_diag_CONFIG_DECIMATOR_RD; 
 		End If;
     

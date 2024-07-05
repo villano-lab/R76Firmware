@@ -1492,77 +1492,6 @@
       "Path": "/Spectrum_22"
     },
     {
-      "Name": "Spectrum_23",
-      "Type": "Spectrum",
-      "Address": 3145728,
-      "Version": "1.0.1.0",
-      "bins": 1024,
-      "Registers": [
-        {
-          "Name": "STATUS",
-          "Type": null,
-          "Address": 3211264,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG",
-          "Type": null,
-          "Address": 3211265,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_LIMIT",
-          "Type": null,
-          "Address": 3211266,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_REBIN",
-          "Type": null,
-          "Address": 3211267,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_MIN",
-          "Type": null,
-          "Address": 3211268,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_MAX",
-          "Type": null,
-          "Address": 3211269,
-          "Version": null,
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        }
-      ],
-      "CountsBit": 16,
-      "Path": "/Spectrum_23"
-    },
-    {
       "Name": "Spectrum_0",
       "Type": "Spectrum",
       "Address": 131072,
@@ -1636,13 +1565,13 @@
     {
       "Name": "Syncs",
       "Type": "Oscilloscope",
-      "Address": 3215360,
+      "Address": 3084288,
       "Version": "1.0.0.0",
       "Registers": [
         {
           "Name": "READ_STATUS",
           "Type": "Register",
-          "Address": 3219456,
+          "Address": 3088384,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -1652,7 +1581,7 @@
         {
           "Name": "READ_POSITION",
           "Type": "Register",
-          "Address": 3219457,
+          "Address": 3088385,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -1662,7 +1591,7 @@
         {
           "Name": "CONFIG_TRIGGER_MODE",
           "Type": "Register",
-          "Address": 3219458,
+          "Address": 3088386,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -1672,7 +1601,7 @@
         {
           "Name": "CONFIG_PRETRIGGER",
           "Type": "Register",
-          "Address": 3219459,
+          "Address": 3088387,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -1682,7 +1611,7 @@
         {
           "Name": "CONFIG_TRIGGER_LEVEL",
           "Type": "Register",
-          "Address": 3219460,
+          "Address": 3088388,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -1692,7 +1621,7 @@
         {
           "Name": "CONFIG_ARM",
           "Type": "Register",
-          "Address": 3219461,
+          "Address": 3088389,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -1702,7 +1631,7 @@
         {
           "Name": "CONFIG_DECIMATOR",
           "Type": "Register",
-          "Address": 3219462,
+          "Address": 3088390,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2029,13 +1958,13 @@
     {
       "Name": "disable_det",
       "Type": "MultiChannelRegister",
-      "Address": 3219471,
+      "Address": 3088399,
       "Version": "1.0.0.0",
       "Registers": [
         {
           "Name": "CH0",
           "Type": "11",
-          "Address": 3219472,
+          "Address": 3088400,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2045,7 +1974,7 @@
         {
           "Name": "CH1",
           "Type": "11",
-          "Address": 3219473,
+          "Address": 3088401,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2055,7 +1984,7 @@
         {
           "Name": "CH2",
           "Type": "11",
-          "Address": 3219474,
+          "Address": 3088402,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2065,7 +1994,7 @@
         {
           "Name": "CH3",
           "Type": "11",
-          "Address": 3219475,
+          "Address": 3088403,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2075,7 +2004,7 @@
         {
           "Name": "CH4",
           "Type": "11",
-          "Address": 3219476,
+          "Address": 3088404,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2085,7 +2014,7 @@
         {
           "Name": "CH5",
           "Type": "11",
-          "Address": 3219477,
+          "Address": 3088405,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2095,7 +2024,7 @@
         {
           "Name": "CH6",
           "Type": "11",
-          "Address": 3219478,
+          "Address": 3088406,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2105,7 +2034,7 @@
         {
           "Name": "CH7",
           "Type": "11",
-          "Address": 3219479,
+          "Address": 3088407,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2115,7 +2044,7 @@
         {
           "Name": "CH8",
           "Type": "11",
-          "Address": 3219480,
+          "Address": 3088408,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2125,7 +2054,7 @@
         {
           "Name": "CH9",
           "Type": "11",
-          "Address": 3219481,
+          "Address": 3088409,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2135,7 +2064,7 @@
         {
           "Name": "CH10",
           "Type": "11",
-          "Address": 3219482,
+          "Address": 3088410,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2145,7 +2074,7 @@
         {
           "Name": "CH11",
           "Type": "11",
-          "Address": 3219483,
+          "Address": 3088411,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2155,7 +2084,7 @@
         {
           "Name": "CH12",
           "Type": "11",
-          "Address": 3219484,
+          "Address": 3088412,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2165,7 +2094,7 @@
         {
           "Name": "CH13",
           "Type": "11",
-          "Address": 3219485,
+          "Address": 3088413,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2175,7 +2104,7 @@
         {
           "Name": "CH14",
           "Type": "11",
-          "Address": 3219486,
+          "Address": 3088414,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2185,7 +2114,7 @@
         {
           "Name": "CH15",
           "Type": "11",
-          "Address": 3219487,
+          "Address": 3088415,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2195,7 +2124,7 @@
         {
           "Name": "CH16",
           "Type": "11",
-          "Address": 3219488,
+          "Address": 3088416,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2205,7 +2134,7 @@
         {
           "Name": "CH17",
           "Type": "11",
-          "Address": 3219489,
+          "Address": 3088417,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2215,7 +2144,7 @@
         {
           "Name": "CH18",
           "Type": "11",
-          "Address": 3219490,
+          "Address": 3088418,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2225,7 +2154,7 @@
         {
           "Name": "CH19",
           "Type": "11",
-          "Address": 3219491,
+          "Address": 3088419,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2235,7 +2164,7 @@
         {
           "Name": "CH20",
           "Type": "11",
-          "Address": 3219492,
+          "Address": 3088420,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2245,7 +2174,7 @@
         {
           "Name": "CH21",
           "Type": "11",
-          "Address": 3219493,
+          "Address": 3088421,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2255,7 +2184,7 @@
         {
           "Name": "CH22",
           "Type": "11",
-          "Address": 3219494,
+          "Address": 3088422,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2265,7 +2194,7 @@
         {
           "Name": "CH23",
           "Type": "11",
-          "Address": 3219495,
+          "Address": 3088423,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2278,13 +2207,13 @@
     {
       "Name": "top",
       "Type": "MultiChannelRegister",
-      "Address": 3219497,
+      "Address": 3088425,
       "Version": "1.0.0.0",
       "Registers": [
         {
           "Name": "CH0",
           "Type": "11",
-          "Address": 3219498,
+          "Address": 3088426,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2294,7 +2223,7 @@
         {
           "Name": "CH1",
           "Type": "11",
-          "Address": 3219499,
+          "Address": 3088427,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2304,7 +2233,7 @@
         {
           "Name": "CH2",
           "Type": "11",
-          "Address": 3219500,
+          "Address": 3088428,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2314,7 +2243,7 @@
         {
           "Name": "CH3",
           "Type": "11",
-          "Address": 3219501,
+          "Address": 3088429,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2324,7 +2253,7 @@
         {
           "Name": "CH4",
           "Type": "11",
-          "Address": 3219502,
+          "Address": 3088430,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2334,7 +2263,7 @@
         {
           "Name": "CH5",
           "Type": "11",
-          "Address": 3219503,
+          "Address": 3088431,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2344,7 +2273,7 @@
         {
           "Name": "CH6",
           "Type": "11",
-          "Address": 3219504,
+          "Address": 3088432,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2354,7 +2283,7 @@
         {
           "Name": "CH7",
           "Type": "11",
-          "Address": 3219505,
+          "Address": 3088433,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2364,7 +2293,7 @@
         {
           "Name": "CH8",
           "Type": "11",
-          "Address": 3219506,
+          "Address": 3088434,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2374,7 +2303,7 @@
         {
           "Name": "CH9",
           "Type": "11",
-          "Address": 3219507,
+          "Address": 3088435,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2384,7 +2313,7 @@
         {
           "Name": "CH10",
           "Type": "11",
-          "Address": 3219508,
+          "Address": 3088436,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2394,7 +2323,7 @@
         {
           "Name": "CH11",
           "Type": "11",
-          "Address": 3219509,
+          "Address": 3088437,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2404,7 +2333,7 @@
         {
           "Name": "CH12",
           "Type": "11",
-          "Address": 3219510,
+          "Address": 3088438,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2414,7 +2343,7 @@
         {
           "Name": "CH13",
           "Type": "11",
-          "Address": 3219511,
+          "Address": 3088439,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2424,7 +2353,7 @@
         {
           "Name": "CH14",
           "Type": "11",
-          "Address": 3219512,
+          "Address": 3088440,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2434,7 +2363,7 @@
         {
           "Name": "CH15",
           "Type": "11",
-          "Address": 3219513,
+          "Address": 3088441,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2444,7 +2373,7 @@
         {
           "Name": "CH16",
           "Type": "11",
-          "Address": 3219514,
+          "Address": 3088442,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2454,7 +2383,7 @@
         {
           "Name": "CH17",
           "Type": "11",
-          "Address": 3219515,
+          "Address": 3088443,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2464,7 +2393,7 @@
         {
           "Name": "CH18",
           "Type": "11",
-          "Address": 3219516,
+          "Address": 3088444,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2474,7 +2403,7 @@
         {
           "Name": "CH19",
           "Type": "11",
-          "Address": 3219517,
+          "Address": 3088445,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2484,7 +2413,7 @@
         {
           "Name": "CH20",
           "Type": "11",
-          "Address": 3219518,
+          "Address": 3088446,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2494,7 +2423,7 @@
         {
           "Name": "CH21",
           "Type": "11",
-          "Address": 3219519,
+          "Address": 3088447,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2504,7 +2433,7 @@
         {
           "Name": "CH22",
           "Type": "11",
-          "Address": 3219520,
+          "Address": 3088448,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2514,7 +2443,7 @@
         {
           "Name": "CH23",
           "Type": "11",
-          "Address": 3219521,
+          "Address": 3088449,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2527,13 +2456,13 @@
     {
       "Name": "thrsh",
       "Type": "MultiChannelRegister",
-      "Address": 3219523,
+      "Address": 3088451,
       "Version": "1.0.0.0",
       "Registers": [
         {
           "Name": "CH0",
           "Type": "11",
-          "Address": 3219524,
+          "Address": 3088452,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2543,7 +2472,7 @@
         {
           "Name": "CH1",
           "Type": "11",
-          "Address": 3219525,
+          "Address": 3088453,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2553,7 +2482,7 @@
         {
           "Name": "CH2",
           "Type": "11",
-          "Address": 3219526,
+          "Address": 3088454,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2563,7 +2492,7 @@
         {
           "Name": "CH3",
           "Type": "11",
-          "Address": 3219527,
+          "Address": 3088455,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2573,7 +2502,7 @@
         {
           "Name": "CH4",
           "Type": "11",
-          "Address": 3219528,
+          "Address": 3088456,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2583,7 +2512,7 @@
         {
           "Name": "CH5",
           "Type": "11",
-          "Address": 3219529,
+          "Address": 3088457,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2593,7 +2522,7 @@
         {
           "Name": "CH6",
           "Type": "11",
-          "Address": 3219530,
+          "Address": 3088458,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2603,7 +2532,7 @@
         {
           "Name": "CH7",
           "Type": "11",
-          "Address": 3219531,
+          "Address": 3088459,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2613,7 +2542,7 @@
         {
           "Name": "CH8",
           "Type": "11",
-          "Address": 3219532,
+          "Address": 3088460,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2623,7 +2552,7 @@
         {
           "Name": "CH9",
           "Type": "11",
-          "Address": 3219533,
+          "Address": 3088461,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2633,7 +2562,7 @@
         {
           "Name": "CH10",
           "Type": "11",
-          "Address": 3219534,
+          "Address": 3088462,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2643,7 +2572,7 @@
         {
           "Name": "CH11",
           "Type": "11",
-          "Address": 3219535,
+          "Address": 3088463,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2653,7 +2582,7 @@
         {
           "Name": "CH12",
           "Type": "11",
-          "Address": 3219536,
+          "Address": 3088464,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2663,7 +2592,7 @@
         {
           "Name": "CH13",
           "Type": "11",
-          "Address": 3219537,
+          "Address": 3088465,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2673,7 +2602,7 @@
         {
           "Name": "CH14",
           "Type": "11",
-          "Address": 3219538,
+          "Address": 3088466,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2683,7 +2612,7 @@
         {
           "Name": "CH15",
           "Type": "11",
-          "Address": 3219539,
+          "Address": 3088467,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2693,7 +2622,7 @@
         {
           "Name": "CH16",
           "Type": "11",
-          "Address": 3219540,
+          "Address": 3088468,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2703,7 +2632,7 @@
         {
           "Name": "CH17",
           "Type": "11",
-          "Address": 3219541,
+          "Address": 3088469,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2713,7 +2642,7 @@
         {
           "Name": "CH18",
           "Type": "11",
-          "Address": 3219542,
+          "Address": 3088470,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2723,7 +2652,7 @@
         {
           "Name": "CH19",
           "Type": "11",
-          "Address": 3219543,
+          "Address": 3088471,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2733,7 +2662,7 @@
         {
           "Name": "CH20",
           "Type": "11",
-          "Address": 3219544,
+          "Address": 3088472,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2743,7 +2672,7 @@
         {
           "Name": "CH21",
           "Type": "11",
-          "Address": 3219545,
+          "Address": 3088473,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2753,7 +2682,7 @@
         {
           "Name": "CH22",
           "Type": "11",
-          "Address": 3219546,
+          "Address": 3088474,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2763,7 +2692,7 @@
         {
           "Name": "CH23",
           "Type": "11",
-          "Address": 3219547,
+          "Address": 3088475,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2776,13 +2705,13 @@
     {
       "Name": "base",
       "Type": "MultiChannelRegister",
-      "Address": 3219550,
+      "Address": 3088478,
       "Version": "1.0.0.0",
       "Registers": [
         {
           "Name": "CH0",
           "Type": "11",
-          "Address": 3219551,
+          "Address": 3088479,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2792,7 +2721,7 @@
         {
           "Name": "CH1",
           "Type": "11",
-          "Address": 3219552,
+          "Address": 3088480,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2802,7 +2731,7 @@
         {
           "Name": "CH2",
           "Type": "11",
-          "Address": 3219553,
+          "Address": 3088481,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2812,7 +2741,7 @@
         {
           "Name": "CH3",
           "Type": "11",
-          "Address": 3219554,
+          "Address": 3088482,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2822,7 +2751,7 @@
         {
           "Name": "CH4",
           "Type": "11",
-          "Address": 3219555,
+          "Address": 3088483,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2832,7 +2761,7 @@
         {
           "Name": "CH5",
           "Type": "11",
-          "Address": 3219556,
+          "Address": 3088484,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2842,7 +2771,7 @@
         {
           "Name": "CH6",
           "Type": "11",
-          "Address": 3219557,
+          "Address": 3088485,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2852,7 +2781,7 @@
         {
           "Name": "CH7",
           "Type": "11",
-          "Address": 3219558,
+          "Address": 3088486,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2862,7 +2791,7 @@
         {
           "Name": "CH8",
           "Type": "11",
-          "Address": 3219559,
+          "Address": 3088487,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2872,7 +2801,7 @@
         {
           "Name": "CH9",
           "Type": "11",
-          "Address": 3219560,
+          "Address": 3088488,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2882,7 +2811,7 @@
         {
           "Name": "CH10",
           "Type": "11",
-          "Address": 3219561,
+          "Address": 3088489,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2892,7 +2821,7 @@
         {
           "Name": "CH11",
           "Type": "11",
-          "Address": 3219562,
+          "Address": 3088490,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2902,7 +2831,7 @@
         {
           "Name": "CH12",
           "Type": "11",
-          "Address": 3219563,
+          "Address": 3088491,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2912,7 +2841,7 @@
         {
           "Name": "CH13",
           "Type": "11",
-          "Address": 3219564,
+          "Address": 3088492,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2922,7 +2851,7 @@
         {
           "Name": "CH14",
           "Type": "11",
-          "Address": 3219565,
+          "Address": 3088493,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2932,7 +2861,7 @@
         {
           "Name": "CH15",
           "Type": "11",
-          "Address": 3219566,
+          "Address": 3088494,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2942,7 +2871,7 @@
         {
           "Name": "CH16",
           "Type": "11",
-          "Address": 3219567,
+          "Address": 3088495,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2952,7 +2881,7 @@
         {
           "Name": "CH17",
           "Type": "11",
-          "Address": 3219568,
+          "Address": 3088496,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2962,7 +2891,7 @@
         {
           "Name": "CH18",
           "Type": "11",
-          "Address": 3219569,
+          "Address": 3088497,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2972,7 +2901,7 @@
         {
           "Name": "CH19",
           "Type": "11",
-          "Address": 3219570,
+          "Address": 3088498,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2982,7 +2911,7 @@
         {
           "Name": "CH20",
           "Type": "11",
-          "Address": 3219571,
+          "Address": 3088499,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -2992,7 +2921,7 @@
         {
           "Name": "CH21",
           "Type": "11",
-          "Address": 3219572,
+          "Address": 3088500,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3002,7 +2931,7 @@
         {
           "Name": "CH22",
           "Type": "11",
-          "Address": 3219573,
+          "Address": 3088501,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3012,7 +2941,7 @@
         {
           "Name": "CH23",
           "Type": "11",
-          "Address": 3219574,
+          "Address": 3088502,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3025,13 +2954,13 @@
     {
       "Name": "io",
       "Type": "RegisterFile",
-      "Address": 3219576,
+      "Address": 3088504,
       "Version": "1.0.0.0",
       "Registers": [
         {
           "Name": "to_encode",
           "Type": "Register",
-          "Address": 3219577,
+          "Address": 3088505,
           "Version": "",
           "RegionSize": 0,
           "Description": null,
@@ -3041,7 +2970,7 @@
         {
           "Name": "stamptype",
           "Type": "Register",
-          "Address": 3219578,
+          "Address": 3088506,
           "Version": "",
           "RegionSize": 0,
           "Description": null,
@@ -3051,7 +2980,7 @@
         {
           "Name": "lemo2out",
           "Type": "Register",
-          "Address": 3219579,
+          "Address": 3088507,
           "Version": "",
           "RegionSize": 0,
           "Description": null,
@@ -3061,7 +2990,7 @@
         {
           "Name": "divide",
           "Type": "Register",
-          "Address": 3219580,
+          "Address": 3088508,
           "Version": "",
           "RegionSize": 0,
           "Description": null,
@@ -3074,13 +3003,13 @@
     {
       "Name": "Analog_In_Unflipped",
       "Type": "Oscilloscope",
-      "Address": 3244032,
+      "Address": 3112960,
       "Version": "1.0.0.0",
       "Registers": [
         {
           "Name": "READ_STATUS",
           "Type": "Register",
-          "Address": 3276800,
+          "Address": 3145728,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3090,7 +3019,7 @@
         {
           "Name": "READ_POSITION",
           "Type": "Register",
-          "Address": 3276801,
+          "Address": 3145729,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3100,7 +3029,7 @@
         {
           "Name": "CONFIG_TRIGGER_MODE",
           "Type": "Register",
-          "Address": 3276802,
+          "Address": 3145730,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3110,7 +3039,7 @@
         {
           "Name": "CONFIG_PRETRIGGER",
           "Type": "Register",
-          "Address": 3276803,
+          "Address": 3145731,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3120,7 +3049,7 @@
         {
           "Name": "CONFIG_TRIGGER_LEVEL",
           "Type": "Register",
-          "Address": 3276804,
+          "Address": 3145732,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3130,7 +3059,7 @@
         {
           "Name": "CONFIG_ARM",
           "Type": "Register",
-          "Address": 3276805,
+          "Address": 3145733,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3140,7 +3069,7 @@
         {
           "Name": "CONFIG_DECIMATOR",
           "Type": "Register",
-          "Address": 3276806,
+          "Address": 3145734,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3163,14 +3092,14 @@
     {
       "Name": "All_Energies",
       "Type": "CustomPacket",
-      "Address": 3276808,
+      "Address": 3145736,
       "Version": "1.1.0.0",
       "Channels": 0,
       "Registers": [
         {
           "Name": "READ_STATUS",
           "Type": null,
-          "Address": 3276809,
+          "Address": 3145737,
           "Version": null,
           "RegionSize": 1,
           "Description": "",
@@ -3180,7 +3109,7 @@
         {
           "Name": "READ_VALID_WORDS",
           "Type": null,
-          "Address": 3276810,
+          "Address": 3145738,
           "Version": null,
           "RegionSize": 1,
           "Description": "",
@@ -3190,7 +3119,7 @@
         {
           "Name": "CONFIG",
           "Type": null,
-          "Address": 3276811,
+          "Address": 3145739,
           "Version": null,
           "RegionSize": 1,
           "Description": "",
@@ -3643,6 +3572,77 @@
     {
       "Name": "Spectrum_10",
       "Type": "Spectrum",
+      "Address": 3211264,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Type": null,
+          "Address": 3276800,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG",
+          "Type": null,
+          "Address": 3276801,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Type": null,
+          "Address": 3276802,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Type": null,
+          "Address": 3276803,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Type": null,
+          "Address": 3276804,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Type": null,
+          "Address": 3276805,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        }
+      ],
+      "CountsBit": 16,
+      "Path": "/Spectrum_10"
+    },
+    {
+      "Name": "Spectrum_23",
+      "Type": "Spectrum",
       "Address": 6750208,
       "Version": "1.0.1.0",
       "bins": 1024,
@@ -3709,18 +3709,18 @@
         }
       ],
       "CountsBit": 16,
-      "Path": "/Spectrum_10"
+      "Path": "/Spectrum_23"
     },
     {
       "Name": "diag",
       "Type": "Oscilloscope",
-      "Address": 6823936,
+      "Address": 6819840,
       "Version": "1.0.0.0",
       "Registers": [
         {
           "Name": "READ_STATUS",
           "Type": "Register",
-          "Address": 6832128,
+          "Address": 6823936,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3730,7 +3730,7 @@
         {
           "Name": "READ_POSITION",
           "Type": "Register",
-          "Address": 6832129,
+          "Address": 6823937,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3740,7 +3740,7 @@
         {
           "Name": "CONFIG_TRIGGER_MODE",
           "Type": "Register",
-          "Address": 6832130,
+          "Address": 6823938,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3750,7 +3750,7 @@
         {
           "Name": "CONFIG_PRETRIGGER",
           "Type": "Register",
-          "Address": 6832131,
+          "Address": 6823939,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3760,7 +3760,7 @@
         {
           "Name": "CONFIG_TRIGGER_LEVEL",
           "Type": "Register",
-          "Address": 6832132,
+          "Address": 6823940,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3770,7 +3770,7 @@
         {
           "Name": "CONFIG_ARM",
           "Type": "Register",
-          "Address": 6832133,
+          "Address": 6823941,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3780,7 +3780,7 @@
         {
           "Name": "CONFIG_DECIMATOR",
           "Type": "Register",
-          "Address": 6832134,
+          "Address": 6823942,
           "Version": "",
           "RegionSize": 1,
           "Description": "",
@@ -3789,7 +3789,7 @@
         }
       ],
       "nsamples": 1024,
-      "Channels": 5,
+      "Channels": 4,
       "WordSize": 16,
       "WordEnob": 16,
       "AnalogInputs": 1,
@@ -3805,7 +3805,7 @@
     {
       "Name": "reset",
       "Type": "Register",
-      "Address": 3219466,
+      "Address": 3088394,
       "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
@@ -3815,7 +3815,7 @@
     {
       "Name": "trigger_code",
       "Type": "Register",
-      "Address": 3219465,
+      "Address": 3088393,
       "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
@@ -3825,7 +3825,7 @@
     {
       "Name": "full",
       "Type": "Register",
-      "Address": 3219464,
+      "Address": 3088392,
       "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
@@ -3835,7 +3835,7 @@
     {
       "Name": "timestamp",
       "Type": "Register",
-      "Address": 3219468,
+      "Address": 3088396,
       "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
@@ -3845,7 +3845,7 @@
     {
       "Name": "received",
       "Type": "Register",
-      "Address": 3219467,
+      "Address": 3088395,
       "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
@@ -3855,7 +3855,7 @@
     {
       "Name": "forcetrig",
       "Type": "Register",
-      "Address": 3219463,
+      "Address": 3088391,
       "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
@@ -3865,7 +3865,7 @@
     {
       "Name": "dummy",
       "Type": "Register",
-      "Address": 3219548,
+      "Address": 3088476,
       "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
@@ -3878,5 +3878,5 @@
   "Magic": "361567DF",
   "Version": null,
   "FPGA": "xc7z030fbg676-2",
-  "BuildDate": "2024-07-04T10:18:03.5119181-05:00"
+  "BuildDate": "2024-07-05T11:15:32.6778983-05:00"
 }

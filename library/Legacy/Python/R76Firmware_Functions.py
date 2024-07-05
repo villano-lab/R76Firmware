@@ -1282,57 +1282,6 @@ def SPECTRUM_Spectrum_22_GET_DATA(Bin, timeout_ms, handle):
 
 
 
-def SPECTRUM_Spectrum_23_RESET(handle):
-    err = __abstracted_reg_write(2, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG, handle)
-    return err
-
-def SPECTRUM_Spectrum_23_START(handle):
-    err = __abstracted_reg_write(4, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG, handle)
-    return err
-
-def SPECTRUM_Spectrum_23_FLUSH(handle):
-    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG, handle)
-    return err
-
-def SPECTRUM_Spectrum_23_STOP(handle):
-    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG, handle)
-    return err
-
-def SPECTRUM_Spectrum_23_SET_PARAMETERS(Bin, AcquisitionMode, TargetValue, handle):
-    rebin_value=0
-    if (Bin == 8192):
-        rebin_value= 1
-    if (Bin == 4096):
-        rebin_value= 2
-    if (Bin == 2048):
-        rebin_value= 3
-    if (Bin == 1024):
-        rebin_value= 4
-    if (Bin == 512):
-        rebin_value= 5
-    if (Bin == 256):
-        rebin_value= 6
-    if (Bin == 128):
-        rebin_value= 7
-    err = __abstracted_reg_write(rebin_value, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG_REBIN, handle)
-    acq_mode=0
-    if (AcquisitionMode =="Event"):
-        acq_mode=(1 << 30) + TargetValue
-    if (AcquisitionMode =="Time"):
-        acq_mode=(1 << 31) + TargetValue*1000
-    err = __abstracted_reg_write(acq_mode, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG_LIMIT, handle)
-    return err
-
-def SPECTRUM_Spectrum_23_GET_STATUS(handle):
-    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Spectrum_23_STATUS, handle)
-    return err, status
-
-def SPECTRUM_Spectrum_23_GET_DATA(Bin, timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(Bin, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_FIFOADDRESS, timeout_ms, handle)
-    return err, data, read_data, valid_data
-
-
-
 def SPECTRUM_Spectrum_0_RESET(handle):
     err = __abstracted_reg_write(2, R76Firmware_RegisterFile.SCI_REG_Spectrum_0_CONFIG, handle)
     return err
@@ -1951,6 +1900,57 @@ def SPECTRUM_Spectrum_10_GET_DATA(Bin, timeout_ms, handle):
 
 
 
+def SPECTRUM_Spectrum_23_RESET(handle):
+    err = __abstracted_reg_write(2, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG, handle)
+    return err
+
+def SPECTRUM_Spectrum_23_START(handle):
+    err = __abstracted_reg_write(4, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG, handle)
+    return err
+
+def SPECTRUM_Spectrum_23_FLUSH(handle):
+    err = __abstracted_reg_write(1, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG, handle)
+    return err
+
+def SPECTRUM_Spectrum_23_STOP(handle):
+    err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG, handle)
+    return err
+
+def SPECTRUM_Spectrum_23_SET_PARAMETERS(Bin, AcquisitionMode, TargetValue, handle):
+    rebin_value=0
+    if (Bin == 8192):
+        rebin_value= 1
+    if (Bin == 4096):
+        rebin_value= 2
+    if (Bin == 2048):
+        rebin_value= 3
+    if (Bin == 1024):
+        rebin_value= 4
+    if (Bin == 512):
+        rebin_value= 5
+    if (Bin == 256):
+        rebin_value= 6
+    if (Bin == 128):
+        rebin_value= 7
+    err = __abstracted_reg_write(rebin_value, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG_REBIN, handle)
+    acq_mode=0
+    if (AcquisitionMode =="Event"):
+        acq_mode=(1 << 30) + TargetValue
+    if (AcquisitionMode =="Time"):
+        acq_mode=(1 << 31) + TargetValue*1000
+    err = __abstracted_reg_write(acq_mode, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_CONFIG_LIMIT, handle)
+    return err
+
+def SPECTRUM_Spectrum_23_GET_STATUS(handle):
+    [err, status] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_Spectrum_23_STATUS, handle)
+    return err, status
+
+def SPECTRUM_Spectrum_23_GET_DATA(Bin, timeout_ms, handle):
+    [err, data, read_data, valid_data] = __abstracted_mem_read(Bin, R76Firmware_RegisterFile.SCI_REG_Spectrum_23_FIFOADDRESS, timeout_ms, handle)
+    return err, data, read_data, valid_data
+
+
+
 def OSCILLOSCOPE_diag_START(handle):
     err = __abstracted_reg_write(0, R76Firmware_RegisterFile.SCI_REG_diag_CONFIG_ARM, handle)
     if (err != 0):
@@ -2009,11 +2009,11 @@ def OSCILLOSCOPE_diag_GET_POSITION(handle):
     return err, position
 
 def OSCILLOSCOPE_diag_GET_DATA(timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_mem_read(5120, R76Firmware_RegisterFile.SCI_REG_diag_FIFOADDRESS, timeout_ms, handle)
+    [err, data, read_data, valid_data] = __abstracted_mem_read(4096, R76Firmware_RegisterFile.SCI_REG_diag_FIFOADDRESS, timeout_ms, handle)
     return err, data, read_data, valid_data
 
 def OSCILLOSCOPE_diag_RECONSTRUCT_DATA(OscilloscopeData, OscilloscopePosition, OscilloscopePreTrigger):
-    OscilloscopeChannels = 5
+    OscilloscopeChannels = 4
     OscilloscopeSamples = 1024
     Analog = list(range(OscilloscopeSamples*OscilloscopeChannels))
     Digital0 = list(range(OscilloscopeSamples*OscilloscopeChannels))
