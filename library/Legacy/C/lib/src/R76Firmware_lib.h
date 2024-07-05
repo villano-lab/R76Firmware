@@ -338,10 +338,10 @@ SCILIB int ClearBuffer(void *buffer_handle);
 
 
 
-
 typedef struct  {
     uint32_t row[18];
 }t_All_Energies_struct;
+
 
 
 
@@ -380,8 +380,6 @@ SCILIB int REG_received_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_received_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_timestamp_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_timestamp_SET(uint32_t val, NI_HANDLE *handle);
-SCILIB int REG_sync0_between_sync2_GET(uint32_t *val, NI_HANDLE *handle);
-SCILIB int REG_sync0_between_sync2_SET(uint32_t val, NI_HANDLE *handle);
 SCILIB int REG_dummy_GET(uint32_t *val, NI_HANDLE *handle);
 SCILIB int REG_dummy_SET(uint32_t val, NI_HANDLE *handle);
 //-----------------------------------------------------------------

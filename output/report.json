@@ -37,12 +37,12 @@
   {
     "Name": "utilization.clb.lut",
     "Description": "LUT(#)",
-    "Value": "35614"
+    "Value": "34614"
   },
   {
     "Name": "utilization.clb.ff",
     "Description": "FD(#)",
-    "Value": "40259"
+    "Value": "40256"
   },
   {
     "Name": "utilization.ram.tile",
@@ -67,7 +67,7 @@
   {
     "Name": "utilization.clb.lut.pct",
     "Description": "LUT(%)",
-    "Value": "45.31"
+    "Value": "44.04"
   },
   {
     "Name": "utilization.clb.ff.pct",
@@ -87,17 +87,17 @@
   {
     "Name": "utilization.clb.f7mux.pct",
     "Description": "MUXF7(%)",
-    "Value": "3.20"
+    "Value": "2.67"
   },
   {
     "Name": "utilization.clb.f8mux.pct",
     "Description": "MUXF8(%)",
-    "Value": "1.24"
+    "Value": "1.42"
   },
   {
     "Name": "design.cells.hlutnm.pct",
     "Description": "LUT Combining(%)",
-    "Value": "7.49"
+    "Value": "7.70"
   },
   {
     "Name": "utilization.dsp.pct",
@@ -172,11 +172,11 @@
   {
     "Name": "design.device.maxlvls.lut",
     "Description": "Number of paths above max LUT budgeting 0.500ns",
-    "Value": "129"
+    "Value": "130"
   },
   {
     "Name": "design.device.maxlvls.net",
     "Description": "Number of paths above max Net budgeting 0.350ns",
-    "Value": "129"
+    "Value": "130"
   }
 ]

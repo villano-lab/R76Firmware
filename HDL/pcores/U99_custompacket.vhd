@@ -9,7 +9,7 @@
     Library xpm;
     use xpm.vcomponents.all;
 
-entity U101_custompacket is
+entity U99_custompacket is
   Generic (	wordWidth : integer := 32;
 			memLength : integer := 4096);
   port (
@@ -73,7 +73,7 @@ entity U101_custompacket is
 	FIFO_FULL: OUT STD_LOGIC_VECTOR (0 downto 0)
 	);
 end;
-    architecture Behavioral of  U101_custompacket  is
+    architecture Behavioral of  U99_custompacket  is
     constant MaxPacketSize : integer := 19;
 	constant TotalWords : integer := memLength;
 	

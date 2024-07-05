@@ -418,14 +418,6 @@ SCILIB int REG_timestamp_SET(uint32_t val, NI_HANDLE *handle)
 {
      return __abstracted_reg_write(val, SCI_REG_timestamp, handle);
 }
-SCILIB int REG_sync0_between_sync2_GET(uint32_t *val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_read(val, SCI_REG_sync0_between_sync2, handle);
-}
-SCILIB int REG_sync0_between_sync2_SET(uint32_t val, NI_HANDLE *handle)
-{
-     return __abstracted_reg_write(val, SCI_REG_sync0_between_sync2, handle);
-}
 SCILIB int REG_dummy_GET(uint32_t *val, NI_HANDLE *handle)
 {
      return __abstracted_reg_read(val, SCI_REG_dummy, handle);

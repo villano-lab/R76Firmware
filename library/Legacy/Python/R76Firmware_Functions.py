@@ -193,14 +193,6 @@ def REG_timestamp_SET(data, handle):
     err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_timestamp, handle)
     return err
 
-def REG_sync0_between_sync2_GET(handle):
-    [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_sync0_between_sync2, handle)
-    return err, data
-
-def REG_sync0_between_sync2_SET(data, handle):
-    err = __abstracted_reg_write(data, R76Firmware_RegisterFile.SCI_REG_sync0_between_sync2, handle)
-    return err
-
 def REG_dummy_GET(handle):
     [err, data] = __abstracted_reg_read(R76Firmware_RegisterFile.SCI_REG_dummy, handle)
     return err, data
