@@ -1,0 +1,82 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Sat Jul  6 10:58:47 2024
+| Host         : Hraesvelgr running 64-bit major release  (build 9200)
+| Command      : report_drc -file TOP_asdf_drc_opted.rpt -pb TOP_asdf_drc_opted.pb -rpx TOP_asdf_drc_opted.rpx
+| Design       : TOP_asdf
+| Device       : xc7z030fbg676-2
+| Speed File   : -2
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 9
++-----------+----------+-------------------------------+------------+
+| Rule      | Severity | Description                   | Violations |
++-----------+----------+-------------------------------+------------+
+| REQP-125  | Warning  | connects_CLKINSEL_both_active | 1          |
+| REQP-1840 | Warning  | RAMB18 async control check    | 8          |
++-----------+----------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+REQP-125#1 Warning
+connects_CLKINSEL_both_active  
+main_clock_gen/inst/mmcm_adv_inst: The MMCME2_ADV has an active CLKINSEL, but the CLKIN1 and CLKIN2 pins are not both active.
+Related violations: <none>
+
+REQP-1840#1 Warning
+RAMB18 async control check  
+The RAMB18E1 zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[10] (net: zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg_i_3_n_0) which is driven by a register (zynq_subsystem/ZynqDesign_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#2 Warning
+RAMB18 async control check  
+The RAMB18E1 zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[11] (net: zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg_i_2_n_0) which is driven by a register (zynq_subsystem/ZynqDesign_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#3 Warning
+RAMB18 async control check  
+The RAMB18E1 zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[12] (net: zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg_i_1_n_0) which is driven by a register (zynq_subsystem/ZynqDesign_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#4 Warning
+RAMB18 async control check  
+The RAMB18E1 zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[5] (net: zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg_i_8_n_0) which is driven by a register (zynq_subsystem/ZynqDesign_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#5 Warning
+RAMB18 async control check  
+The RAMB18E1 zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[6] (net: zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg_i_7_n_0) which is driven by a register (zynq_subsystem/ZynqDesign_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#6 Warning
+RAMB18 async control check  
+The RAMB18E1 zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[7] (net: zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg_i_6_n_0) which is driven by a register (zynq_subsystem/ZynqDesign_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#7 Warning
+RAMB18 async control check  
+The RAMB18E1 zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[8] (net: zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg_i_5_n_0) which is driven by a register (zynq_subsystem/ZynqDesign_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#8 Warning
+RAMB18 async control check  
+The RAMB18E1 zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg has an input control pin zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg/ADDRARDADDR[9] (net: zynq_subsystem/ZynqDesign_i/data_mover_0/U0/data_mover_a_V_m_axi_U/bus_write/buff_wdata/mem_reg_i_4_n_0) which is driven by a register (zynq_subsystem/ZynqDesign_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+
