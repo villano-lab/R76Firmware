@@ -2,37 +2,37 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Jul  6 10:43:34 2024
-# Process ID: 12396
-# Current directory: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1
+# Start of session at: Sat Jul  6 12:54:52 2024
+# Process ID: 7256
+# Current directory: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1
 # Command line: vivado.exe -log ZynqDesign_OPTOLINK_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ZynqDesign_OPTOLINK_0_0.tcl
-# Log file: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/ZynqDesign_OPTOLINK_0_0.vds
-# Journal file: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1\vivado.jou
+# Log file: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/ZynqDesign_OPTOLINK_0_0.vds
+# Journal file: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source ZynqDesign_OPTOLINK_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 276.156 ; gain = 50.562
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 276.355 ; gain = 51.121
 Command: synth_design -top ZynqDesign_OPTOLINK_0_0 -part xc7z030fbg676-2 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10768 
-WARNING: [Synth 8-2306] macro DLY redefined [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/ZynqDesign_OPTOLINK_0_0_axi_to_drp.v:74]
-WARNING: [Synth 8-2306] macro DLY redefined [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_standard_cc_module.v:88]
-WARNING: [Synth 8-2306] macro DLY redefined [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_polarity_check.v:74]
-WARNING: [Synth 8-2306] macro DLY redefined [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_ll_to_axi.v:92]
-WARNING: [Synth 8-2306] macro DLY redefined [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/zynqdesign_optolink_0_0_gtx.v:80]
-WARNING: [Synth 8-2306] macro DLY redefined [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_channel_err_detect_simplex.v:88]
+INFO: Helper process launched with PID 6668 
+WARNING: [Synth 8-2306] macro DLY redefined [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/ZynqDesign_OPTOLINK_0_0_axi_to_drp.v:74]
+WARNING: [Synth 8-2306] macro DLY redefined [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_standard_cc_module.v:88]
+WARNING: [Synth 8-2306] macro DLY redefined [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_polarity_check.v:74]
+WARNING: [Synth 8-2306] macro DLY redefined [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_ll_to_axi.v:92]
+WARNING: [Synth 8-2306] macro DLY redefined [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/zynqdesign_optolink_0_0_gtx.v:80]
+WARNING: [Synth 8-2306] macro DLY redefined [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_channel_err_detect_simplex.v:88]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:41 . Memory (MB): peak = 435.266 ; gain = 115.316
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:44 . Memory (MB): peak = 436.168 ; gain = 115.520
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.v:70]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_support' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:67]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:205]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:206]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:207]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:208]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_gt_common_wrapper' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_gt_common_wrapper.v:64]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.v:70]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_support' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:67]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:205]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:206]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:207]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:208]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_gt_common_wrapper' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_gt_common_wrapper.v:64]
 	Parameter WRAPPER_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
 INFO: [Synth 8-638] synthesizing module 'GTXE2_COMMON' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:11315]
 	Parameter BIAS_CFG bound to: 64'b0000000000000000000001000000000000000000000000000001000000000000 
@@ -58,13 +58,13 @@ INFO: [Synth 8-638] synthesizing module 'GTXE2_COMMON' [C:/Xilinx/Vivado/2017.4/
 	Parameter SIM_RESET_SPEEDUP bound to: TRUE - type: string 
 	Parameter SIM_VERSION bound to: 4.0 - type: string 
 INFO: [Synth 8-256] done synthesizing module 'GTXE2_COMMON' (1#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:11315]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_gt_common_wrapper' (2#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_gt_common_wrapper.v:64]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_gt_common_wrapper' (2#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_gt_common_wrapper.v:64]
 INFO: [Synth 8-638] synthesizing module 'IBUFDS_GTE2' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:19620]
 	Parameter CLKCM_CFG bound to: TRUE - type: string 
 	Parameter CLKRCV_TRST bound to: TRUE - type: string 
 	Parameter CLKSWING_CFG bound to: 2'b11 
 INFO: [Synth 8-256] done synthesizing module 'IBUFDS_GTE2' (3#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:19620]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_CLOCK_MODULE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_clock_module.v:68]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_CLOCK_MODULE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_clock_module.v:68]
 	Parameter MULT bound to: 7 - type: integer 
 	Parameter DIVIDE bound to: 1 - type: integer 
 	Parameter CLK_PERIOD bound to: 5.120000 - type: float 
@@ -72,7 +72,7 @@ INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_CLOCK_MODULE' [
 	Parameter OUT1_DIVIDE bound to: 7 - type: integer 
 	Parameter OUT2_DIVIDE bound to: 10 - type: integer 
 	Parameter OUT3_DIVIDE bound to: 8 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_clock_module.v:108]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_clock_module.v:108]
 INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:25757]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT_F bound to: 7.000000 - type: float 
@@ -125,45 +125,45 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2017.4/sc
 INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (4#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:25757]
 INFO: [Synth 8-638] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-256] done synthesizing module 'BUFG' (5#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:607]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_CLOCK_MODULE' (6#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_clock_module.v:68]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_CLOCK_MODULE' (6#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_clock_module.v:68]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
 	Parameter c_init_val bound to: 1'b1 
 	Parameter c_mtbf_stages bound to: 5'b00101 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:554]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:555]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:556]
-WARNING: [Synth 8-6014] Unused sequential element stg6_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:596]
-WARNING: [Synth 8-6014] Unused sequential element stg7_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:597]
-WARNING: [Synth 8-6014] Unused sequential element stg8_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:598]
-WARNING: [Synth 8-6014] Unused sequential element stg9_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:599]
-WARNING: [Synth 8-6014] Unused sequential element stg10_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:600]
-WARNING: [Synth 8-6014] Unused sequential element stg11_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:601]
-WARNING: [Synth 8-6014] Unused sequential element stg12_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:602]
-WARNING: [Synth 8-6014] Unused sequential element stg13_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:603]
-WARNING: [Synth 8-6014] Unused sequential element stg14_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:604]
-WARNING: [Synth 8-6014] Unused sequential element stg15_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:605]
-WARNING: [Synth 8-6014] Unused sequential element stg16_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:606]
-WARNING: [Synth 8-6014] Unused sequential element stg17_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:607]
-WARNING: [Synth 8-6014] Unused sequential element stg18_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:608]
-WARNING: [Synth 8-6014] Unused sequential element stg19_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:609]
-WARNING: [Synth 8-6014] Unused sequential element stg20_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:610]
-WARNING: [Synth 8-6014] Unused sequential element stg21_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:611]
-WARNING: [Synth 8-6014] Unused sequential element stg22_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:612]
-WARNING: [Synth 8-6014] Unused sequential element stg23_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:613]
-WARNING: [Synth 8-6014] Unused sequential element stg24_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:614]
-WARNING: [Synth 8-6014] Unused sequential element stg25_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:615]
-WARNING: [Synth 8-6014] Unused sequential element stg26_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:616]
-WARNING: [Synth 8-6014] Unused sequential element stg27_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:617]
-WARNING: [Synth 8-6014] Unused sequential element stg28_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:618]
-WARNING: [Synth 8-6014] Unused sequential element stg29_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:619]
-WARNING: [Synth 8-6014] Unused sequential element stg30_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:620]
-WARNING: [Synth 8-6014] Unused sequential element stg31_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:621]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync' (7#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SUPPORT_RESET_LOGIC' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support_reset_logic.v:63]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support_reset_logic.v:97]
-INFO: [Synth 8-3936] Found unconnected internal register 'dly_gt_rst_r_reg' and it is trimmed from '20' to '19' bits. [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support_reset_logic.v:148]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SUPPORT_RESET_LOGIC' (8#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support_reset_logic.v:63]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_core' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:70]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:554]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:555]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:556]
+WARNING: [Synth 8-6014] Unused sequential element stg6_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:596]
+WARNING: [Synth 8-6014] Unused sequential element stg7_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:597]
+WARNING: [Synth 8-6014] Unused sequential element stg8_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:598]
+WARNING: [Synth 8-6014] Unused sequential element stg9_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:599]
+WARNING: [Synth 8-6014] Unused sequential element stg10_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:600]
+WARNING: [Synth 8-6014] Unused sequential element stg11_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:601]
+WARNING: [Synth 8-6014] Unused sequential element stg12_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:602]
+WARNING: [Synth 8-6014] Unused sequential element stg13_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:603]
+WARNING: [Synth 8-6014] Unused sequential element stg14_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:604]
+WARNING: [Synth 8-6014] Unused sequential element stg15_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:605]
+WARNING: [Synth 8-6014] Unused sequential element stg16_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:606]
+WARNING: [Synth 8-6014] Unused sequential element stg17_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:607]
+WARNING: [Synth 8-6014] Unused sequential element stg18_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:608]
+WARNING: [Synth 8-6014] Unused sequential element stg19_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:609]
+WARNING: [Synth 8-6014] Unused sequential element stg20_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:610]
+WARNING: [Synth 8-6014] Unused sequential element stg21_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:611]
+WARNING: [Synth 8-6014] Unused sequential element stg22_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:612]
+WARNING: [Synth 8-6014] Unused sequential element stg23_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:613]
+WARNING: [Synth 8-6014] Unused sequential element stg24_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:614]
+WARNING: [Synth 8-6014] Unused sequential element stg25_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:615]
+WARNING: [Synth 8-6014] Unused sequential element stg26_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:616]
+WARNING: [Synth 8-6014] Unused sequential element stg27_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:617]
+WARNING: [Synth 8-6014] Unused sequential element stg28_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:618]
+WARNING: [Synth 8-6014] Unused sequential element stg29_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:619]
+WARNING: [Synth 8-6014] Unused sequential element stg30_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:620]
+WARNING: [Synth 8-6014] Unused sequential element stg31_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:621]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync' (7#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SUPPORT_RESET_LOGIC' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support_reset_logic.v:63]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support_reset_logic.v:97]
+INFO: [Synth 8-3936] Found unconnected internal register 'dly_gt_rst_r_reg' and it is trimmed from '20' to '19' bits. [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support_reset_logic.v:148]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SUPPORT_RESET_LOGIC' (8#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support_reset_logic.v:63]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_core' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:70]
 	Parameter STABLE_CLOCK_PERIOD bound to: 8 - type: integer 
 	Parameter SIM_GTXRESET_SPEEDUP bound to: TRUE - type: string 
 	Parameter PERIODIC_CB_COUNT bound to: 20'b00100111111111111111 
@@ -175,24 +175,24 @@ INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_core' [c:/OpenH
 	Parameter BACKWARD_COMP_MODE1 bound to: 1'b0 
 	Parameter BACKWARD_COMP_MODE2 bound to: 1'b0 
 	Parameter BACKWARD_COMP_MODE3 bound to: 1'b0 
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_RESET_LOGIC' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_reset_logic.v:63]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_RESET_LOGIC' (9#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_reset_logic.v:63]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_AURORA_LANE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_aurora_lane_simplex.v:74]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_RESET_LOGIC' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_reset_logic.v:63]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_RESET_LOGIC' (9#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_reset_logic.v:63]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_AURORA_LANE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_aurora_lane_simplex.v:74]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_LANE_INIT_SM' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_lane_init_sm_simplex.v:67]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_LANE_INIT_SM' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_lane_init_sm_simplex.v:67]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'FDR' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3951]
 	Parameter INIT bound to: 1'b0 
 INFO: [Synth 8-256] done synthesizing module 'FDR' (10#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3951]
-WARNING: [Synth 8-6014] Unused sequential element counter1_r_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_lane_init_sm_simplex.v:194]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_LANE_INIT_SM' (11#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_lane_init_sm_simplex.v:67]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SYM_GEN' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_gen.v:72]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SYM_GEN' (12#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_gen.v:72]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_ERR_DETECT' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_err_detect_simplex.v:67]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_ERR_DETECT' (13#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_err_detect_simplex.v:67]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_AURORA_LANE' (14#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_aurora_lane_simplex.v:74]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_AURORA_LANE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_aurora_lane_simplex.v:73]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_LANE_INIT_SM' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_lane_init_sm_simplex.v:68]
+WARNING: [Synth 8-6014] Unused sequential element counter1_r_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_lane_init_sm_simplex.v:194]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_LANE_INIT_SM' (11#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_lane_init_sm_simplex.v:67]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SYM_GEN' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_gen.v:72]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SYM_GEN' (12#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_gen.v:72]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_ERR_DETECT' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_err_detect_simplex.v:67]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_ERR_DETECT' (13#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_err_detect_simplex.v:67]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_AURORA_LANE' (14#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_aurora_lane_simplex.v:74]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_AURORA_LANE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_aurora_lane_simplex.v:73]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_LANE_INIT_SM' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_lane_init_sm_simplex.v:68]
 	Parameter BEGIN_R_ST bound to: 5'b10000 
 	Parameter RST_R_ST bound to: 5'b01000 
 	Parameter ALIGN_R_ST bound to: 5'b00100 
@@ -202,47 +202,47 @@ INFO: [Synth 8-638] synthesizing module 'SRLC32E' [C:/Xilinx/Vivado/2017.4/scrip
 	Parameter INIT bound to: 32'b00000000000000000000000000000000 
 	Parameter IS_CLK_INVERTED bound to: 1'b0 
 INFO: [Synth 8-256] done synthesizing module 'SRLC32E' (15#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50855]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
 	Parameter c_cdc_type bound to: 2'b01 
 	Parameter c_flop_input bound to: 1'b0 
 	Parameter c_reset_state bound to: 1'b0 
 	Parameter c_single_bit bound to: 1'b1 
 	Parameter c_vector_width bound to: 6'b100000 
 	Parameter c_mtbf_stages bound to: 3'b010 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:130]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:131]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:132]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:133]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:134]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:135]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:136]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:139]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:140]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:141]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:142]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:143]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:144]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:151]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:152]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:153]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:154]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:155]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:156]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync' (16#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_LANE_INIT_SM' (17#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_lane_init_sm_simplex.v:68]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SYM_DEC' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_dec.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:130]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:131]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:132]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:133]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:134]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:135]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:136]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:139]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:140]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:141]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:142]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:143]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:144]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:151]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:152]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:153]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:154]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:155]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "true" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:156]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync' (16#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_LANE_INIT_SM' (17#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_lane_init_sm_simplex.v:68]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SYM_DEC' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_dec.v:73]
 	Parameter CC_BTF_SA0 bound to: 16'b0111100010010000 
 	Parameter CC_BTF_SA1 bound to: 16'b0111100010000000 
 	Parameter NA_IDLE_BTF bound to: 16'b0111100000110000 
 	Parameter CHANNEL_BOND_BTF bound to: 16'b0111100001000000 
 	Parameter IDLE_BTF bound to: 16'b0111100000010000 
-WARNING: [Synth 8-6014] Unused sequential element rxdatavalid_r_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_dec.v:232]
-WARNING: [Synth 8-6014] Unused sequential element sync_header_r_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_dec.v:242]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SYM_DEC' (18#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_dec.v:73]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_ERR_DETECT' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_err_detect_simplex.v:67]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_ERR_DETECT' (19#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_err_detect_simplex.v:67]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_AURORA_LANE' (20#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_aurora_lane_simplex.v:73]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_WRAPPER' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:65]
+WARNING: [Synth 8-6014] Unused sequential element rxdatavalid_r_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_dec.v:232]
+WARNING: [Synth 8-6014] Unused sequential element sync_header_r_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_dec.v:242]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SYM_DEC' (18#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_sym_dec.v:73]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_ERR_DETECT' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_err_detect_simplex.v:67]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_ERR_DETECT' (19#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_err_detect_simplex.v:67]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_AURORA_LANE' (20#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_aurora_lane_simplex.v:73]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_WRAPPER' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:65]
 	Parameter INTER_CB_GAP bound to: 5'b01111 
 	Parameter SEQ_COUNT bound to: 4 - type: integer 
 	Parameter TRAVELLING_STAGES bound to: 3'b010 
@@ -263,61 +263,61 @@ INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_WRAPPER' [c:/Op
 	Parameter IDLE bound to: 2'b00 
 	Parameter ASSERT_RXRESET bound to: 2'b01 
 	Parameter DONE bound to: 2'b10 
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:412]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:413]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:414]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:456]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:457]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:487]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:488]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:489]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:490]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:491]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:492]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:412]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:413]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:414]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:456]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:457]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:487]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:488]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:489]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:490]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:491]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:492]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
 	Parameter c_init_val bound to: 1'b1 
 	Parameter c_mtbf_stages bound to: 5'b00101 
-WARNING: [Synth 8-6014] Unused sequential element stg6_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:596]
-WARNING: [Synth 8-6014] Unused sequential element stg7_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:597]
-WARNING: [Synth 8-6014] Unused sequential element stg8_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:598]
-WARNING: [Synth 8-6014] Unused sequential element stg9_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:599]
-WARNING: [Synth 8-6014] Unused sequential element stg10_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:600]
-WARNING: [Synth 8-6014] Unused sequential element stg11_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:601]
-WARNING: [Synth 8-6014] Unused sequential element stg12_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:602]
-WARNING: [Synth 8-6014] Unused sequential element stg13_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:603]
-WARNING: [Synth 8-6014] Unused sequential element stg14_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:604]
-WARNING: [Synth 8-6014] Unused sequential element stg15_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:605]
-WARNING: [Synth 8-6014] Unused sequential element stg16_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:606]
-WARNING: [Synth 8-6014] Unused sequential element stg17_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:607]
-WARNING: [Synth 8-6014] Unused sequential element stg18_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:608]
-WARNING: [Synth 8-6014] Unused sequential element stg19_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:609]
-WARNING: [Synth 8-6014] Unused sequential element stg20_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:610]
-WARNING: [Synth 8-6014] Unused sequential element stg21_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:611]
-WARNING: [Synth 8-6014] Unused sequential element stg22_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:612]
-WARNING: [Synth 8-6014] Unused sequential element stg23_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:613]
-WARNING: [Synth 8-6014] Unused sequential element stg24_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:614]
-WARNING: [Synth 8-6014] Unused sequential element stg25_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:615]
-WARNING: [Synth 8-6014] Unused sequential element stg26_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:616]
-WARNING: [Synth 8-6014] Unused sequential element stg27_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:617]
-WARNING: [Synth 8-6014] Unused sequential element stg28_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:618]
-WARNING: [Synth 8-6014] Unused sequential element stg29_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:619]
-WARNING: [Synth 8-6014] Unused sequential element stg30_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:620]
-WARNING: [Synth 8-6014] Unused sequential element stg31_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:621]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized0' (20#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
+WARNING: [Synth 8-6014] Unused sequential element stg6_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:596]
+WARNING: [Synth 8-6014] Unused sequential element stg7_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:597]
+WARNING: [Synth 8-6014] Unused sequential element stg8_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:598]
+WARNING: [Synth 8-6014] Unused sequential element stg9_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:599]
+WARNING: [Synth 8-6014] Unused sequential element stg10_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:600]
+WARNING: [Synth 8-6014] Unused sequential element stg11_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:601]
+WARNING: [Synth 8-6014] Unused sequential element stg12_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:602]
+WARNING: [Synth 8-6014] Unused sequential element stg13_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:603]
+WARNING: [Synth 8-6014] Unused sequential element stg14_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:604]
+WARNING: [Synth 8-6014] Unused sequential element stg15_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:605]
+WARNING: [Synth 8-6014] Unused sequential element stg16_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:606]
+WARNING: [Synth 8-6014] Unused sequential element stg17_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:607]
+WARNING: [Synth 8-6014] Unused sequential element stg18_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:608]
+WARNING: [Synth 8-6014] Unused sequential element stg19_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:609]
+WARNING: [Synth 8-6014] Unused sequential element stg20_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:610]
+WARNING: [Synth 8-6014] Unused sequential element stg21_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:611]
+WARNING: [Synth 8-6014] Unused sequential element stg22_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:612]
+WARNING: [Synth 8-6014] Unused sequential element stg23_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:613]
+WARNING: [Synth 8-6014] Unused sequential element stg24_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:614]
+WARNING: [Synth 8-6014] Unused sequential element stg25_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:615]
+WARNING: [Synth 8-6014] Unused sequential element stg26_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:616]
+WARNING: [Synth 8-6014] Unused sequential element stg27_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:617]
+WARNING: [Synth 8-6014] Unused sequential element stg28_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:618]
+WARNING: [Synth 8-6014] Unused sequential element stg29_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:619]
+WARNING: [Synth 8-6014] Unused sequential element stg30_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:620]
+WARNING: [Synth 8-6014] Unused sequential element stg31_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:621]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized0' (20#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
 INFO: [Synth 8-638] synthesizing module 'BUFGCE' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:617]
 	Parameter CE_TYPE bound to: SYNC - type: string 
 	Parameter IS_CE_INVERTED bound to: 1'b0 
 	Parameter IS_I_INVERTED bound to: 1'b0 
 INFO: [Synth 8-256] done synthesizing module 'BUFGCE' (21#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:617]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
 	Parameter c_cdc_type bound to: 2'b01 
 	Parameter c_flop_input bound to: 1'b0 
 	Parameter c_reset_state bound to: 1'b0 
 	Parameter c_single_bit bound to: 1'b1 
 	Parameter c_vector_width bound to: 6'b100000 
 	Parameter c_mtbf_stages bound to: 3'b101 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized0' (21#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_TX_STARTUP_FSM' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:60]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized0' (21#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_TX_STARTUP_FSM' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:60]
 	Parameter GT_TYPE bound to: GTX - type: string 
 	Parameter STABLE_CLOCK_PERIOD bound to: 8 - type: integer 
 	Parameter RETRY_COUNTER_BITWIDTH bound to: 8 - type: integer 
@@ -344,45 +344,45 @@ INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_TX_STARTUP_FSM'
 	Parameter WAIT_TIMEOUT_500us bound to: 62500 - type: integer 
 	Parameter MAX_RETRIES bound to: 255 - type: integer 
 	Parameter MAX_WAIT_BYPASS bound to: 110000 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:125]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:144]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:145]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:161]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:164]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:165]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized1' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:125]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:144]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:145]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:161]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:164]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:165]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized1' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
 	Parameter c_init_val bound to: 1'b0 
 	Parameter c_mtbf_stages bound to: 5'b00101 
-WARNING: [Synth 8-6014] Unused sequential element stg6_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:596]
-WARNING: [Synth 8-6014] Unused sequential element stg7_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:597]
-WARNING: [Synth 8-6014] Unused sequential element stg8_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:598]
-WARNING: [Synth 8-6014] Unused sequential element stg9_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:599]
-WARNING: [Synth 8-6014] Unused sequential element stg10_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:600]
-WARNING: [Synth 8-6014] Unused sequential element stg11_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:601]
-WARNING: [Synth 8-6014] Unused sequential element stg12_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:602]
-WARNING: [Synth 8-6014] Unused sequential element stg13_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:603]
-WARNING: [Synth 8-6014] Unused sequential element stg14_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:604]
-WARNING: [Synth 8-6014] Unused sequential element stg15_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:605]
-WARNING: [Synth 8-6014] Unused sequential element stg16_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:606]
-WARNING: [Synth 8-6014] Unused sequential element stg17_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:607]
-WARNING: [Synth 8-6014] Unused sequential element stg18_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:608]
-WARNING: [Synth 8-6014] Unused sequential element stg19_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:609]
-WARNING: [Synth 8-6014] Unused sequential element stg20_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:610]
-WARNING: [Synth 8-6014] Unused sequential element stg21_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:611]
-WARNING: [Synth 8-6014] Unused sequential element stg22_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:612]
-WARNING: [Synth 8-6014] Unused sequential element stg23_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:613]
-WARNING: [Synth 8-6014] Unused sequential element stg24_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:614]
-WARNING: [Synth 8-6014] Unused sequential element stg25_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:615]
-WARNING: [Synth 8-6014] Unused sequential element stg26_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:616]
-WARNING: [Synth 8-6014] Unused sequential element stg27_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:617]
-WARNING: [Synth 8-6014] Unused sequential element stg28_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:618]
-WARNING: [Synth 8-6014] Unused sequential element stg29_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:619]
-WARNING: [Synth 8-6014] Unused sequential element stg30_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:620]
-WARNING: [Synth 8-6014] Unused sequential element stg31_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:621]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized1' (21#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:414]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_TX_STARTUP_FSM' (22#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:60]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_RX_STARTUP_FSM' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:60]
+WARNING: [Synth 8-6014] Unused sequential element stg6_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:596]
+WARNING: [Synth 8-6014] Unused sequential element stg7_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:597]
+WARNING: [Synth 8-6014] Unused sequential element stg8_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:598]
+WARNING: [Synth 8-6014] Unused sequential element stg9_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:599]
+WARNING: [Synth 8-6014] Unused sequential element stg10_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:600]
+WARNING: [Synth 8-6014] Unused sequential element stg11_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:601]
+WARNING: [Synth 8-6014] Unused sequential element stg12_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:602]
+WARNING: [Synth 8-6014] Unused sequential element stg13_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:603]
+WARNING: [Synth 8-6014] Unused sequential element stg14_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:604]
+WARNING: [Synth 8-6014] Unused sequential element stg15_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:605]
+WARNING: [Synth 8-6014] Unused sequential element stg16_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:606]
+WARNING: [Synth 8-6014] Unused sequential element stg17_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:607]
+WARNING: [Synth 8-6014] Unused sequential element stg18_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:608]
+WARNING: [Synth 8-6014] Unused sequential element stg19_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:609]
+WARNING: [Synth 8-6014] Unused sequential element stg20_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:610]
+WARNING: [Synth 8-6014] Unused sequential element stg21_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:611]
+WARNING: [Synth 8-6014] Unused sequential element stg22_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:612]
+WARNING: [Synth 8-6014] Unused sequential element stg23_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:613]
+WARNING: [Synth 8-6014] Unused sequential element stg24_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:614]
+WARNING: [Synth 8-6014] Unused sequential element stg25_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:615]
+WARNING: [Synth 8-6014] Unused sequential element stg26_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:616]
+WARNING: [Synth 8-6014] Unused sequential element stg27_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:617]
+WARNING: [Synth 8-6014] Unused sequential element stg28_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:618]
+WARNING: [Synth 8-6014] Unused sequential element stg29_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:619]
+WARNING: [Synth 8-6014] Unused sequential element stg30_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:620]
+WARNING: [Synth 8-6014] Unused sequential element stg31_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:621]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized1' (21#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:414]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_TX_STARTUP_FSM' (22#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_startup_fsm.v:60]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_RX_STARTUP_FSM' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:60]
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
 	Parameter BACKWARD_COMP_MODE2 bound to: 1'b0 
 	Parameter GT_TYPE bound to: GTX - type: string 
@@ -413,19 +413,19 @@ INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_RX_STARTUP_FSM'
 	Parameter RX_CDRLOCK_TIME bound to: 5920000.000000 - type: float 
 	Parameter MAX_RETRIES bound to: 255 - type: integer 
 	Parameter MAX_WAIT_BYPASS bound to: 5000 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:137]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:176]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:212]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:493]
-WARNING: [Synth 8-6014] Unused sequential element time_out_500us_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:300]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_RX_STARTUP_FSM' (23#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:60]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:756]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_MULTI_GT' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_multi_wrapper.v:64]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:137]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:176]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:212]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:493]
+WARNING: [Synth 8-6014] Unused sequential element time_out_500us_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:300]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_RX_STARTUP_FSM' (23#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:60]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:756]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_MULTI_GT' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_multi_wrapper.v:64]
 	Parameter WRAPPER_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
 	Parameter RX_DFE_KL_CFG2_IN bound to: 806439084 - type: integer 
 	Parameter PMA_RSV_IN bound to: 99456 - type: integer 
 	Parameter SIM_VERSION bound to: 4.0 - type: string 
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_GTX' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/zynqdesign_optolink_0_0_gtx.v:71]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_GTX' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/zynqdesign_optolink_0_0_gtx.v:71]
 	Parameter GT_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
 	Parameter RX_DFE_KL_CFG2_IN bound to: 806439084 - type: integer 
 	Parameter PMA_RSV_IN bound to: 99456 - type: integer 
@@ -643,55 +643,55 @@ INFO: [Synth 8-256] done synthesizing module 'GTXE2_CHANNEL' (24#1) [C:/Xilinx/V
 INFO: [Synth 8-638] synthesizing module 'FD' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3723]
 	Parameter INIT bound to: 1'b0 
 INFO: [Synth 8-256] done synthesizing module 'FD' (25#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3723]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_GTX' (26#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/zynqdesign_optolink_0_0_gtx.v:71]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_MULTI_GT' (27#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_multi_wrapper.v:64]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_common_reset_cbcc' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_common_reset_cbcc.v:63]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized2' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_GTX' (26#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/zynqdesign_optolink_0_0_gtx.v:71]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_MULTI_GT' (27#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_multi_wrapper.v:64]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_common_reset_cbcc' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_common_reset_cbcc.v:63]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized2' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
 	Parameter c_init_val bound to: 1'b1 
 	Parameter c_mtbf_stages bound to: 5'b01011 
-WARNING: [Synth 8-6014] Unused sequential element stg12_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:602]
-WARNING: [Synth 8-6014] Unused sequential element stg13_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:603]
-WARNING: [Synth 8-6014] Unused sequential element stg14_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:604]
-WARNING: [Synth 8-6014] Unused sequential element stg15_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:605]
-WARNING: [Synth 8-6014] Unused sequential element stg16_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:606]
-WARNING: [Synth 8-6014] Unused sequential element stg17_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:607]
-WARNING: [Synth 8-6014] Unused sequential element stg18_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:608]
-WARNING: [Synth 8-6014] Unused sequential element stg19_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:609]
-WARNING: [Synth 8-6014] Unused sequential element stg20_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:610]
-WARNING: [Synth 8-6014] Unused sequential element stg21_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:611]
-WARNING: [Synth 8-6014] Unused sequential element stg22_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:612]
-WARNING: [Synth 8-6014] Unused sequential element stg23_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:613]
-WARNING: [Synth 8-6014] Unused sequential element stg24_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:614]
-WARNING: [Synth 8-6014] Unused sequential element stg25_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:615]
-WARNING: [Synth 8-6014] Unused sequential element stg26_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:616]
-WARNING: [Synth 8-6014] Unused sequential element stg27_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:617]
-WARNING: [Synth 8-6014] Unused sequential element stg28_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:618]
-WARNING: [Synth 8-6014] Unused sequential element stg29_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:619]
+WARNING: [Synth 8-6014] Unused sequential element stg12_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:602]
+WARNING: [Synth 8-6014] Unused sequential element stg13_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:603]
+WARNING: [Synth 8-6014] Unused sequential element stg14_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:604]
+WARNING: [Synth 8-6014] Unused sequential element stg15_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:605]
+WARNING: [Synth 8-6014] Unused sequential element stg16_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:606]
+WARNING: [Synth 8-6014] Unused sequential element stg17_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:607]
+WARNING: [Synth 8-6014] Unused sequential element stg18_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:608]
+WARNING: [Synth 8-6014] Unused sequential element stg19_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:609]
+WARNING: [Synth 8-6014] Unused sequential element stg20_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:610]
+WARNING: [Synth 8-6014] Unused sequential element stg21_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:611]
+WARNING: [Synth 8-6014] Unused sequential element stg22_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:612]
+WARNING: [Synth 8-6014] Unused sequential element stg23_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:613]
+WARNING: [Synth 8-6014] Unused sequential element stg24_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:614]
+WARNING: [Synth 8-6014] Unused sequential element stg25_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:615]
+WARNING: [Synth 8-6014] Unused sequential element stg26_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:616]
+WARNING: [Synth 8-6014] Unused sequential element stg27_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:617]
+WARNING: [Synth 8-6014] Unused sequential element stg28_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:618]
+WARNING: [Synth 8-6014] Unused sequential element stg29_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:619]
 INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized2' (27#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized3' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized2' (27#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized3' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
 	Parameter c_init_val bound to: 1'b1 
 	Parameter c_mtbf_stages bound to: 5'b11111 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized3' (27#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_common_reset_cbcc' (28#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_common_reset_cbcc.v:63]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_common_logic_cbcc' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_common_logic_cbcc.v:63]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_rst_sync__parameterized3' (27#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:539]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_common_reset_cbcc' (28#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_common_reset_cbcc.v:63]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_common_logic_cbcc' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_common_logic_cbcc.v:63]
 	Parameter BACKWARD_COMP_MODE1 bound to: 1'b0 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_common_logic_cbcc' (29#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_common_logic_cbcc.v:63]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SCRAMBLER_64B66B' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_64b66b_scrambler.v:63]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_common_logic_cbcc' (29#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_common_logic_cbcc.v:63]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SCRAMBLER_64B66B' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_64b66b_scrambler.v:63]
 	Parameter TX_DATA_WIDTH bound to: 64 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SCRAMBLER_64B66B' (30#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_64b66b_scrambler.v:63]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized1' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SCRAMBLER_64B66B' (30#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_64b66b_scrambler.v:63]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized1' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
 	Parameter c_cdc_type bound to: 2'b01 
 	Parameter c_flop_input bound to: 1'b0 
 	Parameter c_reset_state bound to: 1'b0 
 	Parameter c_single_bit bound to: 1'b1 
 	Parameter c_vector_width bound to: 6'b100000 
 	Parameter c_mtbf_stages bound to: 3'b011 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized1' (30#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_DESCRAMBLER_64B66B' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_64b66b_descrambler.v:62]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized1' (30#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_DESCRAMBLER_64B66B' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_64b66b_descrambler.v:62]
 	Parameter RX_DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_DESCRAMBLER_64B66B' (31#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_64b66b_descrambler.v:62]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_BLOCK_SYNC_SM' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_block_sync_sm.v:63]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_DESCRAMBLER_64B66B' (31#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_64b66b_descrambler.v:62]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_BLOCK_SYNC_SM' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_block_sync_sm.v:63]
 	Parameter SH_CNT_MAX bound to: 16'b1110101001100000 
 	Parameter SH_INVALID_CNT_MAX bound to: 16'b0000000000010000 
 	Parameter BEGIN_R_ST bound to: 6'b100000 
@@ -700,8 +700,8 @@ INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_BLOCK_SYNC_SM' 
 	Parameter SH_INVALID_ST bound to: 6'b000100 
 	Parameter SLIP_R_ST bound to: 6'b000010 
 	Parameter SYNC_DONE_R_ST bound to: 6'b000001 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_BLOCK_SYNC_SM' (32#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_block_sync_sm.v:63]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_CLOCK_CORRECTION_CHANNEL_BONDING' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cbcc_gtx_6466.v:71]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_BLOCK_SYNC_SM' (32#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_block_sync_sm.v:63]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_CLOCK_CORRECTION_CHANNEL_BONDING' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cbcc_gtx_6466.v:71]
 	Parameter INTER_CB_GAP bound to: 5'b01111 
 	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
 	Parameter LOW_WATER_MARK bound to: 13'b0000111000010 
@@ -714,14 +714,14 @@ INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_CLOCK_CORRECTIO
 	Parameter CB_CHARACTER bound to: 16'b0111100001000000 
 	Parameter IDLE_CHARACTER bound to: 16'b0111100000010000 
 	Parameter NA_CHARACTER bound to: 16'b0111100000110000 
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized2' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized2' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
 	Parameter c_cdc_type bound to: 2'b01 
 	Parameter c_flop_input bound to: 1'b0 
 	Parameter c_reset_state bound to: 1'b1 
 	Parameter c_single_bit bound to: 1'b1 
 	Parameter c_vector_width bound to: 6'b100000 
 	Parameter c_mtbf_stages bound to: 3'b101 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized2' (32#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized2' (32#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cdc_sync.v:105]
 INFO: [Synth 8-638] synthesizing module 'FIFO36E1' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:4613]
 	Parameter ALMOST_EMPTY_OFFSET bound to: 13'b0000000001110 
 	Parameter ALMOST_FULL_OFFSET bound to: 13'b0000111000010 
@@ -742,8 +742,8 @@ INFO: [Synth 8-638] synthesizing module 'FIFO36E1' [C:/Xilinx/Vivado/2017.4/scri
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
 	Parameter SRVAL bound to: 72'b000000000000000000000000000000000000000000000000000000000000000000000000 
 INFO: [Synth 8-256] done synthesizing module 'FIFO36E1' (33#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:4613]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_CLOCK_CORRECTION_CHANNEL_BONDING' (34#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cbcc_gtx_6466.v:71]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_POLARITY_CHECK' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_polarity_check.v:77]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_CLOCK_CORRECTION_CHANNEL_BONDING' (34#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_cbcc_gtx_6466.v:71]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_POLARITY_CHECK' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_polarity_check.v:77]
 	Parameter SIZE bound to: 5 - type: integer 
 	Parameter SEQ_COUNT bound to: 4 - type: integer 
 	Parameter INTER_CB_GAP bound to: 5'b01110 
@@ -756,70 +756,70 @@ INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_POLARITY_CHECK'
 	Parameter IDLE_BTF bound to: 16'b0111100000010000 
 	Parameter INV_CB_BTF bound to: 16'b1000011110111111 
 	Parameter INV_IDLE_BTF bound to: 16'b1000011111101111 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_POLARITY_CHECK' (35#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_polarity_check.v:77]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_WRAPPER' (36#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:65]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_GLOBAL_LOGIC' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_global_logic_simplex.v:68]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_POLARITY_CHECK' (35#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_polarity_check.v:77]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_WRAPPER' (36#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/example_design/gt/ZynqDesign_OPTOLINK_0_0_wrapper.v:65]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_GLOBAL_LOGIC' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_global_logic_simplex.v:68]
 	Parameter INTER_CB_GAP bound to: 5'b01111 
 	Parameter PERIODIC_CB_COUNT bound to: 20'b00100111111111111111 
 	Parameter SIMPLEX_TIMER_VALUE bound to: 12 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CHANNEL_INIT_SM' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_channel_init_sm_simplex.v:80]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CHANNEL_INIT_SM' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_channel_init_sm_simplex.v:80]
 	Parameter SIMPLEX_TIMER_VALUE bound to: 12 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'FD__parameterized0' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3723]
 	Parameter INIT bound to: 1'b1 
 INFO: [Synth 8-256] done synthesizing module 'FD__parameterized0' (36#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3723]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CHANNEL_INIT_SM' (37#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_channel_init_sm_simplex.v:80]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CH_BOND_CODE_GEN' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_ch_bond_code_gen_simplex.v:73]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CHANNEL_INIT_SM' (37#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_channel_init_sm_simplex.v:80]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CH_BOND_CODE_GEN' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_ch_bond_code_gen_simplex.v:73]
 	Parameter INTER_CB_GAP bound to: 5'b01111 
 	Parameter TOTAL_CB_COUNT bound to: 8'b00100110 
 	Parameter PERIODIC_CB_COUNT bound to: 20'b00100111111111111111 
 	Parameter CB_FSM_IDLE bound to: 2'b01 
 	Parameter CB_FSM_CHK bound to: 2'b00 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CH_BOND_CODE_GEN' (38#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_ch_bond_code_gen_simplex.v:73]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CHANNEL_ERR_DETECT' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_channel_err_detect_simplex.v:73]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CHANNEL_ERR_DETECT' (39#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_channel_err_detect_simplex.v:73]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_GLOBAL_LOGIC' (40#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_global_logic_simplex.v:68]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_GLOBAL_LOGIC' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_global_logic_simplex.v:68]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_CHANNEL_INIT_SM' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_init_sm_simplex.v:79]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_init_sm_simplex.v:141]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_init_sm_simplex.v:152]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_CHANNEL_INIT_SM' (41#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_init_sm_simplex.v:79]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_CHANNEL_ERR_DETECT' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_err_detect_simplex.v:73]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_CHANNEL_ERR_DETECT' (42#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_err_detect_simplex.v:73]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_GLOBAL_LOGIC' (43#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_global_logic_simplex.v:68]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_AXI_TO_LL' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_axi_to_ll.v:64]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CH_BOND_CODE_GEN' (38#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_ch_bond_code_gen_simplex.v:73]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CHANNEL_ERR_DETECT' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_channel_err_detect_simplex.v:73]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_CHANNEL_ERR_DETECT' (39#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_channel_err_detect_simplex.v:73]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_GLOBAL_LOGIC' (40#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_global_logic_simplex.v:68]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_GLOBAL_LOGIC' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_global_logic_simplex.v:68]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_CHANNEL_INIT_SM' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_init_sm_simplex.v:79]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_init_sm_simplex.v:141]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_init_sm_simplex.v:152]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_CHANNEL_INIT_SM' (41#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_init_sm_simplex.v:79]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_CHANNEL_ERR_DETECT' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_err_detect_simplex.v:73]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_CHANNEL_ERR_DETECT' (42#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_channel_err_detect_simplex.v:73]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_GLOBAL_LOGIC' (43#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_global_logic_simplex.v:68]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_AXI_TO_LL' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_axi_to_ll.v:64]
 	Parameter DATA_WIDTH bound to: 64 - type: integer 
 	Parameter STRB_WIDTH bound to: 8 - type: integer 
 	Parameter BC bound to: 8 - type: integer 
 	Parameter USE_4_NFC bound to: 0 - type: integer 
 	Parameter REM_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_AXI_TO_LL' (44#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_axi_to_ll.v:64]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_LL_TO_AXI' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_ll_to_axi.v:64]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_AXI_TO_LL' (44#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_axi_to_ll.v:64]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_LL_TO_AXI' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_ll_to_axi.v:64]
 	Parameter DATA_WIDTH bound to: 64 - type: integer 
 	Parameter STRB_WIDTH bound to: 8 - type: integer 
 	Parameter USE_UFC_REM bound to: 0 - type: integer 
 	Parameter BC bound to: 8 - type: integer 
 	Parameter REM_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_LL_TO_AXI' (45#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_ll_to_axi.v:64]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_simplex.v:72]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_LL_TO_AXI' (45#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_ll_to_axi.v:64]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_simplex.v:72]
 	Parameter INTER_CB_GAP bound to: 5'b01111 
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM_DATAPATH' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_datapath_simplex.v:70]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM_DATAPATH' (46#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_datapath_simplex.v:70]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM_CONTROL_SM' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_control_sm_simplex.v:71]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM_DATAPATH' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_datapath_simplex.v:70]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM_DATAPATH' (46#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_datapath_simplex.v:70]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM_CONTROL_SM' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_control_sm_simplex.v:71]
 	Parameter INTER_CB_GAP bound to: 5'b01111 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM_CONTROL_SM' (47#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_control_sm_simplex.v:71]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM' (48#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_simplex.v:72]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_STREAM' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_stream_simplex.v:68]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_STREAM_DATAPATH' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_stream_datapath_simplex.v:70]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_STREAM_DATAPATH' (49#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_stream_datapath_simplex.v:70]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_STREAM' (50#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_stream_simplex.v:68]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_STANDARD_CC_MODULE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_standard_cc_module.v:71]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM_CONTROL_SM' (47#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_control_sm_simplex.v:71]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_TX_STREAM' (48#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_tx_stream_simplex.v:72]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_STREAM' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_stream_simplex.v:68]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_STREAM_DATAPATH' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_stream_datapath_simplex.v:70]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_STREAM_DATAPATH' (49#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_stream_datapath_simplex.v:70]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_STREAM' (50#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_stream_simplex.v:68]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_OPTOLINK_0_0_STANDARD_CC_MODULE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_standard_cc_module.v:71]
 	Parameter CC_FREQ_FACTOR1 bound to: 5'b01101 
 	Parameter CC_FREQ_FACTOR2 bound to: 5'b10000 
 	Parameter CC_FREQ_FACTOR bound to: 5'b11000 
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_STANDARD_CC_MODULE' (51#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_standard_cc_module.v:71]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_core' (52#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:70]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_support' (53#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:67]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0' (54#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.v:70]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_STANDARD_CC_MODULE' (51#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_standard_cc_module.v:71]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_core' (52#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:70]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0_support' (53#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_support.v:67]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_OPTOLINK_0_0' (54#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.v:70]
 WARNING: [Synth 8-3331] design ZynqDesign_OPTOLINK_0_0_LL_TO_AXI has unconnected port LL_IP_SOF_N
 WARNING: [Synth 8-3331] design ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_CHANNEL_ERR_DETECT has unconnected port RX_LANE_UP
 WARNING: [Synth 8-3331] design ZynqDesign_OPTOLINK_0_0_SIMPLEX_RX_CHANNEL_INIT_SM has unconnected port CH_BOND_DONE
@@ -922,7 +922,7 @@ WARNING: [Synth 8-3331] design ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized0 
 WARNING: [Synth 8-3331] design ZynqDesign_OPTOLINK_0_0_cdc_sync__parameterized0 has unconnected port prmry_vect_in[12]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:57 . Memory (MB): peak = 496.070 ; gain = 176.121
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:01:01 . Memory (MB): peak = 498.074 ; gain = 177.426
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -931,21 +931,21 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[0] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
-INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[1] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
-INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[2] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
-INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[3] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
-INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[4] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
-INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[5] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
-INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[6] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
-INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[7] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
-INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TLAST to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
-INFO: [Synth 8-3295] tying undriven pin ll_to_axi_data_i:LL_IP_EOF_N to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:834]
-INFO: [Synth 8-3295] tying undriven pin ll_to_axi_data_i:LL_IP_REM[0] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:834]
-INFO: [Synth 8-3295] tying undriven pin ll_to_axi_data_i:LL_IP_REM[1] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:834]
-INFO: [Synth 8-3295] tying undriven pin ll_to_axi_data_i:LL_IP_REM[2] to constant 0 [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:834]
+INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[0] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
+INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[1] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
+INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[2] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
+INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[3] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
+INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[4] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
+INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[5] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
+INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[6] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
+INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TKEEP[7] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
+INFO: [Synth 8-3295] tying undriven pin axi_to_ll_data_i:AXI4_S_IP_TX_TLAST to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:803]
+INFO: [Synth 8-3295] tying undriven pin ll_to_axi_data_i:LL_IP_EOF_N to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:834]
+INFO: [Synth 8-3295] tying undriven pin ll_to_axi_data_i:LL_IP_REM[0] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:834]
+INFO: [Synth 8-3295] tying undriven pin ll_to_axi_data_i:LL_IP_REM[1] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:834]
+INFO: [Synth 8-3295] tying undriven pin ll_to_axi_data_i:LL_IP_REM[2] to constant 0 [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_core.v:834]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:01:00 . Memory (MB): peak = 496.070 ; gain = 176.121
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:01:05 . Memory (MB): peak = 498.074 ; gain = 177.426
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -954,14 +954,14 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_ooc.xdc] for cell 'inst'
-Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xdc] for cell 'inst'
-Parsing XDC File [C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/dont_touch.xdc]
-Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_clocks.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_clocks.xdc] for cell 'inst'
+Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xdc] for cell 'inst'
+Parsing XDC File [C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_clocks.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0_clocks.xdc] for cell 'inst'
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -971,23 +971,23 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDR => FDRE: 4 instances
 
 INFO: [Timing 38-2] Deriving generated clocks
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.265 . Memory (MB): peak = 879.906 ; gain = 0.887
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.457 . Memory (MB): peak = 880.965 ; gain = 1.090
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:02:55 . Memory (MB): peak = 879.906 ; gain = 559.957
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:03:06 . Memory (MB): peak = 880.965 ; gain = 560.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z030fbg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:02:55 . Memory (MB): peak = 879.906 ; gain = 559.957
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:03:06 . Memory (MB): peak = 880.965 ; gain = 560.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:02:55 . Memory (MB): peak = 879.906 ; gain = 559.957
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:03:07 . Memory (MB): peak = 880.965 ; gain = 560.316
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "tx_data_ctrl_c0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "init_wait_count" won't be mapped to RAM because it is too sparse
@@ -1007,9 +1007,9 @@ INFO: [Synth 8-5546] ROM "CPLL_RESET" won't be mapped to RAM because it is too s
 INFO: [Synth 8-5546] ROM "tx_fsm_reset_done_int" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "tx_seq_scramb_reset_int" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "run_phase_alignment_int" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-4471] merging register 'recclk_mon_count_reset_reg' into 'adapt_count_reset_reg' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:482]
-INFO: [Synth 8-4471] merging register 'RXDFELFHOLD_reg' into 'RXDFEAGCHOLD_reg' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:485]
-INFO: [Synth 8-4471] merging register 'RXLPMHFHOLD_reg' into 'RXLPMLFHOLD_reg' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:487]
+INFO: [Synth 8-4471] merging register 'recclk_mon_count_reset_reg' into 'adapt_count_reset_reg' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:482]
+INFO: [Synth 8-4471] merging register 'RXDFELFHOLD_reg' into 'RXDFEAGCHOLD_reg' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:485]
+INFO: [Synth 8-4471] merging register 'RXLPMHFHOLD_reg' into 'RXLPMLFHOLD_reg' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0/src/ZynqDesign_OPTOLINK_0_0_rx_startup_fsm.v:487]
 INFO: [Synth 8-5546] ROM "init_wait_count" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "init_wait_done" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "time_out_counter" won't be mapped to RAM because it is too sparse
@@ -1036,7 +1036,7 @@ INFO: [Synth 8-5546] ROM "cdr_reset_fsm_r" won't be mapped to RAM because it is 
 INFO: [Synth 8-5546] ROM "cdr_reset_fsm_cntr_r" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "count_done_for_periodic_cb" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:03:17 . Memory (MB): peak = 879.906 ; gain = 559.957
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:03:27 . Memory (MB): peak = 880.965 ; gain = 560.316
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1505,7 +1505,7 @@ INFO: [Synth 8-3332] Sequential element (ZynqDesign_OPTOLINK_0_0_core_i/axi_to_l
 INFO: [Synth 8-3332] Sequential element (ZynqDesign_OPTOLINK_0_0_core_i/tx_soft_err_reg) is unused and will be removed from module ZynqDesign_OPTOLINK_0_0_support.
 INFO: [Synth 8-3332] Sequential element (ZynqDesign_OPTOLINK_0_0_core_i/simplex_tx_aurora_lane_0_i/simplex_tx_err_detect_i/TX_SOFT_ERR_reg) is unused and will be removed from module ZynqDesign_OPTOLINK_0_0_support.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:04:25 . Memory (MB): peak = 879.906 ; gain = 559.957
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:04:26 . Memory (MB): peak = 880.965 ; gain = 560.316
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1516,15 +1516,15 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3321] set_false_path : Empty to list for constraint at line 72 of c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xdc. [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xdc:72]
+WARNING: [Synth 8-3321] set_false_path : Empty to list for constraint at line 72 of c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xdc. [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xdc:72]
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:05:21 . Memory (MB): peak = 881.445 ; gain = 561.496
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:05:17 . Memory (MB): peak = 883.211 ; gain = 562.562
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:05:23 . Memory (MB): peak = 886.500 ; gain = 566.551
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:05:19 . Memory (MB): peak = 888.270 ; gain = 567.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1548,7 +1548,7 @@ INFO: [Synth 8-3332] Sequential element (ZynqDesign_OPTOLINK_0_0_core_i/ZynqDesi
 INFO: [Synth 8-3332] Sequential element (ZynqDesign_OPTOLINK_0_0_core_i/ZynqDesign_OPTOLINK_0_0_wrapper_i/polarity_check_i/inv_idl_count_reg[5]) is unused and will be removed from module ZynqDesign_OPTOLINK_0_0_support.
 INFO: [Synth 8-3332] Sequential element (ZynqDesign_OPTOLINK_0_0_core_i/ZynqDesign_OPTOLINK_0_0_wrapper_i/polarity_check_i/idl_count_reg[7]) is unused and will be removed from module ZynqDesign_OPTOLINK_0_0_support.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:05:31 . Memory (MB): peak = 924.426 ; gain = 604.477
+Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:05:25 . Memory (MB): peak = 926.855 ; gain = 606.207
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1661,7 +1661,7 @@ INFO: [Synth 8-3295] tying undriven pin ZynqDesign_OPTOLINK_0_0_core_i/simplex_r
 INFO: [Synth 8-3295] tying undriven pin ZynqDesign_OPTOLINK_0_0_core_i/simplex_rx_aurora_lane_0_i/simplex_rx_lane_init_sm_i/u_cdc_hld_polarity/s_level_out_bus_d3_inferred:in0[16] to constant 0
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:05:37 . Memory (MB): peak = 924.426 ; gain = 604.477
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:05:30 . Memory (MB): peak = 926.855 ; gain = 606.207
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1674,7 +1674,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:05:37 . Memory (MB): peak = 924.426 ; gain = 604.477
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:05:30 . Memory (MB): peak = 926.855 ; gain = 606.207
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1686,25 +1686,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:05:39 . Memory (MB): peak = 924.426 ; gain = 604.477
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:05:31 . Memory (MB): peak = 926.855 ; gain = 606.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:05:39 . Memory (MB): peak = 924.426 ; gain = 604.477
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:05:31 . Memory (MB): peak = 926.855 ; gain = 606.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:05:39 . Memory (MB): peak = 924.426 ; gain = 604.477
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:05:32 . Memory (MB): peak = 926.855 ; gain = 606.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:05:39 . Memory (MB): peak = 924.426 ; gain = 604.477
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:05:32 . Memory (MB): peak = 926.855 ; gain = 606.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1865,11 +1865,11 @@ Report Instance Areas:
 |88    |    tx_reset_pb_sync                          |ZynqDesign_OPTOLINK_0_0_rst_sync_1                       |     5|
 +------+----------------------------------------------+---------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:05:39 . Memory (MB): peak = 924.426 ; gain = 604.477
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:05:32 . Memory (MB): peak = 926.855 ; gain = 606.207
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 71 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:04:34 . Memory (MB): peak = 924.426 ; gain = 220.641
-Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:05:40 . Memory (MB): peak = 924.426 ; gain = 604.477
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:04:19 . Memory (MB): peak = 926.855 ; gain = 223.316
+Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:05:32 . Memory (MB): peak = 926.855 ; gain = 606.207
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 79 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1884,12 +1884,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 412 Infos, 207 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:05:54 . Memory (MB): peak = 924.426 ; gain = 615.531
-INFO: [Common 17-1381] The checkpoint 'C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/ZynqDesign_OPTOLINK_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 924.426 ; gain = 0.000
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xci
+synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:05:45 . Memory (MB): peak = 926.855 ; gain = 617.230
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/ZynqDesign_OPTOLINK_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xci
 INFO: [Coretcl 2-1174] Renamed 87 cell refs.
-INFO: [Common 17-1381] The checkpoint 'C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/ZynqDesign_OPTOLINK_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_OPTOLINK_0_0_synth_1/ZynqDesign_OPTOLINK_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ZynqDesign_OPTOLINK_0_0_utilization_synth.rpt -pb ZynqDesign_OPTOLINK_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.372 . Memory (MB): peak = 924.426 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Jul  6 10:50:28 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.260 . Memory (MB): peak = 926.855 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Jul  6 13:01:38 2024...

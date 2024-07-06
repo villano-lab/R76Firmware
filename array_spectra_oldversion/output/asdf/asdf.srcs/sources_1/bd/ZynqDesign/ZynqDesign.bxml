@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="ZynqDesign" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1720280599"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1720280599"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1720280599"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1720280599"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1720288476"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1720288476"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1720288476"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1720288476"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\ZynqDesign_ADCSyncModule_0_0\ZynqDesign_ADCSyncModule_0_0.xci" Type="IP">
         <Instance HierarchyPath="ADCSyncModule_0"/>

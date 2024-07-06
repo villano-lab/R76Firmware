@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Sat Jul  6 11:02:11 2024
+| Date             : Sat Jul  6 13:18:11 2024
 | Host             : Hraesvelgr running 64-bit major release  (build 9200)
 | Command          : report_power -file TOP_asdf_power_routed.rpt -pb TOP_asdf_power_summary_routed.pb -rpx TOP_asdf_power_routed.rpx
 | Design           : TOP_asdf
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 3.498        |
+| Total On-Chip Power (W)  | 4.253        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 3.343        |
-| Device Static (W)        | 0.155        |
+| Dynamic (W)              | 4.089        |
+| Device Static (W)        | 0.164        |
 | Total Off-Chip Power (W) | 0.002        |
 | Effective TJA (C/W)      | 1.9          |
-| Max Ambient (C)          | 78.4         |
-| Junction Temperature (C) | 31.6         |
+| Max Ambient (C)          | 77.0         |
+| Junction Temperature (C) | 33.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,24 +53,25 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.110 |       34 |       --- |             --- |
-| Slice Logic              |     0.015 |    30186 |       --- |             --- |
-|   LUT as Logic           |     0.012 |     8398 |     78600 |           10.68 |
-|   Register               |     0.001 |    16720 |    157200 |           10.64 |
-|   CARRY4                 |    <0.001 |      412 |     19650 |            2.10 |
-|   LUT as Shift Register  |    <0.001 |      239 |     26600 |            0.90 |
+| Clocks                   |     0.183 |       34 |       --- |             --- |
+| Slice Logic              |     0.144 |    69610 |       --- |             --- |
+|   LUT as Logic           |     0.118 |    24667 |     78600 |           31.38 |
+|   CARRY4                 |     0.016 |     3011 |     19650 |           15.32 |
+|   Register               |     0.009 |    32712 |    157200 |           20.81 |
+|   LUT as Shift Register  |     0.001 |      607 |     26600 |            2.28 |
+|   F7/F8 Muxes            |    <0.001 |     1473 |     78600 |            1.87 |
 |   LUT as Distributed RAM |    <0.001 |      362 |     26600 |            1.36 |
-|   F7/F8 Muxes            |    <0.001 |     1063 |     78600 |            1.35 |
-|   Others                 |     0.000 |     1425 |       --- |             --- |
+|   Others                 |     0.000 |     2073 |       --- |             --- |
 |   BUFR                   |     0.000 |        1 |       116 |            0.86 |
-| Signals                  |     0.026 |    23904 |       --- |             --- |
-| Block RAM                |     0.019 |       18 |       265 |            6.79 |
+| Signals                  |     0.185 |    56939 |       --- |             --- |
+| Block RAM                |     0.352 |     75.5 |       265 |           28.49 |
 | MMCM                     |     0.362 |        3 |         5 |           60.00 |
+| DSPs                     |     0.052 |       46 |       400 |           11.50 |
 | I/O                      |     0.648 |      170 |       250 |           68.00 |
 | GTX                      |     0.627 |        2 |         4 |           50.00 |
 | PS7                      |     1.536 |        1 |       --- |             --- |
-| Static Power             |     0.155 |          |           |                 |
-| Total                    |     3.498 |          |           |                 |
+| Static Power             |     0.164 |          |           |                 |
+| Total                    |     4.252 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,8 +81,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.348 |       0.321 |      0.028 |
-| Vccaux    |       1.800 |     0.407 |       0.392 |      0.015 |
+| Vccint    |       1.000 |     1.077 |       1.045 |      0.032 |
+| Vccaux    |       1.800 |     0.408 |       0.392 |      0.016 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.023 |       0.022 |      0.001 |
 | Vcco18    |       1.800 |     0.088 |       0.087 |      0.001 |
@@ -89,11 +90,11 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.003 |       0.001 |      0.002 |
-| MGTAVcc   |       1.000 |     0.342 |       0.339 |      0.002 |
+| Vccbram   |       1.000 |     0.027 |       0.023 |      0.004 |
+| MGTAVcc   |       1.000 |     0.342 |       0.339 |      0.003 |
 | MGTAVtt   |       1.200 |     0.195 |       0.193 |      0.003 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.744 |       0.724 |      0.020 |
+| Vccpint   |       1.000 |     0.745 |       0.724 |      0.021 |
 | Vccpaux   |       1.800 |     0.061 |       0.051 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.459 |       0.457 |      0.002 |
@@ -186,13 +187,452 @@ Table of Contents
 +-------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                      | Power (W) |
 +-------------------------------------------------------------------------------------------+-----------+
-| TOP_asdf                                                                                  |     3.343 |
+| TOP_asdf                                                                                  |     4.089 |
 |   AW_MEMORY_MANAGER                                                                       |     0.002 |
+|   U30_0                                                                                   |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_1                                                                                   |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_10                                                                                  |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_11                                                                                  |     0.023 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.007 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_12                                                                                  |     0.023 |
+|     U15                                                                                   |    <0.001 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_13                                                                                  |     0.023 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_14                                                                                  |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.005 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_15                                                                                  |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_16                                                                                  |     0.023 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_17                                                                                  |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_18                                                                                  |     0.023 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_19                                                                                  |     0.023 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_2                                                                                   |     0.023 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_20                                                                                  |     0.023 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_21                                                                                  |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.005 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_22                                                                                  |     0.023 |
+|     U15                                                                                   |    <0.001 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_3                                                                                   |     0.023 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_4                                                                                   |     0.023 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_5                                                                                   |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_6                                                                                   |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_7                                                                                   |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_8                                                                                   |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U30_9                                                                                   |     0.022 |
+|     U16                                                                                   |    <0.001 |
+|     U17                                                                                   |     0.002 |
+|     U18                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U19                                                                                   |     0.004 |
+|       xpm_memory_sdpram_inst                                                              |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U20                                                                                   |     0.005 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|     U21                                                                                   |     0.006 |
+|       USE_RAM.xpm_memory_sdpram_inst                                                      |     0.003 |
+|         xpm_memory_base_inst                                                              |     0.003 |
+|   U33_0                                                                                   |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_1                                                                                   |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_10                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_11                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_12                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_13                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_14                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_15                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_16                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_17                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_18                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_19                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_2                                                                                   |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_20                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_21                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_22                                                                                  |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_3                                                                                   |     0.011 |
+|     U1                                                                                    |     0.011 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_4                                                                                   |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_5                                                                                   |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_6                                                                                   |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_7                                                                                   |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_8                                                                                   |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
+|   U33_9                                                                                   |     0.010 |
+|     U1                                                                                    |     0.010 |
+|       pre_intbuff_V_U                                                                     |     0.005 |
+|         charge_integratiobkb_ram_U                                                        |     0.005 |
 |   U42                                                                                     |     0.003 |
 |     xpm_memory_tdpram_inst                                                                |     0.002 |
 |       xpm_memory_base_inst                                                                |     0.002 |
 |   XPM_CLK_VER                                                                             |    <0.001 |
-|   adcs                                                                                    |     0.802 |
+|   adcs                                                                                    |     0.801 |
 |     adc_interface1                                                                        |     0.167 |
 |       ADC_DESER1                                                                          |     0.081 |
 |       ADC_DESER2                                                                          |     0.079 |
@@ -325,8 +765,8 @@ Table of Contents
 |                 gntv_or_sync_fifo.gl0.wr                                                  |    <0.001 |
 |                   gwas.wsts                                                               |    <0.001 |
 |                   wpntr                                                                   |    <0.001 |
-|                 gntv_or_sync_fifo.mem                                                     |     0.001 |
-|                   gdm.dm_gen.dm                                                           |     0.001 |
+|                 gntv_or_sync_fifo.mem                                                     |    <0.001 |
+|                   gdm.dm_gen.dm                                                           |    <0.001 |
 |                     RAM_reg_0_15_0_5                                                      |    <0.001 |
 |                     RAM_reg_0_15_12_17                                                    |    <0.001 |
 |                     RAM_reg_0_15_18_23                                                    |    <0.001 |
@@ -357,8 +797,8 @@ Table of Contents
 |                 gntv_or_sync_fifo.gl0.wr                                                  |    <0.001 |
 |                   gwas.wsts                                                               |    <0.001 |
 |                   wpntr                                                                   |    <0.001 |
-|                 gntv_or_sync_fifo.mem                                                     |     0.001 |
-|                   gdm.dm_gen.dm                                                           |     0.001 |
+|                 gntv_or_sync_fifo.mem                                                     |    <0.001 |
+|                   gdm.dm_gen.dm                                                           |    <0.001 |
 |                     RAM_reg_0_15_0_5                                                      |    <0.001 |
 |                     RAM_reg_0_15_12_17                                                    |    <0.001 |
 |                     RAM_reg_0_15_18_23                                                    |    <0.001 |
@@ -472,8 +912,8 @@ Table of Contents
 |                 gntv_or_sync_fifo.gl0.wr                                                  |    <0.001 |
 |                   gwas.wsts                                                               |    <0.001 |
 |                   wpntr                                                                   |    <0.001 |
-|                 gntv_or_sync_fifo.mem                                                     |     0.001 |
-|                   gdm.dm_gen.dm                                                           |     0.001 |
+|                 gntv_or_sync_fifo.mem                                                     |    <0.001 |
+|                   gdm.dm_gen.dm                                                           |    <0.001 |
 |                     RAM_reg_0_15_0_5                                                      |    <0.001 |
 |                     RAM_reg_0_15_12_17                                                    |    <0.001 |
 |                     RAM_reg_0_15_18_23                                                    |    <0.001 |
@@ -657,13 +1097,13 @@ Table of Contents
 |       inst                                                                                |     0.129 |
 |   main_clock_gen                                                                          |     0.107 |
 |     inst                                                                                  |     0.107 |
-|   zynq_subsystem                                                                          |     2.410 |
+|   zynq_subsystem                                                                          |     2.405 |
 |     IIC_0_scl_iobuf                                                                       |     0.000 |
 |     IIC_0_sda_iobuf                                                                       |     0.000 |
-|     ZynqDesign_i                                                                          |     2.410 |
-|       ADCSyncModule_0                                                                     |     0.008 |
-|         U0                                                                                |     0.008 |
-|           ADCSyncModule_v1_0_S00_AXI_inst                                                 |     0.006 |
+|     ZynqDesign_i                                                                          |     2.405 |
+|       ADCSyncModule_0                                                                     |     0.006 |
+|         U0                                                                                |     0.006 |
+|           ADCSyncModule_v1_0_S00_AXI_inst                                                 |     0.005 |
 |       FS_0_AXIFIFO                                                                        |    <0.001 |
 |         inst                                                                              |    <0.001 |
 |           gen_fifo_generator.fifo_generator_inst                                          |    <0.001 |
@@ -972,13 +1412,13 @@ Table of Contents
 |                 si_register_slice_inst                                                    |    <0.001 |
 |                   ar.ar_pipe                                                              |    <0.001 |
 |                   aw.aw_pipe                                                              |    <0.001 |
-|       axis_data_fifo_0                                                                    |     0.002 |
-|         inst                                                                              |     0.002 |
+|       axis_data_fifo_0                                                                    |     0.001 |
+|         inst                                                                              |     0.001 |
 |           gen_async_clock_and_reset.inst_xpm_cdc_sync_rst                                 |    <0.001 |
-|           gen_fifo_generator.fifo_generator_inst                                          |     0.002 |
-|             inst_fifo_gen                                                                 |     0.002 |
-|               gaxis_fifo.gaxisf.axisf                                                     |     0.002 |
-|                 grf.rf                                                                    |     0.002 |
+|           gen_fifo_generator.fifo_generator_inst                                          |     0.001 |
+|             inst_fifo_gen                                                                 |     0.001 |
+|               gaxis_fifo.gaxisf.axisf                                                     |     0.001 |
+|                 grf.rf                                                                    |     0.001 |
 |                   gntv_or_sync_fifo.gcx.clkx                                              |    <0.001 |
 |                     rd_pntr_cdc_inst                                                      |    <0.001 |
 |                     wr_pntr_cdc_inst                                                      |    <0.001 |
@@ -1008,13 +1448,13 @@ Table of Contents
 |                     ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd |    <0.001 |
 |                     ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst  |    <0.001 |
 |                     ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst          |    <0.001 |
-|       axis_data_fifo_1                                                                    |     0.001 |
-|         inst                                                                              |     0.001 |
+|       axis_data_fifo_1                                                                    |    <0.001 |
+|         inst                                                                              |    <0.001 |
 |           gen_async_clock_and_reset.inst_xpm_cdc_sync_rst                                 |    <0.001 |
-|           gen_fifo_generator.fifo_generator_inst                                          |     0.001 |
-|             inst_fifo_gen                                                                 |     0.001 |
-|               gaxis_fifo.gaxisf.axisf                                                     |     0.001 |
-|                 grf.rf                                                                    |     0.001 |
+|           gen_fifo_generator.fifo_generator_inst                                          |    <0.001 |
+|             inst_fifo_gen                                                                 |    <0.001 |
+|               gaxis_fifo.gaxisf.axisf                                                     |    <0.001 |
+|                 grf.rf                                                                    |    <0.001 |
 |                   gntv_or_sync_fifo.gcx.clkx                                              |    <0.001 |
 |                     rd_pntr_cdc_inst                                                      |    <0.001 |
 |                     wr_pntr_cdc_inst                                                      |    <0.001 |
@@ -1077,13 +1517,13 @@ Table of Contents
 |                     ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd |    <0.001 |
 |                     ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst  |    <0.001 |
 |                     ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst          |    <0.001 |
-|       axis_data_fifo_3                                                                    |     0.001 |
-|         inst                                                                              |     0.001 |
+|       axis_data_fifo_3                                                                    |    <0.001 |
+|         inst                                                                              |    <0.001 |
 |           gen_async_clock_and_reset.inst_xpm_cdc_sync_rst                                 |    <0.001 |
-|           gen_fifo_generator.fifo_generator_inst                                          |     0.001 |
-|             inst_fifo_gen                                                                 |     0.001 |
-|               gaxis_fifo.gaxisf.axisf                                                     |     0.001 |
-|                 grf.rf                                                                    |     0.001 |
+|           gen_fifo_generator.fifo_generator_inst                                          |    <0.001 |
+|             inst_fifo_gen                                                                 |    <0.001 |
+|               gaxis_fifo.gaxisf.axisf                                                     |    <0.001 |
+|                 grf.rf                                                                    |    <0.001 |
 |                   gntv_or_sync_fifo.gcx.clkx                                              |    <0.001 |
 |                     rd_pntr_cdc_inst                                                      |    <0.001 |
 |                     wr_pntr_cdc_inst                                                      |    <0.001 |
@@ -1132,7 +1572,7 @@ Table of Contents
 |             data_mover_inbuffbkb_ram_U                                                    |    <0.001 |
 |       processing_system7_0                                                                |     1.543 |
 |         inst                                                                              |     1.543 |
-|       ps7_0_axi_periph                                                                    |     0.011 |
+|       ps7_0_axi_periph                                                                    |     0.009 |
 |         m00_couplers                                                                      |     0.002 |
 |           auto_cc                                                                         |     0.002 |
 |             inst                                                                          |     0.002 |
@@ -1207,7 +1647,7 @@ Table of Contents
 |         xbar                                                                              |     0.002 |
 |           inst                                                                            |     0.002 |
 |             gen_sasd.crossbar_sasd_0                                                      |     0.002 |
-|               addr_arbiter_inst                                                           |     0.001 |
+|               addr_arbiter_inst                                                           |    <0.001 |
 |               gen_decerr.decerr_slave_inst                                                |    <0.001 |
 |               reg_slice_r                                                                 |    <0.001 |
 |               splitter_ar                                                                 |    <0.001 |

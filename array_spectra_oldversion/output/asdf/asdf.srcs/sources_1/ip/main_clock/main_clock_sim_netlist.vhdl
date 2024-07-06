@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Sat Jul  6 10:41:49 2024
+-- Date        : Sat Jul  6 12:53:09 2024
 -- Host        : Hraesvelgr running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/ip/main_clock/main_clock_sim_netlist.vhdl
+--               C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/ip/main_clock/main_clock_sim_netlist.vhdl
 -- Design      : main_clock
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

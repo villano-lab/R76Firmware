@@ -1,11 +1,11 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Sat Jul  6 10:50:24 2024
+-- Date        : Sat Jul  6 12:59:29 2024
 -- Host        : Hraesvelgr running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_RESET_RX_0/ZynqDesign_RESET_RX_0_stub.vhdl
--- Design      : ZynqDesign_RESET_RX_0
+-- Command     : write_vhdl -force -mode synth_stub -rename_top ZynqDesign_RESET_RX_0 -prefix
+--               ZynqDesign_RESET_RX_0_ ZynqDesign_RESET_TX_0_stub.vhdl
+-- Design      : ZynqDesign_RESET_TX_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z030fbg676-2
 -- --------------------------------------------------------------------------------

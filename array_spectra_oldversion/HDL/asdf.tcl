@@ -1,33 +1,33 @@
-set outputDir C:/OpenHardware/NuclearOption/asdf/output/asdf
+set outputDir C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf
 file mkdir $outputDir
-create_project asdf C:/OpenHardware/NuclearOption/asdf/output/asdf -part xc7z030fbg676-2 -force
+create_project asdf C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf -part xc7z030fbg676-2 -force
 set_property source_mgmt_mode None [current_project]
 set_property target_language VHDL [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY XPM_FIFO} [current_project]
-set_property "ip_repo_paths" "[file normalize "C:/OpenHardware/NuclearOption/asdf/HDL/ip_repo"]"  [current_project]
+set_property "ip_repo_paths" "[file normalize "C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/ip_repo"]"  [current_project]
 update_ip_catalog -rebuild
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/clk_wiz_0.xcix
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/fifo_generator_0.xcix
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/main_clock.xci
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/subpage_subdesign_1.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/subpage_subdesign_2.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/top_asdf.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/ADC1.v
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/ADC2.v
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/adcs_top.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/adc_interface.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/avalon_wrapper.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/charge_integratiobkb.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/charge_integration.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/polinvert.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/trigger_leading.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/xlx_delay.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/xlx_soft_gd.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/xlx_spectrum.vhd
-add_files -force C:/OpenHardware/NuclearOption/asdf/HDL/pcores/ZynqDesign_wrapper.vhd
-add_files -force -fileset constrs_1 C:/OpenHardware/NuclearOption/asdf/HDL/DT5560_pins.xdc
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/clk_wiz_0.xcix
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/fifo_generator_0.xcix
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/main_clock.xci
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/subpage_subdesign_1.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/subpage_subdesign_2.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/top_asdf.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/ADC1.v
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/ADC2.v
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/adcs_top.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/adc_interface.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/avalon_wrapper.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/charge_integratiobkb.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/charge_integration.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/polinvert.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/trigger_leading.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/xlx_delay.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/xlx_soft_gd.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/xlx_spectrum.vhd
+add_files -force C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/ZynqDesign_wrapper.vhd
+add_files -force -fileset constrs_1 C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/DT5560_pins.xdc
 import_files -force -norecurse
-import_files -fileset constrs_1 -force -norecurse C:/OpenHardware/NuclearOption/asdf/HDL/DT5560_pins.xdc
+import_files -fileset constrs_1 -force -norecurse C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/DT5560_pins.xdc
 
 foreach ip [get_ips] {
 	if {[catch {
@@ -53,7 +53,7 @@ foreach ip [get_ips] {
 }
 
 update_ip_catalog -rebuild
-source "C:/OpenHardware/NuclearOption/asdf/HDL/pcores/ZynqDesign.tcl"
+source "C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/pcores/ZynqDesign.tcl"
 set_property top TOP_asdf [current_fileset]
 set obj [get_runs impl_1]
 set obj_s [get_runs synth_1]

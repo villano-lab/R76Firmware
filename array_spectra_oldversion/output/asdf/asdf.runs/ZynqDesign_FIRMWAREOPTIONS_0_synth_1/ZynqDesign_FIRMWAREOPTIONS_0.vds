@@ -2,32 +2,32 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Jul  6 10:46:03 2024
-# Process ID: 1056
-# Current directory: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1
+# Start of session at: Sat Jul  6 12:55:21 2024
+# Process ID: 2008
+# Current directory: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1
 # Command line: vivado.exe -log ZynqDesign_FIRMWAREOPTIONS_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ZynqDesign_FIRMWAREOPTIONS_0.tcl
-# Log file: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1/ZynqDesign_FIRMWAREOPTIONS_0.vds
-# Journal file: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1\vivado.jou
+# Log file: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1/ZynqDesign_FIRMWAREOPTIONS_0.vds
+# Journal file: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source ZynqDesign_FIRMWAREOPTIONS_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 275.648 ; gain = 50.215
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 275.902 ; gain = 50.238
 Command: synth_design -top ZynqDesign_FIRMWAREOPTIONS_0 -part xc7z030fbg676-2 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11616 
+INFO: Helper process launched with PID 4380 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:47 . Memory (MB): peak = 402.102 ; gain = 99.711
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:44 . Memory (MB): peak = 402.426 ; gain = 100.207
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_FIRMWAREOPTIONS_0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_FIRMWAREOPTIONS_0/synth/ZynqDesign_FIRMWAREOPTIONS_0.v:57]
-INFO: [Synth 8-638] synthesizing module 'xlconstant_v1_1_3_xlconstant' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/0750/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_FIRMWAREOPTIONS_0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_FIRMWAREOPTIONS_0/synth/ZynqDesign_FIRMWAREOPTIONS_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'xlconstant_v1_1_3_xlconstant' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/0750/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 1 - type: integer 
 	Parameter CONST_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'xlconstant_v1_1_3_xlconstant' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/0750/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_FIRMWAREOPTIONS_0' (2#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_FIRMWAREOPTIONS_0/synth/ZynqDesign_FIRMWAREOPTIONS_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'xlconstant_v1_1_3_xlconstant' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/0750/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_FIRMWAREOPTIONS_0' (2#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_FIRMWAREOPTIONS_0/synth/ZynqDesign_FIRMWAREOPTIONS_0.v:57]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:54 . Memory (MB): peak = 454.719 ; gain = 152.328
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:51 . Memory (MB): peak = 455.047 ; gain = 152.828
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -37,7 +37,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:57 . Memory (MB): peak = 454.719 ; gain = 152.328
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:53 . Memory (MB): peak = 455.047 ; gain = 152.828
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z030fbg676-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -49,25 +49,25 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 729.441 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 730.238 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:02:27 . Memory (MB): peak = 729.441 ; gain = 427.051
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:02:40 . Memory (MB): peak = 730.238 ; gain = 428.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z030fbg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:02:27 . Memory (MB): peak = 729.441 ; gain = 427.051
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:02:40 . Memory (MB): peak = 730.238 ; gain = 428.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:02:27 . Memory (MB): peak = 729.441 ; gain = 427.051
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:02:40 . Memory (MB): peak = 730.238 ; gain = 428.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:02:27 . Memory (MB): peak = 729.441 ; gain = 427.051
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:02:40 . Memory (MB): peak = 730.238 ; gain = 428.020
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -135,7 +135,7 @@ INFO: [Synth 8-3917] design ZynqDesign_FIRMWAREOPTIONS_0 has port dout[2] driven
 INFO: [Synth 8-3917] design ZynqDesign_FIRMWAREOPTIONS_0 has port dout[1] driven by constant 0
 INFO: [Synth 8-3917] design ZynqDesign_FIRMWAREOPTIONS_0 has port dout[0] driven by constant 1
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:02:31 . Memory (MB): peak = 729.441 ; gain = 427.051
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:02:45 . Memory (MB): peak = 730.238 ; gain = 428.020
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -147,13 +147,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:03:16 . Memory (MB): peak = 797.633 ; gain = 495.242
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:03:54 . Memory (MB): peak = 798.676 ; gain = 496.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:03:16 . Memory (MB): peak = 797.633 ; gain = 495.242
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:03:54 . Memory (MB): peak = 798.676 ; gain = 496.457
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -165,7 +165,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:03:16 . Memory (MB): peak = 807.199 ; gain = 504.809
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:03:54 . Memory (MB): peak = 808.254 ; gain = 506.035
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -189,7 +189,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:03:20 . Memory (MB): peak = 807.199 ; gain = 504.809
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:03:59 . Memory (MB): peak = 808.254 ; gain = 506.035
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -202,7 +202,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:03:20 . Memory (MB): peak = 807.199 ; gain = 504.809
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:03:59 . Memory (MB): peak = 808.254 ; gain = 506.035
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -214,25 +214,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:03:20 . Memory (MB): peak = 807.199 ; gain = 504.809
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:03:59 . Memory (MB): peak = 808.254 ; gain = 506.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:03:20 . Memory (MB): peak = 807.199 ; gain = 504.809
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:03:59 . Memory (MB): peak = 808.254 ; gain = 506.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:03:20 . Memory (MB): peak = 807.199 ; gain = 504.809
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:03:59 . Memory (MB): peak = 808.254 ; gain = 506.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:03:20 . Memory (MB): peak = 807.199 ; gain = 504.809
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:03:59 . Memory (MB): peak = 808.254 ; gain = 506.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -257,11 +257,11 @@ Report Instance Areas:
 |1     |top      |       |     0|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:03:20 . Memory (MB): peak = 807.199 ; gain = 504.809
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:03:59 . Memory (MB): peak = 808.254 ; gain = 506.035
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:02:27 . Memory (MB): peak = 807.199 ; gain = 230.086
-Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:03:21 . Memory (MB): peak = 807.199 ; gain = 504.809
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:02:58 . Memory (MB): peak = 808.254 ; gain = 230.844
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:04:00 . Memory (MB): peak = 808.254 ; gain = 506.035
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -271,10 +271,10 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 45 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:03:30 . Memory (MB): peak = 827.547 ; gain = 536.645
-INFO: [Common 17-1381] The checkpoint 'C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1/ZynqDesign_FIRMWAREOPTIONS_0.dcp' has been generated.
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_FIRMWAREOPTIONS_0/ZynqDesign_FIRMWAREOPTIONS_0.xci
-INFO: [Common 17-1381] The checkpoint 'C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1/ZynqDesign_FIRMWAREOPTIONS_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:04:10 . Memory (MB): peak = 824.074 ; gain = 533.344
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1/ZynqDesign_FIRMWAREOPTIONS_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_FIRMWAREOPTIONS_0/ZynqDesign_FIRMWAREOPTIONS_0.xci
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_FIRMWAREOPTIONS_0_synth_1/ZynqDesign_FIRMWAREOPTIONS_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ZynqDesign_FIRMWAREOPTIONS_0_utilization_synth.rpt -pb ZynqDesign_FIRMWAREOPTIONS_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.596 . Memory (MB): peak = 828.285 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Jul  6 10:50:25 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.953 . Memory (MB): peak = 824.074 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Jul  6 13:00:24 2024...

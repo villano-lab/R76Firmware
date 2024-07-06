@@ -2,17 +2,17 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Jul  6 10:39:24 2024
-# Process ID: 2244
-# Current directory: C:/OpenHardware/NuclearOption/asdf/HDL
-# Command line: vivado.exe -mode batch -source C:/OpenHardware/NuclearOption/asdf/HDL/asdf.tcl
-# Log file: C:/OpenHardware/NuclearOption/asdf/HDL/vivado.log
-# Journal file: C:/OpenHardware/NuclearOption/asdf/HDL\vivado.jou
+# Start of session at: Sat Jul  6 12:50:48 2024
+# Process ID: 2740
+# Current directory: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL
+# Command line: vivado.exe -mode batch -source C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/asdf.tcl
+# Log file: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/vivado.log
+# Journal file: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL\vivado.jou
 #-----------------------------------------------------------
-source C:/OpenHardware/NuclearOption/asdf/HDL/asdf.tcl
+source C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/HDL/asdf.tcl
 create_project -in_memory generateNetlistIP -part xc7z030fbg676-2
-read_ip C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/ip/clk_wiz_0.xcix
+read_ip C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/ip/clk_wiz_0.xcix
 create_project -in_memory generateNetlistIP -part xc7z030fbg676-2
-read_ip C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/ip/fifo_generator_0.xcix
+read_ip C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/ip/fifo_generator_0.xcix
 create_project -in_memory generateNetlistIP -part xc7z030fbg676-2
-read_ip C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/ip/main_clock/main_clock.xci
+read_ip C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/ip/main_clock/main_clock.xci

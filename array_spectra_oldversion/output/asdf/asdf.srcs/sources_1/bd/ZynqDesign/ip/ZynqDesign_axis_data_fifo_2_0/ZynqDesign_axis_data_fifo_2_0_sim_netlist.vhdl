@@ -1,11 +1,11 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Sat Jul  6 10:52:03 2024
+-- Date        : Sat Jul  6 13:03:10 2024
 -- Host        : Hraesvelgr running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top ZynqDesign_axis_data_fifo_2_0 -prefix
---               ZynqDesign_axis_data_fifo_2_0_ ZynqDesign_axis_data_fifo_0_0_sim_netlist.vhdl
--- Design      : ZynqDesign_axis_data_fifo_0_0
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axis_data_fifo_2_0/ZynqDesign_axis_data_fifo_2_0_sim_netlist.vhdl
+-- Design      : ZynqDesign_axis_data_fifo_2_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7z030fbg676-2
@@ -25,6 +25,8 @@ entity ZynqDesign_axis_data_fifo_2_0_xpm_cdc_gray is
   attribute DEST_SYNC_FF of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_gray : entity is 2;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_gray : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_gray : entity is "xpm_cdc_gray";
   attribute REG_OUTPUT : integer;
   attribute REG_OUTPUT of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_gray : entity is 1;
   attribute SIM_ASSERT_CHK : integer;
@@ -1281,6 +1283,8 @@ entity ZynqDesign_axis_data_fifo_2_0_xpm_cdc_single is
   attribute DEST_SYNC_FF of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_single : entity is 5;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_single : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_single : entity is "xpm_cdc_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -1462,6 +1466,8 @@ entity ZynqDesign_axis_data_fifo_2_0_xpm_cdc_sync_rst is
   attribute INIT of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_sync_rst : entity is "1";
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_sync_rst : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_sync_rst : entity is "xpm_cdc_sync_rst";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of ZynqDesign_axis_data_fifo_2_0_xpm_cdc_sync_rst : entity is 0;
   attribute VERSION : integer;
@@ -1739,6 +1745,8 @@ entity ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_prim_wrapper is
     s_axis_tdata : in STD_LOGIC_VECTOR ( 35 downto 0 );
     WEA : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_prim_wrapper : entity is "blk_mem_gen_prim_wrapper";
 end ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_prim_wrapper;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_prim_wrapper is
@@ -2288,6 +2296,8 @@ entity ZynqDesign_axis_data_fifo_2_0_compare is
     comp1 : out STD_LOGIC;
     v1_reg : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_compare : entity is "compare";
 end ZynqDesign_axis_data_fifo_2_0_compare;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_compare is
@@ -2544,6 +2554,8 @@ entity ZynqDesign_axis_data_fifo_2_0_rd_bin_cntr is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_rd_bin_cntr : entity is "rd_bin_cntr";
 end ZynqDesign_axis_data_fifo_2_0_rd_bin_cntr;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_rd_bin_cntr is
@@ -2918,6 +2930,8 @@ entity ZynqDesign_axis_data_fifo_2_0_rd_dc_fwft_ext_as is
     \dest_out_bin_ff_reg[9]\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \gpregsm1.curr_fwft_state_reg[1]\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_rd_dc_fwft_ext_as : entity is "rd_dc_fwft_ext_as";
 end ZynqDesign_axis_data_fifo_2_0_rd_dc_fwft_ext_as;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_rd_dc_fwft_ext_as is
@@ -3113,6 +3127,8 @@ entity ZynqDesign_axis_data_fifo_2_0_rd_fwft is
     ram_empty_fb_i_reg : in STD_LOGIC;
     O : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_rd_fwft : entity is "rd_fwft";
 end ZynqDesign_axis_data_fifo_2_0_rd_fwft;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_rd_fwft is
@@ -3392,6 +3408,8 @@ entity ZynqDesign_axis_data_fifo_2_0_wr_bin_cntr is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_wr_bin_cntr : entity is "wr_bin_cntr";
 end ZynqDesign_axis_data_fifo_2_0_wr_bin_cntr;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_wr_bin_cntr is
@@ -4204,6 +4222,8 @@ entity ZynqDesign_axis_data_fifo_2_0_wr_dc_fwft_ext_as is
     D : in STD_LOGIC_VECTOR ( 9 downto 0 );
     s_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_wr_dc_fwft_ext_as : entity is "wr_dc_fwft_ext_as";
 end ZynqDesign_axis_data_fifo_2_0_wr_dc_fwft_ext_as;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_wr_dc_fwft_ext_as is
@@ -4398,6 +4418,8 @@ entity ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_prim_width is
     s_axis_tdata : in STD_LOGIC_VECTOR ( 35 downto 0 );
     WEA : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_prim_width is
@@ -4660,6 +4682,8 @@ entity ZynqDesign_axis_data_fifo_2_0_clk_x_pntrs is
     \gic0.gc0.count_d2_reg[9]\ : in STD_LOGIC_VECTOR ( 9 downto 0 );
     m_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_clk_x_pntrs : entity is "clk_x_pntrs";
 end ZynqDesign_axis_data_fifo_2_0_clk_x_pntrs;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_clk_x_pntrs is
@@ -5051,6 +5075,8 @@ entity ZynqDesign_axis_data_fifo_2_0_rd_status_flags_as is
     m_axis_tready : in STD_LOGIC;
     \gpregsm1.curr_fwft_state_reg[1]\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_rd_status_flags_as : entity is "rd_status_flags_as";
 end ZynqDesign_axis_data_fifo_2_0_rd_status_flags_as;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_rd_status_flags_as is
@@ -5121,6 +5147,8 @@ entity ZynqDesign_axis_data_fifo_2_0_reset_blk_ramfifo is
     m_aclk : in STD_LOGIC;
     s_aresetn : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_reset_blk_ramfifo : entity is "reset_blk_ramfifo";
 end ZynqDesign_axis_data_fifo_2_0_reset_blk_ramfifo;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_reset_blk_ramfifo is
@@ -5419,6 +5447,8 @@ entity ZynqDesign_axis_data_fifo_2_0_wr_status_flags_as is
     s_axis_tvalid : in STD_LOGIC;
     \grstd1.grst_full.grst_f.rst_d3_reg\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_wr_status_flags_as : entity is "wr_status_flags_as";
 end ZynqDesign_axis_data_fifo_2_0_wr_status_flags_as;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_wr_status_flags_as is
@@ -5511,6 +5541,8 @@ entity ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_generic_cstr is
     \out\ : in STD_LOGIC;
     s_axis_tvalid : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_generic_cstr is
@@ -5575,6 +5607,8 @@ entity ZynqDesign_axis_data_fifo_2_0_rd_logic is
     m_axis_tready : in STD_LOGIC;
     ENB_dly_D : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_rd_logic : entity is "rd_logic";
 end ZynqDesign_axis_data_fifo_2_0_rd_logic;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_rd_logic is
@@ -5654,6 +5688,8 @@ entity ZynqDesign_axis_data_fifo_2_0_wr_logic is
     RD_PNTR_WR : in STD_LOGIC_VECTOR ( 9 downto 0 );
     \grstd1.grst_full.grst_f.rst_d3_reg\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_wr_logic : entity is "wr_logic";
 end ZynqDesign_axis_data_fifo_2_0_wr_logic;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_wr_logic is
@@ -5799,6 +5835,8 @@ entity ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_top is
     \out\ : in STD_LOGIC;
     s_axis_tvalid : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_top;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_top is
@@ -5836,6 +5874,8 @@ entity ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_v8_4_1_synth is
     \out\ : in STD_LOGIC;
     s_axis_tvalid : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_v8_4_1_synth : entity is "blk_mem_gen_v8_4_1_synth";
 end ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_v8_4_1_synth;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_v8_4_1_synth is
@@ -5873,6 +5913,8 @@ entity ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_v8_4_1 is
     \out\ : in STD_LOGIC;
     s_axis_tvalid : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_v8_4_1 : entity is "blk_mem_gen_v8_4_1";
 end ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_v8_4_1;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_blk_mem_gen_v8_4_1 is
@@ -5911,6 +5953,8 @@ entity ZynqDesign_axis_data_fifo_2_0_memory is
     s_axis_tvalid : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_memory : entity is "memory";
 end ZynqDesign_axis_data_fifo_2_0_memory;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_memory is
@@ -6653,6 +6697,8 @@ entity ZynqDesign_axis_data_fifo_2_0_fifo_generator_ramfifo is
     s_axis_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
     s_aresetn : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_fifo_generator_ramfifo : entity is "fifo_generator_ramfifo";
 end ZynqDesign_axis_data_fifo_2_0_fifo_generator_ramfifo;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_fifo_generator_ramfifo is
@@ -6792,6 +6838,8 @@ entity ZynqDesign_axis_data_fifo_2_0_fifo_generator_top is
     s_axis_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
     s_aresetn : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_fifo_generator_top : entity is "fifo_generator_top";
 end ZynqDesign_axis_data_fifo_2_0_fifo_generator_top;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_fifo_generator_top is
@@ -6829,6 +6877,8 @@ entity ZynqDesign_axis_data_fifo_2_0_fifo_generator_v13_2_1_synth is
     s_axis_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
     s_aresetn : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_fifo_generator_v13_2_1_synth : entity is "fifo_generator_v13_2_1_synth";
 end ZynqDesign_axis_data_fifo_2_0_fifo_generator_v13_2_1_synth;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_fifo_generator_v13_2_1_synth is
@@ -7490,6 +7540,8 @@ entity ZynqDesign_axis_data_fifo_2_0_fifo_generator_v13_2_1 is
   attribute C_WR_PNTR_WIDTH_WRCH of ZynqDesign_axis_data_fifo_2_0_fifo_generator_v13_2_1 : entity is 4;
   attribute C_WR_RESPONSE_LATENCY : integer;
   attribute C_WR_RESPONSE_LATENCY of ZynqDesign_axis_data_fifo_2_0_fifo_generator_v13_2_1 : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_fifo_generator_v13_2_1 : entity is "fifo_generator_v13_2_1";
 end ZynqDesign_axis_data_fifo_2_0_fifo_generator_v13_2_1;
 
 architecture STRUCTURE of ZynqDesign_axis_data_fifo_2_0_fifo_generator_v13_2_1 is
@@ -8205,6 +8257,8 @@ entity ZynqDesign_axis_data_fifo_2_0_axis_data_fifo_v1_1_16_axis_data_fifo is
   attribute LP_M_ACLKEN_CAN_TOGGLE of ZynqDesign_axis_data_fifo_2_0_axis_data_fifo_v1_1_16_axis_data_fifo : entity is 0;
   attribute LP_S_ACLKEN_CAN_TOGGLE : integer;
   attribute LP_S_ACLKEN_CAN_TOGGLE of ZynqDesign_axis_data_fifo_2_0_axis_data_fifo_v1_1_16_axis_data_fifo : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of ZynqDesign_axis_data_fifo_2_0_axis_data_fifo_v1_1_16_axis_data_fifo : entity is "axis_data_fifo_v1_1_16_axis_data_fifo";
   attribute P_APPLICATION_TYPE_AXIS : integer;
   attribute P_APPLICATION_TYPE_AXIS of ZynqDesign_axis_data_fifo_2_0_axis_data_fifo_v1_1_16_axis_data_fifo : entity is 0;
   attribute P_AXIS_PAYLOAD_WIDTH : integer;
@@ -9146,7 +9200,7 @@ entity ZynqDesign_axis_data_fifo_2_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of ZynqDesign_axis_data_fifo_2_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of ZynqDesign_axis_data_fifo_2_0 : entity is "ZynqDesign_axis_data_fifo_0_0,axis_data_fifo_v1_1_16_axis_data_fifo,{}";
+  attribute CHECK_LICENSE_TYPE of ZynqDesign_axis_data_fifo_2_0 : entity is "ZynqDesign_axis_data_fifo_2_0,axis_data_fifo_v1_1_16_axis_data_fifo,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of ZynqDesign_axis_data_fifo_2_0 : entity is "yes";
   attribute X_CORE_INFO : string;

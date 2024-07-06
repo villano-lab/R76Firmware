@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
---Date        : Sat Jul  6 10:42:33 2024
+--Date        : Sat Jul  6 12:53:52 2024
 --Host        : Hraesvelgr running 64-bit major release  (build 9200)
 --Command     : generate_target ZynqDesign_wrapper.bd
 --Design      : ZynqDesign_wrapper

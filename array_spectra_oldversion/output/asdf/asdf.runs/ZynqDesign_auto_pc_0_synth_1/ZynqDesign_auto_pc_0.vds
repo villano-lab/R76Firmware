@@ -2,26 +2,26 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Jul  6 10:44:26 2024
-# Process ID: 14140
-# Current directory: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1
+# Start of session at: Sat Jul  6 12:55:01 2024
+# Process ID: 6692
+# Current directory: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1
 # Command line: vivado.exe -log ZynqDesign_auto_pc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ZynqDesign_auto_pc_0.tcl
-# Log file: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/ZynqDesign_auto_pc_0.vds
-# Journal file: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1\vivado.jou
+# Log file: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/ZynqDesign_auto_pc_0.vds
+# Journal file: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source ZynqDesign_auto_pc_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 276.074 ; gain = 51.066
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 276.250 ; gain = 50.754
 Command: synth_design -top ZynqDesign_auto_pc_0 -part xc7z030fbg676-2 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9852 
+INFO: Helper process launched with PID 6336 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:01:11 . Memory (MB): peak = 410.277 ; gain = 107.664
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:01:08 . Memory (MB): peak = 410.469 ; gain = 107.711
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_auto_pc_0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_auto_pc_0/synth/ZynqDesign_auto_pc_0.v:58]
-INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_axi_protocol_converter' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4811]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_auto_pc_0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_auto_pc_0/synth/ZynqDesign_auto_pc_0.v:58]
+INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_axi_protocol_converter' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4811]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_M_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_S_AXI_PROTOCOL bound to: 0 - type: integer 
@@ -47,7 +47,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_axi_prot
 	Parameter P_SLVERR bound to: 2'b10 
 	Parameter P_PROTECTION bound to: 1 - type: integer 
 	Parameter P_CONVERSION bound to: 2 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_axi3_conv' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:954]
+INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_axi3_conv' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:954]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -63,7 +63,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_axi3_con
 	Parameter C_SUPPORT_SPLITTING bound to: 1 - type: integer 
 	Parameter C_SUPPORT_BURSTS bound to: 1 - type: integer 
 	Parameter C_SINGLE_THREAD bound to: 1 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_b_downsizer' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2276]
+INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_b_downsizer' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2276]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
@@ -72,8 +72,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_b_downsi
 	Parameter C_RESP_EXOKAY bound to: 2'b01 
 	Parameter C_RESP_SLVERROR bound to: 2'b10 
 	Parameter C_RESP_DECERR bound to: 2'b11 
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_b_downsizer' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2276]
-INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_a_axi3_conv' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_b_downsizer' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2276]
+INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_a_axi3_conv' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:62]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -89,12 +89,12 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_a_axi3_c
 	Parameter C_WRAP_BURST bound to: 2'b10 
 	Parameter C_FIFO_DEPTH_LOG bound to: 5 - type: integer 
 	Parameter C_SIZE_MASK bound to: 40'b1111111111111111111111111111111100000000 
-INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_14_axic_fifo' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_14_axic_fifo' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_FIFO_DEPTH_LOG bound to: 5 - type: integer 
 	Parameter C_FIFO_WIDTH bound to: 5 - type: integer 
 	Parameter C_FIFO_TYPE bound to: lut - type: string 
-INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_14_fifo_gen' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_14_fifo_gen' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_COMMON_CLOCK bound to: 1 - type: integer 
 	Parameter C_SYNCHRONIZER_STAGE bound to: 3 - type: integer 
@@ -106,11 +106,11 @@ INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_14_fifo_gen' [c:/Ope
 INFO: [Synth 8-638] synthesizing module 'xpm_cdc_async_rst' [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1177]
 INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1228]
 INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_async_rst' (2#1) [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1177]
-INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_14_fifo_gen' (20#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
-INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_14_axic_fifo' (21#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
-WARNING: [Synth 8-6014] Unused sequential element S_AXI_AUSER_Q_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:281]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_a_axi3_conv' (22#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:62]
-INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_w_axi3_conv' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2004]
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_14_fifo_gen' (20#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_14_axic_fifo' (21#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
+WARNING: [Synth 8-6014] Unused sequential element S_AXI_AUSER_Q_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:281]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_a_axi3_conv' (22#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_w_axi3_conv' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2004]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -119,8 +119,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_w_axi3_c
 	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_SUPPORT_SPLITTING bound to: 1 - type: integer 
 	Parameter C_SUPPORT_BURSTS bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_w_axi3_conv' (23#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2004]
-INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_a_axi3_conv__parameterized0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_w_axi3_conv' (23#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2004]
+INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_a_axi3_conv__parameterized0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:62]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -136,12 +136,12 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_a_axi3_c
 	Parameter C_WRAP_BURST bound to: 2'b10 
 	Parameter C_FIFO_DEPTH_LOG bound to: 5 - type: integer 
 	Parameter C_SIZE_MASK bound to: 40'b1111111111111111111111111111111100000000 
-INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_14_axic_fifo__parameterized0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_14_axic_fifo__parameterized0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_FIFO_DEPTH_LOG bound to: 5 - type: integer 
 	Parameter C_FIFO_WIDTH bound to: 1 - type: integer 
 	Parameter C_FIFO_TYPE bound to: lut - type: string 
-INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_14_fifo_gen__parameterized0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_14_fifo_gen__parameterized0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_COMMON_CLOCK bound to: 1 - type: integer 
 	Parameter C_SYNCHRONIZER_STAGE bound to: 3 - type: integer 
@@ -150,13 +150,13 @@ INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_14_fifo_gen__paramet
 	Parameter C_FIFO_TYPE bound to: lut - type: string 
 	Parameter C_MEMORY_TYPE bound to: 2 - type: integer 
 	Parameter C_IMPLEMENTATION_TYPE bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_14_fifo_gen__parameterized0' (23#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
-INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_14_axic_fifo__parameterized0' (23#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
-WARNING: [Synth 8-6014] Unused sequential element NO_B_CHANNEL.cmd_b_depth_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:853]
-WARNING: [Synth 8-6014] Unused sequential element S_AXI_AUSER_Q_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:281]
-WARNING: [Synth 8-6014] Unused sequential element cmd_b_push_block_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:637]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_a_axi3_conv__parameterized0' (23#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:62]
-INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_r_axi3_conv' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:1789]
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_14_fifo_gen__parameterized0' (23#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_14_axic_fifo__parameterized0' (23#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/9909/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
+WARNING: [Synth 8-6014] Unused sequential element NO_B_CHANNEL.cmd_b_depth_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:853]
+WARNING: [Synth 8-6014] Unused sequential element S_AXI_AUSER_Q_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:281]
+WARNING: [Synth 8-6014] Unused sequential element cmd_b_push_block_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:637]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_a_axi3_conv__parameterized0' (23#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_r_axi3_conv' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:1789]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -169,10 +169,10 @@ INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_r_axi3_c
 	Parameter C_RESP_EXOKAY bound to: 2'b01 
 	Parameter C_RESP_SLVERROR bound to: 2'b10 
 	Parameter C_RESP_DECERR bound to: 2'b11 
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_r_axi3_conv' (24#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:1789]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_axi3_conv' (25#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:954]
-INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_axi_protocol_converter' (26#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4811]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_auto_pc_0' (27#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_auto_pc_0/synth/ZynqDesign_auto_pc_0.v:58]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_r_axi3_conv' (24#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:1789]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_axi3_conv' (25#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:954]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_15_axi_protocol_converter' (26#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4811]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_auto_pc_0' (27#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_auto_pc_0/synth/ZynqDesign_auto_pc_0.v:58]
 WARNING: [Synth 8-3331] design axi_protocol_converter_v2_1_15_r_axi3_conv has unconnected port ACLK
 WARNING: [Synth 8-3331] design axi_protocol_converter_v2_1_15_r_axi3_conv has unconnected port ARESET
 WARNING: [Synth 8-3331] design wr_status_flags_ss has unconnected port SRST_FULL_FF
@@ -275,7 +275,7 @@ WARNING: [Synth 8-3331] design output_blk__parameterized0 has unconnected port W
 WARNING: [Synth 8-3331] design output_blk__parameterized0 has unconnected port WR_DATA_COUNT_I[3]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:50 ; elapsed = 00:04:50 . Memory (MB): peak = 561.180 ; gain = 258.566
+Finished RTL Elaboration : Time (s): cpu = 00:00:48 ; elapsed = 00:04:50 . Memory (MB): peak = 561.691 ; gain = 258.934
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -285,17 +285,17 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:50 ; elapsed = 00:04:51 . Memory (MB): peak = 561.180 ; gain = 258.566
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:48 ; elapsed = 00:04:51 . Memory (MB): peak = 561.691 ; gain = 258.934
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z030fbg676-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_auto_pc_0/ZynqDesign_auto_pc_0_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_auto_pc_0/ZynqDesign_auto_pc_0_ooc.xdc] for cell 'inst'
-Parsing XDC File [C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_auto_pc_0/ZynqDesign_auto_pc_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_auto_pc_0/ZynqDesign_auto_pc_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/dont_touch.xdc]
 Sourcing Tcl File [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
 Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
 Sourcing Tcl File [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
@@ -309,40 +309,40 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.168 . Memory (MB): peak = 854.316 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.417 . Memory (MB): peak = 854.410 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:06 ; elapsed = 00:05:35 . Memory (MB): peak = 854.316 ; gain = 551.703
+Finished Constraint Validation : Time (s): cpu = 00:01:05 ; elapsed = 00:05:50 . Memory (MB): peak = 854.410 ; gain = 551.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z030fbg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:06 ; elapsed = 00:05:35 . Memory (MB): peak = 854.316 ; gain = 551.703
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:05 ; elapsed = 00:05:50 . Memory (MB): peak = 854.410 ; gain = 551.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/dont_touch.xdc, line 9).
 Applied set_property DONT_TOUCH = true for inst/\gen_axi4_axi3.axi3_conv_inst /\USE_READ.USE_SPLIT_R.read_addr_inst /\USE_R_CHANNEL.cmd_queue /inst/fifo_gen_inst/inst_fifo_gen/\gconvfifo.rf /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/\gen_axi4_axi3.axi3_conv_inst /\USE_WRITE.write_addr_inst /\USE_BURSTS.cmd_queue /inst/fifo_gen_inst/inst_fifo_gen/\gconvfifo.rf /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/\gen_axi4_axi3.axi3_conv_inst /\USE_WRITE.write_addr_inst /\USE_B_CHANNEL.cmd_b_queue /inst/fifo_gen_inst/inst_fifo_gen/\gconvfifo.rf /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst . (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:06 ; elapsed = 00:05:35 . Memory (MB): peak = 854.316 ; gain = 551.703
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:05 ; elapsed = 00:05:50 . Memory (MB): peak = 854.410 ; gain = 551.652
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element repeat_cnt_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2476]
+WARNING: [Synth 8-6014] Unused sequential element repeat_cnt_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2476]
 INFO: [Synth 8-5544] ROM "leaving_empty_fwft" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:823]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:763]
-WARNING: [Synth 8-6014] Unused sequential element USE_B_CHANNEL.cmd_b_depth_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:821]
-WARNING: [Synth 8-6014] Unused sequential element pushed_commands_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:419]
-WARNING: [Synth 8-6014] Unused sequential element cmd_depth_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:761]
-WARNING: [Synth 8-6014] Unused sequential element length_counter_1_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2148]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:763]
-WARNING: [Synth 8-6014] Unused sequential element pushed_commands_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:419]
-WARNING: [Synth 8-6014] Unused sequential element cmd_depth_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:761]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:823]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:763]
+WARNING: [Synth 8-6014] Unused sequential element USE_B_CHANNEL.cmd_b_depth_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:821]
+WARNING: [Synth 8-6014] Unused sequential element pushed_commands_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:419]
+WARNING: [Synth 8-6014] Unused sequential element cmd_depth_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:761]
+WARNING: [Synth 8-6014] Unused sequential element length_counter_1_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2148]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:763]
+WARNING: [Synth 8-6014] Unused sequential element pushed_commands_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:419]
+WARNING: [Synth 8-6014] Unused sequential element cmd_depth_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:761]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:07 ; elapsed = 00:05:37 . Memory (MB): peak = 854.316 ; gain = 551.703
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:06 ; elapsed = 00:05:53 . Memory (MB): peak = 854.410 ; gain = 551.652
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -550,13 +550,13 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_WRITE.USE_SPLIT_W.write_resp_inst/repeat_cnt_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2476]
-WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_depth_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:821]
-WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/cmd_depth_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:761]
-WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/pushed_commands_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:419]
-WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_data_inst/length_counter_1_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2148]
-WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/cmd_depth_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:761]
-WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/pushed_commands_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:419]
+WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_WRITE.USE_SPLIT_W.write_resp_inst/repeat_cnt_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2476]
+WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_depth_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:821]
+WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/cmd_depth_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:761]
+WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/pushed_commands_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:419]
+WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_data_inst/length_counter_1_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2148]
+WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/cmd_depth_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:761]
+WARNING: [Synth 8-6014] Unused sequential element gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/pushed_commands_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:419]
 INFO: [Synth 8-3886] merging instance 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/addr_step_q_reg[0]' (FDRE) to 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/first_step_q_reg[12]'
 INFO: [Synth 8-3886] merging instance 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/addr_step_q_reg[1]' (FDRE) to 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/first_step_q_reg[12]'
 INFO: [Synth 8-3886] merging instance 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/addr_step_q_reg[2]' (FDRE) to 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/first_step_q_reg[12]'
@@ -650,7 +650,7 @@ INFO: [Synth 8-3332] Sequential element (gen_axi4_axi3.axi3_conv_inst/USE_WRITE.
 INFO: [Synth 8-3886] merging instance 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/addr_step_q_reg[4]' (FDRE) to 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/size_mask_q_reg[0]'
 INFO: [Synth 8-3886] merging instance 'inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/addr_step_q_reg[4]' (FDRE) to 'inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/size_mask_q_reg[0]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:05:42 . Memory (MB): peak = 854.316 ; gain = 551.703
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:05:59 . Memory (MB): peak = 854.410 ; gain = 551.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -679,13 +679,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:21 ; elapsed = 00:06:01 . Memory (MB): peak = 854.316 ; gain = 551.703
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:20 ; elapsed = 00:06:19 . Memory (MB): peak = 854.410 ; gain = 551.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:22 ; elapsed = 00:06:01 . Memory (MB): peak = 858.188 ; gain = 555.574
+Finished Timing Optimization : Time (s): cpu = 00:01:21 ; elapsed = 00:06:20 . Memory (MB): peak = 860.543 ; gain = 557.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -713,7 +713,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:22 ; elapsed = 00:06:02 . Memory (MB): peak = 869.051 ; gain = 566.438
+Finished Technology Mapping : Time (s): cpu = 00:01:21 ; elapsed = 00:06:21 . Memory (MB): peak = 871.102 ; gain = 568.344
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -737,7 +737,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:24 ; elapsed = 00:06:03 . Memory (MB): peak = 869.051 ; gain = 566.438
+Finished IO Insertion : Time (s): cpu = 00:01:22 ; elapsed = 00:06:23 . Memory (MB): peak = 871.102 ; gain = 568.344
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -750,7 +750,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:24 ; elapsed = 00:06:03 . Memory (MB): peak = 869.051 ; gain = 566.438
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:22 ; elapsed = 00:06:23 . Memory (MB): peak = 871.102 ; gain = 568.344
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -762,25 +762,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:24 ; elapsed = 00:06:04 . Memory (MB): peak = 869.051 ; gain = 566.438
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:23 ; elapsed = 00:06:23 . Memory (MB): peak = 871.102 ; gain = 568.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:24 ; elapsed = 00:06:04 . Memory (MB): peak = 869.051 ; gain = 566.438
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:23 ; elapsed = 00:06:23 . Memory (MB): peak = 871.102 ; gain = 568.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:24 ; elapsed = 00:06:04 . Memory (MB): peak = 869.051 ; gain = 566.438
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:23 ; elapsed = 00:06:23 . Memory (MB): peak = 871.102 ; gain = 568.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:24 ; elapsed = 00:06:04 . Memory (MB): peak = 869.051 ; gain = 566.438
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:23 ; elapsed = 00:06:23 . Memory (MB): peak = 871.102 ; gain = 568.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -875,18 +875,18 @@ Report Instance Areas:
 |58    |      \USE_WRITE.write_data_inst                                            |axi_protocol_converter_v2_1_15_w_axi3_conv                 |    26|
 +------+----------------------------------------------------------------------------+-----------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:24 ; elapsed = 00:06:04 . Memory (MB): peak = 869.051 ; gain = 566.438
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:23 ; elapsed = 00:06:23 . Memory (MB): peak = 871.102 ; gain = 568.344
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1636 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:05:34 . Memory (MB): peak = 869.051 ; gain = 273.301
-Synthesis Optimization Complete : Time (s): cpu = 00:01:24 ; elapsed = 00:06:04 . Memory (MB): peak = 869.051 ; gain = 566.438
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:05:46 . Memory (MB): peak = 871.102 ; gain = 275.625
+Synthesis Optimization Complete : Time (s): cpu = 00:01:23 ; elapsed = 00:06:23 . Memory (MB): peak = 871.102 ; gain = 568.344
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Sourcing Tcl File [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
 INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl:2]
-all_registers: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1356.441 ; gain = 487.391
+all_registers: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1357.633 ; gain = 486.531
 Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
 Sourcing Tcl File [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
 Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
@@ -901,11 +901,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 131 Infos, 124 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:06:18 . Memory (MB): peak = 1356.441 ; gain = 1065.352
-INFO: [Common 17-1381] The checkpoint 'C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/ZynqDesign_auto_pc_0.dcp' has been generated.
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_auto_pc_0/ZynqDesign_auto_pc_0.xci
+synth_design: Time (s): cpu = 00:01:29 ; elapsed = 00:06:37 . Memory (MB): peak = 1357.633 ; gain = 1066.496
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/ZynqDesign_auto_pc_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_auto_pc_0/ZynqDesign_auto_pc_0.xci
 INFO: [Coretcl 2-1174] Renamed 57 cell refs.
-INFO: [Common 17-1381] The checkpoint 'C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/ZynqDesign_auto_pc_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_auto_pc_0_synth_1/ZynqDesign_auto_pc_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ZynqDesign_auto_pc_0_utilization_synth.rpt -pb ZynqDesign_auto_pc_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.206 . Memory (MB): peak = 1356.441 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Jul  6 10:51:31 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.165 . Memory (MB): peak = 1357.633 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Jul  6 13:02:20 2024...

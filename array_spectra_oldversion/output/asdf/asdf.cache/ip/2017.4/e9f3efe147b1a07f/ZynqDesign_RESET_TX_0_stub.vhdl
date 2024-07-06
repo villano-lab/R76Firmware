@@ -1,11 +1,11 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Sat Jul  6 10:50:23 2024
+-- Date        : Sat Jul  6 12:59:29 2024
 -- Host        : Hraesvelgr running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
---               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ ZynqDesign_RESET_RX_0_stub.vhdl
--- Design      : ZynqDesign_RESET_RX_0
+--               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ ZynqDesign_RESET_TX_0_stub.vhdl
+-- Design      : ZynqDesign_RESET_TX_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z030fbg676-2
 -- --------------------------------------------------------------------------------

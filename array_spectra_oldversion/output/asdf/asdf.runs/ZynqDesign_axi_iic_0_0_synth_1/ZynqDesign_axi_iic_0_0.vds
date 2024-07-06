@@ -2,26 +2,26 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Jul  6 10:43:32 2024
-# Process ID: 2616
-# Current directory: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1
+# Start of session at: Sat Jul  6 12:55:22 2024
+# Process ID: 8924
+# Current directory: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1
 # Command line: vivado.exe -log ZynqDesign_axi_iic_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ZynqDesign_axi_iic_0_0.tcl
-# Log file: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/ZynqDesign_axi_iic_0_0.vds
-# Journal file: C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1\vivado.jou
+# Log file: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/ZynqDesign_axi_iic_0_0.vds
+# Journal file: C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source ZynqDesign_axi_iic_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 276.695 ; gain = 51.711
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 275.492 ; gain = 50.059
 Command: synth_design -top ZynqDesign_axi_iic_0_0 -part xc7z030fbg676-2 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10004 
+INFO: Helper process launched with PID 8056 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:39 . Memory (MB): peak = 409.312 ; gain = 104.195
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:44 . Memory (MB): peak = 408.402 ; gain = 104.051
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-2048] function gpo_bit_used does not always return a value [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1139]
-INFO: [Synth 8-638] synthesizing module 'ZynqDesign_axi_iic_0_0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/synth/ZynqDesign_axi_iic_0_0.vhd:91]
+WARNING: [Synth 8-2048] function gpo_bit_used does not always return a value [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1139]
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_axi_iic_0_0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/synth/ZynqDesign_axi_iic_0_0.vhd:91]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -34,8 +34,8 @@ INFO: [Synth 8-638] synthesizing module 'ZynqDesign_axi_iic_0_0' [c:/OpenHardwar
 	Parameter C_SDA_LEVEL bound to: 1 - type: integer 
 	Parameter C_SMBUS_PMBUS_HOST bound to: 0 - type: integer 
 	Parameter C_DEFAULT_VALUE bound to: 8'b00000000 
-INFO: [Synth 8-3491] module 'axi_iic' declared at 'c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:6799' bound to instance 'U0' of component 'axi_iic' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/synth/ZynqDesign_axi_iic_0_0.vhd:179]
-INFO: [Synth 8-638] synthesizing module 'axi_iic' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:6870]
+INFO: [Synth 8-3491] module 'axi_iic' declared at 'c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:6799' bound to instance 'U0' of component 'axi_iic' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/synth/ZynqDesign_axi_iic_0_0.vhd:179]
+INFO: [Synth 8-638] synthesizing module 'axi_iic' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:6870]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -48,7 +48,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_iic' [c:/OpenHardware/NuclearOption
 	Parameter C_SDA_LEVEL bound to: 1 - type: integer 
 	Parameter C_SMBUS_PMBUS_HOST bound to: 0 - type: integer 
 	Parameter C_DEFAULT_VALUE bound to: 8'b00000000 
-INFO: [Synth 8-638] synthesizing module 'iic' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:6187]
+INFO: [Synth 8-638] synthesizing module 'iic' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:6187]
 	Parameter C_NUM_IIC_REGS bound to: 18 - type: integer 
 	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 125000000 - type: integer 
 	Parameter C_IIC_FREQ bound to: 100000 - type: integer 
@@ -64,12 +64,12 @@ INFO: [Synth 8-638] synthesizing module 'iic' [c:/OpenHardware/NuclearOption/asd
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_DEFAULT_VALUE bound to: 8'b00000000 
-INFO: [Synth 8-638] synthesizing module 'axi_ipif_ssp1' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5661]
+INFO: [Synth 8-638] synthesizing module 'axi_ipif_ssp1' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5661]
 	Parameter C_NUM_IIC_REGS bound to: 18 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_MIN_SIZE bound to: 32'b00000000000000000000000111111111 
@@ -78,7 +78,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [c:/OpenHardware/Nuclear
 	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 384'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111110000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000111111111 
 	Parameter C_ARD_NUM_CE_ARRAY bound to: 96'b000000000000000000000000000100000000000000000000000000000000000100000000000000000000000000010010 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-638] synthesizing module 'slave_attachment' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
 	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 384'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111110000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000111111111 
 	Parameter C_ARD_NUM_CE_ARRAY bound to: 96'b000000000000000000000000000100000000000000000000000000000000000100000000000000000000000000010010 
 	Parameter C_IPIF_ABUS_WIDTH bound to: 9 - type: integer 
@@ -87,247 +87,247 @@ INFO: [Synth 8-638] synthesizing module 'slave_attachment' [c:/OpenHardware/Nucl
 	Parameter C_USE_WSTRB bound to: 0 - type: integer 
 	Parameter C_DPHASE_TIMEOUT bound to: 8 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-638] synthesizing module 'address_decoder' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
 	Parameter C_BUS_AWIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_MIN_SIZE bound to: 511 - type: integer 
 	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 384'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111110000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000111111111 
 	Parameter C_ARD_NUM_CE_ARRAY bound to: 96'b000000000000000000000000000100000000000000000000000000000000000100000000000000000000000000010010 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-638] synthesizing module 'pselect_f' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 3 - type: integer 
 	Parameter C_AW bound to: 9 - type: integer 
 	Parameter C_BAR bound to: 9'b000000000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0001 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0010 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized3' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized3' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0011 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized3' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized4' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized3' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized4' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0100 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized4' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized5' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized4' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized5' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0101 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized5' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized6' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized5' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized6' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0110 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized6' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized7' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized6' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized7' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0111 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized7' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized8' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized7' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized8' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized8' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized9' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized8' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized9' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1001 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized9' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized10' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized9' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized10' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1010 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized10' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized11' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized10' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized11' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1011 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized11' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized12' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized11' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized12' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1100 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized12' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized13' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized12' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized13' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1101 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized13' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized14' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized13' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized14' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1110 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized14' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized15' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized14' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized15' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1111 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized15' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized16' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized15' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized16' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 7 - type: integer 
 	Parameter C_AW bound to: 9 - type: integer 
 	Parameter C_BAR bound to: 9'b001000000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized16' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized17' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized16' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized17' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 1 - type: integer 
 	Parameter C_AW bound to: 9 - type: integer 
 	Parameter C_BAR bound to: 9'b100000000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized17' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized18' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized17' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized18' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b00000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized18' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized19' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized18' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized19' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b00001 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized19' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized20' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized19' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized20' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b00010 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized20' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized21' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized20' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized21' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b00011 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized21' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized22' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized21' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized22' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b00100 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized22' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized23' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized22' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized23' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b00101 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized23' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized24' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized23' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized24' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b00110 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized24' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized25' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized24' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized25' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b00111 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized25' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized26' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized25' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized26' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b01000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized26' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized27' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized26' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized27' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b01001 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized27' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized28' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized27' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized28' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b01010 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized28' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized29' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized28' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized29' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b01011 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized29' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized30' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized29' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized30' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b01100 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized30' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized31' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized30' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized31' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b01101 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized31' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized32' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized31' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized32' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b01110 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized32' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized33' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized32' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized33' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b01111 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized33' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized34' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized33' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized34' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b10000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized34' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized35' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized34' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized35' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 5 - type: integer 
 	Parameter C_AW bound to: 5 - type: integer 
 	Parameter C_BAR bound to: 5'b10001 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized35' (1#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'address_decoder' (2#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
-INFO: [Synth 8-226] default block is never used [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
-INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (3#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (4#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
-INFO: [Synth 8-638] synthesizing module 'interrupt_control' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/8e66/hdl/interrupt_control_v3_1_vh_rfs.vhd:259]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized35' (1#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (2#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (3#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (4#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'interrupt_control' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/8e66/hdl/interrupt_control_v3_1_vh_rfs.vhd:259]
 	Parameter C_NUM_CE bound to: 16 - type: integer 
 	Parameter C_NUM_IPIF_IRPT_SRC bound to: 1 - type: integer 
 	Parameter C_IP_INTR_MODE_ARRAY bound to: 256'b0000000000000000000000000000001100000000000000000000000000000011000000000000000000000000000000110000000000000000000000000000001100000000000000000000000000000011000000000000000000000000000000110000000000000000000000000000001100000000000000000000000000000011 
 	Parameter C_INCLUDE_DEV_PENCODER bound to: 0 - type: bool 
 	Parameter C_INCLUDE_DEV_ISC bound to: 0 - type: bool 
 	Parameter C_IPIF_DWIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'interrupt_control' (5#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/8e66/hdl/interrupt_control_v3_1_vh_rfs.vhd:259]
-INFO: [Synth 8-638] synthesizing module 'soft_reset' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:141]
+INFO: [Synth 8-256] done synthesizing module 'interrupt_control' (5#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/8e66/hdl/interrupt_control_v3_1_vh_rfs.vhd:259]
+INFO: [Synth 8-638] synthesizing module 'soft_reset' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:141]
 	Parameter C_SIPIF_DWIDTH bound to: 32 - type: integer 
 	Parameter C_RESET_WIDTH bound to: 4 - type: integer 
 	Parameter INIT bound to: 1'b0 
@@ -336,38 +336,38 @@ INFO: [Synth 8-638] synthesizing module 'soft_reset' [c:/OpenHardware/NuclearOpt
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
 	Parameter IS_S_INVERTED bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:272]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:272]
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_CE_INVERTED bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
 	Parameter IS_S_INVERTED bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:272]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:272]
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_CE_INVERTED bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
 	Parameter IS_S_INVERTED bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:272]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:272]
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_CE_INVERTED bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
 	Parameter IS_S_INVERTED bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:272]
+INFO: [Synth 8-113] binding component instance 'RST_FLOPS' to cell 'FDRSE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:272]
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_CE_INVERTED bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
 	Parameter IS_S_INVERTED bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'FF_WRACK' to cell 'FDRSE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:295]
-INFO: [Synth 8-256] done synthesizing module 'soft_reset' (6#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:141]
-INFO: [Synth 8-256] done synthesizing module 'axi_ipif_ssp1' (7#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5661]
-INFO: [Synth 8-638] synthesizing module 'reg_interface' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1677]
+INFO: [Synth 8-113] binding component instance 'FF_WRACK' to cell 'FDRSE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:295]
+INFO: [Synth 8-256] done synthesizing module 'soft_reset' (6#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:141]
+INFO: [Synth 8-256] done synthesizing module 'axi_ipif_ssp1' (7#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5661]
+INFO: [Synth 8-638] synthesizing module 'reg_interface' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1677]
 	Parameter C_SCL_INERTIAL_DELAY bound to: 5 - type: integer 
 	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 125000000 - type: integer 
 	Parameter C_IIC_FREQ bound to: 100000 - type: integer 
@@ -383,15 +383,15 @@ INFO: [Synth 8-638] synthesizing module 'reg_interface' [c:/OpenHardware/Nuclear
 	Parameter C_SIZE bound to: 11 - type: integer 
 	Parameter C_NUM_IIC_REGS bound to: 18 - type: integer 
 	Parameter C_DEFAULT_VALUE bound to: 8'b00000000 
-WARNING: [Synth 8-6014] Unused sequential element ro_a_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:2273]
-INFO: [Synth 8-256] done synthesizing module 'reg_interface' (8#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1677]
-INFO: [Synth 8-638] synthesizing module 'filter' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:4985]
+WARNING: [Synth 8-6014] Unused sequential element ro_a_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:2273]
+INFO: [Synth 8-256] done synthesizing module 'reg_interface' (8#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1677]
+INFO: [Synth 8-638] synthesizing module 'filter' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:4985]
 	Parameter SCL_INERTIAL_DELAY bound to: 5 - type: integer 
 	Parameter SDA_INERTIAL_DELAY bound to: 5 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'debounce' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1307]
+INFO: [Synth 8-638] synthesizing module 'debounce' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1307]
 	Parameter C_INERTIAL_DELAY bound to: 5 - type: integer 
 	Parameter C_DEFAULT bound to: 1'b1 
-INFO: [Synth 8-638] synthesizing module 'cdc_sync' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
 	Parameter C_RESET_STATE bound to: 0 - type: integer 
 	Parameter C_SINGLE_BIT bound to: 1 - type: integer 
@@ -399,21 +399,21 @@ INFO: [Synth 8-638] synthesizing module 'cdc_sync' [c:/OpenHardware/NuclearOptio
 	Parameter C_VECTOR_WIDTH bound to: 32 - type: integer 
 	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:514]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:514]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:545]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:545]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:554]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:554]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:564]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:564]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (9#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
-INFO: [Synth 8-256] done synthesizing module 'debounce' (10#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1307]
-INFO: [Synth 8-256] done synthesizing module 'filter' (11#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:4985]
-INFO: [Synth 8-638] synthesizing module 'iic_control' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:2908]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (9#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'debounce' (10#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1307]
+INFO: [Synth 8-256] done synthesizing module 'filter' (11#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:4985]
+INFO: [Synth 8-638] synthesizing module 'iic_control' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:2908]
 	Parameter C_SCL_INERTIAL_DELAY bound to: 5 - type: integer 
 	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 125000000 - type: integer 
 	Parameter C_IIC_FREQ bound to: 100000 - type: integer 
@@ -421,86 +421,86 @@ INFO: [Synth 8-638] synthesizing module 'iic_control' [c:/OpenHardware/NuclearOp
 	Parameter C_TEN_BIT_ADR bound to: 0 - type: integer 
 	Parameter C_SDA_LEVEL bound to: 1 - type: integer 
 	Parameter C_SMBUS_PMBUS_HOST bound to: 0 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'upcnt_n' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:740]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:740]
 	Parameter C_SIZE bound to: 11 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (12#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:740]
-INFO: [Synth 8-638] synthesizing module 'shift8' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:897]
-INFO: [Synth 8-256] done synthesizing module 'shift8' (13#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:897]
-INFO: [Synth 8-638] synthesizing module 'upcnt_n__parameterized0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:740]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (12#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:740]
+INFO: [Synth 8-638] synthesizing module 'shift8' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:897]
+INFO: [Synth 8-256] done synthesizing module 'shift8' (13#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:897]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n__parameterized0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:740]
 	Parameter C_SIZE bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'upcnt_n__parameterized0' (13#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:740]
-WARNING: [Synth 8-6014] Unused sequential element sda_cout_reg_d1_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:3658]
-WARNING: [Synth 8-6014] Unused sequential element gen_stop_and_scl_hi_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:3874]
-INFO: [Synth 8-256] done synthesizing module 'iic_control' (14#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:2908]
-INFO: [Synth 8-638] synthesizing module 'SRL_FIFO' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:449]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n__parameterized0' (13#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:740]
+WARNING: [Synth 8-6014] Unused sequential element sda_cout_reg_d1_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:3658]
+WARNING: [Synth 8-6014] Unused sequential element gen_stop_and_scl_hi_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:3874]
+INFO: [Synth 8-256] done synthesizing module 'iic_control' (14#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:2908]
+INFO: [Synth 8-638] synthesizing module 'SRL_FIFO' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:449]
 	Parameter C_DATA_BITS bound to: 8 - type: integer 
 	Parameter C_DEPTH bound to: 4 - type: integer 
 	Parameter C_XON bound to: 0 - type: bool 
-INFO: [Synth 8-3491] module 'FDR' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3951' bound to instance 'Data_Exists_DFF' of component 'FDR' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:543]
+INFO: [Synth 8-3491] module 'FDR' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3951' bound to instance 'Data_Exists_DFF' of component 'FDR' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:543]
 INFO: [Synth 8-638] synthesizing module 'FDR' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3951]
 	Parameter INIT bound to: 1'b0 
 INFO: [Synth 8-256] done synthesizing module 'FDR' (15#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3951]
-INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
+INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
 INFO: [Synth 8-638] synthesizing module 'MUXCY_L' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636]
 INFO: [Synth 8-256] done synthesizing module 'MUXCY_L' (16#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636]
-INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
+INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
 INFO: [Synth 8-638] synthesizing module 'XORCY' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717]
 INFO: [Synth 8-256] done synthesizing module 'XORCY' (17#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717]
-INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
 INFO: [Synth 8-638] synthesizing module 'FDRE' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964]
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
 INFO: [Synth 8-256] done synthesizing module 'FDRE' (18#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964]
-INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
-INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
-INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
-INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
-INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
-INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
-INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
-INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
-INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
-INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
+INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
+INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
+INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
+INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
+INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
+INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
+INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
 INFO: [Synth 8-638] synthesizing module 'SRL16E' [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705]
 	Parameter INIT bound to: 16'b0000000000000000 
 	Parameter IS_CLK_INVERTED bound to: 1'b0 
 INFO: [Synth 8-256] done synthesizing module 'SRL16E' (19#1) [C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705]
-INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
-INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
-INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
-INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
-INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
-INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
-INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
-INFO: [Synth 8-256] done synthesizing module 'SRL_FIFO' (20#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:449]
-INFO: [Synth 8-638] synthesizing module 'dynamic_master' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5204]
-WARNING: [Synth 8-6014] Unused sequential element dynamic_MSMS_d_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5265]
-INFO: [Synth 8-256] done synthesizing module 'dynamic_master' (21#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5204]
-INFO: [Synth 8-638] synthesizing module 'SRL_FIFO__parameterized0' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:449]
+INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
+INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
+INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
+INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
+INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
+INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
+INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'SRL_FIFO' (20#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:449]
+INFO: [Synth 8-638] synthesizing module 'dynamic_master' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5204]
+WARNING: [Synth 8-6014] Unused sequential element dynamic_MSMS_d_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5265]
+INFO: [Synth 8-256] done synthesizing module 'dynamic_master' (21#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5204]
+INFO: [Synth 8-638] synthesizing module 'SRL_FIFO__parameterized0' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:449]
 	Parameter C_DATA_BITS bound to: 2 - type: integer 
 	Parameter C_DEPTH bound to: 4 - type: integer 
 	Parameter C_XON bound to: 0 - type: bool 
-INFO: [Synth 8-3491] module 'FDR' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3951' bound to instance 'Data_Exists_DFF' of component 'FDR' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:543]
-INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
-INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
-INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
-INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
-INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
-INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
-INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
-INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
-INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
-INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
-INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
-INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
-INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
-INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
-INFO: [Synth 8-256] done synthesizing module 'SRL_FIFO__parameterized0' (21#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:449]
-INFO: [Synth 8-256] done synthesizing module 'iic' (22#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:6187]
-INFO: [Synth 8-256] done synthesizing module 'axi_iic' (23#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:6870]
-INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_axi_iic_0_0' (24#1) [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/synth/ZynqDesign_axi_iic_0_0.vhd:91]
+INFO: [Synth 8-3491] module 'FDR' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3951' bound to instance 'Data_Exists_DFF' of component 'FDR' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:543]
+INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
+INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
+INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
+INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
+INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
+INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
+INFO: [Synth 8-3491] module 'MUXCY_L' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:26636' bound to instance 'MUXCY_L_I' of component 'MUXCY_L' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:560]
+INFO: [Synth 8-3491] module 'XORCY' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:52717' bound to instance 'XORCY_I' of component 'XORCY' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:567]
+INFO: [Synth 8-3491] module 'FDRE' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964' bound to instance 'FDRE_I' of component 'FDRE' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:573]
+INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
+INFO: [Synth 8-3491] module 'SRL16E' declared at 'C:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705' bound to instance 'SRL16E_I' of component 'SRL16E' [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'SRL_FIFO__parameterized0' (21#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:449]
+INFO: [Synth 8-256] done synthesizing module 'iic' (22#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:6187]
+INFO: [Synth 8-256] done synthesizing module 'axi_iic' (23#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:6870]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_axi_iic_0_0' (24#1) [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/synth/ZynqDesign_axi_iic_0_0.vhd:91]
 WARNING: [Synth 8-3331] design dynamic_master has unconnected port Cr[0]
 WARNING: [Synth 8-3331] design dynamic_master has unconnected port Cr[1]
 WARNING: [Synth 8-3331] design dynamic_master has unconnected port Cr[2]
@@ -603,7 +603,7 @@ WARNING: [Synth 8-3331] design soft_reset has unconnected port Bus2IP_Data[17]
 WARNING: [Synth 8-3331] design soft_reset has unconnected port Bus2IP_Data[18]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:55 . Memory (MB): peak = 470.176 ; gain = 165.059
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:01:02 . Memory (MB): peak = 469.465 ; gain = 165.113
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -613,7 +613,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:58 . Memory (MB): peak = 470.176 ; gain = 165.059
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:01:05 . Memory (MB): peak = 469.465 ; gain = 165.113
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 44 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -622,12 +622,12 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0_ooc.xdc] for cell 'U0'
-Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0_board.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0_board.xdc] for cell 'U0'
-Parsing XDC File [C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0_board.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0_board.xdc] for cell 'U0'
+Parsing XDC File [C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -636,31 +636,31 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDRSE => FDRSE (FDRE, LUT4, VCC): 5 instances
   MUXCY_L => MUXCY: 12 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.172 . Memory (MB): peak = 852.113 ; gain = 0.223
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 851.410 ; gain = 0.129
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:02:47 . Memory (MB): peak = 852.113 ; gain = 546.996
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:03:04 . Memory (MB): peak = 851.410 ; gain = 547.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z030fbg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:02:47 . Memory (MB): peak = 852.113 ; gain = 546.996
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:03:04 . Memory (MB): peak = 851.410 ; gain = 547.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:02:47 . Memory (MB): peak = 852.113 ; gain = 546.996
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:03:04 . Memory (MB): peak = 851.410 ; gain = 547.059
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "s_axi_rresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "s_axi_rresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "s_axi_bresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "s_axi_bresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element INCLUDE_DPHASE_TIMER.dpto_cnt_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2674]
-WARNING: [Synth 8-6014] Unused sequential element GEN_INERTIAL.debounce_ct_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1371]
-WARNING: [Synth 8-6014] Unused sequential element q_int_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:758]
+WARNING: [Synth 8-6014] Unused sequential element INCLUDE_DPHASE_TIMER.dpto_cnt_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2674]
+WARNING: [Synth 8-6014] Unused sequential element GEN_INERTIAL.debounce_ct_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1371]
+WARNING: [Synth 8-6014] Unused sequential element q_int_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:758]
 INFO: [Synth 8-802] inferred FSM for state register 'scl_state_reg' in module 'iic_control'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'iic_control'
 INFO: [Synth 8-5544] ROM "dtc_i" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -687,7 +687,7 @@ INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address si
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "buffer_Empty" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "buffer_Full" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element rdByteCntr_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5381]
+WARNING: [Synth 8-6014] Unused sequential element rdByteCntr_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5381]
 INFO: [Synth 8-5544] ROM "buffer_Empty" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "buffer_Full" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
@@ -718,7 +718,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'scl_state_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'iic_control'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:03:00 . Memory (MB): peak = 852.113 ; gain = 546.996
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:03:16 . Memory (MB): peak = 851.410 ; gain = 547.059
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1053,16 +1053,16 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element X_IIC/X_AXI_IPIF_SSP1/X_INTERRUPT_CONTROL/intr2bus_wrack_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/8e66/hdl/interrupt_control_v3_1_vh_rfs.vhd:543]
-WARNING: [Synth 8-6014] Unused sequential element X_IIC/X_AXI_IPIF_SSP1/X_INTERRUPT_CONTROL/intr2bus_rdack_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/8e66/hdl/interrupt_control_v3_1_vh_rfs.vhd:559]
-WARNING: [Synth 8-6014] Unused sequential element X_IIC/FILTER_I/SDA_DEBOUNCE/GEN_INERTIAL.Unstable_n_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1372]
-WARNING: [Synth 8-6014] Unused sequential element X_IIC/IIC_CONTROL_I/shift_cnt_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:4665]
-WARNING: [Synth 8-6014] Unused sequential element X_IIC/X_AXI_IPIF_SSP1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2674]
-WARNING: [Synth 8-6014] Unused sequential element X_IIC/FILTER_I/SCL_DEBOUNCE/GEN_INERTIAL.debounce_ct_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1371]
-WARNING: [Synth 8-6014] Unused sequential element X_IIC/FILTER_I/SDA_DEBOUNCE/GEN_INERTIAL.debounce_ct_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1371]
-WARNING: [Synth 8-6014] Unused sequential element X_IIC/IIC_CONTROL_I/SETUP_CNT/q_int_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:758]
-WARNING: [Synth 8-6014] Unused sequential element X_IIC/IIC_CONTROL_I/CLKCNT/q_int_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:758]
-WARNING: [Synth 8-6014] Unused sequential element X_IIC/DYN_MASTER_I/rdByteCntr_reg was removed.  [c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5381]
+WARNING: [Synth 8-6014] Unused sequential element X_IIC/X_AXI_IPIF_SSP1/X_INTERRUPT_CONTROL/intr2bus_wrack_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/8e66/hdl/interrupt_control_v3_1_vh_rfs.vhd:543]
+WARNING: [Synth 8-6014] Unused sequential element X_IIC/X_AXI_IPIF_SSP1/X_INTERRUPT_CONTROL/intr2bus_rdack_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/8e66/hdl/interrupt_control_v3_1_vh_rfs.vhd:559]
+WARNING: [Synth 8-6014] Unused sequential element X_IIC/FILTER_I/SDA_DEBOUNCE/GEN_INERTIAL.Unstable_n_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1372]
+WARNING: [Synth 8-6014] Unused sequential element X_IIC/IIC_CONTROL_I/shift_cnt_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:4665]
+WARNING: [Synth 8-6014] Unused sequential element X_IIC/X_AXI_IPIF_SSP1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2674]
+WARNING: [Synth 8-6014] Unused sequential element X_IIC/FILTER_I/SCL_DEBOUNCE/GEN_INERTIAL.debounce_ct_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1371]
+WARNING: [Synth 8-6014] Unused sequential element X_IIC/FILTER_I/SDA_DEBOUNCE/GEN_INERTIAL.debounce_ct_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:1371]
+WARNING: [Synth 8-6014] Unused sequential element X_IIC/IIC_CONTROL_I/SETUP_CNT/q_int_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:758]
+WARNING: [Synth 8-6014] Unused sequential element X_IIC/IIC_CONTROL_I/CLKCNT/q_int_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:758]
+WARNING: [Synth 8-6014] Unused sequential element X_IIC/DYN_MASTER_I/rdByteCntr_reg was removed.  [c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ipshared/4185/hdl/axi_iic_v2_0_vh_rfs.vhd:5381]
 INFO: [Synth 8-3886] merging instance 'U0/X_IIC/REG_INTERFACE_I/FIFO_GEN_DTR.dtre_i_reg' (FDR) to 'U0/X_IIC/REG_INTERFACE_I/sr_i_reg[0]'
 INFO: [Synth 8-3886] merging instance 'U0/X_IIC/REG_INTERFACE_I/sr_i_reg[6]' (FDR) to 'U0/X_IIC/REG_INTERFACE_I/IIC2Bus_IntrEvent_reg[5]'
 INFO: [Synth 8-3886] merging instance 'U0/X_IIC/X_AXI_IPIF_SSP1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[11]' (FDRE) to 'U0/X_IIC/X_AXI_IPIF_SSP1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[12]'
@@ -1099,7 +1099,7 @@ INFO: [Synth 8-3332] Sequential element (X_IIC/FILTER_I/SCL_DEBOUNCE/GEN_INERTIA
 INFO: [Synth 8-3332] Sequential element (X_IIC/FILTER_I/SCL_DEBOUNCE/GEN_INERTIAL.debounce_ct_reg[4]) is unused and will be removed from module axi_iic.
 INFO: [Synth 8-3332] Sequential element (X_IIC/FILTER_I/SCL_DEBOUNCE/GEN_INERTIAL.debounce_ct_reg[3]) is unused and will be removed from module axi_iic.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:03:22 . Memory (MB): peak = 852.113 ; gain = 546.996
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:03:36 . Memory (MB): peak = 851.410 ; gain = 547.059
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1111,13 +1111,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:04:35 . Memory (MB): peak = 852.113 ; gain = 546.996
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:04:29 . Memory (MB): peak = 851.410 ; gain = 547.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:04:47 . Memory (MB): peak = 904.711 ; gain = 599.594
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:04:39 . Memory (MB): peak = 902.008 ; gain = 597.656
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1136,7 +1136,7 @@ INFO: [Synth 8-3332] Sequential element (X_IIC/FILTER_I/SDA_DEBOUNCE/GEN_INERTIA
 INFO: [Synth 8-3332] Sequential element (X_IIC/FILTER_I/SDA_DEBOUNCE/GEN_INERTIAL.debounce_ct_reg[4]) is unused and will be removed from module axi_iic.
 INFO: [Synth 8-3332] Sequential element (X_IIC/FILTER_I/SDA_DEBOUNCE/GEN_INERTIAL.debounce_ct_reg[3]) is unused and will be removed from module axi_iic.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:04:50 . Memory (MB): peak = 905.770 ; gain = 600.652
+Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:04:41 . Memory (MB): peak = 903.066 ; gain = 598.715
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1160,7 +1160,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:04:56 . Memory (MB): peak = 905.770 ; gain = 600.652
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:04:45 . Memory (MB): peak = 903.066 ; gain = 598.715
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1173,7 +1173,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:04:56 . Memory (MB): peak = 905.770 ; gain = 600.652
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:04:45 . Memory (MB): peak = 903.066 ; gain = 598.715
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1185,25 +1185,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:04:56 . Memory (MB): peak = 905.770 ; gain = 600.652
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:04:45 . Memory (MB): peak = 903.066 ; gain = 598.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:04:56 . Memory (MB): peak = 905.770 ; gain = 600.652
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:04:45 . Memory (MB): peak = 903.066 ; gain = 598.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:04:56 . Memory (MB): peak = 905.770 ; gain = 600.652
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:04:46 . Memory (MB): peak = 903.066 ; gain = 598.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:47 ; elapsed = 00:04:57 . Memory (MB): peak = 905.770 ; gain = 600.652
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:04:46 . Memory (MB): peak = 903.066 ; gain = 598.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1265,11 +1265,11 @@ Report Instance Areas:
 |25    |        X_SOFT_RESET         |soft_reset               |    14|
 +------+-----------------------------+-------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:47 ; elapsed = 00:04:57 . Memory (MB): peak = 905.770 ; gain = 600.652
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:04:46 . Memory (MB): peak = 903.066 ; gain = 598.715
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 38 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:03:57 . Memory (MB): peak = 905.770 ; gain = 218.715
-Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:04:57 . Memory (MB): peak = 905.770 ; gain = 600.652
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:03:35 . Memory (MB): peak = 903.066 ; gain = 216.770
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:04:46 . Memory (MB): peak = 903.066 ; gain = 598.715
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 40 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1283,11 +1283,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 263 Infos, 119 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:05:10 . Memory (MB): peak = 905.770 ; gain = 611.543
-INFO: [Common 17-1381] The checkpoint 'C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/ZynqDesign_axi_iic_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0.xci
+synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:04:57 . Memory (MB): peak = 903.066 ; gain = 609.262
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/ZynqDesign_axi_iic_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0.xci
 INFO: [Coretcl 2-1174] Renamed 24 cell refs.
-INFO: [Common 17-1381] The checkpoint 'C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/ZynqDesign_axi_iic_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_axi_iic_0_0_synth_1/ZynqDesign_axi_iic_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ZynqDesign_axi_iic_0_0_utilization_synth.rpt -pb ZynqDesign_axi_iic_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.578 . Memory (MB): peak = 905.770 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Jul  6 10:49:22 2024...
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.565 . Memory (MB): peak = 903.066 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Jul  6 13:01:16 2024...

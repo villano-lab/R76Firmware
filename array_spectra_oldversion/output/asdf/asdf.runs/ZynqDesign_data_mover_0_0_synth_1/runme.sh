@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.runs/ZynqDesign_data_mover_0_0_synth_1'
+HD_PWD='C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.runs/ZynqDesign_data_mover_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

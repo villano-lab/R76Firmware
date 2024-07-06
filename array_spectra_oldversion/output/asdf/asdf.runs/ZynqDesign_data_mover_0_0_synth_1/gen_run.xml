@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="ZynqDesign_data_mover_0_0_synth_1" LaunchPart="xc7z030fbg676-2" LaunchTime="1720280601">
+<GenRun Id="ZynqDesign_data_mover_0_0_synth_1" LaunchPart="xc7z030fbg676-2" LaunchTime="1720288478">
   <File Type="PA-TCL" Name="ZynqDesign_data_mover_0_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="ZynqDesign_data_mover_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ZynqDesign_data_mover_0_0_reports.tcl"/>

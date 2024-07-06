@@ -3128,7 +3128,7 @@ U41_out_0 <= REG_CH_WR(4 downto 0);
 	)
 	PORT MAP(
 		ENERGY => U40_out,
-		ENERGY_STROBE => "0",
+		ENERGY_STROBE => U32_OUT,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,

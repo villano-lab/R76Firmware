@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="35" Path="C:/OpenHardware/NuclearOption/asdf/output/asdf/asdf.xpr">
+<Project Version="7" Minor="35" Path="C:/Users/Owner/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf/asdf.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="2539dc7691de4f5797b705b57fd97eac"/>
+    <Option Name="Id" Val="226d460774294c6bb61d9942082912f0"/>
     <Option Name="Part" Val="xc7z030fbg676-2"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -109,7 +109,7 @@
       <File Path="$PSRCDIR/sources_1/imports/HDL/subpage_subdesign_1.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/subpage_subdesign_1.vhd"/>
-          <Attr Name="ImportTime" Val="1720280361"/>
+          <Attr Name="ImportTime" Val="1720288244"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -117,7 +117,7 @@
       <File Path="$PSRCDIR/sources_1/imports/HDL/subpage_subdesign_2.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/subpage_subdesign_2.vhd"/>
-          <Attr Name="ImportTime" Val="1720280361"/>
+          <Attr Name="ImportTime" Val="1720288245"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -125,7 +125,7 @@
       <File Path="$PSRCDIR/sources_1/imports/HDL/top_asdf.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/top_asdf.vhd"/>
-          <Attr Name="ImportTime" Val="1720280358"/>
+          <Attr Name="ImportTime" Val="1720288242"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -167,7 +167,7 @@
       <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/avalon_wrapper.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/avalon_wrapper.vhd"/>
-          <Attr Name="ImportTime" Val="1720280358"/>
+          <Attr Name="ImportTime" Val="1720288242"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -191,7 +191,7 @@
       <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/polinvert.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/polinvert.vhd"/>
-          <Attr Name="ImportTime" Val="1720280360"/>
+          <Attr Name="ImportTime" Val="1720288244"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -223,7 +223,7 @@
       <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/xlx_spectrum.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/xlx_spectrum.vhd"/>
-          <Attr Name="ImportTime" Val="1720280358"/>
+          <Attr Name="ImportTime" Val="1720288241"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -242,23 +242,14 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_FS_0_AXIFIFO_0/ZynqDesign_FS_0_AXIFIFO_0.xci">
-          <Proxy FileSetName="ZynqDesign_FS_0_AXIFIFO_0"/>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_RESET_TX_0/ZynqDesign_RESET_TX_0.xci">
+          <Proxy FileSetName="ZynqDesign_RESET_TX_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_FIRMWAREBUILD_0/ZynqDesign_FIRMWAREBUILD_0.xci">
           <Proxy FileSetName="ZynqDesign_FIRMWAREBUILD_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_FirmwareStatus_0_0/ZynqDesign_FirmwareStatus_0_0.xci">
-          <Proxy FileSetName="ZynqDesign_FirmwareStatus_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_FIRMWAREOPTIONS_0/ZynqDesign_FIRMWAREOPTIONS_0.xci">
-          <Proxy FileSetName="ZynqDesign_FIRMWAREOPTIONS_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_FIRMWAREVERSION_0/ZynqDesign_FIRMWAREVERSION_0.xci">
-          <Proxy FileSetName="ZynqDesign_FIRMWAREVERSION_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_ADCSyncModule_0_0/ZynqDesign_ADCSyncModule_0_0.xci">
-          <Proxy FileSetName="ZynqDesign_ADCSyncModule_0_0"/>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_FS_0_AXIFIFO_0/ZynqDesign_FS_0_AXIFIFO_0.xci">
+          <Proxy FileSetName="ZynqDesign_FS_0_AXIFIFO_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_NIDNAPort_0_0/ZynqDesign_NIDNAPort_0_0.xci">
           <Proxy FileSetName="ZynqDesign_NIDNAPort_0_0"/>
@@ -266,23 +257,41 @@
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_OPTOLINK_0_0/ZynqDesign_OPTOLINK_0_0.xci">
           <Proxy FileSetName="ZynqDesign_OPTOLINK_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_OPTOLINK_1_0/ZynqDesign_OPTOLINK_1_0.xci">
-          <Proxy FileSetName="ZynqDesign_OPTOLINK_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_IICBaseInterconnection_0_0/ZynqDesign_IICBaseInterconnection_0_0.xci">
-          <Proxy FileSetName="ZynqDesign_IICBaseInterconnection_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_RESET_RX_0/ZynqDesign_RESET_RX_0.xci">
-          <Proxy FileSetName="ZynqDesign_RESET_RX_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_RESET_TX_0/ZynqDesign_RESET_TX_0.xci">
-          <Proxy FileSetName="ZynqDesign_RESET_TX_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_axi_amm_bridge_0_0/ZynqDesign_axi_amm_bridge_0_0.xci">
           <Proxy FileSetName="ZynqDesign_axi_amm_bridge_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_axi_iic_0_0/ZynqDesign_axi_iic_0_0.xci">
           <Proxy FileSetName="ZynqDesign_axi_iic_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_FIRMWAREOPTIONS_0/ZynqDesign_FIRMWAREOPTIONS_0.xci">
+          <Proxy FileSetName="ZynqDesign_FIRMWAREOPTIONS_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_FIRMWAREVERSION_0/ZynqDesign_FIRMWAREVERSION_0.xci">
+          <Proxy FileSetName="ZynqDesign_FIRMWAREVERSION_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_FirmwareStatus_0_0/ZynqDesign_FirmwareStatus_0_0.xci">
+          <Proxy FileSetName="ZynqDesign_FirmwareStatus_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_IICBaseInterconnection_0_0/ZynqDesign_IICBaseInterconnection_0_0.xci">
+          <Proxy FileSetName="ZynqDesign_IICBaseInterconnection_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_OPTOLINK_1_0/ZynqDesign_OPTOLINK_1_0.xci">
+          <Proxy FileSetName="ZynqDesign_OPTOLINK_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_ADCSyncModule_0_0/ZynqDesign_ADCSyncModule_0_0.xci">
+          <Proxy FileSetName="ZynqDesign_ADCSyncModule_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_RESET_RX_0/ZynqDesign_RESET_RX_0.xci">
+          <Proxy FileSetName="ZynqDesign_RESET_RX_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_axis_data_fifo_2_0/ZynqDesign_axis_data_fifo_2_0.xci">
+          <Proxy FileSetName="ZynqDesign_axis_data_fifo_2_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_data_mover_0_0/ZynqDesign_data_mover_0_0.xci">
+          <Proxy FileSetName="ZynqDesign_data_mover_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_axis_data_fifo_3_0/ZynqDesign_axis_data_fifo_3_0.xci">
+          <Proxy FileSetName="ZynqDesign_axis_data_fifo_3_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_axis_data_fifo_1_0/ZynqDesign_axis_data_fifo_1_0.xci">
           <Proxy FileSetName="ZynqDesign_axis_data_fifo_1_0"/>
@@ -290,29 +299,20 @@
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_axis_data_fifo_0_0/ZynqDesign_axis_data_fifo_0_0.xci">
           <Proxy FileSetName="ZynqDesign_axis_data_fifo_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_axis_data_fifo_3_0/ZynqDesign_axis_data_fifo_3_0.xci">
-          <Proxy FileSetName="ZynqDesign_axis_data_fifo_3_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_data_mover_0_0/ZynqDesign_data_mover_0_0.xci">
-          <Proxy FileSetName="ZynqDesign_data_mover_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_axis_data_fifo_2_0/ZynqDesign_axis_data_fifo_2_0.xci">
-          <Proxy FileSetName="ZynqDesign_axis_data_fifo_2_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_processing_system7_0_0/ZynqDesign_processing_system7_0_0.xci">
-          <Proxy FileSetName="ZynqDesign_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_rst_ps7_0_125M1_0/ZynqDesign_rst_ps7_0_125M1_0.xci">
           <Proxy FileSetName="ZynqDesign_rst_ps7_0_125M1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_rst_ps7_0_125M_0/ZynqDesign_rst_ps7_0_125M_0.xci">
-          <Proxy FileSetName="ZynqDesign_rst_ps7_0_125M_0"/>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_auto_pc_1/ZynqDesign_auto_pc_1.xci">
+          <Proxy FileSetName="ZynqDesign_auto_pc_1"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_tft_display_0_0/ZynqDesign_tft_display_0_0.xci">
-          <Proxy FileSetName="ZynqDesign_tft_display_0_0"/>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_xbar_0/ZynqDesign_xbar_0.xci">
+          <Proxy FileSetName="ZynqDesign_xbar_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_util_vector_logic_1_0/ZynqDesign_util_vector_logic_1_0.xci">
-          <Proxy FileSetName="ZynqDesign_util_vector_logic_1_0"/>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_auto_pc_0/ZynqDesign_auto_pc_0.xci">
+          <Proxy FileSetName="ZynqDesign_auto_pc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_auto_cc_1/ZynqDesign_auto_cc_1.xci">
+          <Proxy FileSetName="ZynqDesign_auto_cc_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_auto_us_0/ZynqDesign_auto_us_0.xci">
           <Proxy FileSetName="ZynqDesign_auto_us_0"/>
@@ -320,20 +320,20 @@
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_util_vector_logic_0_0/ZynqDesign_util_vector_logic_0_0.xci">
           <Proxy FileSetName="ZynqDesign_util_vector_logic_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_xbar_0/ZynqDesign_xbar_0.xci">
-          <Proxy FileSetName="ZynqDesign_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_auto_cc_1/ZynqDesign_auto_cc_1.xci">
-          <Proxy FileSetName="ZynqDesign_auto_cc_1"/>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_processing_system7_0_0/ZynqDesign_processing_system7_0_0.xci">
+          <Proxy FileSetName="ZynqDesign_processing_system7_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_auto_cc_0/ZynqDesign_auto_cc_0.xci">
           <Proxy FileSetName="ZynqDesign_auto_cc_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_auto_pc_1/ZynqDesign_auto_pc_1.xci">
-          <Proxy FileSetName="ZynqDesign_auto_pc_1"/>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_util_vector_logic_1_0/ZynqDesign_util_vector_logic_1_0.xci">
+          <Proxy FileSetName="ZynqDesign_util_vector_logic_1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_auto_pc_0/ZynqDesign_auto_pc_0.xci">
-          <Proxy FileSetName="ZynqDesign_auto_pc_0"/>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_rst_ps7_0_125M_0/ZynqDesign_rst_ps7_0_125M_0.xci">
+          <Proxy FileSetName="ZynqDesign_rst_ps7_0_125M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ZynqDesign.bd" FileRelPathName="ip/ZynqDesign_tft_display_0_0/ZynqDesign_tft_display_0_0.xci">
+          <Proxy FileSetName="ZynqDesign_tft_display_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <Config>
@@ -364,9 +364,9 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ZynqDesign_FS_0_AXIFIFO_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_FS_0_AXIFIFO_0">
+    <FileSet Name="ZynqDesign_RESET_TX_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_RESET_TX_0">
       <Config>
-        <Option Name="TopModule" Val="ZynqDesign_FS_0_AXIFIFO_0"/>
+        <Option Name="TopModule" Val="ZynqDesign_RESET_TX_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -376,27 +376,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ZynqDesign_FirmwareStatus_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_FirmwareStatus_0_0">
+    <FileSet Name="ZynqDesign_FS_0_AXIFIFO_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_FS_0_AXIFIFO_0">
       <Config>
-        <Option Name="TopModule" Val="ZynqDesign_FirmwareStatus_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ZynqDesign_FIRMWAREOPTIONS_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_FIRMWAREOPTIONS_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_FIRMWAREOPTIONS_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ZynqDesign_FIRMWAREVERSION_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_FIRMWAREVERSION_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_FIRMWAREVERSION_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ZynqDesign_ADCSyncModule_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_ADCSyncModule_0_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_ADCSyncModule_0_0"/>
+        <Option Name="TopModule" Val="ZynqDesign_FS_0_AXIFIFO_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -412,30 +394,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ZynqDesign_OPTOLINK_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_OPTOLINK_1_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_OPTOLINK_1_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ZynqDesign_IICBaseInterconnection_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_IICBaseInterconnection_0_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_IICBaseInterconnection_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ZynqDesign_RESET_RX_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_RESET_RX_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_RESET_RX_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ZynqDesign_RESET_TX_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_RESET_TX_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_RESET_TX_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="ZynqDesign_axi_amm_bridge_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_axi_amm_bridge_0_0">
       <Config>
         <Option Name="TopModule" Val="ZynqDesign_axi_amm_bridge_0_0"/>
@@ -445,6 +403,66 @@
     <FileSet Name="ZynqDesign_axi_iic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_axi_iic_0_0">
       <Config>
         <Option Name="TopModule" Val="ZynqDesign_axi_iic_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_FIRMWAREOPTIONS_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_FIRMWAREOPTIONS_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_FIRMWAREOPTIONS_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_FIRMWAREVERSION_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_FIRMWAREVERSION_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_FIRMWAREVERSION_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_FirmwareStatus_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_FirmwareStatus_0_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_FirmwareStatus_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_IICBaseInterconnection_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_IICBaseInterconnection_0_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_IICBaseInterconnection_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_OPTOLINK_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_OPTOLINK_1_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_OPTOLINK_1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_ADCSyncModule_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_ADCSyncModule_0_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_ADCSyncModule_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_RESET_RX_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_RESET_RX_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_RESET_RX_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_axis_data_fifo_2_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_axis_data_fifo_2_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_axis_data_fifo_2_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_data_mover_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_data_mover_0_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_data_mover_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_axis_data_fifo_3_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_axis_data_fifo_3_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_axis_data_fifo_3_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -460,51 +478,33 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ZynqDesign_axis_data_fifo_3_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_axis_data_fifo_3_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_axis_data_fifo_3_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ZynqDesign_data_mover_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_data_mover_0_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_data_mover_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ZynqDesign_axis_data_fifo_2_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_axis_data_fifo_2_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_axis_data_fifo_2_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ZynqDesign_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_processing_system7_0_0">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_processing_system7_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="ZynqDesign_rst_ps7_0_125M1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_rst_ps7_0_125M1_0">
       <Config>
         <Option Name="TopModule" Val="ZynqDesign_rst_ps7_0_125M1_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ZynqDesign_rst_ps7_0_125M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_rst_ps7_0_125M_0">
+    <FileSet Name="ZynqDesign_auto_pc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_auto_pc_1">
       <Config>
-        <Option Name="TopModule" Val="ZynqDesign_rst_ps7_0_125M_0"/>
+        <Option Name="TopModule" Val="ZynqDesign_auto_pc_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ZynqDesign_tft_display_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_tft_display_0_0">
+    <FileSet Name="ZynqDesign_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_xbar_0">
       <Config>
-        <Option Name="TopModule" Val="ZynqDesign_tft_display_0_0"/>
+        <Option Name="TopModule" Val="ZynqDesign_xbar_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ZynqDesign_util_vector_logic_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_util_vector_logic_1_0">
+    <FileSet Name="ZynqDesign_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_auto_pc_0">
       <Config>
-        <Option Name="TopModule" Val="ZynqDesign_util_vector_logic_1_0"/>
+        <Option Name="TopModule" Val="ZynqDesign_auto_pc_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_auto_cc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_auto_cc_1">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_auto_cc_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -520,15 +520,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ZynqDesign_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_xbar_0">
+    <FileSet Name="ZynqDesign_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_processing_system7_0_0">
       <Config>
-        <Option Name="TopModule" Val="ZynqDesign_xbar_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ZynqDesign_auto_cc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_auto_cc_1">
-      <Config>
-        <Option Name="TopModule" Val="ZynqDesign_auto_cc_1"/>
+        <Option Name="TopModule" Val="ZynqDesign_processing_system7_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -538,15 +532,21 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ZynqDesign_auto_pc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_auto_pc_1">
+    <FileSet Name="ZynqDesign_util_vector_logic_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_util_vector_logic_1_0">
       <Config>
-        <Option Name="TopModule" Val="ZynqDesign_auto_pc_1"/>
+        <Option Name="TopModule" Val="ZynqDesign_util_vector_logic_1_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ZynqDesign_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_auto_pc_0">
+    <FileSet Name="ZynqDesign_rst_ps7_0_125M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_rst_ps7_0_125M_0">
       <Config>
-        <Option Name="TopModule" Val="ZynqDesign_auto_pc_0"/>
+        <Option Name="TopModule" Val="ZynqDesign_rst_ps7_0_125M_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ZynqDesign_tft_display_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ZynqDesign_tft_display_0_0">
+      <Config>
+        <Option Name="TopModule" Val="ZynqDesign_tft_display_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -581,7 +581,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_FS_0_AXIFIFO_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_FS_0_AXIFIFO_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FS_0_AXIFIFO_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_FS_0_AXIFIFO_0_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_RESET_TX_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_RESET_TX_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_RESET_TX_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_RESET_TX_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -603,40 +603,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_FirmwareStatus_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_FirmwareStatus_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FirmwareStatus_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_FirmwareStatus_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_FIRMWAREOPTIONS_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_FIRMWAREOPTIONS_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FIRMWAREOPTIONS_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_FIRMWAREOPTIONS_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_FIRMWAREVERSION_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_FIRMWAREVERSION_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FIRMWAREVERSION_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_FIRMWAREVERSION_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_ADCSyncModule_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_ADCSyncModule_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_ADCSyncModule_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_ADCSyncModule_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_FS_0_AXIFIFO_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_FS_0_AXIFIFO_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FS_0_AXIFIFO_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_FS_0_AXIFIFO_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -669,7 +636,51 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_OPTOLINK_1_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_OPTOLINK_1_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_OPTOLINK_1_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_OPTOLINK_1_0_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_axi_amm_bridge_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_axi_amm_bridge_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axi_amm_bridge_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_axi_amm_bridge_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_axi_iic_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_axi_iic_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axi_iic_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_axi_iic_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_FIRMWAREOPTIONS_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_FIRMWAREOPTIONS_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FIRMWAREOPTIONS_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_FIRMWAREOPTIONS_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_FIRMWAREVERSION_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_FIRMWAREVERSION_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FIRMWAREVERSION_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_FIRMWAREVERSION_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_FirmwareStatus_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_FirmwareStatus_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FirmwareStatus_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_FirmwareStatus_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -691,6 +702,28 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
+    <Run Id="ZynqDesign_OPTOLINK_1_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_OPTOLINK_1_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_OPTOLINK_1_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_OPTOLINK_1_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_ADCSyncModule_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_ADCSyncModule_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_ADCSyncModule_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_ADCSyncModule_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
     <Run Id="ZynqDesign_RESET_RX_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_RESET_RX_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_RESET_RX_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_RESET_RX_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
@@ -702,7 +735,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_RESET_TX_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_RESET_TX_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_RESET_TX_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_RESET_TX_0_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_axis_data_fifo_2_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_axis_data_fifo_2_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axis_data_fifo_2_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_axis_data_fifo_2_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -713,7 +746,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_axi_amm_bridge_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_axi_amm_bridge_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axi_amm_bridge_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_axi_amm_bridge_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_data_mover_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_data_mover_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_data_mover_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_data_mover_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -724,7 +757,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_axi_iic_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_axi_iic_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axi_iic_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_axi_iic_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_axis_data_fifo_3_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_axis_data_fifo_3_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axis_data_fifo_3_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_axis_data_fifo_3_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -757,50 +790,6 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_axis_data_fifo_3_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_axis_data_fifo_3_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axis_data_fifo_3_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_axis_data_fifo_3_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_data_mover_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_data_mover_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_data_mover_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_data_mover_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_axis_data_fifo_2_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_axis_data_fifo_2_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axis_data_fifo_2_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_axis_data_fifo_2_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_processing_system7_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_processing_system7_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_processing_system7_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="ZynqDesign_rst_ps7_0_125M1_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_rst_ps7_0_125M1_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_rst_ps7_0_125M1_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_rst_ps7_0_125M1_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
@@ -812,7 +801,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_rst_ps7_0_125M_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_rst_ps7_0_125M_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_rst_ps7_0_125M_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_rst_ps7_0_125M_0_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_auto_pc_1" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_pc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_auto_pc_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -823,7 +812,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_tft_display_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_tft_display_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_tft_display_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_tft_display_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_xbar_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_xbar_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_xbar_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -834,7 +823,18 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_util_vector_logic_1_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_util_vector_logic_1_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_util_vector_logic_1_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_util_vector_logic_1_0_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_auto_pc_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_pc_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_auto_pc_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_auto_cc_1_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_auto_cc_1" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_cc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_auto_cc_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -867,18 +867,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_xbar_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_xbar_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_xbar_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_auto_cc_1_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_auto_cc_1" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_cc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_auto_cc_1_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_processing_system7_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_processing_system7_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_processing_system7_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -900,7 +889,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_auto_pc_1" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_pc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_auto_pc_1_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_util_vector_logic_1_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_util_vector_logic_1_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_util_vector_logic_1_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_util_vector_logic_1_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -911,7 +900,18 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_auto_pc_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_pc_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_auto_pc_0_synth_1" IncludeInArchive="true">
+    <Run Id="ZynqDesign_rst_ps7_0_125M_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_rst_ps7_0_125M_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_rst_ps7_0_125M_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_rst_ps7_0_125M_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_tft_display_0_0_synth_1" Type="Ft3:Synth" SrcSet="ZynqDesign_tft_display_0_0" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_tft_display_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ZynqDesign_tft_display_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -943,7 +943,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_FS_0_AXIFIFO_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FS_0_AXIFIFO_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_FS_0_AXIFIFO_0_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_RESET_TX_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_RESET_TX_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_RESET_TX_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -979,61 +979,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_FirmwareStatus_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FirmwareStatus_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_FirmwareStatus_0_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_FIRMWAREOPTIONS_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FIRMWAREOPTIONS_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_FIRMWAREOPTIONS_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_FIRMWAREVERSION_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FIRMWAREVERSION_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_FIRMWAREVERSION_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_ADCSyncModule_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_ADCSyncModule_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_ADCSyncModule_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_FS_0_AXIFIFO_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FS_0_AXIFIFO_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_FS_0_AXIFIFO_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -1087,7 +1033,79 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_OPTOLINK_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_OPTOLINK_1_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_OPTOLINK_1_0_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_axi_amm_bridge_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axi_amm_bridge_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_axi_amm_bridge_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axi_iic_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_axi_iic_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_FIRMWAREOPTIONS_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FIRMWAREOPTIONS_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_FIRMWAREOPTIONS_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_FIRMWAREVERSION_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FIRMWAREVERSION_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_FIRMWAREVERSION_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_FirmwareStatus_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_FirmwareStatus_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_FirmwareStatus_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -1123,6 +1141,42 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
+    <Run Id="ZynqDesign_OPTOLINK_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_OPTOLINK_1_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_OPTOLINK_1_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_ADCSyncModule_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_ADCSyncModule_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_ADCSyncModule_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
     <Run Id="ZynqDesign_RESET_RX_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_RESET_RX_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_RESET_RX_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
@@ -1141,7 +1195,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_RESET_TX_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_RESET_TX_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_RESET_TX_0_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_axis_data_fifo_2_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axis_data_fifo_2_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_axis_data_fifo_2_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -1159,7 +1213,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_axi_amm_bridge_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axi_amm_bridge_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_axi_amm_bridge_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_data_mover_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_data_mover_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_data_mover_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -1177,7 +1231,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axi_iic_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_axi_iic_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_axis_data_fifo_3_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axis_data_fifo_3_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_axis_data_fifo_3_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -1231,78 +1285,6 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_axis_data_fifo_3_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axis_data_fifo_3_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_axis_data_fifo_3_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_data_mover_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_data_mover_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_data_mover_0_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_axis_data_fifo_2_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_axis_data_fifo_2_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_axis_data_fifo_2_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_processing_system7_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_processing_system7_0_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="ZynqDesign_rst_ps7_0_125M1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_rst_ps7_0_125M1_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_rst_ps7_0_125M1_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
@@ -1321,7 +1303,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_rst_ps7_0_125M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_rst_ps7_0_125M_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_rst_ps7_0_125M_0_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_pc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_auto_pc_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -1339,7 +1321,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_tft_display_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_tft_display_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_tft_display_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_xbar_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_xbar_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -1357,7 +1339,25 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_util_vector_logic_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_util_vector_logic_1_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_util_vector_logic_1_0_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_pc_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_auto_pc_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_auto_cc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_cc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_auto_cc_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -1411,25 +1411,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_xbar_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_xbar_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ZynqDesign_auto_cc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_cc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_auto_cc_1_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_processing_system7_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_processing_system7_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -1465,7 +1447,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_pc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_auto_pc_1_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_util_vector_logic_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_util_vector_logic_1_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_util_vector_logic_1_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -1483,7 +1465,25 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ZynqDesign_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_auto_pc_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_auto_pc_0_synth_1" IncludeInArchive="false">
+    <Run Id="ZynqDesign_rst_ps7_0_125M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_rst_ps7_0_125M_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_rst_ps7_0_125M_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="ZynqDesign_tft_display_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z030fbg676-2" ConstrsSet="ZynqDesign_tft_display_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ZynqDesign_tft_display_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>

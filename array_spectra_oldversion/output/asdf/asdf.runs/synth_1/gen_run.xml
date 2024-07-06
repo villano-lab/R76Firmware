@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z030fbg676-2" LaunchTime="1720280606">
+<GenRun Id="synth_1" LaunchPart="xc7z030fbg676-2" LaunchTime="1720288482">
   <File Type="PA-TCL" Name="TOP_asdf.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="TOP_asdf_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TOP_asdf_reports.tcl"/>
@@ -59,7 +59,7 @@
     <File Path="$PSRCDIR/sources_1/imports/HDL/subpage_subdesign_1.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/subpage_subdesign_1.vhd"/>
-        <Attr Name="ImportTime" Val="1720280361"/>
+        <Attr Name="ImportTime" Val="1720288244"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -67,7 +67,7 @@
     <File Path="$PSRCDIR/sources_1/imports/HDL/subpage_subdesign_2.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/subpage_subdesign_2.vhd"/>
-        <Attr Name="ImportTime" Val="1720280361"/>
+        <Attr Name="ImportTime" Val="1720288245"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -75,7 +75,7 @@
     <File Path="$PSRCDIR/sources_1/imports/HDL/top_asdf.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/top_asdf.vhd"/>
-        <Attr Name="ImportTime" Val="1720280358"/>
+        <Attr Name="ImportTime" Val="1720288242"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -117,7 +117,7 @@
     <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/avalon_wrapper.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/avalon_wrapper.vhd"/>
-        <Attr Name="ImportTime" Val="1720280358"/>
+        <Attr Name="ImportTime" Val="1720288242"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -141,7 +141,7 @@
     <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/polinvert.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/polinvert.vhd"/>
-        <Attr Name="ImportTime" Val="1720280360"/>
+        <Attr Name="ImportTime" Val="1720288244"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -173,7 +173,7 @@
     <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/xlx_spectrum.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/xlx_spectrum.vhd"/>
-        <Attr Name="ImportTime" Val="1720280358"/>
+        <Attr Name="ImportTime" Val="1720288241"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -218,35 +218,35 @@
     </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_RESET_TX_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_pc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FIRMWAREOPTIONS_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axi_amm_bridge_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FS_0_AXIFIFO_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axis_data_fifo_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FIRMWAREBUILD_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FS_0_AXIFIFO_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FirmwareStatus_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_OPTOLINK_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FIRMWAREVERSION_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_ADCSyncModule_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_OPTOLINK_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_NIDNAPort_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FIRMWAREVERSION_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_OPTOLINK_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axi_iic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FirmwareStatus_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axis_data_fifo_3_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_IICBaseInterconnection_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_OPTOLINK_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_ADCSyncModule_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_RESET_RX_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_RESET_TX_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axi_amm_bridge_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axi_iic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axis_data_fifo_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_data_mover_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_rst_ps7_0_125M1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axis_data_fifo_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_data_mover_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axis_data_fifo_2_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_rst_ps7_0_125M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_tft_display_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_util_vector_logic_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_us_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_util_vector_logic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_pc_1"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_cc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_us_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_util_vector_logic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_cc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_pc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_util_vector_logic_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_rst_ps7_0_125M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_tft_display_0_0"/>
 </GenRun>
