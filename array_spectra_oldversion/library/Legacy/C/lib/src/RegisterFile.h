@@ -21,3 +21,11 @@
 #define SCI_REG_Spectrum_0_CONFIG_MIN 0x20004
 #define SCI_REG_Spectrum_0_CONFIG_MAX 0x20005
 
+#define SCI_REG_Spectrum_1_FIFOADDRESS 0x30000
+#define SCI_REG_Spectrum_1_STATUS 0x40000
+#define SCI_REG_Spectrum_1_CONFIG 0x40001
+#define SCI_REG_Spectrum_1_CONFIG_LIMIT 0x40002
+#define SCI_REG_Spectrum_1_CONFIG_REBIN 0x40003
+#define SCI_REG_Spectrum_1_CONFIG_MIN 0x40004
+#define SCI_REG_Spectrum_1_CONFIG_MAX 0x40005
+

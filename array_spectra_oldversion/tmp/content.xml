@@ -4,8 +4,8 @@
         <MODEL>A</MODEL>
     </SUPPORTED_PLATFORM>
    <FPGA>
-       <version>2024.07.06.0</version>
-       <filename>asdf.fpga</filename>
+       <version>2024.07.06.2</version>
+       <filename>asdf1.fpga</filename>
    </FPGA>
    <HWJSON>
        <filename>RegisterFile.json</filename>

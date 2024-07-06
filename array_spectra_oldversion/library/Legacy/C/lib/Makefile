@@ -3,7 +3,7 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=libasdf
+ProjectName            :=libasdf1
 ConfigurationName      :=Debug
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
@@ -57,7 +57,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/circular_buffer.c$(ObjectSuffix) $(IntermediateDirectory)/asdf_lib.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/circular_buffer.c$(ObjectSuffix) $(IntermediateDirectory)/asdf1_lib.c$(ObjectSuffix) 
 
 
 
@@ -98,13 +98,13 @@ $(IntermediateDirectory)/circular_buffer.c$(DependSuffix): src/circular_buffer.c
 $(IntermediateDirectory)/circular_buffer.c$(PreprocessSuffix): src/circular_buffer.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/circular_buffer.c$(PreprocessSuffix) src/circular_buffer.c
 
-$(IntermediateDirectory)/asdf_lib.c$(ObjectSuffix): src/asdf_lib.c $(IntermediateDirectory)/asdf_lib.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "src/asdf_lib.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/asdf_lib.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/asdf_lib.c$(DependSuffix): src/asdf_lib.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/asdf_lib.c$(ObjectSuffix) -MF$(IntermediateDirectory)/asdf_lib.c$(DependSuffix) -MM src/asdf_lib.c
+$(IntermediateDirectory)/asdf1_lib.c$(ObjectSuffix): src/asdf1_lib.c $(IntermediateDirectory)/asdf1_lib.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "src/asdf1_lib.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/asdf1_lib.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/asdf1_lib.c$(DependSuffix): src/asdf1_lib.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/asdf1_lib.c$(ObjectSuffix) -MF$(IntermediateDirectory)/asdf1_lib.c$(DependSuffix) -MM src/asdf1_lib.c
 
-$(IntermediateDirectory)/asdf_lib.c$(PreprocessSuffix): src/asdf_lib.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/asdf_lib.c$(PreprocessSuffix) src/asdf_lib.c
+$(IntermediateDirectory)/asdf1_lib.c$(PreprocessSuffix): src/asdf1_lib.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/asdf1_lib.c$(PreprocessSuffix) src/asdf1_lib.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
