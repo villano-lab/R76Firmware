@@ -137,6 +137,12 @@
         <directive functionName="data_mover" label="seq_buf2" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
+        <directive functionName="data_mover" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_none" value="" positionalBoolean="mode"/>
+                <option name="port" value="fifo_resetn" positionalBoolean="4"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

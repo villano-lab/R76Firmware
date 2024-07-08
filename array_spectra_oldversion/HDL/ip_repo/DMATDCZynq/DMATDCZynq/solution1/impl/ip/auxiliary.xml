@@ -12,9 +12,10 @@
   <xd:arg xd:name="*(debug_inbuffer_pointer)" xd:originalName="debug_inbuffer_pointer" xd:direction="out" xd:interfaceRef="debug_inbuffer_pointer" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="32" xd:firstOut="0"/>
   <xd:arg xd:name="*(debug_dst_var)" xd:originalName="debug_dst_var" xd:direction="out" xd:interfaceRef="debug_dst_var_V" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="64" xd:firstOut="0"/>
   <xd:arg xd:name="run" xd:originalName="run" xd:direction="in" xd:interfaceRef="s_axi_axil" xd:busTypeRef="axilite" xd:dataWidth="1" xd:offset="0x38" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="*(fifo_resetn)" xd:originalName="fifo_resetn" xd:direction="out" xd:interfaceRef="fifo_resetn" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="13"/>
   <xd:arg xd:name="DDROFFSET" xd:originalName="DDROFFSET" xd:direction="in" xd:interfaceRef="s_axi_axil" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x40" xd:handshakeRef="ap_none"/>
   <xd:arg xd:name="stat_counter[]" xd:originalName="stat_counter" xd:direction="out" xd:interfaceRef="s_axi_axil" xd:busTypeRef="axilite" xd:dataWidth="64" xd:offset="0x60" xd:arraySize="4"/>
   <xd:arg xd:name="*(interrupt_r)" xd:originalName="interrupt_r" xd:direction="out" xd:interfaceRef="interrupt_r" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="1" xd:firstOut="1"/>
   <xd:latencyEstimates xd:best-case="2" xd:worst-case="4110" xd:average-case="1372"/>
-  <xd:resourceEstimates xd:LUT="2522" xd:FF="2254" xd:BRAM="20" xd:DSP="0"/>
+  <xd:resourceEstimates xd:LUT="2531" xd:FF="2223" xd:BRAM="20" xd:DSP="0"/>
 </xd:acceleratorMap>

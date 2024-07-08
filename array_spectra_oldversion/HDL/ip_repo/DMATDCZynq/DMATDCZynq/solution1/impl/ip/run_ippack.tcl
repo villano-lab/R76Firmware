@@ -59,12 +59,12 @@ proc sort_file_names {files {top_name {}}} {
 set Vendor      "NuclearInstruments"
 set Library     "hls"
 set IPName      "data_mover"
-set Version     "1.0"
-set DisplayName "GEMINI_TDC_DMA"
-set Revision    "1907101509"
-set Description "GEMINI_TDC_DMA"
+set Version     "2.0"
+set DisplayName "data_mover"
+set Revision    "2113359718"
+set Description "DMA for X5560"
 set Device      "zynq"
-set Taxonomy    "/VIVADO_HLS_IP"
+set Taxonomy    "/hlsdma"
 set has_xpm_memory "0"
 set sdx_kernel_type ""
 set sdx_kernel_files {}
@@ -528,6 +528,18 @@ set Interfaces {
                 Type "integer unsigned"
                 Width "64"
                 Bits "64"
+            }
+        }
+    }
+    fifo_resetn {
+        type "data"
+        dir "out"
+        width ""
+        ctype {
+            DATA {
+                Type "null"
+                Width "1"
+                Bits "1"
             }
         }
     }

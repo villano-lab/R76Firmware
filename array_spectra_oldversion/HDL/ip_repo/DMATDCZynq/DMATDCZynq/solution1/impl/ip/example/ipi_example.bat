@@ -8,4 +8,4 @@
 
 @echo off
 
-C:/Xilinx/Vivado/2017.4/bin/vivado  -notrace -mode batch -source ipi_example.tcl -tclargs xc7z045ffg676-1 ../NuclearInstruments_hls_data_mover_1_0.zip
+C:/Xilinx/Vivado/2017.4/bin/vivado  -notrace -mode batch -source ipi_example.tcl -tclargs xc7z030fbg676-2 ../NuclearInstruments_hls_data_mover_2_0.zip

@@ -1,0 +1,452 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Jul  8 12:30:42 2024
+# Process ID: 22848
+# Current directory: C:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.runs/ZynqDesign_ADCSyncModule_0_0_synth_1
+# Command line: vivado.exe -log ZynqDesign_ADCSyncModule_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ZynqDesign_ADCSyncModule_0_0.tcl
+# Log file: C:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.runs/ZynqDesign_ADCSyncModule_0_0_synth_1/ZynqDesign_ADCSyncModule_0_0.vds
+# Journal file: C:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.runs/ZynqDesign_ADCSyncModule_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source ZynqDesign_ADCSyncModule_0_0.tcl -notrace
+Command: synth_design -top ZynqDesign_ADCSyncModule_0_0 -part xc7z030fbg676-2 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 20924 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 407.996 ; gain = 102.895
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'ZynqDesign_ADCSyncModule_0_0' [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_ADCSyncModule_0_0/synth/ZynqDesign_ADCSyncModule_0_0.vhd:99]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'ADCSyncModule_v1_0' declared at 'c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:11' bound to instance 'U0' of component 'ADCSyncModule_v1_0' [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_ADCSyncModule_0_0/synth/ZynqDesign_ADCSyncModule_0_0.vhd:183]
+INFO: [Synth 8-638] synthesizing module 'ADCSyncModule_v1_0' [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:75]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'ADCSyncModule_v1_0_S00_AXI' declared at 'c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:5' bound to instance 'ADCSyncModule_v1_0_S00_AXI_inst' of component 'ADCSyncModule_v1_0_S00_AXI' [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+INFO: [Synth 8-638] synthesizing module 'ADCSyncModule_v1_0_S00_AXI' [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:106]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:313]
+INFO: [Synth 8-226] default block is never used [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:695]
+WARNING: [Synth 8-614] signal 'REG_6' is read in the process but is not in the sensitivity list [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:690]
+WARNING: [Synth 8-614] signal 'REG_7' is read in the process but is not in the sensitivity list [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:690]
+WARNING: [Synth 8-614] signal 'REG_8' is read in the process but is not in the sensitivity list [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:690]
+WARNING: [Synth 8-614] signal 'REG_9' is read in the process but is not in the sensitivity list [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:690]
+WARNING: [Synth 8-614] signal 'REG_10' is read in the process but is not in the sensitivity list [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:690]
+WARNING: [Synth 8-614] signal 'REG_11' is read in the process but is not in the sensitivity list [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:690]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:284]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:285]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:286]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg9_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:287]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg10_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:288]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg11_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:289]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg29_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:307]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:311]
+INFO: [Synth 8-256] done synthesizing module 'ADCSyncModule_v1_0_S00_AXI' (1#1) [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0_S00_AXI.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'ADCSyncModule_v1_0' (2#1) [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'ZynqDesign_ADCSyncModule_0_0' (3#1) [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_ADCSyncModule_0_0/synth/ZynqDesign_ADCSyncModule_0_0.vhd:99]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 461.438 ; gain = 156.336
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[31] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[30] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[29] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[28] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[27] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[26] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[25] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[24] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[23] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[22] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[21] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[20] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[19] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[18] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[17] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[16] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[15] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[14] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[13] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[12] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[11] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[10] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[9] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_8[8] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[31] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[30] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[29] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[28] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[27] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[26] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[25] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[24] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[23] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[22] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[21] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[20] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[19] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[18] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[17] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[16] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[15] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[14] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[13] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[12] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[11] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[10] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[9] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_9[8] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[31] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[30] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[29] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[28] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[27] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[26] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[25] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[24] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[23] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[22] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[21] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[20] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[19] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[18] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[17] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_10[16] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[15] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[14] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[13] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[12] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[11] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[10] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[9] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[8] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[7] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[6] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[5] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+WARNING: [Synth 8-3295] tying undriven pin ADCSyncModule_v1_0_S00_AXI_inst:REG_11[4] to constant 0 [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:158]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 461.438 ; gain = 156.336
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z030fbg676-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.143 . Memory (MB): peak = 838.793 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 838.793 ; gain = 533.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z030fbg676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 838.793 ; gain = 533.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 838.793 ; gain = 533.691
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "SMADC_CS" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "SMADC_MOSI" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "idx" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "SMADCwordwrite" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "SMADC_CLK" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "SMADCnew" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "SMADCnew" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element ERR_A_CNT_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:208]
+WARNING: [Synth 8-6014] Unused sequential element ERR_B_CNT_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:209]
+WARNING: [Synth 8-6014] Unused sequential element aaprog.progCounter_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:244]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:02 ; elapsed = 00:01:07 . Memory (MB): peak = 838.793 ; gain = 533.691
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 27    
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 25    
+	  32 Input     32 Bit        Muxes := 25    
+	   7 Input     32 Bit        Muxes := 1     
+	   7 Input     16 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   7 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+	   7 Input      1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module ADCSyncModule_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 26    
+	                7 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 25    
+	  32 Input     32 Bit        Muxes := 25    
+	   2 Input      1 Bit        Muxes := 5     
+Module ADCSyncModule_v1_0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   7 Input     32 Bit        Muxes := 1     
+	   7 Input     16 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   7 Input      4 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 400 (col length:80)
+BRAMs: 530 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element U0/ERR_A_CNT_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:208]
+WARNING: [Synth 8-6014] Unused sequential element U0/ERR_B_CNT_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:209]
+WARNING: [Synth 8-6014] Unused sequential element U0/aaprog.progCounter_reg was removed.  [c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ipshared/ee97/hdl/ADCSyncModule_v1_0.vhd:244]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design ADCSyncModule_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/aaprog.SMADCnew_reg[2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\U0/ADCSyncModule_v1_0_S00_AXI_inst /aw_en_reg)
+INFO: [Synth 8-3886] merging instance 'U0/ADCSyncModule_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'U0/ADCSyncModule_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/ADCSyncModule_v1_0_S00_AXI_inst /\axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'U0/ADCSyncModule_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'U0/ADCSyncModule_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/ADCSyncModule_v1_0_S00_AXI_inst /\axi_bresp_reg[1] )
+WARNING: [Synth 8-3332] Sequential element (aw_en_reg) is unused and will be removed from module ADCSyncModule_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_awaddr_reg[1]) is unused and will be removed from module ADCSyncModule_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_awaddr_reg[0]) is unused and will be removed from module ADCSyncModule_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_bresp_reg[1]) is unused and will be removed from module ADCSyncModule_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_araddr_reg[1]) is unused and will be removed from module ADCSyncModule_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_araddr_reg[0]) is unused and will be removed from module ADCSyncModule_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_rresp_reg[1]) is unused and will be removed from module ADCSyncModule_v1_0_S00_AXI.
+INFO: [Synth 8-3332] Sequential element (U0/aaprog.SMADCnew_reg[2]) is unused and will be removed from module ZynqDesign_ADCSyncModule_0_0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:17 . Memory (MB): peak = 838.793 ; gain = 533.691
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:40 ; elapsed = 00:01:47 . Memory (MB): peak = 838.793 ; gain = 533.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:41 ; elapsed = 00:01:48 . Memory (MB): peak = 838.793 ; gain = 533.691
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:43 ; elapsed = 00:01:49 . Memory (MB): peak = 859.645 ; gain = 554.543
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 859.645 ; gain = 554.543
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 859.645 ; gain = 554.543
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:46 ; elapsed = 00:01:53 . Memory (MB): peak = 859.645 ; gain = 554.543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:46 ; elapsed = 00:01:53 . Memory (MB): peak = 859.645 ; gain = 554.543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:46 ; elapsed = 00:01:53 . Memory (MB): peak = 859.645 ; gain = 554.543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:46 ; elapsed = 00:01:53 . Memory (MB): peak = 859.645 ; gain = 554.543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    33|
+|2     |LUT1   |    23|
+|3     |LUT2   |    11|
+|4     |LUT3   |     5|
+|5     |LUT4   |   126|
+|6     |LUT5   |    69|
+|7     |LUT6   |   252|
+|8     |MUXF7  |   103|
+|9     |FDRE   |  1002|
+|10    |FDSE   |    11|
++------+-------+------+
+
+Report Instance Areas: 
++------+------------------------------------+---------------------------+------+
+|      |Instance                            |Module                     |Cells |
++------+------------------------------------+---------------------------+------+
+|1     |top                                 |                           |  1635|
+|2     |  U0                                |ADCSyncModule_v1_0         |  1635|
+|3     |    ADCSyncModule_v1_0_S00_AXI_inst |ADCSyncModule_v1_0_S00_AXI |  1372|
++------+------------------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:46 ; elapsed = 00:01:53 . Memory (MB): peak = 859.645 ; gain = 554.543
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:03 ; elapsed = 00:01:29 . Memory (MB): peak = 859.645 ; gain = 177.188
+Synthesis Optimization Complete : Time (s): cpu = 00:01:46 ; elapsed = 00:01:53 . Memory (MB): peak = 859.645 ; gain = 554.543
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 136 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'ZynqDesign_ADCSyncModule_0_0' is not ideal for floorplanning, since the cellview 'ADCSyncModule_v1_0_S00_AXI' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+35 Infos, 116 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:51 ; elapsed = 00:02:00 . Memory (MB): peak = 859.645 ; gain = 566.027
+INFO: [Common 17-1381] The checkpoint 'C:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.runs/ZynqDesign_ADCSyncModule_0_0_synth_1/ZynqDesign_ADCSyncModule_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.srcs/sources_1/bd/ZynqDesign/ip/ZynqDesign_ADCSyncModule_0_0/ZynqDesign_ADCSyncModule_0_0.xci
+INFO: [Coretcl 2-1174] Renamed 2 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.runs/ZynqDesign_ADCSyncModule_0_0_synth_1/ZynqDesign_ADCSyncModule_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ZynqDesign_ADCSyncModule_0_0_utilization_synth.rpt -pb ZynqDesign_ADCSyncModule_0_0_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.207 . Memory (MB): peak = 859.645 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Jul  8 12:33:14 2024...

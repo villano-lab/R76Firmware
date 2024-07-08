@@ -1,12 +1,12 @@
 set C_TypeInfoList {{ 
-"data_mover" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"a": [[],{ "pointer": "0"}] }, {"stream0": [[],"1"] }, {"buffer_status": [[],{ "pointer":  {"scalar": "int"}}] }, {"buffer_ack": [[], {"scalar": "int"}] }, {"buffer_seq": [[], {"array": ["2", [2]]}] }, {"bufsize": [[], {"array": ["3", [2]]}] }, {"debug_buffer_status": [[],{ "pointer":  {"scalar": "int"}}] }, {"debug_bufsel_0": [[],{ "pointer":  {"scalar": "int"}}] }, {"debug_buf0_p": [[],{ "pointer":  {"scalar": "int"}}] }, {"debug_inbuffer_pointer": [[],{ "pointer":  {"scalar": "int"}}] }, {"debug_dst_var": [[],{ "pointer": "4"}] }, {"run": [[], {"scalar": "bool"}] }, {"DDROFFSET": [[],"5"] }, {"stat_counter": [[], {"array": ["2", [4]]}] }, {"interrupt_r": [[],{ "pointer":  {"scalar": "bool"}}] }],[],""], 
-"4": [ "bus_word", {"typedef": [[[],"6"],""]}], 
+"data_mover" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"a": [[],{ "pointer": "0"}] }, {"stream0": [[],"1"] }, {"buffer_status": [[],{ "pointer":  {"scalar": "int"}}] }, {"buffer_ack": [[], {"scalar": "int"}] }, {"buffer_seq": [[], {"array": ["2", [2]]}] }, {"bufsize": [[], {"array": ["3", [2]]}] }, {"debug_buffer_status": [[],{ "pointer":  {"scalar": "int"}}] }, {"debug_bufsel_0": [[],{ "pointer":  {"scalar": "int"}}] }, {"debug_buf0_p": [[],{ "pointer":  {"scalar": "int"}}] }, {"debug_inbuffer_pointer": [[],{ "pointer":  {"scalar": "int"}}] }, {"debug_dst_var": [[],{ "pointer": "4"}] }, {"run": [[], {"scalar": "bool"}] }, {"fifo_resetn": [[],{ "pointer":  {"scalar": "bool"}}] }, {"DDROFFSET": [[],"5"] }, {"stat_counter": [[], {"array": ["2", [4]]}] }, {"interrupt_r": [[],{ "pointer":  {"scalar": "bool"}}] }],[],""], 
+"0": [ "ram_word", {"typedef": [[[],"5"],""]}], 
 "3": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
-"2": [ "uint64_t", {"typedef": [[[], {"scalar": "long long unsigned int"}],""]}], 
-"6": [ "ap_uint<64>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 64}}]],""]}}], 
+"4": [ "bus_word", {"typedef": [[[],"6"],""]}], 
 "1": [ "stream<ap_uint<64> >", {"hls_type": {"stream": [[[[],"6"]],"7"]}}], 
+"6": [ "ap_uint<64>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 64}}]],""]}}], 
 "5": [ "ap_uint<32>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 32}}]],""]}}], 
-"0": [ "ram_word", {"typedef": [[[],"5"],""]}],
+"2": [ "uint64_t", {"typedef": [[[], {"scalar": "long long unsigned int"}],""]}],
 "7": ["hls", ""]
 }}
 set moduleName data_mover
@@ -33,6 +33,7 @@ set C_modelArgList {
 	{ debug_inbuffer_pointer int 32 regular {pointer 1}  }
 	{ debug_dst_var_V int 64 regular {pointer 1}  }
 	{ run uint 1 regular {axi_slave 0}  }
+	{ fifo_resetn int 1 regular {pointer 1}  }
 	{ DDROFFSET_V int 32 regular {axi_slave 0}  }
 	{ stat_counter int 64 regular {axi_slave 1}  }
 	{ interrupt_r int 1 regular {pointer 1}  }
@@ -50,11 +51,12 @@ set C_modelArgMapList {[
  	{ "Name" : "debug_inbuffer_pointer", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "debug_inbuffer_pointer","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "debug_dst_var_V", "interface" : "wire", "bitwidth" : 64, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":63,"cElement": [{"cName": "debug_dst_var.V","cData": "uint64","bit_use": { "low": 0,"up": 63},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "run", "interface" : "axi_slave", "bundle":"axil","type":"ap_none","bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "run","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":56}, "offset_end" : {"in":63}} , 
+ 	{ "Name" : "fifo_resetn", "interface" : "wire", "bitwidth" : 1, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "fifo_resetn","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "DDROFFSET_V", "interface" : "axi_slave", "bundle":"axil","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "DDROFFSET.V","cData": "uint32","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":64}, "offset_end" : {"in":71}} , 
  	{ "Name" : "stat_counter", "interface" : "axi_slave", "bundle":"axil","type":"ap_memory","bitwidth" : 64, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":63,"cElement": [{"cName": "stat_counter","cData": "long long unsigned int","bit_use": { "low": 0,"up": 63},"cArray": [{"low" : 0,"up" : 3,"step" : 1}]}]}], "offset" : {"out":96}, "offset_end" : {"out":127}} , 
  	{ "Name" : "interrupt_r", "interface" : "wire", "bitwidth" : 1, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "interrupt_r","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
-set portNum 79
+set portNum 80
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
@@ -116,8 +118,9 @@ set portList {
 	{ debug_inbuffer_pointer_ap_vld sc_out sc_logic 1 outvld 9 } 
 	{ debug_dst_var_V sc_out sc_lv 64 signal 10 } 
 	{ debug_dst_var_V_ap_vld sc_out sc_logic 1 outvld 10 } 
-	{ interrupt_r sc_out sc_logic 1 signal 14 } 
-	{ interrupt_r_ap_vld sc_out sc_logic 1 outvld 14 } 
+	{ fifo_resetn sc_out sc_logic 1 signal 12 } 
+	{ interrupt_r sc_out sc_logic 1 signal 15 } 
+	{ interrupt_r_ap_vld sc_out sc_logic 1 outvld 15 } 
 	{ s_axi_axil_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_axil_AWREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_axil_AWADDR sc_in sc_lv 7 signal -1 } 
@@ -214,6 +217,7 @@ set NewPortList {[
  	{ "name": "debug_inbuffer_pointer_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "debug_inbuffer_pointer", "role": "ap_vld" }} , 
  	{ "name": "debug_dst_var_V", "direction": "out", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "debug_dst_var_V", "role": "default" }} , 
  	{ "name": "debug_dst_var_V_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "debug_dst_var_V", "role": "ap_vld" }} , 
+ 	{ "name": "fifo_resetn", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "fifo_resetn", "role": "default" }} , 
  	{ "name": "interrupt_r", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "interrupt_r", "role": "default" }} , 
  	{ "name": "interrupt_r_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "interrupt_r", "role": "ap_vld" }}  ]}
 
@@ -245,6 +249,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "debug_inbuffer_pointer", "Type" : "OVld", "Direction" : "O"},
 			{"Name" : "debug_dst_var_V", "Type" : "OVld", "Direction" : "O"},
 			{"Name" : "run", "Type" : "None", "Direction" : "I"},
+			{"Name" : "fifo_resetn", "Type" : "None", "Direction" : "O"},
 			{"Name" : "DDROFFSET_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "stat_counter", "Type" : "Memory", "Direction" : "O"},
 			{"Name" : "interrupt_r", "Type" : "OVld", "Direction" : "O"},
@@ -281,6 +286,7 @@ set ArgLastReadFirstWriteLatency {
 		debug_inbuffer_pointer {Type O LastRead -1 FirstWrite 0}
 		debug_dst_var_V {Type O LastRead -1 FirstWrite 0}
 		run {Type I LastRead 0 FirstWrite -1}
+		fifo_resetn {Type O LastRead -1 FirstWrite 13}
 		DDROFFSET_V {Type I LastRead 0 FirstWrite -1}
 		stat_counter {Type O LastRead -1 FirstWrite 10}
 		interrupt_r {Type O LastRead -1 FirstWrite 1}
@@ -318,6 +324,7 @@ set Spec2ImplPortList {
 	debug_buf0_p { ap_ovld {  { debug_buf0_p out_data 1 32 }  { debug_buf0_p_ap_vld out_vld 1 1 } } }
 	debug_inbuffer_pointer { ap_ovld {  { debug_inbuffer_pointer out_data 1 32 }  { debug_inbuffer_pointer_ap_vld out_vld 1 1 } } }
 	debug_dst_var_V { ap_ovld {  { debug_dst_var_V out_data 1 64 }  { debug_dst_var_V_ap_vld out_vld 1 1 } } }
+	fifo_resetn { ap_none {  { fifo_resetn out_data 1 1 } } }
 	interrupt_r { ap_ovld {  { interrupt_r out_data 1 1 }  { interrupt_r_ap_vld out_vld 1 1 } } }
 }
 

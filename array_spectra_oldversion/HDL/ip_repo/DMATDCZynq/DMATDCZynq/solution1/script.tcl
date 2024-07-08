@@ -7,10 +7,10 @@ open_project DMATDCZynq
 set_top data_mover
 add_files DmaTDC.cpp
 open_solution "solution1"
-set_part {xc7z045ffg676-1}
+set_part {xc7z030fbg676-2}
 create_clock -period 8 -name default
 source "./DMATDCZynq/solution1/directives.tcl"
 #csim_design
 csynth_design
 #cosim_design
-export_design -rtl vhdl -format ip_catalog -description "GEMINI_TDC_DMA" -vendor "NuclearInstruments" -display_name "GEMINI_TDC_DMA"
+export_design -flow syn -rtl vhdl -format ip_catalog -description "DMA for X5560" -vendor "NuclearInstruments" -version "2.0" -display_name "data_mover" -taxonomy "/hlsdma"

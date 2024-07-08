@@ -1,265 +1,304 @@
-{"Registers":[
 {
-  "Name": "pol",
-  "Type": null,
-  "Address": 0,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "hithrs",
-  "Type": null,
-  "Address": 1,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "lothrsh",
-  "Type": null,
-  "Address": 2,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "inhib",
-  "Type": null,
-  "Address": 3,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "gatel",
-  "Type": null,
-  "Address": 4,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "gateu",
-  "Type": null,
-  "Address": 5,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "delay",
-  "Type": null,
-  "Address": 6,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "xdelay",
-  "Type": null,
-  "Address": 7,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "inttime",
-  "Type": null,
-  "Address": 8,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "preint",
-  "Type": null,
-  "Address": 9,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "pileup",
-  "Type": null,
-  "Address": 10,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "gain",
-  "Type": null,
-  "Address": 11,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "ofs",
-  "Type": null,
-  "Address": 12,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "bl",
-  "Type": null,
-  "Address": 13,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-},
-{
-  "Name": "CH",
-  "Type": null,
-  "Address": 14,
-  "Version": null,
-  "RegionSize": 1,
-  "Description": "",
-  "Category": "Undefined"
-}],
-"MMCComponents":[
-{
-  "Name": "Spectrum_0",
-  "Type": "Spectrum",
-  "Address": 65536,
-  "Version": "1.0.1.0",
-  "bins": 1024,
-  "Registers": [
+  "MMCComponents": [
     {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 131072,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
+      "Name": "Spectrum_0",
+      "Type": "Spectrum",
+      "Address": 65536,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Type": null,
+          "Address": 131072,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG",
+          "Type": null,
+          "Address": 131073,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Type": null,
+          "Address": 131074,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Type": null,
+          "Address": 131075,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Type": null,
+          "Address": 131076,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Type": null,
+          "Address": 131077,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        }
+      ],
+      "CountsBit": 16,
+      "Path": "/Spectrum_0"
     },
     {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 131073,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 131074,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 131075,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 131076,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
-    },
-    {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 131077,
-      "Version": null,
-      "RegionSize": 1,
-      "Description": "",
-      "Category": "Undefined"
+      "Name": "Spectrum_1",
+      "Type": "Spectrum",
+      "Address": 196608,
+      "Version": "1.0.1.0",
+      "bins": 1024,
+      "Registers": [
+        {
+          "Name": "STATUS",
+          "Type": null,
+          "Address": 262144,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG",
+          "Type": null,
+          "Address": 262145,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_LIMIT",
+          "Type": null,
+          "Address": 262146,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_REBIN",
+          "Type": null,
+          "Address": 262147,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_MIN",
+          "Type": null,
+          "Address": 262148,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        },
+        {
+          "Name": "CONFIG_MAX",
+          "Type": null,
+          "Address": 262149,
+          "Version": null,
+          "RegionSize": 1,
+          "Description": "",
+          "Category": "Undefined",
+          "Path": null
+        }
+      ],
+      "CountsBit": 16,
+      "Path": "/Spectrum_1"
     }
   ],
-  "CountsBit": 16
-},
-{
-  "Name": "Spectrum_1",
-  "Type": "Spectrum",
-  "Address": 196608,
-  "Version": "1.0.1.0",
-  "bins": 1024,
   "Registers": [
     {
-      "Name": "STATUS",
-      "Type": null,
-      "Address": 262144,
-      "Version": null,
+      "Name": "hithrs",
+      "Type": "Register",
+      "Address": 1,
+      "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
-      "Category": "Undefined"
+      "Category": "Undefined",
+      "Path": "/hithrs"
     },
     {
-      "Name": "CONFIG",
-      "Type": null,
-      "Address": 262145,
-      "Version": null,
+      "Name": "lothrsh",
+      "Type": "Register",
+      "Address": 2,
+      "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
-      "Category": "Undefined"
+      "Category": "Undefined",
+      "Path": "/lothrsh"
     },
     {
-      "Name": "CONFIG_LIMIT",
-      "Type": null,
-      "Address": 262146,
-      "Version": null,
+      "Name": "inhib",
+      "Type": "Register",
+      "Address": 3,
+      "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
-      "Category": "Undefined"
+      "Category": "Undefined",
+      "Path": "/inhib"
     },
     {
-      "Name": "CONFIG_REBIN",
-      "Type": null,
-      "Address": 262147,
-      "Version": null,
+      "Name": "gatel",
+      "Type": "Register",
+      "Address": 4,
+      "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
-      "Category": "Undefined"
+      "Category": "Undefined",
+      "Path": "/gatel"
     },
     {
-      "Name": "CONFIG_MIN",
-      "Type": null,
-      "Address": 262148,
-      "Version": null,
+      "Name": "gateu",
+      "Type": "Register",
+      "Address": 5,
+      "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
-      "Category": "Undefined"
+      "Category": "Undefined",
+      "Path": "/gateu"
     },
     {
-      "Name": "CONFIG_MAX",
-      "Type": null,
-      "Address": 262149,
-      "Version": null,
+      "Name": "delay",
+      "Type": "Register",
+      "Address": 6,
+      "Version": "1.0.0.0",
       "RegionSize": 1,
       "Description": "",
-      "Category": "Undefined"
+      "Category": "Undefined",
+      "Path": "/delay"
+    },
+    {
+      "Name": "xdelay",
+      "Type": "Register",
+      "Address": 7,
+      "Version": "1.0.0.0",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined",
+      "Path": "/xdelay"
+    },
+    {
+      "Name": "pol",
+      "Type": "Register",
+      "Address": 0,
+      "Version": "1.0.0.0",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined",
+      "Path": "/pol"
+    },
+    {
+      "Name": "inttime",
+      "Type": "Register",
+      "Address": 8,
+      "Version": "1.0.0.0",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined",
+      "Path": "/inttime"
+    },
+    {
+      "Name": "preint",
+      "Type": "Register",
+      "Address": 9,
+      "Version": "1.0.0.0",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined",
+      "Path": "/preint"
+    },
+    {
+      "Name": "pileup",
+      "Type": "Register",
+      "Address": 10,
+      "Version": "1.0.0.0",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined",
+      "Path": "/pileup"
+    },
+    {
+      "Name": "gain",
+      "Type": "Register",
+      "Address": 11,
+      "Version": "1.0.0.0",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined",
+      "Path": "/gain"
+    },
+    {
+      "Name": "ofs",
+      "Type": "Register",
+      "Address": 12,
+      "Version": "1.0.0.0",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined",
+      "Path": "/ofs"
+    },
+    {
+      "Name": "bl",
+      "Type": "Register",
+      "Address": 13,
+      "Version": "1.0.0.0",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined",
+      "Path": "/bl"
+    },
+    {
+      "Name": "CH",
+      "Type": "Register",
+      "Address": 14,
+      "Version": "1.0.0.0",
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined",
+      "Path": "/CH"
     }
   ],
-  "CountsBit": 16
-}],"Device":"DT5560","Project":"asdf1"}
+  "Device": "DT5560",
+  "Project": "asdf2",
+  "Magic": "79698AAC",
+  "Version": null,
+  "FPGA": "xc7z030fbg676-2",
+  "BuildDate": "2024-07-08T12:23:21.5916759-06:00"
+}

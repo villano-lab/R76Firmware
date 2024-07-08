@@ -1,4 +1,4 @@
-; ModuleID = 'C:/GIT/R5560_FRAMEWORK_45/ip_repo/DMATDCZynq/DMATDCZynq/solution1/.autopilot/db/a.o.2.bc'
+; ModuleID = 'C:/temp/fifodma5560/HDL/ip_repo/DMATDCZynq/DMATDCZynq/solution1/.autopilot/db/a.o.2.bc'
 target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
 target triple = "x86_64-w64-mingw32"
 
@@ -23,17 +23,18 @@ target triple = "x86_64-w64-mingw32"
 @bsc = internal unnamed_addr global i64 0, align 8
 @RAM_1P_str = internal unnamed_addr constant [7 x i8] c"RAM_1P\00"
 @p_str9 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str8 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str7 = private unnamed_addr constant [13 x i8] c"ap_ctrl_none\00", align 1
-@p_str6 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1
-@p_str5 = private unnamed_addr constant [5 x i8] c"both\00", align 1
-@p_str4 = private unnamed_addr constant [5 x i8] c"axis\00", align 1
-@p_str3 = private unnamed_addr constant [5 x i8] c"axil\00", align 1
+@p_str8 = private unnamed_addr constant [13 x i8] c"ap_ctrl_none\00", align 1
+@p_str7 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1
+@p_str6 = private unnamed_addr constant [5 x i8] c"both\00", align 1
+@p_str5 = private unnamed_addr constant [5 x i8] c"axis\00", align 1
+@p_str4 = private unnamed_addr constant [5 x i8] c"axil\00", align 1
+@p_str3 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1
 @p_str21 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str2 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1
+@p_str2 = private unnamed_addr constant [8 x i8] c"ap_ovld\00", align 1
+@p_str11 = internal unnamed_addr constant [1 x i8] zeroinitializer
 @p_str10 = internal unnamed_addr constant [1 x i8] zeroinitializer
 @p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
-@p_str = private unnamed_addr constant [8 x i8] c"ap_ovld\00", align 1
+@p_str = private unnamed_addr constant [8 x i8] c"ap_none\00", align 1
 
 declare i64 @llvm.part.select.i64(i64, i32, i32) nounwind readnone
 
@@ -43,7 +44,7 @@ declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
 declare void @llvm.dbg.declare(metadata, metadata) nounwind readnone
 
-define void @data_mover(i32* %a_V, i64* %stream0_V_V, i32* %buffer_status, i32 %buffer_ack, [2 x i64]* %buffer_seq, [2 x i32]* %bufsize, i32* %debug_buffer_status, i32* %debug_bufsel_0, i32* %debug_buf0_p, i32* %debug_inbuffer_pointer, i64* %debug_dst_var_V, i1 zeroext %run, i32 %DDROFFSET_V, [4 x i64]* %stat_counter, i1* %interrupt_r) {
+define void @data_mover(i32* %a_V, i64* %stream0_V_V, i32* %buffer_status, i32 %buffer_ack, [2 x i64]* %buffer_seq, [2 x i32]* %bufsize, i32* %debug_buffer_status, i32* %debug_bufsel_0, i32* %debug_buf0_p, i32* %debug_inbuffer_pointer, i64* %debug_dst_var_V, i1 zeroext %run, i1* %fifo_resetn, i32 %DDROFFSET_V, [4 x i64]* %stat_counter, i1* %interrupt_r) {
 .preheader96.preheader:
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %a_V), !map !60
   call void (...)* @_ssdm_op_SpecBitsMap(i64* %stream0_V_V), !map !66
@@ -57,33 +58,35 @@ define void @data_mover(i32* %a_V, i64* %stream0_V_V, i32* %buffer_status, i32 %
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %debug_inbuffer_pointer), !map !102
   call void (...)* @_ssdm_op_SpecBitsMap(i64* %debug_dst_var_V), !map !106
   call void (...)* @_ssdm_op_SpecBitsMap(i1 %run), !map !110
-  call void (...)* @_ssdm_op_SpecBitsMap(i32 %DDROFFSET_V), !map !114
-  call void (...)* @_ssdm_op_SpecBitsMap([4 x i64]* %stat_counter), !map !118
-  call void (...)* @_ssdm_op_SpecBitsMap(i1* %interrupt_r), !map !124
+  call void (...)* @_ssdm_op_SpecBitsMap(i1* %fifo_resetn), !map !114
+  call void (...)* @_ssdm_op_SpecBitsMap(i32 %DDROFFSET_V), !map !118
+  call void (...)* @_ssdm_op_SpecBitsMap([4 x i64]* %stat_counter), !map !122
+  call void (...)* @_ssdm_op_SpecBitsMap(i1* %interrupt_r), !map !128
   %DDROFFSET_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %DDROFFSET_V)
   %run_read = call i1 @_ssdm_op_Read.s_axilite.i1(i1 %run)
   %buffer_ack_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %buffer_ack)
   %stat_counter_addr = getelementptr [4 x i64]* %stat_counter, i64 0, i64 0
   call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @data_mover_str) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i1* %interrupt_r, [8 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([4 x i64]* %stat_counter, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
-  call void (...)* @_ssdm_op_SpecInterface([4 x i64]* %stat_counter, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32 %DDROFFSET_V, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i1 %run, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i64* %debug_dst_var_V, [8 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %debug_inbuffer_pointer, [8 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %debug_buf0_p, [8 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %debug_bufsel_0, [8 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %debug_buffer_status, [8 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  %empty_7 = call i32 (...)* @_ssdm_op_SpecMemCore([2 x i32]* %bufsize, [1 x i8]* @p_str9, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str9, i32 -1, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9)
-  call void (...)* @_ssdm_op_SpecInterface([2 x i32]* %bufsize, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  %empty_8 = call i32 (...)* @_ssdm_op_SpecMemCore([2 x i64]* %buffer_seq, [1 x i8]* @p_str8, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str8, i32 -1, [1 x i8]* @p_str8, [1 x i8]* @p_str8, [1 x i8]* @p_str8, [1 x i8]* @p_str8, [1 x i8]* @p_str8)
-  call void (...)* @_ssdm_op_SpecInterface([2 x i64]* %buffer_seq, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32 %buffer_ack, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %buffer_status, [10 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i64* %stream0_V_V, [5 x i8]* @p_str4, i32 1, i32 1, [5 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %a_V, [6 x i8]* @p_str6, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 32, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str7, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i1* %fifo_resetn, [8 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i1* %interrupt_r, [8 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([4 x i64]* %stat_counter, [1 x i8]* @p_str11, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str11, i32 -1, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11)
+  call void (...)* @_ssdm_op_SpecInterface([4 x i64]* %stat_counter, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32 %DDROFFSET_V, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i1 %run, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i64* %debug_dst_var_V, [8 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %debug_inbuffer_pointer, [8 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %debug_buf0_p, [8 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %debug_bufsel_0, [8 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %debug_buffer_status, [8 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  %empty_7 = call i32 (...)* @_ssdm_op_SpecMemCore([2 x i32]* %bufsize, [1 x i8]* @p_str10, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10)
+  call void (...)* @_ssdm_op_SpecInterface([2 x i32]* %bufsize, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  %empty_8 = call i32 (...)* @_ssdm_op_SpecMemCore([2 x i64]* %buffer_seq, [1 x i8]* @p_str9, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str9, i32 -1, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9)
+  call void (...)* @_ssdm_op_SpecInterface([2 x i64]* %buffer_seq, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32 %buffer_ack, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %buffer_status, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i64* %stream0_V_V, [5 x i8]* @p_str5, i32 1, i32 1, [5 x i8]* @p_str6, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %a_V, [6 x i8]* @p_str7, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 32, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   %bufstatus_0_load = load i1* @bufstatus_0, align 1
   %bufstatus_1_load = load i1* @bufstatus_1, align 1
   %inbuffer_pointer_loa = load i32* @inbuffer_pointer, align 4
@@ -191,7 +194,7 @@ memcpy.tail:                                      ; preds = %burst.wr.header
   store i64 %tmp_14, i64* @bsc, align 8
   br i1 %bufsel_load, label %branch4, label %branch5
 
-._crit_edge10828:                                 ; preds = %branch5, %branch4
+._crit_edge10829:                                 ; preds = %branch5, %branch4
   %bsq_0_load = load i64* @bsq_0, align 16
   %buffer_seq_addr_2 = getelementptr [2 x i64]* %buffer_seq, i64 0, i64 0
   store i64 %bsq_0_load, i64* %buffer_seq_addr_2, align 8
@@ -201,20 +204,20 @@ memcpy.tail:                                      ; preds = %burst.wr.header
   call void @_ssdm_op_Write.ap_ovld.i1P(i1* %interrupt_r, i1 true)
   br label %.critedge93._crit_edge103
 
-.critedge93._crit_edge103:                        ; preds = %._crit_edge10828, %memcpy.tail, %.critedge93
-  %bufstatus_0_flag_1 = phi i1 [ false, %.critedge93 ], [ %not_bufsel_load_t, %._crit_edge10828 ], [ false, %memcpy.tail ]
-  %bufstatus_0_loc_1 = phi i1 [ %bufstatus_0_load, %.critedge93 ], [ %bufstatus_0_load_s, %._crit_edge10828 ], [ %bufstatus_0_load, %memcpy.tail ]
-  %bufstatus_1_flag_1 = phi i1 [ false, %.critedge93 ], [ %bufsel_load, %._crit_edge10828 ], [ false, %memcpy.tail ]
-  %bufstatus_1_loc_1 = phi i1 [ %bufstatus_1_load, %.critedge93 ], [ %p_bufstatus_1_load, %._crit_edge10828 ], [ %bufstatus_1_load, %memcpy.tail ]
-  %inbuffer_pointer_fla_1 = phi i1 [ %inbuffer_pointer_fla, %.critedge93 ], [ true, %._crit_edge10828 ], [ true, %memcpy.tail ]
-  %inbuffer_pointer_new_1 = phi i32 [ %inbuffer_pointer_loc, %.critedge93 ], [ 0, %._crit_edge10828 ], [ 0, %memcpy.tail ]
-  %out_counter_loc_2 = phi i64 [ %out_counter_loc, %.critedge93 ], [ %out_counter_loc_1, %._crit_edge10828 ], [ %out_counter_loc_1, %memcpy.tail ]
-  %lost_counter_loc_2 = phi i64 [ %lost_counter_loc, %.critedge93 ], [ %lost_counter_loc_1, %._crit_edge10828 ], [ %lost_counter_loc_1, %memcpy.tail ]
-  %swap_timeout_flag = phi i1 [ false, %.critedge93 ], [ true, %._crit_edge10828 ], [ false, %memcpy.tail ]
-  %buf_p_flag = phi i1 [ false, %.critedge93 ], [ true, %._crit_edge10828 ], [ true, %memcpy.tail ]
-  %buf_p_loc = phi i32 [ %buf_p_load, %.critedge93 ], [ 0, %._crit_edge10828 ], [ %tmp_10, %memcpy.tail ]
-  %buftimeout_loc = phi i32 [ %buftimeout_load, %.critedge93 ], [ 0, %._crit_edge10828 ], [ %buftimeout_load, %memcpy.tail ]
-  %bufsel_load_3 = phi i1 [ %bufsel_load, %.critedge93 ], [ %not_bufsel_load_t, %._crit_edge10828 ], [ %bufsel_load, %memcpy.tail ]
+.critedge93._crit_edge103:                        ; preds = %._crit_edge10829, %memcpy.tail, %.critedge93
+  %bufstatus_0_flag_1 = phi i1 [ false, %.critedge93 ], [ %not_bufsel_load_t, %._crit_edge10829 ], [ false, %memcpy.tail ]
+  %bufstatus_0_loc_1 = phi i1 [ %bufstatus_0_load, %.critedge93 ], [ %bufstatus_0_load_s, %._crit_edge10829 ], [ %bufstatus_0_load, %memcpy.tail ]
+  %bufstatus_1_flag_1 = phi i1 [ false, %.critedge93 ], [ %bufsel_load, %._crit_edge10829 ], [ false, %memcpy.tail ]
+  %bufstatus_1_loc_1 = phi i1 [ %bufstatus_1_load, %.critedge93 ], [ %p_bufstatus_1_load, %._crit_edge10829 ], [ %bufstatus_1_load, %memcpy.tail ]
+  %inbuffer_pointer_fla_1 = phi i1 [ %inbuffer_pointer_fla, %.critedge93 ], [ true, %._crit_edge10829 ], [ true, %memcpy.tail ]
+  %inbuffer_pointer_new_1 = phi i32 [ %inbuffer_pointer_loc, %.critedge93 ], [ 0, %._crit_edge10829 ], [ 0, %memcpy.tail ]
+  %out_counter_loc_2 = phi i64 [ %out_counter_loc, %.critedge93 ], [ %out_counter_loc_1, %._crit_edge10829 ], [ %out_counter_loc_1, %memcpy.tail ]
+  %lost_counter_loc_2 = phi i64 [ %lost_counter_loc, %.critedge93 ], [ %lost_counter_loc_1, %._crit_edge10829 ], [ %lost_counter_loc_1, %memcpy.tail ]
+  %swap_timeout_flag = phi i1 [ false, %.critedge93 ], [ true, %._crit_edge10829 ], [ false, %memcpy.tail ]
+  %buf_p_flag = phi i1 [ false, %.critedge93 ], [ true, %._crit_edge10829 ], [ true, %memcpy.tail ]
+  %buf_p_loc = phi i32 [ %buf_p_load, %.critedge93 ], [ 0, %._crit_edge10829 ], [ %tmp_10, %memcpy.tail ]
+  %buftimeout_loc = phi i32 [ %buftimeout_load, %.critedge93 ], [ 0, %._crit_edge10829 ], [ %buftimeout_load, %memcpy.tail ]
+  %bufsel_load_3 = phi i1 [ %bufsel_load, %.critedge93 ], [ %not_bufsel_load_t, %._crit_edge10829 ], [ %bufsel_load, %memcpy.tail ]
   %bufsel_load_3_cast = zext i1 %bufsel_load_3 to i32
   %tmp_15 = zext i1 %bufstatus_0_loc_1 to i32
   %tmp_16 = call i32 @_ssdm_op_BitSet.i32.i32.i32.i1(i32 %tmp_15, i32 1, i1 %bufstatus_1_loc_1)
@@ -222,7 +225,7 @@ memcpy.tail:                                      ; preds = %burst.wr.header
   %obuffer_ack_load = load i32* @obuffer_ack, align 4
   %tmp_17 = trunc i32 %obuffer_ack_load to i1
   %tmp_18 = xor i1 %tmp_17, true
-  br i1 %buf_p_flag, label %mergeST37, label %.critedge93._crit_edge103.new_ifconv
+  br i1 %buf_p_flag, label %mergeST38, label %.critedge93._crit_edge103.new_ifconv
 
 ; <label>:3                                       ; preds = %.preheader96.preheader
   store i1 false, i1* @bufsel, align 1
@@ -240,49 +243,62 @@ memcpy.tail:                                      ; preds = %burst.wr.header
   %bufsize_addr_1 = getelementptr [2 x i32]* %bufsize, i64 0, i64 1
   store i32 0, i32* %bufsize_addr_1, align 4
   call void @_ssdm_op_Write.ap_ovld.i1P(i1* %interrupt_r, i1 false)
-  br label %mergeST38
+  br label %mergeST39
+
+mergeST39:                                        ; preds = %.new37, %3
+  %bufstatus_0_flag_3 = phi i1 [ %bufstatus_0_flag_2, %.new37 ], [ true, %3 ]
+  %bufstatus_0_new_3 = phi i1 [ %bufstatus_0_new_2, %.new37 ], [ false, %3 ]
+  %bufstatus_1_flag_3 = phi i1 [ %bufstatus_1_flag_2, %.new37 ], [ true, %3 ]
+  %bufstatus_1_new_3 = phi i1 [ %bufstatus_1_new_2, %.new37 ], [ false, %3 ]
+  %inbuffer_pointer_fla_2 = phi i1 [ %inbuffer_pointer_fla_1, %.new37 ], [ true, %3 ]
+  %inbuffer_pointer_new_2 = phi i32 [ %inbuffer_pointer_new_1, %.new37 ], [ 0, %3 ]
+  %buftimeout_new = phi i32 [ %storemerge, %.new37 ], [ 0, %3 ]
+  %clear_fifo_load = phi i1 [ true, %.new37 ], [ false, %3 ]
+  call void @_ssdm_op_Write.ap_none.i1P(i1* %fifo_resetn, i1 %clear_fifo_load)
+  store i32 %buftimeout_new, i32* @buftimeout, align 4
+  br i1 %inbuffer_pointer_fla_2, label %mergeST34, label %.new35
 
 branch4:                                          ; preds = %._crit_edge105
   store i64 %tmp_14, i64* @bsq_0, align 8
-  br label %._crit_edge10828
+  br label %._crit_edge10829
 
 branch5:                                          ; preds = %._crit_edge105
   store i64 %tmp_14, i64* @bsq_1, align 8
-  br label %._crit_edge10828
+  br label %._crit_edge10829
 
-mergeST:                                          ; preds = %.new32
+mergeST:                                          ; preds = %.new33
   store i1 %bufstatus_0_new_3, i1* @bufstatus_0, align 1
   br label %.new
 
-.new:                                             ; preds = %.new32, %mergeST
+.new:                                             ; preds = %.new33, %mergeST
   ret void
 
-mergeST31:                                        ; preds = %.new34
+mergeST32:                                        ; preds = %.new35
   store i1 %bufstatus_1_new_3, i1* @bufstatus_1, align 1
-  br label %.new32
+  br label %.new33
 
-.new32:                                           ; preds = %.new34, %mergeST31
+.new33:                                           ; preds = %.new35, %mergeST32
   br i1 %bufstatus_0_flag_3, label %mergeST, label %.new
 
-mergeST33:                                        ; preds = %mergeST38
+mergeST34:                                        ; preds = %mergeST39
   store i32 %inbuffer_pointer_new_2, i32* @inbuffer_pointer, align 4
-  br label %.new34
+  br label %.new35
 
-.new34:                                           ; preds = %mergeST38, %mergeST33
-  br i1 %bufstatus_1_flag_3, label %mergeST31, label %.new32
+.new35:                                           ; preds = %mergeST34, %mergeST39
+  br i1 %bufstatus_1_flag_3, label %mergeST32, label %.new33
 
-mergeST35:                                        ; preds = %.critedge93._crit_edge103.new_ifconv
+mergeST36:                                        ; preds = %.critedge93._crit_edge103.new_ifconv
   store i1 %tmp_23, i1* @swap_timeout, align 1
-  br label %.new36
+  br label %.new37
 
-.new36:                                           ; preds = %.critedge93._crit_edge103.new_ifconv, %mergeST35
-  br label %mergeST38
+.new37:                                           ; preds = %.critedge93._crit_edge103.new_ifconv, %mergeST36
+  br label %mergeST39
 
-mergeST37:                                        ; preds = %.critedge93._crit_edge103
+mergeST38:                                        ; preds = %.critedge93._crit_edge103
   store i32 %buf_p_loc, i32* @buf_p, align 4
   br label %.critedge93._crit_edge103.new_ifconv
 
-.critedge93._crit_edge103.new_ifconv:             ; preds = %mergeST37, %.critedge93._crit_edge103
+.critedge93._crit_edge103.new_ifconv:             ; preds = %mergeST38, %.critedge93._crit_edge103
   %tmp_25 = trunc i32 %buffer_ack_read to i1
   %tmp_19 = xor i1 %tmp_25, true
   %bufstatus_0_flag_1_s = and i1 %tmp_25, %tmp_18
@@ -315,18 +331,7 @@ mergeST37:                                        ; preds = %.critedge93._crit_e
   %tmp_24 = add i32 1, %buftimeout_loc
   %swap_timeout_flag_1 = or i1 %tmp_23, %swap_timeout_flag
   %storemerge = select i1 %tmp_23, i32 0, i32 %tmp_24
-  br i1 %swap_timeout_flag_1, label %mergeST35, label %.new36
-
-mergeST38:                                        ; preds = %.new36, %3
-  %bufstatus_0_flag_3 = phi i1 [ %bufstatus_0_flag_2, %.new36 ], [ true, %3 ]
-  %bufstatus_0_new_3 = phi i1 [ %bufstatus_0_new_2, %.new36 ], [ false, %3 ]
-  %bufstatus_1_flag_3 = phi i1 [ %bufstatus_1_flag_2, %.new36 ], [ true, %3 ]
-  %bufstatus_1_new_3 = phi i1 [ %bufstatus_1_new_2, %.new36 ], [ false, %3 ]
-  %inbuffer_pointer_fla_2 = phi i1 [ %inbuffer_pointer_fla_1, %.new36 ], [ true, %3 ]
-  %inbuffer_pointer_new_2 = phi i32 [ %inbuffer_pointer_new_1, %.new36 ], [ 0, %3 ]
-  %buftimeout_new = phi i32 [ %storemerge, %.new36 ], [ 0, %3 ]
-  store i32 %buftimeout_new, i32* @buftimeout, align 4
-  br i1 %inbuffer_pointer_fla_2, label %mergeST33, label %.new34
+  br i1 %swap_timeout_flag_1, label %mergeST36, label %.new37
 }
 
 define weak i1 @_ssdm_op_WriteResp.m_axi.i32P(i32*) {
@@ -363,6 +368,12 @@ entry:
 }
 
 define weak void @_ssdm_op_Write.ap_ovld.i1P(i1*, i1) {
+entry:
+  store i1 %1, i1* %0
+  ret void
+}
+
+define weak void @_ssdm_op_Write.ap_none.i1P(i1*, i1) {
 entry:
   store i1 %1, i1* %0
   ret void
@@ -496,11 +507,11 @@ entry:
 !llvm.map.gv = !{!53}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
-!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 0, i32 1, i32 1}
-!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"ram_word*", metadata !"stream<bus_word>", metadata !"int*", metadata !"int", metadata !"uint64_t*", metadata !"uint32_t*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"bus_word*", metadata !"_Bool", metadata !"ap_uint<32>", metadata !"uint64_t*", metadata !"_Bool*"}
-!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!5 = metadata !{metadata !"kernel_arg_name", metadata !"a", metadata !"stream0", metadata !"buffer_status", metadata !"buffer_ack", metadata !"buffer_seq", metadata !"bufsize", metadata !"debug_buffer_status", metadata !"debug_bufsel_0", metadata !"debug_buf0_p", metadata !"debug_inbuffer_pointer", metadata !"debug_dst_var", metadata !"run", metadata !"DDROFFSET", metadata !"stat_counter", metadata !"interrupt_r"}
+!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 0, i32 1, i32 1}
+!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"ram_word*", metadata !"stream<bus_word>", metadata !"int*", metadata !"int", metadata !"uint64_t*", metadata !"uint32_t*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"bus_word*", metadata !"_Bool", metadata !"_Bool*", metadata !"ap_uint<32>", metadata !"uint64_t*", metadata !"_Bool*"}
+!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!5 = metadata !{metadata !"kernel_arg_name", metadata !"a", metadata !"stream0", metadata !"buffer_status", metadata !"buffer_ack", metadata !"buffer_seq", metadata !"bufsize", metadata !"debug_buffer_status", metadata !"debug_bufsel_0", metadata !"debug_buf0_p", metadata !"debug_inbuffer_pointer", metadata !"debug_dst_var", metadata !"run", metadata !"fifo_resetn", metadata !"DDROFFSET", metadata !"stat_counter", metadata !"interrupt_r"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
 !7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
 !8 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0}
@@ -610,16 +621,20 @@ entry:
 !112 = metadata !{metadata !113}
 !113 = metadata !{metadata !"run", metadata !78, metadata !"bool", i32 0, i32 0}
 !114 = metadata !{metadata !115}
-!115 = metadata !{i32 0, i32 31, metadata !116}
+!115 = metadata !{i32 0, i32 0, metadata !116}
 !116 = metadata !{metadata !117}
-!117 = metadata !{metadata !"DDROFFSET.V", metadata !78, metadata !"uint32", i32 0, i32 31}
+!117 = metadata !{metadata !"fifo_resetn", metadata !58, metadata !"bool", i32 0, i32 0}
 !118 = metadata !{metadata !119}
-!119 = metadata !{i32 0, i32 63, metadata !120}
+!119 = metadata !{i32 0, i32 31, metadata !120}
 !120 = metadata !{metadata !121}
-!121 = metadata !{metadata !"stat_counter", metadata !122, metadata !"long long unsigned int", i32 0, i32 63}
+!121 = metadata !{metadata !"DDROFFSET.V", metadata !78, metadata !"uint32", i32 0, i32 31}
 !122 = metadata !{metadata !123}
-!123 = metadata !{i32 0, i32 3, i32 1}
+!123 = metadata !{i32 0, i32 63, metadata !124}
 !124 = metadata !{metadata !125}
-!125 = metadata !{i32 0, i32 0, metadata !126}
+!125 = metadata !{metadata !"stat_counter", metadata !126, metadata !"long long unsigned int", i32 0, i32 63}
 !126 = metadata !{metadata !127}
-!127 = metadata !{metadata !"interrupt_r", metadata !58, metadata !"bool", i32 0, i32 0}
+!127 = metadata !{i32 0, i32 3, i32 1}
+!128 = metadata !{metadata !129}
+!129 = metadata !{i32 0, i32 0, metadata !130}
+!130 = metadata !{metadata !131}
+!131 = metadata !{metadata !"interrupt_r", metadata !58, metadata !"bool", i32 0, i32 0}

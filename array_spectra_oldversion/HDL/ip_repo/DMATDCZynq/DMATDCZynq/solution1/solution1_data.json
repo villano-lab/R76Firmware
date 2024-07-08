@@ -8,9 +8,9 @@
   "HostMachineBits": "64",
   "Target": {
     "Family": "zynq",
-    "Device": "xc7z045",
-    "Package": "ffg676",
-    "Speed": "-1"
+    "Device": "xc7z030",
+    "Package": "fbg676",
+    "Speed": "-2"
   },
   "HlsSolution": {
     
@@ -28,10 +28,10 @@
     "Vendor": "NuclearInstruments",
     "Library": "hls",
     "Name": "data_mover",
-    "Version": "1.0",
-    "DisplayName": "GEMINI_TDC_DMA",
-    "Description": "GEMINI_TDC_DMA",
-    "Taxonomy": "\/VIVADO_HLS_IP"
+    "Version": "2.0",
+    "DisplayName": "data_mover",
+    "Description": "DMA for X5560",
+    "Taxonomy": "\/hlsdma"
   },
   "Files": {
     "CSource": ["..\/..\/DmaTDC.cpp"],
@@ -49,14 +49,14 @@
       "impl\/verilog\/data_mover.v"
     ],
     "SwDriver": [
-      "impl\/misc\/drivers\/data_mover_v1_0\/data\/data_mover.mdd",
-      "impl\/misc\/drivers\/data_mover_v1_0\/data\/data_mover.tcl",
-      "impl\/misc\/drivers\/data_mover_v1_0\/src\/Makefile",
-      "impl\/misc\/drivers\/data_mover_v1_0\/src\/xdata_mover.c",
-      "impl\/misc\/drivers\/data_mover_v1_0\/src\/xdata_mover.h",
-      "impl\/misc\/drivers\/data_mover_v1_0\/src\/xdata_mover_hw.h",
-      "impl\/misc\/drivers\/data_mover_v1_0\/src\/xdata_mover_linux.c",
-      "impl\/misc\/drivers\/data_mover_v1_0\/src\/xdata_mover_sinit.c"
+      "impl\/misc\/drivers\/data_mover_v2_0\/data\/data_mover.mdd",
+      "impl\/misc\/drivers\/data_mover_v2_0\/data\/data_mover.tcl",
+      "impl\/misc\/drivers\/data_mover_v2_0\/src\/Makefile",
+      "impl\/misc\/drivers\/data_mover_v2_0\/src\/xdata_mover.c",
+      "impl\/misc\/drivers\/data_mover_v2_0\/src\/xdata_mover.h",
+      "impl\/misc\/drivers\/data_mover_v2_0\/src\/xdata_mover_hw.h",
+      "impl\/misc\/drivers\/data_mover_v2_0\/src\/xdata_mover_linux.c",
+      "impl\/misc\/drivers\/data_mover_v2_0\/src\/xdata_mover_sinit.c"
     ],
     "Misc": ["impl\/misc\/logo.png"]
   },
@@ -120,6 +120,15 @@
       "ctype": {"DATA": {
           "Type": "integer signed",
           "Width": "32"
+        }}
+    },
+    "fifo_resetn": {
+      "type": "data",
+      "dir": "out",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "1"
         }}
     },
     "interrupt_r": {
@@ -799,6 +808,10 @@
       "dir": "out",
       "width": "1"
     },
+    "fifo_resetn": {
+      "dir": "out",
+      "width": "1"
+    },
     "interrupt_r": {
       "dir": "out",
       "width": "1"
@@ -909,6 +922,13 @@
       "handshakeRef": "ap_vld",
       "firstOutLatency": "0"
     },
+    "fifo_resetn": {
+      "interfaceRef": "fifo_resetn",
+      "dir": "out",
+      "dataWidth": "1",
+      "handshakeRef": "ap_none",
+      "firstOutLatency": "13"
+    },
     "interrupt_r": {
       "interfaceRef": "interrupt_r",
       "dir": "out",
@@ -944,15 +964,15 @@
           }],
         "Area": {
           "BRAM_18K": "20",
-          "FF": "2254",
-          "LUT": "2522",
+          "FF": "2223",
+          "LUT": "2531",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2019-07-10 15:09:44 +0200",
+    "Time": "2023-12-29 07:58:11 +0100",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

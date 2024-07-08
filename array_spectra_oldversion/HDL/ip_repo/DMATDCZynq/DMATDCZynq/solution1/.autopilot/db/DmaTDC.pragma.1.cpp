@@ -28301,59 +28301,63 @@ void data_mover( volatile ram_word *a,
      int *debug_inbuffer_pointer,
      bus_word *debug_dst_var,
      bool run,
+     bool *fifo_resetn,
      ap_uint<32> DDROFFSET,
      uint64_t stat_counter[4],
      bool *interrupt_r
      )
 
 {_ssdm_SpecArrayDimSize(buffer_seq,2);_ssdm_SpecArrayDimSize(bufsize,2);_ssdm_SpecArrayDimSize(stat_counter,4);
+_ssdm_op_SpecInterface(fifo_resetn, "ap_none", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+#36 "DmaTDC.cpp"
+
 _ssdm_op_SpecInterface(interrupt_r, "ap_ovld", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(stat_counter, "s_axilite", 0, 0, "", 0, 0, "axil", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(&DDROFFSET, "s_axilite", 0, 0, "", 0, 0, "axil", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(run, "s_axilite", 0, 0, "", 0, 0, "axil", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(debug_dst_var, "ap_ovld", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(debug_inbuffer_pointer, "ap_ovld", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(debug_buf0_p, "ap_ovld", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(debug_bufsel_0, "ap_ovld", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(debug_buffer_status, "ap_ovld", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(bufsize, "s_axilite", 0, 0, "", 0, 0, "axil", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(buffer_seq, "s_axilite", 0, 0, "", 0, 0, "axil", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(buffer_ack, "s_axilite", 0, 0, "", 0, 0, "axil", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(buffer_status, "s_axilite", 0, 0, "", 0, 0, "axil", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(&stream0, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(a, "m_axi", 0, 0, "", 0, 32, "", "", "", 16, 16, 16, 16, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
 _ssdm_op_SpecInterface(0, "ap_ctrl_none", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-#35 "DmaTDC.cpp"
+#36 "DmaTDC.cpp"
 
  static bool bufstatus[2]= {false};
  static uint64_t bsq[2] = {0};
@@ -28376,8 +28380,12 @@ _ssdm_op_SpecInterface(0, "ap_ctrl_none", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0
  static bus_word tmpvar[4];
  static short int inner_counter=0;
 
+ static bool clear_fifo = false;
+
  if (run)
  {
+
+  clear_fifo = false;
 
  if (bufstatus[bufsel] == false)
  {
@@ -28448,7 +28456,7 @@ _ssdm_op_SpecInterface(0, "ap_ctrl_none", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0
     seq_buf:for (i=0;i<2;i++)
     {
 _ssdm_Unroll(0,0,0, "");
-#127 "DmaTDC.cpp"
+#132 "DmaTDC.cpp"
 
      buffer_seq[i] = bsq[i];
     }
@@ -28465,7 +28473,7 @@ _ssdm_Unroll(0,0,0, "");
  reset_flag_loop:for (i=0;i<2;i++)
  {
 _ssdm_Unroll(0,0,0, "");
-#141 "DmaTDC.cpp"
+#146 "DmaTDC.cpp"
 
   if (( ((obuffer_ack>>i) & 0x01) == false) && ( ((buffer_ack>>i) & 0x01) == true))
   {
@@ -28519,7 +28527,7 @@ _ssdm_Unroll(0,0,0, "");
   seq_buf2:for (i=0;i<2;i++)
   {
 _ssdm_Unroll(0,0,0, "");
-#192 "DmaTDC.cpp"
+#197 "DmaTDC.cpp"
 
   buffer_seq[i] = 0;
   bufsize[i] =0;
@@ -28527,5 +28535,7 @@ _ssdm_Unroll(0,0,0, "");
  }
 
   *interrupt_r=false;
+  clear_fifo = true;
  }
+ *fifo_resetn = not clear_fifo;
 }

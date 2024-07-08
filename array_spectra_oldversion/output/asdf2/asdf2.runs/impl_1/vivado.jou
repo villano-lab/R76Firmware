@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Jul  8 12:48:06 2024
+# Process ID: 23084
+# Current directory: C:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.runs/impl_1
+# Command line: vivado.exe -log TOP_asdf2.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source TOP_asdf2.tcl -notrace
+# Log file: C:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.runs/impl_1/TOP_asdf2.vdi
+# Journal file: C:/Users/hellmala/Documents/GitHub/R76Firmware/array_spectra_oldversion/output/asdf2/asdf2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source TOP_asdf2.tcl -notrace
