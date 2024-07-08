@@ -1,0 +1,31 @@
+#define SCI_REG_pol 0x00000000
+#define SCI_REG_hithrs 0x00000001
+#define SCI_REG_lothrsh 0x00000002
+#define SCI_REG_inhib 0x00000003
+#define SCI_REG_gatel 0x00000004
+#define SCI_REG_gateu 0x00000005
+#define SCI_REG_delay 0x00000006
+#define SCI_REG_xdelay 0x00000007
+#define SCI_REG_inttime 0x00000008
+#define SCI_REG_preint 0x00000009
+#define SCI_REG_pileup 0x0000000A
+#define SCI_REG_gain 0x0000000B
+#define SCI_REG_ofs 0x0000000C
+#define SCI_REG_bl 0x0000000D
+#define SCI_REG_CH 0x0000000E
+#define SCI_REG_Spectrum_0_FIFOADDRESS 0x10000
+#define SCI_REG_Spectrum_0_STATUS 0x20000
+#define SCI_REG_Spectrum_0_CONFIG 0x20001
+#define SCI_REG_Spectrum_0_CONFIG_LIMIT 0x20002
+#define SCI_REG_Spectrum_0_CONFIG_REBIN 0x20003
+#define SCI_REG_Spectrum_0_CONFIG_MIN 0x20004
+#define SCI_REG_Spectrum_0_CONFIG_MAX 0x20005
+
+#define SCI_REG_Spectrum_1_FIFOADDRESS 0x30000
+#define SCI_REG_Spectrum_1_STATUS 0x40000
+#define SCI_REG_Spectrum_1_CONFIG 0x40001
+#define SCI_REG_Spectrum_1_CONFIG_LIMIT 0x40002
+#define SCI_REG_Spectrum_1_CONFIG_REBIN 0x40003
+#define SCI_REG_Spectrum_1_CONFIG_MIN 0x40004
+#define SCI_REG_Spectrum_1_CONFIG_MAX 0x40005
+

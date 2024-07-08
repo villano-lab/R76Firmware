@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
 	if(verbose > 0){
 		printf("Running in verbose mode. Verbosity: %d\n",verbose);
 	};
-	
+
 	//Connect to the board.
 	int connect_q = connect_staticaddr(verbose);
 	if(connect_q != 0){
@@ -103,13 +103,7 @@ int main(int argc, char* argv[])
 		return reset_q;
 	}
 	tic = time(NULL);
-	//ensure we are not force-quitting the write process!
-	stopwrite_q = REG_stopwrite_SET(0,&handle);
-	if(stopwrite_q != 0){
-		printf("Error! Failed to set the `stopwrite` variable.\n");
-		return stopwrite_q;
-	}
-	
+
 	// Spectrum section
 	/* this doesn't work, and I don't think it has ever worked.
 	spectra_PARAMS(spectra_t,0,0,0);

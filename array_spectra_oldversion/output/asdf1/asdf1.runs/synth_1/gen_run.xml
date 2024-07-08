@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z030fbg676-2" LaunchTime="1720293263">
+  <File Type="PA-TCL" Name="TOP_asdf1.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="TOP_asdf1_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="TOP_asdf1_reports.tcl"/>
+  <File Type="RDS-RDS" Name="TOP_asdf1.vds"/>
+  <File Type="RDS-UTIL" Name="TOP_asdf1_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="TOP_asdf1_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="TOP_asdf1.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="TOP_asdf1_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="TOP_asdf1_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0.xcix">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/clk_wiz_0.xcix"/>
+        <Attr Name="ImportTime" Val="1670932720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/clk_wiz_0/clk_wiz_0.xci"/>
+        <Attr Name="ImportTime" Val="1551107590"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/fifo_generator_0.xcix">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/fifo_generator_0.xcix"/>
+        <Attr Name="ImportTime" Val="1670932720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/fifo_generator_0/fifo_generator_0.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/fifo_generator_0/fifo_generator_0.xci"/>
+        <Attr Name="ImportTime" Val="1525100660"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/main_clock/main_clock.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/main_clock.xci"/>
+        <Attr Name="ImportTime" Val="1670932720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/subpage_subdesign_1.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/subpage_subdesign_1.vhd"/>
+        <Attr Name="ImportTime" Val="1720293040"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/subpage_subdesign_2.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/subpage_subdesign_2.vhd"/>
+        <Attr Name="ImportTime" Val="1720293040"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/top_asdf1.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/top_asdf1.vhd"/>
+        <Attr Name="ImportTime" Val="1720293037"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/ADC1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/ADC1.v"/>
+        <Attr Name="ImportTime" Val="1670932720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/ADC2.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/ADC2.v"/>
+        <Attr Name="ImportTime" Val="1670932720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/adcs_top.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/adcs_top.vhd"/>
+        <Attr Name="ImportTime" Val="1670932720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/adc_interface.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/adc_interface.vhd"/>
+        <Attr Name="ImportTime" Val="1670932720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/avalon_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/avalon_wrapper.vhd"/>
+        <Attr Name="ImportTime" Val="1720293037"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/charge_integratiobkb.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/charge_integratiobkb.vhd"/>
+        <Attr Name="ImportTime" Val="1670932722"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/charge_integration.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/charge_integration.vhd"/>
+        <Attr Name="ImportTime" Val="1670932722"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/polinvert.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/polinvert.vhd"/>
+        <Attr Name="ImportTime" Val="1720293039"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/trigger_leading.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/trigger_leading.vhd"/>
+        <Attr Name="ImportTime" Val="1670932722"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/xlx_delay.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/xlx_delay.vhd"/>
+        <Attr Name="ImportTime" Val="1670932724"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/xlx_soft_gd.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/xlx_soft_gd.vhd"/>
+        <Attr Name="ImportTime" Val="1670932724"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/xlx_spectrum.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/xlx_spectrum.vhd"/>
+        <Attr Name="ImportTime" Val="1720293037"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HDL/pcores/ZynqDesign_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/pcores/ZynqDesign_wrapper.vhd"/>
+        <Attr Name="ImportTime" Val="1670932720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/ZynqDesign/ZynqDesign.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="TOP_asdf1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/HDL/DT5560_pins.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../HDL/DT5560_pins.xdc"/>
+        <Attr Name="ImportTime" Val="1670932720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_us_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axis_data_fifo_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FIRMWAREBUILD_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FIRMWAREOPTIONS_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_cc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_util_vector_logic_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_util_vector_logic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_cc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_auto_pc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FirmwareStatus_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_NIDNAPort_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_OPTOLINK_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axis_data_fifo_3_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_IICBaseInterconnection_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_RESET_TX_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FS_0_AXIFIFO_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axi_amm_bridge_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_OPTOLINK_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axi_iic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_rst_ps7_0_125M1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axis_data_fifo_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_FIRMWAREVERSION_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_ADCSyncModule_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_RESET_RX_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_tft_display_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_axis_data_fifo_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_data_mover_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_rst_ps7_0_125M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ZynqDesign_processing_system7_0_0"/>
+</GenRun>

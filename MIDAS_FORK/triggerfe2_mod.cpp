@@ -9,7 +9,7 @@
  decisions depending on the trigger mode, and writes trigger information
  to the ODB.
  Creators: Scott Oser & Bill Page (UBC)
- \********************************************************************/
+ ********************************************************************/
 
 #include <vector>
 #include <stdio.h>
@@ -65,16 +65,16 @@ char  strin[256];
 HNDLE hDB, hSet;
 
 // Maximum number of towerfe3.exe's allowed
-const  INT max_tower_number = 30;
+const INT max_tower_number = 2;
 // maximum number of trigger primitives kept in memory for each tower
 const INT CBSIZE = 6000;
 //max number of DCRCs
-const INT MAX_DCRCs = 150;
+const INT MAX_DCRCs = 15;
 
 
 //Two arrays that are used in order to check if a tower has crashed.
-// The enable_tower is set by the user in frontend_init(), a 1 used for any 
-// tower that should be working. 
+// The enable_tower is set by the user in frontend_init(), a 1 used for any
+// tower that should be working.
 BOOL enable_tower[max_tower_number+1] = {0};
 // The tower mask is initially zero.  It is populated with ones in the
 // take_tower_attendance function if the tower is supposed to be enabled
@@ -89,8 +89,8 @@ const INT FULL_READOUT = 1;
 INT trigmode = FULL_READOUT;
 
 // While loops are implemented to wait for towerfe to read the triggers and
-// read the waveforms from the DCRCs. tower attendance is taken after this 
-// many seconds 
+// read the waveforms from the DCRCs. tower attendance is taken after this
+// many seconds
 const double WAVEFORM_WAIT_TIME = 3.5;
 const double RTREQUEST_WAIT_TIME = 3.5;
 
@@ -99,7 +99,7 @@ const double RTREQUEST_WAIT_TIME = 3.5;
 // in the dcrc occurs at 0.00005-0.00015s.  This way we have some pileup
 // rejection when testing on noise.  In real life this will be changed to
 // something based on the waveform length, and controlled by the ODB
-double PILEUP_CUT= 0.0001; 
+double PILEUP_CUT= 0.0001;
 
 // Structure to contain information for each trigger primitive returned
 typedef struct {
@@ -122,15 +122,12 @@ typedef struct {
 trigger_prim trigprim[MAX_DCRCs+1][CBSIZE];
 buff_index circbuff[MAX_DCRCs+1];
 
-
-
 // Length of trigger primitive buffer from each tower
 // Up to 500 triggers per poll x 13 bytes per trigger + 8 header bytes
 const int headerbytes=8;
 const int trigprimbufsize = headerbytes + 13*500;
 // Length of trigger output buffer for each tower
 const int trigoutbufsize = headerbytes + 13*500;
-
 
 // Some variables for taking BOR and EOR randoms [ANV]
 bool DID_RANDOMS = false;
@@ -171,7 +168,7 @@ INT generate_random_sequence (unsigned char trigout[max_tower_number][trigoutbuf
 BOOL initialize_randoms_info (void);
 BOOL defer_for_end_randoms(int transition, BOOL first);
 BOOL init_tower_and_buffer_params(void);
-INT write_triglist_to_odb (unsigned char trigout[max_tower_number][trigoutbufsize]); 
+INT write_triglist_to_odb (unsigned char trigout[max_tower_number][trigoutbufsize]);
 
 
 // Takes the triggers index and the triggers dcrc, the time of the
@@ -180,8 +177,8 @@ INT write_triglist_to_odb (unsigned char trigout[max_tower_number][trigoutbufsiz
 // trigger occurs within a globally determined pileup cut
 bool pileup(int triggers_dcrc, int triggers_index);
 
-// Populates the enable_tower[] array  with the ODB boolean variable 
-// /Equipment/Tower#/Settings/EnabledForTrigger 
+// Populates the enable_tower[] array  with the ODB boolean variable
+// /Equipment/Tower#/Settings/EnabledForTrigger
 void set_tower_list();
 
 // Checks the enable_tower[] array agains the first failed variable
@@ -379,7 +376,7 @@ void set_tower_list(){
 }
 
 
-//loop over all the tower and set the towermask array to 1 for malfunctioning 
+//loop over all the tower and set the towermask array to 1 for malfunctioning
 // towers.  Currently it even checks towers that are not enabled.  Maybe
 // this should be altered to check only enabled towers.
 void take_tower_attendance(){
@@ -390,11 +387,11 @@ void take_tower_attendance(){
   int enabled_tower_count = 0;
 
   DWORD first_failed;
-  int size = sizeof(first_failed);  
+  int size = sizeof(first_failed);
   for(int tower = 1; tower < max_tower_number; tower++){
-    
+
     sprintf (set_str,"/Programs/towerfe3_%02d/First failed", tower);
-    int foundkey = db_find_key(hDB, 0, set_str, &hkey);   
+    int foundkey = db_find_key(hDB, 0, set_str, &hkey);
     if (foundkey == SUCCESS) {
       db_get_data(hDB,hkey,&first_failed,&size,TID_DWORD);
     } else {
@@ -416,7 +413,7 @@ void take_tower_attendance(){
       towermask[tower] = 1;
       crashed_tower_count += 1;
       printf("Tower %d is supposed to be diabled for trigger but is running (first failed = %d,enable_tower[%d] = %d), towermask[%d] set to 1 \n", tower, first_failed, tower, enable_tower[tower], tower);
-    } 
+    }
     else{
       towermask[tower] = 0;
     }
@@ -424,8 +421,6 @@ void take_tower_attendance(){
   printf("Done with tower attendance.  %d of %d enabled towers are malfunctioning.\n", crashed_tower_count, enabled_tower_count);
 
 }
-
-    
 
 /*-- Event readout -------------------------------------------------*/
 INT form_triggers(char *pevent, INT off)
@@ -438,14 +433,16 @@ INT form_triggers(char *pevent, INT off)
   for (int tower=1;tower<max_tower_number; tower++) {
     trigout[tower][0] = 0;
     trigout[tower][1] = 0;
+	printf("cleared 1st two values (%d, %d).\n",trigout[tower][0],trigout[tower][1]);
   }
+
+//std::cout << "providing the following (Grep) trigoutbufsize " << trigoutbufsize << std::endl;
 
   /***************BEGIN: Generate Trigger Primitives for Fetching*******************/
   //first clause of if statement generates randoms for BOR random strings if necessary
   //after they are completed we should go into the second clause only until the end-of-run randoms
-  //sequence is initiated by "stopping" the run. 
+  //sequence is initiated by "stopping" the run.
   if(NR>0 && !DID_RANDOMS && FR>0 && RAND_ACCUMULATED<NR){
-
     // get those randoms
     int nrand=0;
     printf("generating random sequence...\n");
@@ -457,45 +454,42 @@ INT form_triggers(char *pevent, INT off)
     printf("Accumulated %d random events\n",RAND_ACCUMULATED);
     if(RAND_ACCUMULATED>=NR)
       printf("Finished accumulating randoms with %d random events\n",RAND_ACCUMULATED);
-
-  }
-  else if(!DOING_EOR){
+  }else if(!DOING_EOR){
     request_rts();
 
-
     // Load the trigger primitive information from the ODB
-    // Only fetch primitives for the towers that are enabled and that we expect 
-    // to be running 
+    // Only fetch primitives for the towers that are enabled and that we expect
+    // to be running
     for (int tower=1;tower<=max_tower_number; tower++){
-      if(towermask[tower] == 1 || enable_tower[tower] == 0) continue; 
+      if(towermask[tower] == 1 || enable_tower[tower] == 0) continue;
+	std::cout << "tower " << tower << " fetching primitives...\n";
       fetch_primitives(tower);
     }
 
-
-//   Apply a trigger algorithm and create the list of waveforms we want 
+//   Apply a trigger algorithm and create the list of waveforms we want
 //   to read.  This will go back into the ODB.
-      printf ("Running basic_trigger algorithm now.\n");
-      basic_trigger(trigout);
+  printf("check 1st two values (%d, %d).\n",trigout[1][0],trigout[1][1]);
+      //printf ("Running basic_trigger algorithm now.\n");
+      basic_trigger(trigout); //so in here, it's always getting the triggers back.
+printf("check 1st two values (%d, %d).\n",trigout[1][0],trigout[1][1]);
 
-      printf ("Running generate_inrun_randoms algorithm now.\n");
+      //printf ("Running generate_inrun_randoms algorithm now.\n");
       generate_inrun_randoms(trigout);
-  } 
+  }
   /***************END: Generate Trigger Primitives for Fetching*******************/
 
-//  for (int i=1; i<max_tower_number; i++) 
+//  for (int i=1; i<max_tower_number; i++)
 //    printf ("Trigs test: %d on tower%2d\n",trigout[i][1]+256*trigout[i][0],i);
 
   // Write the character buffers to the ODB
   write_triglist_to_odb(trigout);
-
 
   // Wait until the wavform have been fetched
   // First check which towers are alive.
   take_tower_attendance();
   printf ("Waiting for waveform fetching.\n");
 
-
-  //here we poopulate the int state with the valua of 
+  //here we poopulate the int state with the valua of
   //Runinfo/Transition in progres in the ODB, which equals 0 if run
   //is ongoing but is set to 2 if the system is in the transition state
   // where you've told it to stop but it has not.
@@ -506,13 +500,12 @@ INT form_triggers(char *pevent, INT off)
   sprintf (run_state_str,"/Runinfo/Transition in progress");
   int found_state_key = db_find_key(hDB, 0, run_state_str, &run_state_key);
 
-
   HNDLE hkey;
   char keyname[80];
   int size = trigoutbufsize;
   for (int i=1; i<max_tower_number; i++) {
 // Only wait for waveform fetching for towers that will actually fetch waveforms (enabled and running)
-    if (towermask[i] == 1 || enable_tower[i] == 0) continue; 
+    if (towermask[i] == 1 || enable_tower[i] == 0) continue;
     sprintf (keyname,"/Equipment/Tower%02d/TriggerList/triggerlist", i);
     unsigned char buff[trigoutbufsize];
     if (db_find_key(hDB,0,keyname, &hkey) == DB_SUCCESS) {
@@ -520,7 +513,7 @@ INT form_triggers(char *pevent, INT off)
       struct timeval start,stop;
       gettimeofday(&start, NULL);
       int timer_increment = 0;
-      // To satisfy the while loop condition, there must be no values in the first
+      // To satisfy the while loop condition, there must be *no* values in the first
       //2 elements of the buff array (which is populated by the triggerlist in the ODB),
       // and the tower must be running.  Additionally, the state variable must not be 2.
       //if it is 2, this means the program is in some transition where you've told it to
@@ -529,10 +522,10 @@ INT form_triggers(char *pevent, INT off)
       while (toberead > 0 && towermask[i] == 0 && state != 2) {
 	db_get_data(hDB,hkey,buff,&size,TID_CHAR);
 	toberead = 256*buff[0]+buff[1];
-	
+
 	gettimeofday(&stop, NULL);
 	float while_loop_time = stop.tv_sec-start.tv_sec + 0.000001*(stop.tv_usec-start.tv_usec);
-	
+
 	//issue a print statement every 1/2 second required to wait for a tower to fetch waveforms
 	if(while_loop_time > 0.5*timer_increment){
 	  printf("waiting for Tower%d waveform fetching for %fs\nwill wait for %fs before taking attendance\n", i, while_loop_time, WAVEFORM_WAIT_TIME);
@@ -543,32 +536,26 @@ INT form_triggers(char *pevent, INT off)
 	if (while_loop_time >WAVEFORM_WAIT_TIME){
 	  printf("taking tower attendance from the waveform loop\n");
 	  take_tower_attendance();
-	  
-	  if(found_state_key == SUCCESS){
-	    db_get_data(hDB, run_state_key,&state,&size_state,TID_INT);
-	  }
-	  
+
+	  if(found_state_key == SUCCESS) db_get_data(hDB, run_state_key,&state,&size_state,TID_INT);
+
 	  printf("\n\n the value of state (transition in progress is %d\n\n", state);
-	  
-	}
-      }
-    }
-    if (towermask[i] == 1){printf ("Did not clear hurdle tower%02d. crashed sometime during waveform fetching\n", i);
-    }
-    else{printf ("Cleared hurdle tower%02d\n", i);}
-  }
+	} // end check for tower crash
+      } //end while loop over toberead,towermask,state
+    } //end if statement checking db_find_key
+    if (towermask[i] == 1)printf ("Did not clear hurdle tower%02d. crashed sometime during waveform fetching\n", i);
+    else printf ("Cleared hurdle tower%02d\n", i);
+  } //end for loop over towers
   printf ("Done waiting for waveform fetching.\n");
 
-  bk_init32(pevent);
-  return bk_size(pevent);
+  bk_init32(pevent); //your definition is in another file.
+  return bk_size(pevent); //your definition is in another file.
 }
 
+INT write_triglist_to_odb  (unsigned char trigout[max_tower_number][trigoutbufsize]) {
 
-
-INT write_triglist_to_odb  (unsigned char trigout[max_tower_number][trigoutbufsize]) { 
-
-  // Code to read from the trigger buffer and set up the list of        
-  // waveforms to request.    
+  // Code to read from the trigger buffer and set up the list of
+  // waveforms to request.
   HNDLE hkey;
   char keyname[80];
 
@@ -586,29 +573,30 @@ INT write_triglist_to_odb  (unsigned char trigout[max_tower_number][trigoutbufsi
   }
   // End kludge to compare priminfo to trigout */
 
-
   for (int tower=1;tower<max_tower_number;tower++) {
     int numTriggers = trigout[tower][0]*256+trigout[tower][1];
+	std::cout << "Here I am; numTriggers in write_triglist_to_odb for tower " << tower << " is " << numTriggers << std::endl;
     if (numTriggers == 0) continue;
     sprintf (keyname,"/Equipment/Tower%02d/TriggerList/triggerlist", tower);
     unsigned char buff[trigoutbufsize];
-    
-    for (int i=0; i<trigoutbufsize; i++) buff[i]=trigout[tower][i];
+
+    printf("providing the following values to triggerlist: ");
+    for (int i=0; i<trigoutbufsize; i++){
+	 buff[i]=trigout[tower][i];
+	printf("%d ",buff[i]);
+    }
+    printf("\n");
 
     // Find the tower's ODB key and write to it
     int status = db_find_key(hDB,0,keyname, &hkey);
     if (status == SUCCESS) db_set_data(hDB,hkey,buff,sizeof(buff),trigoutbufsize,TID_CHAR);
   }
-
   return 1;
 }
 
-
-
 INT fetch_primitives (int thistower) {
-
-  // Code to read from the trigger buffer and set up the list of        
-  // waveforms to request.    
+  // Code to read from the trigger buffer and set up the list of
+  // waveforms to request.
   HNDLE hkey;
   char keyname[80];
   sprintf (keyname,"/Equipment/Tower%02d/TriggerList/priminfo", thistower);
@@ -622,12 +610,9 @@ INT fetch_primitives (int thistower) {
     // circular buffer.  These will become the starting entry for the
     // poll, after we read in thte new data
     int list_of_next_entries[MAX_DCRCs];
-    for (int i=0; i<MAX_DCRCs; i++) 
-            list_of_next_entries[i]=circbuff[i].next_entry;
-
+    for (int i=0; i<MAX_DCRCs; i++) list_of_next_entries[i]=circbuff[i].next_entry;
 
   if (db_find_key(hDB,0,keyname, &hkey) == DB_SUCCESS) {
-
     // Fetch the data from the trigger buffer for this tower, and unpack it
     int size = trigprimbufsize;
     db_get_data(hDB,hkey,buff,&size,TID_CHAR);
@@ -637,14 +622,14 @@ INT fetch_primitives (int thistower) {
     // Bytes 2-5: time at which trigger primitives were read out
     // Bytes 6-7: value of "rd 0" when trigger primitives were read out
     int numTriggers = buff[0]*256+buff[1];
-    int current_time = (buff[2] << 24) + (buff[3] << 16) 
-                              + (buff[4] << 8) + (buff[5]);
+	std::cout << "numTriggers: " << numTriggers << std::endl;
+    int current_time = (buff[2] << 24) + (buff[3] << 16) + (buff[4] << 8) + (buff[5]);
     int rd0stamp = buff[6]*256+buff[7];
 
+#define FETCH_PRIM_COMMENTS
 #ifdef FETCH_PRIM_COMMENTS
-    printf ("Got %d triggers in buffer at time %d for tower %d\n", numTriggers, current_time,thistower); 
+    printf ("Got %d numTriggers in buffer at time %d for tower %d\n", numTriggers, current_time,thistower); 
 #endif
-
 
     // Loop through the triggers and unpack them, storing the trigger
     // primitives in the circular buffers of the relevant DCRCs
@@ -663,15 +648,14 @@ INT fetch_primitives (int thistower) {
       // Byte 8: which DCRCs to read--ignore this byte
       // Bytes 9-12: trigger origin word---lower 10 bits give which DCRC
       int buffindex = headerbytes+13*i;
-      int thisdcrc = 
-	buff[buffindex+12]+(buff[buffindex+11] & 0x02)*256;
+      int thisdcrc = buff[buffindex+12]+(buff[buffindex+11] & 0x02)*256;
       // Point index to the next free slot in this DCRC's circular buffer
       int index = circbuff[thisdcrc].next_entry % CBSIZE;
 
       //Now let's fill in the trigger primitive information
       // First check which channels triggered
 
-      unsigned int triggeringchannels; 
+      unsigned int triggeringchannels;
       std::stringstream ss;
       ss << std::hex << buff[buffindex+0] << buff[buffindex+1];
       ss >> triggeringchannels;
@@ -680,18 +664,16 @@ INT fetch_primitives (int thistower) {
 #endif
       for (int k=0;k<16;k++) {
 	trigprim[thisdcrc][index].chantrig[k] = FALSE;
-	if (triggeringchannels & (0x1 << k)) 
-	  trigprim[thisdcrc][index].chantrig[k] = TRUE;
-      }
+	if (triggeringchannels & (0x1 << k)) trigprim[thisdcrc][index].chantrig[k] = TRUE;
+      }//end for k
 #ifdef FETCH_PRIM_COMMENTS
       for (int k=16;k>=0;k--) {
 	if (trigprim[thisdcrc][index].chantrig[k] == TRUE) {
 	  printf ("1");}
 	else  {printf ("0");}
-      }
+      }//end for k
       printf ("\n");
 #endif
-
 
       // Now encode the DCRC rollover counter value.  Hardwired to zero for
       // now since it's not actually implemented in the current DCRC
@@ -708,35 +690,38 @@ INT fetch_primitives (int thistower) {
       printf (" at time %f\n", trigprim[thisdcrc][index].acq_time);
 #endif
 
-      circbuff[thisdcrc].next_entry = 
-	((circbuff[thisdcrc].next_entry + 1) % CBSIZE); 
+	std::cout << "circbuff info (pre): " << circbuff[thisdcrc].next_entry << ", "
+		<< circbuff[thisdcrc].start_last_poll << std::endl;
+      circbuff[thisdcrc].next_entry = ((circbuff[thisdcrc].next_entry + 1) % CBSIZE);
+	std::cout << "circbuff info: " << circbuff[thisdcrc].next_entry << ", "
+		<< circbuff[thisdcrc].start_last_poll << std::endl;
 #ifdef FETCH_PRIM_COMMENTS
       printf ("Unpacked trigger on DCRC%d and updated the next entry ptr to %d\n", thisdcrc,circbuff[thisdcrc].next_entry);
 #endif
 
     } // end of loop over triggers in buffer---all are shoved into buffers
- 
 
     // Now update the pointers in the circular buffers
     // Store location of start the first entry just read out
-    for (int i=8*thistower; i<8*thistower+6; i++) 
-         circbuff[i].start_last_poll=list_of_next_entries[i];
- 
+	std::cout << "thistower: " << thistower << std::endl;
+    for (int i=8*thistower; i<8*thistower+6; i++){
+	circbuff[i].start_last_poll=list_of_next_entries[i];
+    }
+	circbuff[14].start_last_poll=list_of_next_entries[14];
+	circbuff[6].start_last_poll=list_of_next_entries[6];
 #ifdef FETCH_PRIM_COMMENTS
     printf ("Added %d entries to trigger primitive buffer on Tower%d\n",numTriggers, thistower);
 #endif
 
     // Now scan back to look for stale (more than 3.2s old) info
     // This code doesn't exist yet
-    
+
 
     // Simply return the number of triggers received and unpacked
     return numTriggers;
-  } 
+  }
   else { // If no trigger information successfully received
-   
     printf ("Didn't find %s, returning 0\n",keyname);
-   
     return 0;
 
   }
@@ -826,6 +811,7 @@ bool pileup(int triggers_dcrc, int triggers_index){
 		return TRUE;
 	}
 	*/
+
 	// above if statement commented out by MF on 2017 Dec 20
 	if(real_time_difference_prev < pileup_cut){
 		#ifdef PILEUP_COMMENTS
@@ -833,19 +819,20 @@ bool pileup(int triggers_dcrc, int triggers_index){
 		#endif
 		return TRUE;
 	}
-
-	return FALSE;     
+	return FALSE;
 }
-
 
 // Apply a simple trigger and write trigger banks as needed
 INT basic_trigger (unsigned char trigout[max_tower_number][trigoutbufsize]) {
-
 	// cycle through trigger primitives for each DCRC
-	for (int dcrc=1;dcrc<MAX_DCRCs;dcrc++){
+	for (int dcrc=14;dcrc<MAX_DCRCs;dcrc++){
 		int primstodo = circbuff[dcrc].next_entry - circbuff[dcrc].start_last_poll;
-		if (primstodo<0) primstodo += CBSIZE;
-
+		std::cout << "trigprims " << primstodo << std::endl;
+		if (primstodo<0){
+			std::cout << "Processing: primstodo was negative (" << primstodo << ").\n";
+			primstodo += CBSIZE;
+		}
+		#define TRIG_COMMENTS
 		#ifdef TRIG_COMMENTS
 			printf ("Processing %d trigprims from DCRC%d\n", primstodo,dcrc);
 		#endif
@@ -856,10 +843,10 @@ INT basic_trigger (unsigned char trigout[max_tower_number][trigoutbufsize]) {
 			if (!piledup) {
 				//	printf ("basic_trigger dealing with DCRC %d, %d\n", dcrc,i);
 
-				/// Encode a word that encodes the origin of the trigger.  Here is       
+				/// Encode a word that encodes the origin of the trigger.  Here is
 				/// the intended byte assignment:
 				/// bits 32-26: unused
-				/// bits 25-21: trigger type (types to be defined, 0=default)          
+				/// bits 25-21: trigger type (types to be defined, 0=default)
 				/// bits 20-14: tower of 2nd (coincident) trigger source
 				/// bits 13-11: DCRC# of 2nd (coincident) trigger source
 				/// bits 10-04: tower of 1st (primary) trigger source
@@ -884,7 +871,6 @@ INT basic_trigger (unsigned char trigout[max_tower_number][trigoutbufsize]) {
 				for (int tower=starttower; tower<endtower; tower++) {
 					if(towermask[tower] == 1 || enable_tower[tower] == 0) continue;
 
-
 					int numtrigs = 256*trigout[tower][0] + trigout[tower][1];
 					if (numtrigs >= (trigoutbufsize-headerbytes)/13) {
 						#ifdef TRIG_COMMENTS
@@ -900,7 +886,7 @@ INT basic_trigger (unsigned char trigout[max_tower_number][trigoutbufsize]) {
 					trigout[tower][k+10]= (trigorigin & 0x00ff0000) >> 16;
 					trigout[tower][k+11]= (trigorigin & 0x0000ff00) >> 8;
 					trigout[tower][k+12]= trigorigin & 0x000000ff;
-					for (int j=0; j<8; j++) trigout[tower][k+j] = 
+					for (int j=0; j<8; j++) trigout[tower][k+j] =
 					trigprim[dcrc][index].address[j];
 					numtrigs++;
 					// Update number of triggers
@@ -908,22 +894,15 @@ INT basic_trigger (unsigned char trigout[max_tower_number][trigoutbufsize]) {
 					trigout[tower][1] = (numtrigs & 0xff);
 					// In principle write some timestamp to array entries 2-7
 					// But these aren't being used currently, so set to zero
+					#define TRIG_COMMENTS
 					#ifdef TRIG_COMMENTS
 						printf ("Tower %d has %d triggers\n", tower,numtrigs);
 					#endif
 				}
-
-
-			} else {
-				// Stuff to do if trigger vetoed due to pileup lockout
-			}
-
+			}/* else { // Stuff to do if trigger vetoed due to pileup lockout }*/
 		} //end of loop over primitives to process for this DCRC
-
 	} // end of loop over DCRCs
-
 	return 0;
-
 }
 
 //initialize various globals related to BOR and EOR randoms
@@ -1042,18 +1021,18 @@ INT generate_random_sequence (unsigned char trigout[max_tower_number][trigoutbuf
   if (ran1(&idum) < remainder) num_rnd_to_generate++;
 
   //number of randoms generated for each tower
-  //each tower seems to have independent random trig times 
+  //each tower seems to have independent random trig times
   //are the triggers independent by tower too in this version? [ANV]
   int nrandgenerated=0;
-				
-  //FIXME: this code is nearly identical to the generate_inrun_randoms function, 
+
+  //FIXME: this code is nearly identical to the generate_inrun_randoms function,
   //that suggests a sub-function is appropriate [ANV]
   // Generate random triggers
   for (int iter=0; iter<num_rnd_to_generate; iter++) {
-    /// Encode a word that encodes the origin of the trigger.  Here is       
+    /// Encode a word that encodes the origin of the trigger.  Here is
     /// the intended byte assignment:
     /// bits 32-26: unused
-    /// bits 25-21: trigger type (types to be defined, 0=default)          
+    /// bits 25-21: trigger type (types to be defined, 0=default)
     /// bits 20-14: tower of 2nd (coincident) trigger source
     /// bits 13-11: DCRC# of 2nd (coincident) trigger source
     /// bits 10-04: tower of 1st (primary) trigger source
@@ -1063,14 +1042,14 @@ INT generate_random_sequence (unsigned char trigout[max_tower_number][trigoutbuf
     trigorigin = (0x1 << 20);
     // set all dcrcs to read out
     unsigned char dcrcstoread = 0x3f;
-    
+
     int starttower=1;
     int endtower=max_tower_number;
-    
+
     // Write the info to the output character buffer for affected towers
     for (int tower=starttower; tower<endtower; tower++) {
       if(towermask[tower] == 1 || enable_tower[tower] == 0) continue;
-      
+
       int numtrigs = 256*trigout[tower][0] + trigout[tower][1];
       if (numtrigs >= (trigoutbufsize-headerbytes)/13) {
 #ifdef TRIG_COMMENTS
@@ -1109,18 +1088,16 @@ INT generate_random_sequence (unsigned char trigout[max_tower_number][trigoutbuf
 	printf ("Tower %d has %d triggers\n", tower,numtrigs);
 #endif
     }
-    //increment number of randoms generated for each tower 
+    //increment number of randoms generated for each tower
     nrandgenerated++;
   }
-  
+
   //return the number of rands generated for each tower
   *nrand = nrandgenerated;
   return 0;
 }
 // Generate purely random triggers
 INT generate_inrun_randoms (unsigned char trigout[max_tower_number][trigoutbufsize]) {
-
-
   char set_str[80];
 
   sprintf(set_str, "/Equipment/Triggerfe2/Common/Period");
@@ -1130,19 +1107,19 @@ INT generate_inrun_randoms (unsigned char trigout[max_tower_number][trigoutbufsi
   float desired_num_events = rate_of_randoms*time_between_polls;
   int num_rnd_to_generate = int(desired_num_events);
   float remainder = desired_num_events-num_rnd_to_generate;
-  if (ran1(&idum) < remainder) num_rnd_to_generate++;
-				
-  printf ("Generating %d random triggers\n",num_rnd_to_generate);
-  
+  if (ran1(&idum) < remainder) num_rnd_to_generate++; //what?? does this mean
+							//generate a random number of randoms???
 
-  //FIXME: this code is nearly identical to the generate_random_sequence function, 
+  printf ("Generating %d random triggers\n",num_rnd_to_generate);
+
+  //FIXME: this code is nearly identical to the generate_random_sequence function,
   //that suggests a sub-function is appropriate [ANV]
   // Generate random triggers
   for (int iter=0; iter<num_rnd_to_generate; iter++) {
-    /// Encode a word that encodes the origin of the trigger.  Here is       
+    /// Encode a word that encodes the origin of the trigger.  Here is
     /// the intended byte assignment:
     /// bits 32-26: unused
-    /// bits 25-21: trigger type (types to be defined, 0=default)          
+    /// bits 25-21: trigger type (types to be defined, 0=default)
     /// bits 20-14: tower of 2nd (coincident) trigger source
     /// bits 13-11: DCRC# of 2nd (coincident) trigger source
     /// bits 10-04: tower of 1st (primary) trigger source
@@ -1152,14 +1129,14 @@ INT generate_inrun_randoms (unsigned char trigout[max_tower_number][trigoutbufsi
     trigorigin = (0x1 << 20);
     // set all dcrcs to read out
     unsigned char dcrcstoread = 0x3f;
-    
+
     int starttower=1;
     int endtower=max_tower_number;
-    
+
     // Write the info to the output character buffer for affected towers
     for (int tower=starttower; tower<endtower; tower++) {
       if(towermask[tower] == 1 || enable_tower[tower] == 0) continue;
-      
+
       int numtrigs = 256*trigout[tower][0] + trigout[tower][1];
       if (numtrigs >= (trigoutbufsize-headerbytes)/13) {
 #ifdef TRIG_COMMENTS
@@ -1197,28 +1174,21 @@ INT generate_inrun_randoms (unsigned char trigout[max_tower_number][trigoutbufsi
     }
   }
   return 0;
-  
 }
-
-
-
-
 
 // Command all of the towers to read triggers
 void request_rts (void) {
 
   HNDLE hkey;
   char keyname[80];
+  struct timeval start_rttimer,stop_rttimer;
 
   // Set the ODB variables for each tower to make it trigger
   printf("taking tower attendance from the start of requst rts\n");
   take_tower_attendance();
 
-
-  struct timeval start_rttimer,stop_rttimer;
   gettimeofday(&start_rttimer, NULL);
   printf ("\n\nStarting the rt_timer\n\n");
-
 
   for (int tower=1; tower<max_tower_number; tower++)  {
     if(towermask[tower] == 1 || enable_tower[tower] == 0) continue;
@@ -1233,34 +1203,28 @@ void request_rts (void) {
       db_set_data(hDB,hkey,&rtflag,sizeof(rtflag),1,TID_BYTE);
     }
 
-
-
-
     // Set the "request rt" flag that will signal towerfe to execute rt
     sprintf (keyname,"/Equipment/Tower%02d/TriggerList/rtRequest", tower);
     status = db_find_key(hDB, 0, keyname, &hkey);
     rtflag = 1;
     if (status == SUCCESS) {
       printf ("Setting rtRequest flag on Tower%02d\n", tower);
-      db_set_data(hDB,hkey,&rtflag,sizeof(rtflag),1,TID_BYTE); 
+      db_set_data(hDB,hkey,&rtflag,sizeof(rtflag),1,TID_BYTE);
     }
   }
-
 
   // Wait until the acknowledge rt flag is non-zero
   BYTE rtflag;
   int counter = 1;
-
   struct timeval start,stop;
   gettimeofday(&start, NULL);
- 
   int timer_increment = 0;
 
   while (counter > 0) {
     counter = 0;
     for (int tower=1; tower<max_tower_number; tower++) {
       if(towermask[tower] == 1 || enable_tower[tower] == 0) continue;
-      
+
       sprintf (keyname,"/Equipment/Tower%02d/TriggerList/rtAck", tower);
       int foundkey = db_find_key(hDB, 0, keyname, &hkey);
       int size = sizeof(rtflag);
@@ -1271,7 +1235,7 @@ void request_rts (void) {
 	status = 0;
       }
       if (status == SUCCESS) counter += rtflag;
-     
+
       gettimeofday(&stop, NULL);
       float while_loop_time = stop.tv_sec-start.tv_sec + 0.000001*(stop.tv_usec-start.tv_usec);
 
@@ -1284,18 +1248,15 @@ void request_rts (void) {
       if(while_loop_time > RTREQUEST_WAIT_TIME){
 	printf("taking tower attendance from the request rts loop\n");
 	take_tower_attendance();
-      } 
+      }
     }
   }
 
     gettimeofday(&stop_rttimer, NULL);
     float rt_time = stop_rttimer.tv_sec-start_rttimer.tv_sec + 0.000001*(stop_rttimer.tv_usec-start_rttimer.tv_usec);
     printf ("\n\nWhole rt_time: %f\n\n", rt_time);
-  
+
   printf ("Acknowledgement received from rt ... continuing\n");
-
-
-
 }
 
 

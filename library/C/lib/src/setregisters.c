@@ -180,7 +180,7 @@ int main(int argc, char* argv[]){
 				baseflag = 1;
 			}else if(strcasecmp(userinput, "n") == 0 || strcasecmp(userinput, "no") == 0 || userinput == "0"){
 				if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && polflag == 0 && baseflag == 0){
-					return 0;
+					return 6;
 				}
 				if(verbose>-1){printf("Proceeding with provided values only.");}
 			}else{
@@ -313,7 +313,7 @@ int main(int argc, char* argv[]){
 
 	//set skip
 	if(skipflag == 1){
-		skip_q = REG_skip_SET(skip,&handle);
+		skip_q = __abstracted_reg_write(skip,SCI_REG_io_divide,&handle);
 		if(skip_q != 0){
 			printf("Error from REG_skip_SET. Aborting.\n");
 			return skip_q;
@@ -323,8 +323,8 @@ int main(int argc, char* argv[]){
 	}
 
 	//set inhib
-	if(inhibflag == 1){	
-		inhib_q = REG_inhib_SET(inhib,&handle);	
+	if(inhibflag == 1){
+		inhib_q = __abstracted_reg_write(inhib,SCI_REG_trig_inhib,&handle);
 		if(inhib_q != 0){
 			printf("Error from REG_inhib_SET. Aborting.\n");
 			return inhib_q;
@@ -337,7 +337,7 @@ int main(int argc, char* argv[]){
 
 	//set polarity
 	if(polflag == 1){
-		polarity_q = REG_polarity_SET(polarity,&handle); 
+		polarity_q = __abstracted_reg_write(polarity,SCI_REG_trig_polarity,&handle);
 		if(polarity_q != 0){
 			printf("Error from REG_polarity_SET. Aborting.\n");
 			return polarity_q;
@@ -350,14 +350,14 @@ int main(int argc, char* argv[]){
 
 	//set gates
 	if(gateflagl == 1){
-		gate_lq 				= REG_gate_l_SET(gate_l,&handle);
+		gate_lq = __abstracted_reg_write(gate_l,SCI_REG_trig_gate_l,&handle);
 		if(gate_lq != 0){
 			printf("Error from REG_gate_l_SET. Aborting.\n");
 			return gate_lq;
 		}
 	}else if(verbose>1){printf("Gate flag is off. Skipping lower gate.\n");}
 	if(gateflagu == 1){
-		gate_uq					= REG_gate_u_SET(gate_u,&handle);
+		gate_uq	= __abstracted_reg_write(gate_u,SCI_REG_trig_gate_u,&handle);
 		if(gate_uq != 0){
 			printf("Error from REG_gate_u_SET. Aborting.\n");
 			return gate_uq;
@@ -368,7 +368,7 @@ int main(int argc, char* argv[]){
 
 	//set delay
 	if(delayflag == 1){
-		delay_q 	= REG_delay_SET(delay,&handle); 
+		delay_q = __abstracted_reg_write(delay,SCI_REG_trig_delay,&handle);
 		if(delay_q != 0){
 			printf("Error from REG_delay_SET. Aborting.\n");
 			return delay_q;
@@ -378,9 +378,9 @@ int main(int argc, char* argv[]){
 	}else if(verbose > 1){
 		printf("Delay flag is off. Skipping.\n");
 	}
-	
+
 	if(preflag == 1){
-		pre_int_q = REG_pre_int_SET(pre_int,&handle);
+		pre_int_q = __abstracted_reg_write(pre_int,SCI_REG_int_pre,&handle);
 		if(pre_int_q != 0){
 			printf("Error from REG_pre_int_SET. Aborting.\n");
 			return pre_int_q;
@@ -390,7 +390,7 @@ int main(int argc, char* argv[]){
 	}
 
 	if(intflag == 1){
-		int_time_q = REG_int_time_SET(int_time,&handle);
+		int_time_q = __abstracted_reg_write(int_time,SCI_REG_int_time,&handle);
 		if(pre_int_q != 0){
 			printf("Error from REG_int_time_SET. Aborting.\n");
 			return int_time_q;
@@ -400,7 +400,7 @@ int main(int argc, char* argv[]){
 	}
 
 	if(baseflag == 1){
-		baseline_q = REG_baseline_SET(baseline,&handle);
+		baseline_q = __abstracted_reg_write(baseline,SCI_REG_int_base,&handle);
 		if(baseline_q != 0){
 			printf("Error from REG_baseline_SET. Aborting.\n");
 			return baseline_q;

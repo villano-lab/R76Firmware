@@ -1,0 +1,4 @@
+name;type;address;value
+disable_det_CH0;Decimal;682010;0
+io_lemo2out;Decimal;682080;1
+reset;Decimal;68200A;1

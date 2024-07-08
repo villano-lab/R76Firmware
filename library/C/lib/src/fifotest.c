@@ -93,64 +93,42 @@ int main(int argc, char* argv[])
         for(i=0;i<24;i++){
                 printf("Status spectrum #%d: %d\n",i,spectra_t[i]);
         }
-	
-	//set up variables before reset.
-	read_q = REG_read_SET(0,&handle);
-	if(read_q != 0){
-		printf("Error! Failed to set the `read` variable.\n");
-		return read_q;
-	}
-	write_q = REG_write_SET(0,&handle);
-	if(write_q != 0){
-			printf("Error! Failed to set the `write` variable.\n");
-			return write_q;
-		}	
+
 	int i=0;
 
-	int_time_q = REG_int_time_SET(int_time,&handle);
+	int_time_q = __abstracted_reg_write(int_time,SCI_REG_int_time,&handle);
 	if(int_time_q != 0){
 		printf("Error! Failed to set the `int_time` variable. \n");
 		return int_time_q;
 	}
-	pre_int_q = REG_pre_int_SET(pre_int_q,&handle);
+	pre_int_q = __abstracted_reg_write(pre_int_q,SCI_REG_int_pre,&handle);
 	if(pre_int_q != 0){
 		printf("Error! Failed to set the `pre_int` variable. \n");
 		return pre_int;
 	}
-	baseline_q = REG_baseline_SET(baseline_q,&handle);
+	baseline_q = __abstracted_reg_write(baseline_q,SCI_REG_int_base,&handle);
 	if(baseline_q != 0){
 		printf("Error! Failed to set the `baseline` variable. \n");
 		return baseline;
 	}
 	if(verbose>0){printf("If you are not getting any triggers, please try resetting register values by running `./setregisters -R` and try again.\n");}
-	
+
 	//Reset everything real quick
-	reset_q = REG_reset_SET(1,&handle);
-	if(reset_q != 0){
-		printf("Error! Failed to set the 'reset' variable.\n");
-		return reset_q;
-	}	
 	reset_q = REG_reset_SET(0,&handle);
 	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
 	}
-	stopwrite_q = REG_stopwrite_SET(0,&handle);
-	if(stopwrite_q != 0){
-		printf("Error! Failed to set the `stopwrite` variable.\n");
-		return stopwrite_q;
+	reset_q = REG_reset_SET(1,&handle);
+	if(reset_q != 0){
+		printf("Error! Failed to set the 'reset' variable.\n");
+		return reset_q;
 	}
 	tic = time(NULL);
 	empty = 0;
 
-	read_q = REG_read_SET(1,&handle);
-	if(read_q != 0){
-		printf("Error! Failed to set the `read` variable.\n");
-		return read_q;
-	}
-	
 	if(verbose > 0){printf("Setup complete; starting acquisition.\n");}
-	
+
 	//Main loop!============================================================
 	// =====================================================================
 	// CPACK_CP_0_START(&handle); //comment out if no custom packet yet
@@ -169,11 +147,6 @@ int main(int argc, char* argv[])
 			toc = time(NULL);
 			if(verbose>-1){printf("WARNING: The FIFO is full! Now disabling writing. Number of entries before filling: %d. Seconds taken to fill FIFO: %d\n",i,(int)toc-(int)tic);}
 			if(logfile != NULL){fprintf(logfile,"FIFO was full. Now disabling writing. Seconds to fill fifo: %d.\n",(int)toc-(int)tic);}
-			stopwrite_q = REG_stopwrite_SET(1,&handle);
-                	if(stopwrite_q != 0){
-                        	printf("Error! Failed to set the `stopwrite` variable.\n");
-                        	return stopwrite_q;
-                	}
 		}
 		/*cfull_q = REG_full_GET(&cfull,&handle); //comment out if no custom packet yet
 		if(cfull_q != 0){
@@ -236,16 +209,12 @@ int main(int argc, char* argv[])
 	
 	if(verbose>0){printf("Stopping FIFO...\n");}
 	//stop reading & writing and reset.
-	read_q = REG_read_SET(0,&handle);
-		if(read_q != 0){
-			printf("Error! Failed to set the `read` variable.\n");
-			return read_q;}
-	reset_q = REG_reset_SET(1,&handle);
+	reset_q = REG_reset_SET(0,&handle);
 	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
 	}	
-	reset_q = REG_reset_SET(0,&handle);
+	reset_q = REG_reset_SET(1,&handle);
 	if(reset_q != 0){
 		printf("Error! Failed to set the 'reset' variable.\n");
 		return reset_q;
