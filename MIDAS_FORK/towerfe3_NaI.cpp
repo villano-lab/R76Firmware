@@ -134,7 +134,7 @@ EQUIPMENT equipment[] = {
      "MIDAS",                /* format */
      TRUE,                   /* enabled */
      RO_RUNNING,             /* read only when running */
-     200,                    /* poll for 200ms */
+     2000,                    /* poll for 200ms */
      0,                      /* stop run after this event limit */
      0,                      /* number of sub events */
      0,                      /* don't log history */
@@ -173,60 +173,6 @@ int32_t	FrameExternalTrigger = 0;
 int32_t	FrameOrTrigger = 1;
 //exit codes for sub-whatevers.
 int code, connect_success;
-
-/*INT readpacket(int verbose){ //separate program
-	//reading time.
-	if (status_frame >0){
-	        if(logfile != NULL){
-        	    fprintf(logfile,"Packet #,word label,value\n");
-	        }
-        	valid_data_frame = 0;
-	        if(verbose > 0){printf("Downloading new dataset.\n");}
-        	if (CPACK_All_Energies_DOWNLOAD((uint32_t *)data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
-
-	        valid_data_enqueued = 0;
-        	if(verbose > 1){printf("Enqueuing data.\n");}
-	        Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
-
-	        if(verbose > 1){printf("Reconstructing data.\n");}
-		int successcode = CPACK_All_Energies_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets, verbose, handle);
-        	if (!successcode)
-	        {
-        	    if(verbose>=0){printf(".");}
-	            if(verbose>=0){printf("\n");}
-        	    if(verbose>2){printf("i: %d\n",i);}
-               	    printf("Hi, I got %d valid packets \n",decoded_packets.valid_packets);
-	            for (int i = 0;i<decoded_packets.valid_packets;i++){
-	                t_All_Energies_struct *data = (t_All_Energies_struct *)decoded_packets.packets[i].payload;
-		        if(verbose > -1){printf("Printing a single packet.\n");}
-			for(int n = 0;n<18;n++){
-	                    if(verbose > -1){printf("Row #%02d",n+1);}
-        	            if(verbose > -1 && n > 13){printf(" (No input)");}
-                	    if(verbose > -1){printf(": %08x\n", data->row[n]);}
-	                }
-			verbose = -1; //stop printing after the first one.
-		        if(verbose > 1){
-        		    uint32_t trig_value;
-                	    if(verbose > 2){printf("%p\n",&handle);}
-		                code = REG_trigger_code_GET(&trig_value,&handle);
-        		        if(code != 0){
-                	 	    printf("Retrieving trigger_code failed!\n");
-	                	}else{
-        	                    printf("Trigger code (NOT retrieved at same time as packet!): %06x\n",trig_value);
-	                	}
-		            }
-			    if(verbose > -1){printf("=====\n");}
-			}
-	        }else{
-        	    printf("Hi, I got reconstruction failed with code %d.\n",successcode);
-                    return -1;
-	        }
-        	if(verbose > 2){printf("Incrementing ReadDataNumber.\n");}
-	        ReadDataNumber = ReadDataNumber + N_Packet;
-	}
-	return 0;
-}*/
-
 
 /********************************************************************\
               Callback routines for system transitions
@@ -275,7 +221,7 @@ INT frontend_init()
   char set_str[80];
   char junk = 0x1;
   sprintf (set_str,"/Equipment/Tower%02d/TriggerList/priminfo", whichtower);
-  odbReadAny(set_str,triglistlength-1,TID_CHAR,&junk);
+  cm_msg(MINFO,frontend_name,"Checked ODB with code %d.\n",odbReadAny(set_str,triglistlength-1,TID_CHAR,&junk));
   sprintf (set_str,"/Equipment/Tower%02d/TriggerList/triggerlist", whichtower);
   odbReadAny(set_str,triglistlength-1,TID_CHAR,&junk);
 
@@ -289,7 +235,7 @@ INT frontend_init()
 
   sprintf (set_str,"/Equipment/Tower%02d/TriggerList/rtAck", whichtower);
   odbReadAny(set_str,0,TID_BYTE,&junkbyte);
-  int status = db_find_key(hDB, 0, set_str, &hkey_rtAck);
+  //int status = db_find_key(hDB, 0, set_str, &hkey_rtAck); //unused variable
 
   printf("\n\n\n\nsetting rtAck to zero\n\n");
   db_set_data(hDB,hkey_rtAck,&rtflag,sizeof(rtflag),1,TID_BYTE);
@@ -308,9 +254,11 @@ INT frontend_init()
   // Call the standard list of things to do whenever we start the front-end
   // which will set up the hardware.  Pass argument of 1 to open sockets
   things_to_do_when_starting_frontend_or_run(1);
+  #ifdef TIMING //if undefined, will skip timing-related prints. doesn't ignore all timing.
   gettimeofday(&stop,NULL);
   printf ("Elapsed during things_to_do...: %f\n",stop.tv_sec-start.tv_sec
 	  + 0.000001*(stop.tv_usec-start.tv_usec));
+  #endif
 
   // Declare a hot link to rtRequest, which the triggerfe.exe program
   // will use to initiate requests for triggers from the towerfe processes.
@@ -332,9 +280,9 @@ INT frontend_init()
     HNDLE general_key;
     sprintf (set_str,"/Equipment/Tower%02d/Settings/DCRC%d/General", whichtower, dcrc);
     db_find_key(hDB, 0, set_str, &general_key);
-    int stat = db_open_record(hDB, general_key, &hotlink_general_struct,
+    /*int stat = db_open_record(hDB, general_key, &hotlink_general_struct,
 	 sizeof(hotlink_general_struct), MODE_READ, update_waveform_settings,
-		   &dcrc_hotlink_pointer[dcrc]);
+		   &dcrc_hotlink_pointer[dcrc]);*/ //unused variable
   }
 
 
@@ -342,19 +290,6 @@ INT frontend_init()
   printf("setting rtAck to zero\n\n");
   rtflag = 0;
   db_set_data(hDB,hkey_rtAck,&rtflag,sizeof(rtflag),1,TID_BYTE);
-
-  //Connect to the r5560 and allocate the buffer
- /* int connect_success = connect_staticaddr(0);
-  if(!connect_success){
-	  code = Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
-	  if(code != 0){printf("Buffer allocation failed.\n");}
-	  //Set up packet reader
-	  if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
-	  if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
-	  if (CPACK_All_Energies_STATUS(&status_frame, &handle) != 0) printf("Status Error\n");
-	  //run a quick test of readpacket.
-	  readpacket(1);
-  }else{printf("Board was unreachable with code %d. Board functions unavailable.");}*/
 
   return SUCCESS;
 }
@@ -563,9 +498,10 @@ extern "C" { INT interrupt_configure(INT cmd, INT source, POINTER_T adr)
 // have been requested, and then
 // reads out all 6 waveforms from the DCRC, shoving the data along with some
 // header words into a MIDAS data bank called SCD0
-INT read_trigger_event(char *pevent, INT off)
-{
+INT read_trigger_event(char *pevent, INT off){
+  #ifdef DEBUG
   printf("WE ARE IN READ TRIGGER EVENT! (Checking if any are present)\n");
+  #endif
 // An vector to hold the data.  In spite of the name, each element contains
 // two DCRC samples, packed into one DWORD = one 4-byte word
   std::vector<DWORD> samples(MAXSAMPLES);
@@ -583,7 +519,7 @@ INT read_trigger_event(char *pevent, INT off)
   // waveforms to request.
   char keyname[100];
   sprintf (keyname,"/Equipment/Tower%02d/TriggerList/triggerlist", whichtower);
-  unsigned char readbuffer[triglistlength];
+  unsigned char readbuffer[triglistlength], rd12buffer[triglistlength];
 
   struct timeval start,stop;
   gettimeofday(&start,NULL);
@@ -591,10 +527,18 @@ INT read_trigger_event(char *pevent, INT off)
   HNDLE hkey;
   db_find_key(hDB,0,keyname, &hkey);
   int size = triglistlength;
-  if(db_get_data(hDB,hkey,readbuffer,&size,TID_CHAR) != DB_SUCCESS) printf("error getting readbuffer for num trigs\n");
+  int code = db_get_data(hDB,hkey,readbuffer,&size,TID_CHAR);
+  if(code != DB_SUCCESS) printf("error code %d getting readbuffer for num trigs\n",code);
+  sprintf(keyname,"/Equipment/Tower%02d/TriggerList/lemo_word",whichtower);
+  db_find_key(hDB,0,keyname,&hkey);
+  code = db_get_data(hDB,hkey,rd12buffer,&size,TID_CHAR);
+  if(code != DB_SUCCESS) printf("error code %d getting readbuffer for lemo words\n",code);
+
+  #ifdef TIMING
   gettimeofday(&stop,NULL);
   printf ("Elapsed during ODB read of triggerlist: %f\n",
 	stop.tv_sec-start.tv_sec+ 0.000001*(stop.tv_usec-start.tv_usec));
+  #endif
 
   // Unpack first two bytes: number of triggers for this tower
   numTriggers = readbuffer[0]*256 + readbuffer[1];
@@ -603,14 +547,16 @@ INT read_trigger_event(char *pevent, INT off)
 	"), num trigs: " << numTriggers << std::endl;
   //std::cout << "Readbuffer 0/1: " << readbuffer[0] << ", " << readbuffer[1] << std::endl;
   if(numTriggers > 0) printf ("Hi, I got %d trigs on the readbuffer\n", numTriggers);
+  #ifdef TIMING
   if(!connect_success){
 	  struct timeval NaI_start,NaI_stop;
-	  gettimeofday(&NaI_start,NULL);
+	  //gettimeofday(&NaI_start,NULL);
 	  //readpacket(-1);
 	  gettimeofday(&NaI_stop,NULL);
 	  printf ("Elapsed during packet reading: %f\n",NaI_stop.tv_sec-NaI_start.tv_sec
   	        + 0.000001*(NaI_stop.tv_usec-NaI_start.tv_usec));
   }
+  #endif
 
   int trigstoread[7] = {0,0,0,0,0,0,0};
 
@@ -656,7 +602,7 @@ INT read_trigger_event(char *pevent, INT off)
 	    << addr[dcrc][trigstoread[dcrc]][5]
 	    << addr[dcrc][trigstoread[dcrc]][6]
 	    << addr[dcrc][trigstoread[dcrc]][7];
-	long unsigned int triggerword, ctriggerword,phtriggerword;
+	long unsigned int triggerword,ctriggerword,phtriggerword;
 	ss1 >> triggerword;
 
 	// Calculate the time at which this trigger occurred
@@ -673,10 +619,11 @@ INT read_trigger_event(char *pevent, INT off)
 	ctriggerword += (triggerword & 0xff000000);
 	sprintf (newaddr, "%08lx", ctriggerword);
 	for (int k=0; k<8; k++) caddr[dcrc][trigstoread[dcrc]][k]=newaddr[k];
+
 	// Create new phonon trigger address by subtracting prepulse amount;
 	phtriggerword = ( triggerword & 0x3fffff) - phononprepulse[dcrc];
 	if ((triggerword & 0x3fffff) < phononprepulse[dcrc])
-	 phtriggerword=0x400000+(triggerword & 0x3fffff) - phononprepulse[dcrc];
+		phtriggerword=0x400000+(triggerword & 0x3fffff) - phononprepulse[dcrc];
 	phtriggerword += (triggerword & 0xff000000);
 	sprintf (newaddr, "%08lx", phtriggerword);
 	for (int k=0; k<8; k++) phaddr[dcrc][trigstoread[dcrc]][k]=newaddr[k];
@@ -722,7 +669,9 @@ INT read_trigger_event(char *pevent, INT off)
   gettimeofday(&start_wf_fetch,NULL);
 
   int datasize = 4; //in bytes
-  char lemodata[datasize+1] = {'0'};
+  char lemodata[datasize+1];
+
+  memset( lemodata, '0', (datasize+1)*sizeof(int) );
 
   // Waveform retrieval code follows
   if(longesttriglist > 0){
@@ -793,16 +742,18 @@ INT read_trigger_event(char *pevent, INT off)
       if (!dummyreadout) {
 	// Request inner charge waveform
 	//	printf("Request charge waveform %i\n",charge_nbytes[dcrc]);
+	#ifdef PRINT_REQUESTS
 	printf("Requesting inner charge waveform:\n");
+	#endif
 	for (int dcrc=1;dcrc<=6;dcrc++) {
-	  sprintf(command,"wr c %c%c%c%c\rwr d %c%c%c%c\rrdb 14 %x",
-		  caddr[dcrc][whichtrigger][0],caddr[dcrc][whichtrigger][1],caddr[dcrc][whichtrigger][2],caddr[dcrc][whichtrigger][3],
-		  caddr[dcrc][whichtrigger][4],caddr[dcrc][whichtrigger][5],caddr[dcrc][whichtrigger][6],caddr[dcrc][whichtrigger][7],charge_nbytes[dcrc]);
-	  printf("%s \n",command);
-	  if (dcrcread[dcrc]) {
-	    gDataSocket[dcrc]->write(command,strlen(command)+1);
-	    //	       printf ("Sent to DCRC %d: %s\n", dcrc,command);
-	  }
+		sprintf(command,"wr c %c%c%c%c\rwr d %c%c%c%c\rrdb 14 %x",
+			caddr[dcrc][whichtrigger][0],caddr[dcrc][whichtrigger][1],caddr[dcrc][whichtrigger][2],caddr[dcrc][whichtrigger][3],
+			caddr[dcrc][whichtrigger][4],caddr[dcrc][whichtrigger][5],caddr[dcrc][whichtrigger][6],caddr[dcrc][whichtrigger][7],charge_nbytes[dcrc]);
+
+		#ifdef PRINT_COMMANDS
+		printf("%s \n",command);
+		#endif
+		if (dcrcread[dcrc]) gDataSocket[dcrc]->write(command,strlen(command)+1);
 	}
 
 	// Read requested waveform, and as soon as it is there request
@@ -820,7 +771,9 @@ INT read_trigger_event(char *pevent, INT off)
 	  }
 	  bytes[dcrc] = charge_nbytes[dcrc]; //last place bytes[dcrc] is modified -- equivalent one for each waveform
 	  // Request outer charge waveform
+	  #ifdef PRINT_REQUESTS
 	  printf("Requesting outer charge waveform.\n");
+	  #endif
 	  gDataSocket[dcrc]->write(command,strlen(command)+1); //run the command we built here, then pull the response in the next line
 	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]); //put into data_buffer2 number of bytes requested (bytes[dcrc]) (?)
 	  bytesread[dcrc] += bytes[dcrc]; //add the number of bytes we just read to bytesread[dcrc].
@@ -841,7 +794,9 @@ INT read_trigger_event(char *pevent, INT off)
 	    avail = gDataSocket[dcrc]->available();
 	  }
 	  bytes[dcrc] = charge_nbytes[dcrc];
+	  #ifdef PRINT_REQUESTS
 	  printf("Requesting 3rd waveform (PA?)\n");
+	  #endif
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
 	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
@@ -859,7 +814,9 @@ INT read_trigger_event(char *pevent, INT off)
 	    avail = gDataSocket[dcrc]->available();
 	  }
 	  bytes[dcrc] = phonon_nbytes[dcrc];
+	  #ifdef PRINT_REQUESTS
 	  printf("Requesting 4th waveform (PB?)\n");
+	  #endif
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
 	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
@@ -877,7 +834,9 @@ INT read_trigger_event(char *pevent, INT off)
 	    avail = gDataSocket[dcrc]->available();
 	  }
 	  bytes[dcrc] = phonon_nbytes[dcrc];
+	  #ifdef PRINT_REQUESTS
 	  printf("Requesting 5th waveform (PC?)\n");
+	  #endif
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
 	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
@@ -895,7 +854,9 @@ INT read_trigger_event(char *pevent, INT off)
 	    avail = gDataSocket[dcrc]->available();
 	  }
 	  bytes[dcrc] = phonon_nbytes[dcrc];
+	  #ifdef PRINT_REQUESTS
 	  printf("Requesting 6th waveform (PD?)\n");
+	  #endif
 	  gDataSocket[dcrc]->write(command,strlen(command)+1);
 	  gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc], bytes[dcrc]);
 	  bytesread[dcrc] += bytes[dcrc];
@@ -930,28 +891,38 @@ INT read_trigger_event(char *pevent, INT off)
 	} // end loop over DCRCs writing dummy data
       } // end of dummy readout segment
 
-	for (int dcrc=1;dcrc<=6;dcrc++) {
+	#ifndef DEBUG_RDB12 //this variable moves the fetch into execute_rt
+	#ifndef DEBUG_BUFFER12
+	/*for (int dcrc=1;dcrc<=6;dcrc++) { //ifndef doesn't work ??
 		if (!dcrcread[dcrc]) continue;
 		lemodata[datasize+1] = '\0';
 		sprintf(command,"wr 10 %c%c%c%c\rwr 11 %c%c%c%c\rrdb 12 %x",
-		//sprintf(command,"wr 10 %c%c%c%c\rrdb 12 %x",
 			addr[dcrc][whichtrigger][0],addr[dcrc][whichtrigger][1],
 			addr[dcrc][whichtrigger][2],addr[dcrc][whichtrigger][3],
 			addr[dcrc][whichtrigger][4],addr[dcrc][whichtrigger][5],
 			addr[dcrc][whichtrigger][6],addr[dcrc][whichtrigger][7]
 			,datasize);
-		printf("%s \n",command);
+		printf("Address written to 10/11: %c%c%c%c %c%c%c%c\n",
+			addr[dcrc][whichtrigger][0],addr[dcrc][whichtrigger][1],
+			addr[dcrc][whichtrigger][2],addr[dcrc][whichtrigger][3],
+			addr[dcrc][whichtrigger][4],addr[dcrc][whichtrigger][5],
+			addr[dcrc][whichtrigger][6],addr[dcrc][whichtrigger][7]
+			,datasize);
 		gDataSocket[dcrc]->write(command,strlen(command)+1);
 		printf("Command sent, time to read! ");
 		gDataSocket[dcrc]->readFully(lemodata, datasize); //put into data_buffer2 number of bytes requested (bytes[dcrc]) (?)
 		//         printf ("Sent to DCRC %d: %s\n", dcrc,command);
 		//printf("Data for dcrc %d: 0x%.2X/%.2X/%.2X/%.2X\n",dcrc,lemodata[1],lemodata[0],lemodata[3],lemodata[2]);
 		printf("Data for dcrc %d: 0x%hhX/%hhX/%hhX/%hhX\n",dcrc,lemodata[1],lemodata[0],lemodata[3],lemodata[2]);
-		/*printf("Data for dcrc %d: 0x%02x\n",dcrc,lemodata[1]);
-		printf("Data for dcrc %d: 0x%hhx\n",dcrc,lemodata[1]);*/
+		#ifdef DEBUG
+		printf("Data for dcrc %d: 0x%02x\n",dcrc,lemodata[1]);
+		printf("Data for dcrc %d: 0x%hhx\n",dcrc,lemodata[1]);
 		printf("or %c%c%c%c, or \n %s",lemodata[1],lemodata[0],lemodata[3],lemodata[2],//lemodata[5],lemodata[4],lemodata[7],lemodata[6],lemodata[8],
 			lemodata);
+		#endif
 	}//\*/
+	#endif
+	#endif
 
       // END OF CODE THAT GETS REAL/FAKE DATA FROM DCRCs.  Now to stuff it
       // in banks.
@@ -967,20 +938,7 @@ INT read_trigger_event(char *pevent, INT off)
       // nsamples holds how many 4-byte words we have read out.
       int nsamples = 0;
       for(int i = 0; i < bytesread[dcrc]; i++){ //where is bytesread set? looks like it starts at 0 and is added to in the "Requesting" stanza.
-	/*if(i<32){ //hijack the first 32 entries.
-		sprintf(command,"rd 12");
-		//int avail = gDataSocket[dcrc]->available();
-		printf("Requesting data sent by 1260. ");
-		//bytes[dcrc] = phonon_nbytes[dcrc];
-		/*gDataSocket[dcrc]->write(command,strlen(command)+1);
-		printf("Reading... ");
-		//printf("Data requested. reading...\n");
-		//gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc]+i, 2);
-		bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, 10);
-		printf("Success! got %x \n",tempbuffer);
-		//data_buffer2[dcrc][i] = tempbuffer;
-		sample[i] = 0xFFFF;
-	}*/
+
 	// This is stupid; what is the proper way of converting from
 	// char (1 byte) into DWORD without the 0xff masking.
 	WORD this_byte = data_buffer2[dcrc][i] & 0xff;
@@ -997,33 +955,27 @@ INT read_trigger_event(char *pevent, INT off)
 	  samples[nsamples] = this_word;
 	  nsamples++;
 	}
-	//printf("Requested data came back: %x\n",samples[i]); //too much printing, sometimes disconnects here.
-
       }
 
-	//int lemohexarr[4] = {lemodata[1],lemodata[0],leomdata[3],lemodata[2]};
-	uint8_t lemohexarr[4] = {lemodata[1],lemodata[0],lemodata[3],lemodata[2]};
-      //uint32_t lemohex = 0;
-	uint32_t lemohex = (uint32_t(lemodata[1]&0xff)<<8) + uint32_t(lemodata[0]&0xff);
-	std::cout << "0x lemohex vs calc " << lemohex << ", " << (uint32_t(lemodata[1]&0xff)<<8 + uint32_t(lemodata[0]&0xff)) << std::endl;
-	//int = (lemohexarr[0]<<24)+(lemohexarr[1]<<16)+(lemohexarr[2]<<8)+lemohexarr[3];
-      samples[0] = lemohex; //this is where it's dumped into QI essentially
-      std::cout << "constructed lemo data: 0x" << std::hex << lemohex << std::endl;
-//" (" << samples[0] << " / " << lemohexarr << ")" << std::endl; //lemodata is a char array; need to convert it to the actual hex data.
-	printf("constructed lemo data: 0x%hhx\n",lemohex);
-      std::cout << "value by value: 0x" << lemohexarr[0] << lemohexarr[1] << lemohexarr[2] << lemohexarr[3] << std::endl;
-      //printf("0x%hhx/%hhx, %x\n",lemohexarr[0]<<8,lemohexarr[1],lemohexarr[0]<<8+lemohexarr[1]);
-	std::cout << "0x" << (lemodata[1]&0xff) << "/" << (lemodata[0]&0xff) << std::endl;
-	//std::cout << "0x" << lemodata[1] << "/" << lemodata[0] << std::endl;
-	std::cout << "0x" << (uint32_t(lemodata[1]&0xff)<<8) << "/" << uint32_t(lemodata[0]&0xff) << ", " 
-		<< uint32_t((uint32_t(lemodata[1]&0xff)<<8) + uint32_t(lemodata[0]&0xff)) << std::endl;
-//<<24,lemohexarr[1]<<16,lemohexarr[2]<<8,lemohexarr[3]); //unshifted these are good, so maybe I'm having some kind of formatting issue?
-	//lemodata hasn't changed since i set it; good.
-//std::stoi(lemodata,nullptr,16); //overwrite first part of QI with lemodata, which has same size as 1 word
+	//so right here i need to convert rd12[whichtrigger] into a hex value
+	//and verify that it looks right.
+	std::stringstream tempstring; int tempint;
+	printf("Values retrieved (%d): ",size);
+	for(int i=0;i<size;i++) printf("%d ",rd12buffer[i]);
+	printf("\n");
+
+	int i = whichtrigger*4+4;
+        tempstring << std::hex << rd12buffer[i] << rd12buffer[i+1]
+                << rd12buffer[i+2] << rd12buffer[i+3];
+        tempstring >> tempint;
+
+        samples[0] = tempint; //this is where it's dumped into QI essentially
+	printf("(Associated stamp for trigger %d: %x)\n",whichtrigger,tempint);
 
       const int rtoutmaxlen = 2000;
-      char tempbuffer[rtoutmaxlen];
-      if(1){ //currently needs recompile each time. bad. fix.
+      #ifdef DEBUG
+      char tempbuffer[rtoutmaxlen],tempbuffer2[rtoutmaxlen];
+        //currently needs recompile each time. bad. fix.
 	for(int i=0;i<1;i++){
 		sprintf(command,"rd 12");
 		//int avail = gDataSocket[dcrc]->available();
@@ -1037,8 +989,8 @@ INT read_trigger_event(char *pevent, INT off)
  		printf("Success! got %c%c%c%c \n",tempbuffer[i],tempbuffer[i+1],tempbuffer[i+2],tempbuffer[i+3]);
  		//data_buffer2[dcrc][i] = tempbuffer;
  		//sample[i] = 0xFFFF;
-	}
-      }//\*/
+	}//\*/
+	#endif
 
       // Final check; the number of samples should be satisfy
       // nsamples == (charge_nbytes[dcrc]*2 + phonon_nbytes[dcrc]*4)/4
@@ -1051,14 +1003,6 @@ INT read_trigger_event(char *pevent, INT off)
 	ss1 << std::hex << addr[dcrc][whichtrigger][0] << addr[dcrc][whichtrigger][1] << addr[dcrc][whichtrigger][2] << addr[dcrc][whichtrigger][3]
 	<< std::hex << addr[dcrc][whichtrigger][4] << addr[dcrc][whichtrigger][5] << addr[dcrc][whichtrigger][6] << addr[dcrc][whichtrigger][7];
 	ss1 >> triggerword1;
-	std::cout << "triggerword1: 0x" << triggerword1 << ", lemohex: " << lemohex << std::endl;
-
-	/*	printf ("Trigger %c%c%c%c%c%c%c%c is %x\n",
-		addr[dcrc][whichtrigger][0],addr[dcrc][whichtrigger][1],
-		addr[dcrc][whichtrigger][2],addr[dcrc][whichtrigger][3],
-		addr[dcrc][whichtrigger][4],addr[dcrc][whichtrigger][5],
-		addr[dcrc][whichtrigger][6],addr[dcrc][whichtrigger][7],
-		triggerword1); */
 
 	// Add trigger header---one word saying it's a trigger header, then
 	// three words giving the type and initiating card(s) of the trigger
@@ -1140,14 +1084,18 @@ INT read_trigger_event(char *pevent, INT off)
     db_find_key(hDB,0,keyname, &hkey);
     readbuffer[0]=0;
     readbuffer[1]=0;
+	#ifdef DEBUG
 	printf("DEBUG readbuffer should be 0! %d%d\n",readbuffer[0],readbuffer[1]);
+	#endif
     db_set_data(hDB,hkey,readbuffer,sizeof(readbuffer),triglistlength,TID_CHAR);
 
   } // end of if statement that executes only if there were triggers to read out
 
+  #ifdef TIMING
   gettimeofday(&stop_wf_fetch,NULL);
   printf ("Elapsed during waveform fetching: %f\n",stop_wf_fetch.tv_sec-start_wf_fetch.tv_sec
 	  + 0.000001*(stop_wf_fetch.tv_usec-start_wf_fetch.tv_usec));
+  #endif
 
   // close the bank
   return bk_size(pevent);
@@ -1191,10 +1139,7 @@ INT synchronize_cards () {
       }
     }
 
-
-
   return SUCCESS;
-
   } */
 
 
@@ -1210,11 +1155,11 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   // Buffer to read the trigger list.  6 DCRCs numbered from 1-6.
   // Up to 2000 bytes each;
   const int rtoutmaxlen = 2000;
-  char trigaddr_buffer[7][rtoutmaxlen];
-  char tempbuffer[rtoutmaxlen]; // temporary buffer to put rt output into
+  char trigaddr_buffer[7][rtoutmaxlen], rd12addr_buffer[rtoutmaxlen];
+  char tempbuffer[rtoutmaxlen], tempbuffer2[rtoutmaxlen]; // temporary buffer to put rt output into
   int bufferSize = sizeof(tempbuffer);
 
-  int bytes[7] = {0,0,0,0,0,0,0};
+  int bytes[7] = {0,0,0,0,0,0,0},bytes2 = 0;
   //  int dcrctimestamp = 0;
   if (!dummyreadout) {
     for (int dcrc=1;dcrc<=6;dcrc++) {
@@ -1237,30 +1182,97 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
 	ss >> dcrctimestamp;
 
 	// Get the trigger list by issuing the rt command
+	#ifdef TIMING
 	struct timeval now;
 	gettimeofday(&now,NULL);
 	printf ("rt time for DCRC%d = %lf\n", dcrc, now.tv_sec+0.000001*now.tv_usec);
+	#endif
 	gDataSocket[dcrc]->write("rt",3);
 	bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, 10);
+	#ifdef DEBUG
 	std::cout << "bytes: " << bytes[dcrc] << std::endl;
+	std::cout << "tempbuffer: ";
+	#endif
+	for(int q=0;q<bytes[dcrc];q++) std::cout << tempbuffer[q];
+	std::cout << std::endl;
 
         //[ANV] get sub buffer
         char *subbuf;
         int size = 10;
         subbuf = (char*) malloc(size*sizeof(char));
         memcpy( subbuf, tempbuffer, size );
+	#ifdef DEBUG
 	printf("ANV: read 10 bytes with result: %s",subbuf);
+	#endif
 
 	//[ANV] get number of samples
 	int nsamp = (int)strtol(subbuf, NULL, 16);
 
 	if(nsamp>0){
 	  bytes[dcrc] += gDataSocket[dcrc]->read(tempbuffer+10, nsamp*10);
+	  int count = 0;
+	  std::cout << "bytes 2: " << bytes[dcrc] << std::endl;
+	  //std::cout << "tempbuffer: ";
+	  for(int i=10;i<bytes[dcrc];i++){
+		if(i%10 == 0)std::cout << "tempbuffer2 - addresses: ";
+		if(i%10 == 9) count++;
+		std::cout << tempbuffer[i];
+	  }
+	  std::cout << std::endl << "0x tempbuffer: count - " << count << std::endl;
+	if(count > 0){
+	  char command[10];
+	//#define DEBUG_BUFFER12
+	#ifdef DEBUG_BUFFER12
+	  sprintf(command,"rd 12 %x\r",count); //testing if this is cause of socket exception
+	  gDataSocket[thisdcrc]->write(command,strlen(command)+1);
+	  char tempbuffer2[2000]; int bytes2;
+	  bytes2 = gDataSocket[dcrc]->read(tempbuffer2, 2000);//count*10+4*((count-1)/8));
+	  std::cout << "reading address 12 (" << bytes2 << " bytes): ";
+	  //int which12 = whichtrigger; //i don't think whichtrigger's actually defined yet...
 
+	  for(int i=0;i<bytes2;i++){
+		std::cout << tempbuffer2[i];
+	  }
+	  std::cout << std::endl;
+	  std::cout << std::endl;
+	#endif
+	#define DEBUG_RDB12
+	#ifdef DEBUG_RDB12
+		char lemodata[2*count + 1];
+		sprintf(command,"rdb 12 %x\r",2*count); //read `count` words, which is 2x as many bytes
+		gDataSocket[dcrc]->write(command,strlen(command)+1);
+		printf("# of data packets to receive: %d (%d bytes)\n",count,count*2);
+                gDataSocket[dcrc]->readFully(lemodata, 2*count); //put into data_buffe$
+		#define DEBUG
+		#ifdef DEBUG
+			printf("Data received. Parsing...\n");
+		#endif
+		lemodata[2*count+1] = '\0';
+		int shiftby = 6;
+
+		for(int k=0;k<bytes[dcrc];k+=2){
+			/*std::stringstream ss1, ss2;
+
+			lemodata[datasize+1] = '\0';
+			ss1 << std::hex << tempbuffer[k] << tempbuffer[k+1] << tempbuffer[k+2] << tempbuffer[k+3]
+				<< tempbuffer[k+4] << tempbuffer[k+5] << tempbuffer[k+6] << tempbuffer [k+7];
+			//ss2 << std::hex << tempbuffer[k+4] << tempbuffer[k+5] << tempbuffer[k+6] << tempbuffer[k+7];
+			ss1 >> word10; ss2 >> word11;
+			printf("address: %x / %x\n",word10,word11);
+			if(word11>shiftby-1){word11 -= shiftby;
+			}else if(shiftby > 0){
+				word11 = 0xFFFF - (shiftby-1);
+				word10 -= 1;
+			}*/
+			printf("Data from address: 0x%hhX/%hhX\n",
+				lemodata[k+1],lemodata[k]);//,lemodata[3],lemodata[2]);
+		}
+	#endif
+	}
           //[ANV] get sub buffer
           free(subbuf);
           size = bufferSize-10;
-          subbuf = (char*) malloc(size*sizeof(char));
+	  subbuf = (char*) malloc(size*sizeof(char));
           memcpy( subbuf, &tempbuffer[10], size );
 	  printf("ANV: read %d bytes with result: %s",bufferSize-10,subbuf);
 	}
@@ -1268,97 +1280,116 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
 	//bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, bufferSize);
 	// copy the values returned by rt into the trigger buffer array
 	for (int i=0;i<bytes[dcrc];i++) trigaddr_buffer[dcrc][i]=tempbuffer[i];
+	for (int i=0;i<bytes2;i++) rd12addr_buffer[i] = tempbuffer2[i];
 
       } // end of things to do if this dcrc is enabled
     } // end of do loop over dcrcs
   } // end of things to do if we are not in dummy readout mode
 
   else { // if we are in dummy readout mode
-    // For dummy readout assume 43 triggers with fake trigger address 0000000
-    // in DCRC1 only
-  bytes[1] = (43+1)*10;
-  for (int i=0;i<bytes[1];i++) trigaddr_buffer[1][i]='0';
-  // Set first 8 bytes to 0000002B (hex) = 43
-  trigaddr_buffer[1][6]='2';
-  trigaddr_buffer[1][7]='B';
+  	// For dummy readout assume 43 triggers with fake trigger address 0000000
+  	// in DCRC1 only
+  	bytes[1] = (43+1)*10;
+  	for (int i=0;i<bytes[1];i++) trigaddr_buffer[1][i]='0';
+  	// Set first 8 bytes to 0000002B (hex) = 43
+  	trigaddr_buffer[1][6]='2';
+  	trigaddr_buffer[1][7]='B';
   } // end of things to do for dummy readout
 
+  #ifdef TIMING
   printf ("Last rt cycle phase %d\n", dcrctimestamp);
   struct timeval start2, stop2;
   gettimeofday(&start2, NULL);
+  #endif
 
   int numTriggers = 0;
-  char triglist[max_trigs_per_poll+1][8];
+  char triglist[max_trigs_per_poll+1][8],rd12list[max_trigs_per_poll+1][4];
   DWORD trigorigin[max_trigs_per_poll+1];
 
   // Process the data returned by "rt" for each DCRC
   for (int dcrc=1;dcrc<=6;dcrc++) {
-    printf ("Processing trigs from DCRC%d\n", dcrc);
-    if (bytes[dcrc] ==0) continue; //skip this DCRC if no trigger words read
+	#ifdef DCRC_NUM_PRINTS
+	printf ("Processing trigs from DCRC%d\n", dcrc);
+	#endif
+	if (bytes[dcrc] ==0) continue; //skip this DCRC if no trigger words read
 
-    int trigsfromdcrc;
-    // Parse the first 8 bytes returned by "rt" to see how many triggers await.
-    std::stringstream ss;
-    ss << std::hex << trigaddr_buffer[dcrc][0] << trigaddr_buffer[dcrc][1]
-       << trigaddr_buffer[dcrc][2] << trigaddr_buffer[dcrc][3]
-       << trigaddr_buffer[dcrc][4] << trigaddr_buffer[dcrc][5]
-       << trigaddr_buffer[dcrc][6] << trigaddr_buffer[dcrc][7];
-    ss >> trigsfromdcrc;
+	int trigsfromdcrc;
+	// Parse the first 8 bytes returned by "rt" to see how many triggers await.
+	std::stringstream ss;
+	ss << std::hex << trigaddr_buffer[dcrc][0] << trigaddr_buffer[dcrc][1]
+		<< trigaddr_buffer[dcrc][2] << trigaddr_buffer[dcrc][3]
+		<< trigaddr_buffer[dcrc][4] << trigaddr_buffer[dcrc][5]
+		<< trigaddr_buffer[dcrc][6] << trigaddr_buffer[dcrc][7];
+	ss >> trigsfromdcrc;
 	std::cout << "trigsfromdcrc: " << trigsfromdcrc << std::endl;
-    // Check for self-consistency in the number of bytes returned and
-    // the number of triggers reported
-    if ((trigsfromdcrc+1)*10 != bytes[dcrc]) {
-      printf("Tower%02d, DCRC%d error: number of bytes returned by rt doesn't equal number of triggers reported.\n", whichtower,dcrc);
-      continue;
-    }
+	// Check for self-consistency in the number of bytes returned and
+	// the number of triggers reported
+	if ((trigsfromdcrc+1)*10 != bytes[dcrc]) {
+		printf("Tower%02d, DCRC%d error: number of bytes returned by rt doesn't equal number of triggers reported.\n", whichtower,dcrc);
+		continue;
+	}
 
-    // Add triggers to list to be processed, if not too long already
-    printf ("DCRC%d gives %d triggers reported\n",dcrc,trigsfromdcrc);
-    for (int i=1;i<=trigsfromdcrc;i++) {
-      if (numTriggers >= max_trigs_per_poll) {
-	printf("Tower%02d, DCRC%d, trigger ",whichtower, dcrc);
-	int offset = 10*i;
-	for (int j=0; j<8; j++) printf ("%c", trigaddr_buffer[dcrc][offset+j]);
-	printf (" dropped because number of triggers retrieved from DCRCs exceeds capacity of ODB trigger list array (=%d)\n",max_trigs_per_poll);
-	continue;
-      }
+	// Add triggers to list to be processed, if not too long already
+	printf ("DCRC%d gives %d triggers reported\n",dcrc,trigsfromdcrc);
+	for (int i=1;i<=trigsfromdcrc;i++) {
+		if (numTriggers >= max_trigs_per_poll) {
+			printf("Tower%02d, DCRC%d, trigger ",whichtower, dcrc);
+			int offset = 10*i;
+			for (int j=0; j<8; j++) printf ("%c", trigaddr_buffer[dcrc][offset+j]);
+			printf (" dropped because number of triggers retrieved from DCRCs exceeds capacity of ODB trigger list array (=%d)\n",max_trigs_per_poll);
+			continue;
+		}
+		numTriggers++;
+		int offset = 10*i;
+		for (int j=0; j<8; j++)	triglist[numTriggers][j]=trigaddr_buffer[dcrc][offset+j];
+		//std::cout << "Adding to trig result: \n";
 
-	numTriggers++;
-	int offset = 10*i;
-	for (int j=0; j<8; j++) triglist[numTriggers][j]=trigaddr_buffer[dcrc][offset+j];
- 	/// Encode a word that encodes the origin of the trigger.  Here is
-	/// the intended byte assignment:
-	/// bits 32-26: unused
-	/// bits 25-21: trigger type (types to be defined, 0=default)
-	/// bits 20-14: tower of 2nd (coincident) trigger source
-	/// bits 13-11: DCRC# of 2nd (coincident) trigger source
-	/// bits 10-04: tower of 1st (primary) trigger source
-	/// bits 03-01: DCRC# of 1st (primary) trigger source
-	trigorigin[numTriggers] = 8*whichtower+dcrc;
-	printf ("#%d Adding trigger %c%c%c%c%c%c%c%c from source %08x to list\n", numTriggers,
-		triglist[numTriggers][0],triglist[numTriggers][1],
-		triglist[numTriggers][2],triglist[numTriggers][3],
-		triglist[numTriggers][4],triglist[numTriggers][5],
-		triglist[numTriggers][6],triglist[numTriggers][7],
-		trigorigin[numTriggers]);
-    } // end loop over trigger words received for this DCRC
+		for (int j=0; j<4; j++){
+			//std::cout << rd12addr_buffer[4*i+j+1];
+			rd12list[numTriggers][j]
+				= rd12addr_buffer[5*(i-1)+j+2*((numTriggers-1)/8)];
+			//printf("%x\n",rd12addr_buffer[5*i+j+1]);
+			std::cout << "Adding trig result: " << rd12list[numTriggers] << std::endl;
+		}
+		//std::cout << std::endl;
+
+		/// Encode a word that encodes the origin of the trigger.  Here is
+		/// the intended byte assignment:
+		/// bits 32-26: unused
+		/// bits 25-21: trigger type (types to be defined, 0=default)
+		/// bits 20-14: tower of 2nd (coincident) trigger source
+		/// bits 13-11: DCRC# of 2nd (coincident) trigger source
+		/// bits 10-04: tower of 1st (primary) trigger source
+		/// bits 03-01: DCRC# of 1st (primary) trigger source
+		trigorigin[numTriggers] = 8*whichtower+dcrc;
+		printf ("#%d Adding trigger %c%c%c%c%c%c%c%c from source %08x to list\n",
+			numTriggers,
+			triglist[numTriggers][0],triglist[numTriggers][1],
+			triglist[numTriggers][2],triglist[numTriggers][3],
+			triglist[numTriggers][4],triglist[numTriggers][5],
+			triglist[numTriggers][6],triglist[numTriggers][7],
+			trigorigin[numTriggers]);
+		printf("Associated stamp: %x %x %x %x\n",
+			rd12list[numTriggers][0],rd12list[numTriggers][1],
+			rd12list[numTriggers][2],rd12list[numTriggers][3]);
+	} // end loop over trigger words received for this DCRC
   } // end of loop over DCRCs
 
+  #ifdef TIMING
   gettimeofday(&stop2, NULL);
   printf("Elapsed during polling cycle: %f\n",stop2.tv_sec-start2.tv_sec + 0.000001*(stop2.tv_usec-start2.tv_usec));
+  #endif
 
   time_t current_time = time(NULL);
   printf ("%s  towerfe3_%02d: polling cycle finds %d triggers\n",
 	  ctime(&current_time),frontend_index, numTriggers);
-
-
 
   // At this point we have now made a list of triggers to be passed
   // to the global trigger module through the ODB.
 
 	std::cout << "numTriggers: " << numTriggers << std::endl;
   // Buffer length is triglistlength = 8byte intro + 500 triggers * 13 bytes
-  char globaltriggerbuffer[triglistlength];
+  char globaltriggerbuffer[triglistlength],globalrd12buffer[triglistlength];
 
   // First we write 8 bytes of header for this block on trigger primitives
   // Stuff the number of triggers to be processed into the first two bytes
@@ -1398,6 +1429,14 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
     globaltriggerbuffer[i*13+6]= (trigorigin[i] & 0x0000ff00) >> 8;
     globaltriggerbuffer[i*13+7]= trigorigin[i] & 0x000000ff;
   }
+  for (int i=1; i<=numTriggers; i++) {
+	for (int j=0;j<4;j++) globalrd12buffer[i*4+j] = rd12list[i][j] & 0xff;
+	std::stringstream tempstring; int tempint;
+	tempstring << std::hex << globalrd12buffer[i*4] << globalrd12buffer[i*4+1]
+		<< globalrd12buffer[i*4+2] << globalrd12buffer[i*4+3];
+	tempstring >> tempint;
+	printf("(Associated stamp: %d)\n",tempint);
+  }
 
   // Find the ODB key pointing to the trigger list for this tower, through
   // which we'll pass the info to the global trigger module
@@ -1406,13 +1445,26 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   sprintf (keyname,"/Equipment/Tower%02d/TriggerList/priminfo", whichtower);
 
   // Write the trigger list into the buffer in the ODB, and time the operation
+  #ifdef TIMING
   struct timeval start,stop;
   gettimeofday(&start,NULL);
+  #endif
+
   db_find_key(hDB,0,keyname, &hkey);
   db_set_data(hDB,hkey,globaltriggerbuffer,sizeof(globaltriggerbuffer),triglistlength,TID_CHAR);
+
+  sprintf(keyname,"/Equipment/Tower%02d/TriggerList/lemo_word",whichtower);
+  db_find_key(hDB,0,keyname,&hkey);
+  if(db_set_data(hDB,hkey,globalrd12buffer,sizeof(globalrd12buffer),triglistlength,TID_CHAR) != DB_SUCCESS){
+
+	printf("error writing data for lemo word\n"); //not sure what the last two should be?
+  }
+
+  #ifdef TIMING
   gettimeofday(&stop,NULL);
   printf ("Elapsed during ODB write: %f\n",stop.tv_sec-start.tv_sec
 	  + 0.000001*(stop.tv_usec-start.tv_usec));
+  #endif
 
 // Reset the rtAck flag to signal that the trigger primitives have been sent
   sprintf (keyname,"/Equipment/Tower%02d/TriggerList/rtAck", whichtower);
@@ -1420,14 +1472,14 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
   BYTE rtflag = 0;
   if (status == SUCCESS) db_set_data(hDB,hkey,&rtflag,sizeof(rtflag),1,TID_BYTE);
 
+  #ifdef TIMING
   gettimeofday(&stop_ex_rt_time,NULL);
   printf ("\n\nWhole execute_rt time: %f\n\n",stop_ex_rt_time.tv_sec-start_ex_rt_time.tv_sec + 0.000001*(stop_ex_rt_time.tv_usec-start_ex_rt_time.tv_usec));
-
+  #endif
 }
 
 void get_waveform_settings (INT dcrc_index, INT b, void *c)
 {
-
   char odbkp[150];
   char dcrckp[150];
 
@@ -1468,13 +1520,12 @@ ugh to hold these long waveforms.  Defaulting to 4096-byte charge waveforms and\
 
   printf ("DEBUG DCRC%d: charge prepulse = %d, phonon prepulse = %d\n", dcrc_index, chargeprepulse[dcrc_index], phononprepulse[dcrc_index]);
 
-
   //now update the readback
   char set_str[80];
   //ChargeWaveFormLneghth
   sprintf (set_str,"/Equipment/Tower%02d/Readback/DCRC%1d/General/ChargeWaveFormLength", whichtower, dcrc_index);
-  odbWriteInt(set_str, 0, charge_nbytes[dcrc_index]);
-  cm_msg(MINFO, frontend_name, "ChargeWaveFormLength=%d updated in towerfe3 reading code and ReadbackODB", charge_nbytes[dcrc_index]);
+  cm_msg(MINFO, frontend_name, "ChargeWaveFormLength=%d updated in towerfe3 reading code and ReadbackODB (code %d)", charge_nbytes[dcrc_index],
+	  odbWriteInt(set_str, 0, charge_nbytes[dcrc_index]));
   //PhononWaveFormLength
   sprintf (set_str,"/Equipment/Tower%02d/Readback/DCRC%1d/General/PhononWaveFormLength", whichtower, dcrc_index);
   odbWriteInt(set_str, 0, phonon_nbytes[dcrc_index]);

@@ -1,6 +1,8 @@
-with open("resource_explorer.txt","r") as file:
+filename = "07240628_1633.txt"
+with open(filename,"r") as file:
     lines = file.readlines()
-with open("resource_explorer_modified.txt","w") as file:
+with open(filename,"w") as file:
     for line in lines:
         if line.endswith("C001\n"): 
-            file.write(line[:4]+"\n")
+            line = line.split("C001")[0]
+            file.write("0"*(4-len(line))+line+"\n")
