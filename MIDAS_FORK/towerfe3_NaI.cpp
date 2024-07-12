@@ -546,7 +546,7 @@ INT read_trigger_event(char *pevent, INT off){
 	"), readbuffer[1]: " << readbuffer[1] << " (int: " << (int)readbuffer[1] <<
 	"), num trigs: " << numTriggers << std::endl;
   //std::cout << "Readbuffer 0/1: " << readbuffer[0] << ", " << readbuffer[1] << std::endl;
-  if(numTriggers > 0) printf ("Hi, I got %d trigs on the readbuffer\n", numTriggers);
+  if(numTriggers > 0) printf ("DATA: %d trigs on the readbuffer\n", numTriggers);
   #ifdef TIMING
   if(!connect_success){
 	  struct timeval NaI_start,NaI_stop;
@@ -661,6 +661,9 @@ INT read_trigger_event(char *pevent, INT off){
   for (int i=1;i<=6;i++) {
     totalnumberoftrigsread += trigstoread[i];
     if (trigstoread[i]>longesttriglist) longesttriglist=trigstoread[i];
+    #ifdef DEBUG
+	std::cout << "trigstoread data: " << trigstoread[i] << " " << longesttriglist << std::endl;
+    #endif DEBUG
   }
   printf ("Number of iterations to read triggers: %d\n", longesttriglist);
 
@@ -692,6 +695,7 @@ INT read_trigger_event(char *pevent, INT off){
     *pdata32++ = 0xc0000000 + (DWORD) totalnumberoftrigsread; pdata_sam++;
 
     for (int whichtrigger=0; whichtrigger < longesttriglist; whichtrigger++){
+	std::cout << "Now processing data for trigger " << whichtrigger << "/" << longesttriglist << std::endl;
 
       // Flags specifying if a DCRC should be read out for this trigger
       BOOL dcrcread[7];
@@ -706,16 +710,16 @@ INT read_trigger_event(char *pevent, INT off){
 	    && ((trigsource[dcrc][whichtrigger] & 0x100000) == 0)) {
 	  dcrcread[dcrc]=FALSE;
 	  printf ("Timeout limit: dropping readout of stale trigger# %d, DCRC%d, address %c%c%c%c%c%c%c%c, source=%d\n", 
-		  whichtrigger, dcrc,
-		  addr[dcrc][whichtrigger][0],
-		  addr[dcrc][whichtrigger][1],
-		  addr[dcrc][whichtrigger][2],
-		  addr[dcrc][whichtrigger][3],
-		  addr[dcrc][whichtrigger][4],
-		  addr[dcrc][whichtrigger][5],
-		  addr[dcrc][whichtrigger][6],
-		  addr[dcrc][whichtrigger][7],
-		  trigsource[dcrc][whichtrigger]);
+		whichtrigger, dcrc,
+		addr[dcrc][whichtrigger][0],
+		addr[dcrc][whichtrigger][1],
+		addr[dcrc][whichtrigger][2],
+		addr[dcrc][whichtrigger][3],
+		addr[dcrc][whichtrigger][4],
+		addr[dcrc][whichtrigger][5],
+		addr[dcrc][whichtrigger][6],
+		addr[dcrc][whichtrigger][7],
+		trigsource[dcrc][whichtrigger]);
 	  // Write empty header for dropped trigger, with waveform lengths of 0
 	  DWORD triggerword1 = 0;
 	  std::stringstream ss1;
@@ -882,47 +886,12 @@ INT read_trigger_event(char *pevent, INT off){
 	    printf ("Gonna make fake data\n");
 	    bytesread[dcrc] = 2*charge_nbytes[dcrc]+4*phonon_nbytes[dcrc];
 	    for (int i=0;i<bytesread[dcrc];i++) {
-	      if (i % 2 == 0)
-		{data_buffer2[dcrc][i]=1;}
-	      else
-		{data_buffer2[dcrc][i] = i%256;}
+	      if (i % 2 == 0) data_buffer2[dcrc][i]=1;
+	      else data_buffer2[dcrc][i] = i%256;
 	    };
 	  };
 	} // end loop over DCRCs writing dummy data
       } // end of dummy readout segment
-
-	#ifndef DEBUG_RDB12 //this variable moves the fetch into execute_rt
-	#ifndef DEBUG_BUFFER12
-	/*for (int dcrc=1;dcrc<=6;dcrc++) { //ifndef doesn't work ??
-		if (!dcrcread[dcrc]) continue;
-		lemodata[datasize+1] = '\0';
-		sprintf(command,"wr 10 %c%c%c%c\rwr 11 %c%c%c%c\rrdb 12 %x",
-			addr[dcrc][whichtrigger][0],addr[dcrc][whichtrigger][1],
-			addr[dcrc][whichtrigger][2],addr[dcrc][whichtrigger][3],
-			addr[dcrc][whichtrigger][4],addr[dcrc][whichtrigger][5],
-			addr[dcrc][whichtrigger][6],addr[dcrc][whichtrigger][7]
-			,datasize);
-		printf("Address written to 10/11: %c%c%c%c %c%c%c%c\n",
-			addr[dcrc][whichtrigger][0],addr[dcrc][whichtrigger][1],
-			addr[dcrc][whichtrigger][2],addr[dcrc][whichtrigger][3],
-			addr[dcrc][whichtrigger][4],addr[dcrc][whichtrigger][5],
-			addr[dcrc][whichtrigger][6],addr[dcrc][whichtrigger][7]
-			,datasize);
-		gDataSocket[dcrc]->write(command,strlen(command)+1);
-		printf("Command sent, time to read! ");
-		gDataSocket[dcrc]->readFully(lemodata, datasize); //put into data_buffer2 number of bytes requested (bytes[dcrc]) (?)
-		//         printf ("Sent to DCRC %d: %s\n", dcrc,command);
-		//printf("Data for dcrc %d: 0x%.2X/%.2X/%.2X/%.2X\n",dcrc,lemodata[1],lemodata[0],lemodata[3],lemodata[2]);
-		printf("Data for dcrc %d: 0x%hhX/%hhX/%hhX/%hhX\n",dcrc,lemodata[1],lemodata[0],lemodata[3],lemodata[2]);
-		#ifdef DEBUG
-		printf("Data for dcrc %d: 0x%02x\n",dcrc,lemodata[1]);
-		printf("Data for dcrc %d: 0x%hhx\n",dcrc,lemodata[1]);
-		printf("or %c%c%c%c, or \n %s",lemodata[1],lemodata[0],lemodata[3],lemodata[2],//lemodata[5],lemodata[4],lemodata[7],lemodata[6],lemodata[8],
-			lemodata);
-		#endif
-	}//\*/
-	#endif
-	#endif
 
       // END OF CODE THAT GETS REAL/FAKE DATA FROM DCRCs.  Now to stuff it
       // in banks.
@@ -978,17 +947,11 @@ INT read_trigger_event(char *pevent, INT off){
         //currently needs recompile each time. bad. fix.
 	for(int i=0;i<1;i++){
 		sprintf(command,"rd 12");
-		//int avail = gDataSocket[dcrc]->available();
  		printf("Requesting data sent by 1260. ");
- 		//bytes[dcrc] = phonon_nbytes[dcrc];
  		gDataSocket[dcrc]->write(command,strlen(command)+1);
  		printf("Reading... ");
- 		//printf("Data requested. reading...\n");
- 		//gDataSocket[dcrc]->readFully(data_buffer2[dcrc]+bytesread[dcrc]+i, 2);
  		bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, 10);
  		printf("Success! got %c%c%c%c \n",tempbuffer[i],tempbuffer[i+1],tempbuffer[i+2],tempbuffer[i+3]);
- 		//data_buffer2[dcrc][i] = tempbuffer;
- 		//sample[i] = 0xFFFF;
 	}//\*/
 	#endif
 
@@ -1221,7 +1184,7 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
 	  std::cout << std::endl << "0x tempbuffer: count - " << count << std::endl;
 	if(count > 0){
 	  char command[10];
-	//#define DEBUG_BUFFER12
+	#define DEBUG_BUFFER12
 	#ifdef DEBUG_BUFFER12
 	  sprintf(command,"rd 12 %x\r",count); //testing if this is cause of socket exception
 	  gDataSocket[thisdcrc]->write(command,strlen(command)+1);
@@ -1231,19 +1194,24 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
 	  //int which12 = whichtrigger; //i don't think whichtrigger's actually defined yet...
 
 	  for(int i=0;i<bytes2;i++){
-		std::cout << tempbuffer2[i];
+		std::cout << std::hex << (0xff & tempbuffer2[i]) << " ";
 	  }
 	  std::cout << std::endl;
 	  std::cout << std::endl;
 	#endif
-	#define DEBUG_RDB12
+	//#define DEBUG_RDB12
 	#ifdef DEBUG_RDB12
 		char lemodata[2*count + 1];
 		sprintf(command,"rdb 12 %x\r",2*count); //read `count` words, which is 2x as many bytes
 		gDataSocket[dcrc]->write(command,strlen(command)+1);
 		printf("# of data packets to receive: %d (%d bytes)\n",count,count*2);
-                gDataSocket[dcrc]->readFully(lemodata, 2*count); //put into data_buffe$
-		#define DEBUG
+		try{gDataSocket[dcrc]->readFully(lemodata, 2*count); //put into data_buffer
+		}catch(const std::string& ex){
+			std::cout << ex << std::endl;
+			exit(1);
+			//what do i want to do here
+		}
+		//#define DEBUG
 		#ifdef DEBUG
 			printf("Data received. Parsing...\n");
 		#endif
@@ -1280,8 +1248,14 @@ void execute_rt (int dummy1, int dummy2, void *dummy3) {
 	//bytes[dcrc] = gDataSocket[dcrc]->read(tempbuffer, bufferSize);
 	// copy the values returned by rt into the trigger buffer array
 	for (int i=0;i<bytes[dcrc];i++) trigaddr_buffer[dcrc][i]=tempbuffer[i];
-	for (int i=0;i<bytes2;i++) rd12addr_buffer[i] = tempbuffer2[i];
-
+	if(bytes2>0){
+		printf("Data going into rd12addr_buffer: ");
+		for (int i=0;i<bytes2;i++){
+			rd12addr_buffer[i] = tempbuffer2[i];
+			printf("%x ",rd12addr_buffer[i]);
+		}
+		printf("\n");
+	}
       } // end of things to do if this dcrc is enabled
     } // end of do loop over dcrcs
   } // end of things to do if we are not in dummy readout mode
