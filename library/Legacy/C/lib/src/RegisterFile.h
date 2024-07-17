@@ -190,10 +190,6 @@
 #define SCI_REG_Syncs_CONFIG_ARM 0x312005
 #define SCI_REG_Syncs_CONFIG_DECIMATOR 0x312006
 
-#define SCI_REG_int_time 0x30002
-#define SCI_REG_int_pre 0x30003
-#define SCI_REG_int_base 0x30004
-
 #define SCI_REG_trig_polarity 0x18009
 #define SCI_REG_trig_inhib 0x1800A
 #define SCI_REG_trig_gate_l 0x1800B
@@ -366,4 +362,8 @@
 #define SCI_REG_io_stamptype 0x312079
 #define SCI_REG_io_lemo2out 0x31207A
 #define SCI_REG_io_divide 0x31207B
+
+#define SCI_REG_int_time 0x30002
+#define SCI_REG_int_pre 0x30003
+#define SCI_REG_int_base 0x30004
 

@@ -135,20 +135,6 @@ entity avalon_wrapper is
 	BUS_RateMeter_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_RateMeter_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_RateMeter_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_int_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_int_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_int_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_time_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_time_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_time_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_int_pre_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_pre_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_pre_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_int_base_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_base_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_base_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_0_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_0_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_0_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1147,6 +1133,20 @@ entity avalon_wrapper is
 		REG_io_divide_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_io_divide_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_io_divide_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_time_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_time_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_time_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_int_pre_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_pre_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_pre_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_int_base_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_base_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_base_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -1331,13 +1331,6 @@ BUS_diag_READ_DATA  when  addr >= x"00361000" and addr < x"00362000" else
 		REG_trig_mode_WR <= (others => '0');
 		INT_trig_mode_WR <= "0";
 	BUS_RateMeter_W_INT <= "0";
-	BUS_int_W_INT <= "0";
-		REG_int_time_WR <= (others => '0');
-		INT_int_time_WR <= "0";
-		REG_int_pre_WR <= (others => '0');
-		INT_int_pre_WR <= "0";
-		REG_int_base_WR <= (others => '0');
-		INT_int_base_WR <= "0";
 	BUS_Spectrum_0_W_INT <= "0";
 		INT_Spectrum_0_STATUS_RD <= "0";
 		REG_Spectrum_0_CONFIG_WR <= (others => '0');
@@ -1897,6 +1890,13 @@ BUS_diag_READ_DATA  when  addr >= x"00361000" and addr < x"00362000" else
 		INT_io_lemo2out_WR <= "0";
 		REG_io_divide_WR <= (others => '0');
 		INT_io_divide_WR <= "0";
+	BUS_int_W_INT <= "0";
+		REG_int_time_WR <= (others => '0');
+		INT_int_time_WR <= "0";
+		REG_int_pre_WR <= (others => '0');
+		INT_int_pre_WR <= "0";
+		REG_int_base_WR <= (others => '0');
+		INT_int_base_WR <= "0";
             
                 f_BUS_DATASTROBE_REG <= '0';
                 M_AVALON_0_readdatavalid <= '0';
@@ -1927,10 +1927,6 @@ BUS_diag_READ_DATA  when  addr >= x"00361000" and addr < x"00362000" else
 		INT_trig_delay_WR <= "0";
 		INT_trig_mode_WR <= "0";
 	BUS_RateMeter_W_INT <= "0";
-	BUS_int_W_INT <= "0";
-		INT_int_time_WR <= "0";
-		INT_int_pre_WR <= "0";
-		INT_int_base_WR <= "0";
 	BUS_Spectrum_0_W_INT <= "0";
 		INT_Spectrum_0_STATUS_RD <= "0";
 		INT_Spectrum_0_CONFIG_WR <= "0";
@@ -2247,6 +2243,10 @@ BUS_diag_READ_DATA  when  addr >= x"00361000" and addr < x"00362000" else
 		INT_io_stamptype_WR <= "0";
 		INT_io_lemo2out_WR <= "0";
 		INT_io_divide_WR <= "0";
+	BUS_int_W_INT <= "0";
+		INT_int_time_WR <= "0";
+		INT_int_pre_WR <= "0";
+		INT_int_base_WR <= "0";
   
                 f_BUS_DATASTROBE_REG <= '0';
                 
@@ -2333,22 +2333,6 @@ BUS_diag_READ_DATA  when  addr >= x"00361000" and addr < x"00362000" else
 			BUS_RateMeter_WRITE_DATA <= wreg; 
 			BUS_RateMeter_W_INT <= "1"; 
 		End If;
-		If addr >= x"00030001" And addr < x"00030002" Then
-			BUS_int_WRITE_DATA <= wreg; 
-			BUS_int_W_INT <= "1"; 
-		End If;
-		if addr = x"00030002" then
-			REG_int_time_WR <= wreg; 
-			INT_int_time_WR <= "1"; 
-		end if;
-		if addr = x"00030003" then
-			REG_int_pre_WR <= wreg; 
-			INT_int_pre_WR <= "1"; 
-		end if;
-		if addr = x"00030004" then
-			REG_int_base_WR <= wreg; 
-			INT_int_base_WR <= "1"; 
-		end if;
 		If addr >= x"00040000" And addr < x"00050000" Then
 			BUS_Spectrum_0_WRITE_DATA <= wreg; 
 			BUS_Spectrum_0_W_INT <= "1"; 
@@ -3457,6 +3441,22 @@ BUS_diag_READ_DATA  when  addr >= x"00361000" and addr < x"00362000" else
 			REG_io_divide_WR <= wreg; 
 			INT_io_divide_WR <= "1"; 
 		end if;
+		If addr >= x"00030001" And addr < x"00030002" Then
+			BUS_int_WRITE_DATA <= wreg; 
+			BUS_int_W_INT <= "1"; 
+		End If;
+		if addr = x"00030002" then
+			REG_int_time_WR <= wreg; 
+			INT_int_time_WR <= "1"; 
+		end if;
+		if addr = x"00030003" then
+			REG_int_pre_WR <= wreg; 
+			INT_int_pre_WR <= "1"; 
+		end if;
+		if addr = x"00030004" then
+			REG_int_base_WR <= wreg; 
+			INT_int_base_WR <= "1"; 
+		end if;
 
                 end if;
         
@@ -3524,15 +3524,6 @@ BUS_diag_READ_DATA  when  addr >= x"00361000" and addr < x"00362000" else
 		End If;
 		if addr = x"0001800E" then
 			rreg := REG_trig_mode_RD; 
-		End If;
-		if addr = x"00030002" then
-			rreg := REG_int_time_RD; 
-		End If;
-		if addr = x"00030003" then
-			rreg := REG_int_pre_RD; 
-		End If;
-		if addr = x"00030004" then
-			rreg := REG_int_base_RD; 
 		End If;
 		if addr = x"00050000" then
 			rreg := REG_Spectrum_0_STATUS_RD; 
@@ -4358,6 +4349,15 @@ BUS_diag_READ_DATA  when  addr >= x"00361000" and addr < x"00362000" else
 		End If;
 		if addr = x"0031207B" then
 			rreg := REG_io_divide_RD; 
+		End If;
+		if addr = x"00030002" then
+			rreg := REG_int_time_RD; 
+		End If;
+		if addr = x"00030003" then
+			rreg := REG_int_pre_RD; 
+		End If;
+		if addr = x"00030004" then
+			rreg := REG_int_base_RD; 
 		End If;
     
                    

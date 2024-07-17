@@ -19,7 +19,6 @@ analog_in : in std_logic_vector(15 downto 0);
 int_gate : out std_logic_vector(0 downto 0);
 base : in std_logic_vector(15 downto 0);
 manual_base : in std_logic_vector(0 downto 0);
-dummy : out std_logic_vector(0 downto 0);
 
 		async_clk : in std_logic_vector (0 downto 0);
 		CLK_ACQ : in std_logic_vector (0 downto 0);
@@ -74,6 +73,26 @@ signal U5_pre_int : std_logic_vector(15 downto 0);
 signal U6_analog_in : std_logic_vector(15 downto 0);
 signal U8_base : std_logic_vector(15 downto 0);
 signal U9_manual_base : std_logic_vector(0 downto 0);
+signal U10_out : std_logic_vector(15 downto 0);
+
+COMPONENT BASELINE_RESTORER
+Generic (	wordWidth : integer := 16);
+PORT(
+    	RESET: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    	CLK : IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+    	CE : IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+    	TRIGGER: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    	DATA_IN: IN STD_LOGIC_VECTOR(wordWidth-1 DOWNTO 0);
+    	M_LENGTH: IN INTEGER;
+    	BL_HOLD: IN INTEGER;
+    	FLUSH: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    	BASELINE: OUT STD_LOGIC_VECTOR(wordWidth-1 DOWNTO 0);
+    	BASELINE_VALID: OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    	HOLD_TIME: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    	RUNNING_NOT_HOLD: OUT STD_LOGIC_VECTOR(0 DOWNTO 0));
+END COMPONENT;
+signal U11_base_line : std_logic_vector(15 downto 0) := (others => '0');
+	signal U12_int : integer  := 0;
 
 begin
 
@@ -83,7 +102,7 @@ PORT MAP(
     ap_rst  => GlobalReset(0),
     in1_V  => U6_analog_in,
     in1_V_ap_vld  => '1',
-    base_line_V  => U8_base,
+    base_line_V  => U10_out,
     trigger_signal  => U3_trig(0),
     p_int_length_V  => U4_int_time,
     p_pre_length_V  => U5_pre_int,
@@ -107,6 +126,29 @@ U6_analog_in <= analog_in;
 int_gate <= U0_ind_integrate;
 U8_base <= base;
 U9_manual_base <= manual_base;
-dummy <= U9_manual_base;
+
+U10 : block
+begin
+U10_out <= U11_base_line when U9_manual_base = "0" else U8_base when U9_manual_base = "1"  else (others=>'0');
+
+end block;
+
+U11: BASELINE_RESTORER
+Generic map (	wordWidth=> 16)
+PORT MAP(
+    RESET  => GlobalReset,
+    CLK  => async_clk,
+    CE  => "1",
+    TRIGGER  => U3_trig,
+    DATA_IN  => U6_analog_in,
+    M_LENGTH  => 500,
+    BL_HOLD  => U12_int,
+    FLUSH  => "0",
+    BASELINE  => U11_base_line,
+    BASELINE_VALID  => open,
+    HOLD_TIME  => open,
+    RUNNING_NOT_HOLD  => open
+);
+	U12_int <= conv_integer(U4_int_time);
 
 end Behavioral;
