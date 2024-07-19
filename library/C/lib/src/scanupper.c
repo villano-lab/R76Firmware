@@ -1,5 +1,5 @@
 // A simple program that takes all newly-detected peaks and prints them to a csv file.
-// Trying to move to ROOT but it's causing segfaults before getting into the main func 
+// Trying to move to ROOT but it's causing segfaults before getting into the main func
 // or even before variable declaration?
 
 #include "Legacy/Def.h"
@@ -41,7 +41,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, LOG_TEXT);
 	fprintf (stream, VERSION_TEXT);
 	fprintf (stream, HELP_TEXT);
-	
+
 	exit (exit_code);
 };
 
@@ -133,7 +133,7 @@ int main(int argc, char* argv[])
 	}
 	disable = on_to_off(disable_t,value,verbose);
 
-	//Connect to the board. 
+	//Connect to the board.
 	int connect_q = connect_staticaddr(verbose);
 	if(connect_q != 0){
 		printf("Board connection error code: %d\n",connect_q);

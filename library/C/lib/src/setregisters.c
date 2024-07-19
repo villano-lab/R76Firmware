@@ -47,7 +47,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, HELP_TEXT);
 	fprintf (stream, RESET_TEXT);
 	fprintf (stream, FORCE_TEXT);
-	
+
 	exit (exit_code);
 };
 
@@ -203,7 +203,7 @@ int main(int argc, char* argv[]){
 			baseflag = 1;
 		}else{
 			printf("Somehow, the force variable was set to an invalid value (%d). Aborting. Please submit a bug report.\n",force);
-			return -1;
+			return force;
 		}
 	}
 
@@ -219,18 +219,18 @@ int main(int argc, char* argv[]){
 		disable = on_to_off(disable_t,value,verbose);
 	}
 
-	//Connect to the board. 
+	//Connect to the board.
 	int connect_q = connect_staticaddr(verbose);
 	if(connect_q != 0){
 		printf("Board connection error code: %d\n",connect_q);
 		return connect_q;
 	}
 
-	//Some printing statements	
+	//Some printing statements
 	if(skipflag == 1){
 		if(verbose>0){
 			if(skip >1){
-				printf("Setting to skip every %d triggers.\n",skip);}	
+				printf("Setting to skip every %d triggers.\n",skip);}
 			}else if(skip == 1){
 				printf("Setting to skip EVERY trigger.\n");
 			}else if(skip == 0){
@@ -265,7 +265,7 @@ int main(int argc, char* argv[]){
 									fprintf(logfile,"\b\b\n\n"); //clear trailing comma and space before inserting two newlines.
 		};
 	}
-	
+
 	//Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
 
@@ -284,7 +284,7 @@ int main(int argc, char* argv[]){
 		printf("Detector flag is off (%d). Skipping.\n",detflag);
 	}
 
-	if(threshflag == 1){	
+	if(threshflag == 1){
 		thresh_q = set_thresholds("low",polarity,thrs,thresh_t);
 		if(verbose > 2){printf("Ran set_thresholds. Checking output...\n");}
 		for(int i=0; i<24; i++){
@@ -407,6 +407,13 @@ int main(int argc, char* argv[]){
 		}else if(verbose > 0){
 			printf("Successfully set baseline for pulse integration to %d.\n",baseline);
 		}
+	}
+
+	//set things that should only be altered on board restart or during program runs
+	reset_q = __abstracted_reg_write(reset,SCI_REG_reset,&handle);
+	if(reset_q){
+		printf("Error setting `reset`. Aborting.\n");
+		return reset_q;
 	}
 
 	return 0;

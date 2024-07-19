@@ -1,5 +1,5 @@
 // A simple program that takes all newly-detected peaks and prints them to a csv file.
-// Trying to move to ROOT but it's causing segfaults before getting into the main func 
+// Trying to move to ROOT but it's causing segfaults before getting into the main func
 // or even before variable declaration?
 
 #include "Legacy/Def.h"
@@ -26,16 +26,16 @@
 
 const char* program_name = "scanrate";
 FILE *fp;
+int lower = thrs;
 
-void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
+void print_usage(FILE* stream, int exit_code){
 	fprintf (stream, "Usage:  %s options \n", program_name);
-  	fprintf (stream, DET_TEXT);
-	fprintf (stream, DELAY_TEXT);
-	fprintf (stream, INHIB_TEXT);
+	fprintf (stream, THRESH_TEXT);
+	fprintf (stream, "                                           thresh ignored except in `upper` mode.\n");
 	fprintf (stream, TOP_TEXT);
+	fprintf (stream, "                                           top ignored except in `lower` mode.\n");
 	fprintf (stream, RANGE_TEXT);
 	fprintf (stream, WAIT_TEXT);
-	fprintf (stream, SKIP_TEXT);
 	fprintf (stream, VERBOSE_TEXT);
 	fprintf (stream, SILENT_TEXT);
 	fprintf (stream, LOG_TEXT);
@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+d:i:l::shv::Vg:D:T:r:S:w:", longopts, &ind);
+		iarg = getopt_long(argc, argv, "+l::shv::Vg:T:t:r:w:", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -81,11 +81,6 @@ int main(int argc, char* argv[])
 				logfile = fopen("log.txt","w");
 			};
 			break;
-		case 'D':
-			selection = optarg;
-			parse_detector_switch(selection);
-			if(value < 0 ){return -1;} //If there's an error, pass it through.
-			break;
 		case 'g':
 			if(verbose > 2){printf("Hey I'm in case g\n");}
 			gateflag = 1;
@@ -95,18 +90,11 @@ int main(int argc, char* argv[])
 			rangeflag = 1;
 			rtemp = optarg;
 			break;
-		case 'i':
-			inhib = atoi(optarg);
-			break;
-		case 'd':
-			delay = atoi(optarg);
-			break;
 		case 'T':
-			top = atoi(optarg);
+			top = atof(optarg);
 			break;
-		case 'S':
-			skip = atoi(optarg);
-			break;
+		case 't':
+			lower = atof(optarg);
 		case 'w':
 			wait = atoi(optarg);
 			break;

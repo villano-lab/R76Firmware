@@ -10,6 +10,7 @@
 #include <string.h>
 #include <getopt.h>
 #include <math.h>
+#include <iostream>
 
 //Text defines
 #define BOARD_IP_ADDRESS ("134.84.150.114")
@@ -19,7 +20,7 @@
 #define INHIB_TEXT    (" -i,	--inhibit   <inhibit>	            Set the value of the inhibit time in clock ticks (integer. default: 1000)\n")
 #define THRESH_TEXT   (" -t,    --thresh    <threshold>	            Set the value of the (lower) threshold in MeV (default: 1). \n")
 #define RANGE_TEXT    (" -r,	--range	    '<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned, in MeV (default: min 0, max 8, step size 1).\n")
-#define SKIP_TEXT     (" -S,    --skip      <#>                     Skip every # trigger to reduce the rate.\n")
+#define SKIP_TEXT     (" -S,    --skip      <#>                     [DEPRECATED] Skip every # trigger to reduce the rate.\n")
 #define BASELINE_TEXT (" -b,    --baseline  <baseline>              Set the baseline in ADC units (positive integer) and force manual baseline mode. A baseline of 0 indicates automatic baseline mode. (default: 0/automatic)\n                                            WARNING! This will have unintended consequences for calibration, thresholds, and pulse integration. USE FOR DEV ONLY!\n")
 #define VERBOSE_TEXT  (" -v,	--verbose   <level>                 Print verbose messages at the specified level (1 if unspecified).\n")
 #define SILENT_TEXT   (" -s,-q,	--silent,--quiet,                   Print nothing. (Negative verbosity) \n")
@@ -151,7 +152,7 @@ int parse_range(char* gatestring, int verbose);                         //parse 
 void print_timestamp(int elapsed, int verbose);                         //parse a time elapsed value and print it in readable format
 void read_config(const char* filename);                                 //parse a config file for values
 //converting functions
-int *on_to_off(int *off, int on, int verbose);                          //convert a 'detectors on' bit vector to a 'detectors off' bit vector
+int *on_to_off(int *off, uint32_t on, int verbose);                          //convert a 'detectors on' bit vector to a 'detectors off' bit vector
 int energy_to_bin(int detnum, float energy);                            //convert an energy value to a bin value
 //compatibility functions
 int REG_top_SET(uint32_t value, NI_HANDLE* handle);                           //set all top thresholds to a bin number

@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <iostream>
 
 #include "Legacy/R76Firmware_lib.h"
 #include "UniversalTriggerShared.h"
@@ -25,7 +26,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 };
 
 int packet_setup(NI_HANDLE handle,int verbose){
-
+	return 0; //why does this function exist
 }
 
 int main(int argc, char* argv[])
@@ -129,7 +130,7 @@ int main(int argc, char* argv[])
 	}
 	if (status_frame >0)
 	{
-		if(verbose>1) printf("Logging to %s.\n",logfile);
+		if(verbose>1) std::cout << "Logging to " << logfile << std::endl;
         if(logfile != NULL){
             fprintf(logfile,"Packet #,word label,value\n");
         }

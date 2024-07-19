@@ -42,7 +42,7 @@ const struct option longopts[] =
 //Defaults
 int verbose = 0;
 float thrs = 1.;	        //distance from baseline for threshold.
-uint32_t value = 4294967294;	//default: disable detector 0 (never present) and enable the rest.
+uint32_t value = 16777214;	//default: disable detector 0,24-31 (never present) and enable the rest.
 int gate_u = 100;
 int gate_l = 10;
 float range_l = 0;
@@ -189,6 +189,7 @@ int parse_gate(char* gatestring, int verbose){
 		if(verbose > 0){printf("Using default values for gates, lower %d and upper %d.\n",gate_l,gate_u);}
 	}
 		if(verbose > 1){printf("%d, %d\n",gate_l,gate_u);}
+	return gate_l,gate_u;
 }
 int parse_range(char* rangestring, int verbose){
 	if(verbose > 2){printf("Are we even supposed to be here? %d\n",rangeflag);}
@@ -197,6 +198,7 @@ int parse_range(char* rangestring, int verbose){
 	range_u = atof(strtok (NULL," ,-:"));
 	range_s = atof(strtok (NULL," ,-:"));
 	if(verbose > 1){printf("%f, %f, %f\n",range_l,range_u,range_s);}
+	return range_l,range_u,range_s;
 }
 void print_timestamp(int elapsed, int verbose){
 	int hours = floor(elapsed / 3600);
@@ -255,22 +257,18 @@ void read_config(const char* filename){
 }
 
 //Converting functions
-int *on_to_off(int *off, int on, int verbose){
-    if(verbose > 1){
-		printf("Bitwise detector numeric value supplied: %d\n",on);
-	}
+int *on_to_off(int *off, uint32_t on, int verbose){
+	if(verbose > 1) printf("Bitwise detector numeric value supplied: %d\n",on);
 	on = on ^ 4294967295; //Bitwise flip since we're enabling but firmware is disabling.
 	//We'll disable anything that's 1 after the flip and leave everything else on
-    if(verbose > 1){
-		printf("Bit-flipped detector value: %d\n",value);
-	}
+	if(verbose > 1)	std::cout << "Bit-flipped detector value: " << on << std::endl;
 	if(verbose > 2){
-		for(int i=0;i<24;i++){
+		for(int i=0;i<32;i++){
 			printf("%d",on>>i & 1);
 		}
 		printf("\n");
 	}
-    for(int i=0; i<24; i++){
+    for(int i=0; i<32; i++){
 		if(verbose > 1){printf("%d: %d, %d \n",i,on >> i, (on >> i) & 1);}
 		off[i] = (on >> i) & 1;
 		if(verbose > 2){printf("success!\n");}
@@ -510,7 +508,7 @@ int REG_top_SET(uint32_t value, NI_HANDLE *handle){
 int connect_staticaddr(int verbose){
     R_Init();
 	//If can't connect to the board, abort.
-	if(R_ConnectDevice(BOARD_IP_ADDRESS, 8888, &handle) != 0) { 
+	if(R_ConnectDevice((char*)BOARD_IP_ADDRESS, 8888, &handle) != 0) { 
 		if(verbose>-1){printf("Unable to connect to the board!\n");};
 		if(logfile != NULL){fprintf(logfile,"Unable to connect to the board at %s!\n",BOARD_IP_ADDRESS);};
 		return (-1); 

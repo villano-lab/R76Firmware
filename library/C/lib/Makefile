@@ -69,7 +69,7 @@ Objects=$(Objects0)
 ## Main Build Targets
 ##
 .PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
-all: $(OutputFile) libUniversalTriggerShared.so setregisters scanrate scanupper scanwindow singlerate fifotest getspectrum teststatus packettest
+all: $(OutputFile) gcc/libUniversalTriggerShared.so setregisters scanrate scanupper scanwindow singlerate packettest
 
 $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	@$(MakeDirCommand) $(@D)
@@ -79,35 +79,19 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	@$(MakeDirCommand) ".build-debug"
 	@echo rebuilt > ".build-debug/$(ProjectName)"
 
-libUniversalTriggerShared.so: $(OutputFile) src/UniversalTriggerShared.c src/UniversalTriggerShared.h
-	$(CXX) -fPIC -c -o libUniversalTriggerShared.so src/UniversalTriggerShared.c $(CVER)
-	mv libUniversalTriggerShared.so ./gcc/libUniversalTriggerShared.so
-fifotest: %: $(OutputFile) src/%.c
-	echo %
-	$(CXX) $(CXXFLAGS) -o fifotest src/fifotest.c $(LIBFLAGS) -lm -ldl
-getspectrum: %: $(OutputFile) src/%.c
-	echo %
-	$(CXX) $(CXXFLAGS) -o getspectrum src/getspectrum.c $(LIBFLAGS) -lm -ldl
+gcc/libUniversalTriggerShared.so: $(OutputFile) src/UniversalTriggerShared.c src/UniversalTriggerShared.h
+	$(CXX) -fPIC -c -o gcc/libUniversalTriggerShared.so src/UniversalTriggerShared.c $(CVER)
 setregisters: %: $(OutputFile) src/%.c
-	echo %
 	$(CXX) $(CXXFLAGS) -o setregisters src/setregisters.c $(LIBFLAGS) -lm -ldl
 scanrate: %: $(OutputFile) src/%.c
-	echo %
 	$(CXX) $(CXXFLAGS) -o scanrate src/scanrate.c $(LIBFLAGS) -lm -ldl
 scanupper: %: $(OutputFile) src/%.c
-	echo %
 	$(CXX) $(CXXFLAGS) -o scanupper src/scanupper.c $(LIBFLAGS) -lm -ldl
 scanwindow: %: $(OutputFile) src/%.c
-	echo %
 	$(CXX) $(CXXFLAGS) -o scanwindow src/scanwindow.c $(LIBFLAGS) -lm -ldl
 singlerate: %: $(OutputFile) src/%.c
-	echo %
 	$(CXX) $(CXXFLAGS) -o singlerate src/singlerate.c $(LIBFLAGS) -lm -ldl
-teststatus: %: $(OutputFile) src/%.c
-	echo %
-	$(CXX) $(CXXFLAGS) -o teststatus src/teststatus.c $(LIBFLAGS) -lm -ldl
 packettest: %: $(OutputFile) src/%.c
-	echo %
 	$(CXX) $(CXXFLAGS) -o packettest src/packettest.c $(LIBFLAGS) -lm -ldl
 
 MakeIntermediateDirs:
