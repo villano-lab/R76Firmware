@@ -548,6 +548,365 @@ component avalon_wrapper is
 	BUS_RateMeter_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_RateMeter_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_RateMeter_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_thrsh_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_thrsh_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_thrsh_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_thrsh_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_thrsh_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_thrsh_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_thrsh_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_thrsh_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_diag_READ_ADDRESS : OUT STD_LOGIC_VECTOR(11 downto 0); 
+	BUS_diag_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_diag_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_diag_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_diag_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_diag_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_diag_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_diag_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_diag_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_diag_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_diag_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_diag_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_All_Energies_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_All_Energies_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_All_Energies_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_All_Energies_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_All_Energies_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_All_Energies_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_READ_VALID_WORDS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_All_Energies_READ_VALID_WORDS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_All_Energies_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_time_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_time_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_time_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_int_pre_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_pre_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_pre_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_int_base_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_base_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_base_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_top_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_top_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_top_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_top_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_top_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_top_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_top_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_top_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_base_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_base_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_disable_det_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_disable_det_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_disable_det_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_disable_det_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_disable_det_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_disable_det_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_disable_det_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_disable_det_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_0_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_0_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_0_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -571,6 +930,31 @@ component avalon_wrapper is
 		REG_Spectrum_0_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_0_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_0_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_In_Unflipped_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
+	BUS_Analog_In_Unflipped_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_In_Unflipped_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Analog_In_Unflipped_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Analog_In_Unflipped_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Analog_In_Unflipped_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_12_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_12_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_12_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -985,12 +1369,6 @@ component avalon_wrapper is
 		REG_Spectrum_9_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_9_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_9_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_SyncIn_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_SyncIn_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_SyncIn_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_SyncIn_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_SyncIn_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_SyncIn_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
 	BUS_Spectrum_21_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_21_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_21_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1014,6 +1392,35 @@ component avalon_wrapper is
 		REG_Spectrum_21_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_21_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_21_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_SyncIn_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
+	BUS_SyncIn_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_SyncIn_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_SyncIn_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_SyncIn_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_SyncIn_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Spectrum_10_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
+	BUS_Spectrum_10_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Spectrum_10_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Spectrum_10_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Spectrum_10_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Spectrum_10_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_10_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_10_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_10_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_10_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_10_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_10_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_22_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_Spectrum_22_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Spectrum_22_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1060,6 +1467,29 @@ component avalon_wrapper is
 		REG_Spectrum_11_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Spectrum_11_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Spectrum_11_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Spectrum_23_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
+	BUS_Spectrum_23_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Spectrum_23_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_Spectrum_23_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Spectrum_23_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_Spectrum_23_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_23_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_23_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_23_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_Spectrum_23_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_Spectrum_23_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_Spectrum_23_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Syncs_READ_ADDRESS : OUT STD_LOGIC_VECTOR(11 downto 0); 
 	BUS_Syncs_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_Syncs_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1085,450 +1515,6 @@ component avalon_wrapper is
 		REG_Syncs_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Syncs_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Syncs_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_forcetrig_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_forcetrig_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_forcetrig_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_forcetrig_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_full_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_full_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_full_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_full_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_trigger_code_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_trigger_code_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_trigger_code_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_trigger_code_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_reset_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_reset_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_reset_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_reset_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_received_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_received_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_received_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_received_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_timestamp_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_timestamp_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_timestamp_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_timestamp_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_disable_det_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_disable_det_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_disable_det_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_disable_det_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_disable_det_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_disable_det_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_disable_det_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_disable_det_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_top_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_top_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_top_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_top_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_top_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_top_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_top_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_top_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_thrsh_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_thrsh_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_thrsh_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_thrsh_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_thrsh_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_thrsh_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_thrsh_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_thrsh_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_dummy_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_dummy_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_dummy_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		INT_dummy_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_base_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_base_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_base_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Analog_In_Unflipped_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
-	BUS_Analog_In_Unflipped_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Analog_In_Unflipped_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Analog_In_Unflipped_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Analog_In_Unflipped_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Analog_In_Unflipped_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_All_Energies_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_All_Energies_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_All_Energies_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_All_Energies_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_All_Energies_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_All_Energies_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_READ_VALID_WORDS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_All_Energies_READ_VALID_WORDS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_All_Energies_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_10_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_Spectrum_10_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_10_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_10_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Spectrum_10_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Spectrum_10_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_10_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_10_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_10_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_10_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_10_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_10_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_23_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
-	BUS_Spectrum_23_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_23_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_Spectrum_23_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Spectrum_23_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_Spectrum_23_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_23_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_CONFIG_LIMIT_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_LIMIT_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_23_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_CONFIG_REBIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_REBIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_23_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_CONFIG_MIN_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_MIN_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_Spectrum_23_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_Spectrum_23_CONFIG_MAX_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_Spectrum_23_CONFIG_MAX_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_diag_READ_ADDRESS : OUT STD_LOGIC_VECTOR(11 downto 0); 
-	BUS_diag_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_diag_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_diag_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_diag_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_diag_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_diag_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_diag_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_diag_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		INT_diag_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_diag_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_diag_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_diag_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_diag_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_diag_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_diag_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_diag_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_diag_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_diag_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_diag_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_diag_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_diag_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_diag_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_diag_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_diag_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_io_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_io_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_io_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
@@ -1546,20 +1532,59 @@ component avalon_wrapper is
 		REG_io_divide_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_io_divide_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_io_divide_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_int_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_int_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_time_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_time_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_time_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_int_pre_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_pre_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_pre_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_int_base_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_base_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_base_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_dummy_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_dummy_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_dummy_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_dummy_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_forcetrig_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_forcetrig_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_forcetrig_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_forcetrig_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_full_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_full_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_full_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_full_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trigger_code_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trigger_code_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trigger_code_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_trigger_code_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_reset_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_reset_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_reset_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_reset_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_timestamp_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_timestamp_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_timestamp_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_timestamp_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_received_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_received_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_received_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		INT_received_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_baselines_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
+	BUS_baselines_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_baselines_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_baselines_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_baselines_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_baselines_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_baselines_READ_STATUS_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_baselines_READ_STATUS_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_baselines_READ_POSITION_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		INT_baselines_READ_POSITION_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_baselines_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_baselines_CONFIG_TRIGGER_MODE_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_baselines_CONFIG_TRIGGER_MODE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_baselines_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_baselines_CONFIG_PRETRIGGER_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_baselines_CONFIG_PRETRIGGER_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_baselines_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_baselines_CONFIG_TRIGGER_LEVEL_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_baselines_CONFIG_TRIGGER_LEVEL_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_baselines_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_baselines_CONFIG_ARM_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_baselines_CONFIG_ARM_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_baselines_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_baselines_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_baselines_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -2423,78 +2448,105 @@ signal U108_to_encode : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
 signal U108_stamptype : STD_LOGIC_VECTOR( 1 downto 0 ) := (others => '0');
 signal U108_lemo2out : STD_LOGIC_VECTOR( 1 downto 0 ) := (others => '0');
 signal U108_divide : INTEGER := 0;
-	signal U109_energy_0 : std_logic_vector(15 downto 0);
-	signal U109_valid_0 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_0 : std_logic_vector(0 downto 0);
-	signal U109_energy_1 : std_logic_vector(15 downto 0);
-	signal U109_valid_1 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_1 : std_logic_vector(0 downto 0);
-	signal U109_energy_2 : std_logic_vector(15 downto 0);
-	signal U109_valid_2 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_2 : std_logic_vector(0 downto 0);
-	signal U109_energy_3 : std_logic_vector(15 downto 0);
-	signal U109_valid_3 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_3 : std_logic_vector(0 downto 0);
-	signal U109_energy_4 : std_logic_vector(15 downto 0);
-	signal U109_valid_4 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_4 : std_logic_vector(0 downto 0);
-	signal U109_energy_5 : std_logic_vector(15 downto 0);
-	signal U109_valid_5 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_5 : std_logic_vector(0 downto 0);
-	signal U109_energy_6 : std_logic_vector(15 downto 0);
-	signal U109_valid_6 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_6 : std_logic_vector(0 downto 0);
-	signal U109_energy_7 : std_logic_vector(15 downto 0);
-	signal U109_valid_7 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_7 : std_logic_vector(0 downto 0);
-	signal U109_energy_8 : std_logic_vector(15 downto 0);
-	signal U109_valid_8 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_8 : std_logic_vector(0 downto 0);
-	signal U109_energy_9 : std_logic_vector(15 downto 0);
-	signal U109_valid_9 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_9 : std_logic_vector(0 downto 0);
-	signal U109_energy_10 : std_logic_vector(15 downto 0);
-	signal U109_valid_10 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_10 : std_logic_vector(0 downto 0);
-	signal U109_energy_11 : std_logic_vector(15 downto 0);
-	signal U109_valid_11 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_11 : std_logic_vector(0 downto 0);
-	signal U109_energy_12 : std_logic_vector(15 downto 0);
-	signal U109_valid_12 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_12 : std_logic_vector(0 downto 0);
-	signal U109_energy_13 : std_logic_vector(15 downto 0);
-	signal U109_valid_13 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_13 : std_logic_vector(0 downto 0);
-	signal U109_energy_14 : std_logic_vector(15 downto 0);
-	signal U109_valid_14 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_14 : std_logic_vector(0 downto 0);
-	signal U109_energy_15 : std_logic_vector(15 downto 0);
-	signal U109_valid_15 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_15 : std_logic_vector(0 downto 0);
-	signal U109_energy_16 : std_logic_vector(15 downto 0);
-	signal U109_valid_16 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_16 : std_logic_vector(0 downto 0);
-	signal U109_energy_17 : std_logic_vector(15 downto 0);
-	signal U109_valid_17 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_17 : std_logic_vector(0 downto 0);
-	signal U109_energy_18 : std_logic_vector(15 downto 0);
-	signal U109_valid_18 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_18 : std_logic_vector(0 downto 0);
-	signal U109_energy_19 : std_logic_vector(15 downto 0);
-	signal U109_valid_19 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_19 : std_logic_vector(0 downto 0);
-	signal U109_energy_20 : std_logic_vector(15 downto 0);
-	signal U109_valid_20 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_20 : std_logic_vector(0 downto 0);
-	signal U109_energy_21 : std_logic_vector(15 downto 0);
-	signal U109_valid_21 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_21 : std_logic_vector(0 downto 0);
-	signal U109_energy_22 : std_logic_vector(15 downto 0);
-	signal U109_valid_22 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_22 : std_logic_vector(0 downto 0);
-	signal U109_energy_23 : std_logic_vector(15 downto 0);
-	signal U109_valid_23 : std_logic_vector(0 downto 0);
-	signal U109_int_gate_23 : std_logic_vector(0 downto 0);
+signal U109_time : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_pre : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U109_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+	signal U110_energy_0 : std_logic_vector(15 downto 0);
+	signal U110_valid_0 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_0 : std_logic_vector(0 downto 0);
+	signal U110_baseline_0 : std_logic_vector(15 downto 0);
+	signal U110_energy_1 : std_logic_vector(15 downto 0);
+	signal U110_valid_1 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_1 : std_logic_vector(0 downto 0);
+	signal U110_baseline_1 : std_logic_vector(15 downto 0);
+	signal U110_energy_2 : std_logic_vector(15 downto 0);
+	signal U110_valid_2 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_2 : std_logic_vector(0 downto 0);
+	signal U110_baseline_2 : std_logic_vector(15 downto 0);
+	signal U110_energy_3 : std_logic_vector(15 downto 0);
+	signal U110_valid_3 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_3 : std_logic_vector(0 downto 0);
+	signal U110_baseline_3 : std_logic_vector(15 downto 0);
+	signal U110_energy_4 : std_logic_vector(15 downto 0);
+	signal U110_valid_4 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_4 : std_logic_vector(0 downto 0);
+	signal U110_baseline_4 : std_logic_vector(15 downto 0);
+	signal U110_energy_5 : std_logic_vector(15 downto 0);
+	signal U110_valid_5 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_5 : std_logic_vector(0 downto 0);
+	signal U110_baseline_5 : std_logic_vector(15 downto 0);
+	signal U110_energy_6 : std_logic_vector(15 downto 0);
+	signal U110_valid_6 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_6 : std_logic_vector(0 downto 0);
+	signal U110_baseline_6 : std_logic_vector(15 downto 0);
+	signal U110_energy_7 : std_logic_vector(15 downto 0);
+	signal U110_valid_7 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_7 : std_logic_vector(0 downto 0);
+	signal U110_baseline_7 : std_logic_vector(15 downto 0);
+	signal U110_energy_8 : std_logic_vector(15 downto 0);
+	signal U110_valid_8 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_8 : std_logic_vector(0 downto 0);
+	signal U110_baseline_8 : std_logic_vector(15 downto 0);
+	signal U110_energy_9 : std_logic_vector(15 downto 0);
+	signal U110_valid_9 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_9 : std_logic_vector(0 downto 0);
+	signal U110_baseline_9 : std_logic_vector(15 downto 0);
+	signal U110_energy_10 : std_logic_vector(15 downto 0);
+	signal U110_valid_10 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_10 : std_logic_vector(0 downto 0);
+	signal U110_baseline_10 : std_logic_vector(15 downto 0);
+	signal U110_energy_11 : std_logic_vector(15 downto 0);
+	signal U110_valid_11 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_11 : std_logic_vector(0 downto 0);
+	signal U110_baseline_11 : std_logic_vector(15 downto 0);
+	signal U110_energy_12 : std_logic_vector(15 downto 0);
+	signal U110_valid_12 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_12 : std_logic_vector(0 downto 0);
+	signal U110_baseline_12 : std_logic_vector(15 downto 0);
+	signal U110_energy_13 : std_logic_vector(15 downto 0);
+	signal U110_valid_13 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_13 : std_logic_vector(0 downto 0);
+	signal U110_baseline_13 : std_logic_vector(15 downto 0);
+	signal U110_energy_14 : std_logic_vector(15 downto 0);
+	signal U110_valid_14 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_14 : std_logic_vector(0 downto 0);
+	signal U110_baseline_14 : std_logic_vector(15 downto 0);
+	signal U110_energy_15 : std_logic_vector(15 downto 0);
+	signal U110_valid_15 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_15 : std_logic_vector(0 downto 0);
+	signal U110_baseline_15 : std_logic_vector(15 downto 0);
+	signal U110_energy_16 : std_logic_vector(15 downto 0);
+	signal U110_valid_16 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_16 : std_logic_vector(0 downto 0);
+	signal U110_baseline_16 : std_logic_vector(15 downto 0);
+	signal U110_energy_17 : std_logic_vector(15 downto 0);
+	signal U110_valid_17 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_17 : std_logic_vector(0 downto 0);
+	signal U110_baseline_17 : std_logic_vector(15 downto 0);
+	signal U110_energy_18 : std_logic_vector(15 downto 0);
+	signal U110_valid_18 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_18 : std_logic_vector(0 downto 0);
+	signal U110_baseline_18 : std_logic_vector(15 downto 0);
+	signal U110_energy_19 : std_logic_vector(15 downto 0);
+	signal U110_valid_19 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_19 : std_logic_vector(0 downto 0);
+	signal U110_baseline_19 : std_logic_vector(15 downto 0);
+	signal U110_energy_20 : std_logic_vector(15 downto 0);
+	signal U110_valid_20 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_20 : std_logic_vector(0 downto 0);
+	signal U110_baseline_20 : std_logic_vector(15 downto 0);
+	signal U110_energy_21 : std_logic_vector(15 downto 0);
+	signal U110_valid_21 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_21 : std_logic_vector(0 downto 0);
+	signal U110_baseline_21 : std_logic_vector(15 downto 0);
+	signal U110_energy_22 : std_logic_vector(15 downto 0);
+	signal U110_valid_22 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_22 : std_logic_vector(0 downto 0);
+	signal U110_baseline_22 : std_logic_vector(15 downto 0);
+	signal U110_energy_23 : std_logic_vector(15 downto 0);
+	signal U110_valid_23 : std_logic_vector(0 downto 0);
+	signal U110_int_gate_23 : std_logic_vector(0 downto 0);
+	signal U110_baseline_23 : std_logic_vector(15 downto 0);
 
 COMPONENT SUBPAGE_ChargeIntegrator
 PORT(
@@ -2503,6 +2555,7 @@ PORT(
 	energy : OUT std_logic_vector(15 downto 0);
 	valid : OUT std_logic_vector(0 downto 0);
 	int_gate : OUT std_logic_vector(0 downto 0);
+	baseline : OUT std_logic_vector(15 downto 0);
 	pre_int : IN std_logic_vector(15 downto 0);
 	trig : IN std_logic_vector(0 downto 0);
 	int_time : IN std_logic_vector(15 downto 0);
@@ -2525,9 +2578,10 @@ PORT(
 	GlobalClock: in std_logic_vector (0 downto 0);
 	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
 END COMPONENT;
-signal U110_time : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U110_pre : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U110_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+	signal BUS_baselines_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal BUS_baselines_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal REG_baselines_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal REG_baselines_READ_POSITION_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_Energies_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
 	signal BUS_Energies_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Energies_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -2582,6 +2636,258 @@ signal U110_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
 	signal BUS_RateMeter_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_RateMeter_W_INT : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_RateMeter_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_thrsh_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_thrsh_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_thrsh_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_thrsh_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_thrsh_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_thrsh_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_thrsh_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_thrsh_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_thrsh_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_diag_READ_ADDRESS : STD_LOGIC_VECTOR(11 downto 0);
+	signal BUS_diag_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_diag_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_diag_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_diag_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_diag_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_diag_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_diag_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_diag_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_diag_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_diag_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_diag_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_diag_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_diag_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_diag_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_diag_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_All_Energies_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_All_Energies_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_All_Energies_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_All_Energies_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_All_Energies_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_All_Energies_READ_VALID_WORDS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_All_Energies_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_All_Energies_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_int_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_int_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_int_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_int_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_int_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_int_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_int_time_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_int_time_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_int_pre_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_int_pre_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_int_base_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_int_base_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_top_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_top_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_top_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_top_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_top_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_top_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_top_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_top_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_top_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_base_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_base_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_base_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_base_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_base_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_base_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_base_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_base_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_base_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_disable_det_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
+	signal BUS_disable_det_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_disable_det_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_disable_det_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_disable_det_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_disable_det_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
+	signal REG_disable_det_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_disable_det_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_disable_det_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Spectrum_0_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_0_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_0_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -2597,6 +2903,22 @@ signal U110_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
 	signal INT_Spectrum_0_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Spectrum_0_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Spectrum_0_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Analog_In_Unflipped_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
+	signal BUS_Analog_In_Unflipped_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_Analog_In_Unflipped_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Analog_In_Unflipped_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Analog_In_Unflipped_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Analog_In_Unflipped_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_In_Unflipped_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_In_Unflipped_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Spectrum_12_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_12_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_12_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -2867,10 +3189,6 @@ signal U110_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
 	signal INT_Spectrum_9_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Spectrum_9_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Spectrum_9_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_SyncIn_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
-	signal BUS_SyncIn_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_SyncIn_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_SyncIn_R_INT : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Spectrum_21_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_21_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_21_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -2886,6 +3204,25 @@ signal U110_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
 	signal INT_Spectrum_21_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Spectrum_21_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Spectrum_21_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_SyncIn_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
+	signal BUS_SyncIn_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_SyncIn_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_SyncIn_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Spectrum_10_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
+	signal BUS_Spectrum_10_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_Spectrum_10_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Spectrum_10_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Spectrum_10_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Spectrum_10_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Spectrum_10_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Spectrum_10_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Spectrum_10_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Spectrum_10_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Spectrum_10_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Spectrum_10_CONFIG_MIN_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Spectrum_10_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Spectrum_10_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Spectrum_10_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Spectrum_22_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
 	signal BUS_Spectrum_22_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Spectrum_22_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -2916,6 +3253,21 @@ signal U110_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
 	signal INT_Spectrum_11_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Spectrum_11_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Spectrum_11_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Spectrum_23_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
+	signal BUS_Spectrum_23_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_Spectrum_23_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_Spectrum_23_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_Spectrum_23_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Spectrum_23_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Spectrum_23_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Spectrum_23_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Spectrum_23_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Spectrum_23_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Spectrum_23_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Spectrum_23_CONFIG_MIN_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Spectrum_23_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_Spectrum_23_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_Spectrum_23_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_Syncs_READ_ADDRESS : STD_LOGIC_VECTOR(11 downto 0);
 	signal BUS_Syncs_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Syncs_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -2932,292 +3284,6 @@ signal U110_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
 	signal INT_Syncs_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_Syncs_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_Syncs_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_disable_det_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_disable_det_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_disable_det_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_disable_det_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_disable_det_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_disable_det_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
-	signal REG_disable_det_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_disable_det_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_disable_det_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_top_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_top_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_top_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_top_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_top_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_top_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
-	signal REG_top_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_top_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_top_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_thrsh_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_thrsh_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_thrsh_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_thrsh_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_thrsh_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_thrsh_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
-	signal REG_thrsh_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_thrsh_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_thrsh_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_base_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_base_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_base_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_base_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_base_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_base_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
-	signal REG_base_CH0_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH0_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH1_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH1_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH2_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH2_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH3_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH3_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH4_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH4_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH5_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH5_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH6_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH6_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH7_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH7_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH8_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH8_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH9_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH9_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH10_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH10_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH11_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH11_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH12_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH12_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH13_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH13_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH14_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH14_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH15_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH15_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH16_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH16_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH17_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH17_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH18_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH18_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH19_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH19_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH20_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH20_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH21_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH21_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH22_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH22_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_base_CH23_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_base_CH23_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_Analog_In_Unflipped_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
-	signal BUS_Analog_In_Unflipped_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_Analog_In_Unflipped_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_Analog_In_Unflipped_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_Analog_In_Unflipped_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_Analog_In_Unflipped_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Analog_In_Unflipped_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Analog_In_Unflipped_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_All_Energies_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_All_Energies_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_All_Energies_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_All_Energies_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_All_Energies_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_All_Energies_READ_VALID_WORDS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_All_Energies_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_All_Energies_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_Spectrum_10_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
-	signal BUS_Spectrum_10_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_Spectrum_10_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_Spectrum_10_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_Spectrum_10_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Spectrum_10_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Spectrum_10_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Spectrum_10_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Spectrum_10_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Spectrum_10_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Spectrum_10_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Spectrum_10_CONFIG_MIN_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Spectrum_10_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Spectrum_10_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Spectrum_10_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_Spectrum_23_READ_ADDRESS : STD_LOGIC_VECTOR(15 downto 0);
-	signal BUS_Spectrum_23_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_Spectrum_23_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_Spectrum_23_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_Spectrum_23_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Spectrum_23_CONFIG_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Spectrum_23_CONFIG_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Spectrum_23_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Spectrum_23_CONFIG_LIMIT_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Spectrum_23_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Spectrum_23_CONFIG_REBIN_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Spectrum_23_CONFIG_MIN_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Spectrum_23_CONFIG_MIN_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_Spectrum_23_CONFIG_MAX_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_Spectrum_23_CONFIG_MAX_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_diag_READ_ADDRESS : STD_LOGIC_VECTOR(11 downto 0);
-	signal BUS_diag_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_diag_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_diag_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_diag_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal INT_diag_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_diag_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_diag_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_diag_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_diag_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_diag_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_diag_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_diag_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_diag_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_diag_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_diag_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal BUS_io_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
 	signal BUS_io_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_io_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
@@ -3232,18 +3298,26 @@ signal U110_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
 	signal INT_io_lemo2out_WR : STD_LOGIC_VECTOR(0 downto 0);
 	signal REG_io_divide_WR : STD_LOGIC_VECTOR(31 downto 0);
 	signal INT_io_divide_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_int_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
-	signal BUS_int_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_int_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
-	signal BUS_int_W_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_int_R_INT : STD_LOGIC_VECTOR(0 downto 0);
-	signal BUS_int_VLD : STD_LOGIC_VECTOR(0 downto 0) := "1";
-	signal REG_int_time_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_int_time_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_int_pre_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_int_pre_WR : STD_LOGIC_VECTOR(0 downto 0);
-	signal REG_int_base_WR : STD_LOGIC_VECTOR(31 downto 0);
-	signal INT_int_base_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_baselines_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
+	signal BUS_baselines_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
+	signal BUS_baselines_W_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal BUS_baselines_R_INT : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_baselines_READ_STATUS_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal INT_baselines_READ_POSITION_RD : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_baselines_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_baselines_CONFIG_TRIGGER_MODE_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_baselines_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_baselines_CONFIG_PRETRIGGER_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_baselines_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_baselines_CONFIG_TRIGGER_LEVEL_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_baselines_CONFIG_ARM_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_baselines_CONFIG_ARM_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_baselines_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(31 downto 0);
+	signal INT_baselines_CONFIG_DECIMATOR_WR : STD_LOGIC_VECTOR(0 downto 0);
+	signal REG_dummy_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal REG_dummy_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal INT_dummy_WR : STD_LOGIC_VECTOR(0 downto 0); 
+	signal INT_dummy_RD : STD_LOGIC_VECTOR(0 downto 0); 
 	signal REG_forcetrig_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal REG_forcetrig_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal INT_forcetrig_WR : STD_LOGIC_VECTOR(0 downto 0); 
@@ -3260,18 +3334,14 @@ signal U110_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
 	signal REG_reset_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal INT_reset_WR : STD_LOGIC_VECTOR(0 downto 0); 
 	signal INT_reset_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_received_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_received_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_received_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_received_RD : STD_LOGIC_VECTOR(0 downto 0); 
 	signal REG_timestamp_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal REG_timestamp_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
 	signal INT_timestamp_WR : STD_LOGIC_VECTOR(0 downto 0); 
 	signal INT_timestamp_RD : STD_LOGIC_VECTOR(0 downto 0); 
-	signal REG_dummy_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal REG_dummy_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
-	signal INT_dummy_WR : STD_LOGIC_VECTOR(0 downto 0); 
-	signal INT_dummy_RD : STD_LOGIC_VECTOR(0 downto 0); 
+	signal REG_received_RD : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal REG_received_WR : STD_LOGIC_VECTOR(31 downto 0) := x"00000000"; 
+	signal INT_received_WR : STD_LOGIC_VECTOR(0 downto 0); 
+	signal INT_received_RD : STD_LOGIC_VECTOR(0 downto 0); 
 	
 	component main_clock 
      port (
@@ -3798,6 +3868,365 @@ AW_MEMORY_MANAGER : avalon_wrapper
 	BUS_RateMeter_W_INT => BUS_RateMeter_W_INT,
 	BUS_RateMeter_R_INT => BUS_RateMeter_R_INT,
 	BUS_RateMeter_VLD => BUS_RateMeter_VLD,
+	BUS_thrsh_READ_DATA => BUS_thrsh_READ_DATA,
+	BUS_thrsh_WRITE_DATA => BUS_thrsh_WRITE_DATA,
+	BUS_thrsh_W_INT => BUS_thrsh_W_INT,
+	BUS_thrsh_R_INT => BUS_thrsh_R_INT,
+	BUS_thrsh_VLD => BUS_thrsh_VLD,
+		REG_thrsh_CH0_WR => REG_thrsh_CH0_WR,
+		INT_thrsh_CH0_WR => INT_thrsh_CH0_WR,
+		REG_thrsh_CH0_RD => REG_thrsh_CH0_WR,
+		REG_thrsh_CH1_WR => REG_thrsh_CH1_WR,
+		INT_thrsh_CH1_WR => INT_thrsh_CH1_WR,
+		REG_thrsh_CH1_RD => REG_thrsh_CH1_WR,
+		REG_thrsh_CH2_WR => REG_thrsh_CH2_WR,
+		INT_thrsh_CH2_WR => INT_thrsh_CH2_WR,
+		REG_thrsh_CH2_RD => REG_thrsh_CH2_WR,
+		REG_thrsh_CH3_WR => REG_thrsh_CH3_WR,
+		INT_thrsh_CH3_WR => INT_thrsh_CH3_WR,
+		REG_thrsh_CH3_RD => REG_thrsh_CH3_WR,
+		REG_thrsh_CH4_WR => REG_thrsh_CH4_WR,
+		INT_thrsh_CH4_WR => INT_thrsh_CH4_WR,
+		REG_thrsh_CH4_RD => REG_thrsh_CH4_WR,
+		REG_thrsh_CH5_WR => REG_thrsh_CH5_WR,
+		INT_thrsh_CH5_WR => INT_thrsh_CH5_WR,
+		REG_thrsh_CH5_RD => REG_thrsh_CH5_WR,
+		REG_thrsh_CH6_WR => REG_thrsh_CH6_WR,
+		INT_thrsh_CH6_WR => INT_thrsh_CH6_WR,
+		REG_thrsh_CH6_RD => REG_thrsh_CH6_WR,
+		REG_thrsh_CH7_WR => REG_thrsh_CH7_WR,
+		INT_thrsh_CH7_WR => INT_thrsh_CH7_WR,
+		REG_thrsh_CH7_RD => REG_thrsh_CH7_WR,
+		REG_thrsh_CH8_WR => REG_thrsh_CH8_WR,
+		INT_thrsh_CH8_WR => INT_thrsh_CH8_WR,
+		REG_thrsh_CH8_RD => REG_thrsh_CH8_WR,
+		REG_thrsh_CH9_WR => REG_thrsh_CH9_WR,
+		INT_thrsh_CH9_WR => INT_thrsh_CH9_WR,
+		REG_thrsh_CH9_RD => REG_thrsh_CH9_WR,
+		REG_thrsh_CH10_WR => REG_thrsh_CH10_WR,
+		INT_thrsh_CH10_WR => INT_thrsh_CH10_WR,
+		REG_thrsh_CH10_RD => REG_thrsh_CH10_WR,
+		REG_thrsh_CH11_WR => REG_thrsh_CH11_WR,
+		INT_thrsh_CH11_WR => INT_thrsh_CH11_WR,
+		REG_thrsh_CH11_RD => REG_thrsh_CH11_WR,
+		REG_thrsh_CH12_WR => REG_thrsh_CH12_WR,
+		INT_thrsh_CH12_WR => INT_thrsh_CH12_WR,
+		REG_thrsh_CH12_RD => REG_thrsh_CH12_WR,
+		REG_thrsh_CH13_WR => REG_thrsh_CH13_WR,
+		INT_thrsh_CH13_WR => INT_thrsh_CH13_WR,
+		REG_thrsh_CH13_RD => REG_thrsh_CH13_WR,
+		REG_thrsh_CH14_WR => REG_thrsh_CH14_WR,
+		INT_thrsh_CH14_WR => INT_thrsh_CH14_WR,
+		REG_thrsh_CH14_RD => REG_thrsh_CH14_WR,
+		REG_thrsh_CH15_WR => REG_thrsh_CH15_WR,
+		INT_thrsh_CH15_WR => INT_thrsh_CH15_WR,
+		REG_thrsh_CH15_RD => REG_thrsh_CH15_WR,
+		REG_thrsh_CH16_WR => REG_thrsh_CH16_WR,
+		INT_thrsh_CH16_WR => INT_thrsh_CH16_WR,
+		REG_thrsh_CH16_RD => REG_thrsh_CH16_WR,
+		REG_thrsh_CH17_WR => REG_thrsh_CH17_WR,
+		INT_thrsh_CH17_WR => INT_thrsh_CH17_WR,
+		REG_thrsh_CH17_RD => REG_thrsh_CH17_WR,
+		REG_thrsh_CH18_WR => REG_thrsh_CH18_WR,
+		INT_thrsh_CH18_WR => INT_thrsh_CH18_WR,
+		REG_thrsh_CH18_RD => REG_thrsh_CH18_WR,
+		REG_thrsh_CH19_WR => REG_thrsh_CH19_WR,
+		INT_thrsh_CH19_WR => INT_thrsh_CH19_WR,
+		REG_thrsh_CH19_RD => REG_thrsh_CH19_WR,
+		REG_thrsh_CH20_WR => REG_thrsh_CH20_WR,
+		INT_thrsh_CH20_WR => INT_thrsh_CH20_WR,
+		REG_thrsh_CH20_RD => REG_thrsh_CH20_WR,
+		REG_thrsh_CH21_WR => REG_thrsh_CH21_WR,
+		INT_thrsh_CH21_WR => INT_thrsh_CH21_WR,
+		REG_thrsh_CH21_RD => REG_thrsh_CH21_WR,
+		REG_thrsh_CH22_WR => REG_thrsh_CH22_WR,
+		INT_thrsh_CH22_WR => INT_thrsh_CH22_WR,
+		REG_thrsh_CH22_RD => REG_thrsh_CH22_WR,
+		REG_thrsh_CH23_WR => REG_thrsh_CH23_WR,
+		INT_thrsh_CH23_WR => INT_thrsh_CH23_WR,
+		REG_thrsh_CH23_RD => REG_thrsh_CH23_WR,
+	BUS_diag_READ_ADDRESS => BUS_diag_READ_ADDRESS,
+	BUS_diag_READ_DATA => BUS_diag_READ_DATA,
+	BUS_diag_WRITE_DATA => BUS_diag_WRITE_DATA,
+	BUS_diag_W_INT => BUS_diag_W_INT,
+	BUS_diag_R_INT => BUS_diag_R_INT,
+	BUS_diag_VLD => BUS_diag_VLD,
+		REG_diag_READ_STATUS_RD => REG_diag_READ_STATUS_RD,
+		INT_diag_READ_STATUS_RD => INT_diag_READ_STATUS_RD,
+		REG_diag_READ_POSITION_RD => REG_diag_READ_POSITION_RD,
+		INT_diag_READ_POSITION_RD => INT_diag_READ_POSITION_RD,
+		REG_diag_CONFIG_TRIGGER_MODE_WR => REG_diag_CONFIG_TRIGGER_MODE_WR,
+		INT_diag_CONFIG_TRIGGER_MODE_WR => INT_diag_CONFIG_TRIGGER_MODE_WR,
+		REG_diag_CONFIG_TRIGGER_MODE_RD => REG_diag_CONFIG_TRIGGER_MODE_WR,
+		REG_diag_CONFIG_PRETRIGGER_WR => REG_diag_CONFIG_PRETRIGGER_WR,
+		INT_diag_CONFIG_PRETRIGGER_WR => INT_diag_CONFIG_PRETRIGGER_WR,
+		REG_diag_CONFIG_PRETRIGGER_RD => REG_diag_CONFIG_PRETRIGGER_WR,
+		REG_diag_CONFIG_TRIGGER_LEVEL_WR => REG_diag_CONFIG_TRIGGER_LEVEL_WR,
+		INT_diag_CONFIG_TRIGGER_LEVEL_WR => INT_diag_CONFIG_TRIGGER_LEVEL_WR,
+		REG_diag_CONFIG_TRIGGER_LEVEL_RD => REG_diag_CONFIG_TRIGGER_LEVEL_WR,
+		REG_diag_CONFIG_ARM_WR => REG_diag_CONFIG_ARM_WR,
+		INT_diag_CONFIG_ARM_WR => INT_diag_CONFIG_ARM_WR,
+		REG_diag_CONFIG_ARM_RD => REG_diag_CONFIG_ARM_WR,
+		REG_diag_CONFIG_DECIMATOR_WR => REG_diag_CONFIG_DECIMATOR_WR,
+		INT_diag_CONFIG_DECIMATOR_WR => INT_diag_CONFIG_DECIMATOR_WR,
+		REG_diag_CONFIG_DECIMATOR_RD => REG_diag_CONFIG_DECIMATOR_WR,
+	BUS_All_Energies_READ_DATA => BUS_All_Energies_READ_DATA,
+	BUS_All_Energies_WRITE_DATA => BUS_All_Energies_WRITE_DATA,
+	BUS_All_Energies_W_INT => BUS_All_Energies_W_INT,
+	BUS_All_Energies_R_INT => BUS_All_Energies_R_INT,
+	BUS_All_Energies_VLD => BUS_All_Energies_VLD,
+		REG_All_Energies_READ_STATUS_RD => REG_All_Energies_READ_STATUS_RD,
+		INT_All_Energies_READ_STATUS_RD => INT_All_Energies_READ_STATUS_RD,
+		REG_All_Energies_READ_VALID_WORDS_RD => REG_All_Energies_READ_VALID_WORDS_RD,
+		INT_All_Energies_READ_VALID_WORDS_RD => INT_All_Energies_READ_VALID_WORDS_RD,
+		REG_All_Energies_CONFIG_WR => REG_All_Energies_CONFIG_WR,
+		INT_All_Energies_CONFIG_WR => INT_All_Energies_CONFIG_WR,
+		REG_All_Energies_CONFIG_RD => REG_All_Energies_CONFIG_WR,
+	BUS_int_READ_DATA => BUS_int_READ_DATA,
+	BUS_int_WRITE_DATA => BUS_int_WRITE_DATA,
+	BUS_int_W_INT => BUS_int_W_INT,
+	BUS_int_R_INT => BUS_int_R_INT,
+	BUS_int_VLD => BUS_int_VLD,
+		REG_int_time_WR => REG_int_time_WR,
+		INT_int_time_WR => INT_int_time_WR,
+		REG_int_time_RD => REG_int_time_WR,
+		REG_int_pre_WR => REG_int_pre_WR,
+		INT_int_pre_WR => INT_int_pre_WR,
+		REG_int_pre_RD => REG_int_pre_WR,
+		REG_int_base_WR => REG_int_base_WR,
+		INT_int_base_WR => INT_int_base_WR,
+		REG_int_base_RD => REG_int_base_WR,
+	BUS_top_READ_DATA => BUS_top_READ_DATA,
+	BUS_top_WRITE_DATA => BUS_top_WRITE_DATA,
+	BUS_top_W_INT => BUS_top_W_INT,
+	BUS_top_R_INT => BUS_top_R_INT,
+	BUS_top_VLD => BUS_top_VLD,
+		REG_top_CH0_WR => REG_top_CH0_WR,
+		INT_top_CH0_WR => INT_top_CH0_WR,
+		REG_top_CH0_RD => REG_top_CH0_WR,
+		REG_top_CH1_WR => REG_top_CH1_WR,
+		INT_top_CH1_WR => INT_top_CH1_WR,
+		REG_top_CH1_RD => REG_top_CH1_WR,
+		REG_top_CH2_WR => REG_top_CH2_WR,
+		INT_top_CH2_WR => INT_top_CH2_WR,
+		REG_top_CH2_RD => REG_top_CH2_WR,
+		REG_top_CH3_WR => REG_top_CH3_WR,
+		INT_top_CH3_WR => INT_top_CH3_WR,
+		REG_top_CH3_RD => REG_top_CH3_WR,
+		REG_top_CH4_WR => REG_top_CH4_WR,
+		INT_top_CH4_WR => INT_top_CH4_WR,
+		REG_top_CH4_RD => REG_top_CH4_WR,
+		REG_top_CH5_WR => REG_top_CH5_WR,
+		INT_top_CH5_WR => INT_top_CH5_WR,
+		REG_top_CH5_RD => REG_top_CH5_WR,
+		REG_top_CH6_WR => REG_top_CH6_WR,
+		INT_top_CH6_WR => INT_top_CH6_WR,
+		REG_top_CH6_RD => REG_top_CH6_WR,
+		REG_top_CH7_WR => REG_top_CH7_WR,
+		INT_top_CH7_WR => INT_top_CH7_WR,
+		REG_top_CH7_RD => REG_top_CH7_WR,
+		REG_top_CH8_WR => REG_top_CH8_WR,
+		INT_top_CH8_WR => INT_top_CH8_WR,
+		REG_top_CH8_RD => REG_top_CH8_WR,
+		REG_top_CH9_WR => REG_top_CH9_WR,
+		INT_top_CH9_WR => INT_top_CH9_WR,
+		REG_top_CH9_RD => REG_top_CH9_WR,
+		REG_top_CH10_WR => REG_top_CH10_WR,
+		INT_top_CH10_WR => INT_top_CH10_WR,
+		REG_top_CH10_RD => REG_top_CH10_WR,
+		REG_top_CH11_WR => REG_top_CH11_WR,
+		INT_top_CH11_WR => INT_top_CH11_WR,
+		REG_top_CH11_RD => REG_top_CH11_WR,
+		REG_top_CH12_WR => REG_top_CH12_WR,
+		INT_top_CH12_WR => INT_top_CH12_WR,
+		REG_top_CH12_RD => REG_top_CH12_WR,
+		REG_top_CH13_WR => REG_top_CH13_WR,
+		INT_top_CH13_WR => INT_top_CH13_WR,
+		REG_top_CH13_RD => REG_top_CH13_WR,
+		REG_top_CH14_WR => REG_top_CH14_WR,
+		INT_top_CH14_WR => INT_top_CH14_WR,
+		REG_top_CH14_RD => REG_top_CH14_WR,
+		REG_top_CH15_WR => REG_top_CH15_WR,
+		INT_top_CH15_WR => INT_top_CH15_WR,
+		REG_top_CH15_RD => REG_top_CH15_WR,
+		REG_top_CH16_WR => REG_top_CH16_WR,
+		INT_top_CH16_WR => INT_top_CH16_WR,
+		REG_top_CH16_RD => REG_top_CH16_WR,
+		REG_top_CH17_WR => REG_top_CH17_WR,
+		INT_top_CH17_WR => INT_top_CH17_WR,
+		REG_top_CH17_RD => REG_top_CH17_WR,
+		REG_top_CH18_WR => REG_top_CH18_WR,
+		INT_top_CH18_WR => INT_top_CH18_WR,
+		REG_top_CH18_RD => REG_top_CH18_WR,
+		REG_top_CH19_WR => REG_top_CH19_WR,
+		INT_top_CH19_WR => INT_top_CH19_WR,
+		REG_top_CH19_RD => REG_top_CH19_WR,
+		REG_top_CH20_WR => REG_top_CH20_WR,
+		INT_top_CH20_WR => INT_top_CH20_WR,
+		REG_top_CH20_RD => REG_top_CH20_WR,
+		REG_top_CH21_WR => REG_top_CH21_WR,
+		INT_top_CH21_WR => INT_top_CH21_WR,
+		REG_top_CH21_RD => REG_top_CH21_WR,
+		REG_top_CH22_WR => REG_top_CH22_WR,
+		INT_top_CH22_WR => INT_top_CH22_WR,
+		REG_top_CH22_RD => REG_top_CH22_WR,
+		REG_top_CH23_WR => REG_top_CH23_WR,
+		INT_top_CH23_WR => INT_top_CH23_WR,
+		REG_top_CH23_RD => REG_top_CH23_WR,
+	BUS_base_READ_DATA => BUS_base_READ_DATA,
+	BUS_base_WRITE_DATA => BUS_base_WRITE_DATA,
+	BUS_base_W_INT => BUS_base_W_INT,
+	BUS_base_R_INT => BUS_base_R_INT,
+	BUS_base_VLD => BUS_base_VLD,
+		REG_base_CH0_WR => REG_base_CH0_WR,
+		INT_base_CH0_WR => INT_base_CH0_WR,
+		REG_base_CH0_RD => REG_base_CH0_WR,
+		REG_base_CH1_WR => REG_base_CH1_WR,
+		INT_base_CH1_WR => INT_base_CH1_WR,
+		REG_base_CH1_RD => REG_base_CH1_WR,
+		REG_base_CH2_WR => REG_base_CH2_WR,
+		INT_base_CH2_WR => INT_base_CH2_WR,
+		REG_base_CH2_RD => REG_base_CH2_WR,
+		REG_base_CH3_WR => REG_base_CH3_WR,
+		INT_base_CH3_WR => INT_base_CH3_WR,
+		REG_base_CH3_RD => REG_base_CH3_WR,
+		REG_base_CH4_WR => REG_base_CH4_WR,
+		INT_base_CH4_WR => INT_base_CH4_WR,
+		REG_base_CH4_RD => REG_base_CH4_WR,
+		REG_base_CH5_WR => REG_base_CH5_WR,
+		INT_base_CH5_WR => INT_base_CH5_WR,
+		REG_base_CH5_RD => REG_base_CH5_WR,
+		REG_base_CH6_WR => REG_base_CH6_WR,
+		INT_base_CH6_WR => INT_base_CH6_WR,
+		REG_base_CH6_RD => REG_base_CH6_WR,
+		REG_base_CH7_WR => REG_base_CH7_WR,
+		INT_base_CH7_WR => INT_base_CH7_WR,
+		REG_base_CH7_RD => REG_base_CH7_WR,
+		REG_base_CH8_WR => REG_base_CH8_WR,
+		INT_base_CH8_WR => INT_base_CH8_WR,
+		REG_base_CH8_RD => REG_base_CH8_WR,
+		REG_base_CH9_WR => REG_base_CH9_WR,
+		INT_base_CH9_WR => INT_base_CH9_WR,
+		REG_base_CH9_RD => REG_base_CH9_WR,
+		REG_base_CH10_WR => REG_base_CH10_WR,
+		INT_base_CH10_WR => INT_base_CH10_WR,
+		REG_base_CH10_RD => REG_base_CH10_WR,
+		REG_base_CH11_WR => REG_base_CH11_WR,
+		INT_base_CH11_WR => INT_base_CH11_WR,
+		REG_base_CH11_RD => REG_base_CH11_WR,
+		REG_base_CH12_WR => REG_base_CH12_WR,
+		INT_base_CH12_WR => INT_base_CH12_WR,
+		REG_base_CH12_RD => REG_base_CH12_WR,
+		REG_base_CH13_WR => REG_base_CH13_WR,
+		INT_base_CH13_WR => INT_base_CH13_WR,
+		REG_base_CH13_RD => REG_base_CH13_WR,
+		REG_base_CH14_WR => REG_base_CH14_WR,
+		INT_base_CH14_WR => INT_base_CH14_WR,
+		REG_base_CH14_RD => REG_base_CH14_WR,
+		REG_base_CH15_WR => REG_base_CH15_WR,
+		INT_base_CH15_WR => INT_base_CH15_WR,
+		REG_base_CH15_RD => REG_base_CH15_WR,
+		REG_base_CH16_WR => REG_base_CH16_WR,
+		INT_base_CH16_WR => INT_base_CH16_WR,
+		REG_base_CH16_RD => REG_base_CH16_WR,
+		REG_base_CH17_WR => REG_base_CH17_WR,
+		INT_base_CH17_WR => INT_base_CH17_WR,
+		REG_base_CH17_RD => REG_base_CH17_WR,
+		REG_base_CH18_WR => REG_base_CH18_WR,
+		INT_base_CH18_WR => INT_base_CH18_WR,
+		REG_base_CH18_RD => REG_base_CH18_WR,
+		REG_base_CH19_WR => REG_base_CH19_WR,
+		INT_base_CH19_WR => INT_base_CH19_WR,
+		REG_base_CH19_RD => REG_base_CH19_WR,
+		REG_base_CH20_WR => REG_base_CH20_WR,
+		INT_base_CH20_WR => INT_base_CH20_WR,
+		REG_base_CH20_RD => REG_base_CH20_WR,
+		REG_base_CH21_WR => REG_base_CH21_WR,
+		INT_base_CH21_WR => INT_base_CH21_WR,
+		REG_base_CH21_RD => REG_base_CH21_WR,
+		REG_base_CH22_WR => REG_base_CH22_WR,
+		INT_base_CH22_WR => INT_base_CH22_WR,
+		REG_base_CH22_RD => REG_base_CH22_WR,
+		REG_base_CH23_WR => REG_base_CH23_WR,
+		INT_base_CH23_WR => INT_base_CH23_WR,
+		REG_base_CH23_RD => REG_base_CH23_WR,
+	BUS_disable_det_READ_DATA => BUS_disable_det_READ_DATA,
+	BUS_disable_det_WRITE_DATA => BUS_disable_det_WRITE_DATA,
+	BUS_disable_det_W_INT => BUS_disable_det_W_INT,
+	BUS_disable_det_R_INT => BUS_disable_det_R_INT,
+	BUS_disable_det_VLD => BUS_disable_det_VLD,
+		REG_disable_det_CH0_WR => REG_disable_det_CH0_WR,
+		INT_disable_det_CH0_WR => INT_disable_det_CH0_WR,
+		REG_disable_det_CH0_RD => REG_disable_det_CH0_WR,
+		REG_disable_det_CH1_WR => REG_disable_det_CH1_WR,
+		INT_disable_det_CH1_WR => INT_disable_det_CH1_WR,
+		REG_disable_det_CH1_RD => REG_disable_det_CH1_WR,
+		REG_disable_det_CH2_WR => REG_disable_det_CH2_WR,
+		INT_disable_det_CH2_WR => INT_disable_det_CH2_WR,
+		REG_disable_det_CH2_RD => REG_disable_det_CH2_WR,
+		REG_disable_det_CH3_WR => REG_disable_det_CH3_WR,
+		INT_disable_det_CH3_WR => INT_disable_det_CH3_WR,
+		REG_disable_det_CH3_RD => REG_disable_det_CH3_WR,
+		REG_disable_det_CH4_WR => REG_disable_det_CH4_WR,
+		INT_disable_det_CH4_WR => INT_disable_det_CH4_WR,
+		REG_disable_det_CH4_RD => REG_disable_det_CH4_WR,
+		REG_disable_det_CH5_WR => REG_disable_det_CH5_WR,
+		INT_disable_det_CH5_WR => INT_disable_det_CH5_WR,
+		REG_disable_det_CH5_RD => REG_disable_det_CH5_WR,
+		REG_disable_det_CH6_WR => REG_disable_det_CH6_WR,
+		INT_disable_det_CH6_WR => INT_disable_det_CH6_WR,
+		REG_disable_det_CH6_RD => REG_disable_det_CH6_WR,
+		REG_disable_det_CH7_WR => REG_disable_det_CH7_WR,
+		INT_disable_det_CH7_WR => INT_disable_det_CH7_WR,
+		REG_disable_det_CH7_RD => REG_disable_det_CH7_WR,
+		REG_disable_det_CH8_WR => REG_disable_det_CH8_WR,
+		INT_disable_det_CH8_WR => INT_disable_det_CH8_WR,
+		REG_disable_det_CH8_RD => REG_disable_det_CH8_WR,
+		REG_disable_det_CH9_WR => REG_disable_det_CH9_WR,
+		INT_disable_det_CH9_WR => INT_disable_det_CH9_WR,
+		REG_disable_det_CH9_RD => REG_disable_det_CH9_WR,
+		REG_disable_det_CH10_WR => REG_disable_det_CH10_WR,
+		INT_disable_det_CH10_WR => INT_disable_det_CH10_WR,
+		REG_disable_det_CH10_RD => REG_disable_det_CH10_WR,
+		REG_disable_det_CH11_WR => REG_disable_det_CH11_WR,
+		INT_disable_det_CH11_WR => INT_disable_det_CH11_WR,
+		REG_disable_det_CH11_RD => REG_disable_det_CH11_WR,
+		REG_disable_det_CH12_WR => REG_disable_det_CH12_WR,
+		INT_disable_det_CH12_WR => INT_disable_det_CH12_WR,
+		REG_disable_det_CH12_RD => REG_disable_det_CH12_WR,
+		REG_disable_det_CH13_WR => REG_disable_det_CH13_WR,
+		INT_disable_det_CH13_WR => INT_disable_det_CH13_WR,
+		REG_disable_det_CH13_RD => REG_disable_det_CH13_WR,
+		REG_disable_det_CH14_WR => REG_disable_det_CH14_WR,
+		INT_disable_det_CH14_WR => INT_disable_det_CH14_WR,
+		REG_disable_det_CH14_RD => REG_disable_det_CH14_WR,
+		REG_disable_det_CH15_WR => REG_disable_det_CH15_WR,
+		INT_disable_det_CH15_WR => INT_disable_det_CH15_WR,
+		REG_disable_det_CH15_RD => REG_disable_det_CH15_WR,
+		REG_disable_det_CH16_WR => REG_disable_det_CH16_WR,
+		INT_disable_det_CH16_WR => INT_disable_det_CH16_WR,
+		REG_disable_det_CH16_RD => REG_disable_det_CH16_WR,
+		REG_disable_det_CH17_WR => REG_disable_det_CH17_WR,
+		INT_disable_det_CH17_WR => INT_disable_det_CH17_WR,
+		REG_disable_det_CH17_RD => REG_disable_det_CH17_WR,
+		REG_disable_det_CH18_WR => REG_disable_det_CH18_WR,
+		INT_disable_det_CH18_WR => INT_disable_det_CH18_WR,
+		REG_disable_det_CH18_RD => REG_disable_det_CH18_WR,
+		REG_disable_det_CH19_WR => REG_disable_det_CH19_WR,
+		INT_disable_det_CH19_WR => INT_disable_det_CH19_WR,
+		REG_disable_det_CH19_RD => REG_disable_det_CH19_WR,
+		REG_disable_det_CH20_WR => REG_disable_det_CH20_WR,
+		INT_disable_det_CH20_WR => INT_disable_det_CH20_WR,
+		REG_disable_det_CH20_RD => REG_disable_det_CH20_WR,
+		REG_disable_det_CH21_WR => REG_disable_det_CH21_WR,
+		INT_disable_det_CH21_WR => INT_disable_det_CH21_WR,
+		REG_disable_det_CH21_RD => REG_disable_det_CH21_WR,
+		REG_disable_det_CH22_WR => REG_disable_det_CH22_WR,
+		INT_disable_det_CH22_WR => INT_disable_det_CH22_WR,
+		REG_disable_det_CH22_RD => REG_disable_det_CH22_WR,
+		REG_disable_det_CH23_WR => REG_disable_det_CH23_WR,
+		INT_disable_det_CH23_WR => INT_disable_det_CH23_WR,
+		REG_disable_det_CH23_RD => REG_disable_det_CH23_WR,
 	BUS_Spectrum_0_READ_ADDRESS => BUS_Spectrum_0_READ_ADDRESS,
 	BUS_Spectrum_0_READ_DATA => BUS_Spectrum_0_READ_DATA,
 	BUS_Spectrum_0_WRITE_DATA => BUS_Spectrum_0_WRITE_DATA,
@@ -3821,6 +4250,31 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Spectrum_0_CONFIG_MAX_WR => REG_Spectrum_0_CONFIG_MAX_WR,
 		INT_Spectrum_0_CONFIG_MAX_WR => INT_Spectrum_0_CONFIG_MAX_WR,
 		REG_Spectrum_0_CONFIG_MAX_RD => REG_Spectrum_0_CONFIG_MAX_WR,
+	BUS_Analog_In_Unflipped_READ_ADDRESS => BUS_Analog_In_Unflipped_READ_ADDRESS,
+	BUS_Analog_In_Unflipped_READ_DATA => BUS_Analog_In_Unflipped_READ_DATA,
+	BUS_Analog_In_Unflipped_WRITE_DATA => BUS_Analog_In_Unflipped_WRITE_DATA,
+	BUS_Analog_In_Unflipped_W_INT => BUS_Analog_In_Unflipped_W_INT,
+	BUS_Analog_In_Unflipped_R_INT => BUS_Analog_In_Unflipped_R_INT,
+	BUS_Analog_In_Unflipped_VLD => BUS_Analog_In_Unflipped_VLD,
+		REG_Analog_In_Unflipped_READ_STATUS_RD => REG_Analog_In_Unflipped_READ_STATUS_RD,
+		INT_Analog_In_Unflipped_READ_STATUS_RD => INT_Analog_In_Unflipped_READ_STATUS_RD,
+		REG_Analog_In_Unflipped_READ_POSITION_RD => REG_Analog_In_Unflipped_READ_POSITION_RD,
+		INT_Analog_In_Unflipped_READ_POSITION_RD => INT_Analog_In_Unflipped_READ_POSITION_RD,
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR => REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR,
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR => INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR,
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD => REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR,
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR => REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR,
+		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR => INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR,
+		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD => REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR,
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR => REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR,
+		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR => INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR,
+		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD => REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR,
+		REG_Analog_In_Unflipped_CONFIG_ARM_WR => REG_Analog_In_Unflipped_CONFIG_ARM_WR,
+		INT_Analog_In_Unflipped_CONFIG_ARM_WR => INT_Analog_In_Unflipped_CONFIG_ARM_WR,
+		REG_Analog_In_Unflipped_CONFIG_ARM_RD => REG_Analog_In_Unflipped_CONFIG_ARM_WR,
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR => REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR,
+		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR => INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR,
+		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD => REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR,
 	BUS_Spectrum_12_READ_ADDRESS => BUS_Spectrum_12_READ_ADDRESS,
 	BUS_Spectrum_12_READ_DATA => BUS_Spectrum_12_READ_DATA,
 	BUS_Spectrum_12_WRITE_DATA => BUS_Spectrum_12_WRITE_DATA,
@@ -4235,12 +4689,6 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Spectrum_9_CONFIG_MAX_WR => REG_Spectrum_9_CONFIG_MAX_WR,
 		INT_Spectrum_9_CONFIG_MAX_WR => INT_Spectrum_9_CONFIG_MAX_WR,
 		REG_Spectrum_9_CONFIG_MAX_RD => REG_Spectrum_9_CONFIG_MAX_WR,
-	BUS_SyncIn_READ_ADDRESS => BUS_SyncIn_READ_ADDRESS,
-	BUS_SyncIn_READ_DATA => BUS_SyncIn_READ_DATA,
-	BUS_SyncIn_WRITE_DATA => BUS_SyncIn_WRITE_DATA,
-	BUS_SyncIn_W_INT => BUS_SyncIn_W_INT,
-	BUS_SyncIn_R_INT => BUS_SyncIn_R_INT,
-	BUS_SyncIn_VLD => BUS_SyncIn_VLD,
 	BUS_Spectrum_21_READ_ADDRESS => BUS_Spectrum_21_READ_ADDRESS,
 	BUS_Spectrum_21_READ_DATA => BUS_Spectrum_21_READ_DATA,
 	BUS_Spectrum_21_WRITE_DATA => BUS_Spectrum_21_WRITE_DATA,
@@ -4264,6 +4712,35 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Spectrum_21_CONFIG_MAX_WR => REG_Spectrum_21_CONFIG_MAX_WR,
 		INT_Spectrum_21_CONFIG_MAX_WR => INT_Spectrum_21_CONFIG_MAX_WR,
 		REG_Spectrum_21_CONFIG_MAX_RD => REG_Spectrum_21_CONFIG_MAX_WR,
+	BUS_SyncIn_READ_ADDRESS => BUS_SyncIn_READ_ADDRESS,
+	BUS_SyncIn_READ_DATA => BUS_SyncIn_READ_DATA,
+	BUS_SyncIn_WRITE_DATA => BUS_SyncIn_WRITE_DATA,
+	BUS_SyncIn_W_INT => BUS_SyncIn_W_INT,
+	BUS_SyncIn_R_INT => BUS_SyncIn_R_INT,
+	BUS_SyncIn_VLD => BUS_SyncIn_VLD,
+	BUS_Spectrum_10_READ_ADDRESS => BUS_Spectrum_10_READ_ADDRESS,
+	BUS_Spectrum_10_READ_DATA => BUS_Spectrum_10_READ_DATA,
+	BUS_Spectrum_10_WRITE_DATA => BUS_Spectrum_10_WRITE_DATA,
+	BUS_Spectrum_10_W_INT => BUS_Spectrum_10_W_INT,
+	BUS_Spectrum_10_R_INT => BUS_Spectrum_10_R_INT,
+	BUS_Spectrum_10_VLD => BUS_Spectrum_10_VLD,
+		REG_Spectrum_10_STATUS_RD => REG_Spectrum_10_STATUS_RD,
+		INT_Spectrum_10_STATUS_RD => INT_Spectrum_10_STATUS_RD,
+		REG_Spectrum_10_CONFIG_WR => REG_Spectrum_10_CONFIG_WR,
+		INT_Spectrum_10_CONFIG_WR => INT_Spectrum_10_CONFIG_WR,
+		REG_Spectrum_10_CONFIG_RD => REG_Spectrum_10_CONFIG_WR,
+		REG_Spectrum_10_CONFIG_LIMIT_WR => REG_Spectrum_10_CONFIG_LIMIT_WR,
+		INT_Spectrum_10_CONFIG_LIMIT_WR => INT_Spectrum_10_CONFIG_LIMIT_WR,
+		REG_Spectrum_10_CONFIG_LIMIT_RD => REG_Spectrum_10_CONFIG_LIMIT_WR,
+		REG_Spectrum_10_CONFIG_REBIN_WR => REG_Spectrum_10_CONFIG_REBIN_WR,
+		INT_Spectrum_10_CONFIG_REBIN_WR => INT_Spectrum_10_CONFIG_REBIN_WR,
+		REG_Spectrum_10_CONFIG_REBIN_RD => REG_Spectrum_10_CONFIG_REBIN_WR,
+		REG_Spectrum_10_CONFIG_MIN_WR => REG_Spectrum_10_CONFIG_MIN_WR,
+		INT_Spectrum_10_CONFIG_MIN_WR => INT_Spectrum_10_CONFIG_MIN_WR,
+		REG_Spectrum_10_CONFIG_MIN_RD => REG_Spectrum_10_CONFIG_MIN_WR,
+		REG_Spectrum_10_CONFIG_MAX_WR => REG_Spectrum_10_CONFIG_MAX_WR,
+		INT_Spectrum_10_CONFIG_MAX_WR => INT_Spectrum_10_CONFIG_MAX_WR,
+		REG_Spectrum_10_CONFIG_MAX_RD => REG_Spectrum_10_CONFIG_MAX_WR,
 	BUS_Spectrum_22_READ_ADDRESS => BUS_Spectrum_22_READ_ADDRESS,
 	BUS_Spectrum_22_READ_DATA => BUS_Spectrum_22_READ_DATA,
 	BUS_Spectrum_22_WRITE_DATA => BUS_Spectrum_22_WRITE_DATA,
@@ -4310,6 +4787,29 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Spectrum_11_CONFIG_MAX_WR => REG_Spectrum_11_CONFIG_MAX_WR,
 		INT_Spectrum_11_CONFIG_MAX_WR => INT_Spectrum_11_CONFIG_MAX_WR,
 		REG_Spectrum_11_CONFIG_MAX_RD => REG_Spectrum_11_CONFIG_MAX_WR,
+	BUS_Spectrum_23_READ_ADDRESS => BUS_Spectrum_23_READ_ADDRESS,
+	BUS_Spectrum_23_READ_DATA => BUS_Spectrum_23_READ_DATA,
+	BUS_Spectrum_23_WRITE_DATA => BUS_Spectrum_23_WRITE_DATA,
+	BUS_Spectrum_23_W_INT => BUS_Spectrum_23_W_INT,
+	BUS_Spectrum_23_R_INT => BUS_Spectrum_23_R_INT,
+	BUS_Spectrum_23_VLD => BUS_Spectrum_23_VLD,
+		REG_Spectrum_23_STATUS_RD => REG_Spectrum_23_STATUS_RD,
+		INT_Spectrum_23_STATUS_RD => INT_Spectrum_23_STATUS_RD,
+		REG_Spectrum_23_CONFIG_WR => REG_Spectrum_23_CONFIG_WR,
+		INT_Spectrum_23_CONFIG_WR => INT_Spectrum_23_CONFIG_WR,
+		REG_Spectrum_23_CONFIG_RD => REG_Spectrum_23_CONFIG_WR,
+		REG_Spectrum_23_CONFIG_LIMIT_WR => REG_Spectrum_23_CONFIG_LIMIT_WR,
+		INT_Spectrum_23_CONFIG_LIMIT_WR => INT_Spectrum_23_CONFIG_LIMIT_WR,
+		REG_Spectrum_23_CONFIG_LIMIT_RD => REG_Spectrum_23_CONFIG_LIMIT_WR,
+		REG_Spectrum_23_CONFIG_REBIN_WR => REG_Spectrum_23_CONFIG_REBIN_WR,
+		INT_Spectrum_23_CONFIG_REBIN_WR => INT_Spectrum_23_CONFIG_REBIN_WR,
+		REG_Spectrum_23_CONFIG_REBIN_RD => REG_Spectrum_23_CONFIG_REBIN_WR,
+		REG_Spectrum_23_CONFIG_MIN_WR => REG_Spectrum_23_CONFIG_MIN_WR,
+		INT_Spectrum_23_CONFIG_MIN_WR => INT_Spectrum_23_CONFIG_MIN_WR,
+		REG_Spectrum_23_CONFIG_MIN_RD => REG_Spectrum_23_CONFIG_MIN_WR,
+		REG_Spectrum_23_CONFIG_MAX_WR => REG_Spectrum_23_CONFIG_MAX_WR,
+		INT_Spectrum_23_CONFIG_MAX_WR => INT_Spectrum_23_CONFIG_MAX_WR,
+		REG_Spectrum_23_CONFIG_MAX_RD => REG_Spectrum_23_CONFIG_MAX_WR,
 	BUS_Syncs_READ_ADDRESS => BUS_Syncs_READ_ADDRESS,
 	BUS_Syncs_READ_DATA => BUS_Syncs_READ_DATA,
 	BUS_Syncs_WRITE_DATA => BUS_Syncs_WRITE_DATA,
@@ -4335,450 +4835,6 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_Syncs_CONFIG_DECIMATOR_WR => REG_Syncs_CONFIG_DECIMATOR_WR,
 		INT_Syncs_CONFIG_DECIMATOR_WR => INT_Syncs_CONFIG_DECIMATOR_WR,
 		REG_Syncs_CONFIG_DECIMATOR_RD => REG_Syncs_CONFIG_DECIMATOR_WR,
-		REG_forcetrig_RD => REG_forcetrig_RD,
-		REG_forcetrig_WR => REG_forcetrig_WR,
-		INT_forcetrig_RD => INT_forcetrig_RD,
-		INT_forcetrig_WR => INT_forcetrig_WR,
-		REG_full_RD => REG_full_RD,
-		REG_full_WR => REG_full_WR,
-		INT_full_RD => INT_full_RD,
-		INT_full_WR => INT_full_WR,
-		REG_trigger_code_RD => REG_trigger_code_RD,
-		REG_trigger_code_WR => REG_trigger_code_WR,
-		INT_trigger_code_RD => INT_trigger_code_RD,
-		INT_trigger_code_WR => INT_trigger_code_WR,
-		REG_reset_RD => REG_reset_RD,
-		REG_reset_WR => REG_reset_WR,
-		INT_reset_RD => INT_reset_RD,
-		INT_reset_WR => INT_reset_WR,
-		REG_received_RD => REG_received_RD,
-		REG_received_WR => REG_received_WR,
-		INT_received_RD => INT_received_RD,
-		INT_received_WR => INT_received_WR,
-		REG_timestamp_RD => REG_timestamp_RD,
-		REG_timestamp_WR => REG_timestamp_WR,
-		INT_timestamp_RD => INT_timestamp_RD,
-		INT_timestamp_WR => INT_timestamp_WR,
-	BUS_disable_det_READ_DATA => BUS_disable_det_READ_DATA,
-	BUS_disable_det_WRITE_DATA => BUS_disable_det_WRITE_DATA,
-	BUS_disable_det_W_INT => BUS_disable_det_W_INT,
-	BUS_disable_det_R_INT => BUS_disable_det_R_INT,
-	BUS_disable_det_VLD => BUS_disable_det_VLD,
-		REG_disable_det_CH0_WR => REG_disable_det_CH0_WR,
-		INT_disable_det_CH0_WR => INT_disable_det_CH0_WR,
-		REG_disable_det_CH0_RD => REG_disable_det_CH0_WR,
-		REG_disable_det_CH1_WR => REG_disable_det_CH1_WR,
-		INT_disable_det_CH1_WR => INT_disable_det_CH1_WR,
-		REG_disable_det_CH1_RD => REG_disable_det_CH1_WR,
-		REG_disable_det_CH2_WR => REG_disable_det_CH2_WR,
-		INT_disable_det_CH2_WR => INT_disable_det_CH2_WR,
-		REG_disable_det_CH2_RD => REG_disable_det_CH2_WR,
-		REG_disable_det_CH3_WR => REG_disable_det_CH3_WR,
-		INT_disable_det_CH3_WR => INT_disable_det_CH3_WR,
-		REG_disable_det_CH3_RD => REG_disable_det_CH3_WR,
-		REG_disable_det_CH4_WR => REG_disable_det_CH4_WR,
-		INT_disable_det_CH4_WR => INT_disable_det_CH4_WR,
-		REG_disable_det_CH4_RD => REG_disable_det_CH4_WR,
-		REG_disable_det_CH5_WR => REG_disable_det_CH5_WR,
-		INT_disable_det_CH5_WR => INT_disable_det_CH5_WR,
-		REG_disable_det_CH5_RD => REG_disable_det_CH5_WR,
-		REG_disable_det_CH6_WR => REG_disable_det_CH6_WR,
-		INT_disable_det_CH6_WR => INT_disable_det_CH6_WR,
-		REG_disable_det_CH6_RD => REG_disable_det_CH6_WR,
-		REG_disable_det_CH7_WR => REG_disable_det_CH7_WR,
-		INT_disable_det_CH7_WR => INT_disable_det_CH7_WR,
-		REG_disable_det_CH7_RD => REG_disable_det_CH7_WR,
-		REG_disable_det_CH8_WR => REG_disable_det_CH8_WR,
-		INT_disable_det_CH8_WR => INT_disable_det_CH8_WR,
-		REG_disable_det_CH8_RD => REG_disable_det_CH8_WR,
-		REG_disable_det_CH9_WR => REG_disable_det_CH9_WR,
-		INT_disable_det_CH9_WR => INT_disable_det_CH9_WR,
-		REG_disable_det_CH9_RD => REG_disable_det_CH9_WR,
-		REG_disable_det_CH10_WR => REG_disable_det_CH10_WR,
-		INT_disable_det_CH10_WR => INT_disable_det_CH10_WR,
-		REG_disable_det_CH10_RD => REG_disable_det_CH10_WR,
-		REG_disable_det_CH11_WR => REG_disable_det_CH11_WR,
-		INT_disable_det_CH11_WR => INT_disable_det_CH11_WR,
-		REG_disable_det_CH11_RD => REG_disable_det_CH11_WR,
-		REG_disable_det_CH12_WR => REG_disable_det_CH12_WR,
-		INT_disable_det_CH12_WR => INT_disable_det_CH12_WR,
-		REG_disable_det_CH12_RD => REG_disable_det_CH12_WR,
-		REG_disable_det_CH13_WR => REG_disable_det_CH13_WR,
-		INT_disable_det_CH13_WR => INT_disable_det_CH13_WR,
-		REG_disable_det_CH13_RD => REG_disable_det_CH13_WR,
-		REG_disable_det_CH14_WR => REG_disable_det_CH14_WR,
-		INT_disable_det_CH14_WR => INT_disable_det_CH14_WR,
-		REG_disable_det_CH14_RD => REG_disable_det_CH14_WR,
-		REG_disable_det_CH15_WR => REG_disable_det_CH15_WR,
-		INT_disable_det_CH15_WR => INT_disable_det_CH15_WR,
-		REG_disable_det_CH15_RD => REG_disable_det_CH15_WR,
-		REG_disable_det_CH16_WR => REG_disable_det_CH16_WR,
-		INT_disable_det_CH16_WR => INT_disable_det_CH16_WR,
-		REG_disable_det_CH16_RD => REG_disable_det_CH16_WR,
-		REG_disable_det_CH17_WR => REG_disable_det_CH17_WR,
-		INT_disable_det_CH17_WR => INT_disable_det_CH17_WR,
-		REG_disable_det_CH17_RD => REG_disable_det_CH17_WR,
-		REG_disable_det_CH18_WR => REG_disable_det_CH18_WR,
-		INT_disable_det_CH18_WR => INT_disable_det_CH18_WR,
-		REG_disable_det_CH18_RD => REG_disable_det_CH18_WR,
-		REG_disable_det_CH19_WR => REG_disable_det_CH19_WR,
-		INT_disable_det_CH19_WR => INT_disable_det_CH19_WR,
-		REG_disable_det_CH19_RD => REG_disable_det_CH19_WR,
-		REG_disable_det_CH20_WR => REG_disable_det_CH20_WR,
-		INT_disable_det_CH20_WR => INT_disable_det_CH20_WR,
-		REG_disable_det_CH20_RD => REG_disable_det_CH20_WR,
-		REG_disable_det_CH21_WR => REG_disable_det_CH21_WR,
-		INT_disable_det_CH21_WR => INT_disable_det_CH21_WR,
-		REG_disable_det_CH21_RD => REG_disable_det_CH21_WR,
-		REG_disable_det_CH22_WR => REG_disable_det_CH22_WR,
-		INT_disable_det_CH22_WR => INT_disable_det_CH22_WR,
-		REG_disable_det_CH22_RD => REG_disable_det_CH22_WR,
-		REG_disable_det_CH23_WR => REG_disable_det_CH23_WR,
-		INT_disable_det_CH23_WR => INT_disable_det_CH23_WR,
-		REG_disable_det_CH23_RD => REG_disable_det_CH23_WR,
-	BUS_top_READ_DATA => BUS_top_READ_DATA,
-	BUS_top_WRITE_DATA => BUS_top_WRITE_DATA,
-	BUS_top_W_INT => BUS_top_W_INT,
-	BUS_top_R_INT => BUS_top_R_INT,
-	BUS_top_VLD => BUS_top_VLD,
-		REG_top_CH0_WR => REG_top_CH0_WR,
-		INT_top_CH0_WR => INT_top_CH0_WR,
-		REG_top_CH0_RD => REG_top_CH0_WR,
-		REG_top_CH1_WR => REG_top_CH1_WR,
-		INT_top_CH1_WR => INT_top_CH1_WR,
-		REG_top_CH1_RD => REG_top_CH1_WR,
-		REG_top_CH2_WR => REG_top_CH2_WR,
-		INT_top_CH2_WR => INT_top_CH2_WR,
-		REG_top_CH2_RD => REG_top_CH2_WR,
-		REG_top_CH3_WR => REG_top_CH3_WR,
-		INT_top_CH3_WR => INT_top_CH3_WR,
-		REG_top_CH3_RD => REG_top_CH3_WR,
-		REG_top_CH4_WR => REG_top_CH4_WR,
-		INT_top_CH4_WR => INT_top_CH4_WR,
-		REG_top_CH4_RD => REG_top_CH4_WR,
-		REG_top_CH5_WR => REG_top_CH5_WR,
-		INT_top_CH5_WR => INT_top_CH5_WR,
-		REG_top_CH5_RD => REG_top_CH5_WR,
-		REG_top_CH6_WR => REG_top_CH6_WR,
-		INT_top_CH6_WR => INT_top_CH6_WR,
-		REG_top_CH6_RD => REG_top_CH6_WR,
-		REG_top_CH7_WR => REG_top_CH7_WR,
-		INT_top_CH7_WR => INT_top_CH7_WR,
-		REG_top_CH7_RD => REG_top_CH7_WR,
-		REG_top_CH8_WR => REG_top_CH8_WR,
-		INT_top_CH8_WR => INT_top_CH8_WR,
-		REG_top_CH8_RD => REG_top_CH8_WR,
-		REG_top_CH9_WR => REG_top_CH9_WR,
-		INT_top_CH9_WR => INT_top_CH9_WR,
-		REG_top_CH9_RD => REG_top_CH9_WR,
-		REG_top_CH10_WR => REG_top_CH10_WR,
-		INT_top_CH10_WR => INT_top_CH10_WR,
-		REG_top_CH10_RD => REG_top_CH10_WR,
-		REG_top_CH11_WR => REG_top_CH11_WR,
-		INT_top_CH11_WR => INT_top_CH11_WR,
-		REG_top_CH11_RD => REG_top_CH11_WR,
-		REG_top_CH12_WR => REG_top_CH12_WR,
-		INT_top_CH12_WR => INT_top_CH12_WR,
-		REG_top_CH12_RD => REG_top_CH12_WR,
-		REG_top_CH13_WR => REG_top_CH13_WR,
-		INT_top_CH13_WR => INT_top_CH13_WR,
-		REG_top_CH13_RD => REG_top_CH13_WR,
-		REG_top_CH14_WR => REG_top_CH14_WR,
-		INT_top_CH14_WR => INT_top_CH14_WR,
-		REG_top_CH14_RD => REG_top_CH14_WR,
-		REG_top_CH15_WR => REG_top_CH15_WR,
-		INT_top_CH15_WR => INT_top_CH15_WR,
-		REG_top_CH15_RD => REG_top_CH15_WR,
-		REG_top_CH16_WR => REG_top_CH16_WR,
-		INT_top_CH16_WR => INT_top_CH16_WR,
-		REG_top_CH16_RD => REG_top_CH16_WR,
-		REG_top_CH17_WR => REG_top_CH17_WR,
-		INT_top_CH17_WR => INT_top_CH17_WR,
-		REG_top_CH17_RD => REG_top_CH17_WR,
-		REG_top_CH18_WR => REG_top_CH18_WR,
-		INT_top_CH18_WR => INT_top_CH18_WR,
-		REG_top_CH18_RD => REG_top_CH18_WR,
-		REG_top_CH19_WR => REG_top_CH19_WR,
-		INT_top_CH19_WR => INT_top_CH19_WR,
-		REG_top_CH19_RD => REG_top_CH19_WR,
-		REG_top_CH20_WR => REG_top_CH20_WR,
-		INT_top_CH20_WR => INT_top_CH20_WR,
-		REG_top_CH20_RD => REG_top_CH20_WR,
-		REG_top_CH21_WR => REG_top_CH21_WR,
-		INT_top_CH21_WR => INT_top_CH21_WR,
-		REG_top_CH21_RD => REG_top_CH21_WR,
-		REG_top_CH22_WR => REG_top_CH22_WR,
-		INT_top_CH22_WR => INT_top_CH22_WR,
-		REG_top_CH22_RD => REG_top_CH22_WR,
-		REG_top_CH23_WR => REG_top_CH23_WR,
-		INT_top_CH23_WR => INT_top_CH23_WR,
-		REG_top_CH23_RD => REG_top_CH23_WR,
-	BUS_thrsh_READ_DATA => BUS_thrsh_READ_DATA,
-	BUS_thrsh_WRITE_DATA => BUS_thrsh_WRITE_DATA,
-	BUS_thrsh_W_INT => BUS_thrsh_W_INT,
-	BUS_thrsh_R_INT => BUS_thrsh_R_INT,
-	BUS_thrsh_VLD => BUS_thrsh_VLD,
-		REG_thrsh_CH0_WR => REG_thrsh_CH0_WR,
-		INT_thrsh_CH0_WR => INT_thrsh_CH0_WR,
-		REG_thrsh_CH0_RD => REG_thrsh_CH0_WR,
-		REG_thrsh_CH1_WR => REG_thrsh_CH1_WR,
-		INT_thrsh_CH1_WR => INT_thrsh_CH1_WR,
-		REG_thrsh_CH1_RD => REG_thrsh_CH1_WR,
-		REG_thrsh_CH2_WR => REG_thrsh_CH2_WR,
-		INT_thrsh_CH2_WR => INT_thrsh_CH2_WR,
-		REG_thrsh_CH2_RD => REG_thrsh_CH2_WR,
-		REG_thrsh_CH3_WR => REG_thrsh_CH3_WR,
-		INT_thrsh_CH3_WR => INT_thrsh_CH3_WR,
-		REG_thrsh_CH3_RD => REG_thrsh_CH3_WR,
-		REG_thrsh_CH4_WR => REG_thrsh_CH4_WR,
-		INT_thrsh_CH4_WR => INT_thrsh_CH4_WR,
-		REG_thrsh_CH4_RD => REG_thrsh_CH4_WR,
-		REG_thrsh_CH5_WR => REG_thrsh_CH5_WR,
-		INT_thrsh_CH5_WR => INT_thrsh_CH5_WR,
-		REG_thrsh_CH5_RD => REG_thrsh_CH5_WR,
-		REG_thrsh_CH6_WR => REG_thrsh_CH6_WR,
-		INT_thrsh_CH6_WR => INT_thrsh_CH6_WR,
-		REG_thrsh_CH6_RD => REG_thrsh_CH6_WR,
-		REG_thrsh_CH7_WR => REG_thrsh_CH7_WR,
-		INT_thrsh_CH7_WR => INT_thrsh_CH7_WR,
-		REG_thrsh_CH7_RD => REG_thrsh_CH7_WR,
-		REG_thrsh_CH8_WR => REG_thrsh_CH8_WR,
-		INT_thrsh_CH8_WR => INT_thrsh_CH8_WR,
-		REG_thrsh_CH8_RD => REG_thrsh_CH8_WR,
-		REG_thrsh_CH9_WR => REG_thrsh_CH9_WR,
-		INT_thrsh_CH9_WR => INT_thrsh_CH9_WR,
-		REG_thrsh_CH9_RD => REG_thrsh_CH9_WR,
-		REG_thrsh_CH10_WR => REG_thrsh_CH10_WR,
-		INT_thrsh_CH10_WR => INT_thrsh_CH10_WR,
-		REG_thrsh_CH10_RD => REG_thrsh_CH10_WR,
-		REG_thrsh_CH11_WR => REG_thrsh_CH11_WR,
-		INT_thrsh_CH11_WR => INT_thrsh_CH11_WR,
-		REG_thrsh_CH11_RD => REG_thrsh_CH11_WR,
-		REG_thrsh_CH12_WR => REG_thrsh_CH12_WR,
-		INT_thrsh_CH12_WR => INT_thrsh_CH12_WR,
-		REG_thrsh_CH12_RD => REG_thrsh_CH12_WR,
-		REG_thrsh_CH13_WR => REG_thrsh_CH13_WR,
-		INT_thrsh_CH13_WR => INT_thrsh_CH13_WR,
-		REG_thrsh_CH13_RD => REG_thrsh_CH13_WR,
-		REG_thrsh_CH14_WR => REG_thrsh_CH14_WR,
-		INT_thrsh_CH14_WR => INT_thrsh_CH14_WR,
-		REG_thrsh_CH14_RD => REG_thrsh_CH14_WR,
-		REG_thrsh_CH15_WR => REG_thrsh_CH15_WR,
-		INT_thrsh_CH15_WR => INT_thrsh_CH15_WR,
-		REG_thrsh_CH15_RD => REG_thrsh_CH15_WR,
-		REG_thrsh_CH16_WR => REG_thrsh_CH16_WR,
-		INT_thrsh_CH16_WR => INT_thrsh_CH16_WR,
-		REG_thrsh_CH16_RD => REG_thrsh_CH16_WR,
-		REG_thrsh_CH17_WR => REG_thrsh_CH17_WR,
-		INT_thrsh_CH17_WR => INT_thrsh_CH17_WR,
-		REG_thrsh_CH17_RD => REG_thrsh_CH17_WR,
-		REG_thrsh_CH18_WR => REG_thrsh_CH18_WR,
-		INT_thrsh_CH18_WR => INT_thrsh_CH18_WR,
-		REG_thrsh_CH18_RD => REG_thrsh_CH18_WR,
-		REG_thrsh_CH19_WR => REG_thrsh_CH19_WR,
-		INT_thrsh_CH19_WR => INT_thrsh_CH19_WR,
-		REG_thrsh_CH19_RD => REG_thrsh_CH19_WR,
-		REG_thrsh_CH20_WR => REG_thrsh_CH20_WR,
-		INT_thrsh_CH20_WR => INT_thrsh_CH20_WR,
-		REG_thrsh_CH20_RD => REG_thrsh_CH20_WR,
-		REG_thrsh_CH21_WR => REG_thrsh_CH21_WR,
-		INT_thrsh_CH21_WR => INT_thrsh_CH21_WR,
-		REG_thrsh_CH21_RD => REG_thrsh_CH21_WR,
-		REG_thrsh_CH22_WR => REG_thrsh_CH22_WR,
-		INT_thrsh_CH22_WR => INT_thrsh_CH22_WR,
-		REG_thrsh_CH22_RD => REG_thrsh_CH22_WR,
-		REG_thrsh_CH23_WR => REG_thrsh_CH23_WR,
-		INT_thrsh_CH23_WR => INT_thrsh_CH23_WR,
-		REG_thrsh_CH23_RD => REG_thrsh_CH23_WR,
-		REG_dummy_RD => REG_dummy_RD,
-		REG_dummy_WR => REG_dummy_WR,
-		INT_dummy_RD => INT_dummy_RD,
-		INT_dummy_WR => INT_dummy_WR,
-	BUS_base_READ_DATA => BUS_base_READ_DATA,
-	BUS_base_WRITE_DATA => BUS_base_WRITE_DATA,
-	BUS_base_W_INT => BUS_base_W_INT,
-	BUS_base_R_INT => BUS_base_R_INT,
-	BUS_base_VLD => BUS_base_VLD,
-		REG_base_CH0_WR => REG_base_CH0_WR,
-		INT_base_CH0_WR => INT_base_CH0_WR,
-		REG_base_CH0_RD => REG_base_CH0_WR,
-		REG_base_CH1_WR => REG_base_CH1_WR,
-		INT_base_CH1_WR => INT_base_CH1_WR,
-		REG_base_CH1_RD => REG_base_CH1_WR,
-		REG_base_CH2_WR => REG_base_CH2_WR,
-		INT_base_CH2_WR => INT_base_CH2_WR,
-		REG_base_CH2_RD => REG_base_CH2_WR,
-		REG_base_CH3_WR => REG_base_CH3_WR,
-		INT_base_CH3_WR => INT_base_CH3_WR,
-		REG_base_CH3_RD => REG_base_CH3_WR,
-		REG_base_CH4_WR => REG_base_CH4_WR,
-		INT_base_CH4_WR => INT_base_CH4_WR,
-		REG_base_CH4_RD => REG_base_CH4_WR,
-		REG_base_CH5_WR => REG_base_CH5_WR,
-		INT_base_CH5_WR => INT_base_CH5_WR,
-		REG_base_CH5_RD => REG_base_CH5_WR,
-		REG_base_CH6_WR => REG_base_CH6_WR,
-		INT_base_CH6_WR => INT_base_CH6_WR,
-		REG_base_CH6_RD => REG_base_CH6_WR,
-		REG_base_CH7_WR => REG_base_CH7_WR,
-		INT_base_CH7_WR => INT_base_CH7_WR,
-		REG_base_CH7_RD => REG_base_CH7_WR,
-		REG_base_CH8_WR => REG_base_CH8_WR,
-		INT_base_CH8_WR => INT_base_CH8_WR,
-		REG_base_CH8_RD => REG_base_CH8_WR,
-		REG_base_CH9_WR => REG_base_CH9_WR,
-		INT_base_CH9_WR => INT_base_CH9_WR,
-		REG_base_CH9_RD => REG_base_CH9_WR,
-		REG_base_CH10_WR => REG_base_CH10_WR,
-		INT_base_CH10_WR => INT_base_CH10_WR,
-		REG_base_CH10_RD => REG_base_CH10_WR,
-		REG_base_CH11_WR => REG_base_CH11_WR,
-		INT_base_CH11_WR => INT_base_CH11_WR,
-		REG_base_CH11_RD => REG_base_CH11_WR,
-		REG_base_CH12_WR => REG_base_CH12_WR,
-		INT_base_CH12_WR => INT_base_CH12_WR,
-		REG_base_CH12_RD => REG_base_CH12_WR,
-		REG_base_CH13_WR => REG_base_CH13_WR,
-		INT_base_CH13_WR => INT_base_CH13_WR,
-		REG_base_CH13_RD => REG_base_CH13_WR,
-		REG_base_CH14_WR => REG_base_CH14_WR,
-		INT_base_CH14_WR => INT_base_CH14_WR,
-		REG_base_CH14_RD => REG_base_CH14_WR,
-		REG_base_CH15_WR => REG_base_CH15_WR,
-		INT_base_CH15_WR => INT_base_CH15_WR,
-		REG_base_CH15_RD => REG_base_CH15_WR,
-		REG_base_CH16_WR => REG_base_CH16_WR,
-		INT_base_CH16_WR => INT_base_CH16_WR,
-		REG_base_CH16_RD => REG_base_CH16_WR,
-		REG_base_CH17_WR => REG_base_CH17_WR,
-		INT_base_CH17_WR => INT_base_CH17_WR,
-		REG_base_CH17_RD => REG_base_CH17_WR,
-		REG_base_CH18_WR => REG_base_CH18_WR,
-		INT_base_CH18_WR => INT_base_CH18_WR,
-		REG_base_CH18_RD => REG_base_CH18_WR,
-		REG_base_CH19_WR => REG_base_CH19_WR,
-		INT_base_CH19_WR => INT_base_CH19_WR,
-		REG_base_CH19_RD => REG_base_CH19_WR,
-		REG_base_CH20_WR => REG_base_CH20_WR,
-		INT_base_CH20_WR => INT_base_CH20_WR,
-		REG_base_CH20_RD => REG_base_CH20_WR,
-		REG_base_CH21_WR => REG_base_CH21_WR,
-		INT_base_CH21_WR => INT_base_CH21_WR,
-		REG_base_CH21_RD => REG_base_CH21_WR,
-		REG_base_CH22_WR => REG_base_CH22_WR,
-		INT_base_CH22_WR => INT_base_CH22_WR,
-		REG_base_CH22_RD => REG_base_CH22_WR,
-		REG_base_CH23_WR => REG_base_CH23_WR,
-		INT_base_CH23_WR => INT_base_CH23_WR,
-		REG_base_CH23_RD => REG_base_CH23_WR,
-	BUS_Analog_In_Unflipped_READ_ADDRESS => BUS_Analog_In_Unflipped_READ_ADDRESS,
-	BUS_Analog_In_Unflipped_READ_DATA => BUS_Analog_In_Unflipped_READ_DATA,
-	BUS_Analog_In_Unflipped_WRITE_DATA => BUS_Analog_In_Unflipped_WRITE_DATA,
-	BUS_Analog_In_Unflipped_W_INT => BUS_Analog_In_Unflipped_W_INT,
-	BUS_Analog_In_Unflipped_R_INT => BUS_Analog_In_Unflipped_R_INT,
-	BUS_Analog_In_Unflipped_VLD => BUS_Analog_In_Unflipped_VLD,
-		REG_Analog_In_Unflipped_READ_STATUS_RD => REG_Analog_In_Unflipped_READ_STATUS_RD,
-		INT_Analog_In_Unflipped_READ_STATUS_RD => INT_Analog_In_Unflipped_READ_STATUS_RD,
-		REG_Analog_In_Unflipped_READ_POSITION_RD => REG_Analog_In_Unflipped_READ_POSITION_RD,
-		INT_Analog_In_Unflipped_READ_POSITION_RD => INT_Analog_In_Unflipped_READ_POSITION_RD,
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR => REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR,
-		INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR => INT_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR,
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_RD => REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE_WR,
-		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR => REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR,
-		INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR => INT_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR,
-		REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_RD => REG_Analog_In_Unflipped_CONFIG_PRETRIGGER_WR,
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR => REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR,
-		INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR => INT_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR,
-		REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_RD => REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL_WR,
-		REG_Analog_In_Unflipped_CONFIG_ARM_WR => REG_Analog_In_Unflipped_CONFIG_ARM_WR,
-		INT_Analog_In_Unflipped_CONFIG_ARM_WR => INT_Analog_In_Unflipped_CONFIG_ARM_WR,
-		REG_Analog_In_Unflipped_CONFIG_ARM_RD => REG_Analog_In_Unflipped_CONFIG_ARM_WR,
-		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR => REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR,
-		INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR => INT_Analog_In_Unflipped_CONFIG_DECIMATOR_WR,
-		REG_Analog_In_Unflipped_CONFIG_DECIMATOR_RD => REG_Analog_In_Unflipped_CONFIG_DECIMATOR_WR,
-	BUS_All_Energies_READ_DATA => BUS_All_Energies_READ_DATA,
-	BUS_All_Energies_WRITE_DATA => BUS_All_Energies_WRITE_DATA,
-	BUS_All_Energies_W_INT => BUS_All_Energies_W_INT,
-	BUS_All_Energies_R_INT => BUS_All_Energies_R_INT,
-	BUS_All_Energies_VLD => BUS_All_Energies_VLD,
-		REG_All_Energies_READ_STATUS_RD => REG_All_Energies_READ_STATUS_RD,
-		INT_All_Energies_READ_STATUS_RD => INT_All_Energies_READ_STATUS_RD,
-		REG_All_Energies_READ_VALID_WORDS_RD => REG_All_Energies_READ_VALID_WORDS_RD,
-		INT_All_Energies_READ_VALID_WORDS_RD => INT_All_Energies_READ_VALID_WORDS_RD,
-		REG_All_Energies_CONFIG_WR => REG_All_Energies_CONFIG_WR,
-		INT_All_Energies_CONFIG_WR => INT_All_Energies_CONFIG_WR,
-		REG_All_Energies_CONFIG_RD => REG_All_Energies_CONFIG_WR,
-	BUS_Spectrum_10_READ_ADDRESS => BUS_Spectrum_10_READ_ADDRESS,
-	BUS_Spectrum_10_READ_DATA => BUS_Spectrum_10_READ_DATA,
-	BUS_Spectrum_10_WRITE_DATA => BUS_Spectrum_10_WRITE_DATA,
-	BUS_Spectrum_10_W_INT => BUS_Spectrum_10_W_INT,
-	BUS_Spectrum_10_R_INT => BUS_Spectrum_10_R_INT,
-	BUS_Spectrum_10_VLD => BUS_Spectrum_10_VLD,
-		REG_Spectrum_10_STATUS_RD => REG_Spectrum_10_STATUS_RD,
-		INT_Spectrum_10_STATUS_RD => INT_Spectrum_10_STATUS_RD,
-		REG_Spectrum_10_CONFIG_WR => REG_Spectrum_10_CONFIG_WR,
-		INT_Spectrum_10_CONFIG_WR => INT_Spectrum_10_CONFIG_WR,
-		REG_Spectrum_10_CONFIG_RD => REG_Spectrum_10_CONFIG_WR,
-		REG_Spectrum_10_CONFIG_LIMIT_WR => REG_Spectrum_10_CONFIG_LIMIT_WR,
-		INT_Spectrum_10_CONFIG_LIMIT_WR => INT_Spectrum_10_CONFIG_LIMIT_WR,
-		REG_Spectrum_10_CONFIG_LIMIT_RD => REG_Spectrum_10_CONFIG_LIMIT_WR,
-		REG_Spectrum_10_CONFIG_REBIN_WR => REG_Spectrum_10_CONFIG_REBIN_WR,
-		INT_Spectrum_10_CONFIG_REBIN_WR => INT_Spectrum_10_CONFIG_REBIN_WR,
-		REG_Spectrum_10_CONFIG_REBIN_RD => REG_Spectrum_10_CONFIG_REBIN_WR,
-		REG_Spectrum_10_CONFIG_MIN_WR => REG_Spectrum_10_CONFIG_MIN_WR,
-		INT_Spectrum_10_CONFIG_MIN_WR => INT_Spectrum_10_CONFIG_MIN_WR,
-		REG_Spectrum_10_CONFIG_MIN_RD => REG_Spectrum_10_CONFIG_MIN_WR,
-		REG_Spectrum_10_CONFIG_MAX_WR => REG_Spectrum_10_CONFIG_MAX_WR,
-		INT_Spectrum_10_CONFIG_MAX_WR => INT_Spectrum_10_CONFIG_MAX_WR,
-		REG_Spectrum_10_CONFIG_MAX_RD => REG_Spectrum_10_CONFIG_MAX_WR,
-	BUS_Spectrum_23_READ_ADDRESS => BUS_Spectrum_23_READ_ADDRESS,
-	BUS_Spectrum_23_READ_DATA => BUS_Spectrum_23_READ_DATA,
-	BUS_Spectrum_23_WRITE_DATA => BUS_Spectrum_23_WRITE_DATA,
-	BUS_Spectrum_23_W_INT => BUS_Spectrum_23_W_INT,
-	BUS_Spectrum_23_R_INT => BUS_Spectrum_23_R_INT,
-	BUS_Spectrum_23_VLD => BUS_Spectrum_23_VLD,
-		REG_Spectrum_23_STATUS_RD => REG_Spectrum_23_STATUS_RD,
-		INT_Spectrum_23_STATUS_RD => INT_Spectrum_23_STATUS_RD,
-		REG_Spectrum_23_CONFIG_WR => REG_Spectrum_23_CONFIG_WR,
-		INT_Spectrum_23_CONFIG_WR => INT_Spectrum_23_CONFIG_WR,
-		REG_Spectrum_23_CONFIG_RD => REG_Spectrum_23_CONFIG_WR,
-		REG_Spectrum_23_CONFIG_LIMIT_WR => REG_Spectrum_23_CONFIG_LIMIT_WR,
-		INT_Spectrum_23_CONFIG_LIMIT_WR => INT_Spectrum_23_CONFIG_LIMIT_WR,
-		REG_Spectrum_23_CONFIG_LIMIT_RD => REG_Spectrum_23_CONFIG_LIMIT_WR,
-		REG_Spectrum_23_CONFIG_REBIN_WR => REG_Spectrum_23_CONFIG_REBIN_WR,
-		INT_Spectrum_23_CONFIG_REBIN_WR => INT_Spectrum_23_CONFIG_REBIN_WR,
-		REG_Spectrum_23_CONFIG_REBIN_RD => REG_Spectrum_23_CONFIG_REBIN_WR,
-		REG_Spectrum_23_CONFIG_MIN_WR => REG_Spectrum_23_CONFIG_MIN_WR,
-		INT_Spectrum_23_CONFIG_MIN_WR => INT_Spectrum_23_CONFIG_MIN_WR,
-		REG_Spectrum_23_CONFIG_MIN_RD => REG_Spectrum_23_CONFIG_MIN_WR,
-		REG_Spectrum_23_CONFIG_MAX_WR => REG_Spectrum_23_CONFIG_MAX_WR,
-		INT_Spectrum_23_CONFIG_MAX_WR => INT_Spectrum_23_CONFIG_MAX_WR,
-		REG_Spectrum_23_CONFIG_MAX_RD => REG_Spectrum_23_CONFIG_MAX_WR,
-	BUS_diag_READ_ADDRESS => BUS_diag_READ_ADDRESS,
-	BUS_diag_READ_DATA => BUS_diag_READ_DATA,
-	BUS_diag_WRITE_DATA => BUS_diag_WRITE_DATA,
-	BUS_diag_W_INT => BUS_diag_W_INT,
-	BUS_diag_R_INT => BUS_diag_R_INT,
-	BUS_diag_VLD => BUS_diag_VLD,
-		REG_diag_READ_STATUS_RD => REG_diag_READ_STATUS_RD,
-		INT_diag_READ_STATUS_RD => INT_diag_READ_STATUS_RD,
-		REG_diag_READ_POSITION_RD => REG_diag_READ_POSITION_RD,
-		INT_diag_READ_POSITION_RD => INT_diag_READ_POSITION_RD,
-		REG_diag_CONFIG_TRIGGER_MODE_WR => REG_diag_CONFIG_TRIGGER_MODE_WR,
-		INT_diag_CONFIG_TRIGGER_MODE_WR => INT_diag_CONFIG_TRIGGER_MODE_WR,
-		REG_diag_CONFIG_TRIGGER_MODE_RD => REG_diag_CONFIG_TRIGGER_MODE_WR,
-		REG_diag_CONFIG_PRETRIGGER_WR => REG_diag_CONFIG_PRETRIGGER_WR,
-		INT_diag_CONFIG_PRETRIGGER_WR => INT_diag_CONFIG_PRETRIGGER_WR,
-		REG_diag_CONFIG_PRETRIGGER_RD => REG_diag_CONFIG_PRETRIGGER_WR,
-		REG_diag_CONFIG_TRIGGER_LEVEL_WR => REG_diag_CONFIG_TRIGGER_LEVEL_WR,
-		INT_diag_CONFIG_TRIGGER_LEVEL_WR => INT_diag_CONFIG_TRIGGER_LEVEL_WR,
-		REG_diag_CONFIG_TRIGGER_LEVEL_RD => REG_diag_CONFIG_TRIGGER_LEVEL_WR,
-		REG_diag_CONFIG_ARM_WR => REG_diag_CONFIG_ARM_WR,
-		INT_diag_CONFIG_ARM_WR => INT_diag_CONFIG_ARM_WR,
-		REG_diag_CONFIG_ARM_RD => REG_diag_CONFIG_ARM_WR,
-		REG_diag_CONFIG_DECIMATOR_WR => REG_diag_CONFIG_DECIMATOR_WR,
-		INT_diag_CONFIG_DECIMATOR_WR => INT_diag_CONFIG_DECIMATOR_WR,
-		REG_diag_CONFIG_DECIMATOR_RD => REG_diag_CONFIG_DECIMATOR_WR,
 	BUS_io_READ_DATA => BUS_io_READ_DATA,
 	BUS_io_WRITE_DATA => BUS_io_WRITE_DATA,
 	BUS_io_W_INT => BUS_io_W_INT,
@@ -4796,20 +4852,59 @@ AW_MEMORY_MANAGER : avalon_wrapper
 		REG_io_divide_WR => REG_io_divide_WR,
 		INT_io_divide_WR => INT_io_divide_WR,
 		REG_io_divide_RD => REG_io_divide_WR,
-	BUS_int_READ_DATA => BUS_int_READ_DATA,
-	BUS_int_WRITE_DATA => BUS_int_WRITE_DATA,
-	BUS_int_W_INT => BUS_int_W_INT,
-	BUS_int_R_INT => BUS_int_R_INT,
-	BUS_int_VLD => BUS_int_VLD,
-		REG_int_time_WR => REG_int_time_WR,
-		INT_int_time_WR => INT_int_time_WR,
-		REG_int_time_RD => REG_int_time_WR,
-		REG_int_pre_WR => REG_int_pre_WR,
-		INT_int_pre_WR => INT_int_pre_WR,
-		REG_int_pre_RD => REG_int_pre_WR,
-		REG_int_base_WR => REG_int_base_WR,
-		INT_int_base_WR => INT_int_base_WR,
-		REG_int_base_RD => REG_int_base_WR,
+		REG_dummy_RD => REG_dummy_RD,
+		REG_dummy_WR => REG_dummy_WR,
+		INT_dummy_RD => INT_dummy_RD,
+		INT_dummy_WR => INT_dummy_WR,
+		REG_forcetrig_RD => REG_forcetrig_RD,
+		REG_forcetrig_WR => REG_forcetrig_WR,
+		INT_forcetrig_RD => INT_forcetrig_RD,
+		INT_forcetrig_WR => INT_forcetrig_WR,
+		REG_full_RD => REG_full_RD,
+		REG_full_WR => REG_full_WR,
+		INT_full_RD => INT_full_RD,
+		INT_full_WR => INT_full_WR,
+		REG_trigger_code_RD => REG_trigger_code_RD,
+		REG_trigger_code_WR => REG_trigger_code_WR,
+		INT_trigger_code_RD => INT_trigger_code_RD,
+		INT_trigger_code_WR => INT_trigger_code_WR,
+		REG_reset_RD => REG_reset_RD,
+		REG_reset_WR => REG_reset_WR,
+		INT_reset_RD => INT_reset_RD,
+		INT_reset_WR => INT_reset_WR,
+		REG_timestamp_RD => REG_timestamp_RD,
+		REG_timestamp_WR => REG_timestamp_WR,
+		INT_timestamp_RD => INT_timestamp_RD,
+		INT_timestamp_WR => INT_timestamp_WR,
+		REG_received_RD => REG_received_RD,
+		REG_received_WR => REG_received_WR,
+		INT_received_RD => INT_received_RD,
+		INT_received_WR => INT_received_WR,
+	BUS_baselines_READ_ADDRESS => BUS_baselines_READ_ADDRESS,
+	BUS_baselines_READ_DATA => BUS_baselines_READ_DATA,
+	BUS_baselines_WRITE_DATA => BUS_baselines_WRITE_DATA,
+	BUS_baselines_W_INT => BUS_baselines_W_INT,
+	BUS_baselines_R_INT => BUS_baselines_R_INT,
+	BUS_baselines_VLD => BUS_baselines_VLD,
+		REG_baselines_READ_STATUS_RD => REG_baselines_READ_STATUS_RD,
+		INT_baselines_READ_STATUS_RD => INT_baselines_READ_STATUS_RD,
+		REG_baselines_READ_POSITION_RD => REG_baselines_READ_POSITION_RD,
+		INT_baselines_READ_POSITION_RD => INT_baselines_READ_POSITION_RD,
+		REG_baselines_CONFIG_TRIGGER_MODE_WR => REG_baselines_CONFIG_TRIGGER_MODE_WR,
+		INT_baselines_CONFIG_TRIGGER_MODE_WR => INT_baselines_CONFIG_TRIGGER_MODE_WR,
+		REG_baselines_CONFIG_TRIGGER_MODE_RD => REG_baselines_CONFIG_TRIGGER_MODE_WR,
+		REG_baselines_CONFIG_PRETRIGGER_WR => REG_baselines_CONFIG_PRETRIGGER_WR,
+		INT_baselines_CONFIG_PRETRIGGER_WR => INT_baselines_CONFIG_PRETRIGGER_WR,
+		REG_baselines_CONFIG_PRETRIGGER_RD => REG_baselines_CONFIG_PRETRIGGER_WR,
+		REG_baselines_CONFIG_TRIGGER_LEVEL_WR => REG_baselines_CONFIG_TRIGGER_LEVEL_WR,
+		INT_baselines_CONFIG_TRIGGER_LEVEL_WR => INT_baselines_CONFIG_TRIGGER_LEVEL_WR,
+		REG_baselines_CONFIG_TRIGGER_LEVEL_RD => REG_baselines_CONFIG_TRIGGER_LEVEL_WR,
+		REG_baselines_CONFIG_ARM_WR => REG_baselines_CONFIG_ARM_WR,
+		INT_baselines_CONFIG_ARM_WR => INT_baselines_CONFIG_ARM_WR,
+		REG_baselines_CONFIG_ARM_RD => REG_baselines_CONFIG_ARM_WR,
+		REG_baselines_CONFIG_DECIMATOR_WR => REG_baselines_CONFIG_DECIMATOR_WR,
+		INT_baselines_CONFIG_DECIMATOR_WR => INT_baselines_CONFIG_DECIMATOR_WR,
+		REG_baselines_CONFIG_DECIMATOR_RD => REG_baselines_CONFIG_DECIMATOR_WR,
 		REG_UNIQUE_RD => x"361567DF",
 		REG_UNIQUE_WR => open,
    
@@ -4917,8 +5012,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_1,
-		ENERGY_STROBE => U109_valid_1,
+		ENERGY => U110_energy_1,
+		ENERGY_STROBE => U110_valid_1,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -4944,8 +5039,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_2,
-		ENERGY_STROBE => U109_valid_2,
+		ENERGY => U110_energy_2,
+		ENERGY_STROBE => U110_valid_2,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -4971,8 +5066,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_3,
-		ENERGY_STROBE => U109_valid_3,
+		ENERGY => U110_energy_3,
+		ENERGY_STROBE => U110_valid_3,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -4998,8 +5093,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_4,
-		ENERGY_STROBE => U109_valid_4,
+		ENERGY => U110_energy_4,
+		ENERGY_STROBE => U110_valid_4,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5025,8 +5120,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_5,
-		ENERGY_STROBE => U109_valid_5,
+		ENERGY => U110_energy_5,
+		ENERGY_STROBE => U110_valid_5,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5052,8 +5147,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_6,
-		ENERGY_STROBE => U109_valid_6,
+		ENERGY => U110_energy_6,
+		ENERGY_STROBE => U110_valid_6,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5079,8 +5174,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_7,
-		ENERGY_STROBE => U109_valid_7,
+		ENERGY => U110_energy_7,
+		ENERGY_STROBE => U110_valid_7,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5106,8 +5201,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_8,
-		ENERGY_STROBE => U109_valid_8,
+		ENERGY => U110_energy_8,
+		ENERGY_STROBE => U110_valid_8,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5133,8 +5228,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_9,
-		ENERGY_STROBE => U109_valid_9,
+		ENERGY => U110_energy_9,
+		ENERGY_STROBE => U110_valid_9,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5160,8 +5255,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_11,
-		ENERGY_STROBE => U109_valid_11,
+		ENERGY => U110_energy_11,
+		ENERGY_STROBE => U110_valid_11,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5187,8 +5282,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_12,
-		ENERGY_STROBE => U109_valid_12,
+		ENERGY => U110_energy_12,
+		ENERGY_STROBE => U110_valid_12,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5214,8 +5309,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_13,
-		ENERGY_STROBE => U109_valid_13,
+		ENERGY => U110_energy_13,
+		ENERGY_STROBE => U110_valid_13,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5241,8 +5336,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_14,
-		ENERGY_STROBE => U109_valid_14,
+		ENERGY => U110_energy_14,
+		ENERGY_STROBE => U110_valid_14,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5268,8 +5363,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_15,
-		ENERGY_STROBE => U109_valid_15,
+		ENERGY => U110_energy_15,
+		ENERGY_STROBE => U110_valid_15,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5295,8 +5390,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_16,
-		ENERGY_STROBE => U109_valid_16,
+		ENERGY => U110_energy_16,
+		ENERGY_STROBE => U110_valid_16,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5322,8 +5417,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_17,
-		ENERGY_STROBE => U109_valid_17,
+		ENERGY => U110_energy_17,
+		ENERGY_STROBE => U110_valid_17,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5349,8 +5444,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_18,
-		ENERGY_STROBE => U109_valid_18,
+		ENERGY => U110_energy_18,
+		ENERGY_STROBE => U110_valid_18,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5376,8 +5471,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_19,
-		ENERGY_STROBE => U109_valid_19,
+		ENERGY => U110_energy_19,
+		ENERGY_STROBE => U110_valid_19,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5403,8 +5498,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_20,
-		ENERGY_STROBE => U109_valid_20,
+		ENERGY => U110_energy_20,
+		ENERGY_STROBE => U110_valid_20,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5430,8 +5525,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_21,
-		ENERGY_STROBE => U109_valid_21,
+		ENERGY => U110_energy_21,
+		ENERGY_STROBE => U110_valid_21,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5457,8 +5552,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_22,
-		ENERGY_STROBE => U109_valid_22,
+		ENERGY => U110_energy_22,
+		ENERGY_STROBE => U110_valid_22,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5484,8 +5579,8 @@ REG_reset_RD  <= REG_reset_WR;
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_0,
-		ENERGY_STROBE => U109_valid_0,
+		ENERGY => U110_energy_0,
+		ENERGY_STROBE => U110_valid_0,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -5618,7 +5713,7 @@ U70_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'
 		RESET => U26_int
 	);
 
-	U72_int <= conv_integer(U110_time);
+	U72_int <= conv_integer(U109_time);
 
 U73 : block
 begin
@@ -5641,7 +5736,7 @@ U77_gate_l <= REG_trig_gate_l_WR( 15 downto 0 );
 U77_gate_u <= REG_trig_gate_u_WR( 15 downto 0 );
 U77_delay <= REG_trig_delay_WR( 15 downto 0 );
 U77_mode <= REG_trig_mode_WR( 0 downto 0 );
-U78_OUT <= U109_valid_0 AND U109_valid_1 AND U109_valid_2 AND U109_valid_3 AND U109_valid_4 AND U109_valid_5 AND U109_valid_6 AND U109_valid_7 AND U109_valid_8 AND U109_valid_9 AND U109_valid_10 AND U109_valid_11 AND U109_valid_12 AND U109_valid_13 AND U109_valid_14 AND U109_valid_15 AND U109_valid_16 AND U109_valid_17 AND U109_valid_18 AND U109_valid_19 AND U109_valid_20 AND U109_valid_21 AND U109_valid_22 AND U109_valid_23 AND U74_CONST AND U74_CONST AND U74_CONST AND U74_CONST AND U74_CONST AND U74_CONST AND U74_CONST AND U74_CONST;
+U78_OUT <= U110_valid_0 AND U110_valid_1 AND U110_valid_2 AND U110_valid_3 AND U110_valid_4 AND U110_valid_5 AND U110_valid_6 AND U110_valid_7 AND U110_valid_8 AND U110_valid_9 AND U110_valid_10 AND U110_valid_11 AND U110_valid_12 AND U110_valid_13 AND U110_valid_14 AND U110_valid_15 AND U110_valid_16 AND U110_valid_17 AND U110_valid_18 AND U110_valid_19 AND U110_valid_20 AND U110_valid_21 AND U110_valid_22 AND U110_valid_23 AND U74_CONST AND U74_CONST AND U74_CONST AND U74_CONST AND U74_CONST AND U74_CONST AND U74_CONST AND U74_CONST;
 
 	U79 : MCRateMeter
 	Generic map(
@@ -5715,9 +5810,9 @@ U78_OUT <= U109_valid_0 AND U109_valid_1 AND U109_valid_2 AND U109_valid_3 AND U
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ANALOG => U109_energy_23 & U109_energy_22 & U109_energy_21 & U109_energy_20 & U109_energy_19 & U109_energy_18 & U109_energy_17 & U109_energy_16 & U109_energy_15 & U109_energy_14 & U109_energy_13 & U109_energy_12 & U109_energy_11 & U109_energy_10 & U109_energy_9 & U109_energy_8 & U109_energy_7 & U109_energy_6 & U109_energy_5 & x"0000" & U109_energy_3 & U109_energy_2 & U109_energy_1 & U109_energy_0,
-		D0 => U109_valid_23 & U109_valid_22 & U109_valid_21 & U109_valid_20 & U109_valid_19 & U109_valid_18 & U109_valid_17 & U109_valid_16 & U109_valid_15 & U109_valid_14 & U109_valid_13 & U109_valid_12 & U109_valid_11 & U109_valid_10 & U109_valid_9 & U109_valid_8 & U109_valid_7 & U109_valid_6 & U109_valid_5 & U109_valid_4 & U109_valid_3 & U109_valid_2 & U109_valid_1 & U109_valid_0,
-		D1 => U109_int_gate_23 & U109_int_gate_22 & U109_int_gate_21 & U109_int_gate_20 & U109_int_gate_19 & U109_int_gate_18 & U109_int_gate_17 & U109_int_gate_16 & U109_int_gate_15 & U109_int_gate_14 & U109_int_gate_13 & U109_int_gate_12 & U109_int_gate_11 & U109_int_gate_10 & U109_int_gate_9 & U109_int_gate_8 & U109_int_gate_7 & U109_int_gate_6 & U109_int_gate_5 & U109_int_gate_4 & U109_int_gate_3 & U109_int_gate_2 & U109_int_gate_1 & U109_int_gate_0,
+		ANALOG => U110_energy_23 & U110_energy_22 & U110_energy_21 & U110_energy_20 & U110_energy_19 & U110_energy_18 & U110_energy_17 & U110_energy_16 & U110_energy_15 & U110_energy_14 & U110_energy_13 & U110_energy_12 & U110_energy_11 & U110_energy_10 & U110_energy_9 & U110_energy_8 & U110_energy_7 & U110_energy_6 & U110_energy_5 & x"0000" & U110_energy_3 & U110_energy_2 & U110_energy_1 & U110_energy_0,
+		D0 => U110_valid_23 & U110_valid_22 & U110_valid_21 & U110_valid_20 & U110_valid_19 & U110_valid_18 & U110_valid_17 & U110_valid_16 & U110_valid_15 & U110_valid_14 & U110_valid_13 & U110_valid_12 & U110_valid_11 & U110_valid_10 & U110_valid_9 & U110_valid_8 & U110_valid_7 & U110_valid_6 & U110_valid_5 & U110_valid_4 & U110_valid_3 & U110_valid_2 & U110_valid_1 & U110_valid_0,
+		D1 => U110_int_gate_23 & U110_int_gate_22 & U110_int_gate_21 & U110_int_gate_20 & U110_int_gate_19 & U110_int_gate_18 & U110_int_gate_17 & U110_int_gate_16 & U110_int_gate_15 & U110_int_gate_14 & U110_int_gate_13 & U110_int_gate_12 & U110_int_gate_11 & U110_int_gate_10 & U110_int_gate_9 & U110_int_gate_8 & U110_int_gate_7 & U110_int_gate_6 & U110_int_gate_5 & U110_int_gate_4 & U110_int_gate_3 & U110_int_gate_2 & U110_int_gate_1 & U110_int_gate_0,
 		D2 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		D3 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		TRIG => U73_out,
@@ -7219,30 +7314,30 @@ U94 : COUNTER_RISING
 		wordWidth => 	32
 	)
 	PORT MAP(
-		IN_2 => U109_energy_0,
-		IN_3 => U109_energy_1,
-		IN_4 => U109_energy_2,
-		IN_5 => U109_energy_3,
-		IN_6 => U109_energy_4,
-		IN_7 => U109_energy_5,
-		IN_8 => U109_energy_6,
-		IN_9 => U109_energy_7,
-		IN_10 => U109_energy_8,
-		IN_11 => U109_energy_9,
-		IN_12 => U109_energy_10,
-		IN_13 => U109_energy_11,
-		IN_14 => U109_energy_12,
-		IN_15 => U109_energy_13,
-		IN_16 => U109_energy_14,
-		IN_17 => U109_energy_15,
-		IN_18 => U109_energy_16,
-		IN_19 => U109_energy_17,
-		IN_20 => U109_energy_18,
-		IN_21 => U109_energy_19,
-		IN_22 => U109_energy_20,
-		IN_23 => U109_energy_21,
-		IN_24 => U109_energy_22,
-		IN_25 => U109_energy_23,
+		IN_2 => U110_energy_0,
+		IN_3 => U110_energy_1,
+		IN_4 => U110_energy_2,
+		IN_5 => U110_energy_3,
+		IN_6 => U110_energy_4,
+		IN_7 => U110_energy_5,
+		IN_8 => U110_energy_6,
+		IN_9 => U110_energy_7,
+		IN_10 => U110_energy_8,
+		IN_11 => U110_energy_9,
+		IN_12 => U110_energy_10,
+		IN_13 => U110_energy_11,
+		IN_14 => U110_energy_12,
+		IN_15 => U110_energy_13,
+		IN_16 => U110_energy_14,
+		IN_17 => U110_energy_15,
+		IN_18 => U110_energy_16,
+		IN_19 => U110_energy_17,
+		IN_20 => U110_energy_18,
+		IN_21 => U110_energy_19,
+		IN_22 => U110_energy_20,
+		IN_23 => U110_energy_21,
+		IN_24 => U110_energy_22,
+		IN_25 => U110_energy_23,
 		IN_26 => x"0000",
 		IN_27 => x"0000",
 		IN_28 => x"0000",
@@ -7279,8 +7374,8 @@ U94 : COUNTER_RISING
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_10,
-		ENERGY_STROBE => U109_valid_10,
+		ENERGY => U110_energy_10,
+		ENERGY_STROBE => U110_valid_10,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -7341,8 +7436,8 @@ PORT MAP(
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ENERGY => U109_energy_23,
-		ENERGY_STROBE => U109_valid_23,
+		ENERGY => U110_energy_23,
+		ENERGY_STROBE => U110_valid_23,
 		P_running => open,
 		P_acceptedPulse => open,
 		CLK_WRITE => CLK_ACQ,
@@ -7398,18 +7493,22 @@ U108_to_encode <= REG_io_to_encode_WR( 15 downto 0 );
 U108_stamptype <= REG_io_stamptype_WR( 1 downto 0 );
 U108_lemo2out <= REG_io_lemo2out_WR( 1 downto 0 );
 U108_divide <= conv_integer(REG_io_divide_WR);
+U109_time <= REG_int_time_WR( 15 downto 0 );
+U109_pre <= REG_int_pre_WR( 15 downto 0 );
+U109_base <= REG_int_base_WR( 0 downto 0 );
 
-U109_0:SUBPAGE_ChargeIntegrator
+U110_0:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_0,
 	base => U90_CH0,
-	energy => U109_energy_0,
-	valid => U109_valid_0,
-	int_gate => U109_int_gate_0,
-	pre_int => U110_pre,
+	energy => U110_energy_0,
+	valid => U110_valid_0,
+	int_gate => U110_int_gate_0,
+	baseline => U110_baseline_0,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7428,17 +7527,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_1:SUBPAGE_ChargeIntegrator
+U110_1:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_1,
 	base => U90_CH1,
-	energy => U109_energy_1,
-	valid => U109_valid_1,
-	int_gate => U109_int_gate_1,
-	pre_int => U110_pre,
+	energy => U110_energy_1,
+	valid => U110_valid_1,
+	int_gate => U110_int_gate_1,
+	baseline => U110_baseline_1,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7457,17 +7557,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_2:SUBPAGE_ChargeIntegrator
+U110_2:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_2,
 	base => U90_CH2,
-	energy => U109_energy_2,
-	valid => U109_valid_2,
-	int_gate => U109_int_gate_2,
-	pre_int => U110_pre,
+	energy => U110_energy_2,
+	valid => U110_valid_2,
+	int_gate => U110_int_gate_2,
+	baseline => U110_baseline_2,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7486,17 +7587,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_3:SUBPAGE_ChargeIntegrator
+U110_3:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_3,
 	base => U90_CH3,
-	energy => U109_energy_3,
-	valid => U109_valid_3,
-	int_gate => U109_int_gate_3,
-	pre_int => U110_pre,
+	energy => U110_energy_3,
+	valid => U110_valid_3,
+	int_gate => U110_int_gate_3,
+	baseline => U110_baseline_3,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7515,17 +7617,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_4:SUBPAGE_ChargeIntegrator
+U110_4:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_4,
 	base => U90_CH4,
-	energy => U109_energy_4,
-	valid => U109_valid_4,
-	int_gate => U109_int_gate_4,
-	pre_int => U110_pre,
+	energy => U110_energy_4,
+	valid => U110_valid_4,
+	int_gate => U110_int_gate_4,
+	baseline => U110_baseline_4,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7544,17 +7647,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_5:SUBPAGE_ChargeIntegrator
+U110_5:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_5,
 	base => U90_CH5,
-	energy => U109_energy_5,
-	valid => U109_valid_5,
-	int_gate => U109_int_gate_5,
-	pre_int => U110_pre,
+	energy => U110_energy_5,
+	valid => U110_valid_5,
+	int_gate => U110_int_gate_5,
+	baseline => U110_baseline_5,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7573,17 +7677,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_6:SUBPAGE_ChargeIntegrator
+U110_6:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_6,
 	base => U90_CH6,
-	energy => U109_energy_6,
-	valid => U109_valid_6,
-	int_gate => U109_int_gate_6,
-	pre_int => U110_pre,
+	energy => U110_energy_6,
+	valid => U110_valid_6,
+	int_gate => U110_int_gate_6,
+	baseline => U110_baseline_6,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7602,17 +7707,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_7:SUBPAGE_ChargeIntegrator
+U110_7:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_7,
 	base => U90_CH7,
-	energy => U109_energy_7,
-	valid => U109_valid_7,
-	int_gate => U109_int_gate_7,
-	pre_int => U110_pre,
+	energy => U110_energy_7,
+	valid => U110_valid_7,
+	int_gate => U110_int_gate_7,
+	baseline => U110_baseline_7,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7631,17 +7737,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_8:SUBPAGE_ChargeIntegrator
+U110_8:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_8,
 	base => U90_CH8,
-	energy => U109_energy_8,
-	valid => U109_valid_8,
-	int_gate => U109_int_gate_8,
-	pre_int => U110_pre,
+	energy => U110_energy_8,
+	valid => U110_valid_8,
+	int_gate => U110_int_gate_8,
+	baseline => U110_baseline_8,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7660,17 +7767,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_9:SUBPAGE_ChargeIntegrator
+U110_9:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_9,
 	base => U90_CH9,
-	energy => U109_energy_9,
-	valid => U109_valid_9,
-	int_gate => U109_int_gate_9,
-	pre_int => U110_pre,
+	energy => U110_energy_9,
+	valid => U110_valid_9,
+	int_gate => U110_int_gate_9,
+	baseline => U110_baseline_9,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7689,17 +7797,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_10:SUBPAGE_ChargeIntegrator
+U110_10:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_10,
 	base => U90_CH10,
-	energy => U109_energy_10,
-	valid => U109_valid_10,
-	int_gate => U109_int_gate_10,
-	pre_int => U110_pre,
+	energy => U110_energy_10,
+	valid => U110_valid_10,
+	int_gate => U110_int_gate_10,
+	baseline => U110_baseline_10,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7718,17 +7827,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_11:SUBPAGE_ChargeIntegrator
+U110_11:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_11,
 	base => U90_CH11,
-	energy => U109_energy_11,
-	valid => U109_valid_11,
-	int_gate => U109_int_gate_11,
-	pre_int => U110_pre,
+	energy => U110_energy_11,
+	valid => U110_valid_11,
+	int_gate => U110_int_gate_11,
+	baseline => U110_baseline_11,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7747,17 +7857,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_12:SUBPAGE_ChargeIntegrator
+U110_12:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_12,
 	base => U90_CH12,
-	energy => U109_energy_12,
-	valid => U109_valid_12,
-	int_gate => U109_int_gate_12,
-	pre_int => U110_pre,
+	energy => U110_energy_12,
+	valid => U110_valid_12,
+	int_gate => U110_int_gate_12,
+	baseline => U110_baseline_12,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7776,17 +7887,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_13:SUBPAGE_ChargeIntegrator
+U110_13:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_13,
 	base => U90_CH13,
-	energy => U109_energy_13,
-	valid => U109_valid_13,
-	int_gate => U109_int_gate_13,
-	pre_int => U110_pre,
+	energy => U110_energy_13,
+	valid => U110_valid_13,
+	int_gate => U110_int_gate_13,
+	baseline => U110_baseline_13,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7805,17 +7917,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_14:SUBPAGE_ChargeIntegrator
+U110_14:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_14,
 	base => U90_CH14,
-	energy => U109_energy_14,
-	valid => U109_valid_14,
-	int_gate => U109_int_gate_14,
-	pre_int => U110_pre,
+	energy => U110_energy_14,
+	valid => U110_valid_14,
+	int_gate => U110_int_gate_14,
+	baseline => U110_baseline_14,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7834,17 +7947,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_15:SUBPAGE_ChargeIntegrator
+U110_15:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_15,
 	base => U90_CH15,
-	energy => U109_energy_15,
-	valid => U109_valid_15,
-	int_gate => U109_int_gate_15,
-	pre_int => U110_pre,
+	energy => U110_energy_15,
+	valid => U110_valid_15,
+	int_gate => U110_int_gate_15,
+	baseline => U110_baseline_15,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7863,17 +7977,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_16:SUBPAGE_ChargeIntegrator
+U110_16:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_16,
 	base => U90_CH16,
-	energy => U109_energy_16,
-	valid => U109_valid_16,
-	int_gate => U109_int_gate_16,
-	pre_int => U110_pre,
+	energy => U110_energy_16,
+	valid => U110_valid_16,
+	int_gate => U110_int_gate_16,
+	baseline => U110_baseline_16,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7892,17 +8007,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_17:SUBPAGE_ChargeIntegrator
+U110_17:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_17,
 	base => U90_CH17,
-	energy => U109_energy_17,
-	valid => U109_valid_17,
-	int_gate => U109_int_gate_17,
-	pre_int => U110_pre,
+	energy => U110_energy_17,
+	valid => U110_valid_17,
+	int_gate => U110_int_gate_17,
+	baseline => U110_baseline_17,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7921,17 +8037,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_18:SUBPAGE_ChargeIntegrator
+U110_18:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_18,
 	base => U90_CH18,
-	energy => U109_energy_18,
-	valid => U109_valid_18,
-	int_gate => U109_int_gate_18,
-	pre_int => U110_pre,
+	energy => U110_energy_18,
+	valid => U110_valid_18,
+	int_gate => U110_int_gate_18,
+	baseline => U110_baseline_18,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7950,17 +8067,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_19:SUBPAGE_ChargeIntegrator
+U110_19:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_19,
 	base => U90_CH19,
-	energy => U109_energy_19,
-	valid => U109_valid_19,
-	int_gate => U109_int_gate_19,
-	pre_int => U110_pre,
+	energy => U110_energy_19,
+	valid => U110_valid_19,
+	int_gate => U110_int_gate_19,
+	baseline => U110_baseline_19,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -7979,17 +8097,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_20:SUBPAGE_ChargeIntegrator
+U110_20:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_20,
 	base => U90_CH20,
-	energy => U109_energy_20,
-	valid => U109_valid_20,
-	int_gate => U109_int_gate_20,
-	pre_int => U110_pre,
+	energy => U110_energy_20,
+	valid => U110_valid_20,
+	int_gate => U110_int_gate_20,
+	baseline => U110_baseline_20,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -8008,17 +8127,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_21:SUBPAGE_ChargeIntegrator
+U110_21:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_21,
 	base => U90_CH21,
-	energy => U109_energy_21,
-	valid => U109_valid_21,
-	int_gate => U109_int_gate_21,
-	pre_int => U110_pre,
+	energy => U110_energy_21,
+	valid => U110_valid_21,
+	int_gate => U110_int_gate_21,
+	baseline => U110_baseline_21,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -8037,17 +8157,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_22:SUBPAGE_ChargeIntegrator
+U110_22:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_22,
 	base => U90_CH22,
-	energy => U109_energy_22,
-	valid => U109_valid_22,
-	int_gate => U109_int_gate_22,
-	pre_int => U110_pre,
+	energy => U110_energy_22,
+	valid => U110_valid_22,
+	int_gate => U110_int_gate_22,
+	baseline => U110_baseline_22,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -8066,17 +8187,18 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U109_23:SUBPAGE_ChargeIntegrator
+U110_23:SUBPAGE_ChargeIntegrator
 PORT MAP(
 	analog_in => U84_ANALOGOUT_23,
 	base => U90_CH23,
-	energy => U109_energy_23,
-	valid => U109_valid_23,
-	int_gate => U109_int_gate_23,
-	pre_int => U110_pre,
+	energy => U110_energy_23,
+	valid => U110_valid_23,
+	int_gate => U110_int_gate_23,
+	baseline => U110_baseline_23,
+	pre_int => U109_pre,
 	trig => U73_out,
-	int_time => U110_time,
-	manual_base => U110_base,
+	int_time => U109_time,
+	manual_base => U109_base,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -8094,10 +8216,38 @@ PORT MAP(
 	FAST_CLK_500_90=>FAST_CLK_500_90 ,
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
-U110_time <= REG_int_time_WR( 15 downto 0 );
-U110_pre <= REG_int_pre_WR( 15 downto 0 );
-U110_base <= REG_int_base_WR( 0 downto 0 );
-REG_FIRMWARE_BUILD <= x"20240717";
+
+	U111 : xlx_oscilloscope_sync
+	Generic map(
+		channels => 	24,
+		memLength => 	1024,
+		wordWidth => 	16
+	)
+	PORT MAP(
+		ANALOG => U110_baseline_23 & U110_baseline_22 & U110_baseline_21 & U110_baseline_20 & U110_baseline_19 & U110_baseline_18 & U110_baseline_17 & U110_baseline_16 & U110_baseline_15 & U110_baseline_14 & U110_baseline_13 & U110_baseline_12 & U110_baseline_11 & U110_baseline_10 & U110_baseline_9 & U110_baseline_8 & U110_baseline_7 & U110_baseline_6 & U110_baseline_5 & U110_baseline_4 & U110_baseline_3 & U110_baseline_2 & U110_baseline_1 & U110_baseline_0,
+		D0 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		D1 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		D2 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		D3 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		TRIG => U73_out,
+		BUSY => open,
+		CE => "1",
+		CLK_WRITE => U63_clk,
+		RESET => "0",
+		CLK_READ => BUS_CLK,
+		READ_ADDRESS => BUS_baselines_READ_ADDRESS,
+		READ_DATA => BUS_baselines_READ_DATA,
+		READ_DATAVALID => BUS_baselines_VLD,
+		READ_STATUS => REG_baselines_READ_STATUS_RD,
+		READ_POSITION => REG_baselines_READ_POSITION_RD,
+		CONFIG_TRIGGER_MODE => REG_baselines_CONFIG_TRIGGER_MODE_WR,
+		CONFIG_TRIGGER_LEVEL => REG_baselines_CONFIG_TRIGGER_LEVEL_WR,
+		CONFIG_PRETRIGGER => REG_baselines_CONFIG_PRETRIGGER_WR,
+		CONFIG_DECIMATOR => REG_baselines_CONFIG_DECIMATOR_WR,
+		CONFIG_ARM => REG_baselines_CONFIG_ARM_WR
+	);
+
+REG_FIRMWARE_BUILD <= x"20240723";
 REG_FIRMWARE_UNIQUE <= x"361567DF";
 FW_STRING_0 <= x"5237364669726D776172650000000000";
 

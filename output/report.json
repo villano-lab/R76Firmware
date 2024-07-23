@@ -37,17 +37,17 @@
   {
     "Name": "utilization.clb.lut",
     "Description": "LUT(#)",
-    "Value": "39006"
+    "Value": "41732"
   },
   {
     "Name": "utilization.clb.ff",
     "Description": "FD(#)",
-    "Value": "44298"
+    "Value": "44710"
   },
   {
     "Name": "utilization.ram.tile",
     "Description": "RAMB/FIFO(#)",
-    "Value": "196.5"
+    "Value": "220.5"
   },
   {
     "Name": "utilization.uram.tile",
@@ -62,17 +62,17 @@
   {
     "Name": "design.failure",
     "Description": "Criteria to review",
-    "Value": "6"
+    "Value": "7"
   },
   {
     "Name": "utilization.clb.lut.pct",
     "Description": "LUT(%)",
-    "Value": "49.63"
+    "Value": "53.09"
   },
   {
     "Name": "utilization.clb.ff.pct",
     "Description": "FD(%)",
-    "Value": "28.18"
+    "Value": "28.44"
   },
   {
     "Name": "utilization.clb.lutmem.pct",
@@ -87,17 +87,17 @@
   {
     "Name": "utilization.clb.f7mux.pct",
     "Description": "MUXF7(%)",
-    "Value": "2.58"
+    "Value": "2.46"
   },
   {
     "Name": "utilization.clb.f8mux.pct",
     "Description": "MUXF8(%)",
-    "Value": "1.41"
+    "Value": "1.11"
   },
   {
     "Name": "design.cells.hlutnm.pct",
     "Description": "LUT Combining(%)",
-    "Value": "8.49"
+    "Value": "7.75"
   },
   {
     "Name": "utilization.dsp.pct",
@@ -107,17 +107,17 @@
   {
     "Name": "utilization.ram.tile.pct",
     "Description": "RAMB/FIFO(%)",
-    "Value": "74.15"
+    "Value": "83.21"
   },
   {
     "Name": "utilization.uram.tile.pct",
     "Description": "URAM(%)",
-    "Value": "74.15"
+    "Value": "83.21"
   },
   {
     "Name": "utilization.bigblocks.pct",
     "Description": "DSP48+RAMB+URAM (Avg)(%)",
-    "Value": "43.08"
+    "Value": "47.60"
   },
   {
     "Name": "utilization.clk.all",
@@ -127,7 +127,7 @@
   {
     "Name": "utilization.ctrlsets.uniq",
     "Description": "Control Sets",
-    "Value": "2102"
+    "Value": "2109"
   },
   {
     "Name": "design.dont_touch",
@@ -172,11 +172,11 @@
   {
     "Name": "design.device.maxlvls.lut",
     "Description": "Number of paths above max LUT budgeting 0.500ns",
-    "Value": "118"
+    "Value": "116"
   },
   {
     "Name": "design.device.maxlvls.net",
     "Description": "Number of paths above max Net budgeting 0.350ns",
-    "Value": "118"
+    "Value": "116"
   }
 ]

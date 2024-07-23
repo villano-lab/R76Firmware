@@ -19,6 +19,7 @@ analog_in : in std_logic_vector(15 downto 0);
 int_gate : out std_logic_vector(0 downto 0);
 base : in std_logic_vector(15 downto 0);
 manual_base : in std_logic_vector(0 downto 0);
+baseline : out std_logic_vector(15 downto 0);
 
 		async_clk : in std_logic_vector (0 downto 0);
 		CLK_ACQ : in std_logic_vector (0 downto 0);
@@ -129,7 +130,7 @@ U9_manual_base <= manual_base;
 
 U10 : block
 begin
-U10_out <= U11_base_line when U9_manual_base = "0" else U8_base when U9_manual_base = "1"  else (others=>'0');
+U10_out <= U11_base_line when U9_manual_base = "0" else U8_base when U9_manual_base = "1"  else U8_base;
 
 end block;
 
@@ -150,5 +151,6 @@ PORT MAP(
     RUNNING_NOT_HOLD  => open
 );
 	U12_int <= conv_integer(U4_int_time);
+baseline <= U11_base_line;
 
 end Behavioral;
