@@ -3762,45 +3762,6 @@
       "Path": "/io"
     },
     {
-      "Name": "int",
-      "Type": "RegisterFile",
-      "Address": 204813,
-      "Version": "1.0.0.0",
-      "Registers": [
-        {
-          "Name": "time",
-          "Type": "Register",
-          "Address": 204814,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        },
-        {
-          "Name": "pre",
-          "Type": "Register",
-          "Address": 204815,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        },
-        {
-          "Name": "base",
-          "Type": "Register",
-          "Address": 204816,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        }
-      ],
-      "Path": "/int"
-    },
-    {
       "Name": "baselines",
       "Type": "Oscilloscope",
       "Address": 3571712,
@@ -3888,6 +3849,45 @@
       "DecimatorMax": 0,
       "DecimatorAveraging": false,
       "Path": "/baselines"
+    },
+    {
+      "Name": "int",
+      "Type": "RegisterFile",
+      "Address": 204813,
+      "Version": "1.0.0.0",
+      "Registers": [
+        {
+          "Name": "time",
+          "Type": "Register",
+          "Address": 204814,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        },
+        {
+          "Name": "pre",
+          "Type": "Register",
+          "Address": 204815,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        },
+        {
+          "Name": "base",
+          "Type": "Register",
+          "Address": 204816,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        }
+      ],
+      "Path": "/int"
     }
   ],
   "Registers": [
@@ -3967,5 +3967,5 @@
   "Magic": "361567DF",
   "Version": null,
   "FPGA": "xc7z030fbg676-2",
-  "BuildDate": "2024-07-23T15:16:18.1322824-06:00"
+  "BuildDate": "2024-07-24T10:45:52.4928573-06:00"
 }

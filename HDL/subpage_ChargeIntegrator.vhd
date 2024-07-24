@@ -18,10 +18,10 @@ pre_int : in std_logic_vector(15 downto 0);
 analog_in : in std_logic_vector(15 downto 0);
 int_gate : out std_logic_vector(0 downto 0);
 base : in std_logic_vector(15 downto 0);
-manual_base : in std_logic_vector(0 downto 0);
 baseline : out std_logic_vector(15 downto 0);
 baseline_valid : out std_logic_vector(0 downto 0);
 baseline_calculating : out std_logic_vector(0 downto 0);
+manual_base : in std_logic_vector(7 downto 0);
 
 		async_clk : in std_logic_vector (0 downto 0);
 		CLK_ACQ : in std_logic_vector (0 downto 0);
@@ -75,8 +75,7 @@ signal U4_int_time : std_logic_vector(15 downto 0);
 signal U5_pre_int : std_logic_vector(15 downto 0);
 signal U6_analog_in : std_logic_vector(15 downto 0);
 signal U8_base : std_logic_vector(15 downto 0);
-signal U9_manual_base : std_logic_vector(0 downto 0);
-signal U10_out : std_logic_vector(15 downto 0);
+signal U9_out : std_logic_vector(15 downto 0);
 
 COMPONENT BASELINE_RESTORER
 Generic (	wordWidth : integer := 16);
@@ -94,10 +93,30 @@ PORT(
     	HOLD_TIME: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     	RUNNING_NOT_HOLD: OUT STD_LOGIC_VECTOR(0 DOWNTO 0));
 END COMPONENT;
-signal U11_baseline_valid : std_logic_vector(0 downto 0) := (others => '0');
-signal U11_base_line : std_logic_vector(15 downto 0) := (others => '0');
-signal U11_track_hold : std_logic_vector(0 downto 0) := (others => '0');
-	signal U12_int : integer  := 0;
+signal U10_baseline_valid : std_logic_vector(0 downto 0) := (others => '0');
+signal U10_base_line : std_logic_vector(15 downto 0) := (others => '0');
+signal U10_track_hold : std_logic_vector(0 downto 0) := (others => '0');
+	signal U11_int : integer  := 0;
+	signal U15_int : integer  := 0;
+signal U16_manual_base : std_logic_vector(7 downto 0);
+	signal U17_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+
+	COMPONENT comparator
+		GENERIC( 
+			IN_SIZE : INTEGER := 8;
+			IN_SIGN : STRING := "unsigned";
+			REGISTER_OUT : STRING := "false";
+			OPERATION : STRING := "equal"
+		);
+		PORT( 
+			in1 : in STD_LOGIC_VECTOR(IN_SIZE-1 downto 0);
+			in2 : in STD_LOGIC_VECTOR(IN_SIZE-1 downto 0);
+			clk : in STD_LOGIC;
+			comp_out : out STD_LOGIC_VECTOR(0 downto 0)
+		);
+	END COMPONENT;
+
+signal U18_CONST : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
 
 begin
 
@@ -107,7 +126,7 @@ PORT MAP(
     ap_rst  => GlobalReset(0),
     in1_V  => U6_analog_in,
     in1_V_ap_vld  => '1',
-    base_line_V  => U10_out,
+    base_line_V  => U9_out,
     trigger_signal  => U3_trig(0),
     p_int_length_V  => U4_int_time,
     p_pre_length_V  => U5_pre_int,
@@ -130,15 +149,14 @@ U5_pre_int <= pre_int;
 U6_analog_in <= analog_in;
 int_gate <= U0_ind_integrate;
 U8_base <= base;
-U9_manual_base <= manual_base;
 
-U10 : block
+U9 : block
 begin
-U10_out <= U11_base_line when U9_manual_base = "0" else U8_base when U9_manual_base = "1"  else U8_base;
+U9_out <= U10_base_line when U17_OUT = "0" else U8_base when U17_OUT = "1"  else U8_base;
 
 end block;
 
-U11: BASELINE_RESTORER
+U10: BASELINE_RESTORER
 Generic map (	wordWidth=> 16)
 PORT MAP(
     RESET  => GlobalReset,
@@ -146,17 +164,35 @@ PORT MAP(
     CE  => "1",
     TRIGGER  => U3_trig,
     DATA_IN  => U6_analog_in,
-    M_LENGTH  => 500,
-    BL_HOLD  => U12_int,
+    M_LENGTH  => U15_int,
+    BL_HOLD  => U11_int,
     FLUSH  => "0",
-    BASELINE  => U11_base_line,
-    BASELINE_VALID  => U11_baseline_valid,
+    BASELINE  => U10_base_line,
+    BASELINE_VALID  => U10_baseline_valid,
     HOLD_TIME  => open,
-    RUNNING_NOT_HOLD  => U11_track_hold
+    RUNNING_NOT_HOLD  => U10_track_hold
 );
-	U12_int <= conv_integer(U4_int_time);
-baseline <= U11_base_line;
-baseline_valid <= U11_baseline_valid;
-baseline_calculating <= U11_track_hold;
+	U11_int <= conv_integer(U4_int_time);
+baseline <= U10_base_line;
+baseline_valid <= U10_baseline_valid;
+baseline_calculating <= U10_track_hold;
+	U15_int <= conv_integer(U16_manual_base);
+U16_manual_base <= manual_base;
+
+	U17 : comparator
+	Generic map(
+		IN_SIZE => 	8,
+		IN_SIGN => 	"unsigned",
+		REGISTER_OUT => 	"false",
+		OPERATION => 	"equal"
+	)
+	PORT MAP(
+		in1 => U16_manual_base,
+		in2 => U18_CONST,
+		clk => CLK_125(0),
+		comp_out => U17_OUT
+	);
+
+U18_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"0"),8));
 
 end Behavioral;

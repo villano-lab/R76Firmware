@@ -249,20 +249,6 @@ entity avalon_wrapper is
 		REG_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_All_Energies_CONFIG_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_All_Energies_CONFIG_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_int_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_int_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_time_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_time_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_time_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_int_pre_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_pre_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_pre_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_int_base_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_base_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_base_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_top_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_top_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_top_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
@@ -1172,6 +1158,20 @@ entity avalon_wrapper is
 		REG_baselines_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_baselines_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_baselines_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_time_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_time_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_time_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_int_pre_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_pre_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_pre_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_int_base_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_base_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_base_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -1426,13 +1426,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
 		REG_All_Energies_CONFIG_WR <= (others => '0');
 		INT_All_Energies_CONFIG_WR <= "0";
-	BUS_int_W_INT <= "0";
-		REG_int_time_WR <= (others => '0');
-		INT_int_time_WR <= "0";
-		REG_int_pre_WR <= (others => '0');
-		INT_int_pre_WR <= "0";
-		REG_int_base_WR <= (others => '0');
-		INT_int_base_WR <= "0";
 	BUS_top_W_INT <= "0";
 		REG_top_CH0_WR <= (others => '0');
 		INT_top_CH0_WR <= "0";
@@ -1938,6 +1931,13 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_baselines_CONFIG_ARM_WR <= "0";
 		REG_baselines_CONFIG_DECIMATOR_WR <= (others => '0');
 		INT_baselines_CONFIG_DECIMATOR_WR <= "0";
+	BUS_int_W_INT <= "0";
+		REG_int_time_WR <= (others => '0');
+		INT_int_time_WR <= "0";
+		REG_int_pre_WR <= (others => '0');
+		INT_int_pre_WR <= "0";
+		REG_int_base_WR <= (others => '0');
+		INT_int_base_WR <= "0";
             
                 f_BUS_DATASTROBE_REG <= '0';
                 M_AVALON_0_readdatavalid <= '0';
@@ -2005,10 +2005,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_All_Energies_READ_STATUS_RD <= "0";
 		INT_All_Energies_READ_VALID_WORDS_RD <= "0";
 		INT_All_Energies_CONFIG_WR <= "0";
-	BUS_int_W_INT <= "0";
-		INT_int_time_WR <= "0";
-		INT_int_pre_WR <= "0";
-		INT_int_base_WR <= "0";
 	BUS_top_W_INT <= "0";
 		INT_top_CH0_WR <= "0";
 		INT_top_CH1_WR <= "0";
@@ -2296,6 +2292,10 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_baselines_CONFIG_TRIGGER_LEVEL_WR <= "0";
 		INT_baselines_CONFIG_ARM_WR <= "0";
 		INT_baselines_CONFIG_DECIMATOR_WR <= "0";
+	BUS_int_W_INT <= "0";
+		INT_int_time_WR <= "0";
+		INT_int_pre_WR <= "0";
+		INT_int_base_WR <= "0";
   
                 f_BUS_DATASTROBE_REG <= '0';
                 
@@ -2513,22 +2513,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		if addr = x"0003200B" then
 			REG_All_Energies_CONFIG_WR <= wreg; 
 			INT_All_Energies_CONFIG_WR <= "1"; 
-		end if;
-		If addr >= x"0003200D" And addr < x"0003200E" Then
-			BUS_int_WRITE_DATA <= wreg; 
-			BUS_int_W_INT <= "1"; 
-		End If;
-		if addr = x"0003200E" then
-			REG_int_time_WR <= wreg; 
-			INT_int_time_WR <= "1"; 
-		end if;
-		if addr = x"0003200F" then
-			REG_int_pre_WR <= wreg; 
-			INT_int_pre_WR <= "1"; 
-		end if;
-		if addr = x"00032010" then
-			REG_int_base_WR <= wreg; 
-			INT_int_base_WR <= "1"; 
 		end if;
 		If addr >= x"00032012" And addr < x"00032013" Then
 			BUS_top_WRITE_DATA <= wreg; 
@@ -3530,6 +3514,22 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 			REG_baselines_CONFIG_DECIMATOR_WR <= wreg; 
 			INT_baselines_CONFIG_DECIMATOR_WR <= "1"; 
 		end if;
+		If addr >= x"0003200D" And addr < x"0003200E" Then
+			BUS_int_WRITE_DATA <= wreg; 
+			BUS_int_W_INT <= "1"; 
+		End If;
+		if addr = x"0003200E" then
+			REG_int_time_WR <= wreg; 
+			INT_int_time_WR <= "1"; 
+		end if;
+		if addr = x"0003200F" then
+			REG_int_pre_WR <= wreg; 
+			INT_int_pre_WR <= "1"; 
+		end if;
+		if addr = x"00032010" then
+			REG_int_base_WR <= wreg; 
+			INT_int_base_WR <= "1"; 
+		end if;
 
                 end if;
         
@@ -3699,15 +3699,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		End If;
 		if addr = x"0003200B" then
 			rreg := REG_All_Energies_CONFIG_RD; 
-		End If;
-		if addr = x"0003200E" then
-			rreg := REG_int_time_RD; 
-		End If;
-		if addr = x"0003200F" then
-			rreg := REG_int_pre_RD; 
-		End If;
-		if addr = x"00032010" then
-			rreg := REG_int_base_RD; 
 		End If;
 		if addr = x"00032013" then
 			rreg := REG_top_CH0_RD; 
@@ -4452,6 +4443,15 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		End If;
 		if addr = x"00370006" then
 			rreg := REG_baselines_CONFIG_DECIMATOR_RD; 
+		End If;
+		if addr = x"0003200E" then
+			rreg := REG_int_time_RD; 
+		End If;
+		if addr = x"0003200F" then
+			rreg := REG_int_pre_RD; 
+		End If;
+		if addr = x"00032010" then
+			rreg := REG_int_base_RD; 
 		End If;
     
                    

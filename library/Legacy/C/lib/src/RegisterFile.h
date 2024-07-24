@@ -363,10 +363,6 @@
 #define SCI_REG_io_lemo2out 0x36200B
 #define SCI_REG_io_divide 0x36200C
 
-#define SCI_REG_int_time 0x3200E
-#define SCI_REG_int_pre 0x3200F
-#define SCI_REG_int_base 0x32010
-
 #define SCI_REG_baselines_FIFOADDRESS 0x368000
 #define SCI_REG_baselines_READ_STATUS 0x370000
 #define SCI_REG_baselines_READ_POSITION 0x370001
@@ -375,4 +371,8 @@
 #define SCI_REG_baselines_CONFIG_TRIGGER_LEVEL 0x370004
 #define SCI_REG_baselines_CONFIG_ARM 0x370005
 #define SCI_REG_baselines_CONFIG_DECIMATOR 0x370006
+
+#define SCI_REG_int_time 0x3200E
+#define SCI_REG_int_pre 0x3200F
+#define SCI_REG_int_base 0x32010
 
