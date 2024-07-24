@@ -173,7 +173,7 @@ uint32_t gray_to_bin(uint32_t num, int nbit)
 
 SCILIB int Utility_ALLOCATE_DOWNLOAD_BUFFER(void **buffer_handle, uint32_t buffer_size)
 {
-	uint32_t * buffer = malloc(buffer_size * sizeof(uint32_t));
+	uint32_t * buffer = (uint32_t*)malloc(buffer_size * sizeof(uint32_t));
 	if (buffer == NULL) return -1;
 	cbuf_handle_t cbuf = circular_buf_init(buffer, buffer_size);
 	*buffer_handle = cbuf;
@@ -276,7 +276,7 @@ SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, int32_t 
 //-----------------------------------------------------------------
 
 
-SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, int32_t *val)
+SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t *val)
 {
 	cbuf_handle_t cbuf;
 	cbuf = (cbuf_handle_t)buffer_handle;
@@ -366,7 +366,7 @@ SCILIB void free_packet_collection (t_generic_event_collection *decoded_packets)
 
 
 
-SCILIB int ClearBuffer(void *buffer_handle)
+SCILIB int ClearBuffer(cbuf_handle_t buffer_handle)
 {
 	circular_buf_reset(buffer_handle);
 	return 0;
@@ -435,7 +435,7 @@ SCILIB int REG_received_SET(uint32_t val, NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -461,7 +461,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_1_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -472,7 +472,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_1_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_1_CONFIG, handle);
@@ -487,7 +487,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_1_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -498,7 +498,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_1_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_1_CONFIG, handle);
@@ -513,7 +513,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_1_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -524,7 +524,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_1_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_1_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_1_CONFIG, handle);
@@ -539,22 +539,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_1_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -565,12 +565,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_1_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_1_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_1_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_1_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -587,14 +585,14 @@ SCILIB int SPECTRUM_Spectrum_1_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -615,40 +613,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_1_STATUS, handle);
 //- SPECTRUM_Spectrum_1_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_1POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_1_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_1, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_1 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -673,7 +671,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_1_FIFOADDRESS, timeout,
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -699,7 +697,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_2_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -710,7 +708,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_2_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_2_CONFIG, handle);
@@ -725,7 +723,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_2_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -736,8 +734,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_2_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
-
+SCILIB int SPECTRUM_Spectrum_2_FLUSH(NI_HANDLE *handle)
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_2_CONFIG, handle);
 
@@ -751,7 +748,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_2_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -762,7 +759,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_2_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_2_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_2_CONFIG, handle);
@@ -777,22 +774,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_2_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -803,12 +800,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_2_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_2_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_2_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_2_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_2_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -825,14 +820,14 @@ SCILIB int SPECTRUM_Spectrum_2_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -853,40 +848,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_2_STATUS, handle);
 //- SPECTRUM_Spectrum_2_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_2POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_2_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_2, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_2 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -911,7 +906,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_2_FIFOADDRESS, timeout,
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -937,7 +932,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_3_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -948,7 +943,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_3_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_3_CONFIG, handle);
@@ -963,7 +958,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_3_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -974,7 +969,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_3_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_3_CONFIG, handle);
@@ -989,7 +984,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_3_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1000,7 +995,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_3_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_3_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_3_CONFIG, handle);
@@ -1015,22 +1010,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_3_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1041,12 +1036,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_3_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_3_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_3_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_3_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_3_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -1063,14 +1056,14 @@ SCILIB int SPECTRUM_Spectrum_3_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1091,40 +1084,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_3_STATUS, handle);
 //- SPECTRUM_Spectrum_3_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_3POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_3_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_3, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_3 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1149,7 +1142,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_3_FIFOADDRESS, timeout,
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1175,7 +1168,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_4_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1186,7 +1179,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_4_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_4_CONFIG, handle);
@@ -1201,7 +1194,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_4_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1212,7 +1205,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_4_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_4_CONFIG, handle);
@@ -1227,7 +1220,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_4_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1238,7 +1231,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_4_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_4_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_4_CONFIG, handle);
@@ -1253,22 +1246,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_4_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1279,12 +1272,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_4_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_4_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_4_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_4_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -1301,14 +1292,14 @@ SCILIB int SPECTRUM_Spectrum_4_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1329,40 +1320,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_4_STATUS, handle);
 //- SPECTRUM_Spectrum_4_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_4POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_4_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_4, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_4 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1387,7 +1378,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_4_FIFOADDRESS, timeout,
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1413,7 +1404,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_5_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1424,7 +1415,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_5_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_5_CONFIG, handle);
@@ -1439,7 +1430,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_5_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1450,7 +1441,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_5_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_5_CONFIG, handle);
@@ -1465,7 +1456,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_5_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1476,7 +1467,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_5_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_5_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_5_CONFIG, handle);
@@ -1491,22 +1482,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_5_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1517,12 +1508,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_5_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_5_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_5_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_5_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -1539,14 +1528,14 @@ SCILIB int SPECTRUM_Spectrum_5_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1567,40 +1556,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_5_STATUS, handle);
 //- SPECTRUM_Spectrum_5_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_5POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_5_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_5, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_5 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1625,7 +1614,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_5_FIFOADDRESS, timeout,
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1651,7 +1640,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_6_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1662,7 +1651,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_6_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_6_CONFIG, handle);
@@ -1677,7 +1666,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_6_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1688,7 +1677,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_6_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_6_CONFIG, handle);
@@ -1703,7 +1692,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_6_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1714,7 +1703,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_6_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_6_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_6_CONFIG, handle);
@@ -1729,22 +1718,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_6_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1755,12 +1744,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_6_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_6_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_6_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_6_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_6_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -1777,14 +1764,14 @@ SCILIB int SPECTRUM_Spectrum_6_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1805,40 +1792,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_6_STATUS, handle);
 //- SPECTRUM_Spectrum_6_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_6POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_6_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_6, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_6 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1863,7 +1850,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_6_FIFOADDRESS, timeout,
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1889,7 +1876,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_7_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1900,7 +1887,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_7_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_7_CONFIG, handle);
@@ -1915,7 +1902,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_7_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1926,7 +1913,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_7_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_7_CONFIG, handle);
@@ -1941,7 +1928,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_7_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1952,7 +1939,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_7_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_7_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_7_CONFIG, handle);
@@ -1967,22 +1954,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_7_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -1993,12 +1980,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_7_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_7_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_7_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_7_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_7_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -2015,14 +2000,14 @@ SCILIB int SPECTRUM_Spectrum_7_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2043,40 +2028,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_7_STATUS, handle);
 //- SPECTRUM_Spectrum_7_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_7POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_7_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_7, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_7 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2101,7 +2086,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_7_FIFOADDRESS, timeout,
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2127,7 +2112,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_8_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2138,7 +2123,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_8_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_8_CONFIG, handle);
@@ -2153,7 +2138,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_8_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2164,7 +2149,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_8_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_8_CONFIG, handle);
@@ -2179,7 +2164,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_8_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2190,7 +2175,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_8_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_8_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_8_CONFIG, handle);
@@ -2205,22 +2190,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_8_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2231,12 +2216,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_8_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_8_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_8_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_8_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_8_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -2253,14 +2236,14 @@ SCILIB int SPECTRUM_Spectrum_8_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2281,40 +2264,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_8_STATUS, handle);
 //- SPECTRUM_Spectrum_8_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_8POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_8_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_8, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_8 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2339,7 +2322,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_8_FIFOADDRESS, timeout,
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2365,7 +2348,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_9_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2376,7 +2359,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_9_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_9_CONFIG, handle);
@@ -2391,7 +2374,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_9_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2402,7 +2385,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_9_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_9_CONFIG, handle);
@@ -2417,7 +2400,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_9_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2428,7 +2411,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_9_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_9_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_9_CONFIG, handle);
@@ -2443,22 +2426,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_9_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2469,12 +2452,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_9_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_9_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_9_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_9_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_9_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -2491,14 +2472,14 @@ SCILIB int SPECTRUM_Spectrum_9_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2519,40 +2500,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_9_STATUS, handle);
 //- SPECTRUM_Spectrum_9_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_9POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_9_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_9, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_9 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2577,7 +2558,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_9_FIFOADDRESS, timeout,
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2603,7 +2584,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_11_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2614,7 +2595,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_11_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_11_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_11_CONFIG, handle);
@@ -2629,7 +2610,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_11_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2640,9 +2621,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_11_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
-
-{
+SCILIB int SPECTRUM_Spectrum_11_FLUSH(NI_HANDLE *handle){
 return __abstracted_reg_write(1,SCI_REG_Spectrum_11_CONFIG, handle);
 
 }
@@ -2655,7 +2634,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_11_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2666,9 +2645,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_11_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
-
-{
+SCILIB int SPECTRUM_Spectrum_11_RESET(NI_HANDLE *handle){
 return __abstracted_reg_write(2,SCI_REG_Spectrum_11_CONFIG, handle);
 
 }
@@ -2681,22 +2658,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_11_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2707,12 +2684,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_11_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_11_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_11_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_11_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_11_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -2729,14 +2704,14 @@ SCILIB int SPECTRUM_Spectrum_11_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2757,40 +2732,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_11_STATUS, handle);
 //- SPECTRUM_Spectrum_11_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_11POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_11_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_11, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_11 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2815,7 +2790,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_11_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2841,7 +2816,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_12_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2852,7 +2827,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_12_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_12_CONFIG, handle);
@@ -2867,7 +2842,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_12_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2878,7 +2853,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_12_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_12_CONFIG, handle);
@@ -2893,7 +2868,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_12_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2904,7 +2879,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_12_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_12_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_12_CONFIG, handle);
@@ -2919,22 +2894,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_12_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2945,12 +2920,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_12_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_12_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_12_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_12_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_12_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -2967,14 +2940,14 @@ SCILIB int SPECTRUM_Spectrum_12_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -2995,40 +2968,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_12_STATUS, handle);
 //- SPECTRUM_Spectrum_12_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_12POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_12_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_12, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_12 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3053,7 +3026,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_12_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3079,7 +3052,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_13_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3090,7 +3063,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_13_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_13_CONFIG, handle);
@@ -3105,7 +3078,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_13_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3116,7 +3089,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_13_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_13_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_13_CONFIG, handle);
@@ -3131,7 +3104,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_13_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3142,11 +3115,8 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_13_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_13_CONFIG, handle);
-
+SCILIB int SPECTRUM_Spectrum_13_RESET(NI_HANDLE *handle){
+	return __abstracted_reg_write(2,SCI_REG_Spectrum_13_CONFIG, handle);
 }
 //-----------------------------------------------------------------
 //-
@@ -3157,22 +3127,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_13_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3183,12 +3153,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_13_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_13_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_13_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_13_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -3205,14 +3173,14 @@ SCILIB int SPECTRUM_Spectrum_13_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3233,40 +3201,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_13_STATUS, handle);
 //- SPECTRUM_Spectrum_13_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_13POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_13_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_13, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_13 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3291,7 +3259,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_13_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3317,7 +3285,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_14_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3328,7 +3296,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_14_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_14_CONFIG, handle);
@@ -3343,7 +3311,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_14_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3354,7 +3322,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_14_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_14_CONFIG, handle);
@@ -3369,7 +3337,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_14_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3380,7 +3348,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_14_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_14_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_14_CONFIG, handle);
@@ -3395,22 +3363,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_14_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3421,12 +3389,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_14_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_14_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_14_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_14_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -3443,14 +3409,14 @@ SCILIB int SPECTRUM_Spectrum_14_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3471,40 +3437,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_14_STATUS, handle);
 //- SPECTRUM_Spectrum_14_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_14POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_14_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_14, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_14 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3529,7 +3495,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_14_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3555,7 +3521,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_15_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3566,7 +3532,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_15_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_15_CONFIG, handle);
@@ -3581,7 +3547,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_15_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3592,7 +3558,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_15_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_15_CONFIG, handle);
@@ -3607,7 +3573,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_15_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3618,7 +3584,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_15_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_15_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_15_CONFIG, handle);
@@ -3633,22 +3599,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_15_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3659,12 +3625,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_15_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_15_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_15_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_15_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -3681,14 +3645,14 @@ SCILIB int SPECTRUM_Spectrum_15_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3709,40 +3673,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_15_STATUS, handle);
 //- SPECTRUM_Spectrum_15_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_15POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_15_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_15, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_15 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3767,7 +3731,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_15_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3793,7 +3757,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_16_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3804,7 +3768,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_16_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_16_CONFIG, handle);
@@ -3819,7 +3783,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_16_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3830,7 +3794,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_16_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_16_CONFIG, handle);
@@ -3845,7 +3809,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_16_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3856,7 +3820,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_16_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_16_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_16_CONFIG, handle);
@@ -3871,22 +3835,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_16_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3897,12 +3861,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_16_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_16_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_16_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_16_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -3919,14 +3881,14 @@ SCILIB int SPECTRUM_Spectrum_16_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -3947,40 +3909,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_16_STATUS, handle);
 //- SPECTRUM_Spectrum_16_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_16POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_16_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_16, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_16 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4005,7 +3967,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_16_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4031,7 +3993,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_17_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4042,7 +4004,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_17_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_17_CONFIG, handle);
@@ -4057,7 +4019,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_17_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4068,7 +4030,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_17_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_17_CONFIG, handle);
@@ -4083,7 +4045,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_17_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4094,7 +4056,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_17_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_17_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_17_CONFIG, handle);
@@ -4109,22 +4071,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_17_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4135,12 +4097,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_17_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_17_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_17_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_17_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -4157,14 +4117,14 @@ SCILIB int SPECTRUM_Spectrum_17_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4185,40 +4145,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_17_STATUS, handle);
 //- SPECTRUM_Spectrum_17_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_17POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_17_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_17, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_17 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4243,7 +4203,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_17_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4269,7 +4229,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_18_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4280,7 +4240,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_18_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_18_CONFIG, handle);
@@ -4295,7 +4255,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_18_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4306,7 +4266,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_18_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_18_CONFIG, handle);
@@ -4321,7 +4281,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_18_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4332,7 +4292,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_18_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_18_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_18_CONFIG, handle);
@@ -4347,22 +4307,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_18_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4373,12 +4333,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_18_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_18_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_18_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_18_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_18_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -4395,14 +4353,14 @@ SCILIB int SPECTRUM_Spectrum_18_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4481,7 +4439,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_18_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4507,7 +4465,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_19_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4518,7 +4476,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_19_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_19_CONFIG, handle);
@@ -4533,7 +4491,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_19_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4544,7 +4502,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_19_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_19_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_19_CONFIG, handle);
@@ -4559,7 +4517,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_19_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4570,9 +4528,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_19_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
-
-{
+SCILIB int SPECTRUM_Spectrum_19_RESET(NI_HANDLE *handle){
 return __abstracted_reg_write(2,SCI_REG_Spectrum_19_CONFIG, handle);
 
 }
@@ -4585,22 +4541,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_19_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4611,12 +4567,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_19_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_19_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_19_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_19_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_19_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -4633,14 +4587,14 @@ SCILIB int SPECTRUM_Spectrum_19_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4745,7 +4699,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_20_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4756,7 +4710,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_20_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_20_CONFIG, handle);
@@ -4771,7 +4725,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_20_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4782,7 +4736,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_20_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_20_CONFIG, handle);
@@ -4797,7 +4751,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_20_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4808,7 +4762,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_20_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_20_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_20_CONFIG, handle);
@@ -4823,22 +4777,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_20_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4849,12 +4803,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_20_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_20_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_20_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_20_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_20_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -4871,14 +4823,14 @@ SCILIB int SPECTRUM_Spectrum_20_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4899,40 +4851,40 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_20_STATUS, handle);
 //- SPECTRUM_Spectrum_20_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_20POSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_20_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_20, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_20 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4957,7 +4909,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_20_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4983,7 +4935,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_21_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4994,7 +4946,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_21_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_21_CONFIG, handle);
@@ -5009,7 +4961,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_21_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5020,7 +4972,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_21_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_21_CONFIG, handle);
@@ -5035,7 +4987,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_21_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5046,7 +4998,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_21_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_21_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_21_CONFIG, handle);
@@ -5061,22 +5013,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_21_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5087,12 +5039,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_21_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_21_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_21_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_21_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_21_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -5109,14 +5059,14 @@ SCILIB int SPECTRUM_Spectrum_21_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5195,7 +5145,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_21_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5221,7 +5171,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_22_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5232,7 +5182,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_22_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_22_CONFIG, handle);
@@ -5247,7 +5197,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_22_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5258,7 +5208,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_22_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_22_CONFIG, handle);
@@ -5273,7 +5223,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_22_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5284,7 +5234,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_22_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_22_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_22_CONFIG, handle);
@@ -5299,22 +5249,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_22_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5325,12 +5275,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_22_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_22_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_22_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_22_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_22_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -5347,14 +5295,14 @@ SCILIB int SPECTRUM_Spectrum_22_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5459,7 +5407,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_0_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5470,7 +5418,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_0_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_STOP(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_0_CONFIG, handle);
@@ -5485,7 +5433,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_0_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5496,7 +5444,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_0_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_0_CONFIG, handle);
@@ -5511,7 +5459,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_0_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5522,7 +5470,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_0_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_0_RESET(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_0_CONFIG, handle);
@@ -5537,22 +5485,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_0_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5563,12 +5511,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_0_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_0_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_0_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_0_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_0_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -5835,12 +5781,12 @@ return __abstracted_reg_read(status, SCI_REG_Syncs_READ_STATUS, handle);
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5851,7 +5797,7 @@ return __abstracted_reg_read(status, SCI_REG_Syncs_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Syncs_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Syncs_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Syncs_READ_POSITION, handle);
 
@@ -5861,25 +5807,25 @@ return __abstracted_reg_read(position, SCI_REG_Syncs_READ_POSITION, handle);
 //- OSCILLOSCOPE_Syncs_DOWNLOAD
 //-
 //- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_SyncsPOSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Syncs_DOWNLOAD(data_buffer, BUFFER_SIZE_Syncs, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Syncs to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -6400,12 +6346,12 @@ return __abstracted_reg_read(status, SCI_REG_Analog_READ_STATUS, handle);
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6416,7 +6362,7 @@ return __abstracted_reg_read(status, SCI_REG_Analog_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Analog_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Analog_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Analog_READ_POSITION, handle);
 
@@ -6426,25 +6372,25 @@ return __abstracted_reg_read(position, SCI_REG_Analog_READ_POSITION, handle);
 //- OSCILLOSCOPE_Analog_DOWNLOAD
 //-
 //- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_AnalogPOSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Analog_DOWNLOAD(data_buffer, BUFFER_SIZE_Analog, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Analog to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -6761,12 +6707,12 @@ return __abstracted_reg_read(status, SCI_REG_Energies_READ_STATUS, handle);
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6777,7 +6723,7 @@ return __abstracted_reg_read(status, SCI_REG_Energies_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Energies_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Energies_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Energies_READ_POSITION, handle);
 
@@ -6787,25 +6733,25 @@ return __abstracted_reg_read(position, SCI_REG_Energies_READ_POSITION, handle);
 //- OSCILLOSCOPE_Energies_DOWNLOAD
 //-
 //- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_EnergiesPOSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Energies_DOWNLOAD(data_buffer, BUFFER_SIZE_Energies, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Energies to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -7122,12 +7068,12 @@ return __abstracted_reg_read(status, SCI_REG_Analog_In_Unflipped_READ_STATUS, ha
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7138,7 +7084,7 @@ return __abstracted_reg_read(status, SCI_REG_Analog_In_Unflipped_READ_STATUS, ha
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Analog_In_Unflipped_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Analog_In_Unflipped_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Analog_In_Unflipped_READ_POSITION, handle);
 
@@ -7148,25 +7094,25 @@ return __abstracted_reg_read(position, SCI_REG_Analog_In_Unflipped_READ_POSITION
 //- OSCILLOSCOPE_Analog_In_Unflipped_DOWNLOAD
 //-
 //- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Analog_In_UnflippedPOSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Analog_In_Unflipped_DOWNLOAD(data_buffer, BUFFER_SIZE_Analog_In_Unflipped, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Analog_In_Unflipped to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -7610,7 +7556,6 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 	decoded_packets->packets = NULL;
 	decoded_packets->allocated_packets = 0;
 	decoded_packets->valid_packets = 0;
-	
 	//check if we have elements in the circular buffer
 	int bfsize = circular_buf_size(cbuf);
 	if (bfsize < PacketSize + 1) return -1;
@@ -7628,7 +7573,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 		circular_buf_get(cbuf, &mpe);
 
 		if (in_sync == 0) {
-			if (mpe != 0xIN_35)
+			if (mpe != 0x80000000 && mpe != 0x4A14A14A)
 			{
 				continue;
 			}
@@ -7751,7 +7696,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7777,7 +7722,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_10_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7788,8 +7733,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
-
+SCILIB int SPECTRUM_Spectrum_10_STOP(NI_HANDLE *handle)
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_10_CONFIG, handle);
 
@@ -7803,7 +7747,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_10_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7814,8 +7758,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
-
+SCILIB int SPECTRUM_Spectrum_10_FLUSH(NI_HANDLE *handle)
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_10_CONFIG, handle);
 
@@ -7829,7 +7772,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_10_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7840,11 +7783,9 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
-
+SCILIB int SPECTRUM_Spectrum_10_RESET(NI_HANDLE *handle)
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_10_CONFIG, handle);
-
 }
 //-----------------------------------------------------------------
 //-
@@ -7855,22 +7796,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_10_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7881,12 +7822,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_10_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_10_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -7903,14 +7842,14 @@ SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7989,7 +7928,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_10_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8015,7 +7954,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_23_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8026,9 +7965,7 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_23_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
-
-{
+SCILIB int SPECTRUM_Spectrum_23_STOP(NI_HANDLE *handle){
 return __abstracted_reg_write(0,SCI_REG_Spectrum_23_CONFIG, handle);
 
 }
@@ -8041,7 +7978,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_23_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8052,7 +7989,7 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_23_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_23_FLUSH(NI_HANDLE *handle)
 
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_23_CONFIG, handle);
@@ -8067,7 +8004,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_23_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8078,8 +8015,7 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_23_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
-
+SCILIB int SPECTRUM_Spectrum_23_RESET(NI_HANDLE *handle)
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_23_CONFIG, handle);
 
@@ -8093,22 +8029,22 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_23_CONFIG, handle);
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8119,12 +8055,10 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_23_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_23_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
-
-{
+SCILIB int SPECTRUM_Spectrum_23_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_23_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value; 
+     limit = (1 << (limit_mode + 29)) + limit_value;
      int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_23_CONFIG_LIMIT, handle);
      if (r_rebin == 0 & r_limit == 0)
          return 0;
@@ -8141,14 +8075,14 @@ SCILIB int SPECTRUM_Spectrum_23_SET_PARAMETERS(int32_t rebin, int32_t limit_mode
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8391,12 +8325,12 @@ return __abstracted_reg_read(status, SCI_REG_diag_READ_STATUS, handle);
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8407,7 +8341,7 @@ return __abstracted_reg_read(status, SCI_REG_diag_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_diag_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_diag_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_diag_READ_POSITION, handle);
 
@@ -8417,30 +8351,30 @@ return __abstracted_reg_read(position, SCI_REG_diag_READ_POSITION, handle);
 //- OSCILLOSCOPE_diag_DOWNLOAD
 //-
 //- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_diagPOSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_diag_DOWNLOAD(data_buffer, BUFFER_SIZE_diag, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_diag to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
@@ -8752,12 +8686,12 @@ return __abstracted_reg_read(status, SCI_REG_baselines_READ_STATUS, handle);
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8778,30 +8712,30 @@ return __abstracted_reg_read(position, SCI_REG_baselines_READ_POSITION, handle);
 //- OSCILLOSCOPE_baselines_DOWNLOAD
 //-
 //- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_baselinesPOSITION function 
-//- 
-//- USAGE: 
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_baselines_DOWNLOAD(data_buffer, BUFFER_SIZE_baselines, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_baselines to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
