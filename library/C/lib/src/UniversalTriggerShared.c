@@ -51,6 +51,7 @@ float range_s = 1;
 int delay = 20;
 int inhib = 1000;
 int baseline = 200;
+int base_auto = 9;//default behavior: measure over 2^9 clock ticks to get the baseline
 float top = 8.;
 int int_time = 250; //this seems to be a good default based on oscilloscope readout.
 int pre_int = 100;   //^same here

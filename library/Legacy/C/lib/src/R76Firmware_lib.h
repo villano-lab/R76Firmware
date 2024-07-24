@@ -7235,7 +7235,7 @@ SCILIB int OSCILLOSCOPE_baselines_STATUS(uint32_t *status,NI_HANDLE *handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_baselines_POSITION(int32_t *position,NI_HANDLE *handle);
+SCILIB int OSCILLOSCOPE_baselines_POSITION(uint32_t *position,NI_HANDLE *handle);
 //-----------------------------------------------------------------
 //-
 //- OSCILLOSCOPE_baselines_DOWNLOAD
