@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <sys/time.h>
 #include <iostream>
+#include <signal.h>
 
 #include "Legacy/R76Firmware_lib.h"
 #include "UniversalTriggerShared.h"
@@ -14,6 +15,15 @@
 const char* program_name = "packettest";
 int waittime=100; //default 2 packets.
 
+//Setup to use sigint to stop the program. https://stackoverflow.com/questions/9615706/how-can-i-handle-interrupt-signal-and-call-destructor-in-c
+sig_atomic_t stopFlag = 0;
+void
+handler( int )
+{
+    stopFlag = 1;
+}
+
+//Function definitions
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
 	fprintf (stream, "Usage:  %s options \n", program_name);
 	fprintf (stream, VERBOSE_TEXT);
@@ -116,9 +126,10 @@ int main(int argc, char* argv[])
 	}else if(verbose>1) printf("Buffer allocation succeeded. Continuing to setup.\n");
 
 	//Pull the data!
-	if (CPACK_All_Energies_RESET(&handle) != 0) printf("Reset Error\n");
-	if (CPACK_All_Energies_START(&handle) != 0) printf("Start Error\n");
-	if (CPACK_All_Energies_STATUS(&status_frame, &handle) != 0) printf("Status Error\n");
+	if (CPACK_All_Energies_RESET(&handle) != 0) printf("CPACK flush error\n");
+	if (CPACK_All_Energies_RESET(&handle) != 0) printf("CPACK reset error\n");
+	if (CPACK_All_Energies_START(&handle) != 0) printf("CPACK start error\n");
+	if (CPACK_All_Energies_STATUS(&status_frame, &handle) != 0) printf("CPACK status error\n");
 	if(verbose>1){
 		printf("Setup complete. Packet status %d (",status_frame);
 		if(status_frame & (1 << 0)){printf("Data available, ");
@@ -128,62 +139,59 @@ int main(int argc, char* argv[])
 		if(status_frame & (1 << 2)){printf("Full.)\n");
 		}else{printf("Not full.)\n");}
 	}
-	if (status_frame >0)
-	{
+	if (status_frame > 0){
 		if(verbose>1) std::cout << "Logging to " << logfile << std::endl;
-        if(logfile != NULL){
-            fprintf(logfile,"Packet #,word label,value\n");
-        }
-        int j = 0;
-        while(j<waittime){
-			gettimeofday(&start,NULL);
-            valid_data_frame = 0;
-            if(verbose > 0){printf("Downloading new dataset.\n");}
-            if (CPACK_All_Energies_DOWNLOAD((uint32_t *)data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
-			if(verbose>0) printf("Valid data: %d.\n",valid_data_frame);
-			if(valid_data_frame == 0){
-				printf("No data available; nothing to do. Exiting.");
-				return -1;
-			}
+	        if(logfile != NULL){
+			fprintf(logfile,"trigger_code,timestamp");
+			for(int i=0;i<32;i++) fprintf(logfile,",en_CH%d",i);
+			fprintf(logfile,"\n");
+		}
+	signal( SIGINT, &handler ); //from here on we keep going until interrupted.
+        while(stopFlag == 0){
+		gettimeofday(&start,NULL);
+        	valid_data_frame = 0;
+        	if(verbose > 2) printf("Downloading new dataset.\n");
+        	if (CPACK_All_Energies_DOWNLOAD((uint32_t *)data_frame, N_Packet * (18), timeout_frame, &handle, &read_data_frame, &valid_data_frame) != 0) printf("Data Download Error\n");
+		if(verbose>0) printf("Valid data: %d.\n",valid_data_frame);
+		if(valid_data_frame == 0){
+			if(verbose>2) printf("No data available; waiting...\n");
+			continue;
+		}
 
-            valid_data_enqueued = 0;
-            if(verbose > 1){printf("Enqueuing data.\n");}
-			code = Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
-			if(code != 0){
-				printf("Enqueue failed with code %d.\n",code);
-				return code;
-			}
+		valid_data_enqueued = 0;
+		if(verbose > 1)printf("Enqueuing data.\n");
+		code = Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
+		if(code != 0){
+			printf("Enqueue failed with code %d.\n",code);
+			return code;
+		}
 
-            if(verbose > 1){printf("Reconstructing data.\n");}
-            if (CPACK_All_Energies_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets) == 0)
-            {
-                if(verbose>=0) printf(".");
-                if(verbose>=0) printf("\n");
-                if(verbose>2) printf("i: %d\n",i);
-				if(verbose>2) printf("BufferDownloadHandler: %p\n",BufferDownloadHandler);
-                if(verbose>1) printf("Valid Packets: %d \n",decoded_packets.valid_packets);
+		if(verbose > 1){printf("Reconstructing data.\n");}
+		int failurecount; //track consecutive failures to detect major issues.
+		if (CPACK_All_Energies_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets) == 0)
+		{
+	                if(verbose>=0) printf(".");
+        	        if(verbose>=0) printf("\n");
+                	if(verbose>2) printf("i: %d\n",i);
+			if(verbose>2) printf("BufferDownloadHandler: %p\n",BufferDownloadHandler);
+	                if(verbose>1) printf("Valid Packets: %d \n",decoded_packets.valid_packets);
                 for (int i = 0;i<decoded_packets.valid_packets;i++){
-                    if(verbose>2){printf("Reading out decoded packet...\n");}
+		    if(verbose>2) printf("Reading out decoded packet...\n");
                     t_All_Energies_struct *data = (t_All_Energies_struct *)decoded_packets.packets[i].payload;
 		    //Gate width debugging
                     for(int n=0;n<18;n++){
                         //For now I'm abusing my log function in order to print to file.
                         if(logfile != NULL){
-                            fprintf(logfile,"%d, ",j);
-                            if(n==0){
-                                fprintf(logfile, "timestamp, ");
-                            }else if(n==1){
-                                fprintf(logfile,"trigger_code, ");
-                            }else{
-                                fprintf(logfile,"energy_ch_%02d, ",2*(n-2)); //start on row 2
-                            }
-                            if(n<=1){
-                                fprintf(logfile,"%u\n",data->row[n]);
-                            }else{
+                            if(n==0){ //trigger code
+                                fprintf(logfile, "%08X,",data->row[n]);
+                            }else if(n==1){ //timestamp
+                                fprintf(logfile,"%04X",data->row[n]>>16);
+                            }else{ //energy data
                                 uint16_t lower_word = (uint16_t) (data->row[n] & 0xFFFFUL);
                                 uint16_t upper_word = (uint16_t) ((data->row[n] >> 16) & 0xFFFFUL);
-                                fprintf(logfile,"%u\n%d, energy_ch_%02d, %u\n",(uint32_t)lower_word,j,2*(n-2)+1,(uint32_t)upper_word); //1.5 lines off.
+                                fprintf(logfile,",%04X,%04X",(uint32_t)lower_word,(uint32_t)upper_word); //start on row 2
                             }
+			    if(n==17) fprintf(logfile,"\n");
                         }
                         if(verbose > -1){printf("Row #%02d",n+1);}
                         if(verbose > -1 && n > 13){printf(" (No input)");} //append a note that these channels are unused.
@@ -203,17 +211,14 @@ int main(int argc, char* argv[])
                 }
                 if(verbose>2){printf("Freeing packets... (Is that what this line even does?)\n");}
                 //free_packet_collection(&decoded_packets); //this is broken, that's not good.
+		failurecount = 0;
             }else{
-                printf("Reconstruction failed.\n");
-                return -1;
+                if(verbose) printf("Reconstruction failed %d times.\n",++failurecount);
+                continue;
             }
             if(verbose > 2){printf("Incrementing ReadDataNumber.\n");}
             ReadDataNumber = ReadDataNumber + N_Packet;
-            j++;
-			gettimeofday(&stop,NULL);
-			printf ("Elapsed this iteration: %f\n",stop.tv_sec-start.tv_sec
-	          + 0.000001*(stop.tv_usec-start.tv_usec));
-        }
+        }//end main while loop.
 		if(verbose >-1){printf("Download completed\n");}
 	}
 	else printf("Status Error");
