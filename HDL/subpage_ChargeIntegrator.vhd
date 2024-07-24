@@ -20,6 +20,8 @@ int_gate : out std_logic_vector(0 downto 0);
 base : in std_logic_vector(15 downto 0);
 manual_base : in std_logic_vector(0 downto 0);
 baseline : out std_logic_vector(15 downto 0);
+baseline_valid : out std_logic_vector(0 downto 0);
+baseline_calculating : out std_logic_vector(0 downto 0);
 
 		async_clk : in std_logic_vector (0 downto 0);
 		CLK_ACQ : in std_logic_vector (0 downto 0);
@@ -92,7 +94,9 @@ PORT(
     	HOLD_TIME: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     	RUNNING_NOT_HOLD: OUT STD_LOGIC_VECTOR(0 DOWNTO 0));
 END COMPONENT;
+signal U11_baseline_valid : std_logic_vector(0 downto 0) := (others => '0');
 signal U11_base_line : std_logic_vector(15 downto 0) := (others => '0');
+signal U11_track_hold : std_logic_vector(0 downto 0) := (others => '0');
 	signal U12_int : integer  := 0;
 
 begin
@@ -146,11 +150,13 @@ PORT MAP(
     BL_HOLD  => U12_int,
     FLUSH  => "0",
     BASELINE  => U11_base_line,
-    BASELINE_VALID  => open,
+    BASELINE_VALID  => U11_baseline_valid,
     HOLD_TIME  => open,
-    RUNNING_NOT_HOLD  => open
+    RUNNING_NOT_HOLD  => U11_track_hold
 );
 	U12_int <= conv_integer(U4_int_time);
 baseline <= U11_base_line;
+baseline_valid <= U11_baseline_valid;
+baseline_calculating <= U11_track_hold;
 
 end Behavioral;

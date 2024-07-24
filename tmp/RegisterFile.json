@@ -3882,7 +3882,7 @@
       "WordSize": 16,
       "WordEnob": 16,
       "AnalogInputs": 1,
-      "DigitalInputs": 0,
+      "DigitalInputs": 4,
       "SamplingFrequency": 0,
       "TimeMultiplexing": 1,
       "DecimatorMax": 0,
@@ -3967,5 +3967,5 @@
   "Magic": "361567DF",
   "Version": null,
   "FPGA": "xc7z030fbg676-2",
-  "BuildDate": "2024-07-23T11:44:30.9948793-06:00"
+  "BuildDate": "2024-07-23T15:16:18.1322824-06:00"
 }

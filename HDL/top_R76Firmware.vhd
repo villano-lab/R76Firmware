@@ -2455,98 +2455,146 @@ signal U109_base : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
 	signal U110_valid_0 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_0 : std_logic_vector(0 downto 0);
 	signal U110_baseline_0 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_0 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_0 : std_logic_vector(0 downto 0);
 	signal U110_energy_1 : std_logic_vector(15 downto 0);
 	signal U110_valid_1 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_1 : std_logic_vector(0 downto 0);
 	signal U110_baseline_1 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_1 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_1 : std_logic_vector(0 downto 0);
 	signal U110_energy_2 : std_logic_vector(15 downto 0);
 	signal U110_valid_2 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_2 : std_logic_vector(0 downto 0);
 	signal U110_baseline_2 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_2 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_2 : std_logic_vector(0 downto 0);
 	signal U110_energy_3 : std_logic_vector(15 downto 0);
 	signal U110_valid_3 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_3 : std_logic_vector(0 downto 0);
 	signal U110_baseline_3 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_3 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_3 : std_logic_vector(0 downto 0);
 	signal U110_energy_4 : std_logic_vector(15 downto 0);
 	signal U110_valid_4 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_4 : std_logic_vector(0 downto 0);
 	signal U110_baseline_4 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_4 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_4 : std_logic_vector(0 downto 0);
 	signal U110_energy_5 : std_logic_vector(15 downto 0);
 	signal U110_valid_5 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_5 : std_logic_vector(0 downto 0);
 	signal U110_baseline_5 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_5 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_5 : std_logic_vector(0 downto 0);
 	signal U110_energy_6 : std_logic_vector(15 downto 0);
 	signal U110_valid_6 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_6 : std_logic_vector(0 downto 0);
 	signal U110_baseline_6 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_6 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_6 : std_logic_vector(0 downto 0);
 	signal U110_energy_7 : std_logic_vector(15 downto 0);
 	signal U110_valid_7 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_7 : std_logic_vector(0 downto 0);
 	signal U110_baseline_7 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_7 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_7 : std_logic_vector(0 downto 0);
 	signal U110_energy_8 : std_logic_vector(15 downto 0);
 	signal U110_valid_8 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_8 : std_logic_vector(0 downto 0);
 	signal U110_baseline_8 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_8 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_8 : std_logic_vector(0 downto 0);
 	signal U110_energy_9 : std_logic_vector(15 downto 0);
 	signal U110_valid_9 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_9 : std_logic_vector(0 downto 0);
 	signal U110_baseline_9 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_9 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_9 : std_logic_vector(0 downto 0);
 	signal U110_energy_10 : std_logic_vector(15 downto 0);
 	signal U110_valid_10 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_10 : std_logic_vector(0 downto 0);
 	signal U110_baseline_10 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_10 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_10 : std_logic_vector(0 downto 0);
 	signal U110_energy_11 : std_logic_vector(15 downto 0);
 	signal U110_valid_11 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_11 : std_logic_vector(0 downto 0);
 	signal U110_baseline_11 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_11 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_11 : std_logic_vector(0 downto 0);
 	signal U110_energy_12 : std_logic_vector(15 downto 0);
 	signal U110_valid_12 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_12 : std_logic_vector(0 downto 0);
 	signal U110_baseline_12 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_12 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_12 : std_logic_vector(0 downto 0);
 	signal U110_energy_13 : std_logic_vector(15 downto 0);
 	signal U110_valid_13 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_13 : std_logic_vector(0 downto 0);
 	signal U110_baseline_13 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_13 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_13 : std_logic_vector(0 downto 0);
 	signal U110_energy_14 : std_logic_vector(15 downto 0);
 	signal U110_valid_14 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_14 : std_logic_vector(0 downto 0);
 	signal U110_baseline_14 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_14 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_14 : std_logic_vector(0 downto 0);
 	signal U110_energy_15 : std_logic_vector(15 downto 0);
 	signal U110_valid_15 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_15 : std_logic_vector(0 downto 0);
 	signal U110_baseline_15 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_15 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_15 : std_logic_vector(0 downto 0);
 	signal U110_energy_16 : std_logic_vector(15 downto 0);
 	signal U110_valid_16 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_16 : std_logic_vector(0 downto 0);
 	signal U110_baseline_16 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_16 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_16 : std_logic_vector(0 downto 0);
 	signal U110_energy_17 : std_logic_vector(15 downto 0);
 	signal U110_valid_17 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_17 : std_logic_vector(0 downto 0);
 	signal U110_baseline_17 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_17 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_17 : std_logic_vector(0 downto 0);
 	signal U110_energy_18 : std_logic_vector(15 downto 0);
 	signal U110_valid_18 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_18 : std_logic_vector(0 downto 0);
 	signal U110_baseline_18 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_18 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_18 : std_logic_vector(0 downto 0);
 	signal U110_energy_19 : std_logic_vector(15 downto 0);
 	signal U110_valid_19 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_19 : std_logic_vector(0 downto 0);
 	signal U110_baseline_19 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_19 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_19 : std_logic_vector(0 downto 0);
 	signal U110_energy_20 : std_logic_vector(15 downto 0);
 	signal U110_valid_20 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_20 : std_logic_vector(0 downto 0);
 	signal U110_baseline_20 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_20 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_20 : std_logic_vector(0 downto 0);
 	signal U110_energy_21 : std_logic_vector(15 downto 0);
 	signal U110_valid_21 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_21 : std_logic_vector(0 downto 0);
 	signal U110_baseline_21 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_21 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_21 : std_logic_vector(0 downto 0);
 	signal U110_energy_22 : std_logic_vector(15 downto 0);
 	signal U110_valid_22 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_22 : std_logic_vector(0 downto 0);
 	signal U110_baseline_22 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_22 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_22 : std_logic_vector(0 downto 0);
 	signal U110_energy_23 : std_logic_vector(15 downto 0);
 	signal U110_valid_23 : std_logic_vector(0 downto 0);
 	signal U110_int_gate_23 : std_logic_vector(0 downto 0);
 	signal U110_baseline_23 : std_logic_vector(15 downto 0);
+	signal U110_baseline_valid_23 : std_logic_vector(0 downto 0);
+	signal U110_baseline_calculating_23 : std_logic_vector(0 downto 0);
 
 COMPONENT SUBPAGE_ChargeIntegrator
 PORT(
@@ -2556,6 +2604,8 @@ PORT(
 	valid : OUT std_logic_vector(0 downto 0);
 	int_gate : OUT std_logic_vector(0 downto 0);
 	baseline : OUT std_logic_vector(15 downto 0);
+	baseline_valid : OUT std_logic_vector(0 downto 0);
+	baseline_calculating : OUT std_logic_vector(0 downto 0);
 	pre_int : IN std_logic_vector(15 downto 0);
 	trig : IN std_logic_vector(0 downto 0);
 	int_time : IN std_logic_vector(15 downto 0);
@@ -7505,6 +7555,8 @@ PORT MAP(
 	valid => U110_valid_0,
 	int_gate => U110_int_gate_0,
 	baseline => U110_baseline_0,
+	baseline_valid => U110_baseline_valid_0,
+	baseline_calculating => U110_baseline_calculating_0,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7535,6 +7587,8 @@ PORT MAP(
 	valid => U110_valid_1,
 	int_gate => U110_int_gate_1,
 	baseline => U110_baseline_1,
+	baseline_valid => U110_baseline_valid_1,
+	baseline_calculating => U110_baseline_calculating_1,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7565,6 +7619,8 @@ PORT MAP(
 	valid => U110_valid_2,
 	int_gate => U110_int_gate_2,
 	baseline => U110_baseline_2,
+	baseline_valid => U110_baseline_valid_2,
+	baseline_calculating => U110_baseline_calculating_2,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7595,6 +7651,8 @@ PORT MAP(
 	valid => U110_valid_3,
 	int_gate => U110_int_gate_3,
 	baseline => U110_baseline_3,
+	baseline_valid => U110_baseline_valid_3,
+	baseline_calculating => U110_baseline_calculating_3,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7625,6 +7683,8 @@ PORT MAP(
 	valid => U110_valid_4,
 	int_gate => U110_int_gate_4,
 	baseline => U110_baseline_4,
+	baseline_valid => U110_baseline_valid_4,
+	baseline_calculating => U110_baseline_calculating_4,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7655,6 +7715,8 @@ PORT MAP(
 	valid => U110_valid_5,
 	int_gate => U110_int_gate_5,
 	baseline => U110_baseline_5,
+	baseline_valid => U110_baseline_valid_5,
+	baseline_calculating => U110_baseline_calculating_5,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7685,6 +7747,8 @@ PORT MAP(
 	valid => U110_valid_6,
 	int_gate => U110_int_gate_6,
 	baseline => U110_baseline_6,
+	baseline_valid => U110_baseline_valid_6,
+	baseline_calculating => U110_baseline_calculating_6,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7715,6 +7779,8 @@ PORT MAP(
 	valid => U110_valid_7,
 	int_gate => U110_int_gate_7,
 	baseline => U110_baseline_7,
+	baseline_valid => U110_baseline_valid_7,
+	baseline_calculating => U110_baseline_calculating_7,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7745,6 +7811,8 @@ PORT MAP(
 	valid => U110_valid_8,
 	int_gate => U110_int_gate_8,
 	baseline => U110_baseline_8,
+	baseline_valid => U110_baseline_valid_8,
+	baseline_calculating => U110_baseline_calculating_8,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7775,6 +7843,8 @@ PORT MAP(
 	valid => U110_valid_9,
 	int_gate => U110_int_gate_9,
 	baseline => U110_baseline_9,
+	baseline_valid => U110_baseline_valid_9,
+	baseline_calculating => U110_baseline_calculating_9,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7805,6 +7875,8 @@ PORT MAP(
 	valid => U110_valid_10,
 	int_gate => U110_int_gate_10,
 	baseline => U110_baseline_10,
+	baseline_valid => U110_baseline_valid_10,
+	baseline_calculating => U110_baseline_calculating_10,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7835,6 +7907,8 @@ PORT MAP(
 	valid => U110_valid_11,
 	int_gate => U110_int_gate_11,
 	baseline => U110_baseline_11,
+	baseline_valid => U110_baseline_valid_11,
+	baseline_calculating => U110_baseline_calculating_11,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7865,6 +7939,8 @@ PORT MAP(
 	valid => U110_valid_12,
 	int_gate => U110_int_gate_12,
 	baseline => U110_baseline_12,
+	baseline_valid => U110_baseline_valid_12,
+	baseline_calculating => U110_baseline_calculating_12,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7895,6 +7971,8 @@ PORT MAP(
 	valid => U110_valid_13,
 	int_gate => U110_int_gate_13,
 	baseline => U110_baseline_13,
+	baseline_valid => U110_baseline_valid_13,
+	baseline_calculating => U110_baseline_calculating_13,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7925,6 +8003,8 @@ PORT MAP(
 	valid => U110_valid_14,
 	int_gate => U110_int_gate_14,
 	baseline => U110_baseline_14,
+	baseline_valid => U110_baseline_valid_14,
+	baseline_calculating => U110_baseline_calculating_14,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7955,6 +8035,8 @@ PORT MAP(
 	valid => U110_valid_15,
 	int_gate => U110_int_gate_15,
 	baseline => U110_baseline_15,
+	baseline_valid => U110_baseline_valid_15,
+	baseline_calculating => U110_baseline_calculating_15,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -7985,6 +8067,8 @@ PORT MAP(
 	valid => U110_valid_16,
 	int_gate => U110_int_gate_16,
 	baseline => U110_baseline_16,
+	baseline_valid => U110_baseline_valid_16,
+	baseline_calculating => U110_baseline_calculating_16,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -8015,6 +8099,8 @@ PORT MAP(
 	valid => U110_valid_17,
 	int_gate => U110_int_gate_17,
 	baseline => U110_baseline_17,
+	baseline_valid => U110_baseline_valid_17,
+	baseline_calculating => U110_baseline_calculating_17,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -8045,6 +8131,8 @@ PORT MAP(
 	valid => U110_valid_18,
 	int_gate => U110_int_gate_18,
 	baseline => U110_baseline_18,
+	baseline_valid => U110_baseline_valid_18,
+	baseline_calculating => U110_baseline_calculating_18,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -8075,6 +8163,8 @@ PORT MAP(
 	valid => U110_valid_19,
 	int_gate => U110_int_gate_19,
 	baseline => U110_baseline_19,
+	baseline_valid => U110_baseline_valid_19,
+	baseline_calculating => U110_baseline_calculating_19,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -8105,6 +8195,8 @@ PORT MAP(
 	valid => U110_valid_20,
 	int_gate => U110_int_gate_20,
 	baseline => U110_baseline_20,
+	baseline_valid => U110_baseline_valid_20,
+	baseline_calculating => U110_baseline_calculating_20,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -8135,6 +8227,8 @@ PORT MAP(
 	valid => U110_valid_21,
 	int_gate => U110_int_gate_21,
 	baseline => U110_baseline_21,
+	baseline_valid => U110_baseline_valid_21,
+	baseline_calculating => U110_baseline_calculating_21,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -8165,6 +8259,8 @@ PORT MAP(
 	valid => U110_valid_22,
 	int_gate => U110_int_gate_22,
 	baseline => U110_baseline_22,
+	baseline_valid => U110_baseline_valid_22,
+	baseline_calculating => U110_baseline_calculating_22,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -8195,6 +8291,8 @@ PORT MAP(
 	valid => U110_valid_23,
 	int_gate => U110_int_gate_23,
 	baseline => U110_baseline_23,
+	baseline_valid => U110_baseline_valid_23,
+	baseline_calculating => U110_baseline_calculating_23,
 	pre_int => U109_pre,
 	trig => U73_out,
 	int_time => U109_time,
@@ -8225,8 +8323,8 @@ PORT MAP(
 	)
 	PORT MAP(
 		ANALOG => U110_baseline_23 & U110_baseline_22 & U110_baseline_21 & U110_baseline_20 & U110_baseline_19 & U110_baseline_18 & U110_baseline_17 & U110_baseline_16 & U110_baseline_15 & U110_baseline_14 & U110_baseline_13 & U110_baseline_12 & U110_baseline_11 & U110_baseline_10 & U110_baseline_9 & U110_baseline_8 & U110_baseline_7 & U110_baseline_6 & U110_baseline_5 & U110_baseline_4 & U110_baseline_3 & U110_baseline_2 & U110_baseline_1 & U110_baseline_0,
-		D0 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
-		D1 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
+		D0 => U110_baseline_valid_23 & U110_baseline_valid_22 & U110_baseline_valid_21 & U110_baseline_valid_20 & U110_baseline_valid_19 & U110_baseline_valid_18 & U110_baseline_valid_17 & U110_baseline_valid_16 & U110_baseline_valid_15 & U110_baseline_valid_14 & U110_baseline_valid_13 & U110_baseline_valid_12 & U110_baseline_valid_11 & U110_baseline_valid_10 & U110_baseline_valid_9 & U110_baseline_valid_8 & U110_baseline_valid_7 & U110_baseline_valid_6 & U110_baseline_valid_5 & U110_baseline_valid_4 & U110_baseline_valid_3 & U110_baseline_valid_2 & U110_baseline_valid_1 & U110_baseline_valid_0,
+		D1 => U110_baseline_calculating_23 & U110_baseline_calculating_22 & U110_baseline_calculating_21 & U110_baseline_calculating_20 & U110_baseline_calculating_19 & U110_baseline_calculating_18 & U110_baseline_calculating_17 & U110_baseline_calculating_16 & U110_baseline_calculating_15 & U110_baseline_calculating_14 & U110_baseline_calculating_13 & U110_baseline_calculating_12 & U110_baseline_calculating_11 & U110_baseline_calculating_10 & U110_baseline_calculating_9 & U110_baseline_calculating_8 & U110_baseline_calculating_7 & U110_baseline_calculating_6 & U110_baseline_calculating_5 & U110_baseline_calculating_4 & U110_baseline_calculating_3 & U110_baseline_calculating_2 & U110_baseline_calculating_1 & U110_baseline_calculating_0,
 		D2 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		D3 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		TRIG => U73_out,
