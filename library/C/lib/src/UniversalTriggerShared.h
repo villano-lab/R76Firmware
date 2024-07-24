@@ -21,7 +21,7 @@
 #define THRESH_TEXT   (" -t,    --thresh    <threshold>	            Set the value of the (lower) threshold in MeV (default: 1). \n")
 #define RANGE_TEXT    (" -r,	--range	    '<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned, in MeV (default: min 0, max 8, step size 1).\n")
 #define SKIP_TEXT     (" -S,    --skip      <#>                     [DEPRECATED] Skip every # trigger to reduce the rate.\n")
-#define BASELINE_TEXT (" -b,    --baseline  <baseline>              Set the baseline in ADC units (positive integer) and force manual baseline mode. A baseline of 0 indicates automatic baseline mode. (default: 0/automatic)\n                                            WARNING! This will have unintended consequences for calibration, thresholds, and pulse integration. USE FOR DEV ONLY!\n")
+#define BASELINE_TEXT (" -b,    --baseline  <baseline>              Set the time (positive integer) to measure the baseline; measurement takes place over 2^n clock ticks. Supplying 0 forces manual mode. (default: 9)\n                                            WARNING! This will have unintended consequences for calibration, thresholds, and pulse integration. USE FOR DEV ONLY!\n")
 #define VERBOSE_TEXT  (" -v,	--verbose   <level>                 Print verbose messages at the specified level (1 if unspecified).\n")
 #define SILENT_TEXT   (" -s,-q,	--silent,--quiet,                   Print nothing. (Negative verbosity) \n")
 #define LOG_TEXT      (" -l,	--log	    <file>                  Log terminal output. (default: log.txt) \n")
