@@ -141,14 +141,13 @@ int main(int argc, char* argv[])
 
 	//Final run setup
 	int thrs = 0;	        //amount LESS THAN 8192 for threshold.
-	
 	if(logfile != NULL){
 		fprintf(logfile,"============ Settings ============\n");
 		fprintf(logfile,"Starting threshold:			%d\n",thrs);
 		fprintf(logfile,"Trigger Inhibition Time:		%d\n",inhib);
 		fprintf(logfile,"Upper Gate:					%d\n",gate_u);
 		fprintf(logfile,"Lower Gate: 					%d\n",gate_l);
-		fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);
+		//fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);
 		fprintf(logfile,"Lower threshold scanning from %f to %f in steps of %f.\n",range_l,range_u,range_s);
 		fprintf(logfile,"Detectors enabled:				\n");
 		for(int i=0;i++;i<24){
@@ -160,14 +159,14 @@ int main(int argc, char* argv[])
 	//Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
 	thrs = range_l;
-	thresh_q = set_thresholds("low",polarity,thrs,thresh_t);
+	thresh_q = set_thresholds("low",thrs,thresh_t,baseline);
 	for(i=0;i++;i<24){
 		if(thresh_q[i] != 0){
 			printf("Error from REG_thrsh_SET. Aborting.\n");
 			return thresh_q[i];
 		}
 	}
-	thresh_q = set_thresholds("high",polarity,top,thresh_t);
+	thresh_q = set_thresholds("high",top,thresh_t,baseline);
 	for(i=0;i++;i<24){
 		if(thresh_q[i] != 0){
 			printf("Error from REG_top_SET. Aborting.\n");
@@ -178,7 +177,7 @@ int main(int argc, char* argv[])
 	delay_q = __abstracted_reg_write(delay,SCI_REG_trig_delay,&handle);			//Set number of samples to delay data by
 	gate_uq = __abstracted_reg_write(gate_u,SCI_REG_trig_gate_u,&handle);
 	gate_lq = __abstracted_reg_write(gate_l,SCI_REG_trig_gate_l,&handle);
-	polarity_q = __abstracted_reg_write(polarity,SCI_REG_trig_polarity,&handle);	//Set polarity to negative
+	//polarity_q = __abstracted_reg_write(polarity,SCI_REG_trig_polarity,&handle);	//Set polarity to negative
 
 	//Run phase - undo reset
 	if(verbose>0){printf("Setting up rate counter... \n");};
@@ -195,7 +194,7 @@ int main(int argc, char* argv[])
 			printf("%d\n",thrs);
 		}
 
-		thresh_q = set_thresholds("low",polarity,thrs,thresh_t);
+		thresh_q = set_thresholds("low",thrs,thresh_t,baseline);
 		for(i=0;i++;i<24){
 			if(thresh_q[i] != 0){
 				printf("Error from REG_thrs_SET. Aborting.\n");

@@ -22,7 +22,7 @@ FILE *fp;
 
 void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines up correctly in the terminal output
 	fprintf (stream, "Usage:  %s options \n", program_name);
-  	fprintf (stream, DET_TEXT);
+	fprintf (stream, DET_TEXT);
 	fprintf (stream, DELAY_TEXT);
 	fprintf (stream, INHIB_TEXT);
 	fprintf (stream, TOP_TEXT);
@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 {
 	//Read options
 	while(iarg != -1){
-		iarg = getopt_long(argc, argv, "+l::c::shv::Vg:r:w:p:", longopts, &ind);
+		iarg = getopt_long(argc, argv, "+l::c::shv::Vg:r:w:", longopts, &ind);
 		switch (iarg){
 		case 'h':
 			print_usage(stdout,0);
@@ -89,11 +89,6 @@ int main(int argc, char* argv[])
         case 'w':
             wait = atoi(optarg);
             break;
-        case 'p':
-            polflag = 1;
-            if(optarg){polarity = atoi(optarg);
-            }else{polarity = 1;}
-            break;
         }
     }
 
@@ -122,9 +117,6 @@ int main(int argc, char* argv[])
         if(verbose > 0){printf("Running setregisters utility.\n");}
         if(configfilename){
             snprintf(command,100,"%s -c%s",command,configfilename);
-        }
-        if(polflag){
-            snprintf(command,100,"%s -p%d",command,polarity);
         }
         if(verbose > 0){
             printf("%s\n",command);
@@ -155,13 +147,6 @@ int main(int argc, char* argv[])
 
     //Pass them along to the system
 	if(verbose>0){printf("Configuring...\n");};
-    if(polflag == 1){
-	polarity_q = __abstracted_reg_write(polarity,SCI_REG_trig_polarity,&handle);
-        if(polarity_q != 0){
-            printf("Error from REG_polarity_SET. Aborting.\n");
-            return polarity_q;
-        }
-    }
 	tic = time(NULL);
 
 	fp = fopen("out.csv","a");
@@ -175,14 +160,14 @@ int main(int argc, char* argv[])
             printf("Updated threshold:\n");
             printf("%f, %f\n",thrs,top);
         }
-        thresh_q = set_thresholds("low",polarity,thrs,thresh_t);
+        thresh_q = set_thresholds("low",thrs,thresh_t,baseline);
 		for(i=0;i++;i<24){
 			if(thresh_q[i] != 0){
 				printf("Error from REG_thrs_SET. Aborting.\n");
 				return thresh_q[i];
 			}
 		}
-        thresh_q = set_thresholds("high",polarity,top,thresh_t);
+        thresh_q = set_thresholds("high",top,thresh_t,baseline);
 		for(i=0;i++;i<24){
 			if(thresh_q[i] != 0){
 				printf("Error from REG_top_SET. Aborting.\n");
@@ -193,21 +178,19 @@ int main(int argc, char* argv[])
         float cumulative = 0;
         sleep(10);
         for(i = 0; i<wait; i++){
-			//wait
-			sleep(10);
+		//wait
+		sleep(10);
 
-			//get the rate
-			if(verbose > 2){printf("Retreiving data...\n");};
-			rate_q=RATE_METER_RateMeter_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
-			if(verbose > 2){printf("Rateval: %f\n",rateval[0]/10.0);};
-			cumulative += rateval[0]/10.0;
-		}
-		if(verbose > 1){printf("Average rate: %f\n",cumulative/wait);}
+		//get the rate
+		if(verbose > 2) printf("Retreiving data...\n");
+		rate_q=RATE_METER_RateMeter_GET_DATA(rateval,ratechan,ratetimeout, &handle, &rateread_data, &ratevalid_data);
+		if(verbose > 2) printf("Rateval: %f\n",rateval[0]/10.0);
+		cumulative += rateval[0]/10.0;
+	}
+	if(verbose > 1){printf("Average rate: %f\n",cumulative/wait);}
 
         //write the rate
-    	//fp = fopen("out.csv","a"); //already defined above
         fprintf(fp,"%f, %f, %f\n",thrs,top,cumulative/wait);
-		//fclose(fp);
 		if(verbose>1){printf("lower: %f ; upper: %f ; rate: %f Hz\n",thrs,top,cumulative/wait);};
 		thrs += range_s;
         top  += range_s;

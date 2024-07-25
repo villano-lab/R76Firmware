@@ -21,7 +21,7 @@
 #define THRESH_TEXT   (" -t,    --thresh    <threshold>	            Set the value of the (lower) threshold in MeV (default: 1). \n")
 #define RANGE_TEXT    (" -r,	--range	    '<lower #> <upper #> <step size>'	Set the range and step size for upper thresholds to be scanned, in MeV (default: min 0, max 8, step size 1).\n")
 #define SKIP_TEXT     (" -S,    --skip      <#>                     [DEPRECATED] Skip every # trigger to reduce the rate.\n")
-#define BASELINE_TEXT (" -b,    --baseline  <baseline>              Set the time (positive integer) to measure the baseline; measurement takes place over 2^n clock ticks. Supplying 0 forces manual mode. (default: 9)\n                                            WARNING! This will have unintended consequences for calibration, thresholds, and pulse integration. USE FOR DEV ONLY!\n")
+#define BASELINE_TEXT (" -b,    --baseline  <baseline>              Set the time (positive integer) to measure the baseline; measurement takes place over 2^n clock ticks. Supplying 0 forces manual mode, which uses previously calculated values. (default: 9)\n                                            WARNING! This will have unintended consequences for calibration, thresholds, and pulse integration. USE FOR DEV ONLY!\n")
 #define VERBOSE_TEXT  (" -v,	--verbose   <level>                 Print verbose messages at the specified level (1 if unspecified).\n")
 #define SILENT_TEXT   (" -s,-q,	--silent,--quiet,                   Print nothing. (Negative verbosity) \n")
 #define LOG_TEXT      (" -l,	--log	    <file>                  Log terminal output. (default: log.txt) \n")
@@ -30,7 +30,7 @@
 #define TOP_TEXT      (" -T,    --top       <value>                 Set the upper threshold to the given value in MeV (default: 8).\n")
 #define RESET_TEXT    (" -R,    --reset                             Reset all unsupplied values to their defaults.\n")
 #define FORCE_TEXT    (" -f,    --force                             Skip all requests for user input.\n")
-#define POLARITY_TEXT (" -p,    --polarity  <1 or 0>                Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
+//#define POLARITY_TEXT (" -p,    --polarity  <1 or 0>                Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
 #define PRE_INT_TEXT  (" -P,    --pre-int   <#>                     Set the pre-integration time in clock cycles. (integer. default: 30)\n")
 #define INT_TIME_TEXT (" -I,    --int-time  <#>                     Set the integration time in clock cycles. (integer. default: 250)\n")
 #define CONFIG_TEXT   (" -c,    --config    <file>                  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
@@ -47,10 +47,9 @@ extern int gate_l;
 extern float range_u;
 extern float range_l;
 extern float range_s;
-extern int polarity;
+//extern int polarity;
 extern int inhib;
 extern int delay;
-extern int polarity;
 extern int baseline;
 extern int manual_baseline;
 extern float top;
@@ -63,7 +62,7 @@ extern int delay_q;
 extern int gate_uq;
 extern int gate_lq;
 extern int inhib_q;
-extern int polarity_q;
+//extern int polarity_q;
 extern char* selection;
 extern int *disable_q;  // point to array of disable instead of 24 iintializations
 extern int *disable;
@@ -152,14 +151,14 @@ int parse_range(char* gatestring, int verbose);                         //parse 
 void print_timestamp(int elapsed, int verbose);                         //parse a time elapsed value and print it in readable format
 void read_config(const char* filename);                                 //parse a config file for values
 //converting functions
-int *on_to_off(int *off, uint32_t on, int verbose);                          //convert a 'detectors on' bit vector to a 'detectors off' bit vector
-int energy_to_bin(int detnum, float energy);                            //convert an energy value to a bin value
+int *on_to_off(int *off, uint32_t on, int verbose);                     //convert a 'detectors on' bit vector to a 'detectors off' bit vector
+int energy_to_bin(int detnum, float energy,int baseline);               //convert an energy value to a bin value
 //compatibility functions
-int REG_top_SET(uint32_t value, NI_HANDLE* handle);                           //set all top thresholds to a bin number
-int REG_thrsh_SET(uint32_t value, NI_HANDLE* handle);                         //set all lower thesholds to a bin number
+int REG_top_SET(uint32_t value, NI_HANDLE* handle);                     //set all top thresholds to a bin number
+int REG_thrsh_SET(uint32_t value, NI_HANDLE* handle);                   //set all lower thesholds to a bin number
 //multichannel functions
 int *disable_dets(int *disable_q, int disable[24]);                     //disable detectors based on input array
-int *set_thresholds(const char* side, int polarity, float energy, int *thresh_q);            //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
+int *set_thresholds(const char* side, float energy, int *thresh_q, int baseline);     //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
 uint32_t *spectra_PARAMS(int *spectra_q,int32_t Rebin, int32_t LimitMode, int32_t LimitValue); //set up spectrum parameters
 uint32_t *spectra_START(uint32_t *spectra_q);
 uint32_t *spectra_STOP(uint32_t *spectra_q);
@@ -170,5 +169,5 @@ uint32_t *spectra_STATUS(uint32_t *spectra_q);
 uint32_t *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, uint32_t *specread_q, uint32_t *specvalid_q);
 //utility functions
 int connect_staticaddr(int verbose);                                    //connect to the board, with print functions.
-int set_by_polarity(uint32_t address, int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
+//int set_by_polarity(uint32_t address, int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
 int kbhit(void);                                                        //allow keyboard interrupt
