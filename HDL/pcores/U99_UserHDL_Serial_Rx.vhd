@@ -4,16 +4,16 @@ use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 USE work.Global_Defs.all;
 
-entity U101_UserHDL_Serial_Rx is
+entity U99_UserHDL_Serial_Rx is
 	generic (size : positive := 16);
 	port( 
  sysclk, rxclock, reset, FMData_In, Clr_Err : in std_logic;
 	pdata_out : buffer std_logic_vector(size-1 downto 0 );
 	Rx_Done, Parity_Err : buffer std_logic
 	);
-end U101_UserHDL_Serial_Rx;
+end U99_UserHDL_Serial_Rx;
 
-architecture behavioural of U101_UserHDL_Serial_Rx is
+architecture behavioural of U99_UserHDL_Serial_Rx is
 
 Type FMRx is (RxIdle,RxStrt,RxShift,ParityRx);
 Signal Rx_State : FMRx;

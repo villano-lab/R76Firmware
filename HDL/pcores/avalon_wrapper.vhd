@@ -326,83 +326,6 @@ entity avalon_wrapper is
 		REG_top_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_top_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_top_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_base_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_base_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_base_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_base_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_base_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_base_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_disable_det_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_disable_det_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_disable_det_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
@@ -1133,6 +1056,97 @@ entity avalon_wrapper is
 		REG_received_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_received_RD : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		INT_received_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_int_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_int_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_time_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_time_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_time_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_int_pre_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_pre_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_pre_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_int_base_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_int_base_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_int_base_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_base_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_base_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_base_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH0_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH0_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH0_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH1_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH1_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH1_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH2_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH2_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH2_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH3_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH3_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH3_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH4_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH4_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH4_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH5_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH5_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH5_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH6_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH6_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH6_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH7_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH7_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH7_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH8_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH8_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH8_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH9_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH9_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH9_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH10_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH10_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH10_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH11_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH11_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH11_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH12_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH12_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH12_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH13_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH13_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH13_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH14_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH14_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH14_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH15_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH15_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH15_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH16_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH16_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH16_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH17_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH17_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH17_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH18_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH18_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH18_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH19_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH19_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH19_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH20_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH20_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH20_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH21_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH21_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH21_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH22_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH22_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH22_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_base_CH23_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_base_CH23_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_base_CH23_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_baselines_READ_ADDRESS : OUT STD_LOGIC_VECTOR(14 downto 0); 
 	BUS_baselines_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_baselines_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1158,20 +1172,6 @@ entity avalon_wrapper is
 		REG_baselines_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_baselines_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_baselines_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_int_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_int_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_int_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_time_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_time_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_time_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_int_pre_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_pre_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_pre_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_int_base_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_int_base_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_int_base_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -1475,55 +1475,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_top_CH22_WR <= "0";
 		REG_top_CH23_WR <= (others => '0');
 		INT_top_CH23_WR <= "0";
-	BUS_base_W_INT <= "0";
-		REG_base_CH0_WR <= (others => '0');
-		INT_base_CH0_WR <= "0";
-		REG_base_CH1_WR <= (others => '0');
-		INT_base_CH1_WR <= "0";
-		REG_base_CH2_WR <= (others => '0');
-		INT_base_CH2_WR <= "0";
-		REG_base_CH3_WR <= (others => '0');
-		INT_base_CH3_WR <= "0";
-		REG_base_CH4_WR <= (others => '0');
-		INT_base_CH4_WR <= "0";
-		REG_base_CH5_WR <= (others => '0');
-		INT_base_CH5_WR <= "0";
-		REG_base_CH6_WR <= (others => '0');
-		INT_base_CH6_WR <= "0";
-		REG_base_CH7_WR <= (others => '0');
-		INT_base_CH7_WR <= "0";
-		REG_base_CH8_WR <= (others => '0');
-		INT_base_CH8_WR <= "0";
-		REG_base_CH9_WR <= (others => '0');
-		INT_base_CH9_WR <= "0";
-		REG_base_CH10_WR <= (others => '0');
-		INT_base_CH10_WR <= "0";
-		REG_base_CH11_WR <= (others => '0');
-		INT_base_CH11_WR <= "0";
-		REG_base_CH12_WR <= (others => '0');
-		INT_base_CH12_WR <= "0";
-		REG_base_CH13_WR <= (others => '0');
-		INT_base_CH13_WR <= "0";
-		REG_base_CH14_WR <= (others => '0');
-		INT_base_CH14_WR <= "0";
-		REG_base_CH15_WR <= (others => '0');
-		INT_base_CH15_WR <= "0";
-		REG_base_CH16_WR <= (others => '0');
-		INT_base_CH16_WR <= "0";
-		REG_base_CH17_WR <= (others => '0');
-		INT_base_CH17_WR <= "0";
-		REG_base_CH18_WR <= (others => '0');
-		INT_base_CH18_WR <= "0";
-		REG_base_CH19_WR <= (others => '0');
-		INT_base_CH19_WR <= "0";
-		REG_base_CH20_WR <= (others => '0');
-		INT_base_CH20_WR <= "0";
-		REG_base_CH21_WR <= (others => '0');
-		INT_base_CH21_WR <= "0";
-		REG_base_CH22_WR <= (others => '0');
-		INT_base_CH22_WR <= "0";
-		REG_base_CH23_WR <= (others => '0');
-		INT_base_CH23_WR <= "0";
 	BUS_disable_det_W_INT <= "0";
 		REG_disable_det_CH0_WR <= (others => '0');
 		INT_disable_det_CH0_WR <= "0";
@@ -1918,6 +1869,62 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		REG_received_WR <= (others => '0');
 		INT_received_WR <= "0";
 		INT_received_RD <= "0";
+	BUS_int_W_INT <= "0";
+		REG_int_time_WR <= (others => '0');
+		INT_int_time_WR <= "0";
+		REG_int_pre_WR <= (others => '0');
+		INT_int_pre_WR <= "0";
+		REG_int_base_WR <= (others => '0');
+		INT_int_base_WR <= "0";
+	BUS_base_W_INT <= "0";
+		REG_base_CH0_WR <= (others => '0');
+		INT_base_CH0_WR <= "0";
+		REG_base_CH1_WR <= (others => '0');
+		INT_base_CH1_WR <= "0";
+		REG_base_CH2_WR <= (others => '0');
+		INT_base_CH2_WR <= "0";
+		REG_base_CH3_WR <= (others => '0');
+		INT_base_CH3_WR <= "0";
+		REG_base_CH4_WR <= (others => '0');
+		INT_base_CH4_WR <= "0";
+		REG_base_CH5_WR <= (others => '0');
+		INT_base_CH5_WR <= "0";
+		REG_base_CH6_WR <= (others => '0');
+		INT_base_CH6_WR <= "0";
+		REG_base_CH7_WR <= (others => '0');
+		INT_base_CH7_WR <= "0";
+		REG_base_CH8_WR <= (others => '0');
+		INT_base_CH8_WR <= "0";
+		REG_base_CH9_WR <= (others => '0');
+		INT_base_CH9_WR <= "0";
+		REG_base_CH10_WR <= (others => '0');
+		INT_base_CH10_WR <= "0";
+		REG_base_CH11_WR <= (others => '0');
+		INT_base_CH11_WR <= "0";
+		REG_base_CH12_WR <= (others => '0');
+		INT_base_CH12_WR <= "0";
+		REG_base_CH13_WR <= (others => '0');
+		INT_base_CH13_WR <= "0";
+		REG_base_CH14_WR <= (others => '0');
+		INT_base_CH14_WR <= "0";
+		REG_base_CH15_WR <= (others => '0');
+		INT_base_CH15_WR <= "0";
+		REG_base_CH16_WR <= (others => '0');
+		INT_base_CH16_WR <= "0";
+		REG_base_CH17_WR <= (others => '0');
+		INT_base_CH17_WR <= "0";
+		REG_base_CH18_WR <= (others => '0');
+		INT_base_CH18_WR <= "0";
+		REG_base_CH19_WR <= (others => '0');
+		INT_base_CH19_WR <= "0";
+		REG_base_CH20_WR <= (others => '0');
+		INT_base_CH20_WR <= "0";
+		REG_base_CH21_WR <= (others => '0');
+		INT_base_CH21_WR <= "0";
+		REG_base_CH22_WR <= (others => '0');
+		INT_base_CH22_WR <= "0";
+		REG_base_CH23_WR <= (others => '0');
+		INT_base_CH23_WR <= "0";
 	BUS_baselines_W_INT <= "0";
 		INT_baselines_READ_STATUS_RD <= "0";
 		INT_baselines_READ_POSITION_RD <= "0";
@@ -1931,13 +1938,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_baselines_CONFIG_ARM_WR <= "0";
 		REG_baselines_CONFIG_DECIMATOR_WR <= (others => '0');
 		INT_baselines_CONFIG_DECIMATOR_WR <= "0";
-	BUS_int_W_INT <= "0";
-		REG_int_time_WR <= (others => '0');
-		INT_int_time_WR <= "0";
-		REG_int_pre_WR <= (others => '0');
-		INT_int_pre_WR <= "0";
-		REG_int_base_WR <= (others => '0');
-		INT_int_base_WR <= "0";
             
                 f_BUS_DATASTROBE_REG <= '0';
                 M_AVALON_0_readdatavalid <= '0';
@@ -2030,31 +2030,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_top_CH21_WR <= "0";
 		INT_top_CH22_WR <= "0";
 		INT_top_CH23_WR <= "0";
-	BUS_base_W_INT <= "0";
-		INT_base_CH0_WR <= "0";
-		INT_base_CH1_WR <= "0";
-		INT_base_CH2_WR <= "0";
-		INT_base_CH3_WR <= "0";
-		INT_base_CH4_WR <= "0";
-		INT_base_CH5_WR <= "0";
-		INT_base_CH6_WR <= "0";
-		INT_base_CH7_WR <= "0";
-		INT_base_CH8_WR <= "0";
-		INT_base_CH9_WR <= "0";
-		INT_base_CH10_WR <= "0";
-		INT_base_CH11_WR <= "0";
-		INT_base_CH12_WR <= "0";
-		INT_base_CH13_WR <= "0";
-		INT_base_CH14_WR <= "0";
-		INT_base_CH15_WR <= "0";
-		INT_base_CH16_WR <= "0";
-		INT_base_CH17_WR <= "0";
-		INT_base_CH18_WR <= "0";
-		INT_base_CH19_WR <= "0";
-		INT_base_CH20_WR <= "0";
-		INT_base_CH21_WR <= "0";
-		INT_base_CH22_WR <= "0";
-		INT_base_CH23_WR <= "0";
 	BUS_disable_det_W_INT <= "0";
 		INT_disable_det_CH0_WR <= "0";
 		INT_disable_det_CH1_WR <= "0";
@@ -2284,6 +2259,35 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_timestamp_RD <= "0";
 		INT_received_WR <= "0";
 		INT_received_RD <= "0";
+	BUS_int_W_INT <= "0";
+		INT_int_time_WR <= "0";
+		INT_int_pre_WR <= "0";
+		INT_int_base_WR <= "0";
+	BUS_base_W_INT <= "0";
+		INT_base_CH0_WR <= "0";
+		INT_base_CH1_WR <= "0";
+		INT_base_CH2_WR <= "0";
+		INT_base_CH3_WR <= "0";
+		INT_base_CH4_WR <= "0";
+		INT_base_CH5_WR <= "0";
+		INT_base_CH6_WR <= "0";
+		INT_base_CH7_WR <= "0";
+		INT_base_CH8_WR <= "0";
+		INT_base_CH9_WR <= "0";
+		INT_base_CH10_WR <= "0";
+		INT_base_CH11_WR <= "0";
+		INT_base_CH12_WR <= "0";
+		INT_base_CH13_WR <= "0";
+		INT_base_CH14_WR <= "0";
+		INT_base_CH15_WR <= "0";
+		INT_base_CH16_WR <= "0";
+		INT_base_CH17_WR <= "0";
+		INT_base_CH18_WR <= "0";
+		INT_base_CH19_WR <= "0";
+		INT_base_CH20_WR <= "0";
+		INT_base_CH21_WR <= "0";
+		INT_base_CH22_WR <= "0";
+		INT_base_CH23_WR <= "0";
 	BUS_baselines_W_INT <= "0";
 		INT_baselines_READ_STATUS_RD <= "0";
 		INT_baselines_READ_POSITION_RD <= "0";
@@ -2292,10 +2296,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_baselines_CONFIG_TRIGGER_LEVEL_WR <= "0";
 		INT_baselines_CONFIG_ARM_WR <= "0";
 		INT_baselines_CONFIG_DECIMATOR_WR <= "0";
-	BUS_int_W_INT <= "0";
-		INT_int_time_WR <= "0";
-		INT_int_pre_WR <= "0";
-		INT_int_base_WR <= "0";
   
                 f_BUS_DATASTROBE_REG <= '0';
                 
@@ -2514,303 +2514,203 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 			REG_All_Energies_CONFIG_WR <= wreg; 
 			INT_All_Energies_CONFIG_WR <= "1"; 
 		end if;
-		If addr >= x"00032012" And addr < x"00032013" Then
+		If addr >= x"0003200D" And addr < x"0003200E" Then
 			BUS_top_WRITE_DATA <= wreg; 
 			BUS_top_W_INT <= "1"; 
 		End If;
-		if addr = x"00032013" then
+		if addr = x"0003200E" then
 			REG_top_CH0_WR <= wreg; 
 			INT_top_CH0_WR <= "1"; 
 		end if;
-		if addr = x"00032014" then
+		if addr = x"0003200F" then
 			REG_top_CH1_WR <= wreg; 
 			INT_top_CH1_WR <= "1"; 
 		end if;
-		if addr = x"00032015" then
+		if addr = x"00032010" then
 			REG_top_CH2_WR <= wreg; 
 			INT_top_CH2_WR <= "1"; 
 		end if;
-		if addr = x"00032016" then
+		if addr = x"00032011" then
 			REG_top_CH3_WR <= wreg; 
 			INT_top_CH3_WR <= "1"; 
 		end if;
-		if addr = x"00032017" then
+		if addr = x"00032012" then
 			REG_top_CH4_WR <= wreg; 
 			INT_top_CH4_WR <= "1"; 
 		end if;
-		if addr = x"00032018" then
+		if addr = x"00032013" then
 			REG_top_CH5_WR <= wreg; 
 			INT_top_CH5_WR <= "1"; 
 		end if;
-		if addr = x"00032019" then
+		if addr = x"00032014" then
 			REG_top_CH6_WR <= wreg; 
 			INT_top_CH6_WR <= "1"; 
 		end if;
-		if addr = x"0003201A" then
+		if addr = x"00032015" then
 			REG_top_CH7_WR <= wreg; 
 			INT_top_CH7_WR <= "1"; 
 		end if;
-		if addr = x"0003201B" then
+		if addr = x"00032016" then
 			REG_top_CH8_WR <= wreg; 
 			INT_top_CH8_WR <= "1"; 
 		end if;
-		if addr = x"0003201C" then
+		if addr = x"00032017" then
 			REG_top_CH9_WR <= wreg; 
 			INT_top_CH9_WR <= "1"; 
 		end if;
-		if addr = x"0003201D" then
+		if addr = x"00032018" then
 			REG_top_CH10_WR <= wreg; 
 			INT_top_CH10_WR <= "1"; 
 		end if;
-		if addr = x"0003201E" then
+		if addr = x"00032019" then
 			REG_top_CH11_WR <= wreg; 
 			INT_top_CH11_WR <= "1"; 
 		end if;
-		if addr = x"0003201F" then
+		if addr = x"0003201A" then
 			REG_top_CH12_WR <= wreg; 
 			INT_top_CH12_WR <= "1"; 
 		end if;
-		if addr = x"00032020" then
+		if addr = x"0003201B" then
 			REG_top_CH13_WR <= wreg; 
 			INT_top_CH13_WR <= "1"; 
 		end if;
-		if addr = x"00032021" then
+		if addr = x"0003201C" then
 			REG_top_CH14_WR <= wreg; 
 			INT_top_CH14_WR <= "1"; 
 		end if;
-		if addr = x"00032022" then
+		if addr = x"0003201D" then
 			REG_top_CH15_WR <= wreg; 
 			INT_top_CH15_WR <= "1"; 
 		end if;
-		if addr = x"00032023" then
+		if addr = x"0003201E" then
 			REG_top_CH16_WR <= wreg; 
 			INT_top_CH16_WR <= "1"; 
 		end if;
-		if addr = x"00032024" then
+		if addr = x"0003201F" then
 			REG_top_CH17_WR <= wreg; 
 			INT_top_CH17_WR <= "1"; 
 		end if;
-		if addr = x"00032025" then
+		if addr = x"00032020" then
 			REG_top_CH18_WR <= wreg; 
 			INT_top_CH18_WR <= "1"; 
 		end if;
-		if addr = x"00032026" then
+		if addr = x"00032021" then
 			REG_top_CH19_WR <= wreg; 
 			INT_top_CH19_WR <= "1"; 
 		end if;
-		if addr = x"00032027" then
+		if addr = x"00032022" then
 			REG_top_CH20_WR <= wreg; 
 			INT_top_CH20_WR <= "1"; 
 		end if;
-		if addr = x"00032028" then
+		if addr = x"00032023" then
 			REG_top_CH21_WR <= wreg; 
 			INT_top_CH21_WR <= "1"; 
 		end if;
-		if addr = x"00032029" then
+		if addr = x"00032024" then
 			REG_top_CH22_WR <= wreg; 
 			INT_top_CH22_WR <= "1"; 
 		end if;
-		if addr = x"0003202A" then
+		if addr = x"00032025" then
 			REG_top_CH23_WR <= wreg; 
 			INT_top_CH23_WR <= "1"; 
 		end if;
-		If addr >= x"0003202C" And addr < x"0003202D" Then
-			BUS_base_WRITE_DATA <= wreg; 
-			BUS_base_W_INT <= "1"; 
-		End If;
-		if addr = x"0003202D" then
-			REG_base_CH0_WR <= wreg; 
-			INT_base_CH0_WR <= "1"; 
-		end if;
-		if addr = x"0003202E" then
-			REG_base_CH1_WR <= wreg; 
-			INT_base_CH1_WR <= "1"; 
-		end if;
-		if addr = x"0003202F" then
-			REG_base_CH2_WR <= wreg; 
-			INT_base_CH2_WR <= "1"; 
-		end if;
-		if addr = x"00032030" then
-			REG_base_CH3_WR <= wreg; 
-			INT_base_CH3_WR <= "1"; 
-		end if;
-		if addr = x"00032031" then
-			REG_base_CH4_WR <= wreg; 
-			INT_base_CH4_WR <= "1"; 
-		end if;
-		if addr = x"00032032" then
-			REG_base_CH5_WR <= wreg; 
-			INT_base_CH5_WR <= "1"; 
-		end if;
-		if addr = x"00032033" then
-			REG_base_CH6_WR <= wreg; 
-			INT_base_CH6_WR <= "1"; 
-		end if;
-		if addr = x"00032034" then
-			REG_base_CH7_WR <= wreg; 
-			INT_base_CH7_WR <= "1"; 
-		end if;
-		if addr = x"00032035" then
-			REG_base_CH8_WR <= wreg; 
-			INT_base_CH8_WR <= "1"; 
-		end if;
-		if addr = x"00032036" then
-			REG_base_CH9_WR <= wreg; 
-			INT_base_CH9_WR <= "1"; 
-		end if;
-		if addr = x"00032037" then
-			REG_base_CH10_WR <= wreg; 
-			INT_base_CH10_WR <= "1"; 
-		end if;
-		if addr = x"00032038" then
-			REG_base_CH11_WR <= wreg; 
-			INT_base_CH11_WR <= "1"; 
-		end if;
-		if addr = x"00032039" then
-			REG_base_CH12_WR <= wreg; 
-			INT_base_CH12_WR <= "1"; 
-		end if;
-		if addr = x"0003203A" then
-			REG_base_CH13_WR <= wreg; 
-			INT_base_CH13_WR <= "1"; 
-		end if;
-		if addr = x"0003203B" then
-			REG_base_CH14_WR <= wreg; 
-			INT_base_CH14_WR <= "1"; 
-		end if;
-		if addr = x"0003203C" then
-			REG_base_CH15_WR <= wreg; 
-			INT_base_CH15_WR <= "1"; 
-		end if;
-		if addr = x"0003203D" then
-			REG_base_CH16_WR <= wreg; 
-			INT_base_CH16_WR <= "1"; 
-		end if;
-		if addr = x"0003203E" then
-			REG_base_CH17_WR <= wreg; 
-			INT_base_CH17_WR <= "1"; 
-		end if;
-		if addr = x"0003203F" then
-			REG_base_CH18_WR <= wreg; 
-			INT_base_CH18_WR <= "1"; 
-		end if;
-		if addr = x"00032040" then
-			REG_base_CH19_WR <= wreg; 
-			INT_base_CH19_WR <= "1"; 
-		end if;
-		if addr = x"00032041" then
-			REG_base_CH20_WR <= wreg; 
-			INT_base_CH20_WR <= "1"; 
-		end if;
-		if addr = x"00032042" then
-			REG_base_CH21_WR <= wreg; 
-			INT_base_CH21_WR <= "1"; 
-		end if;
-		if addr = x"00032043" then
-			REG_base_CH22_WR <= wreg; 
-			INT_base_CH22_WR <= "1"; 
-		end if;
-		if addr = x"00032044" then
-			REG_base_CH23_WR <= wreg; 
-			INT_base_CH23_WR <= "1"; 
-		end if;
-		If addr >= x"00032046" And addr < x"00032047" Then
+		If addr >= x"00032027" And addr < x"00032028" Then
 			BUS_disable_det_WRITE_DATA <= wreg; 
 			BUS_disable_det_W_INT <= "1"; 
 		End If;
-		if addr = x"00032047" then
+		if addr = x"00032028" then
 			REG_disable_det_CH0_WR <= wreg; 
 			INT_disable_det_CH0_WR <= "1"; 
 		end if;
-		if addr = x"00032048" then
+		if addr = x"00032029" then
 			REG_disable_det_CH1_WR <= wreg; 
 			INT_disable_det_CH1_WR <= "1"; 
 		end if;
-		if addr = x"00032049" then
+		if addr = x"0003202A" then
 			REG_disable_det_CH2_WR <= wreg; 
 			INT_disable_det_CH2_WR <= "1"; 
 		end if;
-		if addr = x"0003204A" then
+		if addr = x"0003202B" then
 			REG_disable_det_CH3_WR <= wreg; 
 			INT_disable_det_CH3_WR <= "1"; 
 		end if;
-		if addr = x"0003204B" then
+		if addr = x"0003202C" then
 			REG_disable_det_CH4_WR <= wreg; 
 			INT_disable_det_CH4_WR <= "1"; 
 		end if;
-		if addr = x"0003204C" then
+		if addr = x"0003202D" then
 			REG_disable_det_CH5_WR <= wreg; 
 			INT_disable_det_CH5_WR <= "1"; 
 		end if;
-		if addr = x"0003204D" then
+		if addr = x"0003202E" then
 			REG_disable_det_CH6_WR <= wreg; 
 			INT_disable_det_CH6_WR <= "1"; 
 		end if;
-		if addr = x"0003204E" then
+		if addr = x"0003202F" then
 			REG_disable_det_CH7_WR <= wreg; 
 			INT_disable_det_CH7_WR <= "1"; 
 		end if;
-		if addr = x"0003204F" then
+		if addr = x"00032030" then
 			REG_disable_det_CH8_WR <= wreg; 
 			INT_disable_det_CH8_WR <= "1"; 
 		end if;
-		if addr = x"00032050" then
+		if addr = x"00032031" then
 			REG_disable_det_CH9_WR <= wreg; 
 			INT_disable_det_CH9_WR <= "1"; 
 		end if;
-		if addr = x"00032051" then
+		if addr = x"00032032" then
 			REG_disable_det_CH10_WR <= wreg; 
 			INT_disable_det_CH10_WR <= "1"; 
 		end if;
-		if addr = x"00032052" then
+		if addr = x"00032033" then
 			REG_disable_det_CH11_WR <= wreg; 
 			INT_disable_det_CH11_WR <= "1"; 
 		end if;
-		if addr = x"00032053" then
+		if addr = x"00032034" then
 			REG_disable_det_CH12_WR <= wreg; 
 			INT_disable_det_CH12_WR <= "1"; 
 		end if;
-		if addr = x"00032054" then
+		if addr = x"00032035" then
 			REG_disable_det_CH13_WR <= wreg; 
 			INT_disable_det_CH13_WR <= "1"; 
 		end if;
-		if addr = x"00032055" then
+		if addr = x"00032036" then
 			REG_disable_det_CH14_WR <= wreg; 
 			INT_disable_det_CH14_WR <= "1"; 
 		end if;
-		if addr = x"00032056" then
+		if addr = x"00032037" then
 			REG_disable_det_CH15_WR <= wreg; 
 			INT_disable_det_CH15_WR <= "1"; 
 		end if;
-		if addr = x"00032057" then
+		if addr = x"00032038" then
 			REG_disable_det_CH16_WR <= wreg; 
 			INT_disable_det_CH16_WR <= "1"; 
 		end if;
-		if addr = x"00032058" then
+		if addr = x"00032039" then
 			REG_disable_det_CH17_WR <= wreg; 
 			INT_disable_det_CH17_WR <= "1"; 
 		end if;
-		if addr = x"00032059" then
+		if addr = x"0003203A" then
 			REG_disable_det_CH18_WR <= wreg; 
 			INT_disable_det_CH18_WR <= "1"; 
 		end if;
-		if addr = x"0003205A" then
+		if addr = x"0003203B" then
 			REG_disable_det_CH19_WR <= wreg; 
 			INT_disable_det_CH19_WR <= "1"; 
 		end if;
-		if addr = x"0003205B" then
+		if addr = x"0003203C" then
 			REG_disable_det_CH20_WR <= wreg; 
 			INT_disable_det_CH20_WR <= "1"; 
 		end if;
-		if addr = x"0003205C" then
+		if addr = x"0003203D" then
 			REG_disable_det_CH21_WR <= wreg; 
 			INT_disable_det_CH21_WR <= "1"; 
 		end if;
-		if addr = x"0003205D" then
+		if addr = x"0003203E" then
 			REG_disable_det_CH22_WR <= wreg; 
 			INT_disable_det_CH22_WR <= "1"; 
 		end if;
-		if addr = x"0003205E" then
+		if addr = x"0003203F" then
 			REG_disable_det_CH23_WR <= wreg; 
 			INT_disable_det_CH23_WR <= "1"; 
 		end if;
@@ -3490,6 +3390,122 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 			REG_received_WR <= wreg; 
 			INT_received_WR <= "1"; 
 		end if;
+		If addr >= x"00362015" And addr < x"00362016" Then
+			BUS_int_WRITE_DATA <= wreg; 
+			BUS_int_W_INT <= "1"; 
+		End If;
+		if addr = x"00362016" then
+			REG_int_time_WR <= wreg; 
+			INT_int_time_WR <= "1"; 
+		end if;
+		if addr = x"00362017" then
+			REG_int_pre_WR <= wreg; 
+			INT_int_pre_WR <= "1"; 
+		end if;
+		if addr = x"00362018" then
+			REG_int_base_WR <= wreg; 
+			INT_int_base_WR <= "1"; 
+		end if;
+		If addr >= x"0036201A" And addr < x"0036201B" Then
+			BUS_base_WRITE_DATA <= wreg; 
+			BUS_base_W_INT <= "1"; 
+		End If;
+		if addr = x"0036201B" then
+			REG_base_CH0_WR <= wreg; 
+			INT_base_CH0_WR <= "1"; 
+		end if;
+		if addr = x"0036201C" then
+			REG_base_CH1_WR <= wreg; 
+			INT_base_CH1_WR <= "1"; 
+		end if;
+		if addr = x"0036201D" then
+			REG_base_CH2_WR <= wreg; 
+			INT_base_CH2_WR <= "1"; 
+		end if;
+		if addr = x"0036201E" then
+			REG_base_CH3_WR <= wreg; 
+			INT_base_CH3_WR <= "1"; 
+		end if;
+		if addr = x"0036201F" then
+			REG_base_CH4_WR <= wreg; 
+			INT_base_CH4_WR <= "1"; 
+		end if;
+		if addr = x"00362020" then
+			REG_base_CH5_WR <= wreg; 
+			INT_base_CH5_WR <= "1"; 
+		end if;
+		if addr = x"00362021" then
+			REG_base_CH6_WR <= wreg; 
+			INT_base_CH6_WR <= "1"; 
+		end if;
+		if addr = x"00362022" then
+			REG_base_CH7_WR <= wreg; 
+			INT_base_CH7_WR <= "1"; 
+		end if;
+		if addr = x"00362023" then
+			REG_base_CH8_WR <= wreg; 
+			INT_base_CH8_WR <= "1"; 
+		end if;
+		if addr = x"00362024" then
+			REG_base_CH9_WR <= wreg; 
+			INT_base_CH9_WR <= "1"; 
+		end if;
+		if addr = x"00362025" then
+			REG_base_CH10_WR <= wreg; 
+			INT_base_CH10_WR <= "1"; 
+		end if;
+		if addr = x"00362026" then
+			REG_base_CH11_WR <= wreg; 
+			INT_base_CH11_WR <= "1"; 
+		end if;
+		if addr = x"00362027" then
+			REG_base_CH12_WR <= wreg; 
+			INT_base_CH12_WR <= "1"; 
+		end if;
+		if addr = x"00362028" then
+			REG_base_CH13_WR <= wreg; 
+			INT_base_CH13_WR <= "1"; 
+		end if;
+		if addr = x"00362029" then
+			REG_base_CH14_WR <= wreg; 
+			INT_base_CH14_WR <= "1"; 
+		end if;
+		if addr = x"0036202A" then
+			REG_base_CH15_WR <= wreg; 
+			INT_base_CH15_WR <= "1"; 
+		end if;
+		if addr = x"0036202B" then
+			REG_base_CH16_WR <= wreg; 
+			INT_base_CH16_WR <= "1"; 
+		end if;
+		if addr = x"0036202C" then
+			REG_base_CH17_WR <= wreg; 
+			INT_base_CH17_WR <= "1"; 
+		end if;
+		if addr = x"0036202D" then
+			REG_base_CH18_WR <= wreg; 
+			INT_base_CH18_WR <= "1"; 
+		end if;
+		if addr = x"0036202E" then
+			REG_base_CH19_WR <= wreg; 
+			INT_base_CH19_WR <= "1"; 
+		end if;
+		if addr = x"0036202F" then
+			REG_base_CH20_WR <= wreg; 
+			INT_base_CH20_WR <= "1"; 
+		end if;
+		if addr = x"00362030" then
+			REG_base_CH21_WR <= wreg; 
+			INT_base_CH21_WR <= "1"; 
+		end if;
+		if addr = x"00362031" then
+			REG_base_CH22_WR <= wreg; 
+			INT_base_CH22_WR <= "1"; 
+		end if;
+		if addr = x"00362032" then
+			REG_base_CH23_WR <= wreg; 
+			INT_base_CH23_WR <= "1"; 
+		end if;
 		If addr >= x"00368000" And addr < x"00370000" Then
 			BUS_baselines_WRITE_DATA <= wreg; 
 			BUS_baselines_W_INT <= "1"; 
@@ -3513,22 +3529,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		if addr = x"00370006" then
 			REG_baselines_CONFIG_DECIMATOR_WR <= wreg; 
 			INT_baselines_CONFIG_DECIMATOR_WR <= "1"; 
-		end if;
-		If addr >= x"0003200D" And addr < x"0003200E" Then
-			BUS_int_WRITE_DATA <= wreg; 
-			BUS_int_W_INT <= "1"; 
-		End If;
-		if addr = x"0003200E" then
-			REG_int_time_WR <= wreg; 
-			INT_int_time_WR <= "1"; 
-		end if;
-		if addr = x"0003200F" then
-			REG_int_pre_WR <= wreg; 
-			INT_int_pre_WR <= "1"; 
-		end if;
-		if addr = x"00032010" then
-			REG_int_base_WR <= wreg; 
-			INT_int_base_WR <= "1"; 
 		end if;
 
                 end if;
@@ -3700,220 +3700,148 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		if addr = x"0003200B" then
 			rreg := REG_All_Energies_CONFIG_RD; 
 		End If;
-		if addr = x"00032013" then
+		if addr = x"0003200E" then
 			rreg := REG_top_CH0_RD; 
 		End If;
-		if addr = x"00032014" then
+		if addr = x"0003200F" then
 			rreg := REG_top_CH1_RD; 
 		End If;
-		if addr = x"00032015" then
+		if addr = x"00032010" then
 			rreg := REG_top_CH2_RD; 
 		End If;
-		if addr = x"00032016" then
+		if addr = x"00032011" then
 			rreg := REG_top_CH3_RD; 
 		End If;
-		if addr = x"00032017" then
+		if addr = x"00032012" then
 			rreg := REG_top_CH4_RD; 
 		End If;
-		if addr = x"00032018" then
+		if addr = x"00032013" then
 			rreg := REG_top_CH5_RD; 
 		End If;
-		if addr = x"00032019" then
+		if addr = x"00032014" then
 			rreg := REG_top_CH6_RD; 
 		End If;
-		if addr = x"0003201A" then
+		if addr = x"00032015" then
 			rreg := REG_top_CH7_RD; 
 		End If;
-		if addr = x"0003201B" then
+		if addr = x"00032016" then
 			rreg := REG_top_CH8_RD; 
 		End If;
-		if addr = x"0003201C" then
+		if addr = x"00032017" then
 			rreg := REG_top_CH9_RD; 
 		End If;
-		if addr = x"0003201D" then
+		if addr = x"00032018" then
 			rreg := REG_top_CH10_RD; 
 		End If;
-		if addr = x"0003201E" then
+		if addr = x"00032019" then
 			rreg := REG_top_CH11_RD; 
 		End If;
-		if addr = x"0003201F" then
+		if addr = x"0003201A" then
 			rreg := REG_top_CH12_RD; 
 		End If;
-		if addr = x"00032020" then
+		if addr = x"0003201B" then
 			rreg := REG_top_CH13_RD; 
 		End If;
-		if addr = x"00032021" then
+		if addr = x"0003201C" then
 			rreg := REG_top_CH14_RD; 
 		End If;
-		if addr = x"00032022" then
+		if addr = x"0003201D" then
 			rreg := REG_top_CH15_RD; 
 		End If;
-		if addr = x"00032023" then
+		if addr = x"0003201E" then
 			rreg := REG_top_CH16_RD; 
 		End If;
-		if addr = x"00032024" then
+		if addr = x"0003201F" then
 			rreg := REG_top_CH17_RD; 
 		End If;
-		if addr = x"00032025" then
+		if addr = x"00032020" then
 			rreg := REG_top_CH18_RD; 
 		End If;
-		if addr = x"00032026" then
+		if addr = x"00032021" then
 			rreg := REG_top_CH19_RD; 
 		End If;
-		if addr = x"00032027" then
+		if addr = x"00032022" then
 			rreg := REG_top_CH20_RD; 
 		End If;
-		if addr = x"00032028" then
+		if addr = x"00032023" then
 			rreg := REG_top_CH21_RD; 
 		End If;
-		if addr = x"00032029" then
+		if addr = x"00032024" then
 			rreg := REG_top_CH22_RD; 
 		End If;
-		if addr = x"0003202A" then
+		if addr = x"00032025" then
 			rreg := REG_top_CH23_RD; 
 		End If;
-		if addr = x"0003202D" then
-			rreg := REG_base_CH0_RD; 
-		End If;
-		if addr = x"0003202E" then
-			rreg := REG_base_CH1_RD; 
-		End If;
-		if addr = x"0003202F" then
-			rreg := REG_base_CH2_RD; 
-		End If;
-		if addr = x"00032030" then
-			rreg := REG_base_CH3_RD; 
-		End If;
-		if addr = x"00032031" then
-			rreg := REG_base_CH4_RD; 
-		End If;
-		if addr = x"00032032" then
-			rreg := REG_base_CH5_RD; 
-		End If;
-		if addr = x"00032033" then
-			rreg := REG_base_CH6_RD; 
-		End If;
-		if addr = x"00032034" then
-			rreg := REG_base_CH7_RD; 
-		End If;
-		if addr = x"00032035" then
-			rreg := REG_base_CH8_RD; 
-		End If;
-		if addr = x"00032036" then
-			rreg := REG_base_CH9_RD; 
-		End If;
-		if addr = x"00032037" then
-			rreg := REG_base_CH10_RD; 
-		End If;
-		if addr = x"00032038" then
-			rreg := REG_base_CH11_RD; 
-		End If;
-		if addr = x"00032039" then
-			rreg := REG_base_CH12_RD; 
-		End If;
-		if addr = x"0003203A" then
-			rreg := REG_base_CH13_RD; 
-		End If;
-		if addr = x"0003203B" then
-			rreg := REG_base_CH14_RD; 
-		End If;
-		if addr = x"0003203C" then
-			rreg := REG_base_CH15_RD; 
-		End If;
-		if addr = x"0003203D" then
-			rreg := REG_base_CH16_RD; 
-		End If;
-		if addr = x"0003203E" then
-			rreg := REG_base_CH17_RD; 
-		End If;
-		if addr = x"0003203F" then
-			rreg := REG_base_CH18_RD; 
-		End If;
-		if addr = x"00032040" then
-			rreg := REG_base_CH19_RD; 
-		End If;
-		if addr = x"00032041" then
-			rreg := REG_base_CH20_RD; 
-		End If;
-		if addr = x"00032042" then
-			rreg := REG_base_CH21_RD; 
-		End If;
-		if addr = x"00032043" then
-			rreg := REG_base_CH22_RD; 
-		End If;
-		if addr = x"00032044" then
-			rreg := REG_base_CH23_RD; 
-		End If;
-		if addr = x"00032047" then
+		if addr = x"00032028" then
 			rreg := REG_disable_det_CH0_RD; 
 		End If;
-		if addr = x"00032048" then
+		if addr = x"00032029" then
 			rreg := REG_disable_det_CH1_RD; 
 		End If;
-		if addr = x"00032049" then
+		if addr = x"0003202A" then
 			rreg := REG_disable_det_CH2_RD; 
 		End If;
-		if addr = x"0003204A" then
+		if addr = x"0003202B" then
 			rreg := REG_disable_det_CH3_RD; 
 		End If;
-		if addr = x"0003204B" then
+		if addr = x"0003202C" then
 			rreg := REG_disable_det_CH4_RD; 
 		End If;
-		if addr = x"0003204C" then
+		if addr = x"0003202D" then
 			rreg := REG_disable_det_CH5_RD; 
 		End If;
-		if addr = x"0003204D" then
+		if addr = x"0003202E" then
 			rreg := REG_disable_det_CH6_RD; 
 		End If;
-		if addr = x"0003204E" then
+		if addr = x"0003202F" then
 			rreg := REG_disable_det_CH7_RD; 
 		End If;
-		if addr = x"0003204F" then
+		if addr = x"00032030" then
 			rreg := REG_disable_det_CH8_RD; 
 		End If;
-		if addr = x"00032050" then
+		if addr = x"00032031" then
 			rreg := REG_disable_det_CH9_RD; 
 		End If;
-		if addr = x"00032051" then
+		if addr = x"00032032" then
 			rreg := REG_disable_det_CH10_RD; 
 		End If;
-		if addr = x"00032052" then
+		if addr = x"00032033" then
 			rreg := REG_disable_det_CH11_RD; 
 		End If;
-		if addr = x"00032053" then
+		if addr = x"00032034" then
 			rreg := REG_disable_det_CH12_RD; 
 		End If;
-		if addr = x"00032054" then
+		if addr = x"00032035" then
 			rreg := REG_disable_det_CH13_RD; 
 		End If;
-		if addr = x"00032055" then
+		if addr = x"00032036" then
 			rreg := REG_disable_det_CH14_RD; 
 		End If;
-		if addr = x"00032056" then
+		if addr = x"00032037" then
 			rreg := REG_disable_det_CH15_RD; 
 		End If;
-		if addr = x"00032057" then
+		if addr = x"00032038" then
 			rreg := REG_disable_det_CH16_RD; 
 		End If;
-		if addr = x"00032058" then
+		if addr = x"00032039" then
 			rreg := REG_disable_det_CH17_RD; 
 		End If;
-		if addr = x"00032059" then
+		if addr = x"0003203A" then
 			rreg := REG_disable_det_CH18_RD; 
 		End If;
-		if addr = x"0003205A" then
+		if addr = x"0003203B" then
 			rreg := REG_disable_det_CH19_RD; 
 		End If;
-		if addr = x"0003205B" then
+		if addr = x"0003203C" then
 			rreg := REG_disable_det_CH20_RD; 
 		End If;
-		if addr = x"0003205C" then
+		if addr = x"0003203D" then
 			rreg := REG_disable_det_CH21_RD; 
 		End If;
-		if addr = x"0003205D" then
+		if addr = x"0003203E" then
 			rreg := REG_disable_det_CH22_RD; 
 		End If;
-		if addr = x"0003205E" then
+		if addr = x"0003203F" then
 			rreg := REG_disable_det_CH23_RD; 
 		End If;
 		if addr = x"00050000" then
@@ -4423,6 +4351,87 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		if addr = x"00362013" then
 			rreg := REG_received_RD; 
 		End If;
+		if addr = x"00362016" then
+			rreg := REG_int_time_RD; 
+		End If;
+		if addr = x"00362017" then
+			rreg := REG_int_pre_RD; 
+		End If;
+		if addr = x"00362018" then
+			rreg := REG_int_base_RD; 
+		End If;
+		if addr = x"0036201B" then
+			rreg := REG_base_CH0_RD; 
+		End If;
+		if addr = x"0036201C" then
+			rreg := REG_base_CH1_RD; 
+		End If;
+		if addr = x"0036201D" then
+			rreg := REG_base_CH2_RD; 
+		End If;
+		if addr = x"0036201E" then
+			rreg := REG_base_CH3_RD; 
+		End If;
+		if addr = x"0036201F" then
+			rreg := REG_base_CH4_RD; 
+		End If;
+		if addr = x"00362020" then
+			rreg := REG_base_CH5_RD; 
+		End If;
+		if addr = x"00362021" then
+			rreg := REG_base_CH6_RD; 
+		End If;
+		if addr = x"00362022" then
+			rreg := REG_base_CH7_RD; 
+		End If;
+		if addr = x"00362023" then
+			rreg := REG_base_CH8_RD; 
+		End If;
+		if addr = x"00362024" then
+			rreg := REG_base_CH9_RD; 
+		End If;
+		if addr = x"00362025" then
+			rreg := REG_base_CH10_RD; 
+		End If;
+		if addr = x"00362026" then
+			rreg := REG_base_CH11_RD; 
+		End If;
+		if addr = x"00362027" then
+			rreg := REG_base_CH12_RD; 
+		End If;
+		if addr = x"00362028" then
+			rreg := REG_base_CH13_RD; 
+		End If;
+		if addr = x"00362029" then
+			rreg := REG_base_CH14_RD; 
+		End If;
+		if addr = x"0036202A" then
+			rreg := REG_base_CH15_RD; 
+		End If;
+		if addr = x"0036202B" then
+			rreg := REG_base_CH16_RD; 
+		End If;
+		if addr = x"0036202C" then
+			rreg := REG_base_CH17_RD; 
+		End If;
+		if addr = x"0036202D" then
+			rreg := REG_base_CH18_RD; 
+		End If;
+		if addr = x"0036202E" then
+			rreg := REG_base_CH19_RD; 
+		End If;
+		if addr = x"0036202F" then
+			rreg := REG_base_CH20_RD; 
+		End If;
+		if addr = x"00362030" then
+			rreg := REG_base_CH21_RD; 
+		End If;
+		if addr = x"00362031" then
+			rreg := REG_base_CH22_RD; 
+		End If;
+		if addr = x"00362032" then
+			rreg := REG_base_CH23_RD; 
+		End If;
 		if addr = x"00370000" then
 			rreg := REG_baselines_READ_STATUS_RD; 
 		End If;
@@ -4443,15 +4452,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		End If;
 		if addr = x"00370006" then
 			rreg := REG_baselines_CONFIG_DECIMATOR_RD; 
-		End If;
-		if addr = x"0003200E" then
-			rreg := REG_int_time_RD; 
-		End If;
-		if addr = x"0003200F" then
-			rreg := REG_int_pre_RD; 
-		End If;
-		if addr = x"00032010" then
-			rreg := REG_int_base_RD; 
 		End If;
     
                    

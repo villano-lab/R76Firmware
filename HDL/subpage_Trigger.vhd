@@ -19,6 +19,8 @@ TRIGOUT : out std_logic_vector(0 downto 0);
 gate : in std_logic_vector(15 downto 0);
 ANALOGOUT : out std_logic_vector(15 downto 0);
 thrsh : in std_logic_vector(15 downto 0);
+baseline : in std_logic_vector(7 downto 0);
+auto_baseline : in std_logic_vector(15 downto 0);
 
 		async_clk : in std_logic_vector (0 downto 0);
 		CLK_ACQ : in std_logic_vector (0 downto 0);
@@ -100,6 +102,30 @@ signal U11_gate : std_logic_vector(15 downto 0);
 
 	signal U14_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
 signal U16_thrsh : std_logic_vector(15 downto 0);
+signal U17_out : std_logic_vector(15 downto 0);
+signal U18_baseline : std_logic_vector(7 downto 0);
+	signal U19_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+
+	COMPONENT comparator
+		GENERIC( 
+			IN_SIZE : INTEGER := 8;
+			IN_SIGN : STRING := "unsigned";
+			REGISTER_OUT : STRING := "false";
+			OPERATION : STRING := "equal"
+		);
+		PORT( 
+			in1 : in STD_LOGIC_VECTOR(IN_SIZE-1 downto 0);
+			in2 : in STD_LOGIC_VECTOR(IN_SIZE-1 downto 0);
+			clk : in STD_LOGIC;
+			comp_out : out STD_LOGIC_VECTOR(0 downto 0)
+		);
+	END COMPONENT;
+
+signal U20_CONST : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+signal U21_out : std_logic_vector(15 downto 0);
+signal U22_auto_baseline : std_logic_vector(15 downto 0);
+signal U23_out_0 : std_logic_vector(15 downto 0) := (others => '0');
+signal U24_out_0 : std_logic_vector(15 downto 0) := (others => '0');
 
 begin
 
@@ -113,7 +139,7 @@ port Map(
 	CE =>"1",
 	POLARITY =>U14_OUT,
 	PORT_IN =>U13_b,
-	THRESHOLD =>U16_thrsh,
+	THRESHOLD =>U17_out,
 	TRIGGER_INIB =>U6_int,
 	DELAYED_DATA =>open,
 	TOT =>open,
@@ -158,5 +184,37 @@ U11_gate <= gate;
 U14_OUT <= NOT U4_polarity;
 ANALOGOUT <= U13_b;
 U16_thrsh <= thrsh;
+
+U17 : block
+begin
+U17_out <= U21_out when U19_OUT = "0" else U16_thrsh when U19_OUT = "1"  else (others=>'0');
+
+end block;
+U18_baseline <= baseline;
+
+	U19 : comparator
+	Generic map(
+		IN_SIZE => 	8,
+		IN_SIGN => 	"unsigned",
+		REGISTER_OUT => 	"false",
+		OPERATION => 	"equal"
+	)
+	PORT MAP(
+		in1 => U18_baseline,
+		in2 => U20_CONST,
+		clk => CLK_125(0),
+		comp_out => U19_OUT
+	);
+
+U20_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"0"),8));
+
+U21 : block
+begin
+U21_out <= U23_out_0 when U4_polarity = "0" else U24_out_0 when U4_polarity = "1"  else (others=>'0');
+
+end block;
+U22_auto_baseline <= auto_baseline;
+U23_out_0 <= U22_auto_baseline - U16_thrsh;
+U24_out_0 <= ext(U22_auto_baseline, 16) + ext(U16_thrsh, 16) ;
 
 end Behavioral;

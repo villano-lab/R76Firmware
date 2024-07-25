@@ -37,12 +37,12 @@
   {
     "Name": "utilization.clb.lut",
     "Description": "LUT(#)",
-    "Value": "45924"
+    "Value": "45846"
   },
   {
     "Name": "utilization.clb.ff",
     "Description": "FD(#)",
-    "Value": "46081"
+    "Value": "45958"
   },
   {
     "Name": "utilization.ram.tile",
@@ -67,12 +67,12 @@
   {
     "Name": "utilization.clb.lut.pct",
     "Description": "LUT(%)",
-    "Value": "58.43"
+    "Value": "58.33"
   },
   {
     "Name": "utilization.clb.ff.pct",
     "Description": "FD(%)",
-    "Value": "29.31"
+    "Value": "29.24"
   },
   {
     "Name": "utilization.clb.lutmem.pct",
@@ -87,17 +87,17 @@
   {
     "Name": "utilization.clb.f7mux.pct",
     "Description": "MUXF7(%)",
-    "Value": "2.37"
+    "Value": "2.98"
   },
   {
     "Name": "utilization.clb.f8mux.pct",
     "Description": "MUXF8(%)",
-    "Value": "1.14"
+    "Value": "1.62"
   },
   {
     "Name": "design.cells.hlutnm.pct",
     "Description": "LUT Combining(%)",
-    "Value": "7.99"
+    "Value": "9.00"
   },
   {
     "Name": "utilization.dsp.pct",
@@ -127,7 +127,7 @@
   {
     "Name": "utilization.ctrlsets.uniq",
     "Description": "Control Sets",
-    "Value": "2110"
+    "Value": "2100"
   },
   {
     "Name": "design.dont_touch",
@@ -172,11 +172,11 @@
   {
     "Name": "design.device.maxlvls.lut",
     "Description": "Number of paths above max LUT budgeting 0.500ns",
-    "Value": "113"
+    "Value": "127"
   },
   {
     "Name": "design.device.maxlvls.net",
     "Description": "Number of paths above max Net budgeting 0.350ns",
-    "Value": "113"
+    "Value": "127"
   }
 ]

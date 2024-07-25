@@ -1,8 +1,7 @@
 #include "Def.h"
 #include <stdint.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include "circular_buffer.h"
+#include  <stdbool.h>
 
 #pragma once
 #ifndef __R5560_SCICOMPILER_H
@@ -336,8 +335,6 @@ SCILIB int ClearBuffer(void *buffer_handle);
 
 
 
-
-
 typedef struct  {
     uint32_t row[18];
 }t_All_Energies_struct;
@@ -413,7 +410,7 @@ SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -435,7 +432,7 @@ SCILIB int SPECTRUM_Spectrum_1_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -457,7 +454,7 @@ SCILIB int SPECTRUM_Spectrum_1_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -479,22 +476,22 @@ SCILIB int SPECTRUM_Spectrum_1_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -516,14 +513,14 @@ SCILIB int SPECTRUM_Spectrum_1_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -540,40 +537,40 @@ SCILIB int SPECTRUM_Spectrum_1_STATUS(uint32_t *status,NI_HANDLE *handle);
 //- SPECTRUM_Spectrum_1_DOWNLOAD
 //-
 //- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_1POSITION function 
-//-
-//- USAGE:
+//- 
+//- USAGE: 
 //-     OSCILLOSCOPE_Spectrum_1_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_1, 1000, handle, rd, vp);
-//-
+//- 
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_1 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -594,7 +591,7 @@ SCILIB int SPECTRUM_Spectrum_1_DOWNLOAD(uint32_t *val, uint32_t size, int32_t ti
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -616,7 +613,7 @@ SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -638,7 +635,7 @@ SCILIB int SPECTRUM_Spectrum_2_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -660,7 +657,7 @@ SCILIB int SPECTRUM_Spectrum_2_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -682,22 +679,22 @@ SCILIB int SPECTRUM_Spectrum_2_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -819,7 +816,7 @@ SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -841,7 +838,7 @@ SCILIB int SPECTRUM_Spectrum_3_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -863,7 +860,7 @@ SCILIB int SPECTRUM_Spectrum_3_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -885,22 +882,22 @@ SCILIB int SPECTRUM_Spectrum_3_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -922,7 +919,7 @@ SCILIB int SPECTRUM_Spectrum_3_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
@@ -1022,7 +1019,7 @@ SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1044,7 +1041,7 @@ SCILIB int SPECTRUM_Spectrum_4_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1066,7 +1063,7 @@ SCILIB int SPECTRUM_Spectrum_4_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1088,7 +1085,7 @@ SCILIB int SPECTRUM_Spectrum_4_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
@@ -1247,7 +1244,7 @@ SCILIB int SPECTRUM_Spectrum_5_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1269,7 +1266,7 @@ SCILIB int SPECTRUM_Spectrum_5_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1428,7 +1425,7 @@ SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1450,7 +1447,7 @@ SCILIB int SPECTRUM_Spectrum_6_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1472,7 +1469,7 @@ SCILIB int SPECTRUM_Spectrum_6_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1494,22 +1491,22 @@ SCILIB int SPECTRUM_Spectrum_6_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1609,7 +1606,7 @@ SCILIB int SPECTRUM_Spectrum_6_DOWNLOAD(uint32_t *val, uint32_t size, int32_t ti
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1631,7 +1628,7 @@ SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1653,7 +1650,7 @@ SCILIB int SPECTRUM_Spectrum_7_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1675,7 +1672,7 @@ SCILIB int SPECTRUM_Spectrum_7_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1697,7 +1694,7 @@ SCILIB int SPECTRUM_Spectrum_7_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
@@ -1834,7 +1831,7 @@ SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1856,7 +1853,7 @@ SCILIB int SPECTRUM_Spectrum_8_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -1878,7 +1875,7 @@ SCILIB int SPECTRUM_Spectrum_8_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2037,7 +2034,7 @@ SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2059,7 +2056,7 @@ SCILIB int SPECTRUM_Spectrum_9_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2081,7 +2078,7 @@ SCILIB int SPECTRUM_Spectrum_9_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2103,12 +2100,12 @@ SCILIB int SPECTRUM_Spectrum_9_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
@@ -2262,7 +2259,7 @@ SCILIB int SPECTRUM_Spectrum_11_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2284,7 +2281,7 @@ SCILIB int SPECTRUM_Spectrum_11_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2443,7 +2440,7 @@ SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2465,7 +2462,7 @@ SCILIB int SPECTRUM_Spectrum_12_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2487,7 +2484,7 @@ SCILIB int SPECTRUM_Spectrum_12_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2509,22 +2506,22 @@ SCILIB int SPECTRUM_Spectrum_12_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2624,7 +2621,7 @@ SCILIB int SPECTRUM_Spectrum_12_DOWNLOAD(uint32_t *val, uint32_t size, int32_t t
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2646,7 +2643,7 @@ SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2668,7 +2665,7 @@ SCILIB int SPECTRUM_Spectrum_13_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2690,7 +2687,7 @@ SCILIB int SPECTRUM_Spectrum_13_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2871,7 +2868,7 @@ SCILIB int SPECTRUM_Spectrum_14_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -2893,7 +2890,7 @@ SCILIB int SPECTRUM_Spectrum_14_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3074,7 +3071,7 @@ SCILIB int SPECTRUM_Spectrum_15_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3096,7 +3093,7 @@ SCILIB int SPECTRUM_Spectrum_15_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3118,17 +3115,17 @@ SCILIB int SPECTRUM_Spectrum_15_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -3277,7 +3274,7 @@ SCILIB int SPECTRUM_Spectrum_16_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3299,7 +3296,7 @@ SCILIB int SPECTRUM_Spectrum_16_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3321,17 +3318,17 @@ SCILIB int SPECTRUM_Spectrum_16_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -3480,7 +3477,7 @@ SCILIB int SPECTRUM_Spectrum_17_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3502,7 +3499,7 @@ SCILIB int SPECTRUM_Spectrum_17_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3524,17 +3521,17 @@ SCILIB int SPECTRUM_Spectrum_17_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -3661,7 +3658,7 @@ SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3683,7 +3680,7 @@ SCILIB int SPECTRUM_Spectrum_18_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3705,7 +3702,7 @@ SCILIB int SPECTRUM_Spectrum_18_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3727,17 +3724,17 @@ SCILIB int SPECTRUM_Spectrum_18_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -3886,7 +3883,7 @@ SCILIB int SPECTRUM_Spectrum_19_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3908,7 +3905,7 @@ SCILIB int SPECTRUM_Spectrum_19_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -3930,17 +3927,17 @@ SCILIB int SPECTRUM_Spectrum_19_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -4089,7 +4086,7 @@ SCILIB int SPECTRUM_Spectrum_20_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4111,7 +4108,7 @@ SCILIB int SPECTRUM_Spectrum_20_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4133,17 +4130,17 @@ SCILIB int SPECTRUM_Spectrum_20_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -4248,7 +4245,7 @@ SCILIB int SPECTRUM_Spectrum_20_DOWNLOAD(uint32_t *val, uint32_t size, int32_t t
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4270,7 +4267,7 @@ SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4292,7 +4289,7 @@ SCILIB int SPECTRUM_Spectrum_21_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4314,7 +4311,7 @@ SCILIB int SPECTRUM_Spectrum_21_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4336,17 +4333,17 @@ SCILIB int SPECTRUM_Spectrum_21_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -4495,7 +4492,7 @@ SCILIB int SPECTRUM_Spectrum_22_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4517,7 +4514,7 @@ SCILIB int SPECTRUM_Spectrum_22_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4539,22 +4536,22 @@ SCILIB int SPECTRUM_Spectrum_22_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4698,7 +4695,7 @@ SCILIB int SPECTRUM_Spectrum_0_STOP(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4720,7 +4717,7 @@ SCILIB int SPECTRUM_Spectrum_0_FLUSH(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -4742,17 +4739,17 @@ SCILIB int SPECTRUM_Spectrum_0_RESET(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	           rebin   PARAM_IN    int32_t
 //- 		Rebin factor
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      limit_mode   PARAM_IN    int32_t
 //- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     limit_value   PARAM_IN    int32_t
 //- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
@@ -6425,7 +6422,7 @@ SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-

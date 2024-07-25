@@ -75,9 +75,9 @@ SCILIB int R_CloseConnection(NI_HANDLE *handle)
 }
 
 
-SCILIB int __abstracted_mem_write(uint32_t *data, uint32_t count, 
-										uint32_t address, 
-										uint32_t timeout_ms, NI_HANDLE *handle, 
+SCILIB int __abstracted_mem_write(uint32_t *data, uint32_t count,
+										uint32_t address,
+										uint32_t timeout_ms, NI_HANDLE *handle,
 										uint32_t *written_data)
 {
 	int err = NI_WriteData(data,  count,  address, handle, written_data);
@@ -85,9 +85,9 @@ SCILIB int __abstracted_mem_write(uint32_t *data, uint32_t count,
 }
 
 
-SCILIB int __abstracted_mem_read(uint32_t *data, uint32_t count, 
-										uint32_t address, 
-										uint32_t timeout_ms, NI_HANDLE *handle, 
+SCILIB int __abstracted_mem_read(uint32_t *data, uint32_t count,
+										uint32_t address,
+										uint32_t timeout_ms, NI_HANDLE *handle,
 										uint32_t *read_data, uint32_t *valid_data)
 {
 	int err = NI_ReadData(data,  count, address,  handle, read_data);
@@ -95,20 +95,20 @@ SCILIB int __abstracted_mem_read(uint32_t *data, uint32_t count,
 	return err;
 }
 
-SCILIB int __abstracted_fifo_write(uint32_t *data, uint32_t count, 
-										uint32_t address, 
-										uint32_t address_status, 
-										uint32_t timeout_ms, NI_HANDLE *handle, 
+SCILIB int __abstracted_fifo_write(uint32_t *data, uint32_t count,
+										uint32_t address,
+										uint32_t address_status,
+										uint32_t timeout_ms, NI_HANDLE *handle,
 										uint32_t *written_data)
 {
 	return -1;
 }
-	
-SCILIB int __abstracted_fifo_read(uint32_t *data, uint32_t count, 
-										uint32_t address, 
-										uint32_t address_status, 
+
+SCILIB int __abstracted_fifo_read(uint32_t *data, uint32_t count,
+										uint32_t address,
+										uint32_t address_status,
 										bool blocking,
-										uint32_t timeout_ms, NI_HANDLE *handle, 
+										uint32_t timeout_ms, NI_HANDLE *handle,
 										uint32_t *read_data, uint32_t *valid_data)
 {
 	int err;
@@ -116,7 +116,7 @@ SCILIB int __abstracted_fifo_read(uint32_t *data, uint32_t count,
 	*valid_data = *read_data;
 	return err;
 }
-	
+
 SCILIB int __abstracted_reg_write(uint32_t data, uint32_t address, NI_HANDLE *handle)
 {
 	return NI_WriteReg(data, address, handle);
@@ -150,16 +150,16 @@ uint32_t gray_to_bin(uint32_t num, int nbit)
 //-  to be processed.
 //-  The buffer_size specify the size of the buffer to be allocated
 //-  ARGUMENTS:
-//- 	            buffer_handle   PARAM_OUT   void ** 
+//- 	            buffer_handle   PARAM_OUT   void **
 //-			Handle to the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
-//-  
+//-
 //- 	            buffer_size   PARAM_IN   uint32_t
 //- 		size in word (32 bit) of the buffer to be allocated
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
-//-  
+//-
 //-  RETURN [int]
 //- 	Return if the function has been succesfully executed
 //- 		0) Success
@@ -187,31 +187,31 @@ SCILIB int Utility_ALLOCATE_DOWNLOAD_BUFFER(void **buffer_handle, uint32_t buffe
 //-
 //-  Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER
 //-
-//-	 This function take as input a pointer to a buffer handle allocated with the function 
+//-	 This function take as input a pointer to a buffer handle allocated with the function
 //-  Utility_ALLOCATE_DOWNLOAD_BUFFER and fill it with the content of the array val
-//-  If the buffer is full the function fails and the output parameter 
+//-  If the buffer is full the function fails and the output parameter
 //-  The buffer_size specify the size of the buffer to be allocated enqueued_data willl
 //-	 contain the number of word that has been enqueued in the buffer
 //-
 //-  ARGUMENTS:
 //- 	            buffer_handle   PARAM_IN   void *
 //-			Handle to the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
-//-  
+//-
 //- 	            val			   PARAM_IN   uint32_t *
 //-			input data vector downloaded from a FIFO from the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
-//- 
-//- 	            size   			PARAM_IN   uint32_t 
+//-
+//- 	            size   			PARAM_IN   uint32_t
 //- 		number of valid word in the val vector
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
-//-  
+//-
 //- 	            enqueued_data   PARAM_OUT   uint32_t *
 //-			number of word of the val vector really enqueued in the circular buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-  RETURN [int]
@@ -250,7 +250,7 @@ SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, int32_t 
 //-
 //-  Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER
 //-
-//-	 This function take as input a pointer to a buffer handle allocated with the function 
+//-	 This function take as input a pointer to a buffer handle allocated with the function
 //-  Utility_ALLOCATE_DOWNLOAD_BUFFER and retrive one data from the buffer (head of the FIFO)
 //-  If the buffer is rmpty function fails with -1 error
 //-  The buffer_size specify the size of the buffer to be allocated enqueued_data willl
@@ -259,12 +259,12 @@ SCILIB int Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(void *buffer_handle, int32_t 
 //-  ARGUMENTS:
 //- 	            buffer_handle   PARAM_IN   void *
 //-			Handle to the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
-//-  
+//-
 //- 	            val			   PARAM_OUT   uint32_t *
 //-			head of the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-  RETURN [int]
@@ -295,7 +295,7 @@ SCILIB int Utility_PEAK_DATA_FORM_DOWNLOAD_BUFFER(void *buffer_handle, uint32_t 
 //-  ARGUMENTS:
 //- 	    buffer_handle   PARAM_IN   t_ASIC_packet_collection *
 //-			Packet to be released
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-  RETURN [void]
@@ -330,7 +330,7 @@ SCILIB void free_PETIROCFRAME_packet_collection(t_ASIC_packet_collection *decode
 //-  ARGUMENTS:
 //- 	            buffer_handle   PARAM_IN   t_FRAME_packet_collection *
 //-			Packet to be released
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-  RETURN [void]
@@ -565,7 +565,9 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_1_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_1_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
+SCILIB int SPECTRUM_Spectrum_1_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+
+{
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_1_CONFIG_REBIN, handle);
      limit = (1 << (limit_mode + 29)) + limit_value;
@@ -612,7 +614,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_1_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_1_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_1POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_1POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_1_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_1, 1000, handle, rd, vp);
@@ -847,7 +849,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_2_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_2_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_2POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_2POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_2_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_2, 1000, handle, rd, vp);
@@ -1083,7 +1085,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_3_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_3_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_3POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_3POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_3_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_3, 1000, handle, rd, vp);
@@ -1272,7 +1274,9 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_4_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_4_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
+SCILIB int SPECTRUM_Spectrum_4_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+
+{
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_4_CONFIG_REBIN, handle);
      limit = (1 << (limit_mode + 29)) + limit_value;
@@ -1319,7 +1323,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_4_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_4_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_4POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_4POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_4_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_4, 1000, handle, rd, vp);
@@ -1508,7 +1512,9 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_5_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_5_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
+SCILIB int SPECTRUM_Spectrum_5_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+
+{
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_5_CONFIG_REBIN, handle);
      limit = (1 << (limit_mode + 29)) + limit_value;
@@ -1555,7 +1561,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_5_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_5_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_5POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_5POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_5_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_5, 1000, handle, rd, vp);
@@ -1791,7 +1797,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_6_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_6_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_6POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_6POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_6_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_6, 1000, handle, rd, vp);
@@ -2027,7 +2033,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_7_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_7_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_7POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_7POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_7_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_7, 1000, handle, rd, vp);
@@ -2263,7 +2269,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_8_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_8_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_8POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_8POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_8_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_8, 1000, handle, rd, vp);
@@ -2499,7 +2505,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_9_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_9_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_9POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_9POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_9_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_9, 1000, handle, rd, vp);
@@ -2731,7 +2737,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_11_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_11_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_11POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_11POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_11_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_11, 1000, handle, rd, vp);
@@ -2967,7 +2973,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_12_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_12_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_12POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_12POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_12_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_12, 1000, handle, rd, vp);
@@ -3115,8 +3121,11 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_13_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_RESET(NI_HANDLE *handle){
-	return __abstracted_reg_write(2,SCI_REG_Spectrum_13_CONFIG, handle);
+SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
+
+{
+return __abstracted_reg_write(2,SCI_REG_Spectrum_13_CONFIG, handle);
+
 }
 //-----------------------------------------------------------------
 //-
@@ -3153,7 +3162,9 @@ SCILIB int SPECTRUM_Spectrum_13_RESET(NI_HANDLE *handle){
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_13_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
+SCILIB int SPECTRUM_Spectrum_13_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+
+{
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_13_CONFIG_REBIN, handle);
      limit = (1 << (limit_mode + 29)) + limit_value;
@@ -3200,7 +3211,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_13_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_13_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_13POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_13POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_13_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_13, 1000, handle, rd, vp);
@@ -3389,7 +3400,9 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_14_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_14_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
+SCILIB int SPECTRUM_Spectrum_14_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+
+{
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_14_CONFIG_REBIN, handle);
      limit = (1 << (limit_mode + 29)) + limit_value;
@@ -3436,7 +3449,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_14_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_14_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_14POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_14POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_14_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_14, 1000, handle, rd, vp);
@@ -3625,7 +3638,9 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_15_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_15_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
+SCILIB int SPECTRUM_Spectrum_15_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+
+{
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_15_CONFIG_REBIN, handle);
      limit = (1 << (limit_mode + 29)) + limit_value;
@@ -3672,7 +3687,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_15_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_15_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_15POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_15POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_15_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_15, 1000, handle, rd, vp);
@@ -3861,7 +3876,9 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_16_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_16_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
+SCILIB int SPECTRUM_Spectrum_16_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+
+{
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_16_CONFIG_REBIN, handle);
      limit = (1 << (limit_mode + 29)) + limit_value;
@@ -3908,7 +3925,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_16_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_16_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_16POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_16POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_16_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_16, 1000, handle, rd, vp);
@@ -4097,7 +4114,9 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_17_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_17_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
+SCILIB int SPECTRUM_Spectrum_17_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+
+{
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_17_CONFIG_REBIN, handle);
      limit = (1 << (limit_mode + 29)) + limit_value;
@@ -4144,7 +4163,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_17_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_17_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_17POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_17POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_17_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_17, 1000, handle, rd, vp);
@@ -4380,41 +4399,41 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_18_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_18_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_18POSITION function 
-//- 
-//- USAGE: 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_18POSITION function
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_18_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_18, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_18 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4614,41 +4633,41 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_19_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_19_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_19POSITION function 
-//- 
-//- USAGE: 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_19POSITION function
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_19_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_19, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_19 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4673,7 +4692,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_19_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -4850,7 +4869,7 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_20_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_20_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_20POSITION function 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_20POSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Spectrum_20_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_20, 1000, handle, rd, vp);
@@ -5086,41 +5105,41 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_21_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_21_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_21POSITION function 
-//- 
-//- USAGE: 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_21POSITION function
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_21_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_21, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_21 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5322,41 +5341,41 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_22_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_22_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_22POSITION function 
-//- 
-//- USAGE: 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_22POSITION function
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_22_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_22, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_22 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5381,7 +5400,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_22_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5531,14 +5550,14 @@ SCILIB int SPECTRUM_Spectrum_0_SET_PARAMETERS(int32_t rebin, int32_t limit_mode,
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Stop
 //- 		1) Running
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5558,41 +5577,41 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_0_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_0_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_0POSITION function 
-//- 
-//- USAGE: 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_0POSITION function
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_0_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_0, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_0 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5617,7 +5636,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_0_FIFOADDRESS, timeout,
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5648,74 +5667,74 @@ else
 //- ARGUMENTS:
 //- 	       decimator   PARAM_IN    int32_t
 //- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             pre   PARAM_IN    int32_t
 //- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	software_trigger   PARAM_IN    int32_t
 //- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	  analog_trigger   PARAM_IN    int32_t
 //- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital0_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital1_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital2_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital3_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	 trigger_channel   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	    trigger_edge   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Rising
 //- 		1) Falling
 //-
 //- 	   trigger_level   PARAM_IN    int32_t
 //- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5749,14 +5768,14 @@ else
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) No data available
 //- 		1) Data available
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5806,7 +5825,7 @@ return __abstracted_reg_read(position, SCI_REG_Syncs_READ_POSITION, handle);
 //-
 //- OSCILLOSCOPE_Syncs_DOWNLOAD
 //-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_SyncsPOSITION function 
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_SyncsPOSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Syncs_DOWNLOAD(data_buffer, BUFFER_SIZE_Syncs, 1000, handle, rd, vp);
@@ -5830,17 +5849,17 @@ return __abstracted_reg_read(position, SCI_REG_Syncs_READ_POSITION, handle);
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5861,48 +5880,48 @@ return __abstracted_mem_read(val, size, SCI_REG_Syncs_FIFOADDRESS, timeout, hand
 //- OSCILLOSCOPE_Syncs_RECONSTRUCT
 //-
 //- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//- 
-//- 
+//-
+//-
 //-
 //- ARGUMENTS:
 //- 	        data_osc   PARAM_IN   uint32_t
 //- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	        position   PARAM_IN   uint32_t
 //- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     pre_trigger   PARAM_IN    int32_t
 //- 		Length of the pre-trigger
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     read_analog  PARAM_OUT   uint32_t
 //- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital0  PARAM_OUT   uint32_t
 //- 		Digital track 0 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital1  PARAM_OUT   uint32_t
 //- 		Digital track 1 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital2  PARAM_OUT   uint32_t
 //- 		Digital track 2 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital3  PARAM_OUT   uint32_t
 //- 		Digital track 3 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -5973,38 +5992,38 @@ return 0;
 //-
 //- RATE_METER_RateMeter_GET_DATA
 //-
-//- USAGE: 
-//- 
+//- USAGE:
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN   channels
 //- 		number of word to download from the buffer.
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6024,38 +6043,38 @@ return __abstracted_mem_read(val, channels, SCI_REG_RateMeter_FIFOADDRESS, timeo
 //-
 //- RATE_METER_RateMeter_GET_DATA_COUNTS
 //-
-//- USAGE: 
-//- 
+//- USAGE:
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN   channels
 //- 		number of word to download from the buffer.
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6075,38 +6094,38 @@ return __abstracted_mem_read(val, channels, SCI_REG_RateMeter_FIFOADDRESS+512, t
 //-
 //- RATE_METER_SyncIn_GET_DATA
 //-
-//- USAGE: 
-//- 
+//- USAGE:
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN   channels
 //- 		number of word to download from the buffer.
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6126,38 +6145,38 @@ return __abstracted_mem_read(val, channels, SCI_REG_SyncIn_FIFOADDRESS, timeout,
 //-
 //- RATE_METER_SyncIn_GET_DATA_COUNTS
 //-
-//- USAGE: 
-//- 
+//- USAGE:
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN   channels
 //- 		number of word to download from the buffer.
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6182,7 +6201,7 @@ return __abstracted_mem_read(val, channels, SCI_REG_SyncIn_FIFOADDRESS+512, time
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6213,74 +6232,74 @@ else
 //- ARGUMENTS:
 //- 	       decimator   PARAM_IN    int32_t
 //- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             pre   PARAM_IN    int32_t
 //- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	software_trigger   PARAM_IN    int32_t
 //- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	  analog_trigger   PARAM_IN    int32_t
 //- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital0_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital1_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital2_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital3_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	 trigger_channel   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	    trigger_edge   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Rising
 //- 		1) Falling
 //-
 //- 	   trigger_level   PARAM_IN    int32_t
 //- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6297,7 +6316,7 @@ int32_t triggermode = 0;
 int r_decimator = __abstracted_reg_write(decimator, SCI_REG_Analog_CONFIG_DECIMATOR, handle);
 int r_pre = __abstracted_reg_write(pre, SCI_REG_Analog_CONFIG_PRETRIGGER, handle);
 int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_Analog_CONFIG_TRIGGER_LEVEL, handle);
-triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ; 
+triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ;
 int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_Analog_CONFIG_TRIGGER_MODE, handle);
 if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
     return 0;
@@ -6314,14 +6333,14 @@ else
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) No data available
 //- 		1) Data available
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6371,7 +6390,7 @@ return __abstracted_reg_read(position, SCI_REG_Analog_READ_POSITION, handle);
 //-
 //- OSCILLOSCOPE_Analog_DOWNLOAD
 //-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_AnalogPOSITION function 
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_AnalogPOSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Analog_DOWNLOAD(data_buffer, BUFFER_SIZE_Analog, 1000, handle, rd, vp);
@@ -6395,17 +6414,17 @@ return __abstracted_reg_read(position, SCI_REG_Analog_READ_POSITION, handle);
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6426,48 +6445,48 @@ return __abstracted_mem_read(val, size, SCI_REG_Analog_FIFOADDRESS, timeout, han
 //- OSCILLOSCOPE_Analog_RECONSTRUCT
 //-
 //- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//- 
-//- 
+//-
+//-
 //-
 //- ARGUMENTS:
 //- 	        data_osc   PARAM_IN   uint32_t
 //- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	        position   PARAM_IN   uint32_t
 //- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     pre_trigger   PARAM_IN    int32_t
 //- 		Length of the pre-trigger
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     read_analog  PARAM_OUT   uint32_t
 //- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital0  PARAM_OUT   uint32_t
 //- 		Digital track 0 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital1  PARAM_OUT   uint32_t
 //- 		Digital track 1 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital2  PARAM_OUT   uint32_t
 //- 		Digital track 2 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital3  PARAM_OUT   uint32_t
 //- 		Digital track 3 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6543,7 +6562,7 @@ return 0;
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6574,74 +6593,74 @@ else
 //- ARGUMENTS:
 //- 	       decimator   PARAM_IN    int32_t
 //- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             pre   PARAM_IN    int32_t
 //- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	software_trigger   PARAM_IN    int32_t
 //- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	  analog_trigger   PARAM_IN    int32_t
 //- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital0_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital1_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital2_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital3_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	 trigger_channel   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	    trigger_edge   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Rising
 //- 		1) Falling
 //-
 //- 	   trigger_level   PARAM_IN    int32_t
 //- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6658,7 +6677,7 @@ int32_t triggermode = 0;
 int r_decimator = __abstracted_reg_write(decimator, SCI_REG_Energies_CONFIG_DECIMATOR, handle);
 int r_pre = __abstracted_reg_write(pre, SCI_REG_Energies_CONFIG_PRETRIGGER, handle);
 int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_Energies_CONFIG_TRIGGER_LEVEL, handle);
-triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ; 
+triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ;
 int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_Energies_CONFIG_TRIGGER_MODE, handle);
 if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
     return 0;
@@ -6675,14 +6694,14 @@ else
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) No data available
 //- 		1) Data available
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6732,7 +6751,7 @@ return __abstracted_reg_read(position, SCI_REG_Energies_READ_POSITION, handle);
 //-
 //- OSCILLOSCOPE_Energies_DOWNLOAD
 //-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_EnergiesPOSITION function 
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_EnergiesPOSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Energies_DOWNLOAD(data_buffer, BUFFER_SIZE_Energies, 1000, handle, rd, vp);
@@ -6756,17 +6775,17 @@ return __abstracted_reg_read(position, SCI_REG_Energies_READ_POSITION, handle);
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6787,48 +6806,48 @@ return __abstracted_mem_read(val, size, SCI_REG_Energies_FIFOADDRESS, timeout, h
 //- OSCILLOSCOPE_Energies_RECONSTRUCT
 //-
 //- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//- 
-//- 
+//-
+//-
 //-
 //- ARGUMENTS:
 //- 	        data_osc   PARAM_IN   uint32_t
 //- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	        position   PARAM_IN   uint32_t
 //- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     pre_trigger   PARAM_IN    int32_t
 //- 		Length of the pre-trigger
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     read_analog  PARAM_OUT   uint32_t
 //- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital0  PARAM_OUT   uint32_t
 //- 		Digital track 0 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital1  PARAM_OUT   uint32_t
 //- 		Digital track 1 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital2  PARAM_OUT   uint32_t
 //- 		Digital track 2 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital3  PARAM_OUT   uint32_t
 //- 		Digital track 3 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6904,7 +6923,7 @@ return 0;
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -6935,74 +6954,74 @@ else
 //- ARGUMENTS:
 //- 	       decimator   PARAM_IN    int32_t
 //- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             pre   PARAM_IN    int32_t
 //- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	software_trigger   PARAM_IN    int32_t
 //- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	  analog_trigger   PARAM_IN    int32_t
 //- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital0_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital1_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital2_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital3_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	 trigger_channel   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	    trigger_edge   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Rising
 //- 		1) Falling
 //-
 //- 	   trigger_level   PARAM_IN    int32_t
 //- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7019,7 +7038,7 @@ int32_t triggermode = 0;
 int r_decimator = __abstracted_reg_write(decimator, SCI_REG_Analog_In_Unflipped_CONFIG_DECIMATOR, handle);
 int r_pre = __abstracted_reg_write(pre, SCI_REG_Analog_In_Unflipped_CONFIG_PRETRIGGER, handle);
 int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL, handle);
-triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ; 
+triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ;
 int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE, handle);
 if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
     return 0;
@@ -7036,14 +7055,14 @@ else
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) No data available
 //- 		1) Data available
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7093,7 +7112,7 @@ return __abstracted_reg_read(position, SCI_REG_Analog_In_Unflipped_READ_POSITION
 //-
 //- OSCILLOSCOPE_Analog_In_Unflipped_DOWNLOAD
 //-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Analog_In_UnflippedPOSITION function 
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Analog_In_UnflippedPOSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_Analog_In_Unflipped_DOWNLOAD(data_buffer, BUFFER_SIZE_Analog_In_Unflipped, 1000, handle, rd, vp);
@@ -7117,17 +7136,17 @@ return __abstracted_reg_read(position, SCI_REG_Analog_In_Unflipped_READ_POSITION
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7148,48 +7167,48 @@ return __abstracted_mem_read(val, size, SCI_REG_Analog_In_Unflipped_FIFOADDRESS,
 //- OSCILLOSCOPE_Analog_In_Unflipped_RECONSTRUCT
 //-
 //- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//- 
-//- 
+//-
+//-
 //-
 //- ARGUMENTS:
 //- 	        data_osc   PARAM_IN   uint32_t
 //- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	        position   PARAM_IN   uint32_t
 //- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     pre_trigger   PARAM_IN    int32_t
 //- 		Length of the pre-trigger
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     read_analog  PARAM_OUT   uint32_t
 //- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital0  PARAM_OUT   uint32_t
 //- 		Digital track 0 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital1  PARAM_OUT   uint32_t
 //- 		Digital track 1 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital2  PARAM_OUT   uint32_t
 //- 		Digital track 2 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital3  PARAM_OUT   uint32_t
 //- 		Digital track 3 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7249,7 +7268,7 @@ return 0;
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7275,7 +7294,7 @@ return __abstracted_reg_write(1,SCI_REG_All_Energies_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7301,7 +7320,7 @@ return __abstracted_reg_write(0,SCI_REG_All_Energies_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7326,7 +7345,7 @@ return __abstracted_reg_write(0,SCI_REG_All_Energies_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7351,7 +7370,7 @@ return __abstracted_reg_write(0,SCI_REG_All_Energies_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the status:
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		bit[0] = 0) No data available
 //- 		bit[0] = 1) Data available
@@ -7360,7 +7379,7 @@ return __abstracted_reg_write(0,SCI_REG_All_Energies_CONFIG, handle);
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7389,7 +7408,7 @@ return err;
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the status (1) data available (0) no data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		bit[0] = 0) No data available
 //- 		bit[0] = 1) Data available
@@ -7398,7 +7417,7 @@ return err;
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7419,39 +7438,39 @@ return __abstracted_reg_read(status, SCI_REG_All_Energies_READ_VALID_WORDS, hand
 //- CPACK_All_Energies_DOWNLOAD
 //-
 //- Download data from buffer. Data in the buffer respect the packet layout defined in the Packet Creator Tool
-//- 
-//- USAGE: 
-//- 
+//-
+//- USAGE:
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. 
-//- 		DEFAULT: 
+//- 		number of word to download from the buffer.
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7471,35 +7490,35 @@ return __abstracted_fifo_read(val, size, SCI_REG_All_Energies_FIFOADDRESS, SCI_R
 //-
 //- CPACK_All_Energies_RECONSTRUCT_DATA
 //-
-//- Take in input a circular buffer (buffer_handle) allocated with the function Utility_ALLOCATE_DOWNLOAD_BUFFER 
-//- And filled with downloaded data Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER And decoded the packet  
+//- Take in input a circular buffer (buffer_handle) allocated with the function Utility_ALLOCATE_DOWNLOAD_BUFFER
+//- And filled with downloaded data Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER And decoded the packet
 //- created with the Image (Frame Transfer block).
 //- The function internally allocate the output data structure t_FRAME_packet_collection And fill it with packed data
 //- decoded. Release the memory allocated by the function with free_FRAME_packet_collectionvoid(buffer) function
 //- in order to avoid memory leakage
 //- ----------------------------------------
-//- USAGE: 
-//-   t_FRAME_packet_collection decoded_packets; 
-//-   uint32_t data_frame[100000]; 
+//- USAGE:
+//-   t_FRAME_packet_collection decoded_packets;
+//-   uint32_t data_frame[100000];
 //-   void *BufferDownloadHandler = NULL;
-//- 
+//-
 //-   Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
 //-   .... initialize frame transfer ....
 //-   while (1){
-//-     CPACK_CP0_DOWNLOAD(&data_frame, N_Packet * (PacketSize), timeout_frame, &handle, &read_data_frame, &valid_data_frame); 
-//-     Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued); 
-//-     if (CPACK_CP_0_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets) == 0) { 
+//-     CPACK_CP0_DOWNLOAD(&data_frame, N_Packet * (PacketSize), timeout_frame, &handle, &read_data_frame, &valid_data_frame);
+//-     Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
+//-     if (CPACK_CP_0_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets) == 0) {
 //-         .... process data contained in decoded_packets....
 //-         free_FRAME_packet_collectionvoid(&decoded_packets);
 //-     }
-//- 
-//- 
-//- 
-//- 
+//-
+//-
+//-
+//-
 //- THIS FUNCTION MUST BE CONFIGURED IN FUNCTION OF THE PACKET LAYOUT DEFINED IN THE TOOL!
-//- 
-//- 
-//- 
+//-
+//-
+//-
 //- This Is just the skeleton for the decoded function!
 //- In the state 3 of the thate machine in the code the packet decoder extract every line from the packet
 //- for example if the payload of your packet Is 8 channels of 16 bits alligned 2 channels per row
@@ -7520,17 +7539,17 @@ return __abstracted_fifo_read(val, size, SCI_REG_All_Energies_FIFOADDRESS, SCI_R
 //- 5:   IN2             %%32 BIT DATA                       Decoded in state 3
 //- 6:   IN3             %%32 BIT DATA                       Decoded in state 3
 //- 7:   IN4             %%32 BIT DATA                       Decoded in state 3
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	   buffer_handle   PARAM_IN       void
 //- 		void pointer to the allocated memory area
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	 decoded_packets  PARAM_OUT t_FRAME_packet_collection
 //- 		Output vector containing the decoded data
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -7556,6 +7575,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 	decoded_packets->packets = NULL;
 	decoded_packets->allocated_packets = 0;
 	decoded_packets->valid_packets = 0;
+
 	//check if we have elements in the circular buffer
 	int bfsize = circular_buf_size(cbuf);
 	if (bfsize < PacketSize + 1) return -1;
@@ -7675,7 +7695,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 			    decoded_packets->valid_packets = k;
 			}
 			if (k > decoded_packets->allocated_packets) return 0;
-			
+
 			in_sync = 0;
 			if (circular_buf_size(cbuf) >= PacketSize)
 			    continue;
@@ -7733,7 +7753,8 @@ return __abstracted_reg_write(4,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_STOP(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
+
 {
 return __abstracted_reg_write(0,SCI_REG_Spectrum_10_CONFIG, handle);
 
@@ -7758,7 +7779,8 @@ return __abstracted_reg_write(0,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_FLUSH(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
+
 {
 return __abstracted_reg_write(1,SCI_REG_Spectrum_10_CONFIG, handle);
 
@@ -7783,9 +7805,11 @@ return __abstracted_reg_write(1,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_RESET(NI_HANDLE *handle)
+SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
+
 {
 return __abstracted_reg_write(2,SCI_REG_Spectrum_10_CONFIG, handle);
+
 }
 //-----------------------------------------------------------------
 //-
@@ -7822,7 +7846,9 @@ return __abstracted_reg_write(2,SCI_REG_Spectrum_10_CONFIG, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
+SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle);
+
+{
      int32_t limit = 0;
      int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_10_CONFIG_REBIN, handle);
      limit = (1 << (limit_mode + 29)) + limit_value;
@@ -7869,41 +7895,41 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_10_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_10_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_10POSITION function 
-//- 
-//- USAGE: 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_10POSITION function
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_10_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_10, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_10 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8102,41 +8128,41 @@ return __abstracted_reg_read(status, SCI_REG_Spectrum_23_STATUS, handle);
 //-
 //- SPECTRUM_Spectrum_23_DOWNLOAD
 //-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_23POSITION function 
-//- 
-//- USAGE: 
+//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_23POSITION function
+//-
+//- USAGE:
 //-     OSCILLOSCOPE_Spectrum_23_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_23, 1000, handle, rd, vp);
-//- 
+//-
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_23 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8161,7 +8187,7 @@ return __abstracted_mem_read(val, size, SCI_REG_Spectrum_23_FIFOADDRESS, timeout
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8192,74 +8218,74 @@ else
 //- ARGUMENTS:
 //- 	       decimator   PARAM_IN    int32_t
 //- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             pre   PARAM_IN    int32_t
 //- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	software_trigger   PARAM_IN    int32_t
 //- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	  analog_trigger   PARAM_IN    int32_t
 //- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital0_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital1_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital2_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital3_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	 trigger_channel   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	    trigger_edge   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Rising
 //- 		1) Falling
 //-
 //- 	   trigger_level   PARAM_IN    int32_t
 //- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8276,7 +8302,7 @@ int32_t triggermode = 0;
 int r_decimator = __abstracted_reg_write(decimator, SCI_REG_diag_CONFIG_DECIMATOR, handle);
 int r_pre = __abstracted_reg_write(pre, SCI_REG_diag_CONFIG_PRETRIGGER, handle);
 int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_diag_CONFIG_TRIGGER_LEVEL, handle);
-triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ; 
+triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ;
 int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_diag_CONFIG_TRIGGER_MODE, handle);
 if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
     return 0;
@@ -8293,14 +8319,14 @@ else
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) No data available
 //- 		1) Data available
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8350,7 +8376,7 @@ return __abstracted_reg_read(position, SCI_REG_diag_READ_POSITION, handle);
 //-
 //- OSCILLOSCOPE_diag_DOWNLOAD
 //-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_diagPOSITION function 
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_diagPOSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_diag_DOWNLOAD(data_buffer, BUFFER_SIZE_diag, 1000, handle, rd, vp);
@@ -8379,12 +8405,12 @@ return __abstracted_reg_read(position, SCI_REG_diag_READ_POSITION, handle);
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8405,48 +8431,48 @@ return __abstracted_mem_read(val, size, SCI_REG_diag_FIFOADDRESS, timeout, handl
 //- OSCILLOSCOPE_diag_RECONSTRUCT
 //-
 //- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//- 
-//- 
+//-
+//-
 //-
 //- ARGUMENTS:
 //- 	        data_osc   PARAM_IN   uint32_t
 //- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	        position   PARAM_IN   uint32_t
 //- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     pre_trigger   PARAM_IN    int32_t
 //- 		Length of the pre-trigger
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     read_analog  PARAM_OUT   uint32_t
 //- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital0  PARAM_OUT   uint32_t
 //- 		Digital track 0 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital1  PARAM_OUT   uint32_t
 //- 		Digital track 1 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital2  PARAM_OUT   uint32_t
 //- 		Digital track 2 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital3  PARAM_OUT   uint32_t
 //- 		Digital track 3 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8522,7 +8548,7 @@ return 0;
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8553,74 +8579,74 @@ else
 //- ARGUMENTS:
 //- 	       decimator   PARAM_IN    int32_t
 //- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	             pre   PARAM_IN    int32_t
 //- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	software_trigger   PARAM_IN    int32_t
 //- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	  analog_trigger   PARAM_IN    int32_t
 //- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital0_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital1_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital2_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital3_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	 trigger_channel   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	    trigger_edge   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) Rising
 //- 		1) Falling
 //-
 //- 	   trigger_level   PARAM_IN    int32_t
 //- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8637,7 +8663,7 @@ int32_t triggermode = 0;
 int r_decimator = __abstracted_reg_write(decimator, SCI_REG_baselines_CONFIG_DECIMATOR, handle);
 int r_pre = __abstracted_reg_write(pre, SCI_REG_baselines_CONFIG_PRETRIGGER, handle);
 int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_baselines_CONFIG_TRIGGER_LEVEL, handle);
-triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ; 
+triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ;
 int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_baselines_CONFIG_TRIGGER_MODE, handle);
 if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
     return 0;
@@ -8654,14 +8680,14 @@ else
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //- 		0) No data available
 //- 		1) Data available
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8711,7 +8737,7 @@ return __abstracted_reg_read(position, SCI_REG_baselines_READ_POSITION, handle);
 //-
 //- OSCILLOSCOPE_baselines_DOWNLOAD
 //-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_baselinesPOSITION function 
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_baselinesPOSITION function
 //-
 //- USAGE:
 //-     OSCILLOSCOPE_baselines_DOWNLOAD(data_buffer, BUFFER_SIZE_baselines, 1000, handle, rd, vp);
@@ -8740,12 +8766,12 @@ return __abstracted_reg_read(position, SCI_REG_baselines_READ_POSITION, handle);
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
@@ -8766,48 +8792,48 @@ return __abstracted_mem_read(val, size, SCI_REG_baselines_FIFOADDRESS, timeout, 
 //- OSCILLOSCOPE_baselines_RECONSTRUCT
 //-
 //- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//- 
-//- 
+//-
+//-
 //-
 //- ARGUMENTS:
 //- 	        data_osc   PARAM_IN   uint32_t
 //- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	        position   PARAM_IN   uint32_t
 //- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     pre_trigger   PARAM_IN    int32_t
 //- 		Length of the pre-trigger
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	     read_analog  PARAM_OUT   uint32_t
 //- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital0  PARAM_OUT   uint32_t
 //- 		Digital track 0 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital1  PARAM_OUT   uint32_t
 //- 		Digital track 1 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital2  PARAM_OUT   uint32_t
 //- 		Digital track 2 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital3  PARAM_OUT   uint32_t
 //- 		Digital track 3 reordered
-//- 		DEFAULT: 
+//- 		DEFAULT:
 //- 		OPTIONAL: False
 //-
 //-
