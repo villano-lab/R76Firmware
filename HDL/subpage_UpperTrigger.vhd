@@ -12,7 +12,6 @@ entity SUBPAGE_UpperTrigger is
     Port (	
 		gate : in std_logic_vector(15 downto 0);
 AIN : in std_logic_vector(15 downto 0);
-polarity : in std_logic_vector(0 downto 0);
 TRIGOUT : out std_logic_vector(0 downto 0);
 top : in std_logic_vector(15 downto 0);
 
@@ -73,8 +72,7 @@ signal U1_out : std_logic_vector(0 downto 0) := (others => '0');
 signal U3_gate : std_logic_vector(15 downto 0);
 signal U4_CONST : INTEGER := 0;
 signal U5_AIN : std_logic_vector(15 downto 0);
-signal U6_polarity : std_logic_vector(0 downto 0);
-	signal U8_b : STD_LOGIC_VECTOR(15 DOWNTO 0);
+	signal U7_b : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
 	COMPONENT polinvert
 		GENERIC( 
@@ -89,8 +87,8 @@ signal U6_polarity : std_logic_vector(0 downto 0);
 		);
 	END COMPONENT;
 
-	signal U9_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-signal U10_top : std_logic_vector(15 downto 0);
+signal U8_top : std_logic_vector(15 downto 0);
+signal U9_CONST : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
 
 begin
 
@@ -102,9 +100,9 @@ port Map(
 	RESET =>GlobalReset,
 	CLK =>async_clk,
 	CE =>"1",
-	POLARITY =>U9_OUT,
-	PORT_IN =>U8_b,
-	THRESHOLD =>U10_top,
+	POLARITY =>"0",
+	PORT_IN =>U7_b,
+	THRESHOLD =>U8_top,
 	TRIGGER_INIB =>0,
 	DELAYED_DATA =>open,
 	TOT =>open,
@@ -126,10 +124,9 @@ PORT MAP(
 U3_gate <= gate;
 U4_CONST <= 0;
 U5_AIN <= AIN;
-U6_polarity <= polarity;
 TRIGOUT <= U1_out;
 
-	U8 : polinvert
+	U7 : polinvert
 	Generic map(
 		A_SIZE => 	16,
 		SIGN => 	"UNSIGNED",
@@ -137,11 +134,11 @@ TRIGOUT <= U1_out;
 	)
 	PORT MAP(
 		a => U5_AIN,
-		pol => U6_polarity,
-		b => U8_b
+		pol => U9_CONST,
+		b => U7_b
 	);
 
-U9_OUT <= NOT U6_polarity;
-U10_top <= top;
+U8_top <= top;
+U9_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"1"),1));
 
 end Behavioral;

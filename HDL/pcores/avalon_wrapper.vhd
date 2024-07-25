@@ -106,29 +106,6 @@ entity avalon_wrapper is
 		REG_Analog_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_Analog_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_Analog_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_trig_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_trig_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
-	BUS_trig_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_trig_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
-	BUS_trig_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
-		REG_trig_polarity_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_trig_polarity_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_trig_polarity_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_trig_inhib_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_trig_inhib_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_trig_inhib_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_trig_gate_l_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_trig_gate_l_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_trig_gate_l_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_trig_gate_u_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_trig_gate_u_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_trig_gate_u_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_trig_delay_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_trig_delay_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_trig_delay_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
-		REG_trig_mode_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
-		INT_trig_mode_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
-		REG_trig_mode_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_RateMeter_READ_ADDRESS : OUT STD_LOGIC_VECTOR(15 downto 0); 
 	BUS_RateMeter_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
 	BUS_RateMeter_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
@@ -1172,6 +1149,26 @@ entity avalon_wrapper is
 		REG_baselines_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 		INT_baselines_CONFIG_DECIMATOR_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
 		REG_baselines_CONFIG_DECIMATOR_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_trig_READ_DATA : IN STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_trig_WRITE_DATA : OUT STD_LOGIC_VECTOR(31 downto 0); 
+	BUS_trig_W_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_trig_R_INT : OUT STD_LOGIC_VECTOR(0 downto 0); 
+	BUS_trig_VLD : IN STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_inhib_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_inhib_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_inhib_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trig_gate_l_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_gate_l_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_gate_l_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trig_gate_u_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_gate_u_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_gate_u_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trig_delay_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_delay_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_delay_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
+		REG_trig_mode_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
+		INT_trig_mode_WR : OUT STD_LOGIC_VECTOR(0 downto 0); 
+		REG_trig_mode_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_RD : IN STD_LOGIC_VECTOR(31 downto 0); 
 		REG_UNIQUE_WR : OUT STD_LOGIC_VECTOR(31 downto 0); 
 	
@@ -1345,19 +1342,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_Analog_CONFIG_ARM_WR <= "0";
 		REG_Analog_CONFIG_DECIMATOR_WR <= (others => '0');
 		INT_Analog_CONFIG_DECIMATOR_WR <= "0";
-	BUS_trig_W_INT <= "0";
-		REG_trig_polarity_WR <= (others => '0');
-		INT_trig_polarity_WR <= "0";
-		REG_trig_inhib_WR <= (others => '0');
-		INT_trig_inhib_WR <= "0";
-		REG_trig_gate_l_WR <= (others => '0');
-		INT_trig_gate_l_WR <= "0";
-		REG_trig_gate_u_WR <= (others => '0');
-		INT_trig_gate_u_WR <= "0";
-		REG_trig_delay_WR <= (others => '0');
-		INT_trig_delay_WR <= "0";
-		REG_trig_mode_WR <= (others => '0');
-		INT_trig_mode_WR <= "0";
 	BUS_RateMeter_W_INT <= "0";
 	BUS_thrsh_W_INT <= "0";
 		REG_thrsh_CH0_WR <= (others => '0');
@@ -1938,6 +1922,17 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_baselines_CONFIG_ARM_WR <= "0";
 		REG_baselines_CONFIG_DECIMATOR_WR <= (others => '0');
 		INT_baselines_CONFIG_DECIMATOR_WR <= "0";
+	BUS_trig_W_INT <= "0";
+		REG_trig_inhib_WR <= (others => '0');
+		INT_trig_inhib_WR <= "0";
+		REG_trig_gate_l_WR <= (others => '0');
+		INT_trig_gate_l_WR <= "0";
+		REG_trig_gate_u_WR <= (others => '0');
+		INT_trig_gate_u_WR <= "0";
+		REG_trig_delay_WR <= (others => '0');
+		INT_trig_delay_WR <= "0";
+		REG_trig_mode_WR <= (others => '0');
+		INT_trig_mode_WR <= "0";
             
                 f_BUS_DATASTROBE_REG <= '0';
                 M_AVALON_0_readdatavalid <= '0';
@@ -1960,13 +1955,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_Analog_CONFIG_TRIGGER_LEVEL_WR <= "0";
 		INT_Analog_CONFIG_ARM_WR <= "0";
 		INT_Analog_CONFIG_DECIMATOR_WR <= "0";
-	BUS_trig_W_INT <= "0";
-		INT_trig_polarity_WR <= "0";
-		INT_trig_inhib_WR <= "0";
-		INT_trig_gate_l_WR <= "0";
-		INT_trig_gate_u_WR <= "0";
-		INT_trig_delay_WR <= "0";
-		INT_trig_mode_WR <= "0";
 	BUS_RateMeter_W_INT <= "0";
 	BUS_thrsh_W_INT <= "0";
 		INT_thrsh_CH0_WR <= "0";
@@ -2296,6 +2284,12 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		INT_baselines_CONFIG_TRIGGER_LEVEL_WR <= "0";
 		INT_baselines_CONFIG_ARM_WR <= "0";
 		INT_baselines_CONFIG_DECIMATOR_WR <= "0";
+	BUS_trig_W_INT <= "0";
+		INT_trig_inhib_WR <= "0";
+		INT_trig_gate_l_WR <= "0";
+		INT_trig_gate_u_WR <= "0";
+		INT_trig_delay_WR <= "0";
+		INT_trig_mode_WR <= "0";
   
                 f_BUS_DATASTROBE_REG <= '0';
                 
@@ -2349,34 +2343,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		if addr = x"00018006" then
 			REG_Analog_CONFIG_DECIMATOR_WR <= wreg; 
 			INT_Analog_CONFIG_DECIMATOR_WR <= "1"; 
-		end if;
-		If addr >= x"00018008" And addr < x"00018009" Then
-			BUS_trig_WRITE_DATA <= wreg; 
-			BUS_trig_W_INT <= "1"; 
-		End If;
-		if addr = x"00018009" then
-			REG_trig_polarity_WR <= wreg; 
-			INT_trig_polarity_WR <= "1"; 
-		end if;
-		if addr = x"0001800A" then
-			REG_trig_inhib_WR <= wreg; 
-			INT_trig_inhib_WR <= "1"; 
-		end if;
-		if addr = x"0001800B" then
-			REG_trig_gate_l_WR <= wreg; 
-			INT_trig_gate_l_WR <= "1"; 
-		end if;
-		if addr = x"0001800C" then
-			REG_trig_gate_u_WR <= wreg; 
-			INT_trig_gate_u_WR <= "1"; 
-		end if;
-		if addr = x"0001800D" then
-			REG_trig_delay_WR <= wreg; 
-			INT_trig_delay_WR <= "1"; 
-		end if;
-		if addr = x"0001800E" then
-			REG_trig_mode_WR <= wreg; 
-			INT_trig_mode_WR <= "1"; 
 		end if;
 		If addr >= x"00020000" And addr < x"00030000" Then
 			BUS_RateMeter_WRITE_DATA <= wreg; 
@@ -3530,6 +3496,30 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 			REG_baselines_CONFIG_DECIMATOR_WR <= wreg; 
 			INT_baselines_CONFIG_DECIMATOR_WR <= "1"; 
 		end if;
+		If addr >= x"00370008" And addr < x"00370009" Then
+			BUS_trig_WRITE_DATA <= wreg; 
+			BUS_trig_W_INT <= "1"; 
+		End If;
+		if addr = x"00370009" then
+			REG_trig_inhib_WR <= wreg; 
+			INT_trig_inhib_WR <= "1"; 
+		end if;
+		if addr = x"0037000A" then
+			REG_trig_gate_l_WR <= wreg; 
+			INT_trig_gate_l_WR <= "1"; 
+		end if;
+		if addr = x"0037000B" then
+			REG_trig_gate_u_WR <= wreg; 
+			INT_trig_gate_u_WR <= "1"; 
+		end if;
+		if addr = x"0037000C" then
+			REG_trig_delay_WR <= wreg; 
+			INT_trig_delay_WR <= "1"; 
+		end if;
+		if addr = x"0037000D" then
+			REG_trig_mode_WR <= wreg; 
+			INT_trig_mode_WR <= "1"; 
+		end if;
 
                 end if;
         
@@ -3579,24 +3569,6 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		End If;
 		if addr = x"00018006" then
 			rreg := REG_Analog_CONFIG_DECIMATOR_RD; 
-		End If;
-		if addr = x"00018009" then
-			rreg := REG_trig_polarity_RD; 
-		End If;
-		if addr = x"0001800A" then
-			rreg := REG_trig_inhib_RD; 
-		End If;
-		if addr = x"0001800B" then
-			rreg := REG_trig_gate_l_RD; 
-		End If;
-		if addr = x"0001800C" then
-			rreg := REG_trig_gate_u_RD; 
-		End If;
-		if addr = x"0001800D" then
-			rreg := REG_trig_delay_RD; 
-		End If;
-		if addr = x"0001800E" then
-			rreg := REG_trig_mode_RD; 
 		End If;
 		if addr = x"00030002" then
 			rreg := REG_thrsh_CH0_RD; 
@@ -4452,6 +4424,21 @@ BUS_baselines_READ_DATA  when  addr >= x"00368000" and addr < x"00370000" else
 		End If;
 		if addr = x"00370006" then
 			rreg := REG_baselines_CONFIG_DECIMATOR_RD; 
+		End If;
+		if addr = x"00370009" then
+			rreg := REG_trig_inhib_RD; 
+		End If;
+		if addr = x"0037000A" then
+			rreg := REG_trig_gate_l_RD; 
+		End If;
+		if addr = x"0037000B" then
+			rreg := REG_trig_gate_u_RD; 
+		End If;
+		if addr = x"0037000C" then
+			rreg := REG_trig_delay_RD; 
+		End If;
+		if addr = x"0037000D" then
+			rreg := REG_trig_mode_RD; 
 		End If;
     
                    

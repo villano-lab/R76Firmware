@@ -1572,164 +1572,6 @@
       "Path": "/Spectrum_0"
     },
     {
-      "Name": "Syncs",
-      "Type": "Oscilloscope",
-      "Address": 3543040,
-      "Version": "1.0.0.0",
-      "Registers": [
-        {
-          "Name": "READ_STATUS",
-          "Type": "Register",
-          "Address": 3547136,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "READ_POSITION",
-          "Type": "Register",
-          "Address": 3547137,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_TRIGGER_MODE",
-          "Type": "Register",
-          "Address": 3547138,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_PRETRIGGER",
-          "Type": "Register",
-          "Address": 3547139,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_TRIGGER_LEVEL",
-          "Type": "Register",
-          "Address": 3547140,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_ARM",
-          "Type": "Register",
-          "Address": 3547141,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        },
-        {
-          "Name": "CONFIG_DECIMATOR",
-          "Type": "Register",
-          "Address": 3547142,
-          "Version": "",
-          "RegionSize": 1,
-          "Description": "",
-          "Category": "Undefined",
-          "Path": null
-        }
-      ],
-      "nsamples": 1024,
-      "Channels": 3,
-      "WordSize": 16,
-      "WordEnob": 16,
-      "AnalogInputs": 1,
-      "DigitalInputs": 4,
-      "SamplingFrequency": 0,
-      "TimeMultiplexing": 1,
-      "DecimatorMax": 0,
-      "DecimatorAveraging": false,
-      "Path": "/Syncs"
-    },
-    {
-      "Name": "trig",
-      "Type": "RegisterFile",
-      "Address": 98312,
-      "Version": "1.0.0.0",
-      "Registers": [
-        {
-          "Name": "polarity",
-          "Type": "Register",
-          "Address": 98313,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        },
-        {
-          "Name": "inhib",
-          "Type": "Register",
-          "Address": 98314,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        },
-        {
-          "Name": "gate_l",
-          "Type": "Register",
-          "Address": 98315,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        },
-        {
-          "Name": "gate_u",
-          "Type": "Register",
-          "Address": 98316,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        },
-        {
-          "Name": "delay",
-          "Type": "Register",
-          "Address": 98317,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        },
-        {
-          "Name": "mode",
-          "Type": "Register",
-          "Address": 98318,
-          "Version": "",
-          "RegionSize": 0,
-          "Description": null,
-          "Category": null,
-          "Path": null
-        }
-      ],
-      "Path": "/trig"
-    },
-    {
       "Name": "RateMeter",
       "Type": "MCRateMeter",
       "Address": 131072,
@@ -1737,15 +1579,6 @@
       "Channels": 1,
       "Registers": [],
       "Path": "/RateMeter"
-    },
-    {
-      "Name": "SyncIn",
-      "Type": "MCRateMeter",
-      "Address": 2949120,
-      "Version": "1.0.0.0",
-      "Channels": 3,
-      "Registers": [],
-      "Path": "/SyncIn"
     },
     {
       "Name": "Analog",
@@ -3899,6 +3732,65 @@
       "Path": "/baselines"
     },
     {
+      "Name": "trig",
+      "Type": "RegisterFile",
+      "Address": 3604488,
+      "Version": "1.0.0.0",
+      "Registers": [
+        {
+          "Name": "inhib",
+          "Type": "Register",
+          "Address": 3604489,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        },
+        {
+          "Name": "gate_l",
+          "Type": "Register",
+          "Address": 3604490,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        },
+        {
+          "Name": "gate_u",
+          "Type": "Register",
+          "Address": 3604491,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        },
+        {
+          "Name": "delay",
+          "Type": "Register",
+          "Address": 3604492,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        },
+        {
+          "Name": "mode",
+          "Type": "Register",
+          "Address": 3604493,
+          "Version": "",
+          "RegionSize": 0,
+          "Description": null,
+          "Category": null,
+          "Path": null
+        }
+      ],
+      "Path": "/trig"
+    },
+    {
       "Name": "reset",
       "Type": "Register",
       "Address": 3547153,
@@ -3977,5 +3869,5 @@
   "Magic": "361567DF",
   "Version": null,
   "FPGA": "xc7z030fbg676-2",
-  "BuildDate": "2024-07-24T16:04:49.2532557-06:00"
+  "BuildDate": "2024-07-25T11:57:55.4446128-06:00"
 }

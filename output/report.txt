@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------------
-# Created on Wed Jul 24 17:04:53 -0600 2024 with report_failfast (2017.11.01)
+# Created on Thu Jul 25 13:06:57 -0600 2024 with report_failfast (2017.11.01)
 # ---------------------------------------------------------------------------------
 
 #  +-----------------------------------------------------------------------------------------+
@@ -9,17 +9,17 @@
 #  +-----------------------------------------------------------+-----------+--------+--------+
 #  | Criteria                                                  | Guideline | Actual | Status |
 #  +-----------------------------------------------------------+-----------+--------+--------+
-#  | LUT                                                       | 70%       | 58.33% | OK     |
-#  | FD                                                        | 50%       | 29.24% | OK     |
+#  | LUT                                                       | 70%       | 55.88% | OK     |
+#  | FD                                                        | 50%       | 28.47% | OK     |
 #  | LUTRAM+SRL                                                | 25%       | 2.28%  | OK     |
-#  | MUXF7                                                     | 15%       | 2.98%  | OK     |
-#  | LUT Combining                                             | 20%       | 9.00%  | OK     |
+#  | MUXF7                                                     | 15%       | 2.54%  | OK     |
+#  | LUT Combining                                             | 20%       | 8.68%  | OK     |
 #  | DSP48                                                     | 80%       | 12.00% | OK     |
-#  | RAMB/FIFO                                                 | 80%       | 83.21% | REVIEW |
-#  | DSP48+RAMB+URAM (Avg)                                     | 70%       | 47.60% | OK     |
+#  | RAMB/FIFO                                                 | 80%       | 82.08% | REVIEW |
+#  | DSP48+RAMB+URAM (Avg)                                     | 70%       | 47.04% | OK     |
 #  | BUFGCE* + BUFGCTRL                                        | 24        | 13     | OK     |
 #  | DONT_TOUCH (cells/nets)                                   | 0         | 262    | REVIEW |
-#  | Control Sets                                              | 1474      | 2100   | REVIEW |
+#  | Control Sets                                              | 1474      | 2088   | REVIEW |
 #  | Average Fanout for modules > 100k cells                   | 4         | 0      | OK     |
 #  | Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
 #  +-----------------------------------------------------------+-----------+--------+--------+
@@ -29,8 +29,8 @@
 #  | TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
 #  | TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
 #  +-----------------------------------------------------------+-----------+--------+--------+
-#  | Number of paths above max LUT budgeting (0.500ns)         | 0         | 127    | REVIEW |
-#  | Number of paths above max Net budgeting (0.350ns)         | 0         | 127    | REVIEW |
+#  | Number of paths above max LUT budgeting (0.500ns)         | 0         | 126    | REVIEW |
+#  | Number of paths above max Net budgeting (0.350ns)         | 0         | 126    | REVIEW |
 #  +-----------------------------------------------------------+-----------+--------+--------+
 
 

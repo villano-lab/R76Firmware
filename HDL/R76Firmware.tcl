@@ -11,7 +11,6 @@ add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/fifo_generat
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/main_clock.xci
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_ChargeIntegrator.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_clean_interrupt.vhd
-add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_CombinedTrigger.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_ReduceRate.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_Trigger.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_UpperTrigger.vhd
@@ -36,9 +35,9 @@ add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/scaler.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/SW_GATE_AND_DELAY.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/TimestampGenerator.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/trigger_leading.vhd
-add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U95_custompacket.vhd
-add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U97_UserHDL_Serial_Tx.vhd
-add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U99_UserHDL_Serial_Rx.vhd
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U85_custompacket.vhd
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U87_UserHDL_Serial_Tx.vhd
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U89_UserHDL_Serial_Rx.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/xlx_delay.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/xlx_oscilloscope_sync.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/xlx_soft_gd.vhd

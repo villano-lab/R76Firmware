@@ -181,25 +181,7 @@
 #define SCI_REG_Spectrum_0_CONFIG_MIN 0x50004
 #define SCI_REG_Spectrum_0_CONFIG_MAX 0x50005
 
-#define SCI_REG_Syncs_FIFOADDRESS 0x361000
-#define SCI_REG_Syncs_READ_STATUS 0x362000
-#define SCI_REG_Syncs_READ_POSITION 0x362001
-#define SCI_REG_Syncs_CONFIG_TRIGGER_MODE 0x362002
-#define SCI_REG_Syncs_CONFIG_PRETRIGGER 0x362003
-#define SCI_REG_Syncs_CONFIG_TRIGGER_LEVEL 0x362004
-#define SCI_REG_Syncs_CONFIG_ARM 0x362005
-#define SCI_REG_Syncs_CONFIG_DECIMATOR 0x362006
-
-#define SCI_REG_trig_polarity 0x18009
-#define SCI_REG_trig_inhib 0x1800A
-#define SCI_REG_trig_gate_l 0x1800B
-#define SCI_REG_trig_gate_u 0x1800C
-#define SCI_REG_trig_delay 0x1800D
-#define SCI_REG_trig_mode 0x1800E
-
 #define SCI_REG_RateMeter_FIFOADDRESS 0x20000
-
-#define SCI_REG_SyncIn_FIFOADDRESS 0x2D0000
 
 #define SCI_REG_Analog_FIFOADDRESS 0x10000
 #define SCI_REG_Analog_READ_STATUS 0x18000
@@ -375,4 +357,10 @@
 #define SCI_REG_baselines_CONFIG_TRIGGER_LEVEL 0x370004
 #define SCI_REG_baselines_CONFIG_ARM 0x370005
 #define SCI_REG_baselines_CONFIG_DECIMATOR 0x370006
+
+#define SCI_REG_trig_inhib 0x370009
+#define SCI_REG_trig_gate_l 0x37000A
+#define SCI_REG_trig_gate_u 0x37000B
+#define SCI_REG_trig_delay 0x37000C
+#define SCI_REG_trig_mode 0x37000D
 
