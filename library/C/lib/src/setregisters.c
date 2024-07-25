@@ -35,7 +35,7 @@ void print_usage(FILE* stream, int exit_code){ //This looks unaligned but lines 
 	fprintf (stream, THRESH_TEXT);
 	fprintf (stream, TOP_TEXT);
 	fprintf (stream, SKIP_TEXT);
-	fprintf (stream, POLARITY_TEXT);
+	//fprintf (stream, POLARITY_TEXT);
 	fprintf (stream, PRE_INT_TEXT);
 	fprintf (stream, INT_TIME_TEXT);
 	fprintf (stream, BASELINE_TEXT);
@@ -55,7 +55,7 @@ int main(int argc, char* argv[]){
 	//Read options
 	int index;
 	int iarg=0;
-	int polarity=1;
+	//int polarity=1;
 	while(iarg != -1){
 		iarg = getopt_long(argc, argv, "l::c::D:i:t:shv::Vg:d:T:RfS:p::P:I:b:", longopts, &index);
 		switch (iarg){
@@ -132,11 +132,11 @@ int main(int argc, char* argv[]){
 			skipflag = 1;
 			skip = atoi(optarg);
 			break;
-		case 'p':
+		/*case 'p':
 			polflag = 1;
 			if(optarg){polarity = atoi(optarg);
 			}else{polarity = 1;};
-			break;
+			break;*/
 		case 'P':
 			preflag = 1;
 			pre_int = atoi(optarg);
@@ -158,7 +158,7 @@ int main(int argc, char* argv[]){
 	};
 
 	//If the user said to reset, or if they didn't set anything and the program is going to do nothing
-	if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && polflag == 0 && preflag == 0 && intflag == 0 && baseflag == 0){
+	if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && preflag == 0 && intflag == 0 && baseflag == 0){
 		printf("No variables set by the user. ");
 		reset = 1;
 	}
@@ -174,12 +174,12 @@ int main(int argc, char* argv[]){
 				detflag = 1;
 				gateflag = 1;
 				skipflag = 1;
-				polflag = 1;
+				//polflag = 1;
 				preflag = 1;
 				intflag = 1;
 				baseflag = 1;
 			}else if(strcasecmp(userinput, "n") == 0 || strcasecmp(userinput, "no") == 0 || userinput == "0"){
-				if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && polflag == 0 && baseflag == 0){
+				if(inhibflag == 0 && delayflag == 0 && threshflag == 0 && topflag == 0 && detflag == 0 & gateflag == 0 && gateflagl == 0 && gateflagu == 0 && skipflag == 0 && baseflag == 0){
 					return 6;
 				}
 				if(verbose>-1){printf("Proceeding with provided values only.");}
@@ -197,7 +197,7 @@ int main(int argc, char* argv[]){
 			detflag = 1;
 			gateflag = 1;
 			skipflag = 1;
-			polflag = 1;
+			//polflag = 1;
 			preflag = 1;
 			intflag = 1;
 			baseflag = 1;
@@ -207,9 +207,9 @@ int main(int argc, char* argv[]){
 		}
 	}
 
-	if(verbose > 0 && polflag == 0 && (threshflag == 1 || topflag == 1)){
+	/*if(verbose > 0 && polflag == 0 && (threshflag == 1 || topflag == 1)){
 		printf("No polarity supplied. Thresholds will be set assuming negative polarity is being flipped to positive.\n");
-	}
+	}*/
 
 	//Detector on/off
 	if(detflag == 1){
@@ -249,20 +249,18 @@ int main(int argc, char* argv[]){
 	}
 	if(logfile != NULL){
 		fprintf(logfile,"============ Settings ============\n");
-		if(threshflag 	== 1){		fprintf(logfile,"Lower threshold:				%f\n",thrs);}
-		if(topflag	 	== 1){		fprintf(logfile,"Upper threshold:				%f\n",top);}
-		if(inhibflag	== 1){		fprintf(logfile,"Trigger Inhibition Time:		%d\n",inhib);}
-		if(gateflagu	== 1){		fprintf(logfile,"Upper Gate:					%d\n",gate_u);}
-		if(gateflagl 	== 1){		fprintf(logfile,"Lower Gate: 					%d\n",gate_l);}
-		if(delayflag	== 1){		fprintf(logfile,"Delay:							%d\n",delay);}
-		if(polflag		== 1){		fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);}
-		if(skipflag     == 1){		fprintf(logfile,"Skip value:					%d\n",skip);}
-		if(detflag		== 1){
-									fprintf(logfile,"Detectors enabled:				\n");
-			for(int i=0;i++;i<24){
-				if(disable[i] == 0){fprintf(logfile,"%d, ",i);}
-			}
-									fprintf(logfile,"\b\b\n\n"); //clear trailing comma and space before inserting two newlines.
+		if(threshflag 	== 1) fprintf(logfile,"Lower threshold:				%f\n",thrs);
+		if(topflag	== 1) fprintf(logfile,"Upper threshold:				%f\n",top);
+		if(inhibflag	== 1) fprintf(logfile,"Trigger Inhibition Time:		%d\n",inhib);
+		if(gateflagu	== 1) fprintf(logfile,"Upper Gate:					%d\n",gate_u);
+		if(gateflagl 	== 1) fprintf(logfile,"Lower Gate: 					%d\n",gate_l);
+		if(delayflag	== 1) fprintf(logfile,"Delay:							%d\n",delay);
+		//if(polflag	== 1) fprintf(logfile,"Polarity (Neg 0, Pos 1):		%d\n",polarity);
+		if(skipflag     == 1) fprintf(logfile,"Skip value:					%d\n",skip);
+		if(detflag	== 1){
+			fprintf(logfile,"Detectors enabled:				\n");
+			for(int i=0;i++;i<24) if(disable[i] == 0) fprintf(logfile,"%d, ",i);
+			fprintf(logfile,"\b\b\n\n"); //clear trailing comma and space before inserting two newlines.
 		};
 	}
 
@@ -285,7 +283,7 @@ int main(int argc, char* argv[]){
 	}
 
 	if(threshflag == 1){
-		thresh_q = set_thresholds("low",polarity,thrs,thresh_t);
+		thresh_q = set_thresholds("low",thrs,thresh_t,baseline);
 		if(verbose > 2){printf("Ran set_thresholds. Checking output...\n");}
 		for(int i=0; i<24; i++){
 			if(thresh_q[i] != 0){
@@ -299,7 +297,7 @@ int main(int argc, char* argv[]){
 	}
 	//set top
 	if(topflag == 1){
-		thresh_q = set_thresholds("high",polarity,top,thresh_t);
+		thresh_q = set_thresholds("high",top,thresh_t,baseline);
 		for(int i=0; i<24; i++){
 			if(thresh_q[i] != 0){
 				printf("Unable to set upper threshold of detector #%d! Aborting.\n",i);
@@ -336,7 +334,7 @@ int main(int argc, char* argv[]){
 	}
 
 	//set polarity
-	if(polflag == 1){
+	/*if(polflag == 1){
 		polarity_q = __abstracted_reg_write(polarity,SCI_REG_trig_polarity,&handle);
 		if(polarity_q != 0){
 			printf("Error from REG_polarity_SET. Aborting.\n");
@@ -346,7 +344,7 @@ int main(int argc, char* argv[]){
 		}
 	}else if(verbose > 1){
 		printf("Polarity flag is off. Skipping.\n");
-	}
+	}*/
 
 	//set gates
 	if(gateflagl == 1){
