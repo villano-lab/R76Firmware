@@ -11,6 +11,7 @@
 #include <getopt.h>
 #include <math.h>
 #include <iostream>
+#include <string>
 
 //Text defines
 #define BOARD_IP_ADDRESS ("134.84.150.114")
@@ -30,15 +31,18 @@
 #define TOP_TEXT      (" -T,    --top       <value>                 Set the upper threshold to the given value in MeV (default: 8).\n")
 #define RESET_TEXT    (" -R,    --reset                             Reset all unsupplied values to their defaults.\n")
 #define FORCE_TEXT    (" -f,    --force                             Skip all requests for user input.\n")
-//#define POLARITY_TEXT (" -p,    --polarity  <1 or 0>                Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
 #define PRE_INT_TEXT  (" -P,    --pre-int   <#>                     Set the pre-integration time in clock cycles. (integer. default: 30)\n")
 #define INT_TIME_TEXT (" -I,    --int-time  <#>                     Set the integration time in clock cycles. (integer. default: 250)\n")
 #define CONFIG_TEXT   (" -c,    --config    <file>                  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
 #define WAIT_TEXT     (" -w,    --wait      <#>                     Set the number of 10-second cycles to wait through for data collection. (integer. if not supplied, uses one cycle.)\n")
+#define MODE_TEXT     (" -m,	--mode	    <'l','u','w',or 's'>    Select the operation mode; l(ower), u(pper), w(indow), or s(ingle) (default). The program will scan over the selected side(s) and leave the remaining, if any, static.")
 //Assigning buffer sizes
 #define BUFFER_SIZE (1024)
+//version number
+#define VERSION_NUMBER ("v0.4 (development)")
 
 //Defaults
+extern char mode;
 extern int verbose;
 extern float thrs;
 extern uint32_t value;
@@ -171,3 +175,4 @@ uint32_t *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, uint32_t *specre
 int connect_staticaddr(int verbose);                                    //connect to the board, with print functions.
 //int set_by_polarity(uint32_t address, int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
 int kbhit(void);                                                        //allow keyboard interrupt
+int multicheck(int* errors,int len,std::string name);

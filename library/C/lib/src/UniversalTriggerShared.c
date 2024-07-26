@@ -36,6 +36,7 @@ const struct option longopts[] =
 	{"int-time",	required_argument,	0,	'I'},
 	{"config",	optional_argument,	0,	'c'},
 	{"wait",	required_argument,	0,	'w'},
+	{"mode",	required_argument,	0,	'm'},
 	{0,		0,			0,	0},
 };
 
@@ -44,6 +45,7 @@ float baseline_calib[32] = {0,288.21,258.69,318.06,233.09,197.68,321.82,261.98,2
 float scale_calib[32] = {1,1.44,1.29,1.28,1.29,1.28,1.36,1.15,1.17,1.42,1.29,1.32,1.26,1.22,1.36,1.12,1.34,1.23,1.28,1.22,1.44,1.18,1.06,1.36,1,1,1,1,1,1,1,1};
 
 //Defaults
+char mode = 'l';
 int verbose = 0;
 float thrs = 1.;	        //distance from baseline for threshold.
 uint32_t value = 16777214;	//default: disable detector 0,24-31 (never present) and enable the rest.
@@ -152,6 +154,7 @@ void printbits(unsigned char v) {
   for(i = 24; i >= 0; i--) putchar('0' + ((v >> i) & 1));
 }
 void copyright(){
+    printf(VERSION_NUMBER);
     printf("Copyright (c) 2022 Anthony Villano, Kitty Harris \n");
     printf("License: The Expat license  <https://spdx.org/licenses/MIT.html> \n");
     printf("This is free software: you are free to change and redistribute it. \n");
@@ -661,5 +664,15 @@ int kbhit(void){
 	return 1;
 	}
 
+	return 0;
+}
+
+int multicheck(int* errors,int len,std::string name){
+	for(int i=0;i++;i<len){
+		if(errors[i] != 0){
+			std::cout << "Error code " << errors[i] << " from " << name << ". Aborting.\n";
+			exit(errors[i]);
+		}
+	}
 	return 0;
 }

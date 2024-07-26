@@ -5901,7 +5901,7 @@ return __abstracted_reg_read(status, SCI_REG_Analog_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Analog_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Analog_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Analog_READ_POSITION, handle);
 
