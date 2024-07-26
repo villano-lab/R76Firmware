@@ -65,6 +65,7 @@ getspectrum
 teststatus
 packettest
 readcal
+rate
 *diagnostics.root
 
 # Other make output
