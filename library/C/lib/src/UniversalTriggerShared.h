@@ -156,13 +156,13 @@ void print_timestamp(int elapsed, int verbose);                         //parse 
 void read_config(const char* filename);                                 //parse a config file for values
 //converting functions
 int *on_to_off(int *off, uint32_t on, int verbose);                     //convert a 'detectors on' bit vector to a 'detectors off' bit vector
-int energy_to_bin(int detnum, float energy,int baseline);               //convert an energy value to a bin value
+uint32_t energy_to_bin(int detnum, float energy,int baseline);               //convert an energy value to a bin value
 //compatibility functions
 int REG_top_SET(uint32_t value, NI_HANDLE* handle);                     //set all top thresholds to a bin number
 int REG_thrsh_SET(uint32_t value, NI_HANDLE* handle);                   //set all lower thesholds to a bin number
 //multichannel functions
 int *disable_dets(int *disable_q, int disable[24]);                     //disable detectors based on input array
-int *set_thresholds(const char* side, float energy, int *thresh_q, int baseline);     //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
+uint32_t *set_thresholds(const char* side, float energy, int *thresh_q, int baseline);     //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
 uint32_t *spectra_PARAMS(int *spectra_q,int32_t Rebin, int32_t LimitMode, int32_t LimitValue); //set up spectrum parameters
 uint32_t *spectra_START(uint32_t *spectra_q);
 uint32_t *spectra_STOP(uint32_t *spectra_q);

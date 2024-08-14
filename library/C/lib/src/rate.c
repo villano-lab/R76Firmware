@@ -25,6 +25,8 @@ const char* program_name = "rate";
 FILE *fp;
 int lower = thrs;
 float rate;
+uint32_t* thresholds_l;
+uint32_t* thresholds_u;
 
 void print_usage(FILE* stream, int exit_code){
 	fprintf (stream, "Usage:  %s options \n", program_name);
@@ -155,13 +157,16 @@ int main(int argc, char* argv[])
 	//else if(mode == 'w')
 	if(mode != 's'){//don't set thresholds in single rate mode.
 		if(verbose) printf("Configuring...\n");
-		thresh_q = set_thresholds("high",top,thresh_t,baseline);
-		multicheck(thresh_q,24,"setting upper thresholds");
-		if(verbose > 1) printf("Updated top threshold to initial value: %f\n",top);
-		thresh_q = set_thresholds("low",thrs,thresh_t,baseline);
-		multicheck(thresh_q,24,"setting lower thresholds");
+		thresholds_l = set_thresholds("low",thrs,thresh_t,baseline);
+		multicheck(thresh_t,24,"setting lower thresholds");
 		if(verbose > 1) printf("Updated lower threshold to initial value: %f\n",thrs);
-		fprintf(fp,"lower (MeV), top (MeV), rate (Hz)\n");
+		thresholds_u = set_thresholds("high",top,thresh_t,baseline);
+		multicheck(thresh_t,24,"setting upper thresholds");
+		if(verbose > 1) printf("Updated top threshold to initial value: %f\n",top);
+		//Generate file header
+		fprintf(fp,"lower (MeV), top (MeV), rate (Hz)");
+		for(int i=0;i<24;i++) fprintf(fp,", l%02d, u%02d",i,i);
+		fprintf(fp,"\n");
 	}
 
 	//let the board catch up to settings
@@ -177,12 +182,14 @@ int main(int argc, char* argv[])
 		while(thrs <= range_u){
 			if(verbose>1) printf("Retrieving data...\n");
 			rate = collect_over_time(wait);
-			fprintf(fp,"%f, %f, %f\n",thrs,top,rate);
+			fprintf(fp,"%f, %f, %f",thrs,top,rate);
+			for(int i=0;i<24;i++) fprintf(fp,", %d, %d",thresholds_l[i],thresholds_u[i]);
+			fprintf(fp,"\n");
 			if(verbose>1) printf("thresh: %f ; rate: %f Hz\n",thrs,rate);
 
 			//set up for next iteration
 			thrs += range_s;
-			thresh_q = set_thresholds("low",thrs,thresh_t,baseline);
+			thresholds_l = set_thresholds("low",thrs,thresh_t,baseline);
 			if(verbose>1) printf("Updated lower threshold: %f\n",thrs);
 		}
 		if(verbose > 2) printf("thresh: %f, limit: %f. Time to stop!\n",thrs,range_u);
@@ -190,12 +197,14 @@ int main(int argc, char* argv[])
 		while(thrs <= range_u){
 			if(verbose>1) printf("Retrieving data...\n");
 			rate = collect_over_time(wait);
-			fprintf(fp,"%f, %f, %f\n",thrs,top,rate);
+			fprintf(fp,"%f, %f, %f",thrs,top,rate);
+			for(int i=0;i<24;i++) fprintf(fp,", %d, %d",thresholds_l[i],thresholds_u[i]);
+			fprintf(fp,"\n");
 			if(verbose>1) printf("top %f ; rate: %f Hz\n",top,rate);
 
 			//set up for next iteration
 			top += range_s;
-			thresh_q = set_thresholds("top",top,thresh_t,baseline);
+			thresholds_u = set_thresholds("top",top,thresh_t,baseline);
 			if(verbose>1) printf("Updated top threshold: %f\n",top);
 		}
 		if(verbose > 2) printf("top: %f, limit: %f. Time to stop!\n",top,range_u);
@@ -204,21 +213,24 @@ int main(int argc, char* argv[])
 			if(verbose>1) printf("Retrieving data...\n");
 			//getting structure down before I allow waiting time to be set.
 			rate = collect_over_time(wait);
-			fprintf(fp,"%f, %f, %f\n",thrs,top,rate);
+			fprintf(fp,"%f, %f, %f",thrs,top,rate);
+			for(int i=0;i<24;i++){
+				if(verbose>2) std::cout << "bins for " << i <<": " << &thresholds_l[i] << ", " << &thresholds_u[i] << std::endl;
+				fprintf(fp,", %d, %d",&thresholds_l[i],&thresholds_u[i]);
+			}
+			fprintf(fp,"\n");
 			if(verbose>1) printf("lower: %f ; upper: %f ; rate: %f Hz\n",thrs,top,rate);
 			//set up for next iteration
 			//left off at line 189
 			thrs += range_s;
 			top += range_s;
-			thresh_q = set_thresholds("low",thrs,thresh_t,baseline);
-			multicheck(thresh_q,24,"setting lower thresholds");
-			thresh_q = set_thresholds("upper",thrs,thresh_t,baseline);
-			multicheck(thresh_q,24,"setting lower thresholds");
+			thresholds_l = set_thresholds("low",thrs,thresh_t,baseline);
+			thresholds_u = set_thresholds("upper",top,thresh_t,baseline);
 		}
 	}//else{ //error handling
 
 	//CLEANUP ---------------------------------------------------------------------
-	if(verbose) printf("Data collection coplete.\n");
+	if(verbose) printf("Data collection complete.\n");
 	if(logfile) fclose(logfile);
 	return 0;
 }

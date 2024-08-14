@@ -45,7 +45,7 @@ float baseline_calib[32] = {0,288.21,258.69,318.06,233.09,197.68,321.82,261.98,2
 float scale_calib[32] = {1,1.44,1.29,1.28,1.29,1.28,1.36,1.15,1.17,1.42,1.29,1.32,1.26,1.22,1.36,1.12,1.34,1.23,1.28,1.22,1.44,1.18,1.06,1.36,1,1,1,1,1,1,1,1};
 
 //Defaults
-char mode = 'l';
+char mode = 's';
 int verbose = 0;
 float thrs = 1.;	        //distance from baseline for threshold.
 uint32_t value = 16777214;	//default: disable detector 0,24-31 (never present) and enable the rest.
@@ -302,15 +302,18 @@ int *on_to_off(int *off, uint32_t on, int verbose){
 	}
     return off;
 }
-int energy_to_bin(int detnum, float energy, int baseline){ //take an energy (MeV) and convert it to a bin number
+uint32_t energy_to_bin(int detnum, float energy, int baseline){ //take an energy (MeV) and convert it to a bin number
 	// convert to keV, since that's how our calibrations were done
 	float tempbase;
 	if(baseline == 0) tempbase = 0;
 	else tempbase = baseline_calib[detnum];
-	float bin;
+	uint32_t bin;
 	energy = energy * 1000;
-	bin = scale_calib[detnum]*energy + tempbase;
-	if(verbose > 3){printf("Bin value: %f\n",bin);}
+	bin = uint32_t(scale_calib[detnum]*energy + tempbase);
+	#define DEBUG
+	#ifdef DEBUG
+	std::cout << detnum << ": " << scale_calib[detnum]*energy + tempbase << ", ";
+	#endif
 	return bin;
 }
 
@@ -319,10 +322,10 @@ int energy_to_bin(int detnum, float energy, int baseline){ //take an energy (MeV
 int connect_staticaddr(int verbose){
     R_Init();
 	//If can't connect to the board, abort.
-	if(R_ConnectDevice((char*)BOARD_IP_ADDRESS, 8888, &handle) != 0) { 
-		if(verbose>-1){printf("Unable to connect to the board!\n");};
+	if(R_ConnectDevice((char*)BOARD_IP_ADDRESS, 8888, &handle) != 0) {
+		printf("Unable to connect to the board!\n");
 		if(logfile != NULL){fprintf(logfile,"Unable to connect to the board at %s!\n",BOARD_IP_ADDRESS);};
-		return (-1); 
+		return (-1);
 	}else{
 		if(verbose>-1){printf("Connected.\n");};
 		if(logfile != NULL){fprintf(logfile,"Connected to board at %s\n",BOARD_IP_ADDRESS);};
@@ -366,70 +369,23 @@ int *disable_dets(int *disable_q, int disable[32]){
     return disable_q;
 }
 
-int *set_thresholds(const char* side, float energy, int *thresh_q, int baseline){
+uint32_t *set_thresholds(const char* side, float energy, int *thresh_q, int baseline){
+	int startpoint; uint32_t threshs[32];
+	uint32_t* thresholds = threshs;
 	if(strcasecmp(side,"lower") == 0 || strcasecmp(side,"thrs") == 0 || strcasecmp(side,"thresh") == 0 || strcasecmp(side,"thrsh") == 0 || strcasecmp(side,"lo") == 0 || strcasecmp(side,"low") == 0){
-		thresh_q[0 ] = __abstracted_reg_write(SCI_REG_thrsh_CH0, energy_to_bin(0 ,energy,baseline),&handle);
-		thresh_q[1 ] = __abstracted_reg_write(SCI_REG_thrsh_CH1, energy_to_bin(1 ,energy,baseline),&handle);
-		thresh_q[2 ] = __abstracted_reg_write(SCI_REG_thrsh_CH2, energy_to_bin(2 ,energy,baseline),&handle);
-		thresh_q[3 ] = __abstracted_reg_write(SCI_REG_thrsh_CH3, energy_to_bin(3 ,energy,baseline),&handle);
-		thresh_q[4 ] = __abstracted_reg_write(SCI_REG_thrsh_CH4, energy_to_bin(4 ,energy,baseline),&handle);
-		thresh_q[5 ] = __abstracted_reg_write(SCI_REG_thrsh_CH5, energy_to_bin(5 ,energy,baseline),&handle);
-		thresh_q[6 ] = __abstracted_reg_write(SCI_REG_thrsh_CH6, energy_to_bin(6 ,energy,baseline),&handle);
-		thresh_q[7 ] = __abstracted_reg_write(SCI_REG_thrsh_CH7, energy_to_bin(7 ,energy,baseline),&handle);
-		thresh_q[8 ] = __abstracted_reg_write(SCI_REG_thrsh_CH8, energy_to_bin(8 ,energy,baseline),&handle);
-		thresh_q[9 ] = __abstracted_reg_write(SCI_REG_thrsh_CH9, energy_to_bin(9 ,energy,baseline),&handle);
-		thresh_q[10] = __abstracted_reg_write(SCI_REG_thrsh_CH10,energy_to_bin(10,energy,baseline),&handle);
-		thresh_q[11] = __abstracted_reg_write(SCI_REG_thrsh_CH11,energy_to_bin(11,energy,baseline),&handle);
-		thresh_q[12] = __abstracted_reg_write(SCI_REG_thrsh_CH12,energy_to_bin(12,energy,baseline),&handle);
-		thresh_q[13] = __abstracted_reg_write(SCI_REG_thrsh_CH13,energy_to_bin(13,energy,baseline),&handle);
-		thresh_q[14] = __abstracted_reg_write(SCI_REG_thrsh_CH14,energy_to_bin(14,energy,baseline),&handle);
-		thresh_q[15] = __abstracted_reg_write(SCI_REG_thrsh_CH15,energy_to_bin(15,energy,baseline),&handle);
-		thresh_q[16] = __abstracted_reg_write(SCI_REG_thrsh_CH16,energy_to_bin(16,energy,baseline),&handle);
-		thresh_q[17] = __abstracted_reg_write(SCI_REG_thrsh_CH17,energy_to_bin(17,energy,baseline),&handle);
-		thresh_q[18] = __abstracted_reg_write(SCI_REG_thrsh_CH18,energy_to_bin(18,energy,baseline),&handle);
-		thresh_q[19] = __abstracted_reg_write(SCI_REG_thrsh_CH19,energy_to_bin(19,energy,baseline),&handle);
-		thresh_q[20] = __abstracted_reg_write(SCI_REG_thrsh_CH20,energy_to_bin(20,energy,baseline),&handle);
-		thresh_q[21] = __abstracted_reg_write(SCI_REG_thrsh_CH21,energy_to_bin(21,energy,baseline),&handle);
-		thresh_q[22] = __abstracted_reg_write(SCI_REG_thrsh_CH22,energy_to_bin(22,energy,baseline),&handle);
-		thresh_q[23] = __abstracted_reg_write(SCI_REG_thrsh_CH23,energy_to_bin(23,energy,baseline),&handle);
-		/*thresh_q[24] = set_by_polarity(REG_thrsh_24_SET,polarity,energy_to_bin(24,energy));
-		thresh_q[25] = set_by_polarity(REG_thrsh_25_SET,polarity,energy_to_bin(25,energy));
-		thresh_q[26] = set_by_polarity(REG_thrsh_26_SET,polarity,energy_to_bin(26,energy));
-		thresh_q[27] = set_by_polarity(REG_thrsh_27_SET,polarity,energy_to_bin(27,energy));
-		thresh_q[28] = set_by_polarity(REG_thrsh_28_SET,polarity,energy_to_bin(28,energy));
-		thresh_q[29] = set_by_polarity(REG_thrsh_29_SET,polarity,energy_to_bin(29,energy));
-		thresh_q[30] = set_by_polarity(REG_thrsh_30_SET,polarity,energy_to_bin(30,energy));
-		thresh_q[31] = set_by_polarity(REG_thrsh_31_SET,polarity,energy_to_bin(31,energy));*/ //these do not exist yet.
+		startpoint = SCI_REG_thrsh_CH0; //thanks to registerfile these are always in order with spacing 1
 	}else if(strcasecmp(side,"upper") == 0 || strcasecmp(side,"up") == 0 || strcasecmp(side,"hi") == 0 || strcasecmp(side,"higher") == 0 || strcasecmp(side,"high") == 0 || strcasecmp(side,"top") == 0){
-		thresh_q[0 ] = __abstracted_reg_write(SCI_REG_top_CH0, energy_to_bin(0 ,energy,baseline),&handle);
-		thresh_q[1 ] = __abstracted_reg_write(SCI_REG_top_CH1, energy_to_bin(1 ,energy,baseline),&handle);
-		thresh_q[2 ] = __abstracted_reg_write(SCI_REG_top_CH2, energy_to_bin(2 ,energy,baseline),&handle);
-		thresh_q[3 ] = __abstracted_reg_write(SCI_REG_top_CH3, energy_to_bin(3 ,energy,baseline),&handle);
-		thresh_q[4 ] = __abstracted_reg_write(SCI_REG_top_CH4, energy_to_bin(4 ,energy,baseline),&handle);
-		thresh_q[5 ] = __abstracted_reg_write(SCI_REG_top_CH5, energy_to_bin(5 ,energy,baseline),&handle);
-		thresh_q[6 ] = __abstracted_reg_write(SCI_REG_top_CH6, energy_to_bin(6 ,energy,baseline),&handle);
-		thresh_q[7 ] = __abstracted_reg_write(SCI_REG_top_CH7, energy_to_bin(7 ,energy,baseline),&handle);
-		thresh_q[8 ] = __abstracted_reg_write(SCI_REG_top_CH8, energy_to_bin(8 ,energy,baseline),&handle);
-		thresh_q[9 ] = __abstracted_reg_write(SCI_REG_top_CH9, energy_to_bin(9 ,energy,baseline),&handle);
-		thresh_q[10] = __abstracted_reg_write(SCI_REG_top_CH10,energy_to_bin(10,energy,baseline),&handle);
-		thresh_q[11] = __abstracted_reg_write(SCI_REG_top_CH11,energy_to_bin(11,energy,baseline),&handle);
-		thresh_q[12] = __abstracted_reg_write(SCI_REG_top_CH12,energy_to_bin(12,energy,baseline),&handle);
-		thresh_q[13] = __abstracted_reg_write(SCI_REG_top_CH13,energy_to_bin(13,energy,baseline),&handle);
-		thresh_q[14] = __abstracted_reg_write(SCI_REG_top_CH14,energy_to_bin(14,energy,baseline),&handle);
-		thresh_q[15] = __abstracted_reg_write(SCI_REG_top_CH15,energy_to_bin(15,energy,baseline),&handle);
-		thresh_q[16] = __abstracted_reg_write(SCI_REG_top_CH16,energy_to_bin(16,energy,baseline),&handle);
-		thresh_q[17] = __abstracted_reg_write(SCI_REG_top_CH17,energy_to_bin(17,energy,baseline),&handle);
-		thresh_q[18] = __abstracted_reg_write(SCI_REG_top_CH18,energy_to_bin(18,energy,baseline),&handle);
-		thresh_q[19] = __abstracted_reg_write(SCI_REG_top_CH19,energy_to_bin(19,energy,baseline),&handle);
-		thresh_q[20] = __abstracted_reg_write(SCI_REG_top_CH20,energy_to_bin(20,energy,baseline),&handle);
-		thresh_q[21] = __abstracted_reg_write(SCI_REG_top_CH21,energy_to_bin(21,energy,baseline),&handle);
-		thresh_q[22] = __abstracted_reg_write(SCI_REG_top_CH22,energy_to_bin(22,energy,baseline),&handle);
-		thresh_q[23] = __abstracted_reg_write(SCI_REG_top_CH23,energy_to_bin(23,energy,baseline),&handle);
+		startpoint = SCI_REG_top_CH0;
 	}else{
 		printf("Invalid 'side' passed to set_thresholds. Please submit a bug report.\n");
 		exit(-1);
 	}
-	return thresh_q;
+	for(int i=0;i<24;i++){
+		int tempenergy = energy_to_bin(i,energy,baseline);
+		thresh_q[i] = __abstracted_reg_write(tempenergy,startpoint+i,&handle);
+		thresholds[i] = tempenergy;
+	}
+	return thresholds;
 }
 
 uint32_t *spectra_START(uint32_t *spectra_q){
