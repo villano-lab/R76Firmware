@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------------
-# Created on Thu Jul 25 13:06:57 -0600 2024 with report_failfast (2017.11.01)
+# Created on Wed Aug 14 17:12:06 -0600 2024 with report_failfast (2017.11.01)
 # ---------------------------------------------------------------------------------
 
 #  +-----------------------------------------------------------------------------------------+
@@ -10,10 +10,10 @@
 #  | Criteria                                                  | Guideline | Actual | Status |
 #  +-----------------------------------------------------------+-----------+--------+--------+
 #  | LUT                                                       | 70%       | 55.88% | OK     |
-#  | FD                                                        | 50%       | 28.47% | OK     |
-#  | LUTRAM+SRL                                                | 25%       | 2.28%  | OK     |
+#  | FD                                                        | 50%       | 28.50% | OK     |
+#  | LUTRAM+SRL                                                | 25%       | 2.29%  | OK     |
 #  | MUXF7                                                     | 15%       | 2.54%  | OK     |
-#  | LUT Combining                                             | 20%       | 8.68%  | OK     |
+#  | LUT Combining                                             | 20%       | 8.67%  | OK     |
 #  | DSP48                                                     | 80%       | 12.00% | OK     |
 #  | RAMB/FIFO                                                 | 80%       | 82.08% | REVIEW |
 #  | DSP48+RAMB+URAM (Avg)                                     | 70%       | 47.04% | OK     |
@@ -29,8 +29,8 @@
 #  | TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
 #  | TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
 #  +-----------------------------------------------------------+-----------+--------+--------+
-#  | Number of paths above max LUT budgeting (0.500ns)         | 0         | 126    | REVIEW |
-#  | Number of paths above max Net budgeting (0.350ns)         | 0         | 126    | REVIEW |
+#  | Number of paths above max LUT budgeting (0.500ns)         | 0         | 117    | REVIEW |
+#  | Number of paths above max Net budgeting (0.350ns)         | 0         | 117    | REVIEW |
 #  +-----------------------------------------------------------+-----------+--------+--------+
 
 

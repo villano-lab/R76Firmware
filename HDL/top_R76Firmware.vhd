@@ -2616,6 +2616,8 @@ PORT(
 	GlobalClock: in std_logic_vector (0 downto 0);
 	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
 END COMPONENT;
+signal U104_out : std_logic_vector(15 downto 0) := (others => '0');
+signal U105_out : std_logic_vector(15 downto 0) := (others => '0');
 	signal BUS_Energies_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
 	signal BUS_Energies_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Energies_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -6117,7 +6119,7 @@ PORT MAP(
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ANALOG => x"0000" & x"0000" & x"0000" & U74_out,
+		ANALOG => x"0000" & U104_out & U105_out & U74_out,
 		D0 => "0" & U91_out & U87_FMData_Out & U68_out,
 		D1 => U70_OUT & U24_OUT & U50_OUT & U66_out,
 		D2 => U85_FIFO_FULL & U85_BUSY & "0" & U69_int,
@@ -8273,7 +8275,9 @@ PORT MAP(
 	FAST_CLK_500_90=>FAST_CLK_500_90 ,
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
-REG_FIRMWARE_BUILD <= x"20240725";
+U104_out <= U83_OUT(15 downto 0);
+U105_out <= U83_OUT(31 downto 16);
+REG_FIRMWARE_BUILD <= x"20240814";
 REG_FIRMWARE_UNIQUE <= x"361567DF";
 FW_STRING_0 <= x"5237364669726D776172650000000000";
 
