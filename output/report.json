@@ -37,12 +37,12 @@
   {
     "Name": "utilization.clb.lut",
     "Description": "LUT(#)",
-    "Value": "43922"
+    "Value": "51169"
   },
   {
     "Name": "utilization.clb.ff",
     "Description": "FD(#)",
-    "Value": "44796"
+    "Value": "69759"
   },
   {
     "Name": "utilization.ram.tile",
@@ -67,17 +67,17 @@
   {
     "Name": "utilization.clb.lut.pct",
     "Description": "LUT(%)",
-    "Value": "55.88"
+    "Value": "65.10"
   },
   {
     "Name": "utilization.clb.ff.pct",
     "Description": "FD(%)",
-    "Value": "28.50"
+    "Value": "44.38"
   },
   {
     "Name": "utilization.clb.lutmem.pct",
     "Description": "LUTRAM+SRL(%)",
-    "Value": "2.29"
+    "Value": "2.28"
   },
   {
     "Name": "utilization.clb.carry8.pct",
@@ -87,17 +87,17 @@
   {
     "Name": "utilization.clb.f7mux.pct",
     "Description": "MUXF7(%)",
-    "Value": "2.54"
+    "Value": "2.55"
   },
   {
     "Name": "utilization.clb.f8mux.pct",
     "Description": "MUXF8(%)",
-    "Value": "1.17"
+    "Value": "1.13"
   },
   {
     "Name": "design.cells.hlutnm.pct",
     "Description": "LUT Combining(%)",
-    "Value": "8.67"
+    "Value": "7.83"
   },
   {
     "Name": "utilization.dsp.pct",
@@ -122,12 +122,12 @@
   {
     "Name": "utilization.clk.all",
     "Description": "BUFGCE* + BUFGCTRL",
-    "Value": "13"
+    "Value": "14"
   },
   {
     "Name": "utilization.ctrlsets.uniq",
     "Description": "Control Sets",
-    "Value": "2088"
+    "Value": "2090"
   },
   {
     "Name": "design.dont_touch",
@@ -137,7 +137,7 @@
   {
     "Name": "design.cells.maxavgfo",
     "Description": "Average Fanout for modules > 100k cells",
-    "Value": "0"
+    "Value": "3.02"
   },
   {
     "Name": "design.nets.nonfdhfn",
@@ -172,11 +172,11 @@
   {
     "Name": "design.device.maxlvls.lut",
     "Description": "Number of paths above max LUT budgeting 0.500ns",
-    "Value": "117"
+    "Value": "100"
   },
   {
     "Name": "design.device.maxlvls.net",
     "Description": "Number of paths above max Net budgeting 0.350ns",
-    "Value": "117"
+    "Value": "100"
   }
 ]

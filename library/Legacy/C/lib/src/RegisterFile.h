@@ -320,34 +320,30 @@
 #define SCI_REG_io_lemo2out 0x36200B
 #define SCI_REG_io_divide 0x36200C
 
-#define SCI_REG_int_time 0x362016
-#define SCI_REG_int_pre 0x362017
-#define SCI_REG_int_base 0x362018
-
-#define SCI_REG_base_CH0 0x36201B
-#define SCI_REG_base_CH1 0x36201C
-#define SCI_REG_base_CH2 0x36201D
-#define SCI_REG_base_CH3 0x36201E
-#define SCI_REG_base_CH4 0x36201F
-#define SCI_REG_base_CH5 0x362020
-#define SCI_REG_base_CH6 0x362021
-#define SCI_REG_base_CH7 0x362022
-#define SCI_REG_base_CH8 0x362023
-#define SCI_REG_base_CH9 0x362024
-#define SCI_REG_base_CH10 0x362025
-#define SCI_REG_base_CH11 0x362026
-#define SCI_REG_base_CH12 0x362027
-#define SCI_REG_base_CH13 0x362028
-#define SCI_REG_base_CH14 0x362029
-#define SCI_REG_base_CH15 0x36202A
-#define SCI_REG_base_CH16 0x36202B
-#define SCI_REG_base_CH17 0x36202C
-#define SCI_REG_base_CH18 0x36202D
-#define SCI_REG_base_CH19 0x36202E
-#define SCI_REG_base_CH20 0x36202F
-#define SCI_REG_base_CH21 0x362030
-#define SCI_REG_base_CH22 0x362031
-#define SCI_REG_base_CH23 0x362032
+#define SCI_REG_base_CH0 0x362016
+#define SCI_REG_base_CH1 0x362017
+#define SCI_REG_base_CH2 0x362018
+#define SCI_REG_base_CH3 0x362019
+#define SCI_REG_base_CH4 0x36201A
+#define SCI_REG_base_CH5 0x36201B
+#define SCI_REG_base_CH6 0x36201C
+#define SCI_REG_base_CH7 0x36201D
+#define SCI_REG_base_CH8 0x36201E
+#define SCI_REG_base_CH9 0x36201F
+#define SCI_REG_base_CH10 0x362020
+#define SCI_REG_base_CH11 0x362021
+#define SCI_REG_base_CH12 0x362022
+#define SCI_REG_base_CH13 0x362023
+#define SCI_REG_base_CH14 0x362024
+#define SCI_REG_base_CH15 0x362025
+#define SCI_REG_base_CH16 0x362026
+#define SCI_REG_base_CH17 0x362027
+#define SCI_REG_base_CH18 0x362028
+#define SCI_REG_base_CH19 0x362029
+#define SCI_REG_base_CH20 0x36202A
+#define SCI_REG_base_CH21 0x36202B
+#define SCI_REG_base_CH22 0x36202C
+#define SCI_REG_base_CH23 0x36202D
 
 #define SCI_REG_baselines_FIFOADDRESS 0x368000
 #define SCI_REG_baselines_READ_STATUS 0x370000
@@ -363,4 +359,9 @@
 #define SCI_REG_trig_gate_u 0x37000B
 #define SCI_REG_trig_delay 0x37000C
 #define SCI_REG_trig_mode 0x37000D
+
+#define SCI_REG_int_time 0x370010
+#define SCI_REG_int_pre 0x370011
+#define SCI_REG_int_base 0x370012
+#define SCI_REG_int_scale 0x370013
 
