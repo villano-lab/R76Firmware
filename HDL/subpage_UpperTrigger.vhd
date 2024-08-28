@@ -89,6 +89,26 @@ signal U5_AIN : std_logic_vector(15 downto 0);
 
 signal U8_top : std_logic_vector(15 downto 0);
 signal U9_CONST : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
+	signal U10_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+
+	COMPONENT comparator
+		GENERIC( 
+			IN_SIZE : INTEGER := 16;
+			IN_SIGN : STRING := "unsigned";
+			REGISTER_OUT : STRING := "false";
+			OPERATION : STRING := "equal"
+		);
+		PORT( 
+			in1 : in STD_LOGIC_VECTOR(IN_SIZE-1 downto 0);
+			in2 : in STD_LOGIC_VECTOR(IN_SIZE-1 downto 0);
+			clk : in STD_LOGIC;
+			comp_out : out STD_LOGIC_VECTOR(0 downto 0)
+		);
+	END COMPONENT;
+
+signal U11_CONST : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
+signal U12_out : std_logic_vector(0 downto 0);
+signal U13_CONST : STD_LOGIC_VECTOR(0 downto 0) := (others => '0');
 
 begin
 
@@ -100,7 +120,7 @@ port Map(
 	RESET =>GlobalReset,
 	CLK =>async_clk,
 	CE =>"1",
-	POLARITY =>"0",
+	POLARITY =>U9_CONST,
 	PORT_IN =>U7_b,
 	THRESHOLD =>U8_top,
 	TRIGGER_INIB =>0,
@@ -124,7 +144,7 @@ PORT MAP(
 U3_gate <= gate;
 U4_CONST <= 0;
 U5_AIN <= AIN;
-TRIGOUT <= U1_out;
+TRIGOUT <= U12_out;
 
 	U7 : polinvert
 	Generic map(
@@ -140,5 +160,28 @@ TRIGOUT <= U1_out;
 
 U8_top <= top;
 U9_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"1"),1));
+
+	U10 : comparator
+	Generic map(
+		IN_SIZE => 	16,
+		IN_SIGN => 	"unsigned",
+		REGISTER_OUT => 	"false",
+		OPERATION => 	"equal"
+	)
+	PORT MAP(
+		in1 => U8_top,
+		in2 => U11_CONST,
+		clk => CLK_125(0),
+		comp_out => U10_OUT
+	);
+
+U11_CONST <= conv_std_logic_vector(0,16);
+
+U12 : block
+begin
+U12_out <= U13_CONST when U10_OUT = "0" else U1_out when U10_OUT = "1"  else U1_out;
+
+end block;
+U13_CONST <= conv_std_logic_vector(0,1);
 
 end Behavioral;

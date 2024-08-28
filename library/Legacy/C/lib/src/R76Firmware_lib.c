@@ -428,5224 +428,40 @@ SCILIB int REG_received_SET(uint32_t val, NI_HANDLE *handle)
 }
 //-----------------------------------------------------------------
 //-
-//- SPECTRUM_Spectrum_1_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_1_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_1_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_1_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_1_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_1_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_1_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_1_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_1_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_1_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_1_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_1_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_1_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_1_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_1_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_1_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_1_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_1_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_1_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_1_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_1POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_1_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_1, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_1 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_1_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_1_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_2_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_2_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_2_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_2_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_2_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_2_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_2_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_2_FLUSH(NI_HANDLE *handle)
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_2_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_2_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_2_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_2_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_2_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_2_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_2_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_2_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_2_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_2_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_2_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_2_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_2POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_2_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_2, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_2 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_2_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_2_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_3_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_3_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_3_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_3_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_3_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_3_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_3_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_3_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_3_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_3_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_3_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_3_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_3_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_3_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_3_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_3_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_3_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_3_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_3_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_3_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_3POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_3_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_3, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_3 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_3_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_3_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_4_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_4_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_4_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_4_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_4_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_4_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_4_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_4_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_4_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_4_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_4_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_4_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_4_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_4_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_4_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_4_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_4_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_4_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_4_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_4_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_4POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_4_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_4, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_4 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_4_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_4_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_5_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_5_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_5_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_5_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_5_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_5_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_5_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_5_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_5_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_5_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_5_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_5_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_5_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_5_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_5_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_5_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_5_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_5_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_5_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_5_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_5POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_5_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_5, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_5 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_5_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_5_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_6_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_6_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_6_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_6_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_6_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_6_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_6_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_6_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_6_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_6_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_6_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_6_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_6_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_6_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_6_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_6_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_6_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_6_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_6_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_6_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_6POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_6_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_6, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_6 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_6_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_6_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_7_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_7_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_7_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_7_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_7_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_7_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_7_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_7_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_7_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_7_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_7_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_7_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_7_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_7_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_7_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_7_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_7_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_7_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_7_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_7_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_7POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_7_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_7, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_7 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_7_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_7_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_8_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_8_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_8_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_8_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_8_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_8_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_8_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_8_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_8_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_8_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_8_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_8_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_8_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_8_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_8_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_8_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_8_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_8_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_8_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_8_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_8POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_8_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_8, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_8 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_8_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_8_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_9_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_9_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_9_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_9_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_9_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_9_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_9_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_9_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_9_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_9_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_9_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_9_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_9_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_9_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_9_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_9_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_9_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_9_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_9_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_9_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_9POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_9_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_9, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_9 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_9_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_9_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_11_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_11_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_11_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_11_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_11_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_11_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_11_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_11_FLUSH(NI_HANDLE *handle){
-return __abstracted_reg_write(1,SCI_REG_Spectrum_11_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_11_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_11_RESET(NI_HANDLE *handle){
-return __abstracted_reg_write(2,SCI_REG_Spectrum_11_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_11_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_11_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_11_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_11_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_11_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_11_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_11_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_11_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_11POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_11_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_11, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_11 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_11_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_11_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_12_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_12_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_12_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_12_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_12_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_12_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_12_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_12_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_12_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_12_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_12_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_12_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_12_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_12_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_12_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_12_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_12_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_12_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_12_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_12_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_12POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_12_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_12, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_12 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_12_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_12_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_13_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_13_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_13_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_13_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_13_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_13_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_13_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_13_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_13_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_13_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_13_RESET(NI_HANDLE *handle)
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_13_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_13_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_13_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_13_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_13_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_13_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_13_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_13_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_13_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_13POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_13_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_13, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_13 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_13_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_13_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_14_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_14_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_14_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_14_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_14_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_14_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_14_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_14_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_14_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_14_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_14_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_14_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_14_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_14_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_14_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_14_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_14_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_14_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_14_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_14_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_14POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_14_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_14, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_14 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_14_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_14_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_15_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_15_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_15_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_15_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_15_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_15_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_15_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_15_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_15_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_15_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_15_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_15_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_15_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_15_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_15_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_15_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_15_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_15_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_15_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_15_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_15POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_15_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_15, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_15 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_15_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_15_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_16_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_16_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_16_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_16_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_16_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_16_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_16_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_16_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_16_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_16_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_16_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_16_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_16_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_16_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_16_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_16_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_16_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_16_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_16_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_16_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_16POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_16_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_16, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_16 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_16_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_16_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_17_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_17_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_17_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_17_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_17_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_17_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_17_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_17_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_17_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_17_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_17_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_17_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_17_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_17_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_17_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_17_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_17_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_17_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_17_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_17_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_17POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_17_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_17, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_17 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_17_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_17_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_18_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_18_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_18_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_18_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_18_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_18_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_18_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_18_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_18_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_18_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_18_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_18_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_18_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_18_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_18_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_18_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_18_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_18_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_18_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_18_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_18POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_18_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_18, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_18 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_18_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_18_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_19_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_19_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_19_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_19_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_19_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_19_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_19_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_19_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_19_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_19_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_19_RESET(NI_HANDLE *handle){
-return __abstracted_reg_write(2,SCI_REG_Spectrum_19_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_19_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_19_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_19_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_19_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_19_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_19_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_19_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_19_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_19POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_19_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_19, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_19 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_19_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_19_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_20_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_20_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_20_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_20_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_20_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_20_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_20_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_20_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_20_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_20_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_20_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_20_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_20_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_20_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_20_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_20_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_20_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_20_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_20_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_20_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_20POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_20_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_20, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_20 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_20_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_20_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_21_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_21_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_21_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_21_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_21_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_21_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_21_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_21_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_21_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_21_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_21_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_21_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_21_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_21_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_21_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_21_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_21_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_21_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_21_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_21_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_21POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_21_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_21, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_21 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_21_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_21_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_22_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_22_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_22_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_22_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_22_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_22_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_22_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_22_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_22_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_22_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_22_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_22_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_22_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_22_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_22_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_22_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_22_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_22_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_22_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_22_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_22POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_22_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_22, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_22 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_22_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_22_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_0_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_0_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_0_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_0_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_0_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_0_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_0_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_0_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_0_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_0_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_0_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_0_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_0_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_0_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_0_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_0_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_0_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_0_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_0_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_0_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_0POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_0_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_0, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_0 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_0_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_0_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
 //- RATE_METER_RateMeter_GET_DATA
 //-
-//- USAGE:
-//-
+//- USAGE: 
+//- 
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN   channels
 //- 		number of word to download from the buffer.
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -5665,38 +481,38 @@ return __abstracted_mem_read(val, channels, SCI_REG_RateMeter_FIFOADDRESS, timeo
 //-
 //- RATE_METER_RateMeter_GET_DATA_COUNTS
 //-
-//- USAGE:
-//-
+//- USAGE: 
+//- 
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN   channels
 //- 		number of word to download from the buffer.
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -5721,7 +537,7 @@ return __abstracted_mem_read(val, channels, SCI_REG_RateMeter_FIFOADDRESS+512, t
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -5752,74 +568,74 @@ else
 //- ARGUMENTS:
 //- 	       decimator   PARAM_IN    int32_t
 //- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             pre   PARAM_IN    int32_t
 //- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	software_trigger   PARAM_IN    int32_t
 //- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	  analog_trigger   PARAM_IN    int32_t
 //- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital0_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital1_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital2_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital3_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	 trigger_channel   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	    trigger_edge   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Rising
 //- 		1) Falling
 //-
 //- 	   trigger_level   PARAM_IN    int32_t
 //- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -5836,7 +652,7 @@ int32_t triggermode = 0;
 int r_decimator = __abstracted_reg_write(decimator, SCI_REG_Analog_CONFIG_DECIMATOR, handle);
 int r_pre = __abstracted_reg_write(pre, SCI_REG_Analog_CONFIG_PRETRIGGER, handle);
 int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_Analog_CONFIG_TRIGGER_LEVEL, handle);
-triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ;
+triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ; 
 int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_Analog_CONFIG_TRIGGER_MODE, handle);
 if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
     return 0;
@@ -5853,14 +669,14 @@ else
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) No data available
 //- 		1) Data available
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -5885,12 +701,12 @@ return __abstracted_reg_read(status, SCI_REG_Analog_READ_STATUS, handle);
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -5901,7 +717,7 @@ return __abstracted_reg_read(status, SCI_REG_Analog_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Analog_POSITION(uint32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Analog_POSITION(int32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Analog_READ_POSITION, handle);
 
@@ -5910,41 +726,41 @@ return __abstracted_reg_read(position, SCI_REG_Analog_READ_POSITION, handle);
 //-
 //- OSCILLOSCOPE_Analog_DOWNLOAD
 //-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_AnalogPOSITION function
-//-
-//- USAGE:
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_AnalogPOSITION function 
+//- 
+//- USAGE: 
 //-     OSCILLOSCOPE_Analog_DOWNLOAD(data_buffer, BUFFER_SIZE_Analog, 1000, handle, rd, vp);
-//-
+//- 
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Analog to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -5965,48 +781,48 @@ return __abstracted_mem_read(val, size, SCI_REG_Analog_FIFOADDRESS, timeout, han
 //- OSCILLOSCOPE_Analog_RECONSTRUCT
 //-
 //- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//-
-//-
+//- 
+//- 
 //-
 //- ARGUMENTS:
 //- 	        data_osc   PARAM_IN   uint32_t
 //- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	        position   PARAM_IN   uint32_t
 //- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     pre_trigger   PARAM_IN    int32_t
 //- 		Length of the pre-trigger
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     read_analog  PARAM_OUT   uint32_t
 //- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital0  PARAM_OUT   uint32_t
 //- 		Digital track 0 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital1  PARAM_OUT   uint32_t
 //- 		Digital track 1 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital2  PARAM_OUT   uint32_t
 //- 		Digital track 2 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital3  PARAM_OUT   uint32_t
 //- 		Digital track 3 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6082,7 +898,7 @@ return 0;
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6113,74 +929,74 @@ else
 //- ARGUMENTS:
 //- 	       decimator   PARAM_IN    int32_t
 //- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             pre   PARAM_IN    int32_t
 //- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	software_trigger   PARAM_IN    int32_t
 //- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	  analog_trigger   PARAM_IN    int32_t
 //- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital0_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital1_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital2_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital3_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	 trigger_channel   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	    trigger_edge   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Rising
 //- 		1) Falling
 //-
 //- 	   trigger_level   PARAM_IN    int32_t
 //- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6197,7 +1013,7 @@ int32_t triggermode = 0;
 int r_decimator = __abstracted_reg_write(decimator, SCI_REG_Energies_CONFIG_DECIMATOR, handle);
 int r_pre = __abstracted_reg_write(pre, SCI_REG_Energies_CONFIG_PRETRIGGER, handle);
 int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_Energies_CONFIG_TRIGGER_LEVEL, handle);
-triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ;
+triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ; 
 int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_Energies_CONFIG_TRIGGER_MODE, handle);
 if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
     return 0;
@@ -6214,14 +1030,14 @@ else
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) No data available
 //- 		1) Data available
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6246,12 +1062,12 @@ return __abstracted_reg_read(status, SCI_REG_Energies_READ_STATUS, handle);
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6262,7 +1078,7 @@ return __abstracted_reg_read(status, SCI_REG_Energies_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Energies_POSITION(uint32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Energies_POSITION(int32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Energies_READ_POSITION, handle);
 
@@ -6271,41 +1087,41 @@ return __abstracted_reg_read(position, SCI_REG_Energies_READ_POSITION, handle);
 //-
 //- OSCILLOSCOPE_Energies_DOWNLOAD
 //-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_EnergiesPOSITION function
-//-
-//- USAGE:
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_EnergiesPOSITION function 
+//- 
+//- USAGE: 
 //-     OSCILLOSCOPE_Energies_DOWNLOAD(data_buffer, BUFFER_SIZE_Energies, 1000, handle, rd, vp);
-//-
+//- 
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Energies to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6326,48 +1142,48 @@ return __abstracted_mem_read(val, size, SCI_REG_Energies_FIFOADDRESS, timeout, h
 //- OSCILLOSCOPE_Energies_RECONSTRUCT
 //-
 //- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//-
-//-
+//- 
+//- 
 //-
 //- ARGUMENTS:
 //- 	        data_osc   PARAM_IN   uint32_t
 //- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	        position   PARAM_IN   uint32_t
 //- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     pre_trigger   PARAM_IN    int32_t
 //- 		Length of the pre-trigger
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     read_analog  PARAM_OUT   uint32_t
 //- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital0  PARAM_OUT   uint32_t
 //- 		Digital track 0 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital1  PARAM_OUT   uint32_t
 //- 		Digital track 1 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital2  PARAM_OUT   uint32_t
 //- 		Digital track 2 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital3  PARAM_OUT   uint32_t
 //- 		Digital track 3 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6443,7 +1259,7 @@ return 0;
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6474,74 +1290,74 @@ else
 //- ARGUMENTS:
 //- 	       decimator   PARAM_IN    int32_t
 //- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             pre   PARAM_IN    int32_t
 //- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	software_trigger   PARAM_IN    int32_t
 //- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	  analog_trigger   PARAM_IN    int32_t
 //- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital0_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital1_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital2_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	digital3_trigger   PARAM_IN    int32_t
 //- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Disable
 //- 		1) Enable
 //-
 //- 	 trigger_channel   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	    trigger_edge   PARAM_IN    int32_t
 //- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) Rising
 //- 		1) Falling
 //-
 //- 	   trigger_level   PARAM_IN    int32_t
 //- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6558,7 +1374,7 @@ int32_t triggermode = 0;
 int r_decimator = __abstracted_reg_write(decimator, SCI_REG_Analog_In_Unflipped_CONFIG_DECIMATOR, handle);
 int r_pre = __abstracted_reg_write(pre, SCI_REG_Analog_In_Unflipped_CONFIG_PRETRIGGER, handle);
 int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_Analog_In_Unflipped_CONFIG_TRIGGER_LEVEL, handle);
-triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ;
+triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ; 
 int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_Analog_In_Unflipped_CONFIG_TRIGGER_MODE, handle);
 if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
     return 0;
@@ -6575,14 +1391,14 @@ else
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the oscilloscope status
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		0) No data available
 //- 		1) Data available
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6607,12 +1423,12 @@ return __abstracted_reg_read(status, SCI_REG_Analog_In_Unflipped_READ_STATUS, ha
 //- ARGUMENTS:
 //- 	        position  PARAM_OUT    int32_t
 //- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6623,7 +1439,7 @@ return __abstracted_reg_read(status, SCI_REG_Analog_In_Unflipped_READ_STATUS, ha
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Analog_In_Unflipped_POSITION(uint32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Analog_In_Unflipped_POSITION(int32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Analog_In_Unflipped_READ_POSITION, handle);
 
@@ -6632,41 +1448,41 @@ return __abstracted_reg_read(position, SCI_REG_Analog_In_Unflipped_READ_POSITION
 //-
 //- OSCILLOSCOPE_Analog_In_Unflipped_DOWNLOAD
 //-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Analog_In_UnflippedPOSITION function
-//-
-//- USAGE:
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Analog_In_UnflippedPOSITION function 
+//- 
+//- USAGE: 
 //-     OSCILLOSCOPE_Analog_In_Unflipped_DOWNLOAD(data_buffer, BUFFER_SIZE_Analog_In_Unflipped, 1000, handle, rd, vp);
-//-
+//- 
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
 //- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Analog_In_Unflipped to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6687,48 +1503,48 @@ return __abstracted_mem_read(val, size, SCI_REG_Analog_In_Unflipped_FIFOADDRESS,
 //- OSCILLOSCOPE_Analog_In_Unflipped_RECONSTRUCT
 //-
 //- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//-
-//-
+//- 
+//- 
 //-
 //- ARGUMENTS:
 //- 	        data_osc   PARAM_IN   uint32_t
 //- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	        position   PARAM_IN   uint32_t
 //- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     pre_trigger   PARAM_IN    int32_t
 //- 		Length of the pre-trigger
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	     read_analog  PARAM_OUT   uint32_t
 //- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital0  PARAM_OUT   uint32_t
 //- 		Digital track 0 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital1  PARAM_OUT   uint32_t
 //- 		Digital track 1 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital2  PARAM_OUT   uint32_t
 //- 		Digital track 2 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	   read_digital3  PARAM_OUT   uint32_t
 //- 		Digital track 3 reordered
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6781,6 +1597,728 @@ return 0;
 }
 //-----------------------------------------------------------------
 //-
+//- OSCILLOSCOPE_diag_START
+//-
+//- Start Oscilloscope acquisition.
+//-
+//- ARGUMENTS:
+//- 	          handle PARAM_INOUT  NI_HANDLE
+//- 		Connection handle to the board
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_diag_START(NI_HANDLE *handle)
+
+{
+int r1 = __abstracted_reg_write(0,SCI_REG_diag_CONFIG_ARM, handle);
+int r2 = __abstracted_reg_write(1,SCI_REG_diag_CONFIG_ARM, handle);
+if ((r1 == 0) && (r2 == 0))
+    return 0;
+else
+    return -1;
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_diag_SET_PARAMETERS
+//-
+//- Configure oscilloscope parameters
+//-
+//- ARGUMENTS:
+//- 	       decimator   PARAM_IN    int32_t
+//- 		Set decimator value. 0: no decimation, 1: divide by two, ...
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	             pre   PARAM_IN    int32_t
+//- 		Set the length in samples of pre-trigger buffer
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	software_trigger   PARAM_IN    int32_t
+//- 		Generate software trigger to force start acquisition (1:generate trigger)
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	  analog_trigger   PARAM_IN    int32_t
+//- 		Enable threshold trigger on analog input of selected channel
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Disable
+//- 		1) Enable
+//-
+//- 	digital0_trigger   PARAM_IN    int32_t
+//- 		Enable digital trigger on digital in 0 of selected channel
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Disable
+//- 		1) Enable
+//-
+//- 	digital1_trigger   PARAM_IN    int32_t
+//- 		Enable digital trigger on digital in 1 of selected channel
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Disable
+//- 		1) Enable
+//-
+//- 	digital2_trigger   PARAM_IN    int32_t
+//- 		Enable digital trigger on digital in 2 of selected channel
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Disable
+//- 		1) Enable
+//-
+//- 	digital3_trigger   PARAM_IN    int32_t
+//- 		Enable digital trigger on digital in 3 of selected channel
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Disable
+//- 		1) Enable
+//-
+//- 	 trigger_channel   PARAM_IN    int32_t
+//- 		Select channel of the oscilloscope connected to the trigger logic
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	    trigger_edge   PARAM_IN    int32_t
+//- 		Select channel of the oscilloscope connected to the trigger logic
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Rising
+//- 		1) Falling
+//-
+//- 	   trigger_level   PARAM_IN    int32_t
+//- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	          handle PARAM_INOUT  NI_HANDLE
+//- 		Connection handle to the board
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_diag_SET_PARAMETERS(int32_t decimator, int32_t pre, int32_t software_trigger, int32_t analog_trigger, int32_t digital0_trigger, int32_t digital1_trigger, int32_t digital2_trigger, int32_t digital3_trigger, int32_t trigger_channel, int32_t trigger_edge, int32_t trigger_level, NI_HANDLE *handle)
+{
+int32_t triggermode = 0;
+int r_decimator = __abstracted_reg_write(decimator, SCI_REG_diag_CONFIG_DECIMATOR, handle);
+int r_pre = __abstracted_reg_write(pre, SCI_REG_diag_CONFIG_PRETRIGGER, handle);
+int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_diag_CONFIG_TRIGGER_LEVEL, handle);
+triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ; 
+int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_diag_CONFIG_TRIGGER_MODE, handle);
+if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
+    return 0;
+else
+    return -1;
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_diag_STATUS
+//-
+//- Get Oscilloscope status
+//-
+//- ARGUMENTS:
+//- 	          status  PARAM_OUT    int32_t
+//- 		Return the oscilloscope status
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) No data available
+//- 		1) Data available
+//-
+//- 	          handle PARAM_INOUT  NI_HANDLE
+//- 		Connection handle to the board
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_diag_STATUS(uint32_t *status,NI_HANDLE *handle)
+{
+return __abstracted_reg_read(status, SCI_REG_diag_READ_STATUS, handle);
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_diag_POSITION
+//-
+//- Get Oscilloscope trigger position. The trigger position indicate the position in the output buffer of each channels where the sample at t0 occureed. PRE-TRIGGER samples before t0 is the pre-trigger data.
+//-
+//- ARGUMENTS:
+//- 	        position  PARAM_OUT    int32_t
+//- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	          handle PARAM_INOUT  NI_HANDLE
+//- 		Connection handle to the board
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_diag_POSITION(int32_t *position,NI_HANDLE *handle)
+{
+return __abstracted_reg_read(position, SCI_REG_diag_READ_POSITION, handle);
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_diag_DOWNLOAD
+//-
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_diagPOSITION function 
+//- 
+//- USAGE: 
+//-     OSCILLOSCOPE_diag_DOWNLOAD(data_buffer, BUFFER_SIZE_diag, 1000, handle, rd, vp);
+//- 
+//-
+//- ARGUMENTS:
+//- 	             val  PARAM_OUT   uint32_t
+//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	             val   PARAM_IN       size
+//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_diag to get actual oscilloscope buffer size on FPGA
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	             val   PARAM_IN    int32_t
+//- 		timeout in ms
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	          handle PARAM_INOUT  NI_HANDLE
+//- 		Connection handle to the board
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	       read_data  PARAM_OUT    int32_t
+//- 		number of word read from the buffer
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	      valid_data  PARAM_OUT    int32_t
+//- 		number of word valid in the buffer
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_diag_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
+{
+return __abstracted_mem_read(val, size, SCI_REG_diag_FIFOADDRESS, timeout, handle, read_data, valid_data);
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_diag_RECONSTRUCT
+//-
+//- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
+//- 
+//- 
+//-
+//- ARGUMENTS:
+//- 	        data_osc   PARAM_IN   uint32_t
+//- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	        position   PARAM_IN   uint32_t
+//- 		Position of the trigger obtained with the POSITION function
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	     pre_trigger   PARAM_IN    int32_t
+//- 		Length of the pre-trigger
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	     read_analog  PARAM_OUT   uint32_t
+//- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	   read_digital0  PARAM_OUT   uint32_t
+//- 		Digital track 0 reordered
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	   read_digital1  PARAM_OUT   uint32_t
+//- 		Digital track 1 reordered
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	   read_digital2  PARAM_OUT   uint32_t
+//- 		Digital track 2 reordered
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	   read_digital3  PARAM_OUT   uint32_t
+//- 		Digital track 3 reordered
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_diag_RECONSTRUCT(uint32_t *data_osc, uint32_t position, int32_t pre_trigger, uint32_t *read_analog, uint32_t *read_digital0, uint32_t *read_digital1, uint32_t *read_digital2, uint32_t *read_digital3)
+{
+int n_ch = 4;
+int n_samples = 1024;
+if (position > n_samples) return -1;
+for(int n=0; n< n_ch; n++)
+{
+	int current = position - pre_trigger;
+	if (current > 0)
+    {
+	    int k = 0;
+	    for (int i = current; i < n_samples - 1; i++)
+        {
+		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
+		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
+		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
+		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
+		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
+             k++;
+        }
+	    for (int i = 0; i < current - 1; i++)
+        {
+		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
+		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
+		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
+		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
+		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
+             k++;
+        }
+    }
+    else
+    {
+	    int k = 0;
+	    for (int i = n_samples+current; i < n_samples - 1; i++)
+        {
+		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
+		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
+		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
+		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
+		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
+             k++;
+        }
+	    for (int i = 0; i < n_samples + current - 1; i++)
+        {
+		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
+		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
+		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
+		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
+		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
+             k++;
+        }
+    }
+}
+return 0;
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_baselines_START
+//-
+//- Start Oscilloscope acquisition.
+//-
+//- ARGUMENTS:
+//- 	          handle PARAM_INOUT  NI_HANDLE
+//- 		Connection handle to the board
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_baselines_START(NI_HANDLE *handle)
+
+{
+int r1 = __abstracted_reg_write(0,SCI_REG_baselines_CONFIG_ARM, handle);
+int r2 = __abstracted_reg_write(1,SCI_REG_baselines_CONFIG_ARM, handle);
+if ((r1 == 0) && (r2 == 0))
+    return 0;
+else
+    return -1;
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_baselines_SET_PARAMETERS
+//-
+//- Configure oscilloscope parameters
+//-
+//- ARGUMENTS:
+//- 	       decimator   PARAM_IN    int32_t
+//- 		Set decimator value. 0: no decimation, 1: divide by two, ...
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	             pre   PARAM_IN    int32_t
+//- 		Set the length in samples of pre-trigger buffer
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	software_trigger   PARAM_IN    int32_t
+//- 		Generate software trigger to force start acquisition (1:generate trigger)
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	  analog_trigger   PARAM_IN    int32_t
+//- 		Enable threshold trigger on analog input of selected channel
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Disable
+//- 		1) Enable
+//-
+//- 	digital0_trigger   PARAM_IN    int32_t
+//- 		Enable digital trigger on digital in 0 of selected channel
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Disable
+//- 		1) Enable
+//-
+//- 	digital1_trigger   PARAM_IN    int32_t
+//- 		Enable digital trigger on digital in 1 of selected channel
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Disable
+//- 		1) Enable
+//-
+//- 	digital2_trigger   PARAM_IN    int32_t
+//- 		Enable digital trigger on digital in 2 of selected channel
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Disable
+//- 		1) Enable
+//-
+//- 	digital3_trigger   PARAM_IN    int32_t
+//- 		Enable digital trigger on digital in 3 of selected channel
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Disable
+//- 		1) Enable
+//-
+//- 	 trigger_channel   PARAM_IN    int32_t
+//- 		Select channel of the oscilloscope connected to the trigger logic
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	    trigger_edge   PARAM_IN    int32_t
+//- 		Select channel of the oscilloscope connected to the trigger logic
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) Rising
+//- 		1) Falling
+//-
+//- 	   trigger_level   PARAM_IN    int32_t
+//- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	          handle PARAM_INOUT  NI_HANDLE
+//- 		Connection handle to the board
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_baselines_SET_PARAMETERS(int32_t decimator, int32_t pre, int32_t software_trigger, int32_t analog_trigger, int32_t digital0_trigger, int32_t digital1_trigger, int32_t digital2_trigger, int32_t digital3_trigger, int32_t trigger_channel, int32_t trigger_edge, int32_t trigger_level, NI_HANDLE *handle)
+{
+int32_t triggermode = 0;
+int r_decimator = __abstracted_reg_write(decimator, SCI_REG_baselines_CONFIG_DECIMATOR, handle);
+int r_pre = __abstracted_reg_write(pre, SCI_REG_baselines_CONFIG_PRETRIGGER, handle);
+int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_baselines_CONFIG_TRIGGER_LEVEL, handle);
+triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ; 
+int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_baselines_CONFIG_TRIGGER_MODE, handle);
+if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
+    return 0;
+else
+    return -1;
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_baselines_STATUS
+//-
+//- Get Oscilloscope status
+//-
+//- ARGUMENTS:
+//- 	          status  PARAM_OUT    int32_t
+//- 		Return the oscilloscope status
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//- 		0) No data available
+//- 		1) Data available
+//-
+//- 	          handle PARAM_INOUT  NI_HANDLE
+//- 		Connection handle to the board
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_baselines_STATUS(uint32_t *status,NI_HANDLE *handle)
+{
+return __abstracted_reg_read(status, SCI_REG_baselines_READ_STATUS, handle);
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_baselines_POSITION
+//-
+//- Get Oscilloscope trigger position. The trigger position indicate the position in the output buffer of each channels where the sample at t0 occureed. PRE-TRIGGER samples before t0 is the pre-trigger data.
+//-
+//- ARGUMENTS:
+//- 	        position  PARAM_OUT    int32_t
+//- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	          handle PARAM_INOUT  NI_HANDLE
+//- 		Connection handle to the board
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_baselines_POSITION(int32_t *position,NI_HANDLE *handle)
+{
+return __abstracted_reg_read(position, SCI_REG_baselines_READ_POSITION, handle);
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_baselines_DOWNLOAD
+//-
+//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_baselinesPOSITION function 
+//- 
+//- USAGE: 
+//-     OSCILLOSCOPE_baselines_DOWNLOAD(data_buffer, BUFFER_SIZE_baselines, 1000, handle, rd, vp);
+//- 
+//-
+//- ARGUMENTS:
+//- 	             val  PARAM_OUT   uint32_t
+//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	             val   PARAM_IN       size
+//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_baselines to get actual oscilloscope buffer size on FPGA
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	             val   PARAM_IN    int32_t
+//- 		timeout in ms
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	          handle PARAM_INOUT  NI_HANDLE
+//- 		Connection handle to the board
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	       read_data  PARAM_OUT    int32_t
+//- 		number of word read from the buffer
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	      valid_data  PARAM_OUT    int32_t
+//- 		number of word valid in the buffer
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_baselines_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
+{
+return __abstracted_mem_read(val, size, SCI_REG_baselines_FIFOADDRESS, timeout, handle, read_data, valid_data);
+
+}
+//-----------------------------------------------------------------
+//-
+//- OSCILLOSCOPE_baselines_RECONSTRUCT
+//-
+//- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
+//- 
+//- 
+//-
+//- ARGUMENTS:
+//- 	        data_osc   PARAM_IN   uint32_t
+//- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	        position   PARAM_IN   uint32_t
+//- 		Position of the trigger obtained with the POSITION function
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	     pre_trigger   PARAM_IN    int32_t
+//- 		Length of the pre-trigger
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	     read_analog  PARAM_OUT   uint32_t
+//- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	   read_digital0  PARAM_OUT   uint32_t
+//- 		Digital track 0 reordered
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	   read_digital1  PARAM_OUT   uint32_t
+//- 		Digital track 1 reordered
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	   read_digital2  PARAM_OUT   uint32_t
+//- 		Digital track 2 reordered
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//- 	   read_digital3  PARAM_OUT   uint32_t
+//- 		Digital track 3 reordered
+//- 		DEFAULT: 
+//- 		OPTIONAL: False
+//-
+//-
+//- RETURN [int]
+//- 	Return if the function has been succesfully executed
+//- 		0) Success
+//- 		-1) Error
+//-
+//-----------------------------------------------------------------
+
+SCILIB int OSCILLOSCOPE_baselines_RECONSTRUCT(uint32_t *data_osc, uint32_t position, int32_t pre_trigger, uint32_t *read_analog, uint32_t *read_digital0, uint32_t *read_digital1, uint32_t *read_digital2, uint32_t *read_digital3)
+{
+int n_ch = 24;
+int n_samples = 1024;
+if (position > n_samples) return -1;
+for(int n=0; n< n_ch; n++)
+{
+	int current = position - pre_trigger;
+	if (current > 0)
+    {
+	    int k = 0;
+	    for (int i = current; i < n_samples - 1; i++)
+        {
+		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
+		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
+		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
+		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
+		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
+             k++;
+        }
+	    for (int i = 0; i < current - 1; i++)
+        {
+		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
+		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
+		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
+		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
+		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
+             k++;
+        }
+    }
+    else
+    {
+	    int k = 0;
+	    for (int i = n_samples+current; i < n_samples - 1; i++)
+        {
+		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
+		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
+		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
+		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
+		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
+             k++;
+        }
+	    for (int i = 0; i < n_samples + current - 1; i++)
+        {
+		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
+		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
+		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
+		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
+		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
+             k++;
+        }
+    }
+}
+return 0;
+
+}
+//-----------------------------------------------------------------
+//-
 //- CPACK_All_Energies_START
 //-
 //- Start acquisition.
@@ -6788,7 +2326,7 @@ return 0;
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6814,7 +2352,7 @@ return __abstracted_reg_write(1,SCI_REG_All_Energies_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6840,7 +2378,7 @@ return __abstracted_reg_write(0,SCI_REG_All_Energies_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6865,7 +2403,7 @@ return __abstracted_reg_write(0,SCI_REG_All_Energies_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6890,7 +2428,7 @@ return __abstracted_reg_write(0,SCI_REG_All_Energies_CONFIG, handle);
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the status:
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		bit[0] = 0) No data available
 //- 		bit[0] = 1) Data available
@@ -6899,7 +2437,7 @@ return __abstracted_reg_write(0,SCI_REG_All_Energies_CONFIG, handle);
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6928,7 +2466,7 @@ return err;
 //- ARGUMENTS:
 //- 	          status  PARAM_OUT    int32_t
 //- 		Return the status (1) data available (0) no data
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //- 		bit[0] = 0) No data available
 //- 		bit[0] = 1) Data available
@@ -6937,7 +2475,7 @@ return err;
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -6958,39 +2496,39 @@ return __abstracted_reg_read(status, SCI_REG_All_Energies_READ_VALID_WORDS, hand
 //- CPACK_All_Energies_DOWNLOAD
 //-
 //- Download data from buffer. Data in the buffer respect the packet layout defined in the Packet Creator Tool
-//-
-//- USAGE:
-//-
+//- 
+//- USAGE: 
+//- 
 //-
 //- ARGUMENTS:
 //- 	             val  PARAM_OUT   uint32_t
 //- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer.
-//- 		DEFAULT:
+//- 		number of word to download from the buffer. 
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	             val   PARAM_IN    int32_t
 //- 		timeout in ms
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	          handle PARAM_INOUT  NI_HANDLE
 //- 		Connection handle to the board
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	       read_data  PARAM_OUT    int32_t
 //- 		number of word read from the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	      valid_data  PARAM_OUT    int32_t
 //- 		number of word valid in the buffer
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -7010,35 +2548,35 @@ return __abstracted_fifo_read(val, size, SCI_REG_All_Energies_FIFOADDRESS, SCI_R
 //-
 //- CPACK_All_Energies_RECONSTRUCT_DATA
 //-
-//- Take in input a circular buffer (buffer_handle) allocated with the function Utility_ALLOCATE_DOWNLOAD_BUFFER
-//- And filled with downloaded data Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER And decoded the packet
+//- Take in input a circular buffer (buffer_handle) allocated with the function Utility_ALLOCATE_DOWNLOAD_BUFFER 
+//- And filled with downloaded data Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER And decoded the packet  
 //- created with the Image (Frame Transfer block).
 //- The function internally allocate the output data structure t_FRAME_packet_collection And fill it with packed data
 //- decoded. Release the memory allocated by the function with free_FRAME_packet_collectionvoid(buffer) function
 //- in order to avoid memory leakage
 //- ----------------------------------------
-//- USAGE:
-//-   t_FRAME_packet_collection decoded_packets;
-//-   uint32_t data_frame[100000];
+//- USAGE: 
+//-   t_FRAME_packet_collection decoded_packets; 
+//-   uint32_t data_frame[100000]; 
 //-   void *BufferDownloadHandler = NULL;
-//-
+//- 
 //-   Utility_ALLOCATE_DOWNLOAD_BUFFER(&BufferDownloadHandler, 1024*1024);
 //-   .... initialize frame transfer ....
 //-   while (1){
-//-     CPACK_CP0_DOWNLOAD(&data_frame, N_Packet * (PacketSize), timeout_frame, &handle, &read_data_frame, &valid_data_frame);
-//-     Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued);
-//-     if (CPACK_CP_0_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets) == 0) {
+//-     CPACK_CP0_DOWNLOAD(&data_frame, N_Packet * (PacketSize), timeout_frame, &handle, &read_data_frame, &valid_data_frame); 
+//-     Utility_ENQUEUE_DATA_IN_DOWNLOAD_BUFFER(BufferDownloadHandler, data_frame, valid_data_frame, &valid_data_enqueued); 
+//-     if (CPACK_CP_0_RECONSTRUCT_DATA(BufferDownloadHandler, &decoded_packets) == 0) { 
 //-         .... process data contained in decoded_packets....
 //-         free_FRAME_packet_collectionvoid(&decoded_packets);
 //-     }
-//-
-//-
-//-
-//-
+//- 
+//- 
+//- 
+//- 
 //- THIS FUNCTION MUST BE CONFIGURED IN FUNCTION OF THE PACKET LAYOUT DEFINED IN THE TOOL!
-//-
-//-
-//-
+//- 
+//- 
+//- 
 //- This Is just the skeleton for the decoded function!
 //- In the state 3 of the thate machine in the code the packet decoder extract every line from the packet
 //- for example if the payload of your packet Is 8 channels of 16 bits alligned 2 channels per row
@@ -7059,17 +2597,17 @@ return __abstracted_fifo_read(val, size, SCI_REG_All_Energies_FIFOADDRESS, SCI_R
 //- 5:   IN2             %%32 BIT DATA                       Decoded in state 3
 //- 6:   IN3             %%32 BIT DATA                       Decoded in state 3
 //- 7:   IN4             %%32 BIT DATA                       Decoded in state 3
-//-
+//- 
 //-
 //- ARGUMENTS:
 //- 	   buffer_handle   PARAM_IN       void
 //- 		void pointer to the allocated memory area
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //- 	 decoded_packets  PARAM_OUT t_FRAME_packet_collection
 //- 		Output vector containing the decoded data
-//- 		DEFAULT:
+//- 		DEFAULT: 
 //- 		OPTIONAL: False
 //-
 //-
@@ -7084,7 +2622,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 {
 	cbuf_handle_t cbuf;
 	cbuf = (cbuf_handle_t)buffer_handle;
-	int PacketSize =19;
+	int PacketSize =34;
 	int in_sync = 0;
 	uint64_t event_timecode = 0;
 	uint32_t ev_energy = 0;
@@ -7095,7 +2633,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 	decoded_packets->packets = NULL;
 	decoded_packets->allocated_packets = 0;
 	decoded_packets->valid_packets = 0;
-
+	
 	//check if we have elements in the circular buffer
 	int bfsize = circular_buf_size(cbuf);
 	if (bfsize < PacketSize + 1) return -1;
@@ -7113,7 +2651,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 		circular_buf_get(cbuf, &mpe);
 
 		if (in_sync == 0) {
-			if (mpe != 0x80000000 && mpe != 0x4A14A14A)
+			if (mpe != 0xIN_35)
 			{
 				continue;
 			}
@@ -7208,6 +2746,81 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 		}
 		if (in_sync == 18) {
 			temp_data.row[17]  =  mpe;
+			in_sync = 19;
+			continue;
+		}
+		if (in_sync == 19) {
+			temp_data.row[18]  =  mpe;
+			in_sync = 20;
+			continue;
+		}
+		if (in_sync == 20) {
+			temp_data.row[19]  =  mpe;
+			in_sync = 21;
+			continue;
+		}
+		if (in_sync == 21) {
+			temp_data.row[20]  =  mpe;
+			in_sync = 22;
+			continue;
+		}
+		if (in_sync == 22) {
+			temp_data.row[21]  =  mpe;
+			in_sync = 23;
+			continue;
+		}
+		if (in_sync == 23) {
+			temp_data.row[22]  =  mpe;
+			in_sync = 24;
+			continue;
+		}
+		if (in_sync == 24) {
+			temp_data.row[23]  =  mpe;
+			in_sync = 25;
+			continue;
+		}
+		if (in_sync == 25) {
+			temp_data.row[24]  =  mpe;
+			in_sync = 26;
+			continue;
+		}
+		if (in_sync == 26) {
+			temp_data.row[25]  =  mpe;
+			in_sync = 27;
+			continue;
+		}
+		if (in_sync == 27) {
+			temp_data.row[26]  =  mpe;
+			in_sync = 28;
+			continue;
+		}
+		if (in_sync == 28) {
+			temp_data.row[27]  =  mpe;
+			in_sync = 29;
+			continue;
+		}
+		if (in_sync == 29) {
+			temp_data.row[28]  =  mpe;
+			in_sync = 30;
+			continue;
+		}
+		if (in_sync == 30) {
+			temp_data.row[29]  =  mpe;
+			in_sync = 31;
+			continue;
+		}
+		if (in_sync == 31) {
+			temp_data.row[30]  =  mpe;
+			in_sync = 32;
+			continue;
+		}
+		if (in_sync == 32) {
+			temp_data.row[31]  =  mpe;
+			in_sync = 33;
+			continue;
+		}
+		if (in_sync == 33) {
+			temp_data.row[32]  =  mpe;
 			decoded_packets->packets[k].payload = malloc(sizeof(t_All_Energies_struct));
 			if (decoded_packets->packets[k].payload != NULL) {
 			    *((t_All_Energies_struct*)decoded_packets->packets[k].payload) = temp_data;
@@ -7215,7 +2828,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 			    decoded_packets->valid_packets = k;
 			}
 			if (k > decoded_packets->allocated_packets) return 0;
-
+			
 			in_sync = 0;
 			if (circular_buf_size(cbuf) >= PacketSize)
 			    continue;
@@ -7225,1196 +2838,5 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 	}
 
  return 0;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_10_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_10_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_10_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_10_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_10_STOP(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(0,SCI_REG_Spectrum_10_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_10_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_10_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_10_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_10_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_10_RESET(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_10_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_10_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_10_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_10_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_10_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_10_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_10_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_10_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_10_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_10POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_10_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_10, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_10 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_10_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_10_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_23_START
-//-
-//- Start acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_23_START(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(4,SCI_REG_Spectrum_23_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_23_STOP
-//-
-//- Stop acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_23_STOP(NI_HANDLE *handle){
-return __abstracted_reg_write(0,SCI_REG_Spectrum_23_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_23_FLUSH
-//-
-//- Flush spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_23_FLUSH(NI_HANDLE *handle)
-
-{
-return __abstracted_reg_write(1,SCI_REG_Spectrum_23_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_23_RESET
-//-
-//- RESET spectrum
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_23_RESET(NI_HANDLE *handle)
-{
-return __abstracted_reg_write(2,SCI_REG_Spectrum_23_CONFIG, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_23_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	           rebin   PARAM_IN    int32_t
-//- 		Rebin factor
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      limit_mode   PARAM_IN    int32_t
-//- 		Limit Mode: 0) No Limit, 1) Total Counts, 2) Real Time
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     limit_value   PARAM_IN    int32_t
-//- 		Limit value: in counts or in ms depends on limit mode
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_23_SET_PARAMETERS(int32_t rebin, int32_t limit_mode, int32_t limit_value, NI_HANDLE *handle){
-     int32_t limit = 0;
-     int r_rebin = __abstracted_reg_write(rebin, SCI_REG_Spectrum_23_CONFIG_REBIN, handle);
-     limit = (1 << (limit_mode + 29)) + limit_value;
-     int r_limit = __abstracted_reg_write(limit, SCI_REG_Spectrum_23_CONFIG_LIMIT, handle);
-     if (r_rebin == 0 & r_limit == 0)
-         return 0;
-     else
-         return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_23_STATUS
-//-
-//- Get Spectrum status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Stop
-//- 		1) Running
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_23_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_Spectrum_23_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- SPECTRUM_Spectrum_23_DOWNLOAD
-//-
-//- Download data from buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_Spectrum_23POSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_Spectrum_23_DOWNLOAD(data_buffer, BUFFER_SIZE_Spectrum_23, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_Spectrum_23 to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int SPECTRUM_Spectrum_23_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_Spectrum_23_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_diag_START
-//-
-//- Start Oscilloscope acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_diag_START(NI_HANDLE *handle)
-
-{
-int r1 = __abstracted_reg_write(0,SCI_REG_diag_CONFIG_ARM, handle);
-int r2 = __abstracted_reg_write(1,SCI_REG_diag_CONFIG_ARM, handle);
-if ((r1 == 0) && (r2 == 0))
-    return 0;
-else
-    return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_diag_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	       decimator   PARAM_IN    int32_t
-//- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             pre   PARAM_IN    int32_t
-//- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	software_trigger   PARAM_IN    int32_t
-//- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	  analog_trigger   PARAM_IN    int32_t
-//- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Disable
-//- 		1) Enable
-//-
-//- 	digital0_trigger   PARAM_IN    int32_t
-//- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Disable
-//- 		1) Enable
-//-
-//- 	digital1_trigger   PARAM_IN    int32_t
-//- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Disable
-//- 		1) Enable
-//-
-//- 	digital2_trigger   PARAM_IN    int32_t
-//- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Disable
-//- 		1) Enable
-//-
-//- 	digital3_trigger   PARAM_IN    int32_t
-//- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Disable
-//- 		1) Enable
-//-
-//- 	 trigger_channel   PARAM_IN    int32_t
-//- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	    trigger_edge   PARAM_IN    int32_t
-//- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Rising
-//- 		1) Falling
-//-
-//- 	   trigger_level   PARAM_IN    int32_t
-//- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_diag_SET_PARAMETERS(int32_t decimator, int32_t pre, int32_t software_trigger, int32_t analog_trigger, int32_t digital0_trigger, int32_t digital1_trigger, int32_t digital2_trigger, int32_t digital3_trigger, int32_t trigger_channel, int32_t trigger_edge, int32_t trigger_level, NI_HANDLE *handle)
-{
-int32_t triggermode = 0;
-int r_decimator = __abstracted_reg_write(decimator, SCI_REG_diag_CONFIG_DECIMATOR, handle);
-int r_pre = __abstracted_reg_write(pre, SCI_REG_diag_CONFIG_PRETRIGGER, handle);
-int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_diag_CONFIG_TRIGGER_LEVEL, handle);
-triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ;
-int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_diag_CONFIG_TRIGGER_MODE, handle);
-if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
-    return 0;
-else
-    return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_diag_STATUS
-//-
-//- Get Oscilloscope status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) No data available
-//- 		1) Data available
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_diag_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_diag_READ_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_diag_POSITION
-//-
-//- Get Oscilloscope trigger position. The trigger position indicate the position in the output buffer of each channels where the sample at t0 occureed. PRE-TRIGGER samples before t0 is the pre-trigger data.
-//-
-//- ARGUMENTS:
-//- 	        position  PARAM_OUT    int32_t
-//- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_diag_POSITION(uint32_t *position,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(position, SCI_REG_diag_READ_POSITION, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_diag_DOWNLOAD
-//-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_diagPOSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_diag_DOWNLOAD(data_buffer, BUFFER_SIZE_diag, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_diag to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_diag_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_diag_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_diag_RECONSTRUCT
-//-
-//- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//-
-//-
-//-
-//- ARGUMENTS:
-//- 	        data_osc   PARAM_IN   uint32_t
-//- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	        position   PARAM_IN   uint32_t
-//- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     pre_trigger   PARAM_IN    int32_t
-//- 		Length of the pre-trigger
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     read_analog  PARAM_OUT   uint32_t
-//- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	   read_digital0  PARAM_OUT   uint32_t
-//- 		Digital track 0 reordered
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	   read_digital1  PARAM_OUT   uint32_t
-//- 		Digital track 1 reordered
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	   read_digital2  PARAM_OUT   uint32_t
-//- 		Digital track 2 reordered
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	   read_digital3  PARAM_OUT   uint32_t
-//- 		Digital track 3 reordered
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_diag_RECONSTRUCT(uint32_t *data_osc, uint32_t position, int32_t pre_trigger, uint32_t *read_analog, uint32_t *read_digital0, uint32_t *read_digital1, uint32_t *read_digital2, uint32_t *read_digital3)
-{
-int n_ch = 4;
-int n_samples = 1024;
-if (position > n_samples) return -1;
-for(int n=0; n< n_ch; n++)
-{
-	int current = position - pre_trigger;
-	if (current > 0)
-    {
-	    int k = 0;
-	    for (int i = current; i < n_samples - 1; i++)
-        {
-		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
-		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
-		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
-		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-             k++;
-        }
-	    for (int i = 0; i < current - 1; i++)
-        {
-		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
-		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
-		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
-		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
-             k++;
-        }
-    }
-    else
-    {
-	    int k = 0;
-	    for (int i = n_samples+current; i < n_samples - 1; i++)
-        {
-		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
-		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
-		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
-		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
-             k++;
-        }
-	    for (int i = 0; i < n_samples + current - 1; i++)
-        {
-		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
-		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
-		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
-		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
-             k++;
-        }
-    }
-}
-return 0;
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_baselines_START
-//-
-//- Start Oscilloscope acquisition.
-//-
-//- ARGUMENTS:
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_baselines_START(NI_HANDLE *handle)
-
-{
-int r1 = __abstracted_reg_write(0,SCI_REG_baselines_CONFIG_ARM, handle);
-int r2 = __abstracted_reg_write(1,SCI_REG_baselines_CONFIG_ARM, handle);
-if ((r1 == 0) && (r2 == 0))
-    return 0;
-else
-    return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_baselines_SET_PARAMETERS
-//-
-//- Configure oscilloscope parameters
-//-
-//- ARGUMENTS:
-//- 	       decimator   PARAM_IN    int32_t
-//- 		Set decimator value. 0: no decimation, 1: divide by two, ...
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             pre   PARAM_IN    int32_t
-//- 		Set the length in samples of pre-trigger buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	software_trigger   PARAM_IN    int32_t
-//- 		Generate software trigger to force start acquisition (1:generate trigger)
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	  analog_trigger   PARAM_IN    int32_t
-//- 		Enable threshold trigger on analog input of selected channel
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Disable
-//- 		1) Enable
-//-
-//- 	digital0_trigger   PARAM_IN    int32_t
-//- 		Enable digital trigger on digital in 0 of selected channel
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Disable
-//- 		1) Enable
-//-
-//- 	digital1_trigger   PARAM_IN    int32_t
-//- 		Enable digital trigger on digital in 1 of selected channel
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Disable
-//- 		1) Enable
-//-
-//- 	digital2_trigger   PARAM_IN    int32_t
-//- 		Enable digital trigger on digital in 2 of selected channel
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Disable
-//- 		1) Enable
-//-
-//- 	digital3_trigger   PARAM_IN    int32_t
-//- 		Enable digital trigger on digital in 3 of selected channel
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Disable
-//- 		1) Enable
-//-
-//- 	 trigger_channel   PARAM_IN    int32_t
-//- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	    trigger_edge   PARAM_IN    int32_t
-//- 		Select channel of the oscilloscope connected to the trigger logic
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) Rising
-//- 		1) Falling
-//-
-//- 	   trigger_level   PARAM_IN    int32_t
-//- 		Level in LSB of the leading edge comparator on analog input. Use only with analog_trigger=1
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_baselines_SET_PARAMETERS(int32_t decimator, int32_t pre, int32_t software_trigger, int32_t analog_trigger, int32_t digital0_trigger, int32_t digital1_trigger, int32_t digital2_trigger, int32_t digital3_trigger, int32_t trigger_channel, int32_t trigger_edge, int32_t trigger_level, NI_HANDLE *handle)
-{
-int32_t triggermode = 0;
-int r_decimator = __abstracted_reg_write(decimator, SCI_REG_baselines_CONFIG_DECIMATOR, handle);
-int r_pre = __abstracted_reg_write(pre, SCI_REG_baselines_CONFIG_PRETRIGGER, handle);
-int r_triglevel = __abstracted_reg_write(trigger_level, SCI_REG_baselines_CONFIG_TRIGGER_LEVEL, handle);
-triggermode = (trigger_channel << 8)  + (software_trigger << 7 ) + (trigger_edge << 3) + (software_trigger << 1) + analog_trigger + (digital0_trigger << 2) + (digital1_trigger << 2) + digital1_trigger + (digital2_trigger << 2) + (digital2_trigger << 1) + (digital3_trigger << 2) + (digital3_trigger << 1) + digital3_trigger ;
-int r_triggermode = __abstracted_reg_write(triggermode, SCI_REG_baselines_CONFIG_TRIGGER_MODE, handle);
-if (r_decimator == 0 & r_pre == 0 & r_triglevel == 0 & r_triggermode == 0)
-    return 0;
-else
-    return -1;
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_baselines_STATUS
-//-
-//- Get Oscilloscope status
-//-
-//- ARGUMENTS:
-//- 	          status  PARAM_OUT    int32_t
-//- 		Return the oscilloscope status
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//- 		0) No data available
-//- 		1) Data available
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_baselines_STATUS(uint32_t *status,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(status, SCI_REG_baselines_READ_STATUS, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_baselines_POSITION
-//-
-//- Get Oscilloscope trigger position. The trigger position indicate the position in the output buffer of each channels where the sample at t0 occureed. PRE-TRIGGER samples before t0 is the pre-trigger data.
-//-
-//- ARGUMENTS:
-//- 	        position  PARAM_OUT    int32_t
-//- 		Return the trigger position in the data set in order to correct recustruct the pre-prigger and post trigger data
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_baselines_POSITION(uint32_t *position,NI_HANDLE *handle)
-{
-return __abstracted_reg_read(position, SCI_REG_baselines_READ_POSITION, handle);
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_baselines_DOWNLOAD
-//-
-//- Download data from oscilloscope buffer. Please note that downloaded data is not time ordered and the trigger position info data must be obtained using the OSCILLOSCOPE_baselinesPOSITION function
-//-
-//- USAGE:
-//-     OSCILLOSCOPE_baselines_DOWNLOAD(data_buffer, BUFFER_SIZE_baselines, 1000, handle, rd, vp);
-//-
-//-
-//- ARGUMENTS:
-//- 	             val  PARAM_OUT   uint32_t
-//- 		uint32_t buffer data with preallocated size of at list 'size' parameters + 16 word
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN       size
-//- 		number of word to download from the buffer. Use macro BUFFER_SIZE_baselines to get actual oscilloscope buffer size on FPGA
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	             val   PARAM_IN    int32_t
-//- 		timeout in ms
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	          handle PARAM_INOUT  NI_HANDLE
-//- 		Connection handle to the board
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	       read_data  PARAM_OUT    int32_t
-//- 		number of word read from the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	      valid_data  PARAM_OUT    int32_t
-//- 		number of word valid in the buffer
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_baselines_DOWNLOAD(uint32_t *val, uint32_t size, int32_t timeout, NI_HANDLE *handle, uint32_t *read_data, uint32_t *valid_data)
-{
-return __abstracted_mem_read(val, size, SCI_REG_baselines_FIFOADDRESS, timeout, handle, read_data, valid_data);
-
-}
-//-----------------------------------------------------------------
-//-
-//- OSCILLOSCOPE_baselines_RECONSTRUCT
-//-
-//- Take as input the downloaded buffer and decode the the different track for each channels. Channel order is the following: [0...1023] Channel 1, [1024...2047] Channel2
-//-
-//-
-//-
-//- ARGUMENTS:
-//- 	        data_osc   PARAM_IN   uint32_t
-//- 		uint32_t buffer containing the raw data download with the DOWNLOAD function
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	        position   PARAM_IN   uint32_t
-//- 		Position of the trigger obtained with the POSITION function
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     pre_trigger   PARAM_IN    int32_t
-//- 		Length of the pre-trigger
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	     read_analog  PARAM_OUT   uint32_t
-//- 		Analog track reordered in time. Data are encoded in unsigned data format between -32576 and 32576
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	   read_digital0  PARAM_OUT   uint32_t
-//- 		Digital track 0 reordered
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	   read_digital1  PARAM_OUT   uint32_t
-//- 		Digital track 1 reordered
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	   read_digital2  PARAM_OUT   uint32_t
-//- 		Digital track 2 reordered
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//- 	   read_digital3  PARAM_OUT   uint32_t
-//- 		Digital track 3 reordered
-//- 		DEFAULT:
-//- 		OPTIONAL: False
-//-
-//-
-//- RETURN [int]
-//- 	Return if the function has been succesfully executed
-//- 		0) Success
-//- 		-1) Error
-//-
-//-----------------------------------------------------------------
-
-SCILIB int OSCILLOSCOPE_baselines_RECONSTRUCT(uint32_t *data_osc, uint32_t position, int32_t pre_trigger, uint32_t *read_analog, uint32_t *read_digital0, uint32_t *read_digital1, uint32_t *read_digital2, uint32_t *read_digital3)
-{
-int n_ch = 24;
-int n_samples = 1024;
-if (position > n_samples) return -1;
-for(int n=0; n< n_ch; n++)
-{
-	int current = position - pre_trigger;
-	if (current > 0)
-    {
-	    int k = 0;
-	    for (int i = current; i < n_samples - 1; i++)
-        {
-		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
-		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
-		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
-		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-             k++;
-        }
-	    for (int i = 0; i < current - 1; i++)
-        {
-		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
-		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
-		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
-		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
-             k++;
-        }
-    }
-    else
-    {
-	    int k = 0;
-	    for (int i = n_samples+current; i < n_samples - 1; i++)
-        {
-		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
-		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
-		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
-		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
-             k++;
-        }
-	    for (int i = 0; i < n_samples + current - 1; i++)
-        {
-		 read_analog[k + (n_samples*n)] = data_osc[i + (n_samples*n)] & 65535;
-		 read_digital0[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 16 & 1;
-		 read_digital1[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 17 & 1;
-		 read_digital2[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 18 & 1;
-		 read_digital3[k + (n_samples*n)] = data_osc[i + (n_samples*n)] >> 19 & 1;
-             k++;
-        }
-    }
-}
-return 0;
 
 }

@@ -20,6 +20,7 @@ ANALOGOUT : out std_logic_vector(15 downto 0);
 thrsh : in std_logic_vector(15 downto 0);
 baseline : in std_logic_vector(7 downto 0);
 auto_baseline : in std_logic_vector(15 downto 0);
+trig_nodelay : out std_logic_vector(0 downto 0);
 
 		async_clk : in std_logic_vector (0 downto 0);
 		CLK_ACQ : in std_logic_vector (0 downto 0);
@@ -133,7 +134,7 @@ port Map(
 	RESET =>GlobalReset,
 	CLK =>async_clk,
 	CE =>"1",
-	POLARITY =>"0",
+	POLARITY =>U21_CONST,
 	PORT_IN =>U12_b,
 	THRESHOLD =>U15_out,
 	TRIGGER_INIB =>U5_int,
@@ -204,5 +205,6 @@ U18_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'
 U19_auto_baseline <= auto_baseline;
 U20_out_0 <= ext(U19_auto_baseline, 16) + ext(U14_thrsh, 16) ;
 U21_CONST <= conv_std_logic_vector(1,1);
+trig_nodelay <= U7_OUT;
 
 end Behavioral;

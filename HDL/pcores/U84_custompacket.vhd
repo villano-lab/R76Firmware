@@ -52,6 +52,37 @@ entity U84_custompacket is
 	IN_34 : STD_LOGIC_VECTOR(31 downto 0);
 	IN_35 : STD_LOGIC_VECTOR(31 downto 0);
 	IN_1 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_38 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_40 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_42 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_44 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_46 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_48 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_50 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_52 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_54 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_56 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_58 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_60 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_62 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_64 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_36 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_37 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_39 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_41 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_43 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_45 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_47 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_49 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_51 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_53 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_55 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_57 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_59 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_61 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_63 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_65 : STD_LOGIC_VECTOR(15 downto 0);
+	IN_66 : STD_LOGIC_VECTOR(15 downto 0);
 
 	
 	TRIG : IN STD_LOGIC_VECTOR (0 DOWNTO 0);
@@ -74,7 +105,7 @@ entity U84_custompacket is
 	);
 end;
     architecture Behavioral of  U84_custompacket  is
-    constant MaxPacketSize : integer := 19;
+    constant MaxPacketSize : integer := 34;
 	constant TotalWords : integer := memLength;
 	
 	constant busWidthWrite : integer := 32;
@@ -119,6 +150,37 @@ end;
 	signal lIN_34 : STD_LOGIC_VECTOR(31 downto 0);
 	signal lIN_35 : STD_LOGIC_VECTOR(31 downto 0);
 	signal lIN_1 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_38 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_40 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_42 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_44 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_46 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_48 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_50 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_52 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_54 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_56 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_58 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_60 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_62 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_64 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_36 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_37 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_39 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_41 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_43 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_45 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_47 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_49 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_51 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_53 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_55 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_57 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_59 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_61 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_63 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_65 : STD_LOGIC_VECTOR(15 downto 0);
+	signal lIN_66 : STD_LOGIC_VECTOR(15 downto 0);
 
 
 	signal FIFO_PORT_IN : STD_LOGIC_VECTOR (31 DOWNTO 0); 
@@ -129,7 +191,7 @@ end;
 	signal FIFO_PORT_OUT : STD_LOGIC_VECTOR (31 DOWNTO 0); 
 	signal FIFO_FLUSH : STD_LOGIC := '0';
 	
-	signal SMSI : integer range 0 to 19 + 10 := 0;
+	signal SMSI : integer range 0 to 34 + 10 := 0;
 	signal COUNTER_IN : std_logic_vector (31 downto 0);
 	signal COUNTER_IN_GLOBAL : std_logic_vector (31 downto 0);
 	signal TIMESTAMP : std_logic_vector (31 downto 0);
@@ -316,6 +378,37 @@ lIN_33 <= IN_33;
 lIN_34 <= IN_34;
 lIN_35 <= IN_35;
 lIN_1 <= IN_1;
+lIN_38 <= IN_38;
+lIN_40 <= IN_40;
+lIN_42 <= IN_42;
+lIN_44 <= IN_44;
+lIN_46 <= IN_46;
+lIN_48 <= IN_48;
+lIN_50 <= IN_50;
+lIN_52 <= IN_52;
+lIN_54 <= IN_54;
+lIN_56 <= IN_56;
+lIN_58 <= IN_58;
+lIN_60 <= IN_60;
+lIN_62 <= IN_62;
+lIN_64 <= IN_64;
+lIN_36 <= IN_36;
+lIN_37 <= IN_37;
+lIN_39 <= IN_39;
+lIN_41 <= IN_41;
+lIN_43 <= IN_43;
+lIN_45 <= IN_45;
+lIN_47 <= IN_47;
+lIN_49 <= IN_49;
+lIN_51 <= IN_51;
+lIN_53 <= IN_53;
+lIN_55 <= IN_55;
+lIN_57 <= IN_57;
+lIN_59 <= IN_59;
+lIN_61 <= IN_61;
+lIN_63 <= IN_63;
+lIN_65 <= IN_65;
+lIN_66 <= IN_66;
 
 					end if;
 						 when 1 =>
@@ -333,7 +426,7 @@ SMSI <= 3;
 		 FIFO_PORT_IN(31 downto 16) <= lIN_1(15 downto 0);
 FIFO_WE <= '1';
 SMSI <= 4;
-		 FIFO_PORT_IN(15 downto 0) <= x"c001";
+		 FIFO_PORT_IN(15 downto 0) <= lIN_66(15 downto 0);
 FIFO_WE <= '1';
 SMSI <= 4;
 		 when 4 =>
@@ -460,8 +553,128 @@ SMSI <= 19;
 		 FIFO_PORT_IN <= (others => '0');
 		 FIFO_PORT_IN(31 downto 16) <= lIN_32(15 downto 0);
 FIFO_WE <= '1';
-SMSI <= 0;
+SMSI <= 20;
 		 FIFO_PORT_IN(15 downto 0) <= lIN_33(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 20;
+		 when 20 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_36(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 21;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_37(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 21;
+		 when 21 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_38(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 22;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_39(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 22;
+		 when 22 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_40(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 23;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_41(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 23;
+		 when 23 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_42(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 24;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_43(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 24;
+		 when 24 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_44(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 25;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_45(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 25;
+		 when 25 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_46(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 26;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_47(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 26;
+		 when 26 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_48(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 27;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_49(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 27;
+		 when 27 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_50(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 28;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_51(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 28;
+		 when 28 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_52(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 29;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_53(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 29;
+		 when 29 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_54(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 30;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_55(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 30;
+		 when 30 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_56(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 31;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_57(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 31;
+		 when 31 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_58(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 32;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_59(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 32;
+		 when 32 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_60(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 33;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_61(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 33;
+		 when 33 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_62(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 34;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_63(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 34;
+		 when 34 =>
+		 FIFO_PORT_IN <= (others => '0');
+		 FIFO_PORT_IN(31 downto 16) <= lIN_64(15 downto 0);
+FIFO_WE <= '1';
+SMSI <= 0;
+		 FIFO_PORT_IN(15 downto 0) <= lIN_65(15 downto 0);
 FIFO_WE <= '1';
 SMSI <= 0;
 
