@@ -717,7 +717,7 @@ return __abstracted_reg_read(status, SCI_REG_Analog_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Analog_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Analog_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Analog_READ_POSITION, handle);
 
@@ -1078,7 +1078,7 @@ return __abstracted_reg_read(status, SCI_REG_Energies_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Energies_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Energies_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Energies_READ_POSITION, handle);
 
@@ -1439,7 +1439,7 @@ return __abstracted_reg_read(status, SCI_REG_Analog_In_Unflipped_READ_STATUS, ha
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_Analog_In_Unflipped_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_Analog_In_Unflipped_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_Analog_In_Unflipped_READ_POSITION, handle);
 
@@ -1784,7 +1784,7 @@ return __abstracted_reg_read(status, SCI_REG_diag_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_diag_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_diag_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_diag_READ_POSITION, handle);
 
@@ -2145,7 +2145,7 @@ return __abstracted_reg_read(status, SCI_REG_baselines_READ_STATUS, handle);
 //-
 //-----------------------------------------------------------------
 
-SCILIB int OSCILLOSCOPE_baselines_POSITION(int32_t *position,NI_HANDLE *handle)
+SCILIB int OSCILLOSCOPE_baselines_POSITION(uint32_t *position,NI_HANDLE *handle)
 {
 return __abstracted_reg_read(position, SCI_REG_baselines_READ_POSITION, handle);
 
@@ -2651,7 +2651,7 @@ SCILIB int CPACK_All_Energies_RECONSTRUCT_DATA(void *buffer_handle, t_generic_ev
 		circular_buf_get(cbuf, &mpe);
 
 		if (in_sync == 0) {
-			if (mpe != 0xIN_35)
+			if (mpe != 0x80000000 && mpe != 0x4A14A14A)
 			{
 				continue;
 			}

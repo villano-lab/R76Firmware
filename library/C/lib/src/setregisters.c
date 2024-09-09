@@ -322,12 +322,12 @@ int main(int argc, char* argv[]){
 
 	//set inhib
 	if(inhibflag == 1){
-		inhib_q = __abstracted_reg_write(inhib,SCI_REG_trig_inhib,&handle);
+		inhib_q = __abstracted_reg_write(int_time,SCI_REG_int_time,&handle);
 		if(inhib_q != 0){
-			printf("Error from REG_inhib_SET. Aborting.\n");
+			printf("Error setting int_time (also for trig inhibition). Aborting.\n");
 			return inhib_q;
 		}else if(verbose > 0){
-			printf("Successfully set inhib to %d.\n",inhib);
+			printf("Successfully set int time/trig inhib to %d.\n",inhib);
 		}
 	}else if(verbose > 1){
 		printf("Inhibit flag is off. Skipping.\n");

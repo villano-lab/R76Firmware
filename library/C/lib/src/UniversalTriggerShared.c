@@ -54,7 +54,7 @@ int gate_l = 10;
 float range_l = 0;
 float range_u = 8;
 float range_s = 1;
-int delay = 20;
+int delay = 5;
 int inhib = 1000;
 int baseline = 200;
 int base_auto = 9;//default behavior: measure over 2^9 clock ticks to get the baseline
@@ -388,7 +388,7 @@ uint32_t *set_thresholds(const char* side, float energy, int *thresh_q, int base
 	return thresholds;
 }
 
-uint32_t *spectra_START(uint32_t *spectra_q){
+/*uint32_t *spectra_START(uint32_t *spectra_q){
 	spectra_q[0 ] = SPECTRUM_Spectrum_0_START (&handle);
 	spectra_q[1 ] = SPECTRUM_Spectrum_1_START (&handle);
 	spectra_q[2 ] = SPECTRUM_Spectrum_2_START (&handle);
@@ -583,7 +583,7 @@ uint32_t *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, uint32_t *specre
 	SPECTRUM_Spectrum_23_DOWNLOAD(&specdat[23*17*BUFFER_SIZE],BUFFER_SIZE, timeout, &handle, &specread_q[23], &specvalid_q[23]);
 	return specdat;
 }
-
+*/
 /*int set_by_polarity(uint32_t address, int value){
 	if(polarity==0){
 		uint32_t newval = baseline - value;
