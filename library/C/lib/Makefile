@@ -87,6 +87,8 @@ rate: %: $(OutputFile) src/%.c
 	$(CXX) $(CXXFLAGS) -o rate src/rate.c $(LIBFLAGS) -lm -ldl
 packettest: %: $(OutputFile) src/%.c
 	$(CXX) $(CXXFLAGS) -o packettest src/packettest.c $(LIBFLAGS) -lm -ldl
+detval: %: $(OutputFile) src/%.c
+	$(CXX) $(CXXFLAGS) -o detval src/detval.c $(LIBFLAGS) -lm -ldl
 
 MakeIntermediateDirs:
 	@test -d ./Debug || $(MakeDirCommand) ./Debug

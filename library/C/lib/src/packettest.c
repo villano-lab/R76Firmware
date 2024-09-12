@@ -187,8 +187,8 @@ int main(int argc, char* argv[])
                             }else if(n==1){ //timestamp
                                 fprintf(logfile,"%04X",data->row[n]>>16);
                             }else{ //energy data
-                                uint16_t lower_word = (uint16_t) (data->row[n] & 0xFFFFUL);
-                                uint16_t upper_word = (uint16_t) ((data->row[n] >> 16) & 0xFFFFUL);
+                                uint16_t upper_word = (uint16_t) (data->row[n] & 0xFFFFUL);
+                                uint16_t lower_word = (uint16_t) ((data->row[n] >> 16) & 0xFFFFUL);
                                 fprintf(logfile,",%04X,%04X",(uint32_t)lower_word,(uint32_t)upper_word); //start on row 2
                             }
 			    if(n==17) fprintf(logfile,"\n");

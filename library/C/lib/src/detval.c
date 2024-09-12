@@ -7,8 +7,9 @@
 #include <unistd.h>
 #include <iostream>
 #include "UniversalTriggerShared.h" //for arguments bc i'm lazy.
+#include "Legacy/R76Firmware_lib.h"
 
-const char* program_name = "detval"
+const char* program_name = "detval";
 
 void print_usage(FILE* stream, int exit_code){
 	fprintf(stream, "Usage: %s desired-detector desired-detector desired-detector...\n",program_name);
@@ -21,6 +22,15 @@ void print_usage(FILE* stream, int exit_code){
 
 int main(int argc, char* argv[]){
 	while(iarg != -1){
-		iarg = getopt_long(argc,argv,"h?",longopts,&ind);
+		iarg = getopt_long(argc,argv,"h",longopts,&ind);
+		switch(iarg){
+		case 'h':
+			print_usage(stdout,0);
+			return 0;
+			break;
+		}
+
 	}
+
+	std::cout << argc << "arguments: " << argv << std::endl;
 }
