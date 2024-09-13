@@ -328,7 +328,7 @@ int connect_staticaddr(int verbose){
 		return (-1);
 	}else{
 		if(verbose>-1){printf("Connected.\n");};
-		if(logfile != NULL){fprintf(logfile,"Connected to board at %s\n",BOARD_IP_ADDRESS);};
+		if(logfile != NULL){fprintf(logfile,"#Connected to board at %s\n",BOARD_IP_ADDRESS);};
         return 0;
 	};
 }
