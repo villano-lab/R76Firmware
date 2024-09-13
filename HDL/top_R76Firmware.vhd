@@ -1626,361 +1626,30 @@ PORT(
 	GlobalClock: in std_logic_vector (0 downto 0);
 	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
 END COMPONENT;
-	signal U76_energy_0 : std_logic_vector(15 downto 0);
-	signal U76_valid_0 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_0 : std_logic_vector(0 downto 0);
-	signal U76_baseline_0 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_0 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_0 : std_logic_vector(0 downto 0);
-	signal U76_energy_1 : std_logic_vector(15 downto 0);
-	signal U76_valid_1 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_1 : std_logic_vector(0 downto 0);
-	signal U76_baseline_1 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_1 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_1 : std_logic_vector(0 downto 0);
-	signal U76_energy_2 : std_logic_vector(15 downto 0);
-	signal U76_valid_2 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_2 : std_logic_vector(0 downto 0);
-	signal U76_baseline_2 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_2 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_2 : std_logic_vector(0 downto 0);
-	signal U76_energy_3 : std_logic_vector(15 downto 0);
-	signal U76_valid_3 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_3 : std_logic_vector(0 downto 0);
-	signal U76_baseline_3 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_3 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_3 : std_logic_vector(0 downto 0);
-	signal U76_energy_4 : std_logic_vector(15 downto 0);
-	signal U76_valid_4 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_4 : std_logic_vector(0 downto 0);
-	signal U76_baseline_4 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_4 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_4 : std_logic_vector(0 downto 0);
-	signal U76_energy_5 : std_logic_vector(15 downto 0);
-	signal U76_valid_5 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_5 : std_logic_vector(0 downto 0);
-	signal U76_baseline_5 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_5 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_5 : std_logic_vector(0 downto 0);
-	signal U76_energy_6 : std_logic_vector(15 downto 0);
-	signal U76_valid_6 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_6 : std_logic_vector(0 downto 0);
-	signal U76_baseline_6 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_6 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_6 : std_logic_vector(0 downto 0);
-	signal U76_energy_7 : std_logic_vector(15 downto 0);
-	signal U76_valid_7 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_7 : std_logic_vector(0 downto 0);
-	signal U76_baseline_7 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_7 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_7 : std_logic_vector(0 downto 0);
-	signal U76_energy_8 : std_logic_vector(15 downto 0);
-	signal U76_valid_8 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_8 : std_logic_vector(0 downto 0);
-	signal U76_baseline_8 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_8 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_8 : std_logic_vector(0 downto 0);
-	signal U76_energy_9 : std_logic_vector(15 downto 0);
-	signal U76_valid_9 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_9 : std_logic_vector(0 downto 0);
-	signal U76_baseline_9 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_9 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_9 : std_logic_vector(0 downto 0);
-	signal U76_energy_10 : std_logic_vector(15 downto 0);
-	signal U76_valid_10 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_10 : std_logic_vector(0 downto 0);
-	signal U76_baseline_10 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_10 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_10 : std_logic_vector(0 downto 0);
-	signal U76_energy_11 : std_logic_vector(15 downto 0);
-	signal U76_valid_11 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_11 : std_logic_vector(0 downto 0);
-	signal U76_baseline_11 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_11 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_11 : std_logic_vector(0 downto 0);
-	signal U76_energy_12 : std_logic_vector(15 downto 0);
-	signal U76_valid_12 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_12 : std_logic_vector(0 downto 0);
-	signal U76_baseline_12 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_12 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_12 : std_logic_vector(0 downto 0);
-	signal U76_energy_13 : std_logic_vector(15 downto 0);
-	signal U76_valid_13 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_13 : std_logic_vector(0 downto 0);
-	signal U76_baseline_13 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_13 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_13 : std_logic_vector(0 downto 0);
-	signal U76_energy_14 : std_logic_vector(15 downto 0);
-	signal U76_valid_14 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_14 : std_logic_vector(0 downto 0);
-	signal U76_baseline_14 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_14 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_14 : std_logic_vector(0 downto 0);
-	signal U76_energy_15 : std_logic_vector(15 downto 0);
-	signal U76_valid_15 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_15 : std_logic_vector(0 downto 0);
-	signal U76_baseline_15 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_15 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_15 : std_logic_vector(0 downto 0);
-	signal U76_energy_16 : std_logic_vector(15 downto 0);
-	signal U76_valid_16 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_16 : std_logic_vector(0 downto 0);
-	signal U76_baseline_16 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_16 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_16 : std_logic_vector(0 downto 0);
-	signal U76_energy_17 : std_logic_vector(15 downto 0);
-	signal U76_valid_17 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_17 : std_logic_vector(0 downto 0);
-	signal U76_baseline_17 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_17 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_17 : std_logic_vector(0 downto 0);
-	signal U76_energy_18 : std_logic_vector(15 downto 0);
-	signal U76_valid_18 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_18 : std_logic_vector(0 downto 0);
-	signal U76_baseline_18 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_18 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_18 : std_logic_vector(0 downto 0);
-	signal U76_energy_19 : std_logic_vector(15 downto 0);
-	signal U76_valid_19 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_19 : std_logic_vector(0 downto 0);
-	signal U76_baseline_19 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_19 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_19 : std_logic_vector(0 downto 0);
-	signal U76_energy_20 : std_logic_vector(15 downto 0);
-	signal U76_valid_20 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_20 : std_logic_vector(0 downto 0);
-	signal U76_baseline_20 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_20 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_20 : std_logic_vector(0 downto 0);
-	signal U76_energy_21 : std_logic_vector(15 downto 0);
-	signal U76_valid_21 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_21 : std_logic_vector(0 downto 0);
-	signal U76_baseline_21 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_21 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_21 : std_logic_vector(0 downto 0);
-	signal U76_energy_22 : std_logic_vector(15 downto 0);
-	signal U76_valid_22 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_22 : std_logic_vector(0 downto 0);
-	signal U76_baseline_22 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_22 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_22 : std_logic_vector(0 downto 0);
-	signal U76_energy_23 : std_logic_vector(15 downto 0);
-	signal U76_valid_23 : std_logic_vector(0 downto 0);
-	signal U76_int_gate_23 : std_logic_vector(0 downto 0);
-	signal U76_baseline_23 : std_logic_vector(15 downto 0);
-	signal U76_baseline_valid_23 : std_logic_vector(0 downto 0);
-	signal U76_baseline_calculating_23 : std_logic_vector(0 downto 0);
-
-COMPONENT SUBPAGE_ChargeIntegrator
-PORT(
-	analog_in : IN std_logic_vector(15 downto 0);
-	base : IN std_logic_vector(15 downto 0);
-	energy : OUT std_logic_vector(15 downto 0);
-	valid : OUT std_logic_vector(0 downto 0);
-	int_gate : OUT std_logic_vector(0 downto 0);
-	baseline : OUT std_logic_vector(15 downto 0);
-	baseline_valid : OUT std_logic_vector(0 downto 0);
-	baseline_calculating : OUT std_logic_vector(0 downto 0);
-	scale : IN std_logic_vector(15 downto 0);
-	pre_int : IN std_logic_vector(15 downto 0);
-	trig : IN std_logic_vector(0 downto 0);
-	manual_base : IN std_logic_vector(7 downto 0);
-	int_time : IN std_logic_vector(15 downto 0);
-	GlobalReset: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-	CLK_ACQ: in std_logic_vector (0 downto 0);
-	BUS_CLK: in std_logic_vector (0 downto 0);
-	CLK_40: in std_logic_vector (0 downto 0);
-	CLK_50: in std_logic_vector (0 downto 0);
-	CLK_80: in std_logic_vector (0 downto 0);
-	clk_160: in std_logic_vector (0 downto 0);
-	clk_320: in std_logic_vector (0 downto 0);
-	clk_125: in std_logic_vector (0 downto 0);
-	FAST_CLK_100: in std_logic_vector (0 downto 0);
-	FAST_CLK_200: in std_logic_vector (0 downto 0);
-	FAST_CLK_250: in std_logic_vector (0 downto 0);
-	FAST_CLK_250_90: in std_logic_vector (0 downto 0);
-	FAST_CLK_500: in std_logic_vector (0 downto 0);
-	FAST_CLK_500_90: in std_logic_vector (0 downto 0);
-	GlobalClock: in std_logic_vector (0 downto 0);
-	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
-END COMPONENT;
-	signal U77_TRIGOUT_0 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_1 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_2 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_3 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_4 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_5 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_6 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_7 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_8 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_9 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_10 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_11 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_12 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_13 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_14 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_15 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_16 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_17 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_18 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_19 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_20 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_21 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_22 : std_logic_vector(0 downto 0);
-	signal U77_TRIGOUT_23 : std_logic_vector(0 downto 0);
-
-COMPONENT SUBPAGE_UpperTrigger
-PORT(
-	AIN : IN std_logic_vector(15 downto 0);
-	top : IN std_logic_vector(15 downto 0);
-	TRIGOUT : OUT std_logic_vector(0 downto 0);
-	gate : IN std_logic_vector(15 downto 0);
-	GlobalReset: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-	CLK_ACQ: in std_logic_vector (0 downto 0);
-	BUS_CLK: in std_logic_vector (0 downto 0);
-	CLK_40: in std_logic_vector (0 downto 0);
-	CLK_50: in std_logic_vector (0 downto 0);
-	CLK_80: in std_logic_vector (0 downto 0);
-	clk_160: in std_logic_vector (0 downto 0);
-	clk_320: in std_logic_vector (0 downto 0);
-	clk_125: in std_logic_vector (0 downto 0);
-	FAST_CLK_100: in std_logic_vector (0 downto 0);
-	FAST_CLK_200: in std_logic_vector (0 downto 0);
-	FAST_CLK_250: in std_logic_vector (0 downto 0);
-	FAST_CLK_250_90: in std_logic_vector (0 downto 0);
-	FAST_CLK_500: in std_logic_vector (0 downto 0);
-	FAST_CLK_500_90: in std_logic_vector (0 downto 0);
-	GlobalClock: in std_logic_vector (0 downto 0);
-	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
-END COMPONENT;
-	signal U78_ANALOGOUT_0 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_0 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_0 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_1 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_1 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_1 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_2 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_2 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_2 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_3 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_3 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_3 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_4 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_4 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_4 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_5 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_5 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_5 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_6 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_6 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_6 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_7 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_7 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_7 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_8 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_8 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_8 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_9 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_9 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_9 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_10 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_10 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_10 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_11 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_11 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_11 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_12 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_12 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_12 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_13 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_13 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_13 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_14 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_14 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_14 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_15 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_15 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_15 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_16 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_16 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_16 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_17 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_17 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_17 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_18 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_18 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_18 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_19 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_19 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_19 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_20 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_20 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_20 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_21 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_21 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_21 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_22 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_22 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_22 : std_logic_vector(0 downto 0);
-	signal U78_ANALOGOUT_23 : std_logic_vector(15 downto 0);
-	signal U78_TRIGOUT_23 : std_logic_vector(0 downto 0);
-	signal U78_trig_nodelay_23 : std_logic_vector(0 downto 0);
-
-COMPONENT SUBPAGE_Trigger
-PORT(
-	AIN : IN std_logic_vector(15 downto 0);
-	auto_baseline : IN std_logic_vector(15 downto 0);
-	thrsh : IN std_logic_vector(15 downto 0);
-	disable_det : IN std_logic_vector(0 downto 0);
-	ANALOGOUT : OUT std_logic_vector(15 downto 0);
-	TRIGOUT : OUT std_logic_vector(0 downto 0);
-	trig_nodelay : OUT std_logic_vector(0 downto 0);
-	inhib : IN std_logic_vector(15 downto 0);
-	baseline : IN std_logic_vector(7 downto 0);
-	gate : IN std_logic_vector(15 downto 0);
-	delay : IN std_logic_vector(15 downto 0);
-	GlobalReset: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-	CLK_ACQ: in std_logic_vector (0 downto 0);
-	BUS_CLK: in std_logic_vector (0 downto 0);
-	CLK_40: in std_logic_vector (0 downto 0);
-	CLK_50: in std_logic_vector (0 downto 0);
-	CLK_80: in std_logic_vector (0 downto 0);
-	clk_160: in std_logic_vector (0 downto 0);
-	clk_320: in std_logic_vector (0 downto 0);
-	clk_125: in std_logic_vector (0 downto 0);
-	FAST_CLK_100: in std_logic_vector (0 downto 0);
-	FAST_CLK_200: in std_logic_vector (0 downto 0);
-	FAST_CLK_250: in std_logic_vector (0 downto 0);
-	FAST_CLK_250_90: in std_logic_vector (0 downto 0);
-	FAST_CLK_500: in std_logic_vector (0 downto 0);
-	FAST_CLK_500_90: in std_logic_vector (0 downto 0);
-	GlobalClock: in std_logic_vector (0 downto 0);
-	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
-END COMPONENT;
-	signal U79_saturated_0 : std_logic_vector(0 downto 0);
-	signal U79_saturated_1 : std_logic_vector(0 downto 0);
-	signal U79_saturated_2 : std_logic_vector(0 downto 0);
-	signal U79_saturated_3 : std_logic_vector(0 downto 0);
-	signal U79_saturated_4 : std_logic_vector(0 downto 0);
-	signal U79_saturated_5 : std_logic_vector(0 downto 0);
-	signal U79_saturated_6 : std_logic_vector(0 downto 0);
-	signal U79_saturated_7 : std_logic_vector(0 downto 0);
-	signal U79_saturated_8 : std_logic_vector(0 downto 0);
-	signal U79_saturated_9 : std_logic_vector(0 downto 0);
-	signal U79_saturated_10 : std_logic_vector(0 downto 0);
-	signal U79_saturated_11 : std_logic_vector(0 downto 0);
-	signal U79_saturated_12 : std_logic_vector(0 downto 0);
-	signal U79_saturated_13 : std_logic_vector(0 downto 0);
-	signal U79_saturated_14 : std_logic_vector(0 downto 0);
-	signal U79_saturated_15 : std_logic_vector(0 downto 0);
-	signal U79_saturated_16 : std_logic_vector(0 downto 0);
-	signal U79_saturated_17 : std_logic_vector(0 downto 0);
-	signal U79_saturated_18 : std_logic_vector(0 downto 0);
-	signal U79_saturated_19 : std_logic_vector(0 downto 0);
-	signal U79_saturated_20 : std_logic_vector(0 downto 0);
-	signal U79_saturated_21 : std_logic_vector(0 downto 0);
-	signal U79_saturated_22 : std_logic_vector(0 downto 0);
-	signal U79_saturated_23 : std_logic_vector(0 downto 0);
+	signal U76_saturated_0 : std_logic_vector(0 downto 0);
+	signal U76_saturated_1 : std_logic_vector(0 downto 0);
+	signal U76_saturated_2 : std_logic_vector(0 downto 0);
+	signal U76_saturated_3 : std_logic_vector(0 downto 0);
+	signal U76_saturated_4 : std_logic_vector(0 downto 0);
+	signal U76_saturated_5 : std_logic_vector(0 downto 0);
+	signal U76_saturated_6 : std_logic_vector(0 downto 0);
+	signal U76_saturated_7 : std_logic_vector(0 downto 0);
+	signal U76_saturated_8 : std_logic_vector(0 downto 0);
+	signal U76_saturated_9 : std_logic_vector(0 downto 0);
+	signal U76_saturated_10 : std_logic_vector(0 downto 0);
+	signal U76_saturated_11 : std_logic_vector(0 downto 0);
+	signal U76_saturated_12 : std_logic_vector(0 downto 0);
+	signal U76_saturated_13 : std_logic_vector(0 downto 0);
+	signal U76_saturated_14 : std_logic_vector(0 downto 0);
+	signal U76_saturated_15 : std_logic_vector(0 downto 0);
+	signal U76_saturated_16 : std_logic_vector(0 downto 0);
+	signal U76_saturated_17 : std_logic_vector(0 downto 0);
+	signal U76_saturated_18 : std_logic_vector(0 downto 0);
+	signal U76_saturated_19 : std_logic_vector(0 downto 0);
+	signal U76_saturated_20 : std_logic_vector(0 downto 0);
+	signal U76_saturated_21 : std_logic_vector(0 downto 0);
+	signal U76_saturated_22 : std_logic_vector(0 downto 0);
+	signal U76_saturated_23 : std_logic_vector(0 downto 0);
 
 COMPONENT SUBPAGE_SaturationDetector
 PORT(
@@ -2005,18 +1674,18 @@ PORT(
 	GlobalClock: in std_logic_vector (0 downto 0);
 	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
 END COMPONENT;
-	signal U80_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
-signal U81_out : std_logic_vector(15 downto 0);
-signal U82_CONST : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
-signal U83_CONST : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
-	signal U84_BUSY : STD_LOGIC_VECTOR(0 DOWNTO 0);
-	signal U84_FIFO_FULL : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U77_OUT : STD_LOGIC_VECTOR(0 DOWNTO 0);
+signal U78_out : std_logic_vector(15 downto 0);
+signal U79_CONST : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
+signal U80_CONST : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
+	signal U81_BUSY : STD_LOGIC_VECTOR(0 DOWNTO 0);
+	signal U81_FIFO_FULL : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal BUS_All_Energies_READ_DATA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal BUS_All_Energies_VLD : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	signal REG_All_Energies_READ_STATUS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal REG_All_Energies_READ_VALID_WORDS_RD : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
-	COMPONENT U84_custompacket
+	COMPONENT U81_custompacket
 		GENERIC( 
 			memLength : INTEGER := 32768;
 			wordWidth : INTEGER := 32
@@ -2107,15 +1776,346 @@ signal U83_CONST : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
 		);
 	END COMPONENT;
 
-signal U85_gate_l : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_gate_u : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_delay : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
-signal U85_mode : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
-signal U86_out_0 : std_logic_vector(15 downto 0);
-signal U86_int : std_logic_vector(0 downto 0);
-signal U87_stamptype : STD_LOGIC_VECTOR( 1 downto 0 ) := (others => '0');
-signal U87_lemo2out : STD_LOGIC_VECTOR( 1 downto 0 ) := (others => '0');
-signal U87_divide : INTEGER := 0;
+signal U82_gate_l : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U82_gate_u : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U82_delay : STD_LOGIC_VECTOR( 15 downto 0 ) := (others => '0');
+signal U82_mode : STD_LOGIC_VECTOR( 0 downto 0 ) := (others => '0');
+signal U83_out_0 : std_logic_vector(15 downto 0);
+signal U83_int : std_logic_vector(0 downto 0);
+signal U84_stamptype : STD_LOGIC_VECTOR( 1 downto 0 ) := (others => '0');
+signal U84_lemo2out : STD_LOGIC_VECTOR( 1 downto 0 ) := (others => '0');
+signal U84_divide : INTEGER := 0;
+	signal U85_TRIGOUT_0 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_1 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_2 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_3 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_4 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_5 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_6 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_7 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_8 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_9 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_10 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_11 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_12 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_13 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_14 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_15 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_16 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_17 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_18 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_19 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_20 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_21 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_22 : std_logic_vector(0 downto 0);
+	signal U85_TRIGOUT_23 : std_logic_vector(0 downto 0);
+
+COMPONENT SUBPAGE_UpperTrigger
+PORT(
+	AIN : IN std_logic_vector(15 downto 0);
+	top : IN std_logic_vector(15 downto 0);
+	TRIGOUT : OUT std_logic_vector(0 downto 0);
+	gate : IN std_logic_vector(15 downto 0);
+	GlobalReset: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+	CLK_ACQ: in std_logic_vector (0 downto 0);
+	BUS_CLK: in std_logic_vector (0 downto 0);
+	CLK_40: in std_logic_vector (0 downto 0);
+	CLK_50: in std_logic_vector (0 downto 0);
+	CLK_80: in std_logic_vector (0 downto 0);
+	clk_160: in std_logic_vector (0 downto 0);
+	clk_320: in std_logic_vector (0 downto 0);
+	clk_125: in std_logic_vector (0 downto 0);
+	FAST_CLK_100: in std_logic_vector (0 downto 0);
+	FAST_CLK_200: in std_logic_vector (0 downto 0);
+	FAST_CLK_250: in std_logic_vector (0 downto 0);
+	FAST_CLK_250_90: in std_logic_vector (0 downto 0);
+	FAST_CLK_500: in std_logic_vector (0 downto 0);
+	FAST_CLK_500_90: in std_logic_vector (0 downto 0);
+	GlobalClock: in std_logic_vector (0 downto 0);
+	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
+END COMPONENT;
+	signal U86_ANALOGOUT_0 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_0 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_0 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_1 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_1 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_1 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_2 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_2 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_2 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_3 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_3 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_3 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_4 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_4 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_4 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_5 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_5 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_5 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_6 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_6 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_6 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_7 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_7 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_7 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_8 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_8 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_8 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_9 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_9 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_9 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_10 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_10 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_10 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_11 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_11 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_11 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_12 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_12 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_12 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_13 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_13 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_13 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_14 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_14 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_14 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_15 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_15 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_15 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_16 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_16 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_16 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_17 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_17 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_17 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_18 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_18 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_18 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_19 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_19 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_19 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_20 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_20 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_20 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_21 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_21 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_21 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_22 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_22 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_22 : std_logic_vector(0 downto 0);
+	signal U86_ANALOGOUT_23 : std_logic_vector(15 downto 0);
+	signal U86_TRIGOUT_23 : std_logic_vector(0 downto 0);
+	signal U86_trig_nodelay_23 : std_logic_vector(0 downto 0);
+
+COMPONENT SUBPAGE_Trigger
+PORT(
+	AIN : IN std_logic_vector(15 downto 0);
+	auto_baseline : IN std_logic_vector(15 downto 0);
+	thrsh : IN std_logic_vector(15 downto 0);
+	disable_det : IN std_logic_vector(0 downto 0);
+	ANALOGOUT : OUT std_logic_vector(15 downto 0);
+	TRIGOUT : OUT std_logic_vector(0 downto 0);
+	trig_nodelay : OUT std_logic_vector(0 downto 0);
+	inhib : IN std_logic_vector(15 downto 0);
+	baseline : IN std_logic_vector(7 downto 0);
+	gate : IN std_logic_vector(15 downto 0);
+	delay : IN std_logic_vector(15 downto 0);
+	GlobalReset: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+	CLK_ACQ: in std_logic_vector (0 downto 0);
+	BUS_CLK: in std_logic_vector (0 downto 0);
+	CLK_40: in std_logic_vector (0 downto 0);
+	CLK_50: in std_logic_vector (0 downto 0);
+	CLK_80: in std_logic_vector (0 downto 0);
+	clk_160: in std_logic_vector (0 downto 0);
+	clk_320: in std_logic_vector (0 downto 0);
+	clk_125: in std_logic_vector (0 downto 0);
+	FAST_CLK_100: in std_logic_vector (0 downto 0);
+	FAST_CLK_200: in std_logic_vector (0 downto 0);
+	FAST_CLK_250: in std_logic_vector (0 downto 0);
+	FAST_CLK_250_90: in std_logic_vector (0 downto 0);
+	FAST_CLK_500: in std_logic_vector (0 downto 0);
+	FAST_CLK_500_90: in std_logic_vector (0 downto 0);
+	GlobalClock: in std_logic_vector (0 downto 0);
+	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
+END COMPONENT;
+	signal U87_energy_0 : std_logic_vector(15 downto 0);
+	signal U87_valid_0 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_0 : std_logic_vector(0 downto 0);
+	signal U87_baseline_0 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_0 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_0 : std_logic_vector(0 downto 0);
+	signal U87_energy_1 : std_logic_vector(15 downto 0);
+	signal U87_valid_1 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_1 : std_logic_vector(0 downto 0);
+	signal U87_baseline_1 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_1 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_1 : std_logic_vector(0 downto 0);
+	signal U87_energy_2 : std_logic_vector(15 downto 0);
+	signal U87_valid_2 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_2 : std_logic_vector(0 downto 0);
+	signal U87_baseline_2 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_2 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_2 : std_logic_vector(0 downto 0);
+	signal U87_energy_3 : std_logic_vector(15 downto 0);
+	signal U87_valid_3 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_3 : std_logic_vector(0 downto 0);
+	signal U87_baseline_3 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_3 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_3 : std_logic_vector(0 downto 0);
+	signal U87_energy_4 : std_logic_vector(15 downto 0);
+	signal U87_valid_4 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_4 : std_logic_vector(0 downto 0);
+	signal U87_baseline_4 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_4 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_4 : std_logic_vector(0 downto 0);
+	signal U87_energy_5 : std_logic_vector(15 downto 0);
+	signal U87_valid_5 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_5 : std_logic_vector(0 downto 0);
+	signal U87_baseline_5 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_5 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_5 : std_logic_vector(0 downto 0);
+	signal U87_energy_6 : std_logic_vector(15 downto 0);
+	signal U87_valid_6 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_6 : std_logic_vector(0 downto 0);
+	signal U87_baseline_6 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_6 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_6 : std_logic_vector(0 downto 0);
+	signal U87_energy_7 : std_logic_vector(15 downto 0);
+	signal U87_valid_7 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_7 : std_logic_vector(0 downto 0);
+	signal U87_baseline_7 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_7 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_7 : std_logic_vector(0 downto 0);
+	signal U87_energy_8 : std_logic_vector(15 downto 0);
+	signal U87_valid_8 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_8 : std_logic_vector(0 downto 0);
+	signal U87_baseline_8 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_8 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_8 : std_logic_vector(0 downto 0);
+	signal U87_energy_9 : std_logic_vector(15 downto 0);
+	signal U87_valid_9 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_9 : std_logic_vector(0 downto 0);
+	signal U87_baseline_9 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_9 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_9 : std_logic_vector(0 downto 0);
+	signal U87_energy_10 : std_logic_vector(15 downto 0);
+	signal U87_valid_10 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_10 : std_logic_vector(0 downto 0);
+	signal U87_baseline_10 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_10 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_10 : std_logic_vector(0 downto 0);
+	signal U87_energy_11 : std_logic_vector(15 downto 0);
+	signal U87_valid_11 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_11 : std_logic_vector(0 downto 0);
+	signal U87_baseline_11 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_11 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_11 : std_logic_vector(0 downto 0);
+	signal U87_energy_12 : std_logic_vector(15 downto 0);
+	signal U87_valid_12 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_12 : std_logic_vector(0 downto 0);
+	signal U87_baseline_12 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_12 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_12 : std_logic_vector(0 downto 0);
+	signal U87_energy_13 : std_logic_vector(15 downto 0);
+	signal U87_valid_13 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_13 : std_logic_vector(0 downto 0);
+	signal U87_baseline_13 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_13 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_13 : std_logic_vector(0 downto 0);
+	signal U87_energy_14 : std_logic_vector(15 downto 0);
+	signal U87_valid_14 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_14 : std_logic_vector(0 downto 0);
+	signal U87_baseline_14 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_14 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_14 : std_logic_vector(0 downto 0);
+	signal U87_energy_15 : std_logic_vector(15 downto 0);
+	signal U87_valid_15 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_15 : std_logic_vector(0 downto 0);
+	signal U87_baseline_15 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_15 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_15 : std_logic_vector(0 downto 0);
+	signal U87_energy_16 : std_logic_vector(15 downto 0);
+	signal U87_valid_16 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_16 : std_logic_vector(0 downto 0);
+	signal U87_baseline_16 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_16 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_16 : std_logic_vector(0 downto 0);
+	signal U87_energy_17 : std_logic_vector(15 downto 0);
+	signal U87_valid_17 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_17 : std_logic_vector(0 downto 0);
+	signal U87_baseline_17 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_17 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_17 : std_logic_vector(0 downto 0);
+	signal U87_energy_18 : std_logic_vector(15 downto 0);
+	signal U87_valid_18 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_18 : std_logic_vector(0 downto 0);
+	signal U87_baseline_18 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_18 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_18 : std_logic_vector(0 downto 0);
+	signal U87_energy_19 : std_logic_vector(15 downto 0);
+	signal U87_valid_19 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_19 : std_logic_vector(0 downto 0);
+	signal U87_baseline_19 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_19 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_19 : std_logic_vector(0 downto 0);
+	signal U87_energy_20 : std_logic_vector(15 downto 0);
+	signal U87_valid_20 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_20 : std_logic_vector(0 downto 0);
+	signal U87_baseline_20 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_20 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_20 : std_logic_vector(0 downto 0);
+	signal U87_energy_21 : std_logic_vector(15 downto 0);
+	signal U87_valid_21 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_21 : std_logic_vector(0 downto 0);
+	signal U87_baseline_21 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_21 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_21 : std_logic_vector(0 downto 0);
+	signal U87_energy_22 : std_logic_vector(15 downto 0);
+	signal U87_valid_22 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_22 : std_logic_vector(0 downto 0);
+	signal U87_baseline_22 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_22 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_22 : std_logic_vector(0 downto 0);
+	signal U87_energy_23 : std_logic_vector(15 downto 0);
+	signal U87_valid_23 : std_logic_vector(0 downto 0);
+	signal U87_int_gate_23 : std_logic_vector(0 downto 0);
+	signal U87_baseline_23 : std_logic_vector(15 downto 0);
+	signal U87_baseline_valid_23 : std_logic_vector(0 downto 0);
+	signal U87_baseline_calculating_23 : std_logic_vector(0 downto 0);
+
+COMPONENT SUBPAGE_ChargeIntegrator
+PORT(
+	analog_in : IN std_logic_vector(15 downto 0);
+	base : IN std_logic_vector(15 downto 0);
+	energy : OUT std_logic_vector(15 downto 0);
+	valid : OUT std_logic_vector(0 downto 0);
+	int_gate : OUT std_logic_vector(0 downto 0);
+	baseline : OUT std_logic_vector(15 downto 0);
+	baseline_valid : OUT std_logic_vector(0 downto 0);
+	baseline_calculating : OUT std_logic_vector(0 downto 0);
+	scale : IN std_logic_vector(15 downto 0);
+	pre_int : IN std_logic_vector(15 downto 0);
+	trig : IN std_logic_vector(0 downto 0);
+	manual_base : IN std_logic_vector(7 downto 0);
+	int_time : IN std_logic_vector(15 downto 0);
+	GlobalReset: IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+	CLK_ACQ: in std_logic_vector (0 downto 0);
+	BUS_CLK: in std_logic_vector (0 downto 0);
+	CLK_40: in std_logic_vector (0 downto 0);
+	CLK_50: in std_logic_vector (0 downto 0);
+	CLK_80: in std_logic_vector (0 downto 0);
+	clk_160: in std_logic_vector (0 downto 0);
+	clk_320: in std_logic_vector (0 downto 0);
+	clk_125: in std_logic_vector (0 downto 0);
+	FAST_CLK_100: in std_logic_vector (0 downto 0);
+	FAST_CLK_200: in std_logic_vector (0 downto 0);
+	FAST_CLK_250: in std_logic_vector (0 downto 0);
+	FAST_CLK_250_90: in std_logic_vector (0 downto 0);
+	FAST_CLK_500: in std_logic_vector (0 downto 0);
+	FAST_CLK_500_90: in std_logic_vector (0 downto 0);
+	GlobalClock: in std_logic_vector (0 downto 0);
+	async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0));
+END COMPONENT;
 	signal BUS_Energies_READ_ADDRESS : STD_LOGIC_VECTOR(14 downto 0);
 	signal BUS_Energies_WRITE_DATA : STD_LOGIC_VECTOR(31 downto 0);
 	signal BUS_Energies_W_INT : STD_LOGIC_VECTOR(0 downto 0);
@@ -3561,13 +3561,13 @@ U20_A20 <= CHA20;
 U21_A21 <= CHA21;
 U22_A22 <= CHA22;
 U23_A23 <= CHA23;
-U24_OUT <= U77_TRIGOUT_0 OR U77_TRIGOUT_1 OR U77_TRIGOUT_2 OR U77_TRIGOUT_3 OR U77_TRIGOUT_4 OR U77_TRIGOUT_5 OR U77_TRIGOUT_6 OR U77_TRIGOUT_7 OR U77_TRIGOUT_8 OR U77_TRIGOUT_9 OR U77_TRIGOUT_10 OR U77_TRIGOUT_11 OR U77_TRIGOUT_12 OR U77_TRIGOUT_13 OR U77_TRIGOUT_14 OR U77_TRIGOUT_15 OR U77_TRIGOUT_16 OR U77_TRIGOUT_17 OR U77_TRIGOUT_18 OR U77_TRIGOUT_19 OR U77_TRIGOUT_20 OR U77_TRIGOUT_21 OR U77_TRIGOUT_22 OR U77_TRIGOUT_23;
+U24_OUT <= U85_TRIGOUT_0 OR U85_TRIGOUT_1 OR U85_TRIGOUT_2 OR U85_TRIGOUT_3 OR U85_TRIGOUT_4 OR U85_TRIGOUT_5 OR U85_TRIGOUT_6 OR U85_TRIGOUT_7 OR U85_TRIGOUT_8 OR U85_TRIGOUT_9 OR U85_TRIGOUT_10 OR U85_TRIGOUT_11 OR U85_TRIGOUT_12 OR U85_TRIGOUT_13 OR U85_TRIGOUT_14 OR U85_TRIGOUT_15 OR U85_TRIGOUT_16 OR U85_TRIGOUT_17 OR U85_TRIGOUT_18 OR U85_TRIGOUT_19 OR U85_TRIGOUT_20 OR U85_TRIGOUT_21 OR U85_TRIGOUT_22 OR U85_TRIGOUT_23;
 U25_OUT <= U28_OUT AND ( NOT sxt(U24_OUT,1));
 U26_int <= INT_reset_WR;
 U26_out_0 <= REG_reset_WR(0 downto 0);
 REG_reset_RD  <= REG_reset_WR;
-U27_out_0 <= U78_TRIGOUT_23 & U78_TRIGOUT_22 & U78_TRIGOUT_21 & U78_TRIGOUT_20 & U78_TRIGOUT_19 & U78_TRIGOUT_18 & U78_TRIGOUT_17 & U78_TRIGOUT_16 & U78_TRIGOUT_15 & U78_TRIGOUT_14 & U78_TRIGOUT_13 & U78_TRIGOUT_12 & U78_TRIGOUT_11 & U78_TRIGOUT_10 & U78_TRIGOUT_9 & U78_TRIGOUT_8 & U78_TRIGOUT_7 & U78_TRIGOUT_6 & U78_TRIGOUT_5 & U78_TRIGOUT_4 & U78_TRIGOUT_3 & U78_TRIGOUT_2 & U78_TRIGOUT_1 & U78_TRIGOUT_0 ;
-U28_OUT <= U78_TRIGOUT_0 OR U78_TRIGOUT_1 OR U78_TRIGOUT_2 OR U78_TRIGOUT_3 OR U78_TRIGOUT_4 OR U78_TRIGOUT_5 OR U78_TRIGOUT_6 OR U78_TRIGOUT_7 OR U78_TRIGOUT_8 OR U78_TRIGOUT_9 OR U78_TRIGOUT_10 OR U78_TRIGOUT_11 OR U78_TRIGOUT_12 OR U78_TRIGOUT_13 OR U78_TRIGOUT_14 OR U78_TRIGOUT_15 OR U78_TRIGOUT_16 OR U78_TRIGOUT_17 OR U78_TRIGOUT_18 OR U78_TRIGOUT_19 OR U78_TRIGOUT_20 OR U78_TRIGOUT_21 OR U78_TRIGOUT_22 OR U78_TRIGOUT_23 OR "0" OR "0" OR "0" OR "0" OR "0" OR "0" OR "0" OR "0";
+U27_out_0 <= U86_TRIGOUT_23 & U86_TRIGOUT_22 & U86_TRIGOUT_21 & U86_TRIGOUT_20 & U86_TRIGOUT_19 & U86_TRIGOUT_18 & U86_TRIGOUT_17 & U86_TRIGOUT_16 & U86_TRIGOUT_15 & U86_TRIGOUT_14 & U86_TRIGOUT_13 & U86_TRIGOUT_12 & U86_TRIGOUT_11 & U86_TRIGOUT_10 & U86_TRIGOUT_9 & U86_TRIGOUT_8 & U86_TRIGOUT_7 & U86_TRIGOUT_6 & U86_TRIGOUT_5 & U86_TRIGOUT_4 & U86_TRIGOUT_3 & U86_TRIGOUT_2 & U86_TRIGOUT_1 & U86_TRIGOUT_0 ;
+U28_OUT <= U86_TRIGOUT_0 OR U86_TRIGOUT_1 OR U86_TRIGOUT_2 OR U86_TRIGOUT_3 OR U86_TRIGOUT_4 OR U86_TRIGOUT_5 OR U86_TRIGOUT_6 OR U86_TRIGOUT_7 OR U86_TRIGOUT_8 OR U86_TRIGOUT_9 OR U86_TRIGOUT_10 OR U86_TRIGOUT_11 OR U86_TRIGOUT_12 OR U86_TRIGOUT_13 OR U86_TRIGOUT_14 OR U86_TRIGOUT_15 OR U86_TRIGOUT_16 OR U86_TRIGOUT_17 OR U86_TRIGOUT_18 OR U86_TRIGOUT_19 OR U86_TRIGOUT_20 OR U86_TRIGOUT_21 OR U86_TRIGOUT_22 OR U86_TRIGOUT_23 OR "0" OR "0" OR "0" OR "0" OR "0" OR "0" OR "0" OR "0";
 PROCESS_REG_U29 : process(BUS_CLK,GlobalReset)
 begin
     if rising_edge(BUS_CLK(0)) and U44_out = "1" then
@@ -3591,10 +3591,10 @@ U31_out <= ext(U27_out_0 , 32);
 PROCESS_REG_U32 : process(BUS_CLK,GlobalReset)
 begin
     if rising_edge(BUS_CLK(0))  then
-         U32_hold <= EXT(U84_FIFO_FULL,32);
+         U32_hold <= EXT(U81_FIFO_FULL,32);
     end if;
 end process;
-REG_full_RD <= EXT(U84_FIFO_FULL,32);
+REG_full_RD <= EXT(U81_FIFO_FULL,32);
 SYNC_0_OUT <= U44_out;
 
 	U34_clk <= FAST_CLK_100;
@@ -3602,7 +3602,7 @@ U35_out <= U30_TIMESTAMP(15 downto 0);
 
 U36 : block
 begin
-U36_out <= U35_out when U87_stamptype = "00" else U37_out when U87_stamptype = "01" else U86_out_0 when U87_stamptype = "10" else U57_out when U87_stamptype = "11"  else U57_out;
+U36_out <= U35_out when U84_stamptype = "00" else U37_out when U84_stamptype = "01" else U83_out_0 when U84_stamptype = "10" else U57_out when U84_stamptype = "11"  else U57_out;
 
 end block;
 U37_out <= U30_TIMESTAMP(31 downto 16);
@@ -3645,17 +3645,17 @@ U41_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'
 
 U44 : block
 begin
-U44_out <= U25_OUT when U85_mode = "0" else U86_int when U85_mode = "1"  else U86_int;
+U44_out <= U25_OUT when U82_mode = "0" else U83_int when U82_mode = "1"  else U83_int;
 
 end block;
 U45_CONST <= conv_std_logic_vector(1,1);
 
 U46 : block
 begin
-U46_out <= U44_out when U87_lemo2out = "00" else U60_FMData_Out when U87_lemo2out = "01" else U64_out when U87_lemo2out = "10" else U64_out when U87_lemo2out = "11"  else U64_out;
+U46_out <= U44_out when U84_lemo2out = "00" else U60_FMData_Out when U84_lemo2out = "01" else U64_out when U84_lemo2out = "10" else U64_out when U84_lemo2out = "11"  else U64_out;
 
 end block;
-U47_OUT <= U76_valid_0 AND U76_valid_1 AND U76_valid_2 AND U76_valid_3 AND U76_valid_4 AND U76_valid_5 AND U76_valid_6 AND U76_valid_7 AND U76_valid_8 AND U76_valid_9 AND U76_valid_10 AND U76_valid_11 AND U76_valid_12 AND U76_valid_13 AND U76_valid_14 AND U76_valid_15 AND U76_valid_16 AND U76_valid_17 AND U76_valid_18 AND U76_valid_19 AND U76_valid_20 AND U76_valid_21 AND U76_valid_22 AND U76_valid_23 AND U45_CONST AND U45_CONST AND U45_CONST AND U45_CONST AND U45_CONST AND U45_CONST AND U45_CONST AND U45_CONST;
+U47_OUT <= U87_valid_0 AND U87_valid_1 AND U87_valid_2 AND U87_valid_3 AND U87_valid_4 AND U87_valid_5 AND U87_valid_6 AND U87_valid_7 AND U87_valid_8 AND U87_valid_9 AND U87_valid_10 AND U87_valid_11 AND U87_valid_12 AND U87_valid_13 AND U87_valid_14 AND U87_valid_15 AND U87_valid_16 AND U87_valid_17 AND U87_valid_18 AND U87_valid_19 AND U87_valid_20 AND U87_valid_21 AND U87_valid_22 AND U87_valid_23 AND U45_CONST AND U45_CONST AND U45_CONST AND U45_CONST AND U45_CONST AND U45_CONST AND U45_CONST AND U45_CONST;
 
 	U48 : MCRateMeter
 	Generic map(
@@ -3681,9 +3681,9 @@ U47_OUT <= U76_valid_0 AND U76_valid_1 AND U76_valid_2 AND U76_valid_3 AND U76_v
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ANALOG => U78_ANALOGOUT_23 & U78_ANALOGOUT_22 & U78_ANALOGOUT_21 & U78_ANALOGOUT_20 & U78_ANALOGOUT_19 & U78_ANALOGOUT_18 & U78_ANALOGOUT_17 & U78_ANALOGOUT_16 & U78_ANALOGOUT_15 & U78_ANALOGOUT_14 & U78_ANALOGOUT_13 & U78_ANALOGOUT_12 & U78_ANALOGOUT_11 & U78_ANALOGOUT_10 & U78_ANALOGOUT_9 & U78_ANALOGOUT_8 & U78_ANALOGOUT_7 & U78_ANALOGOUT_6 & U78_ANALOGOUT_5 & U78_ANALOGOUT_4 & U78_ANALOGOUT_3 & U78_ANALOGOUT_2 & U78_ANALOGOUT_1 & U78_ANALOGOUT_0,
-		D0 => U78_TRIGOUT_23 & U78_TRIGOUT_22 & U78_TRIGOUT_21 & U78_TRIGOUT_20 & U78_TRIGOUT_19 & U78_TRIGOUT_18 & U78_TRIGOUT_17 & U78_TRIGOUT_16 & U78_TRIGOUT_15 & U78_TRIGOUT_14 & U78_TRIGOUT_13 & U78_TRIGOUT_12 & U78_TRIGOUT_11 & U78_TRIGOUT_10 & U78_TRIGOUT_9 & U78_TRIGOUT_8 & U78_TRIGOUT_7 & U78_TRIGOUT_6 & U78_TRIGOUT_5 & U78_TRIGOUT_4 & U78_TRIGOUT_3 & U78_TRIGOUT_2 & U78_TRIGOUT_1 & U78_TRIGOUT_0,
-		D1 => U77_TRIGOUT_23 & U77_TRIGOUT_22 & U77_TRIGOUT_21 & U77_TRIGOUT_20 & U77_TRIGOUT_19 & U77_TRIGOUT_18 & U77_TRIGOUT_17 & U77_TRIGOUT_16 & U77_TRIGOUT_15 & U77_TRIGOUT_14 & U77_TRIGOUT_13 & U77_TRIGOUT_12 & U77_TRIGOUT_11 & U77_TRIGOUT_10 & U77_TRIGOUT_9 & U77_TRIGOUT_8 & U77_TRIGOUT_7 & U77_TRIGOUT_6 & U77_TRIGOUT_5 & U77_TRIGOUT_4 & U77_TRIGOUT_3 & U77_TRIGOUT_2 & U77_TRIGOUT_1 & U77_TRIGOUT_0,
+		ANALOG => U86_ANALOGOUT_23 & U86_ANALOGOUT_22 & U86_ANALOGOUT_21 & U86_ANALOGOUT_20 & U86_ANALOGOUT_19 & U86_ANALOGOUT_18 & U86_ANALOGOUT_17 & U86_ANALOGOUT_16 & U86_ANALOGOUT_15 & U86_ANALOGOUT_14 & U86_ANALOGOUT_13 & U86_ANALOGOUT_12 & U86_ANALOGOUT_11 & U86_ANALOGOUT_10 & U86_ANALOGOUT_9 & U86_ANALOGOUT_8 & U86_ANALOGOUT_7 & U86_ANALOGOUT_6 & U86_ANALOGOUT_5 & U86_ANALOGOUT_4 & U86_ANALOGOUT_3 & U86_ANALOGOUT_2 & U86_ANALOGOUT_1 & U86_ANALOGOUT_0,
+		D0 => U86_TRIGOUT_23 & U86_TRIGOUT_22 & U86_TRIGOUT_21 & U86_TRIGOUT_20 & U86_TRIGOUT_19 & U86_TRIGOUT_18 & U86_TRIGOUT_17 & U86_TRIGOUT_16 & U86_TRIGOUT_15 & U86_TRIGOUT_14 & U86_TRIGOUT_13 & U86_TRIGOUT_12 & U86_TRIGOUT_11 & U86_TRIGOUT_10 & U86_TRIGOUT_9 & U86_TRIGOUT_8 & U86_TRIGOUT_7 & U86_TRIGOUT_6 & U86_TRIGOUT_5 & U86_TRIGOUT_4 & U86_TRIGOUT_3 & U86_TRIGOUT_2 & U86_TRIGOUT_1 & U86_TRIGOUT_0,
+		D1 => U85_TRIGOUT_23 & U85_TRIGOUT_22 & U85_TRIGOUT_21 & U85_TRIGOUT_20 & U85_TRIGOUT_19 & U85_TRIGOUT_18 & U85_TRIGOUT_17 & U85_TRIGOUT_16 & U85_TRIGOUT_15 & U85_TRIGOUT_14 & U85_TRIGOUT_13 & U85_TRIGOUT_12 & U85_TRIGOUT_11 & U85_TRIGOUT_10 & U85_TRIGOUT_9 & U85_TRIGOUT_8 & U85_TRIGOUT_7 & U85_TRIGOUT_6 & U85_TRIGOUT_5 & U85_TRIGOUT_4 & U85_TRIGOUT_3 & U85_TRIGOUT_2 & U85_TRIGOUT_1 & U85_TRIGOUT_0,
 		D2 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		D3 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		TRIG => U44_out,
@@ -3712,9 +3712,9 @@ U47_OUT <= U76_valid_0 AND U76_valid_1 AND U76_valid_2 AND U76_valid_3 AND U76_v
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ANALOG => U76_energy_23 & U76_energy_22 & U76_energy_21 & U76_energy_20 & U76_energy_19 & U76_energy_18 & U76_energy_17 & U76_energy_16 & U76_energy_15 & U76_energy_14 & U76_energy_13 & U76_energy_12 & U76_energy_11 & U76_energy_10 & U76_energy_9 & U76_energy_8 & U76_energy_7 & U76_energy_6 & U76_energy_5 & x"0000" & U76_energy_3 & U76_energy_2 & U76_energy_1 & U76_energy_0,
-		D0 => U76_valid_23 & U76_valid_22 & U76_valid_21 & U76_valid_20 & U76_valid_19 & U76_valid_18 & U76_valid_17 & U76_valid_16 & U76_valid_15 & U76_valid_14 & U76_valid_13 & U76_valid_12 & U76_valid_11 & U76_valid_10 & U76_valid_9 & U76_valid_8 & U76_valid_7 & U76_valid_6 & U76_valid_5 & U76_valid_4 & U76_valid_3 & U76_valid_2 & U76_valid_1 & U76_valid_0,
-		D1 => U76_int_gate_23 & U76_int_gate_22 & U76_int_gate_21 & U76_int_gate_20 & U76_int_gate_19 & U76_int_gate_18 & U76_int_gate_17 & U76_int_gate_16 & U76_int_gate_15 & U76_int_gate_14 & U76_int_gate_13 & U76_int_gate_12 & U76_int_gate_11 & U76_int_gate_10 & U76_int_gate_9 & U76_int_gate_8 & U76_int_gate_7 & U76_int_gate_6 & U76_int_gate_5 & U76_int_gate_4 & U76_int_gate_3 & U76_int_gate_2 & U76_int_gate_1 & U76_int_gate_0,
+		ANALOG => U87_energy_23 & U87_energy_22 & U87_energy_21 & U87_energy_20 & U87_energy_19 & U87_energy_18 & U87_energy_17 & U87_energy_16 & U87_energy_15 & U87_energy_14 & U87_energy_13 & U87_energy_12 & U87_energy_11 & U87_energy_10 & U87_energy_9 & U87_energy_8 & U87_energy_7 & U87_energy_6 & U87_energy_5 & x"0000" & U87_energy_3 & U87_energy_2 & U87_energy_1 & U87_energy_0,
+		D0 => U87_valid_23 & U87_valid_22 & U87_valid_21 & U87_valid_20 & U87_valid_19 & U87_valid_18 & U87_valid_17 & U87_valid_16 & U87_valid_15 & U87_valid_14 & U87_valid_13 & U87_valid_12 & U87_valid_11 & U87_valid_10 & U87_valid_9 & U87_valid_8 & U87_valid_7 & U87_valid_6 & U87_valid_5 & U87_valid_4 & U87_valid_3 & U87_valid_2 & U87_valid_1 & U87_valid_0,
+		D1 => U87_int_gate_23 & U87_int_gate_22 & U87_int_gate_21 & U87_int_gate_20 & U87_int_gate_19 & U87_int_gate_18 & U87_int_gate_17 & U87_int_gate_16 & U87_int_gate_15 & U87_int_gate_14 & U87_int_gate_13 & U87_int_gate_12 & U87_int_gate_11 & U87_int_gate_10 & U87_int_gate_9 & U87_int_gate_8 & U87_int_gate_7 & U87_int_gate_6 & U87_int_gate_5 & U87_int_gate_4 & U87_int_gate_3 & U87_int_gate_2 & U87_int_gate_1 & U87_int_gate_0,
 		D2 => U75_ready_23 & U75_ready_22 & U75_ready_21 & U75_ready_20 & U75_ready_19 & U75_ready_18 & U75_ready_17 & U75_ready_16 & U75_ready_15 & U75_ready_14 & U75_ready_13 & U75_ready_12 & U75_ready_11 & U75_ready_10 & U75_ready_9 & U75_ready_8 & U75_ready_7 & U75_ready_6 & U75_ready_5 & U75_ready_4 & U75_ready_3 & U75_ready_2 & U75_ready_1 & U75_ready_0,
 		D3 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		TRIG => U44_out,
@@ -3899,7 +3899,7 @@ PORT MAP(
     RESET => GlobalReset,
     CE => "1",
     PORT_IN => U34_clk,
-    PORT_SCALE => U87_divide,
+    PORT_SCALE => U84_divide,
     PORT_OUT => U64_out
 );
 
@@ -3913,7 +3913,7 @@ PORT MAP(
 		ANALOG => x"0000" & U70_out & U71_out & U51_out,
 		D0 => "0" & U64_out & U60_FMData_Out & U46_out,
 		D1 => U47_OUT & U24_OUT & U28_OUT & U44_out,
-		D2 => U84_FIFO_FULL & U84_BUSY & "0" & "0",
+		D2 => U81_FIFO_FULL & U81_BUSY & "0" & "0",
 		D3 => "0" & "0" & U42_OUT & U60_Tx_Done,
 		TRIG => U44_out,
 		BUSY => open,
@@ -3967,9 +3967,9 @@ U68_CH23 <= REG_base_CH23_WR( 15 downto 0 );
 		wordWidth => 	16
 	)
 	PORT MAP(
-		ANALOG => U76_baseline_23 & U76_baseline_22 & U76_baseline_21 & U76_baseline_20 & U76_baseline_19 & U76_baseline_18 & U76_baseline_17 & U76_baseline_16 & U76_baseline_15 & U76_baseline_14 & U76_baseline_13 & U76_baseline_12 & U76_baseline_11 & U76_baseline_10 & U76_baseline_9 & U76_baseline_8 & U76_baseline_7 & U76_baseline_6 & U76_baseline_5 & U76_baseline_4 & U76_baseline_3 & U76_baseline_2 & U76_baseline_1 & U76_baseline_0,
-		D0 => U76_baseline_valid_23 & U76_baseline_valid_22 & U76_baseline_valid_21 & U76_baseline_valid_20 & U76_baseline_valid_19 & U76_baseline_valid_18 & U76_baseline_valid_17 & U76_baseline_valid_16 & U76_baseline_valid_15 & U76_baseline_valid_14 & U76_baseline_valid_13 & U76_baseline_valid_12 & U76_baseline_valid_11 & U76_baseline_valid_10 & U76_baseline_valid_9 & U76_baseline_valid_8 & U76_baseline_valid_7 & U76_baseline_valid_6 & U76_baseline_valid_5 & U76_baseline_valid_4 & U76_baseline_valid_3 & U76_baseline_valid_2 & U76_baseline_valid_1 & U76_baseline_valid_0,
-		D1 => U76_baseline_calculating_23 & U76_baseline_calculating_22 & U76_baseline_calculating_21 & U76_baseline_calculating_20 & U76_baseline_calculating_19 & U76_baseline_calculating_18 & U76_baseline_calculating_17 & U76_baseline_calculating_16 & U76_baseline_calculating_15 & U76_baseline_calculating_14 & U76_baseline_calculating_13 & U76_baseline_calculating_12 & U76_baseline_calculating_11 & U76_baseline_calculating_10 & U76_baseline_calculating_9 & U76_baseline_calculating_8 & U76_baseline_calculating_7 & U76_baseline_calculating_6 & U76_baseline_calculating_5 & U76_baseline_calculating_4 & U76_baseline_calculating_3 & U76_baseline_calculating_2 & U76_baseline_calculating_1 & U76_baseline_calculating_0,
+		ANALOG => U87_baseline_23 & U87_baseline_22 & U87_baseline_21 & U87_baseline_20 & U87_baseline_19 & U87_baseline_18 & U87_baseline_17 & U87_baseline_16 & U87_baseline_15 & U87_baseline_14 & U87_baseline_13 & U87_baseline_12 & U87_baseline_11 & U87_baseline_10 & U87_baseline_9 & U87_baseline_8 & U87_baseline_7 & U87_baseline_6 & U87_baseline_5 & U87_baseline_4 & U87_baseline_3 & U87_baseline_2 & U87_baseline_1 & U87_baseline_0,
+		D0 => U87_baseline_valid_23 & U87_baseline_valid_22 & U87_baseline_valid_21 & U87_baseline_valid_20 & U87_baseline_valid_19 & U87_baseline_valid_18 & U87_baseline_valid_17 & U87_baseline_valid_16 & U87_baseline_valid_15 & U87_baseline_valid_14 & U87_baseline_valid_13 & U87_baseline_valid_12 & U87_baseline_valid_11 & U87_baseline_valid_10 & U87_baseline_valid_9 & U87_baseline_valid_8 & U87_baseline_valid_7 & U87_baseline_valid_6 & U87_baseline_valid_5 & U87_baseline_valid_4 & U87_baseline_valid_3 & U87_baseline_valid_2 & U87_baseline_valid_1 & U87_baseline_valid_0,
+		D1 => U87_baseline_calculating_23 & U87_baseline_calculating_22 & U87_baseline_calculating_21 & U87_baseline_calculating_20 & U87_baseline_calculating_19 & U87_baseline_calculating_18 & U87_baseline_calculating_17 & U87_baseline_calculating_16 & U87_baseline_calculating_15 & U87_baseline_calculating_14 & U87_baseline_calculating_13 & U87_baseline_calculating_12 & U87_baseline_calculating_11 & U87_baseline_calculating_10 & U87_baseline_calculating_9 & U87_baseline_calculating_8 & U87_baseline_calculating_7 & U87_baseline_calculating_6 & U87_baseline_calculating_5 & U87_baseline_calculating_4 & U87_baseline_calculating_3 & U87_baseline_calculating_2 & U87_baseline_calculating_1 & U87_baseline_calculating_0,
 		D2 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		D3 => "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0" & "0",
 		TRIG => U44_out,
@@ -4011,17 +4011,17 @@ U73_time <= REG_int_time_WR( 15 downto 0 );
 U73_pre <= REG_int_pre_WR( 15 downto 0 );
 U73_base <= REG_int_base_WR( 7 downto 0 );
 U73_scale <= REG_int_scale_WR( 15 downto 0 );
-U74_OUT <= U78_trig_nodelay_0 OR U78_trig_nodelay_1 OR U78_trig_nodelay_2 OR U78_trig_nodelay_3 OR U78_trig_nodelay_4 OR U78_trig_nodelay_5 OR U78_trig_nodelay_6 OR U78_trig_nodelay_7 OR U78_trig_nodelay_8 OR U78_trig_nodelay_9 OR U78_trig_nodelay_10 OR U78_trig_nodelay_11 OR U78_trig_nodelay_12 OR U78_trig_nodelay_13 OR U78_trig_nodelay_14 OR U78_trig_nodelay_15 OR U78_trig_nodelay_16 OR U78_trig_nodelay_17 OR U78_trig_nodelay_18 OR U78_trig_nodelay_19 OR U78_trig_nodelay_20 OR U78_trig_nodelay_21 OR U78_trig_nodelay_22 OR U78_trig_nodelay_23;
+U74_OUT <= U86_trig_nodelay_0 OR U86_trig_nodelay_1 OR U86_trig_nodelay_2 OR U86_trig_nodelay_3 OR U86_trig_nodelay_4 OR U86_trig_nodelay_5 OR U86_trig_nodelay_6 OR U86_trig_nodelay_7 OR U86_trig_nodelay_8 OR U86_trig_nodelay_9 OR U86_trig_nodelay_10 OR U86_trig_nodelay_11 OR U86_trig_nodelay_12 OR U86_trig_nodelay_13 OR U86_trig_nodelay_14 OR U86_trig_nodelay_15 OR U86_trig_nodelay_16 OR U86_trig_nodelay_17 OR U86_trig_nodelay_18 OR U86_trig_nodelay_19 OR U86_trig_nodelay_20 OR U86_trig_nodelay_21 OR U86_trig_nodelay_22 OR U86_trig_nodelay_23;
 
 U75_0:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_0,
+	analog_in => U86_ANALOGOUT_0,
 	max_out => U75_max_out_0,
 	ready => U75_ready_0,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4042,13 +4042,13 @@ PORT MAP(
 
 U75_1:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_1,
+	analog_in => U86_ANALOGOUT_1,
 	max_out => U75_max_out_1,
 	ready => U75_ready_1,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4069,13 +4069,13 @@ PORT MAP(
 
 U75_2:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_2,
+	analog_in => U86_ANALOGOUT_2,
 	max_out => U75_max_out_2,
 	ready => U75_ready_2,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4096,13 +4096,13 @@ PORT MAP(
 
 U75_3:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_3,
+	analog_in => U86_ANALOGOUT_3,
 	max_out => U75_max_out_3,
 	ready => U75_ready_3,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4123,13 +4123,13 @@ PORT MAP(
 
 U75_4:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_4,
+	analog_in => U86_ANALOGOUT_4,
 	max_out => U75_max_out_4,
 	ready => U75_ready_4,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4150,13 +4150,13 @@ PORT MAP(
 
 U75_5:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_5,
+	analog_in => U86_ANALOGOUT_5,
 	max_out => U75_max_out_5,
 	ready => U75_ready_5,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4177,13 +4177,13 @@ PORT MAP(
 
 U75_6:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_6,
+	analog_in => U86_ANALOGOUT_6,
 	max_out => U75_max_out_6,
 	ready => U75_ready_6,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4204,13 +4204,13 @@ PORT MAP(
 
 U75_7:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_7,
+	analog_in => U86_ANALOGOUT_7,
 	max_out => U75_max_out_7,
 	ready => U75_ready_7,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4231,13 +4231,13 @@ PORT MAP(
 
 U75_8:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_8,
+	analog_in => U86_ANALOGOUT_8,
 	max_out => U75_max_out_8,
 	ready => U75_ready_8,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4258,13 +4258,13 @@ PORT MAP(
 
 U75_9:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_9,
+	analog_in => U86_ANALOGOUT_9,
 	max_out => U75_max_out_9,
 	ready => U75_ready_9,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4285,13 +4285,13 @@ PORT MAP(
 
 U75_10:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_10,
+	analog_in => U86_ANALOGOUT_10,
 	max_out => U75_max_out_10,
 	ready => U75_ready_10,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4312,13 +4312,13 @@ PORT MAP(
 
 U75_11:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_11,
+	analog_in => U86_ANALOGOUT_11,
 	max_out => U75_max_out_11,
 	ready => U75_ready_11,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4339,13 +4339,13 @@ PORT MAP(
 
 U75_12:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_12,
+	analog_in => U86_ANALOGOUT_12,
 	max_out => U75_max_out_12,
 	ready => U75_ready_12,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4366,13 +4366,13 @@ PORT MAP(
 
 U75_13:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_13,
+	analog_in => U86_ANALOGOUT_13,
 	max_out => U75_max_out_13,
 	ready => U75_ready_13,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4393,13 +4393,13 @@ PORT MAP(
 
 U75_14:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_14,
+	analog_in => U86_ANALOGOUT_14,
 	max_out => U75_max_out_14,
 	ready => U75_ready_14,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4420,13 +4420,13 @@ PORT MAP(
 
 U75_15:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_15,
+	analog_in => U86_ANALOGOUT_15,
 	max_out => U75_max_out_15,
 	ready => U75_ready_15,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4447,13 +4447,13 @@ PORT MAP(
 
 U75_16:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_16,
+	analog_in => U86_ANALOGOUT_16,
 	max_out => U75_max_out_16,
 	ready => U75_ready_16,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4474,13 +4474,13 @@ PORT MAP(
 
 U75_17:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_17,
+	analog_in => U86_ANALOGOUT_17,
 	max_out => U75_max_out_17,
 	ready => U75_ready_17,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4501,13 +4501,13 @@ PORT MAP(
 
 U75_18:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_18,
+	analog_in => U86_ANALOGOUT_18,
 	max_out => U75_max_out_18,
 	ready => U75_ready_18,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4528,13 +4528,13 @@ PORT MAP(
 
 U75_19:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_19,
+	analog_in => U86_ANALOGOUT_19,
 	max_out => U75_max_out_19,
 	ready => U75_ready_19,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4555,13 +4555,13 @@ PORT MAP(
 
 U75_20:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_20,
+	analog_in => U86_ANALOGOUT_20,
 	max_out => U75_max_out_20,
 	ready => U75_ready_20,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4582,13 +4582,13 @@ PORT MAP(
 
 U75_21:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_21,
+	analog_in => U86_ANALOGOUT_21,
 	max_out => U75_max_out_21,
 	ready => U75_ready_21,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4609,13 +4609,13 @@ PORT MAP(
 
 U75_22:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_22,
+	analog_in => U86_ANALOGOUT_22,
 	max_out => U75_max_out_22,
 	ready => U75_ready_22,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4636,13 +4636,13 @@ PORT MAP(
 
 U75_23:SUBPAGE_PulseHeightFinder
 PORT MAP(
-	analog_in => U78_ANALOGOUT_23,
+	analog_in => U86_ANALOGOUT_23,
 	max_out => U75_max_out_23,
 	ready => U75_ready_23,
 	window => U73_time,
 	trig => U74_OUT,
 	pre_int => U73_pre,
-	trig_delay => U85_delay,
+	trig_delay => U82_delay,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
 	BUS_CLK=>BUS_CLK ,
@@ -4661,2122 +4661,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U76_0:SUBPAGE_ChargeIntegrator
+U76_0:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_0,
-	base => U68_CH0,
-	energy => U76_energy_0,
-	valid => U76_valid_0,
-	int_gate => U76_int_gate_0,
-	baseline => U76_baseline_0,
-	baseline_valid => U76_baseline_valid_0,
-	baseline_calculating => U76_baseline_calculating_0,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_1:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_1,
-	base => U68_CH1,
-	energy => U76_energy_1,
-	valid => U76_valid_1,
-	int_gate => U76_int_gate_1,
-	baseline => U76_baseline_1,
-	baseline_valid => U76_baseline_valid_1,
-	baseline_calculating => U76_baseline_calculating_1,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_2:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_2,
-	base => U68_CH2,
-	energy => U76_energy_2,
-	valid => U76_valid_2,
-	int_gate => U76_int_gate_2,
-	baseline => U76_baseline_2,
-	baseline_valid => U76_baseline_valid_2,
-	baseline_calculating => U76_baseline_calculating_2,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_3:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_3,
-	base => U68_CH3,
-	energy => U76_energy_3,
-	valid => U76_valid_3,
-	int_gate => U76_int_gate_3,
-	baseline => U76_baseline_3,
-	baseline_valid => U76_baseline_valid_3,
-	baseline_calculating => U76_baseline_calculating_3,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_4:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_4,
-	base => U68_CH4,
-	energy => U76_energy_4,
-	valid => U76_valid_4,
-	int_gate => U76_int_gate_4,
-	baseline => U76_baseline_4,
-	baseline_valid => U76_baseline_valid_4,
-	baseline_calculating => U76_baseline_calculating_4,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_5:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_5,
-	base => U68_CH5,
-	energy => U76_energy_5,
-	valid => U76_valid_5,
-	int_gate => U76_int_gate_5,
-	baseline => U76_baseline_5,
-	baseline_valid => U76_baseline_valid_5,
-	baseline_calculating => U76_baseline_calculating_5,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_6:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_6,
-	base => U68_CH6,
-	energy => U76_energy_6,
-	valid => U76_valid_6,
-	int_gate => U76_int_gate_6,
-	baseline => U76_baseline_6,
-	baseline_valid => U76_baseline_valid_6,
-	baseline_calculating => U76_baseline_calculating_6,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_7:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_7,
-	base => U68_CH7,
-	energy => U76_energy_7,
-	valid => U76_valid_7,
-	int_gate => U76_int_gate_7,
-	baseline => U76_baseline_7,
-	baseline_valid => U76_baseline_valid_7,
-	baseline_calculating => U76_baseline_calculating_7,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_8:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_8,
-	base => U68_CH8,
-	energy => U76_energy_8,
-	valid => U76_valid_8,
-	int_gate => U76_int_gate_8,
-	baseline => U76_baseline_8,
-	baseline_valid => U76_baseline_valid_8,
-	baseline_calculating => U76_baseline_calculating_8,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_9:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_9,
-	base => U68_CH9,
-	energy => U76_energy_9,
-	valid => U76_valid_9,
-	int_gate => U76_int_gate_9,
-	baseline => U76_baseline_9,
-	baseline_valid => U76_baseline_valid_9,
-	baseline_calculating => U76_baseline_calculating_9,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_10:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_10,
-	base => U68_CH10,
-	energy => U76_energy_10,
-	valid => U76_valid_10,
-	int_gate => U76_int_gate_10,
-	baseline => U76_baseline_10,
-	baseline_valid => U76_baseline_valid_10,
-	baseline_calculating => U76_baseline_calculating_10,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_11:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_11,
-	base => U68_CH11,
-	energy => U76_energy_11,
-	valid => U76_valid_11,
-	int_gate => U76_int_gate_11,
-	baseline => U76_baseline_11,
-	baseline_valid => U76_baseline_valid_11,
-	baseline_calculating => U76_baseline_calculating_11,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_12:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_12,
-	base => U68_CH12,
-	energy => U76_energy_12,
-	valid => U76_valid_12,
-	int_gate => U76_int_gate_12,
-	baseline => U76_baseline_12,
-	baseline_valid => U76_baseline_valid_12,
-	baseline_calculating => U76_baseline_calculating_12,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_13:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_13,
-	base => U68_CH13,
-	energy => U76_energy_13,
-	valid => U76_valid_13,
-	int_gate => U76_int_gate_13,
-	baseline => U76_baseline_13,
-	baseline_valid => U76_baseline_valid_13,
-	baseline_calculating => U76_baseline_calculating_13,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_14:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_14,
-	base => U68_CH14,
-	energy => U76_energy_14,
-	valid => U76_valid_14,
-	int_gate => U76_int_gate_14,
-	baseline => U76_baseline_14,
-	baseline_valid => U76_baseline_valid_14,
-	baseline_calculating => U76_baseline_calculating_14,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_15:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_15,
-	base => U68_CH15,
-	energy => U76_energy_15,
-	valid => U76_valid_15,
-	int_gate => U76_int_gate_15,
-	baseline => U76_baseline_15,
-	baseline_valid => U76_baseline_valid_15,
-	baseline_calculating => U76_baseline_calculating_15,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_16:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_16,
-	base => U68_CH16,
-	energy => U76_energy_16,
-	valid => U76_valid_16,
-	int_gate => U76_int_gate_16,
-	baseline => U76_baseline_16,
-	baseline_valid => U76_baseline_valid_16,
-	baseline_calculating => U76_baseline_calculating_16,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_17:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_17,
-	base => U68_CH17,
-	energy => U76_energy_17,
-	valid => U76_valid_17,
-	int_gate => U76_int_gate_17,
-	baseline => U76_baseline_17,
-	baseline_valid => U76_baseline_valid_17,
-	baseline_calculating => U76_baseline_calculating_17,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_18:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_18,
-	base => U68_CH18,
-	energy => U76_energy_18,
-	valid => U76_valid_18,
-	int_gate => U76_int_gate_18,
-	baseline => U76_baseline_18,
-	baseline_valid => U76_baseline_valid_18,
-	baseline_calculating => U76_baseline_calculating_18,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_19:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_19,
-	base => U68_CH19,
-	energy => U76_energy_19,
-	valid => U76_valid_19,
-	int_gate => U76_int_gate_19,
-	baseline => U76_baseline_19,
-	baseline_valid => U76_baseline_valid_19,
-	baseline_calculating => U76_baseline_calculating_19,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_20:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_20,
-	base => U68_CH20,
-	energy => U76_energy_20,
-	valid => U76_valid_20,
-	int_gate => U76_int_gate_20,
-	baseline => U76_baseline_20,
-	baseline_valid => U76_baseline_valid_20,
-	baseline_calculating => U76_baseline_calculating_20,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_21:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_21,
-	base => U68_CH21,
-	energy => U76_energy_21,
-	valid => U76_valid_21,
-	int_gate => U76_int_gate_21,
-	baseline => U76_baseline_21,
-	baseline_valid => U76_baseline_valid_21,
-	baseline_calculating => U76_baseline_calculating_21,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_22:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_22,
-	base => U68_CH22,
-	energy => U76_energy_22,
-	valid => U76_valid_22,
-	int_gate => U76_int_gate_22,
-	baseline => U76_baseline_22,
-	baseline_valid => U76_baseline_valid_22,
-	baseline_calculating => U76_baseline_calculating_22,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U76_23:SUBPAGE_ChargeIntegrator
-PORT MAP(
-	analog_in => U78_ANALOGOUT_23,
-	base => U68_CH23,
-	energy => U76_energy_23,
-	valid => U76_valid_23,
-	int_gate => U76_int_gate_23,
-	baseline => U76_baseline_23,
-	baseline_valid => U76_baseline_valid_23,
-	baseline_calculating => U76_baseline_calculating_23,
-	scale => U73_scale,
-	pre_int => U73_pre,
-	trig => U44_out,
-	manual_base => U73_base,
-	int_time => U73_time,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_0:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U0_A0,
-	top => U53_CH0,
-	TRIGOUT => U77_TRIGOUT_0,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_1:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U1_A1,
-	top => U53_CH1,
-	TRIGOUT => U77_TRIGOUT_1,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_2:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U2_A2,
-	top => U53_CH2,
-	TRIGOUT => U77_TRIGOUT_2,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_3:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U3_A3,
-	top => U53_CH3,
-	TRIGOUT => U77_TRIGOUT_3,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_4:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U4_A4,
-	top => U53_CH4,
-	TRIGOUT => U77_TRIGOUT_4,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_5:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U5_A5,
-	top => U53_CH5,
-	TRIGOUT => U77_TRIGOUT_5,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_6:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U6_A6,
-	top => U53_CH6,
-	TRIGOUT => U77_TRIGOUT_6,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_7:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U7_A7,
-	top => U53_CH7,
-	TRIGOUT => U77_TRIGOUT_7,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_8:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U8_A8,
-	top => U53_CH8,
-	TRIGOUT => U77_TRIGOUT_8,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_9:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U9_A9,
-	top => U53_CH9,
-	TRIGOUT => U77_TRIGOUT_9,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_10:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U10_A10,
-	top => U53_CH10,
-	TRIGOUT => U77_TRIGOUT_10,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_11:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U11_A11,
-	top => U53_CH11,
-	TRIGOUT => U77_TRIGOUT_11,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_12:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U12_A12,
-	top => U53_CH12,
-	TRIGOUT => U77_TRIGOUT_12,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_13:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U13_A13,
-	top => U53_CH13,
-	TRIGOUT => U77_TRIGOUT_13,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_14:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U14_A14,
-	top => U53_CH14,
-	TRIGOUT => U77_TRIGOUT_14,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_15:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U15_A15,
-	top => U53_CH15,
-	TRIGOUT => U77_TRIGOUT_15,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_16:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U16_A16,
-	top => U53_CH16,
-	TRIGOUT => U77_TRIGOUT_16,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_17:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U17_A17,
-	top => U53_CH17,
-	TRIGOUT => U77_TRIGOUT_17,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_18:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U18_A18,
-	top => U53_CH18,
-	TRIGOUT => U77_TRIGOUT_18,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_19:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U19_A19,
-	top => U53_CH19,
-	TRIGOUT => U77_TRIGOUT_19,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_20:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U20_A20,
-	top => U53_CH20,
-	TRIGOUT => U77_TRIGOUT_20,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_21:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U21_A21,
-	top => U53_CH21,
-	TRIGOUT => U77_TRIGOUT_21,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_22:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U22_A22,
-	top => U53_CH22,
-	TRIGOUT => U77_TRIGOUT_22,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U77_23:SUBPAGE_UpperTrigger
-PORT MAP(
-	AIN => U23_A23,
-	top => U53_CH23,
-	TRIGOUT => U77_TRIGOUT_23,
-	gate => U85_gate_u,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_0:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U0_A0,
-	auto_baseline => U76_baseline_0,
-	thrsh => U54_CH0,
-	disable_det => U52_CH0,
-	ANALOGOUT => U78_ANALOGOUT_0,
-	TRIGOUT => U78_TRIGOUT_0,
-	trig_nodelay => U78_trig_nodelay_0,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_1:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U1_A1,
-	auto_baseline => U76_baseline_1,
-	thrsh => U54_CH1,
-	disable_det => U52_CH1,
-	ANALOGOUT => U78_ANALOGOUT_1,
-	TRIGOUT => U78_TRIGOUT_1,
-	trig_nodelay => U78_trig_nodelay_1,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_2:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U2_A2,
-	auto_baseline => U76_baseline_2,
-	thrsh => U54_CH2,
-	disable_det => U52_CH2,
-	ANALOGOUT => U78_ANALOGOUT_2,
-	TRIGOUT => U78_TRIGOUT_2,
-	trig_nodelay => U78_trig_nodelay_2,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_3:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U3_A3,
-	auto_baseline => U76_baseline_3,
-	thrsh => U54_CH3,
-	disable_det => U52_CH3,
-	ANALOGOUT => U78_ANALOGOUT_3,
-	TRIGOUT => U78_TRIGOUT_3,
-	trig_nodelay => U78_trig_nodelay_3,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_4:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U4_A4,
-	auto_baseline => U76_baseline_4,
-	thrsh => U54_CH4,
-	disable_det => U52_CH4,
-	ANALOGOUT => U78_ANALOGOUT_4,
-	TRIGOUT => U78_TRIGOUT_4,
-	trig_nodelay => U78_trig_nodelay_4,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_5:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U5_A5,
-	auto_baseline => U76_baseline_5,
-	thrsh => U54_CH5,
-	disable_det => U52_CH5,
-	ANALOGOUT => U78_ANALOGOUT_5,
-	TRIGOUT => U78_TRIGOUT_5,
-	trig_nodelay => U78_trig_nodelay_5,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_6:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U6_A6,
-	auto_baseline => U76_baseline_6,
-	thrsh => U54_CH6,
-	disable_det => U52_CH6,
-	ANALOGOUT => U78_ANALOGOUT_6,
-	TRIGOUT => U78_TRIGOUT_6,
-	trig_nodelay => U78_trig_nodelay_6,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_7:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U7_A7,
-	auto_baseline => U76_baseline_7,
-	thrsh => U54_CH7,
-	disable_det => U52_CH7,
-	ANALOGOUT => U78_ANALOGOUT_7,
-	TRIGOUT => U78_TRIGOUT_7,
-	trig_nodelay => U78_trig_nodelay_7,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_8:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U8_A8,
-	auto_baseline => U76_baseline_8,
-	thrsh => U54_CH8,
-	disable_det => U52_CH8,
-	ANALOGOUT => U78_ANALOGOUT_8,
-	TRIGOUT => U78_TRIGOUT_8,
-	trig_nodelay => U78_trig_nodelay_8,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_9:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U9_A9,
-	auto_baseline => U76_baseline_9,
-	thrsh => U54_CH9,
-	disable_det => U52_CH9,
-	ANALOGOUT => U78_ANALOGOUT_9,
-	TRIGOUT => U78_TRIGOUT_9,
-	trig_nodelay => U78_trig_nodelay_9,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_10:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U10_A10,
-	auto_baseline => U76_baseline_10,
-	thrsh => U54_CH10,
-	disable_det => U52_CH10,
-	ANALOGOUT => U78_ANALOGOUT_10,
-	TRIGOUT => U78_TRIGOUT_10,
-	trig_nodelay => U78_trig_nodelay_10,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_11:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U11_A11,
-	auto_baseline => U76_baseline_11,
-	thrsh => U54_CH11,
-	disable_det => U52_CH11,
-	ANALOGOUT => U78_ANALOGOUT_11,
-	TRIGOUT => U78_TRIGOUT_11,
-	trig_nodelay => U78_trig_nodelay_11,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_12:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U12_A12,
-	auto_baseline => U76_baseline_12,
-	thrsh => U54_CH12,
-	disable_det => U52_CH12,
-	ANALOGOUT => U78_ANALOGOUT_12,
-	TRIGOUT => U78_TRIGOUT_12,
-	trig_nodelay => U78_trig_nodelay_12,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_13:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U13_A13,
-	auto_baseline => U76_baseline_13,
-	thrsh => U54_CH13,
-	disable_det => U52_CH13,
-	ANALOGOUT => U78_ANALOGOUT_13,
-	TRIGOUT => U78_TRIGOUT_13,
-	trig_nodelay => U78_trig_nodelay_13,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_14:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U14_A14,
-	auto_baseline => U76_baseline_14,
-	thrsh => U54_CH14,
-	disable_det => U52_CH14,
-	ANALOGOUT => U78_ANALOGOUT_14,
-	TRIGOUT => U78_TRIGOUT_14,
-	trig_nodelay => U78_trig_nodelay_14,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_15:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U15_A15,
-	auto_baseline => U76_baseline_15,
-	thrsh => U54_CH15,
-	disable_det => U52_CH15,
-	ANALOGOUT => U78_ANALOGOUT_15,
-	TRIGOUT => U78_TRIGOUT_15,
-	trig_nodelay => U78_trig_nodelay_15,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_16:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U16_A16,
-	auto_baseline => U76_baseline_16,
-	thrsh => U54_CH16,
-	disable_det => U52_CH16,
-	ANALOGOUT => U78_ANALOGOUT_16,
-	TRIGOUT => U78_TRIGOUT_16,
-	trig_nodelay => U78_trig_nodelay_16,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_17:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U17_A17,
-	auto_baseline => U76_baseline_17,
-	thrsh => U54_CH17,
-	disable_det => U52_CH17,
-	ANALOGOUT => U78_ANALOGOUT_17,
-	TRIGOUT => U78_TRIGOUT_17,
-	trig_nodelay => U78_trig_nodelay_17,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_18:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U18_A18,
-	auto_baseline => U76_baseline_18,
-	thrsh => U54_CH18,
-	disable_det => U52_CH18,
-	ANALOGOUT => U78_ANALOGOUT_18,
-	TRIGOUT => U78_TRIGOUT_18,
-	trig_nodelay => U78_trig_nodelay_18,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_19:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U19_A19,
-	auto_baseline => U76_baseline_19,
-	thrsh => U54_CH19,
-	disable_det => U52_CH19,
-	ANALOGOUT => U78_ANALOGOUT_19,
-	TRIGOUT => U78_TRIGOUT_19,
-	trig_nodelay => U78_trig_nodelay_19,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_20:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U20_A20,
-	auto_baseline => U76_baseline_20,
-	thrsh => U54_CH20,
-	disable_det => U52_CH20,
-	ANALOGOUT => U78_ANALOGOUT_20,
-	TRIGOUT => U78_TRIGOUT_20,
-	trig_nodelay => U78_trig_nodelay_20,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_21:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U21_A21,
-	auto_baseline => U76_baseline_21,
-	thrsh => U54_CH21,
-	disable_det => U52_CH21,
-	ANALOGOUT => U78_ANALOGOUT_21,
-	TRIGOUT => U78_TRIGOUT_21,
-	trig_nodelay => U78_trig_nodelay_21,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_22:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U22_A22,
-	auto_baseline => U76_baseline_22,
-	thrsh => U54_CH22,
-	disable_det => U52_CH22,
-	ANALOGOUT => U78_ANALOGOUT_22,
-	TRIGOUT => U78_TRIGOUT_22,
-	trig_nodelay => U78_trig_nodelay_22,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U78_23:SUBPAGE_Trigger
-PORT MAP(
-	AIN => U23_A23,
-	auto_baseline => U76_baseline_23,
-	thrsh => U54_CH23,
-	disable_det => U52_CH23,
-	ANALOGOUT => U78_ANALOGOUT_23,
-	TRIGOUT => U78_TRIGOUT_23,
-	trig_nodelay => U78_trig_nodelay_23,
-	inhib => U73_time,
-	baseline => U73_base,
-	gate => U85_gate_l,
-	delay => U85_delay,
-	GlobalReset => GlobalReset,
-	CLK_ACQ=>CLK_ACQ ,
-	BUS_CLK=>BUS_CLK ,
-	CLK_40=>CLK_40 ,
-	CLK_50 => "0" ,
-	CLK_80=>CLK_80 ,
-	clk_160=>clk_160 ,
-	clk_320=>clk_320 ,
-	clk_125=>clk_125 ,
-	FAST_CLK_100=>FAST_CLK_100 ,
-	FAST_CLK_200=>FAST_CLK_200 ,
-	FAST_CLK_250=>FAST_CLK_250 ,
-	FAST_CLK_250_90=>FAST_CLK_250_90 ,
-	FAST_CLK_500=>FAST_CLK_500 ,
-	FAST_CLK_500_90=>FAST_CLK_500_90 ,
-	GlobalClock=>GlobalClock ,
-	async_clk => async_clk);
-
-U79_0:SUBPAGE_SaturationDetector
-PORT MAP(
-	analog_in => U78_ANALOGOUT_0,
-	saturated => U79_saturated_0,
+	analog_in => U86_ANALOGOUT_0,
+	saturated => U76_saturated_0,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -6796,10 +4684,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_1:SUBPAGE_SaturationDetector
+U76_1:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_1,
-	saturated => U79_saturated_1,
+	analog_in => U86_ANALOGOUT_1,
+	saturated => U76_saturated_1,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -6819,10 +4707,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_2:SUBPAGE_SaturationDetector
+U76_2:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_2,
-	saturated => U79_saturated_2,
+	analog_in => U86_ANALOGOUT_2,
+	saturated => U76_saturated_2,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -6842,10 +4730,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_3:SUBPAGE_SaturationDetector
+U76_3:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_3,
-	saturated => U79_saturated_3,
+	analog_in => U86_ANALOGOUT_3,
+	saturated => U76_saturated_3,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -6865,10 +4753,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_4:SUBPAGE_SaturationDetector
+U76_4:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_4,
-	saturated => U79_saturated_4,
+	analog_in => U86_ANALOGOUT_4,
+	saturated => U76_saturated_4,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -6888,10 +4776,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_5:SUBPAGE_SaturationDetector
+U76_5:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_5,
-	saturated => U79_saturated_5,
+	analog_in => U86_ANALOGOUT_5,
+	saturated => U76_saturated_5,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -6911,10 +4799,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_6:SUBPAGE_SaturationDetector
+U76_6:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_6,
-	saturated => U79_saturated_6,
+	analog_in => U86_ANALOGOUT_6,
+	saturated => U76_saturated_6,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -6934,10 +4822,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_7:SUBPAGE_SaturationDetector
+U76_7:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_7,
-	saturated => U79_saturated_7,
+	analog_in => U86_ANALOGOUT_7,
+	saturated => U76_saturated_7,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -6957,10 +4845,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_8:SUBPAGE_SaturationDetector
+U76_8:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_8,
-	saturated => U79_saturated_8,
+	analog_in => U86_ANALOGOUT_8,
+	saturated => U76_saturated_8,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -6980,10 +4868,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_9:SUBPAGE_SaturationDetector
+U76_9:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_9,
-	saturated => U79_saturated_9,
+	analog_in => U86_ANALOGOUT_9,
+	saturated => U76_saturated_9,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7003,10 +4891,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_10:SUBPAGE_SaturationDetector
+U76_10:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_10,
-	saturated => U79_saturated_10,
+	analog_in => U86_ANALOGOUT_10,
+	saturated => U76_saturated_10,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7026,10 +4914,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_11:SUBPAGE_SaturationDetector
+U76_11:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_11,
-	saturated => U79_saturated_11,
+	analog_in => U86_ANALOGOUT_11,
+	saturated => U76_saturated_11,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7049,10 +4937,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_12:SUBPAGE_SaturationDetector
+U76_12:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_12,
-	saturated => U79_saturated_12,
+	analog_in => U86_ANALOGOUT_12,
+	saturated => U76_saturated_12,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7072,10 +4960,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_13:SUBPAGE_SaturationDetector
+U76_13:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_13,
-	saturated => U79_saturated_13,
+	analog_in => U86_ANALOGOUT_13,
+	saturated => U76_saturated_13,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7095,10 +4983,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_14:SUBPAGE_SaturationDetector
+U76_14:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_14,
-	saturated => U79_saturated_14,
+	analog_in => U86_ANALOGOUT_14,
+	saturated => U76_saturated_14,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7118,10 +5006,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_15:SUBPAGE_SaturationDetector
+U76_15:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_15,
-	saturated => U79_saturated_15,
+	analog_in => U86_ANALOGOUT_15,
+	saturated => U76_saturated_15,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7141,10 +5029,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_16:SUBPAGE_SaturationDetector
+U76_16:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_16,
-	saturated => U79_saturated_16,
+	analog_in => U86_ANALOGOUT_16,
+	saturated => U76_saturated_16,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7164,10 +5052,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_17:SUBPAGE_SaturationDetector
+U76_17:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_17,
-	saturated => U79_saturated_17,
+	analog_in => U86_ANALOGOUT_17,
+	saturated => U76_saturated_17,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7187,10 +5075,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_18:SUBPAGE_SaturationDetector
+U76_18:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_18,
-	saturated => U79_saturated_18,
+	analog_in => U86_ANALOGOUT_18,
+	saturated => U76_saturated_18,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7210,10 +5098,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_19:SUBPAGE_SaturationDetector
+U76_19:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_19,
-	saturated => U79_saturated_19,
+	analog_in => U86_ANALOGOUT_19,
+	saturated => U76_saturated_19,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7233,10 +5121,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_20:SUBPAGE_SaturationDetector
+U76_20:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_20,
-	saturated => U79_saturated_20,
+	analog_in => U86_ANALOGOUT_20,
+	saturated => U76_saturated_20,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7256,10 +5144,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_21:SUBPAGE_SaturationDetector
+U76_21:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_21,
-	saturated => U79_saturated_21,
+	analog_in => U86_ANALOGOUT_21,
+	saturated => U76_saturated_21,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7279,10 +5167,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_22:SUBPAGE_SaturationDetector
+U76_22:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_22,
-	saturated => U79_saturated_22,
+	analog_in => U86_ANALOGOUT_22,
+	saturated => U76_saturated_22,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7302,10 +5190,10 @@ PORT MAP(
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
 
-U79_23:SUBPAGE_SaturationDetector
+U76_23:SUBPAGE_SaturationDetector
 PORT MAP(
-	analog_in => U78_ANALOGOUT_23,
-	saturated => U79_saturated_23,
+	analog_in => U86_ANALOGOUT_23,
+	saturated => U76_saturated_23,
 	gate => U73_time,
 	GlobalReset => GlobalReset,
 	CLK_ACQ=>CLK_ACQ ,
@@ -7324,46 +5212,46 @@ PORT MAP(
 	FAST_CLK_500_90=>FAST_CLK_500_90 ,
 	GlobalClock=>GlobalClock ,
 	async_clk => async_clk);
-U80_OUT <= U79_saturated_0 OR U79_saturated_1 OR U79_saturated_2 OR U79_saturated_3 OR U79_saturated_4 OR U79_saturated_5 OR U79_saturated_6 OR U79_saturated_7 OR U79_saturated_8 OR U79_saturated_9 OR U79_saturated_10 OR U79_saturated_11 OR U79_saturated_12 OR U79_saturated_13 OR U79_saturated_14 OR U79_saturated_15 OR U79_saturated_16 OR U79_saturated_17 OR U79_saturated_18 OR U79_saturated_19 OR U79_saturated_20 OR U79_saturated_21 OR U79_saturated_22 OR U79_saturated_23;
+U77_OUT <= U76_saturated_0 OR U76_saturated_1 OR U76_saturated_2 OR U76_saturated_3 OR U76_saturated_4 OR U76_saturated_5 OR U76_saturated_6 OR U76_saturated_7 OR U76_saturated_8 OR U76_saturated_9 OR U76_saturated_10 OR U76_saturated_11 OR U76_saturated_12 OR U76_saturated_13 OR U76_saturated_14 OR U76_saturated_15 OR U76_saturated_16 OR U76_saturated_17 OR U76_saturated_18 OR U76_saturated_19 OR U76_saturated_20 OR U76_saturated_21 OR U76_saturated_22 OR U76_saturated_23;
 
-U81 : block
+U78 : block
 begin
-U81_out <= U82_CONST when U80_OUT = "0000000000000000" else U83_CONST when U80_OUT = "0000000000000001"  else (others=>'0');
+U78_out <= U79_CONST when U77_OUT = "0000000000000000" else U80_CONST when U77_OUT = "0000000000000001"  else (others=>'0');
 
 end block;
-U82_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"C001"),16));
-U83_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"5A7C"),16));
+U79_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"C001"),16));
+U80_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"5A7C"),16));
 
-	U84 : U84_custompacket
+	U81 : U81_custompacket
 	Generic map(
 		memLength => 	32768,
 		wordWidth => 	32
 	)
 	PORT MAP(
-		IN_2 => U76_energy_0,
-		IN_3 => U76_energy_1,
-		IN_4 => U76_energy_2,
-		IN_5 => U76_energy_3,
-		IN_6 => U76_energy_4,
-		IN_7 => U76_energy_5,
-		IN_8 => U76_energy_6,
-		IN_9 => U76_energy_7,
-		IN_10 => U76_energy_8,
-		IN_11 => U76_energy_9,
-		IN_12 => U76_energy_10,
-		IN_13 => U76_energy_11,
-		IN_14 => U76_energy_12,
-		IN_15 => U76_energy_13,
-		IN_16 => U76_energy_14,
-		IN_17 => U76_energy_15,
-		IN_18 => U76_energy_16,
-		IN_19 => U76_energy_17,
-		IN_20 => U76_energy_18,
-		IN_21 => U76_energy_19,
-		IN_22 => U76_energy_20,
-		IN_23 => U76_energy_21,
-		IN_24 => U76_energy_22,
-		IN_25 => U76_energy_23,
+		IN_2 => U87_energy_0,
+		IN_3 => U87_energy_1,
+		IN_4 => U87_energy_2,
+		IN_5 => U87_energy_3,
+		IN_6 => U87_energy_4,
+		IN_7 => U87_energy_5,
+		IN_8 => U87_energy_6,
+		IN_9 => U87_energy_7,
+		IN_10 => U87_energy_8,
+		IN_11 => U87_energy_9,
+		IN_12 => U87_energy_10,
+		IN_13 => U87_energy_11,
+		IN_14 => U87_energy_12,
+		IN_15 => U87_energy_13,
+		IN_16 => U87_energy_14,
+		IN_17 => U87_energy_15,
+		IN_18 => U87_energy_16,
+		IN_19 => U87_energy_17,
+		IN_20 => U87_energy_18,
+		IN_21 => U87_energy_19,
+		IN_22 => U87_energy_20,
+		IN_23 => U87_energy_21,
+		IN_24 => U87_energy_22,
+		IN_25 => U87_energy_23,
 		IN_26 => x"0000",
 		IN_27 => x"0000",
 		IN_28 => x"0000",
@@ -7405,14 +5293,14 @@ U83_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'
 		IN_61 => x"0000",
 		IN_63 => x"0000",
 		IN_65 => x"0000",
-		IN_66 => U81_out,
+		IN_66 => U78_out,
 		TRIG => U47_OUT,
 		CLK_WRITE => U34_clk,
 		SYNC_TRIG => "0",
 		SYNC_RESET => "0",
 		SYNC_CLK => "0",
-		BUSY => U84_BUSY,
-		FIFO_FULL => U84_FIFO_FULL,
+		BUSY => U81_BUSY,
+		FIFO_FULL => U81_FIFO_FULL,
 		RUN => open,
 		RESET => "0",
 		CLK_READ => BUS_CLK,
@@ -7424,17 +5312,2129 @@ U83_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'
 		CONFIG => REG_All_Energies_CONFIG_WR
 	);
 
-U85_gate_l <= REG_trig_gate_l_WR( 15 downto 0 );
-U85_gate_u <= REG_trig_gate_u_WR( 15 downto 0 );
-U85_delay <= REG_trig_delay_WR( 15 downto 0 );
-U85_mode <= REG_trig_mode_WR( 0 downto 0 );
-U86_int <= INT_forcetrig_WR;
-U86_out_0 <= REG_forcetrig_WR(15 downto 0);
+U82_gate_l <= REG_trig_gate_l_WR( 15 downto 0 );
+U82_gate_u <= REG_trig_gate_u_WR( 15 downto 0 );
+U82_delay <= REG_trig_delay_WR( 15 downto 0 );
+U82_mode <= REG_trig_mode_WR( 0 downto 0 );
+U83_int <= INT_forcetrig_WR;
+U83_out_0 <= REG_forcetrig_WR(15 downto 0);
 REG_forcetrig_RD  <= REG_forcetrig_WR;
-U87_stamptype <= REG_io_stamptype_WR( 1 downto 0 );
-U87_lemo2out <= REG_io_lemo2out_WR( 1 downto 0 );
-U87_divide <= conv_integer(REG_io_divide_WR);
-REG_FIRMWARE_BUILD <= x"20240828";
+U84_stamptype <= REG_io_stamptype_WR( 1 downto 0 );
+U84_lemo2out <= REG_io_lemo2out_WR( 1 downto 0 );
+U84_divide <= conv_integer(REG_io_divide_WR);
+
+U85_0:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U0_A0,
+	top => U53_CH0,
+	TRIGOUT => U85_TRIGOUT_0,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_1:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U1_A1,
+	top => U53_CH1,
+	TRIGOUT => U85_TRIGOUT_1,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_2:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U2_A2,
+	top => U53_CH2,
+	TRIGOUT => U85_TRIGOUT_2,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_3:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U3_A3,
+	top => U53_CH3,
+	TRIGOUT => U85_TRIGOUT_3,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_4:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U4_A4,
+	top => U53_CH4,
+	TRIGOUT => U85_TRIGOUT_4,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_5:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U5_A5,
+	top => U53_CH5,
+	TRIGOUT => U85_TRIGOUT_5,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_6:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U6_A6,
+	top => U53_CH6,
+	TRIGOUT => U85_TRIGOUT_6,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_7:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U7_A7,
+	top => U53_CH7,
+	TRIGOUT => U85_TRIGOUT_7,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_8:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U8_A8,
+	top => U53_CH8,
+	TRIGOUT => U85_TRIGOUT_8,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_9:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U9_A9,
+	top => U53_CH9,
+	TRIGOUT => U85_TRIGOUT_9,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_10:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U10_A10,
+	top => U53_CH10,
+	TRIGOUT => U85_TRIGOUT_10,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_11:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U11_A11,
+	top => U53_CH11,
+	TRIGOUT => U85_TRIGOUT_11,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_12:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U12_A12,
+	top => U53_CH12,
+	TRIGOUT => U85_TRIGOUT_12,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_13:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U13_A13,
+	top => U53_CH13,
+	TRIGOUT => U85_TRIGOUT_13,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_14:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U14_A14,
+	top => U53_CH14,
+	TRIGOUT => U85_TRIGOUT_14,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_15:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U15_A15,
+	top => U53_CH15,
+	TRIGOUT => U85_TRIGOUT_15,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_16:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U16_A16,
+	top => U53_CH16,
+	TRIGOUT => U85_TRIGOUT_16,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_17:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U17_A17,
+	top => U53_CH17,
+	TRIGOUT => U85_TRIGOUT_17,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_18:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U18_A18,
+	top => U53_CH18,
+	TRIGOUT => U85_TRIGOUT_18,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_19:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U19_A19,
+	top => U53_CH19,
+	TRIGOUT => U85_TRIGOUT_19,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_20:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U20_A20,
+	top => U53_CH20,
+	TRIGOUT => U85_TRIGOUT_20,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_21:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U21_A21,
+	top => U53_CH21,
+	TRIGOUT => U85_TRIGOUT_21,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_22:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U22_A22,
+	top => U53_CH22,
+	TRIGOUT => U85_TRIGOUT_22,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U85_23:SUBPAGE_UpperTrigger
+PORT MAP(
+	AIN => U23_A23,
+	top => U53_CH23,
+	TRIGOUT => U85_TRIGOUT_23,
+	gate => U82_gate_u,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_0:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U0_A0,
+	auto_baseline => U87_baseline_0,
+	thrsh => U54_CH0,
+	disable_det => U52_CH0,
+	ANALOGOUT => U86_ANALOGOUT_0,
+	TRIGOUT => U86_TRIGOUT_0,
+	trig_nodelay => U86_trig_nodelay_0,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_1:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U1_A1,
+	auto_baseline => U87_baseline_1,
+	thrsh => U54_CH1,
+	disable_det => U52_CH1,
+	ANALOGOUT => U86_ANALOGOUT_1,
+	TRIGOUT => U86_TRIGOUT_1,
+	trig_nodelay => U86_trig_nodelay_1,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_2:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U2_A2,
+	auto_baseline => U87_baseline_2,
+	thrsh => U54_CH2,
+	disable_det => U52_CH2,
+	ANALOGOUT => U86_ANALOGOUT_2,
+	TRIGOUT => U86_TRIGOUT_2,
+	trig_nodelay => U86_trig_nodelay_2,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_3:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U3_A3,
+	auto_baseline => U87_baseline_3,
+	thrsh => U54_CH3,
+	disable_det => U52_CH3,
+	ANALOGOUT => U86_ANALOGOUT_3,
+	TRIGOUT => U86_TRIGOUT_3,
+	trig_nodelay => U86_trig_nodelay_3,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_4:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U4_A4,
+	auto_baseline => U87_baseline_4,
+	thrsh => U54_CH4,
+	disable_det => U52_CH4,
+	ANALOGOUT => U86_ANALOGOUT_4,
+	TRIGOUT => U86_TRIGOUT_4,
+	trig_nodelay => U86_trig_nodelay_4,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_5:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U5_A5,
+	auto_baseline => U87_baseline_5,
+	thrsh => U54_CH5,
+	disable_det => U52_CH5,
+	ANALOGOUT => U86_ANALOGOUT_5,
+	TRIGOUT => U86_TRIGOUT_5,
+	trig_nodelay => U86_trig_nodelay_5,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_6:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U6_A6,
+	auto_baseline => U87_baseline_6,
+	thrsh => U54_CH6,
+	disable_det => U52_CH6,
+	ANALOGOUT => U86_ANALOGOUT_6,
+	TRIGOUT => U86_TRIGOUT_6,
+	trig_nodelay => U86_trig_nodelay_6,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_7:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U7_A7,
+	auto_baseline => U87_baseline_7,
+	thrsh => U54_CH7,
+	disable_det => U52_CH7,
+	ANALOGOUT => U86_ANALOGOUT_7,
+	TRIGOUT => U86_TRIGOUT_7,
+	trig_nodelay => U86_trig_nodelay_7,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_8:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U8_A8,
+	auto_baseline => U87_baseline_8,
+	thrsh => U54_CH8,
+	disable_det => U52_CH8,
+	ANALOGOUT => U86_ANALOGOUT_8,
+	TRIGOUT => U86_TRIGOUT_8,
+	trig_nodelay => U86_trig_nodelay_8,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_9:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U9_A9,
+	auto_baseline => U87_baseline_9,
+	thrsh => U54_CH9,
+	disable_det => U52_CH9,
+	ANALOGOUT => U86_ANALOGOUT_9,
+	TRIGOUT => U86_TRIGOUT_9,
+	trig_nodelay => U86_trig_nodelay_9,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_10:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U10_A10,
+	auto_baseline => U87_baseline_10,
+	thrsh => U54_CH10,
+	disable_det => U52_CH10,
+	ANALOGOUT => U86_ANALOGOUT_10,
+	TRIGOUT => U86_TRIGOUT_10,
+	trig_nodelay => U86_trig_nodelay_10,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_11:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U11_A11,
+	auto_baseline => U87_baseline_11,
+	thrsh => U54_CH11,
+	disable_det => U52_CH11,
+	ANALOGOUT => U86_ANALOGOUT_11,
+	TRIGOUT => U86_TRIGOUT_11,
+	trig_nodelay => U86_trig_nodelay_11,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_12:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U12_A12,
+	auto_baseline => U87_baseline_12,
+	thrsh => U54_CH12,
+	disable_det => U52_CH12,
+	ANALOGOUT => U86_ANALOGOUT_12,
+	TRIGOUT => U86_TRIGOUT_12,
+	trig_nodelay => U86_trig_nodelay_12,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_13:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U13_A13,
+	auto_baseline => U87_baseline_13,
+	thrsh => U54_CH13,
+	disable_det => U52_CH13,
+	ANALOGOUT => U86_ANALOGOUT_13,
+	TRIGOUT => U86_TRIGOUT_13,
+	trig_nodelay => U86_trig_nodelay_13,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_14:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U14_A14,
+	auto_baseline => U87_baseline_14,
+	thrsh => U54_CH14,
+	disable_det => U52_CH14,
+	ANALOGOUT => U86_ANALOGOUT_14,
+	TRIGOUT => U86_TRIGOUT_14,
+	trig_nodelay => U86_trig_nodelay_14,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_15:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U15_A15,
+	auto_baseline => U87_baseline_15,
+	thrsh => U54_CH15,
+	disable_det => U52_CH15,
+	ANALOGOUT => U86_ANALOGOUT_15,
+	TRIGOUT => U86_TRIGOUT_15,
+	trig_nodelay => U86_trig_nodelay_15,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_16:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U16_A16,
+	auto_baseline => U87_baseline_16,
+	thrsh => U54_CH16,
+	disable_det => U52_CH16,
+	ANALOGOUT => U86_ANALOGOUT_16,
+	TRIGOUT => U86_TRIGOUT_16,
+	trig_nodelay => U86_trig_nodelay_16,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_17:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U17_A17,
+	auto_baseline => U87_baseline_17,
+	thrsh => U54_CH17,
+	disable_det => U52_CH17,
+	ANALOGOUT => U86_ANALOGOUT_17,
+	TRIGOUT => U86_TRIGOUT_17,
+	trig_nodelay => U86_trig_nodelay_17,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_18:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U18_A18,
+	auto_baseline => U87_baseline_18,
+	thrsh => U54_CH18,
+	disable_det => U52_CH18,
+	ANALOGOUT => U86_ANALOGOUT_18,
+	TRIGOUT => U86_TRIGOUT_18,
+	trig_nodelay => U86_trig_nodelay_18,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_19:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U19_A19,
+	auto_baseline => U87_baseline_19,
+	thrsh => U54_CH19,
+	disable_det => U52_CH19,
+	ANALOGOUT => U86_ANALOGOUT_19,
+	TRIGOUT => U86_TRIGOUT_19,
+	trig_nodelay => U86_trig_nodelay_19,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_20:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U20_A20,
+	auto_baseline => U87_baseline_20,
+	thrsh => U54_CH20,
+	disable_det => U52_CH20,
+	ANALOGOUT => U86_ANALOGOUT_20,
+	TRIGOUT => U86_TRIGOUT_20,
+	trig_nodelay => U86_trig_nodelay_20,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_21:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U21_A21,
+	auto_baseline => U87_baseline_21,
+	thrsh => U54_CH21,
+	disable_det => U52_CH21,
+	ANALOGOUT => U86_ANALOGOUT_21,
+	TRIGOUT => U86_TRIGOUT_21,
+	trig_nodelay => U86_trig_nodelay_21,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_22:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U22_A22,
+	auto_baseline => U87_baseline_22,
+	thrsh => U54_CH22,
+	disable_det => U52_CH22,
+	ANALOGOUT => U86_ANALOGOUT_22,
+	TRIGOUT => U86_TRIGOUT_22,
+	trig_nodelay => U86_trig_nodelay_22,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U86_23:SUBPAGE_Trigger
+PORT MAP(
+	AIN => U23_A23,
+	auto_baseline => U87_baseline_23,
+	thrsh => U54_CH23,
+	disable_det => U52_CH23,
+	ANALOGOUT => U86_ANALOGOUT_23,
+	TRIGOUT => U86_TRIGOUT_23,
+	trig_nodelay => U86_trig_nodelay_23,
+	inhib => U73_time,
+	baseline => U73_base,
+	gate => U82_gate_l,
+	delay => U82_delay,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_0:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_0,
+	base => U68_CH0,
+	energy => U87_energy_0,
+	valid => U87_valid_0,
+	int_gate => U87_int_gate_0,
+	baseline => U87_baseline_0,
+	baseline_valid => U87_baseline_valid_0,
+	baseline_calculating => U87_baseline_calculating_0,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_1:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_1,
+	base => U68_CH1,
+	energy => U87_energy_1,
+	valid => U87_valid_1,
+	int_gate => U87_int_gate_1,
+	baseline => U87_baseline_1,
+	baseline_valid => U87_baseline_valid_1,
+	baseline_calculating => U87_baseline_calculating_1,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_2:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_2,
+	base => U68_CH2,
+	energy => U87_energy_2,
+	valid => U87_valid_2,
+	int_gate => U87_int_gate_2,
+	baseline => U87_baseline_2,
+	baseline_valid => U87_baseline_valid_2,
+	baseline_calculating => U87_baseline_calculating_2,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_3:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_3,
+	base => U68_CH3,
+	energy => U87_energy_3,
+	valid => U87_valid_3,
+	int_gate => U87_int_gate_3,
+	baseline => U87_baseline_3,
+	baseline_valid => U87_baseline_valid_3,
+	baseline_calculating => U87_baseline_calculating_3,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_4:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_4,
+	base => U68_CH4,
+	energy => U87_energy_4,
+	valid => U87_valid_4,
+	int_gate => U87_int_gate_4,
+	baseline => U87_baseline_4,
+	baseline_valid => U87_baseline_valid_4,
+	baseline_calculating => U87_baseline_calculating_4,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_5:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_5,
+	base => U68_CH5,
+	energy => U87_energy_5,
+	valid => U87_valid_5,
+	int_gate => U87_int_gate_5,
+	baseline => U87_baseline_5,
+	baseline_valid => U87_baseline_valid_5,
+	baseline_calculating => U87_baseline_calculating_5,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_6:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_6,
+	base => U68_CH6,
+	energy => U87_energy_6,
+	valid => U87_valid_6,
+	int_gate => U87_int_gate_6,
+	baseline => U87_baseline_6,
+	baseline_valid => U87_baseline_valid_6,
+	baseline_calculating => U87_baseline_calculating_6,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_7:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_7,
+	base => U68_CH7,
+	energy => U87_energy_7,
+	valid => U87_valid_7,
+	int_gate => U87_int_gate_7,
+	baseline => U87_baseline_7,
+	baseline_valid => U87_baseline_valid_7,
+	baseline_calculating => U87_baseline_calculating_7,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_8:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_8,
+	base => U68_CH8,
+	energy => U87_energy_8,
+	valid => U87_valid_8,
+	int_gate => U87_int_gate_8,
+	baseline => U87_baseline_8,
+	baseline_valid => U87_baseline_valid_8,
+	baseline_calculating => U87_baseline_calculating_8,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_9:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_9,
+	base => U68_CH9,
+	energy => U87_energy_9,
+	valid => U87_valid_9,
+	int_gate => U87_int_gate_9,
+	baseline => U87_baseline_9,
+	baseline_valid => U87_baseline_valid_9,
+	baseline_calculating => U87_baseline_calculating_9,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_10:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_10,
+	base => U68_CH10,
+	energy => U87_energy_10,
+	valid => U87_valid_10,
+	int_gate => U87_int_gate_10,
+	baseline => U87_baseline_10,
+	baseline_valid => U87_baseline_valid_10,
+	baseline_calculating => U87_baseline_calculating_10,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_11:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_11,
+	base => U68_CH11,
+	energy => U87_energy_11,
+	valid => U87_valid_11,
+	int_gate => U87_int_gate_11,
+	baseline => U87_baseline_11,
+	baseline_valid => U87_baseline_valid_11,
+	baseline_calculating => U87_baseline_calculating_11,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_12:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_12,
+	base => U68_CH12,
+	energy => U87_energy_12,
+	valid => U87_valid_12,
+	int_gate => U87_int_gate_12,
+	baseline => U87_baseline_12,
+	baseline_valid => U87_baseline_valid_12,
+	baseline_calculating => U87_baseline_calculating_12,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_13:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_13,
+	base => U68_CH13,
+	energy => U87_energy_13,
+	valid => U87_valid_13,
+	int_gate => U87_int_gate_13,
+	baseline => U87_baseline_13,
+	baseline_valid => U87_baseline_valid_13,
+	baseline_calculating => U87_baseline_calculating_13,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_14:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_14,
+	base => U68_CH14,
+	energy => U87_energy_14,
+	valid => U87_valid_14,
+	int_gate => U87_int_gate_14,
+	baseline => U87_baseline_14,
+	baseline_valid => U87_baseline_valid_14,
+	baseline_calculating => U87_baseline_calculating_14,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_15:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_15,
+	base => U68_CH15,
+	energy => U87_energy_15,
+	valid => U87_valid_15,
+	int_gate => U87_int_gate_15,
+	baseline => U87_baseline_15,
+	baseline_valid => U87_baseline_valid_15,
+	baseline_calculating => U87_baseline_calculating_15,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_16:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_16,
+	base => U68_CH16,
+	energy => U87_energy_16,
+	valid => U87_valid_16,
+	int_gate => U87_int_gate_16,
+	baseline => U87_baseline_16,
+	baseline_valid => U87_baseline_valid_16,
+	baseline_calculating => U87_baseline_calculating_16,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_17:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_17,
+	base => U68_CH17,
+	energy => U87_energy_17,
+	valid => U87_valid_17,
+	int_gate => U87_int_gate_17,
+	baseline => U87_baseline_17,
+	baseline_valid => U87_baseline_valid_17,
+	baseline_calculating => U87_baseline_calculating_17,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_18:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_18,
+	base => U68_CH18,
+	energy => U87_energy_18,
+	valid => U87_valid_18,
+	int_gate => U87_int_gate_18,
+	baseline => U87_baseline_18,
+	baseline_valid => U87_baseline_valid_18,
+	baseline_calculating => U87_baseline_calculating_18,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_19:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_19,
+	base => U68_CH19,
+	energy => U87_energy_19,
+	valid => U87_valid_19,
+	int_gate => U87_int_gate_19,
+	baseline => U87_baseline_19,
+	baseline_valid => U87_baseline_valid_19,
+	baseline_calculating => U87_baseline_calculating_19,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_20:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_20,
+	base => U68_CH20,
+	energy => U87_energy_20,
+	valid => U87_valid_20,
+	int_gate => U87_int_gate_20,
+	baseline => U87_baseline_20,
+	baseline_valid => U87_baseline_valid_20,
+	baseline_calculating => U87_baseline_calculating_20,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_21:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_21,
+	base => U68_CH21,
+	energy => U87_energy_21,
+	valid => U87_valid_21,
+	int_gate => U87_int_gate_21,
+	baseline => U87_baseline_21,
+	baseline_valid => U87_baseline_valid_21,
+	baseline_calculating => U87_baseline_calculating_21,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_22:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_22,
+	base => U68_CH22,
+	energy => U87_energy_22,
+	valid => U87_valid_22,
+	int_gate => U87_int_gate_22,
+	baseline => U87_baseline_22,
+	baseline_valid => U87_baseline_valid_22,
+	baseline_calculating => U87_baseline_calculating_22,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+
+U87_23:SUBPAGE_ChargeIntegrator
+PORT MAP(
+	analog_in => U86_ANALOGOUT_23,
+	base => U68_CH23,
+	energy => U87_energy_23,
+	valid => U87_valid_23,
+	int_gate => U87_int_gate_23,
+	baseline => U87_baseline_23,
+	baseline_valid => U87_baseline_valid_23,
+	baseline_calculating => U87_baseline_calculating_23,
+	scale => U73_scale,
+	pre_int => U73_pre,
+	trig => U44_out,
+	manual_base => U73_base,
+	int_time => U73_time,
+	GlobalReset => GlobalReset,
+	CLK_ACQ=>CLK_ACQ ,
+	BUS_CLK=>BUS_CLK ,
+	CLK_40=>CLK_40 ,
+	CLK_50 => "0" ,
+	CLK_80=>CLK_80 ,
+	clk_160=>clk_160 ,
+	clk_320=>clk_320 ,
+	clk_125=>clk_125 ,
+	FAST_CLK_100=>FAST_CLK_100 ,
+	FAST_CLK_200=>FAST_CLK_200 ,
+	FAST_CLK_250=>FAST_CLK_250 ,
+	FAST_CLK_250_90=>FAST_CLK_250_90 ,
+	FAST_CLK_500=>FAST_CLK_500 ,
+	FAST_CLK_500_90=>FAST_CLK_500_90 ,
+	GlobalClock=>GlobalClock ,
+	async_clk => async_clk);
+REG_FIRMWARE_BUILD <= x"20240904";
 REG_FIRMWARE_UNIQUE <= x"361567DF";
 FW_STRING_0 <= x"5237364669726D776172650000000000";
 

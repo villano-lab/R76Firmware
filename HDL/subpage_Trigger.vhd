@@ -134,7 +134,7 @@ port Map(
 	RESET =>GlobalReset,
 	CLK =>async_clk,
 	CE =>"1",
-	POLARITY =>U21_CONST,
+	POLARITY =>"0",
 	PORT_IN =>U12_b,
 	THRESHOLD =>U15_out,
 	TRIGGER_INIB =>U5_int,

@@ -120,7 +120,7 @@ port Map(
 	RESET =>GlobalReset,
 	CLK =>async_clk,
 	CE =>"1",
-	POLARITY =>U9_CONST,
+	POLARITY =>"0",
 	PORT_IN =>U7_b,
 	THRESHOLD =>U8_top,
 	TRIGGER_INIB =>0,
@@ -179,7 +179,7 @@ U11_CONST <= conv_std_logic_vector(0,16);
 
 U12 : block
 begin
-U12_out <= U13_CONST when U10_OUT = "0" else U1_out when U10_OUT = "1"  else U1_out;
+U12_out <= U1_out when U10_OUT = "0" else U13_CONST when U10_OUT = "1"  else U1_out;
 
 end block;
 U13_CONST <= conv_std_logic_vector(0,1);
