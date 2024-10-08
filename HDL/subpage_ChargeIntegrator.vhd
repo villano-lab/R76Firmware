@@ -22,6 +22,7 @@ baseline : out std_logic_vector(15 downto 0);
 baseline_valid : out std_logic_vector(0 downto 0);
 baseline_calculating : out std_logic_vector(0 downto 0);
 manual_base : in std_logic_vector(7 downto 0);
+scale : in std_logic_vector(15 downto 0);
 
 		async_clk : in std_logic_vector (0 downto 0);
 		CLK_ACQ : in std_logic_vector (0 downto 0);
@@ -117,6 +118,39 @@ signal U16_manual_base : std_logic_vector(7 downto 0);
 	END COMPONENT;
 
 signal U18_CONST : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+signal U19_scale : std_logic_vector(15 downto 0);
+	signal U20_OUT : STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+	COMPONENT U20_DividerPipelined
+		PORT( 
+			s_axis_dividend_tdata : in STD_LOGIC_VECTOR(15 downto 0);
+			s_axis_dividend_tvalid : in STD_LOGIC;
+			s_axis_divisor_tdata : in STD_LOGIC_VECTOR(15 downto 0);
+			s_axis_divisor_tvalid : in STD_LOGIC;
+			m_axis_dout_tdata : out STD_LOGIC_VECTOR(31 downto 0);
+			m_axis_dout_tvalid : out STD_LOGIC;
+			aclk : in STD_LOGIC;
+			aclken : in STD_LOGIC
+		);
+	END COMPONENT;
+
+signal U21_out : std_logic_vector(15 downto 0) := (others => '0');
+	signal U22_OUT : STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+	COMPONENT U22_DividerPipelined
+		PORT( 
+			s_axis_dividend_tdata : in STD_LOGIC_VECTOR(15 downto 0);
+			s_axis_dividend_tvalid : in STD_LOGIC;
+			s_axis_divisor_tdata : in STD_LOGIC_VECTOR(15 downto 0);
+			s_axis_divisor_tvalid : in STD_LOGIC;
+			m_axis_dout_tdata : out STD_LOGIC_VECTOR(31 downto 0);
+			m_axis_dout_tvalid : out STD_LOGIC;
+			aclk : in STD_LOGIC;
+			aclken : in STD_LOGIC
+		);
+	END COMPONENT;
+
+signal U23_out : std_logic_vector(15 downto 0) := (others => '0');
 
 begin
 
@@ -124,9 +158,9 @@ U0: charge_integration
 PORT MAP(
     ap_clk  => async_clk(0),
     ap_rst  => GlobalReset(0),
-    in1_V  => U6_analog_in,
+    in1_V  => U21_out,
     in1_V_ap_vld  => '1',
-    base_line_V  => U9_out,
+    base_line_V  => U23_out,
     trigger_signal  => U3_trig(0),
     p_int_length_V  => U4_int_time,
     p_pre_length_V  => U5_pre_int,
@@ -194,5 +228,34 @@ U16_manual_base <= manual_base;
 	);
 
 U18_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"0"),8));
+U19_scale <= scale;
+
+	U20 : U20_DividerPipelined
+	PORT MAP(
+		s_axis_dividend_tdata => U6_analog_in,
+		s_axis_dividend_tvalid => '0',
+		s_axis_divisor_tdata => U19_scale,
+		s_axis_divisor_tvalid => '0',
+		m_axis_dout_tdata => U20_OUT,
+		m_axis_dout_tvalid => open,
+		aclk => CLK_ACQ(0),
+		aclken => '1'
+	);
+
+U21_out <= U20_OUT(31 downto 16);
+
+	U22 : U22_DividerPipelined
+	PORT MAP(
+		s_axis_dividend_tdata => U9_out,
+		s_axis_dividend_tvalid => '0',
+		s_axis_divisor_tdata => U19_scale,
+		s_axis_divisor_tvalid => '0',
+		m_axis_dout_tdata => U22_OUT,
+		m_axis_dout_tvalid => open,
+		aclk => CLK_ACQ(0),
+		aclken => '1'
+	);
+
+U23_out <= U22_OUT(31 downto 16);
 
 end Behavioral;

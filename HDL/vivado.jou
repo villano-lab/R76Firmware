@@ -2,14 +2,18 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Thu Jul 25 11:58:09 2024
-# Process ID: 6632
+# Start of session at: Wed Sep  4 15:43:51 2024
+# Process ID: 1980
 # Current directory: C:/OpenHardware/UserProject/R76Firmware/HDL
 # Command line: vivado.exe -mode batch -source C:/OpenHardware/UserProject/R76Firmware/HDL/R76Firmware.tcl
 # Log file: C:/OpenHardware/UserProject/R76Firmware/HDL/vivado.log
 # Journal file: C:/OpenHardware/UserProject/R76Firmware/HDL\vivado.jou
 #-----------------------------------------------------------
 source C:/OpenHardware/UserProject/R76Firmware/HDL/R76Firmware.tcl
+create_project -in_memory generateNetlistIP -part xc7z030fbg676-2
+read_ip C:/OpenHardware/UserProject/R76Firmware/output/R76Firmware/R76Firmware.srcs/sources_1/ip/U20_DividerPipelined/U20_DividerPipelined.xci
+create_project -in_memory generateNetlistIP -part xc7z030fbg676-2
+read_ip C:/OpenHardware/UserProject/R76Firmware/output/R76Firmware/R76Firmware.srcs/sources_1/ip/U22_DividerPipelined/U22_DividerPipelined.xci
 create_project -in_memory generateNetlistIP -part xc7z030fbg676-2
 read_ip C:/OpenHardware/UserProject/R76Firmware/output/R76Firmware/R76Firmware.srcs/sources_1/ip/clk_wiz_0.xcix
 create_project -in_memory generateNetlistIP -part xc7z030fbg676-2

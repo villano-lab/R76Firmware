@@ -11,6 +11,7 @@
 #include <getopt.h>
 #include <math.h>
 #include <iostream>
+#include <string>
 
 //Text defines
 #define BOARD_IP_ADDRESS ("134.84.150.114")
@@ -30,15 +31,18 @@
 #define TOP_TEXT      (" -T,    --top       <value>                 Set the upper threshold to the given value in MeV (default: 8).\n")
 #define RESET_TEXT    (" -R,    --reset                             Reset all unsupplied values to their defaults.\n")
 #define FORCE_TEXT    (" -f,    --force                             Skip all requests for user input.\n")
-//#define POLARITY_TEXT (" -p,    --polarity  <1 or 0>                Flip polarity to positive (1 or no arg) or leave as-is (0). (default: 1)\n")
 #define PRE_INT_TEXT  (" -P,    --pre-int   <#>                     Set the pre-integration time in clock cycles. (integer. default: 30)\n")
 #define INT_TIME_TEXT (" -I,    --int-time  <#>                     Set the integration time in clock cycles. (integer. default: 250)\n")
 #define CONFIG_TEXT   (" -c,    --config    <file>                  Take parameters from a config file. See example.config for formatting. (default: example.config)\n")
 #define WAIT_TEXT     (" -w,    --wait      <#>                     Set the number of 10-second cycles to wait through for data collection. (integer. if not supplied, uses one cycle.)\n")
+#define MODE_TEXT     (" -m,	--mode	    <'l','u','w',or 's'>    Select the operation mode; l(ower), u(pper), w(indow), or s(ingle) (default). The program will scan over the selected side(s) and leave the remaining, if any, static.")
 //Assigning buffer sizes
 #define BUFFER_SIZE (1024)
+//version number
+#define VERSION_NUMBER ("v0.4 (development)")
 
 //Defaults
+extern char mode;
 extern int verbose;
 extern float thrs;
 extern uint32_t value;
@@ -152,13 +156,13 @@ void print_timestamp(int elapsed, int verbose);                         //parse 
 void read_config(const char* filename);                                 //parse a config file for values
 //converting functions
 int *on_to_off(int *off, uint32_t on, int verbose);                     //convert a 'detectors on' bit vector to a 'detectors off' bit vector
-int energy_to_bin(int detnum, float energy,int baseline);               //convert an energy value to a bin value
+uint32_t energy_to_bin(int detnum, float energy,int baseline);               //convert an energy value to a bin value
 //compatibility functions
 int REG_top_SET(uint32_t value, NI_HANDLE* handle);                     //set all top thresholds to a bin number
 int REG_thrsh_SET(uint32_t value, NI_HANDLE* handle);                   //set all lower thesholds to a bin number
 //multichannel functions
 int *disable_dets(int *disable_q, int disable[24]);                     //disable detectors based on input array
-int *set_thresholds(const char* side, float energy, int *thresh_q, int baseline);     //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
+uint32_t *set_thresholds(const char* side, float energy, int *thresh_q, int baseline);     //run the REG_?_0_SET functions for either upper or lower thresholds, all at once, for a single energy value.
 uint32_t *spectra_PARAMS(int *spectra_q,int32_t Rebin, int32_t LimitMode, int32_t LimitValue); //set up spectrum parameters
 uint32_t *spectra_START(uint32_t *spectra_q);
 uint32_t *spectra_STOP(uint32_t *spectra_q);
@@ -171,3 +175,4 @@ uint32_t *spectra_DOWNLOAD(uint32_t *specdat, uint32_t timeout, uint32_t *specre
 int connect_staticaddr(int verbose);                                    //connect to the board, with print functions.
 //int set_by_polarity(uint32_t address, int polarity, int value);  //run a REG_?_SET function to set a value above or below the baseline, depending on the polarity.
 int kbhit(void);                                                        //allow keyboard interrupt
+int multicheck(int* errors,int len,std::string name);

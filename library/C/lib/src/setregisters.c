@@ -283,10 +283,10 @@ int main(int argc, char* argv[]){
 	}
 
 	if(threshflag == 1){
-		thresh_q = set_thresholds("low",thrs,thresh_t,baseline);
+		set_thresholds("low",thrs,thresh_t,baseline);
 		if(verbose > 2){printf("Ran set_thresholds. Checking output...\n");}
 		for(int i=0; i<24; i++){
-			if(thresh_q[i] != 0){
+			if(thresh_t[i] != 0){
 				printf("Unable to set threshold of detector #%d! Aborting.\n",i);
 				return thresh_q[i];
 			}
@@ -297,9 +297,9 @@ int main(int argc, char* argv[]){
 	}
 	//set top
 	if(topflag == 1){
-		thresh_q = set_thresholds("high",top,thresh_t,baseline);
+		set_thresholds("high",top,thresh_t,baseline);
 		for(int i=0; i<24; i++){
-			if(thresh_q[i] != 0){
+			if(thresh_t[i] != 0){
 				printf("Unable to set upper threshold of detector #%d! Aborting.\n",i);
 				return thresh_q[i];
 			}
@@ -322,12 +322,12 @@ int main(int argc, char* argv[]){
 
 	//set inhib
 	if(inhibflag == 1){
-		inhib_q = __abstracted_reg_write(inhib,SCI_REG_trig_inhib,&handle);
+		inhib_q = __abstracted_reg_write(int_time,SCI_REG_int_time,&handle);
 		if(inhib_q != 0){
-			printf("Error from REG_inhib_SET. Aborting.\n");
+			printf("Error setting int_time (also for trig inhibition). Aborting.\n");
 			return inhib_q;
 		}else if(verbose > 0){
-			printf("Successfully set inhib to %d.\n",inhib);
+			printf("Successfully set int time/trig inhib to %d.\n",inhib);
 		}
 	}else if(verbose > 1){
 		printf("Inhibit flag is off. Skipping.\n");

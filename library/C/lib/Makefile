@@ -69,7 +69,7 @@ Objects=$(Objects0)
 ## Main Build Targets
 ##
 .PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
-all: $(OutputFile) gcc/libUniversalTriggerShared.so setregisters scanrate scanupper scanwindow singlerate packettest
+all: $(OutputFile) gcc/libUniversalTriggerShared.so setregisters rate packettest
 
 $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	@$(MakeDirCommand) $(@D)
@@ -83,16 +83,12 @@ gcc/libUniversalTriggerShared.so: $(OutputFile) src/UniversalTriggerShared.c src
 	$(CXX) -fPIC -c -o gcc/libUniversalTriggerShared.so src/UniversalTriggerShared.c $(CVER)
 setregisters: %: $(OutputFile) src/%.c
 	$(CXX) $(CXXFLAGS) -o setregisters src/setregisters.c $(LIBFLAGS) -lm -ldl
-scanrate: %: $(OutputFile) src/%.c
-	$(CXX) $(CXXFLAGS) -o scanrate src/scanrate.c $(LIBFLAGS) -lm -ldl
-scanupper: %: $(OutputFile) src/%.c
-	$(CXX) $(CXXFLAGS) -o scanupper src/scanupper.c $(LIBFLAGS) -lm -ldl
-scanwindow: %: $(OutputFile) src/%.c
-	$(CXX) $(CXXFLAGS) -o scanwindow src/scanwindow.c $(LIBFLAGS) -lm -ldl
-singlerate: %: $(OutputFile) src/%.c
-	$(CXX) $(CXXFLAGS) -o singlerate src/singlerate.c $(LIBFLAGS) -lm -ldl
+rate: %: $(OutputFile) src/%.c
+	$(CXX) $(CXXFLAGS) -o rate src/rate.c $(LIBFLAGS) -lm -ldl
 packettest: %: $(OutputFile) src/%.c
 	$(CXX) $(CXXFLAGS) -o packettest src/packettest.c $(LIBFLAGS) -lm -ldl
+detval: %: $(OutputFile) src/%.c
+	$(CXX) $(CXXFLAGS) -o detval src/detval.c $(LIBFLAGS) -lm -ldl
 
 MakeIntermediateDirs:
 	@test -d ./Debug || $(MakeDirCommand) ./Debug

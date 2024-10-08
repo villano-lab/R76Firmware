@@ -9,9 +9,13 @@ update_ip_catalog -rebuild
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/clk_wiz_0.xcix
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/fifo_generator_0.xcix
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/main_clock.xci
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U20_DividerPipelined.xci
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U22_DividerPipelined.xci
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_ChargeIntegrator.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_clean_interrupt.vhd
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_PulseHeightFinder.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_ReduceRate.vhd
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_SaturationDetector.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_Trigger.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/subpage_UpperTrigger.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/top_R76Firmware.vhd
@@ -30,18 +34,18 @@ add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/MCRateMeter.
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/moving_average.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/moving_average_debkb.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/moving_average_srcud.vhd
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/peak_finder.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/polinvert.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/scaler.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/SW_GATE_AND_DELAY.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/TimestampGenerator.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/trigger_leading.vhd
-add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U85_custompacket.vhd
-add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U87_UserHDL_Serial_Tx.vhd
-add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U89_UserHDL_Serial_Rx.vhd
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U60_UserHDL_Serial_Tx.vhd
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U62_UserHDL_Serial_Rx.vhd
+add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/U81_custompacket.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/xlx_delay.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/xlx_oscilloscope_sync.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/xlx_soft_gd.vhd
-add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/xlx_spectrum.vhd
 add_files -force C:/OpenHardware/UserProject/R76Firmware/HDL/pcores/ZynqDesign_wrapper.vhd
 add_files -force -fileset constrs_1 C:/OpenHardware/UserProject/R76Firmware/HDL/DT5560_pins.xdc
 import_files -force -norecurse
